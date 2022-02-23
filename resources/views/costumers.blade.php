@@ -32,7 +32,7 @@
         <div class="kunderportfolio-div mx-4 my-4">
             <div class="header kundenstyle1 px-3 py-3">
                 <div class="d-flex justify-content-between ">
-                    <span class="fs-5 fw-600">Kundenportfolio</span>
+                    <span class="fs-5 fw-600">Kundenportfolioooooo</span>
                     <div class="d-flex justify-content-end col my-auto input-group">
                         <a href="{{route('searchword')}}" style="text-decoration: none;color: #434343;cursor: pointer"
                            class="px-2 my-auto fw-600 border-0">
