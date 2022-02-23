@@ -70,7 +70,7 @@ export default {
         return {
 client_id: this.$attrs['client_id'],
 lead_id: this.$attrs['lead_id'],
-url: 'https://crm.kutiza.com/public/',
+url: this.$attrs['url'],
 client: null,
 admins: null,
 admin: null
@@ -95,6 +95,9 @@ admin: null
     mounted(){
     this.getclient();
    axios.get(this.url + 'fsadmins?admin_id=' + this.$attrs['admin_id']).then((response) => {this.admins = response.data; this.admin = response.data.id});
+},
+props:{
+    url: {required:false}
 }
 }
 </script>
