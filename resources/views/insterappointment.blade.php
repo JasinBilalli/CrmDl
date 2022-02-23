@@ -79,14 +79,16 @@
                                     <select name="admin" class="form-control">
                                         <option value="{{$admins->id}}">{{$admins->name}}</option>
                                     </select>
-                                @else
-                                    <label for="" class="mb-1">Besprechungsformular</label>
+                             
+                                @elseif(!Auth::user()->hasRole('salesmanager'))
+                                <label for="" class="mb-1">Besprechungsformular</label>
                                 <select onchange="hideadmin()" name="online" id="selecti" class="form-control">
-                                    <option value="yes">Online</option>
-                                    <option value="no">Physically</option>
+                                <option value="no">Physically</option>
+                                <option value="yes">Online</option>
                                 </select>
+                                
                             </div>
-                            <div class="input mb-2" id="admin" style="display: none">
+                            <div id="admin">
                                 <label for="admin" class="">Zuweisen</label>
                                 <br>
                                 <select name="admin" class="form-control">
@@ -95,8 +97,10 @@
                                                 <option value="{{$admin->id}}">{{$admin->name}}</option>
                                             @endif
                                         @endforeach
-                                    @endif
+                                  
                                 </select>
+</div>
+                                @endif
                             </div>
                             <div class="mb-2">
                                 <label for="" class="mb-1">Tel. Privat</label>
