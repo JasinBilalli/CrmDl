@@ -236,16 +236,14 @@
         background: #4EC590;
     }
 
-    .person-box-1 {
-        background-color: #fff;
-        border-radius: 15px;
-    }
+ 
 
     .person-box {
         color: #fff;
         font-weight: 600;
         border-radius: 15px;
         background-color: #0C71C3;
+
     }
 
     .text-color123 {

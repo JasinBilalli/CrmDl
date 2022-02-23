@@ -258,22 +258,26 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
            }
     }
     $gegen = newgegen::where('person_id',$personId)->get(); 
-    for($i = 1; $i<= $count; $i++){
- if(!empty($gegen[$i-1])){
-                    $file = $request->file('upload_policeFahrzeug'. $i);
-                   $gegen[$i-1]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i-1]->upload_policeFahrzeug;
-                   $gegen[$i-1]->comparison_type = $request->input('comparison_type' . $i) ? $request->input('comparison_type' . $i) : $gegen[$i-1]->comparison_type;
-                   $gegen[$i-1]->commentFahrenzug = $request->input('commentFahrenzug' . $i) ? $request->input('commentFahrenzug' . $i) : $gegen[$i-1]->commentFahrenzug;
-                   $gegen[$i-1]->save();
+    for($i = 0; $i< $count; $i++){
+        $curr = $i+1;
+ if(isset($gegen[$i])){
+
+                    $file = $request->file('upload_policeFahrzeug'. $curr);
+                   $gegen[$i]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i]->upload_policeFahrzeug;
+                   $gegen[$i]->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : $gegen[$i]->comparison_type;
+                   $gegen[$i]->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : $gegen[$i]->commentFahrenzug;
+                   $gegen[$i]->save();
+              
                     }
                    else{
                        $gegen = new newgegen();
-                       $file = $request->file('upload_policeFahrzeug'. $i);
-                       $gegen->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : null;
-                       $gegen->comparison_type = $request->input('comparison_type' . $i) ? $request->input('comparison_type' . $i) : null;
-                       $gegen->commentFahrenzug = $request->input('commentFahrenzug' . $i) ? $request->input('commentFahrenzug' . $i) : null;
+                       $file = $request->file('upload_policeFahrzeug'. $curr);
+                       $gegen->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : null;
+                       $gegen->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : null;
+                       $gegen->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : null;
                        $gegen->person_id = $personId;
                        $gegen->save();
+                       
                    }
                 }
 
