@@ -51,14 +51,14 @@
                 </div>
             </div>
             <div class="col-12 row text-center my-3">
-                <div class="col-6 col-md-6 g-0" style="color: #4CC590">
+                <div class="col-6 col-md-6 g-0" style="color: #0C71C3">
                     <i @click="searchfor()" class="dateee px-1 pb-1" style="cursor:pointer; border-radius: 50px !important;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-left fw-bold" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
                         </svg>
                     </i>
                 </div>
-                <div class="col-6 col-md-6" style="color: #4CC590">
+                <div class="col-6 col-md-6" style="color: #0C71C3">
                     <i  class="dateee px-1 pb-1" style=" cursor:pointer; border-radius: 50px !important;" @click="searchfor2()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-right fw-bold" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
@@ -66,7 +66,7 @@
                     </i>
                 </div>
             </div>
-            <div class="px-4 pt-4 mb-4" style="height: 300px; background: #00c78c; border-radius: 25px;  overflow:hidden !important; background-color: #F5F4F4; border-radius: 25px; font-family: 'Montserrat';">
+            <div class="px-4 pt-4 mb-4" style="height: 300px; background: #0C71C3; border-radius: 25px;  overflow:hidden !important; background-color: #F5F4F4; border-radius: 25px; font-family: 'Montserrat';">
                 <div class="text-center" v-if="today == null">
                     No appointments for today
                 </div>

@@ -190,19 +190,19 @@
 
     .dateee {
         border-radius: 15px;
-        border: #4CC590 1px solid;
+        border: #0C71C3 1px solid;
         color: #000;
         background-color: #fff;
     }
 
     .dateee:hover {
-        background-color: #4CC590;
+        background-color: #0C71C3;
         border-radius: 15px;
         color: #fff;
     }
 
     .dateee:focus {
-        background-color: #4CC590;
+        background-color: #0C71C3;
         border-radius: 15px;
         color: #fff;
     }
@@ -245,7 +245,7 @@
         color: #fff;
         font-weight: 600;
         border-radius: 15px;
-        background-color: #4EC590;
+        background-color: #0C71C3;
     }
 
     .text-color123 {
@@ -2004,9 +2004,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     }
     a{
         text-decoration: none;
-    
+
     }
-    
+
 </style>
 <style>
             /*Per Notification */
