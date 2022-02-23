@@ -408,14 +408,13 @@
                                         data-bs-target="#nav-profile" type="button" role="tab"
                                         aria-controls="nav-profile" aria-selected="false" onclick="changecnt(1)">Auto
                                 </button>
-
-                                <button class="nav-link  col vorsorge-btn" id="nav-fourth-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth"
-                                        aria-selected="false" onclick="changecnt(3)">Vorsorge
-                                </button>
                                 <button class="nav-link  col sachen-btn" id="nav-contact-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-contact" type="button" role="tab"
-                                        aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)">Sachen
+                                        aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)">Vorsorge
+                                </button>
+                                <button class="nav-link  col vorsorge-btn" id="nav-fourth-tab" data-bs-toggle="tab"
+                                        data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth"
+                                        aria-selected="false" onclick="changecnt(3)">Sachen
                                 </button>
                             </div>
                         </nav>

@@ -208,23 +208,24 @@ class UserController extends Controller
         $responseJson = curl_exec($ch);
         curl_close($ch);
         $response = json_decode($responseJson);
-
         if ($response->status == 'OK') {
-            $lead->latitude = $response->results[0]->geometry->location->lat;
-            $lead->longitude = $response->results[0]->geometry->location->lng;
-
-        }else{
-            return redirect()->back()->with('success','Wrong Field Strasse');
+            $latitude = $response->results[0]->geometry->location->lat;
+            $longitude = $response->results[0]->geometry->location->lng;
         }
-
-//            $lead->latitude = $latitude;
-//            $lead->longitude = $longitude;
-//
+        else{
+       
+        $lead->latitude = "0";
+        $lead->longitude = "0";
+        }
 
 
         if ($lead->save()) {
+            if(Auth::user()->hasRole('salesmanager')){
+                $lead->assign_to_id = null;
+            }
             $lead->slug = Str::slug($req->input('fname')) . '-' . $lead->id;
-            return redirect()->route('dashboard')->with('success', 'You joined successfully, our team will try to contact you as soon as possible!');
+            $lead->save();
+            return redirect()->back()->with('success', 'Appointment was done successfully!');
         } else {
             return redirect()->route('getlead')->with('fail', 'Your joined fail');
         }
