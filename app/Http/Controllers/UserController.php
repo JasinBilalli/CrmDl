@@ -227,7 +227,7 @@ class UserController extends Controller
             $lead->save();
             return redirect()->back()->with('success', 'Appointment was done successfully!');
         } else {
-            return redirect()->route('getlead')->with('fail', 'Your joined fail');
+            return redirect()->back()->with('fail', 'Your joined fail');
         }
     }
 

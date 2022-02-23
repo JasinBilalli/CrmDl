@@ -9,7 +9,7 @@
         </button>
         <div class="btn-group dropdown dropdown-notifications sw-open" id="openNotification"
              style="position: absolute; display:none; right: 1rem; top: 3.2rem;">
-            <div class="bg-white dropdown-container text-start" style="border: 1px solid black;border-radius: 8px; z-index: 150">
+            <div class="bg-white dropdown-container text-start" style="border: 1px solid black;border-radius: 8px; z-index: 150; min-width:368px;">
                 <div class="dropdown-toolbar" style="z-index: 150">
                     <h3 class="dropdown-toolbar-title pt-2" style="padding-left:1rem; font-weight: 600">Recent Notifications</h3>
                     <hr class="m-0 g-0 p-0">

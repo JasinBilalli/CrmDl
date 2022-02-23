@@ -133,7 +133,6 @@ export default {
     return {
       messages: [],
       pag: 1,
-      url: "https://crm.kutiza.com/public/",
       cnt: 0,
         admin: null
     };
@@ -199,6 +198,9 @@ headers:{
     u2: {
       default: () => window.data.u2,
     },
+    url:
+      {required:false}
+    
   },
 };
 </script>

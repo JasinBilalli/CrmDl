@@ -5314,7 +5314,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       client_id: this.$attrs['client_id'],
       lead_id: this.$attrs['lead_id'],
-      url: 'https://crm.kutiza.com/public/',
       client: null,
       admins: null,
       admin: null
@@ -5348,6 +5347,11 @@ __webpack_require__.r(__webpack_exports__);
       _this2.admins = response.data;
       _this2.admin = response.data.id;
     });
+  },
+  props: {
+    url: {
+      required: false
+    }
   }
 });
 
@@ -5435,7 +5439,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       client_id: this.$attrs['client_id'],
       lead_id: this.$attrs['lead_id'],
-      url: 'https://crm.kutiza.com/public/',
+      url: this.$attrs['url'],
       client: null,
       admins: null,
       admin: null
@@ -5468,6 +5472,11 @@ __webpack_require__.r(__webpack_exports__);
       _this2.admins = response.data;
       _this2.admin = response.data.id;
     });
+  },
+  props: {
+    url: {
+      required: false
+    }
   }
 });
 
@@ -5555,7 +5564,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       client_id: this.$attrs['client_id'],
       lead_id: this.$attrs['lead_id'],
-      url: 'https://crm.kutiza.com/public/',
+      url: this.$attrs['url'],
       client: null,
       admins: null,
       admin: null
@@ -5588,6 +5597,11 @@ __webpack_require__.r(__webpack_exports__);
       _this2.admins = response.data;
       _this2.admin = response.data.id;
     });
+  },
+  props: {
+    url: {
+      required: false
+    }
   }
 });
 
@@ -5675,7 +5689,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       client_id: this.$attrs['client_id'],
       lead_id: this.$attrs['lead_id'],
-      url: 'https://crm.kutiza.com/public/',
+      url: this.$attrs['url'],
       client: null,
       admins: null,
       admin: null
@@ -5708,6 +5722,11 @@ __webpack_require__.r(__webpack_exports__);
       _this2.admins = response.data;
       _this2.admin = response.data.id;
     });
+  },
+  props: {
+    url: {
+      required: false
+    }
   }
 });
 
@@ -6052,7 +6071,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       messages: [],
       pag: 1,
-      url: "https://crm.kutiza.com/public/",
       cnt: 0,
       admin: null
     };
@@ -6104,6 +6122,9 @@ __webpack_require__.r(__webpack_exports__);
       "default": function _default() {
         return window.data.u2;
       }
+    },
+    url: {
+      required: false
     }
   }
 });
@@ -33905,6 +33926,7 @@ var render = function () {
               border: "1px solid black",
               "border-radius": "8px",
               "z-index": "150",
+              "min-width": "368px",
             },
           },
           [

@@ -43,6 +43,7 @@
             top: 0;
             padding: 20px;
             z-index: 7;
+            
             background-color: #e7e7e7;
         }
 
@@ -310,14 +311,13 @@ if (fullPath) {
     if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
         filename = filename.substring(1);
     }
-
 document.getElementById(x.id + 'c').value = filename;
 }
 }
 </script>
 
 <div id="app">
-    <chat></chat>
+    <chat url="{{config('app.url')}}"></chat>
 </div>
 </body>
 </html>

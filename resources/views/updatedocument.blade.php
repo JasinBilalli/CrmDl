@@ -782,7 +782,7 @@
                             <div class="text-center mt-3 pb-3">
                                 <div class="row mx-4">
                                     @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
-                              <addtask2 :client_id="{{$lead->id}}" :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask2>
+                              <addtask2 url="{{config('app.url')}}" :client_id="{{$lead->id}}" :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask2>
                                     @endif
                                     <div class="col d-flex justify-content-end">
                                         <div class="row">
@@ -2888,7 +2888,7 @@
                             <div class="text-center mt-3 pb-3">
                                 <div class="row mx-4">
                                     @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
-                                    <addtask3 :client_id="{{$lead->id}}" :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask3>
+                                    <addtask3 url="{{config('app.url')}}" :client_id="{{$lead->id}}" :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask3>
                                     @endif
                                     <div class="col d-flex justify-content-end">
                                         <div class="row">
@@ -3406,7 +3406,7 @@
                             <div class="text-center  pb-3">
                                 <div class="row mx-3">
                                     @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
-                                    <addtask4 :client_id="{{$lead->id}}" :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask4>
+                                    <addtask4 url="{{config('app.url')}}" :client_id="{{$lead->id}}" :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask4>
                                     @endif
                                     <div class="col g-0 d-flex justify-content-end">
                                         <div class="">
@@ -3971,7 +3971,7 @@
                               <div class="text-center mt-3 pb-3">
                                 <div class="row mx-4">
                                     @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
-                                        <addtask :client_id="{{$lead->id}}" :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
+                                        <addtask url="{{config('app.url')}}" :client_id="{{$lead->id}}" :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
                                     @endif
                                     <div class="col d-flex justify-content-end">
                                         <div class="row">
@@ -5073,7 +5073,7 @@
 '                                                        <div class="">'+
 '                                                           <div class="upload-box mx-1 my-2">'+
 '                                                               <div class="mx-1 my-2 p-4 text-center">'+
-'                                                                    <label for="file-input-4   newgcnt  "  ">'+
+'                                                                    <label for="file-input-4' + newgcnt   + '">'+
 '                                                                        <svg xmlns="http://www.w3.org/2000/svg"'+
 '                                                                             width="53" height="53"'+
 '                                                                             viewBox="0 0 53 53">'+
@@ -5101,13 +5101,13 @@
 '                                                                            </g>'+
 '                                                                        </svg>'+
 '                                                                    </label>'+
-'                                                                    <input type="file" id="file-input-4  newgcnt  " '+
+'                                                                    <input type="file" id="file-input-4' +   newgcnt + '"'+
 '                                                                           class="svg-div w-100 border-0  g-0"'+
 '                                                                           onchange="upload(this);"'+
-'                                                                           name="upload_policeFahrzeug  newgcnt  "> '+
+'                                                                           name="upload_policeFahrzeug'+ newgcnt + '">'+
 '                                                                    <input type="text"'+
 '                                                                          class="form-control text-center"'+
-'                                                                           id="file-input-4  newgcnt  c" disabled'+
+'                                                                           id="file-input-4' + newgcnt  + 'c" disabled'+
 '                                                                           style="background:transparent; border:none;">'+
 '                                                                </div>'+
 '                                                            </div>'+
@@ -5124,7 +5124,7 @@
 '                                                                </div>'+
 '                                                                <div class="col g-0 d-flex justify-content-end">'+
 '                                                                    <div class="select-div text-end ">'+
-'                                                                        <select name="comparison_type newgcnt  "> '+
+'                                                                        <select name="comparison_type'  + newgcnt + '"> '+
 '                                                                                class="fw-bold" id=""'+
 '                                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">'+
 ''+
@@ -5141,7 +5141,7 @@
 '                                                            <div class="mb-3 mt-3">'+
 '                                                               <label for="exampleFormControlTextarea1"'+
 '                                                                      class="form-label"'+
-'                                                                      style="font-size: 13px;">Kommentar</label>                                                                <textarea name="commentFahrenzug  newgcnt  " '+
+'                                                                      style="font-size: 13px;">Kommentar</label>                                                                <textarea name="commentFahrenzug' +   newgcnt +'" '+
 '                                                                         id="exampleFormControlTextarea1"'+
 '                                                                          rows="3" class="form-control"></textarea>'+
 '                                                            </div>'+
@@ -5173,7 +5173,7 @@
 '                                        </g>'+
 '                                    </svg>'+
 '                             '+
-'                            </div>  '
+'                            </div>  ';
 
 document.getElementById('newgcount').value = newgcnt;
     }
