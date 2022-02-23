@@ -146,28 +146,8 @@
                             </div>
                             <div class="text-center" style="margin-top: -30px">
                                 <a href="{{route('insertappointment')}}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="37.694" height="37.694"
-                                         viewBox="0 0 37.694 37.694">
-                                        <g id="Group_621" data-name="Group 621"
-                                           transform="translate(-663.236 -976.679)">
-                                            <g id="Group_550" data-name="Group 550"
-                                               transform="translate(663.236 976.679)">
-                                                <rect id="Rectangle_9" data-name="Rectangle 9"
-                                                      width="37.694" height="37.694" rx="18.847"
-                                                      fill="#4ec590"/>
-                                                <g id="Group_42" data-name="Group 42"
-                                                   transform="translate(12.724 12.724)">
-                                                    <line id="Line_11" data-name="Line 11" y2="11.972"
-                                                          transform="translate(5.986 0)" fill="none"
-                                                          stroke="#fff" stroke-linecap="round"
-                                                          stroke-width="2"/>
-                                                    <line id="Line_12" data-name="Line 12" x1="11.972"
-                                                          transform="translate(0 5.634)" fill="none"
-                                                          stroke="#fff" stroke-linecap="round"
-                                                          stroke-width="2"/>
-                                                </g>
-                                            </g>
-                                        </g>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="#0C71C3" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
                                     </svg>
                                 </a>
                             </div>
@@ -340,105 +320,97 @@
             </div>
         </section>
     @endif
-    @if(Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin'))
+    @if(Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('adm    in'))
 
-    <div class="row mx-4 px-3" id="app">
+    <div class="row g-0" id="app">
 
             <div class="col-12 col-md-12 mb-3 mt-3">
                 <todo></todo>
             </div>
-
-
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 pe-3 g-0 mb-3 my-1 py-2">
-                <div class="accordion accordion-flush mx-3 " id="accordionFlush2">
-                    <div class="accordion-item my-1 py-2" style="background-color: #4EC590;">
-                        <div class="p-3">
-                                <span class="col text-white fw-bold fs-5" style="font-family: 'Montserrat';">
-                                Answered Pendencies
-                                </span>
-                        </div>
-                        <hr class="text-black" style="color: #fff !important; height: 2px; margin: 0 !important; opacity: 1;">
-                        <div id="flush-collapse3" class="accordion-collapse collapse show pt-3"
-                             aria-labelledby="flush-heading3" data-bs-parent="#accordionFlush3">
-                            <div class="accordion-body p-0 mx-2 overflow-div2"
-                                 style="background-color: #4EC590; border-bottom-left-radius: 15px; font-family: 'Montserrat'; border-bottom-right-radius: 15px; height: 170px; overflow-y: scroll !important; overflow-x: hidden !important;">
-                                @if(!empty($pendencies))
-                                    @foreach($pendencies as $pendency)
-                                        @php
-                                            $crypt = $pendency->family_id * 1244;
-                                            $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
-                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
-                                            $pend_id = $pendency->pid;
-                                        @endphp
-                                        <a style="text-decoration: none"
-                                           href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
-                                            <div class="py-2 my-2 mx-2"
-                                                 style="background-color: #fff; border-radius: 15px; color: #000;">
-
-                                                <div class="mx-3 ">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                        <span class="fw-bold fs-5">
-                                                          {{$pendency->first_name}} {{$pendency->last_name}}
-                                                        </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
+        <div class="col-12 col-md-12 col-lg-6 g-0">
+            <div class="answered-pendencies">
+                <div class="header px-3 px-sm-3">
+                    <div class="">
+                        <span>Answered Pendencies</span>
+                    </div>
+                </div>
+                <div class="content pt-2">
+                    <div class="overflow-div mx-3 mt-4">
+                        @if(!empty($pendencies))
+                            @foreach($pendencies as $pendency)
+                                @php
+                                    $crypt = $pendency->family_id * 1244;
+                                    $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
+                                    $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
+                                    $pend_id = $pendency->pid;
+                                @endphp
+                                <a style="text-decoration: none;color: black"
+                                   href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
+                                    <div class="py-2 d-flex answer-item my-2 px-2 px-sm-3">
+                                        <div class="col my-auto">
+                                            <div class="">
+                                                <span class="fw-600">{{$pendency->first_name}} {{$pendency->last_name}}</span>
                                             </div>
-                                        </a>
-                                    @endforeach
-                                @endif
-
-                            </div>
-                        </div>
+                                        </div>
+                                        <div class="col-auto d-flex align-items-center">
+                                            <div class="btn ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="#CCCCCC"
+                                                     class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 col-sm-12 col-md-12 ps-3 col-lg-6 g-0 mb-3 my-1 py-2">
-                <div class="accordion accordion-flush mx-3 " id="accordionFlush5">
-                    <div class="accordion-item my-1 py-2" style="background-color: #FFEBE5;">
-                        <div class="p-3">
-                                <span class="col text-black fw-bold fs-5" style="font-family: 'Montserrat';">
-                                Open For More Than A Month
-                                 </span>
-                        </div>
-                        <hr class="text-black" style="color: #fff !important; height: 2px; margin: 0 !important; opacity: 1;">
-                        <div id="flush-collapse5" class="accordion-collapse collapse show"
-                             aria-labelledby="flush-heading5" data-bs-parent="#accordionFlush5">
-                            <div class="accordion-body p-0 mx-2 py-2 overflow-div4"
-                                 style="background-color: #FFEBE5; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 185px; overflow-y: scroll !important; overflow-x: hidden !important;">
-                                @if(!empty($morethan30))
-                                    @foreach($morethan30 as $pendency)
-                                        @php
-                                            $crypt = $pendency->family_id * 1244;
-                                            $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
-                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
-                                            $pend_id = $pendency->pid;
-                                        @endphp
-                                        <a style="text-decoration: none;"
-                                           href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
-                                            <div class="py-2 my-2 mx-2"
-                                                 style="background-color: #fff; border-radius: 15px; color: #000;">
-                                                <div class="mx-3 ">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                        <span class="fw-bold fs-5" style="font-family: 'Montserrat';">
-                                                            {{$pendency->first_name}} {{$pendency->last_name}}
-                                                        </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 g-0">
+            <div class="open-for-month">
+                <div class="header px-3 px-sm-3">
+                    <div class="">
+                        <span>Open for more than a month</span>
+                    </div>
+                </div>
+                <div class="content pt-2">
+                    <div class="overflow-div mx-3 mt-4">
+                        @if(!empty($morethan30))
+                            @foreach($morethan30 as $pendency)
+                                @php
+                                    $crypt = $pendency->family_id * 1244;
+                                    $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
+                                    $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
+                                    $pend_id = $pendency->pid;
+                                @endphp
+                                <a style="text-decoration: none; color: black"
+                                   href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
+                                    <div class="py-2 d-flex open-month-items my-2 px-2 px-sm-3">
+                                        <div class="col my-auto">
+                                            <div class="">
+                                                <span class="fw-600">{{$pendency->first_name}} {{$pendency->last_name}}</span>
                                             </div>
-                                        </a>
-                                    @endforeach
-                                @endif
-                            </div>
-                        </div>
+                                        </div>
+                                        <div class="col-auto d-flex align-items-center">
+                                            <div class="btn ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="#000"
+                                                     class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
+        </div>
             @if(!Auth::guard('admins')->user()->hasRole('backoffice'))
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0 pe-3 mb-3 my-1 py-2">
                 <div class="accordion accordion-flush mx-3 " id="accordionFlush5">
@@ -1373,5 +1345,228 @@
             /*Per Notification */
             .coloriii a{
                 color: 	#7F00FF !important;
+            }
+        </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
+
+            body {
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .number-item {
+                background-color: #EFEFEF;
+                border-radius: 8px;
+            }
+
+            .answer-item {
+                background-color: #EFF8FF;
+                border-radius: 8px;
+            }
+
+            .open-month-items {
+                background-color: #FFC428;
+                border-radius: 8px;
+            }
+
+            .personal-app-items {
+                background-color: #fff;
+                border: 1px solid #70707080;
+                border-radius: 8px;
+            }
+
+            .fw-600 {
+                font-weight: 600;
+            }
+
+            .add-text {
+                background-color: #0C71C3;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+                font-weight: 650;
+                color: #fff;
+                display: flex;
+                align-items: center;
+            }
+
+
+
+
+            /* overflow-scroll divvvvvvvvv */
+            .overflow-div {
+                padding-right: 15px;
+            }
+
+            .overflow-div::-webkit-scrollbar {
+                width: 7px;
+            }
+
+            /* Track */
+            .overflow-div::-webkit-scrollbar-track {
+                background: #EFEFEF !important;
+                border-radius: 10px;
+            }
+
+            /* Handle */
+            .overflow-div::-webkit-scrollbar-thumb {
+                background: #0C71C3;
+                border-radius: 10px;
+            }
+
+            /* Handle on hover */
+            .overflow-div::-webkit-scrollbar-thumb:hover {
+                background: #0C71C3;
+                border-radius: 10px;
+            }
+
+
+
+
+
+            .to-do-div-new {}
+
+            .to-do-div-new .header {
+                border-bottom: 1px solid #70707050;
+                border-top: 1px solid #70707050;
+                border-left: 1px solid #70707050;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                height: 60px;
+                background-color: #D1EBFF;
+            }
+
+            .to-do-div-new .content {
+                height: 60vh;
+            }
+
+            .to-do-div-new .content .overflow-div {
+                overflow: auto;
+                height: 50vh;
+
+            }
+
+            .to-do-div-new .content .button-div button {
+                background-color: #0C71C3;
+                font-weight: 700;
+                color: #fff;
+                border: none;
+                border-radius: 8px;
+            }
+
+            .to-do-div-new .content label {
+                font-weight: 500;
+            }
+
+            .to-do-div-new .content input,
+            textarea {
+                border-color: #707070 !important;
+            }
+
+
+
+            .informational-numbers {}
+
+            .informational-numbers .header {
+                border-bottom: 1px solid #70707050;
+                border-top: 1px solid #70707050;
+                border-right: 1px solid #70707050;
+                border-left: 1px solid #70707050;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                height: 60px;
+                background-color: #D1EBFF;
+            }
+
+            .informational-numbers .content {
+                height: 60vh;
+                border-left: 1px solid #70707050;
+            }
+
+            .informational-numbers .content .overflow-div {
+                height: 50vh;
+                overflow: auto;
+            }
+
+            .informational-numbers .content .overflow-div span {
+                font-size: 18px;
+            }
+
+
+
+            .answered-pendencies {}
+
+            .answered-pendencies .header {
+                border-bottom: 1px solid #70707050;
+                border-top: 1px solid #70707050;
+                /* border-right: 1px solid #70707050; */
+                border-left: 1px solid #70707050;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                height: 60px;
+                background-color: #EFEFEF;
+            }
+
+            .answered-pendencies .content {
+                height: 60vh;
+            }
+
+            .answered-pendencies .content .overflow-div {
+                overflow: auto;
+                height: 50vh;
+            }
+
+
+            .open-for-month {}
+
+            .open-for-month .header {
+                border-bottom: 1px solid #70707050;
+                border-top: 1px solid #70707050;
+                border-right: 1px solid #70707050;
+                border-left: 1px solid #70707050;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                height: 60px;
+                background-color: #EFEFEF;
+            }
+
+            .open-for-month .content {
+                height: 60vh;
+                border-left: 1px solid #70707050;
+
+            }
+
+            .open-for-month .content .overflow-div {
+                overflow: auto;
+                height: 50vh;
+            }
+
+
+
+            .personal-appointments {}
+
+            .personal-appointments .header {
+                border-bottom: 1px solid #70707050;
+                border-top: 1px solid #70707050;
+                border-right: 1px solid #70707050;
+                border-left: 1px solid #70707050;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                height: 60px;
+                background-color: #EFEFEF;
+            }
+
+            .personal-appointments .content {
+                height: 45vh;
+            }
+
+            .personal-appointments .content .overflow-div {
+                height: 27vh;
+                overflow: auto;
+
             }
         </style>

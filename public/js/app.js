@@ -31339,7 +31339,7 @@ var render = function () {
         "div",
         {
           staticClass: "col-6 col-md-6 g-0",
-          staticStyle: { color: "#4CC590" },
+          staticStyle: { color: "#0C71C3" },
         },
         [
           _c(
@@ -31385,7 +31385,7 @@ var render = function () {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "col-6 col-md-6", staticStyle: { color: "#4CC590" } },
+        { staticClass: "col-6 col-md-6", staticStyle: { color: "#0C71C3" } },
         [
           _c(
             "i",
@@ -31435,7 +31435,7 @@ var render = function () {
         staticClass: "px-4 pt-4 mb-4",
         staticStyle: {
           height: "300px",
-          background: "#00c78c",
+          background: "#0C71C3",
           "border-radius": "25px",
           overflow: "hidden !important",
           "background-color": "#F5F4F4",
