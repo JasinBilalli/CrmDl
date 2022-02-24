@@ -1,94 +1,25 @@
 @extends('template.navbar')
 @section('content')
-    <section>
-        <div class="my-3 ">
-            <div class="leads-div py-3 px-4">
-                <div class="row g-0">
-                    <div class="col">
-                        <div class="assigned-leads-div mt-2 mx-3 py-3">
-                            <div class="header mx-4 my-2 d-flex justify-content-between">
-{{--                                <div class="text-end py-3">--}}
-{{--                                    @if(!Auth::guard('admins')->user()->hasRole('fs'))--}}
-{{--                                        @if($leads->currentPage() > 1)--}}
-{{--                                            <span class="px-2"--}}
-{{--                                                  onclick="window.location.href='{{route('leads',['page' => $leads->currentPage() -1 ])}}'">--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">--}}
-{{--                                        <g id="Group_757" data-name="Group 757" transform="translate(0.082)">--}}
-{{--                                            <path id="Path_281" data-name="Path 281" d="M0,0,9.679,7.316,0,14.631"--}}
-{{--                                                  transform="translate(20.741 24.316) rotate(180)" fill="none"--}}
-{{--                                                  stroke="#ccc" stroke-linecap="round" stroke-linejoin="round"--}}
-{{--                                                  stroke-width="2"/>--}}
-{{--                                            <g id="Ellipse_55" data-name="Ellipse 55" transform="translate(-0.082)"--}}
-{{--                                               fill="none" stroke="#ccc" stroke-width="2">--}}
-{{--                                                <circle cx="17" cy="17" r="17" stroke="none"/>--}}
-{{--                                                <circle cx="17" cy="17" r="16" fill="none"/>--}}
-{{--                                            </g>--}}
-{{--                                        </g>--}}
-{{--                                    </svg>--}}
-{{--                                </span>--}}
-{{--                                        @endif--}}
-{{--                                        <span class="px-2"--}}
-{{--                                              onclick="window.location.href='{{route('leads',['page' => $leads->currentPage() +1])}}'">--}}
-{{--                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"--}}
-{{--                                         width="34" height="34" viewBox="0 0 34 34">--}}
-{{--                                        <defs>--}}
-
-{{--                                        </defs>--}}
-{{--                                        <g id="Group_758" data-name="Group 758"--}}
-{{--                                           transform="translate(34.082 34) rotate(180)">--}}
-{{--                                            <g transform="matrix(-1, 0, 0, -1, 34.08, 34)">--}}
-{{--                                                <path id="Path_281-2" data-name="Path 281" d="M0,0,9.679,7.316,0,14.631"--}}
-{{--                                                      transform="translate(13.13 9.68)" fill="none" stroke="#000"--}}
-{{--                                                      stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>--}}
-{{--                                            </g>--}}
-{{--                                            <g id="Ellipse_55" data-name="Ellipse 55" transform="translate(0.082)"--}}
-{{--                                               fill="none" stroke="#000" stroke-width="2">--}}
-{{--                                                <circle cx="17" cy="17" r="17" stroke="none"/>--}}
-{{--                                                <circle cx="17" cy="17" r="16" fill="none"/>--}}
-{{--                                            </g>--}}
-{{--                                        </g>--}}
-{{--                                    </svg>--}}
-{{--                                </span>--}}
-{{--                                    @endif--}}
-{{--                                </div>--}}
-                            </div>
-                            <div class="content overflow-divvv" style="overflow: auto;">
-                                <div class="row mx-3 my-2">
-                                    <leads></leads>
-
-                                </div>
-                            </div>
-                            @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('salesmanager'))
-                                <br>
-                                <section class="p-0 m-0 g-0">
-                                    <div class="col-8">
-                                        <div class="form-div py-3 mx-3"
-                                             style="background-color: #F7F7F7; border-radius: 20px;">
-
-                                            <div class="mb-4 mx-5">
-                                                <span class="fs-5 fw-600">Import Leads</span>
-                                            </div>
-                                            <div class="col-10 mx-auto">
-                                                <form action="{{route('importleads')}}" method="post"
-                                                      enctype="multipart/form-data">
-                                                    @csrf
-                                                    <input type="file" name="file" class="form-control">
-                                                    <input type="submit" class="mt-2 btn py-2"
-                                                           style="background-color: rgb(99, 212, 164); color: #fff; border-radius: 13px; font-weight: 600;">
-                                                </form>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </section>
-                            @endif
+    <leads></leads>
+    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('salesmanager'))
+        <div class="container-fluid p-0">
+            <div class="col-12 g-0">
+                <div class="import-leads-div  px-3">
+                    <form action="{{route('importleads')}}" enctype="multipart/form-data" method="post">
+                        @csrf
+                        <div class="head py-3">
+                            <span class="fs-5 fw-bold">Import Leads</span>
                         </div>
-                    </div>
-
+                        <div class="content py-3">
+                            <input type="file" class="form-control" name="" id="file">
+                            <input type="submit" class="mt-2 btn py-2"
+                                   style="background-color: #4EC590; color: #ffffff; font-weight: bold; border: none; border-radius: 12px;">
+                        </div>
+                    </form>
                 </div>
             </div>
-    </section>
-
+        </div>
+    @endif
 
     @php $csrf_token = csrf_token();@endphp
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -98,239 +29,9 @@
 
 @endsection
 
-<style>
-    html,
-    body {
-        overflow-x: hidden !important;
-    }
 
-    .grayyy1 {
-        color: #88889D;
-    }
 
-    .assigned-leads-div {
-        border-radius: 25px;
-    }
 
-    .t {
-        color: #88889D;
-    }
-
-    .fw-600 {
-        font-weight: 600;
-
-    }
-
-    .fw-500 {
-        font-weight: 500;
-    }
-
-    .whiteee {
-        background-color: #fff;
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 15px !important;
-        border-top-right-radius: 15px !important;
-    }
-
-    .lead-offnen {
-        background-color: #88889D;
-        color: #fff;
-        border-bottom-left-radius: 15px !important;
-        border-bottom-right-radius: 15px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    .overflow-divvv::-webkit-scrollbar {
-        width: 0px;
-    }
-
-    /* Track */
-    .overflow-divvv::-webkit-scrollbar-track {
-        background: transparent !important;
-        border-radius: 10px;
-    }
-
-    /* Handle */
-    .overflow-divvv::-webkit-scrollbar-thumb {
-        background: #c9cad8;
-        border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    .overflow-divvv::-webkit-scrollbar-thumb:hover {
-        background: #707070;
-        border-radius: 10px;
-    }
-
-    .lead-statistics-header {
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 15px !important;
-        border-top-right-radius: 15px !important;
-    }
-
-    .lead-statistics {
-        border-bottom-left-radius: 15px !important;
-        border-bottom-right-radius: 15px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    .grayyy1 {
-        color: #88889D;
-    }
-
-    .assigned-leads-div {
-        border-radius: 25px;
-    }
-
-    .t {
-        color: #88889D;
-    }
-
-    .fw-600 {
-        font-weight: 600;
-
-    }
-
-    .fw-500 {
-        font-weight: 500;
-    }
-
-    .whiteee {
-        background-color: #fff;
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 15px !important;
-        border-top-right-radius: 15px !important;
-    }
-
-    .lead-offnen {
-        background-color: #88889D;
-        color: #fff;
-        border-bottom-left-radius: 15px !important;
-        border-bottom-right-radius: 15px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    .overflow-divvv::-webkit-scrollbar {
-        width: 0px;
-    }
-
-    /* Track */
-    .overflow-divvv::-webkit-scrollbar-track {
-        background: transparent !important;
-        border-radius: 10px;
-    }
-
-    /* Handle */
-    .overflow-divvv::-webkit-scrollbar-thumb {
-        background: #c9cad8;
-        border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    .overflow-divvv::-webkit-scrollbar-thumb:hover {
-        background: #707070;
-        border-radius: 10px;
-    }
-
-    .lead-statistics-header {
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 15px !important;
-        border-top-right-radius: 15px !important;
-    }
-
-    .lead-statistics {
-        border-bottom-left-radius: 15px !important;
-        border-bottom-right-radius: 15px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-</style>
-<style>
-    .grayyy1 {
-        color: #88889D;
-    }
-
-    .assigned-leads-div {
-        border-radius: 25px;
-    }
-
-    .t {
-        color: #88889D;
-    }
-
-    .fw-600 {
-        font-weight: 600;
-
-    }
-
-    .fw-500 {
-        font-weight: 500;
-    }
-
-    .whiteee {
-        background-color: #fff;
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 15px !important;
-        border-top-right-radius: 15px !important;
-    }
-
-    .lead-offnen {
-        background-color: #88889D;
-        color: #fff;
-        border-bottom-left-radius: 15px !important;
-        border-bottom-right-radius: 15px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    .overflow-divvv::-webkit-scrollbar {
-        width: 0px;
-    }
-
-    /* Track */
-    .overflow-divvv::-webkit-scrollbar-track {
-        background: transparent !important;
-        border-radius: 10px;
-    }
-
-    /* Handle */
-    .overflow-divvv::-webkit-scrollbar-thumb {
-        background: #c9cad8;
-        border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    .overflow-divvv::-webkit-scrollbar-thumb:hover {
-        background: #707070;
-        border-radius: 10px;
-    }
-
-    .lead-statistics-header {
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 15px !important;
-        border-top-right-radius: 15px !important;
-    }
-
-    .lead-statistics {
-        border-bottom-left-radius: 15px !important;
-        border-bottom-right-radius: 15px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    input[type="checkbox"i] {
-        margin: 5px;
-    }
-</style>
 <style scoped>
     @media (min-width: 576px) {
         .modal-dialog {
@@ -345,7 +46,7 @@
 </style>
 <style>
     /*Per Notification */
-    .coloriii a{
+    .coloriii a {
         color: black !important;
     }
 </style>
@@ -367,3 +68,231 @@
     //             document.getElementById("mod02").style.display = "block";
     //         }
 </script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        overflow-x: hidden !important;
+    }
+
+    .grayyy1 {
+        color: #88889D;
+    }
+
+    .fw-500 {
+        font-weight: 500;
+    }
+
+    .assigned-items {
+        background-color: #EFEFEF;
+        border-radius: 15px;
+    }
+
+    .assigned-items .button-div button {
+        background-color: #0C71C3;
+        color: #fff;
+        border-radius: 8px;
+    }
+
+    /* overflow-scroll divvvvvvvvv */
+    .overflow-div {
+        padding-right: 15px;
+        height: 80vh !important;
+        overflow: auto;
+    }
+
+    .overflow-div::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    /* Track */
+    .overflow-div::-webkit-scrollbar-track {
+        background: #EFEFEF !important;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    .overflow-div::-webkit-scrollbar-thumb {
+        background: #0C71C3;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    .overflow-div::-webkit-scrollbar-thumb:hover {
+        background: #0C71C3;
+        border-radius: 10px;
+    }
+
+
+    .assigned-leads {
+        height: 90vh;
+    }
+
+    .assigned-leads .header {
+        border-bottom: 1px solid #70707050;
+        border-top: 1px solid #70707050;
+        border-left: 1px solid #70707050;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: 60px;
+        background-color: #EFEFEF;
+    }
+
+    .assigned-leads .content {
+    }
+
+
+    .lead-statistics {
+        height: 90vh;
+        background-color: #EFEFEF;
+        border-left: 1px solid #70707050;
+    }
+
+    .lead-statistics .header {
+        border-bottom: 1px solid #70707050;
+        border-top: 1px solid #70707050;
+        /* border-right: 1px solid #70707050; */
+        /* border-left: 1px solid #70707050; */
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: 60px;
+        background-color: #EFEFEF;
+    }
+
+    .lead-statistics .content {
+    }
+
+    @media (max-width: 575.98px) {
+        .overflow-div {
+            padding-right: 5px;
+        }
+    }
+</style>
+
+
+{{--Else--}}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .grayyy1 {
+        color: #88889D;
+    }
+
+    .fw-500 {
+        font-weight: 500;
+    }
+
+    .assigned-items {
+        background-color: #EFEFEF;
+        border-radius: 15px;
+    }
+
+    .assigned-items1 .button-div button {
+        background-color: #0C71C3;
+        color: #fff;
+        border-radius: 8px;
+    }
+
+    /* overflow-scroll divvvvvvvvv */
+    .overflow-div1 {
+        padding-right: 15px;
+        height: 75vh !important;
+        overflow: auto;
+    }
+
+    .overflow-div1::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    /* Track */
+    .overflow-div1::-webkit-scrollbar-track {
+        background: #EFEFEF !important;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    .overflow-div1::-webkit-scrollbar-thumb {
+        background: #0C71C3;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    .overflow-div1::-webkit-scrollbar-thumb:hover {
+        background: #0C71C3;
+        border-radius: 10px;
+    }
+
+    .form-check .form-check-input[type=checkbox] {
+        border-radius: .25em;
+        height: 29px;
+        width: 29px;
+    }
+
+
+    .import-leads-div {
+        border-top: 1px solid #70707050;
+        background-color: #EFEFEF;
+        height: 25vh;
+    }
+
+    .assigned-leads1 {
+        height: 100vh;
+    }
+
+    .assigned-leads1 .header {
+        border-bottom: 1px solid #70707050;
+        border-top: 1px solid #70707050;
+        border-left: 1px solid #70707050;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: 60px;
+        background-color: #EFEFEF;
+    }
+
+    .assigned-leads1 .content {
+    }
+
+    .assigned-leads1 .button-div button {
+        background-color: #4EC590;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+    }
+
+    .lead-statistics1 {
+        height: 100vh;
+        background-color: #EFEFEF;
+        border-left: 1px solid #70707050;
+    }
+
+    .lead-statistics1 .header {
+        border-bottom: 1px solid #70707050;
+        border-top: 1px solid #70707050;
+        /* border-right: 1px solid #70707050; */
+        /* border-left: 1px solid #70707050; */
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: 60px;
+        background-color: #EFEFEF;
+    }
+
+    .lead-statistics1 .content {
+    }
+
+    @media (max-width: 575.98px) {
+        .overflow-div {
+            padding-right: 5px;
+        }
+    }
+</style>

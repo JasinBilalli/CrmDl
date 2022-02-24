@@ -129,7 +129,8 @@ $leadinfo = lead_info::where('lead_id',$leads['leads'][$i]->id)->first();
     Route::get('changeTS', 'App\Http\Controllers\AppointmentsController@changeTS')->name('changeTS');
       route::post('completeapp/{id}',[UserController::class,'completeapp'])->name('completeapp');
     route::get('dealnotclosed/{id}',[UserController::class,'dealnotclosed'])->name('dealnotclosed');
-    route::post('rejectedleads/{status?}',[UserController::class,'rejectedleads'])->name('rejectedleads');
+    route::post('rejectedleads',[UserController::class,'rejectedleads'])->name('rejectedleads');
+    route::post('rejectedleadsNalt',[UserController::class,'rejectedleadsNalt'])->name('rejectedleadsNalt');
     route::post('rejectlead/{id}',[UserController::class,'rejectlead'])->name('rejectlead');
     route::get('addnewuser',[UserController::class,'addnewuser'])->name('addnewuser');
     route::post('registernewuser',[UserController::class,'registernewuser'])->name('registernewuser');
@@ -239,7 +240,7 @@ route::get('file/{file?}',function($file = null,Request $request){
            return $response;
         }
         else{
-            
+
            return $request->session()->get('_previous');
         }
 })->middleware('role:admin|backoffice|salesmanager|management,admins')->name('showfile');
