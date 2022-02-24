@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 use Flash;
 use Auth;
 use App\Models\Admins;
-
 use App\Models\lead;
 use Carbon\Carbon;
-use DB;
+use Illuminate\Support\Facades\DB;
 use DateTime;
 
 class AppointmentsController extends Controller
@@ -77,9 +76,6 @@ class AppointmentsController extends Controller
                 ->with('personalApp',$personalApp)
                 ->with('maps',$maps)
 				->with('date_in',$date_in);
-
-
-
 		}
 	}
 
@@ -88,30 +84,22 @@ class AppointmentsController extends Controller
 		$input = $request->all();
 		$pieces = explode("-", $input['nom_lead']);
 		$id_lead = $pieces['0'];
-	
-
+		$date = Carbon::parse(substr($request->ctime,0,15))->format('Y-m-d');
+	if(lead::find($id_lead)->appointment_date == $date){
 		$appointment = lead::where('id', $pieces['0'])
               ->update(['assigned' => 1,'assign_to_id' => $input['id_user'],'rejected' => 0]);
 		if($appointment){return "Assigned with success !!!!";} else {return "ERROR !!!";}
-		
-
-
-
 	}
-	public function changeFilter(Request $request){
-
-
-
+	else{
+		return "Wrong, appointment should be assigned to its date (" . lead::find($id_lead)->appointment_date . ") !!!";
 	}
-
+}
 
 	public function changeTS(Request $request){
-
 		$input = $request->all();
-		if($input['ts_id'] == "0"){ $input['ts_id'] = Null;}
+		if($input['ts_id'] == "0"){$input['ts_id'] = null;}
 		$appointment = lead::where('id', $input['id_lead_input'])
-              ->update(['appointment_date' =>  $input['date_new'],'assign_to_id' => $input['ts_id'] ,'time' => $input['time_new']]);
-
-		if($appointment){session(['msg' => 'Success !!!!']);  return redirect()->back();} else {return "ERROR !!!";}
+              ->update(['assign_to_id' => $input['ts_id']]);
+		if($appointment){session(['msg' => 'Success !!!']);  return redirect()->back();} else {return "ERROR !!!";}
 	}
 }

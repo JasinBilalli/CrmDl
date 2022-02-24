@@ -62,7 +62,6 @@ $title = $req->title ? $req->title : "";
     $some_date = Carbon::now()->format('H:i');
     $now = (int) str_replace(':', '', $some_date);
 
-
     $admin = Auth::guard('admins')->user();
     $today = Carbon::now()->format("Y-m-d");
     $data = null;
@@ -84,8 +83,6 @@ $title = $req->title ? $req->title : "";
             $cnt++;
 
         }
-
-
       } elseif ($admin->hasRole('fs')) {
           foreach (DB::table('leads')
                        ->where('wantsonline', 0)

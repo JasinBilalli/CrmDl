@@ -320,7 +320,7 @@
             </div>
         </section>
     @endif
-    @if(Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('adm    in'))
+    @if(Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin'))
 
     <div class="row g-0" id="app">
 

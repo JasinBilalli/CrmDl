@@ -3308,7 +3308,7 @@
 '                                        </g>'+
 '                                    </svg>'+
 '                             '+
-'                            </div>  ';
+'                            </div>' ;
 
 document.getElementById('newgcount').value = newgcnt;
     }
