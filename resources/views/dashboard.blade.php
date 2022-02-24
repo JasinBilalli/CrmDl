@@ -1,7 +1,6 @@
 @extends('template.navbar')
 @section('content')
     <title>Home</title>
-
     @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('digital'))
         <section>
             <div class="col-md-12 col-11 mx-auto">
@@ -321,77 +320,127 @@
         </section>
     @endif
     @if(Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin'))
-
     <div class="row g-0" id="app">
 
-            <div class="col-12 col-md-12 mb-3 mt-3">
                 <todo></todo>
-            </div>
-        <div class="col-12 col-md-12 col-lg-6 g-0">
-            <div class="answered-pendencies">
-                <div class="header px-3 px-sm-3">
-                    <div class="">
-                        <span>Answered Pendencies</span>
-                    </div>
+
+<div class="row g-0 p-0 m-0">
+    <div class="col-12 col-md-12 col-lg-6 g-0">
+        <div class="answered-pendencies">
+            <div class="header px-3 px-sm-3">
+                <div class="">
+                    <span>Answered Pendencies</span>
                 </div>
-                <div class="content pt-2">
-                    <div class="overflow-div mx-3 mt-4">
-                        @if(!empty($pendencies))
-                            @foreach($pendencies as $pendency)
-                                @php
-                                    $crypt = $pendency->family_id * 1244;
-                                    $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
-                                    $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
-                                    $pend_id = $pendency->pid;
-                                @endphp
-                                <a style="text-decoration: none;color: black"
-                                   href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
-                                    <div class="py-2 d-flex answer-item my-2 px-2 px-sm-3">
-                                        <div class="col my-auto">
-                                            <div class="">
-                                                <span class="fw-600">{{$pendency->first_name}} {{$pendency->last_name}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto d-flex align-items-center">
-                                            <div class="btn ">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="#CCCCCC"
-                                                     class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-                                                </svg>
-                                            </div>
+            </div>
+            <div class="content pt-2">
+                <div class="overflow-div mx-3 mt-4">
+                    @if(!empty($pendencies))
+                        @foreach($pendencies as $pendency)
+                            @php
+                                $crypt = $pendency->family_id * 1244;
+                                $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
+                                $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
+                                $pend_id = $pendency->pid;
+                            @endphp
+                            <a style="text-decoration: none;color: black"
+                               href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
+                                <div class="py-2 d-flex answer-item my-2 px-2 px-sm-3">
+                                    <div class="col my-auto">
+                                        <div class="">
+                                            <span class="fw-600">{{$pendency->first_name}} {{$pendency->last_name}}</span>
                                         </div>
                                     </div>
-                                </a>
-                            @endforeach
-                        @endif
-                    </div>
+                                    <div class="col-auto d-flex align-items-center">
+                                        <div class="btn ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="#CCCCCC"
+                                                 class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-12 col-lg-6 g-0">
-            <div class="open-for-month">
-                <div class="header px-3 px-sm-3">
-                    <div class="">
-                        <span>Open for more than a month</span>
-                    </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-6 g-0">
+        <div class="open-for-month">
+            <div class="header px-3 px-sm-3">
+                <div class="">
+                    <span>Open for more than a month</span>
                 </div>
-                <div class="content pt-2">
-                    <div class="overflow-div mx-3 mt-4">
-                        @if(!empty($morethan30))
-                            @foreach($morethan30 as $pendency)
-                                @php
-                                    $crypt = $pendency->family_id * 1244;
-                                    $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
-                                    $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
-                                    $pend_id = $pendency->pid;
-                                @endphp
-                                <a style="text-decoration: none; color: black"
-                                   href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
-                                    <div class="py-2 d-flex open-month-items my-2 px-2 px-sm-3">
+            </div>
+            <div class="content pt-2">
+                <div class="overflow-div mx-3 mt-4">
+                    @if(!empty($morethan30))
+                        @foreach($morethan30 as $pendency)
+                            @php
+                                $crypt = $pendency->family_id * 1244;
+                                $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
+                                $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
+                                $pend_id = $pendency->pid;
+                            @endphp
+                            <a style="text-decoration: none; color: black"
+                               href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
+                                <div class="py-2 d-flex open-month-items my-2 px-2 px-sm-3">
+                                    <div class="col my-auto">
+                                        <div class="">
+                                            <span class="fw-600">{{$pendency->first_name}} {{$pendency->last_name}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto d-flex align-items-center">
+                                        <div class="btn ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="#000"
+                                                 class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            @if(!Auth::guard('admins')->user()->hasRole('backoffice'))
+            <div class="col-12 col-md-12 col-lg-12 g-0">
+                <div class="personal-appointments">
+                    <div class="header px-3 px-sm-3 justify-content-between">
+                        <div class="">
+                            <span>Personal Appointments</span>
+                        </div>
+                        <div class="">
+                            <span>{{$countpersonalApp}}</span>
+                        </div>
+                    </div>
+                    <div class="content pt-2">
+                        <div class="overflow-div mx-3 mt-4 row">
+                            @foreach($personalApp as $perApp)
+                                <div class="col-12 col-sm-12 col-md-6 g-0">
+                                    <div class="py-2 d-flex personal-app-items m-2 px-2 px-sm-3">
                                         <div class="col my-auto">
                                             <div class="">
-                                                <span class="fw-600">{{$pendency->first_name}} {{$pendency->last_name}}</span>
+                                                <span class="fw-600">{{$perApp->title}}</span>
+                                            </div>
+                                            <div class="">
+                                                <span class="fw-400">Address: {{$perApp->address}}</span>
+                                            </div>
+                                            <div class="">
+                                                <span class="fw-400">Date: {{$perApp->date}}</span>
+                                            </div>
+                                            <div class="">
+                                                <span class="fw-400">Time: {{$perApp->time}}</span>
+                                            </div>
+                                            <div class="">
+                                                <span class="fw-400">Comment: {{$perApp->comment}}</span>
                                             </div>
                                         </div>
                                         <div class="col-auto d-flex align-items-center">
@@ -404,164 +453,94 @@
                                             </div>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             @endforeach
-                        @endif
+                        </div>
+                        <div class="button-div mt-2">
+                            <div class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="90"
+                                     viewBox="0 0 105 71">
+                                    <g id="Group_1170" data-name="Group 1170" transform="translate(-434 -2907)">
+                                        <rect id="Rectangle_977" data-name="Rectangle 977" width="105" height="71"
+                                              rx="8" transform="translate(434 2907)" fill="#0c71c3" />
+                                        <path id="Path_2005" data-name="Path 2005" d="M541.911,1942.5h27.942"
+                                              transform="translate(-69.382 1000)" fill="none" stroke="#fff"
+                                              stroke-linecap="round" stroke-width="3" />
+                                        <path id="Path_2006" data-name="Path 2006" d="M0,0H27.942"
+                                              transform="translate(486.5 2928.529) rotate(90)" fill="none"
+                                              stroke="#fff" stroke-linecap="round" stroke-width="3" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-            @if(!Auth::guard('admins')->user()->hasRole('backoffice'))
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0 pe-3 mb-3 my-1 py-2">
-                <div class="accordion accordion-flush mx-3 " id="accordionFlush5">
-                    <div class="accordion-item my-1 py-2" style="background-color: #ececec;">
-                        <div class="p-3">
-                            <div class="row">
-                                <div class="col"><h5><b>Personal Apponitments</b></h5></div>
-                                @if(!Auth::user()->hasRole('backoffice'))<div style="color: #0a53be" class="col-3 text-end pe-4"><h5><b>{{$countpersonalApp}}</b></h5></div>@endif
-                            </div>
+{{--        Modali--}}
+            <div class="modal fade" style="top: 1% !important;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content p-3" style="border-radius: 43px !important;">
+                        <div class="modal-header" style="border-bottom: 0 !important;">
+                            <h5 class="modal-title mx-2" id="exampleModalLabel" style="font-family: 'Montserrat' !important;"><b>Add Personals
+                                    Appointment</b></h5>
+                            <button type="button" class="btn-close" style="opacity: 1 !important;" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                         </div>
-                        <hr class="text-black" style="color: #fff !important; height: 2px; margin: 0 !important; opacity: 1;">
-                        <br>
-                        </h2>
-                        <div id="flush-collapse1" class="accordion-collapse collapse show"
-                             aria-labelledby="flush-heading1" data-bs-parent="#accordionFlush1">
+                        <div class="modal-body">
+                            <form class="" action="{{route('addPersonalAppointment')}}" method="post">
+                                @csrf
+                                <input type="hidden" name="apporconId" value="1">
+                                <div class="px-2">
+                                    <label style="font-family: 'Montserrat' !important;"><b>Title</b></label>
+                                    <input type="text" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" name="title" class="form-control mb-3" required>
+                                    <label style="font-family: 'Montserrat' !important;"><b>Date</b></label>
+                                    <input type="date" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" name="date" class="form-control mb-3" required>
+                                    <label style="font-family: 'Montserrat' !important;"><b>Time</b></label>
+                                    <input type="time" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" name="time" class="form-control mb-3" required>
+                                    <label style="font-family: 'Montserrat' !important;"><b>Address</b></label>
+                                    <input type="text" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" name="address" class="form-control mb-3" required>
+                                    <label style="font-family: 'Montserrat' !important;"><b>Comment</b></label>
+                                    <textarea type="text" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" rows="3" name="comment" class="form-control mb-3"
+                                              required>
+                                                    </textarea>
+                                    <label style="font-family: 'Montserrat' !important;"><b>Assign To</b></label>
 
-                            <div class="accordion-body p-0 mx-2 py-2 overflow-div1"
-                                 style="background-color: #F7F7F7; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 170px; overflow-y: scroll !important; overflow-x: hidden !important;">
-                                @if(!Auth::guard('admins')->user()->hasRole('backoffice'))
-                                    @foreach($personalApp as $perApp)
-                                        <div class="py-2 my-2 mx-2"
-                                             style="background-color: #fff; border-radius: 15px; color: #000; font-family: 'Montserrat';">
-                                            <div class="mx-3 ">
-                                                <div class="row">
-                                                    <div class="col">
-                                                    <span class="fw-bold fs-5" style="font-family: 'Montserrat';">
-                                                        {{$perApp->title}}
-                                                    </span>
-                                                    </div>
-                                                    <div class="col-1 text-end">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="5"
-                                                             height="13"
-                                                             viewBox="0 0 5 13">
-                                                            <g id="Group_528" data-name="Group 528"
-                                                               transform="translate(-0.239 0)">
-                                                                <circle id="Ellipse_6" data-name="Ellipse 6"
-                                                                        cx="2.5"
-                                                                        cy="2.5" r="2.5"
-                                                                        transform="translate(0.239 0)"
-                                                                        fill="#000"/>
-                                                                <circle id="Ellipse_7" data-name="Ellipse 7"
-                                                                        cx="2.5"
-                                                                        cy="2.5" r="2.5"
-                                                                        transform="translate(0.239 8)"
-                                                                        fill="#000"/>
-                                                            </g>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <div class="">
-                                                                <span>
-                                                                    Address: {{$perApp->address}}
-                                                                </span>
-                                                </div>
-                                                <div class="">
-                                                                <span>
-                                                                    Date: {{$perApp->date}}
-                                                                </span>
-                                                </div>
-                                                <div class="">
-                                                                <span>
-                                                                    Time: {{$perApp->time}}
-                                                                </span>
-                                                </div>
-                                                <div class="">
-                                                                <span>
-                                                                    Comment: {{$perApp->comment}}
-                                                                </span>
-                                                </div>
+                                    <select class="form-select mb-2" style="font-family: 'Montserrat' !important;border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;" name="roleid">
+                                        @if(!Auth::guard('admins')->user()->hasRole('backoffice'))
+                                            @foreach($admins as $admin)
+
+                                                <option value="{{$admin->id}}">{{$admin->name}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+
+                                </div>
+                                <div class="modal-footer px-1" style="border-top: 0 !important; justify-content: flex-start !important;">
+                                    <div class="row" style="width: 100%;">
+                                        <div class="col-md-4 col-5 p-0">
+                                            <div style="padding: 2%;">
+                                                <input type="submit" style="font-family: 'Montserrat' !important; width: 100%; border: 1px solid #4EC590; font-weight: 600 !important; font-size: 18px !important; background-color: #4EC590; color: #fff; border-radius: 8px;" class="btn py-2" value="Save">
                                             </div>
                                         </div>
-                                    @endforeach
-                                @endif
-                            </div>
-                            <div class="text-left mx-2 py-2 mt-3">
-                                <button type="button" class="btn" style="background-color: #4ec490; color: white; border: 1px solid #4ec490; width: 30%; border-radius: 8px !important;" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30.751" height="29.429" viewBox="0 0 30.751 29.429">
-                                        <g id="Group_42" data-name="Group 42" transform="translate(1.5 1.5)">
-                                            <line id="Line_11" data-name="Line 11" y2="26.429" transform="translate(13.876 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-                                            <line id="Line_12" data-name="Line 12" x1="27.751" transform="translate(0 12.437)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-                                        </g>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div class="modal fade" style="top: 1% !important;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content p-3" style="border-radius: 43px !important;">
-                                        <div class="modal-header" style="border-bottom: 0 !important;">
-                                            <h5 class="modal-title mx-2" id="exampleModalLabel" style="font-family: 'Montserrat' !important;"><b>Add Personals
-                                                    Appointment</b></h5>
-                                            <button type="button" class="btn-close" style="opacity: 1 !important;" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form class="" action="{{route('addPersonalAppointment')}}" method="post">
-                                                @csrf
-                                                <input type="hidden" name="apporconId" value="1">
-                                                <div class="px-2">
-                                                    <label style="font-family: 'Montserrat' !important;"><b>Title</b></label>
-                                                    <input type="text" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" name="title" class="form-control mb-3" required>
-                                                    <label style="font-family: 'Montserrat' !important;"><b>Date</b></label>
-                                                    <input type="date" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" name="date" class="form-control mb-3" required>
-                                                    <label style="font-family: 'Montserrat' !important;"><b>Time</b></label>
-                                                    <input type="time" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" name="time" class="form-control mb-3" required>
-                                                    <label style="font-family: 'Montserrat' !important;"><b>Address</b></label>
-                                                    <input type="text" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" name="address" class="form-control mb-3" required>
-                                                    <label style="font-family: 'Montserrat' !important;"><b>Comment</b></label>
-                                                    <textarea type="text" style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';" rows="3" name="comment" class="form-control mb-3"
-                                                              required>
-                                                    </textarea>
-                                                    <label style="font-family: 'Montserrat' !important;"><b>Assign To</b></label>
-
-                                                    <select class="form-select mb-2" style="font-family: 'Montserrat' !important;border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;" name="roleid">
-                                                        @if(!Auth::guard('admins')->user()->hasRole('backoffice'))
-                                                            @foreach($admins as $admin)
-
-                                                                <option value="{{$admin->id}}">{{$admin->name}}</option>
-                                                            @endforeach
-                                                        @endif
-                                                    </select>
-
-                                                </div>
-                                                <div class="modal-footer px-1" style="border-top: 0 !important; justify-content: flex-start !important;">
-                                                    <div class="row" style="width: 100%;">
-                                                        <div class="col-md-4 col-5 p-0">
-                                                            <div style="padding: 2%;">
-                                                                <input type="submit" style="font-family: 'Montserrat' !important; width: 100%; border: 1px solid #4EC590; font-weight: 600 !important; font-size: 18px !important; background-color: #4EC590; color: #fff; border-radius: 8px;" class="btn py-2" value="Save">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-5 p-0">
-                                                            <div style="padding: 2%;">
-                                                                <button type="button" class="btn py-2"
-                                                                        data-bs-dismiss="modal" style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;">
-                                                                    Close
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                        <div class="col-md-4 col-5 p-0">
+                                            <div style="padding: 2%;">
+                                                <button type="button" class="btn py-2"
+                                                        data-bs-dismiss="modal" style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;">
+                                                    Close
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-                @endif
+{{--End--}}
+
+            @endif
             @endif
             @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
             <div class="modal fade" id="finstatus" tabindex="-1"
@@ -1458,9 +1437,14 @@
                 font-weight: 500;
             }
 
-            .to-do-div-new .content input,
-            textarea {
-                border-color: #707070 !important;
+            .to-do-div-new  input{
+                border: solid 1px #707070 !important;
+            }
+            .to-do-div-new textarea {
+                border: solid 1px #707070 !important;
+            }
+            .to-do-div-new select{
+                border: solid 1px #707070 !important;
             }
 
 
@@ -1482,6 +1466,9 @@
             .informational-numbers .content {
                 height: 60vh;
                 border-left: 1px solid #70707050;
+            }
+            .informational-numbers .content input {
+                border: solid 1px #707070 !important;
             }
 
             .informational-numbers .content .overflow-div {

@@ -213,7 +213,7 @@ class UserController extends Controller
             $longitude = $response->results[0]->geometry->location->lng;
         }
         else{
-       
+
         $lead->latitude = "0";
         $lead->longitude = "0";
         }
@@ -525,23 +525,21 @@ return redirect()->route('tasks');
             return redirect()->back();
         }
     }
+    public function rejectedleadsNalt(Request $request){
+        $leads_id = (int) $request->leadsid;
+        lead::where('id', $leads_id)->update(['assign_to_id' => null, 'assigned' => 0, 'rejected'=>1]);
 
-    public function rejectedleads(Request $request,$status = null)
+    }
+
+    public function rejectedleads(Request $request)
     {
         $leads_id = (int) $request->leadsid;
-        $user_id = Auth::user()->id;
 
-        if($status != null){
-        $status = (int) $status;
-        }
-        if($status === 0) {
-            $reason = 'Rejected';  lead::where('id', $leads_id)->update(['assign_to_id' => null, 'assigned' => 0]);
-        }elseif($status === 1){
-            $reason = 'Pending';
-            lead::where('id', $leads_id)->update(['assign_to_id' => null, 'assigned' => 0]);
+        if($request->pending === 1){
+            lead::where('id', $leads_id)->update(['assign_to_id' => null, 'assigned' => 0,'rejected' => 1]);
         }else{
             $reason = $request->reason;
-            lead::where('id', $leads_id)->update(['assign_to_id' => null, 'assigned' => 0,'rejected' => 1]);
+            lead::where('id', $leads_id)->update(['assign_to_id'=>9999999]);
         }
 
           $image = $request->hasFile('image') ? $this->storeFile($request->input('image'),'img') : null;
