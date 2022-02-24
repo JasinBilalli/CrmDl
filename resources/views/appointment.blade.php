@@ -161,7 +161,7 @@
 		  // console.log('Thing was saved to the database.');
 
 		 $.ajax({
-                     url: "{{URL::route('Dropajax')}}"+"?nom_lead="+arg.draggedEl.innerText.trim()+"&id_user="+arg.resource.id+"&time="+arg.draggedEl.now ,
+                     url: "{{URL::route('Dropajax')}}"+"?nom_lead="+arg.draggedEl.innerText.trim()+"&id_user="+arg.resource.id+"&time="+arg.draggedEl.now+"&ctime="+calendar.getDate(),
                      type: "GET",
                      data: {"data" : arg.draggedEl.innerText.trim()},
                      success: function(data) {
@@ -353,15 +353,15 @@
 </div>
 <div class="col-12 col-sm-12 col-md-12 col-lg-12 g-0"><br>
 <div class="row">
-	<div class="col-lg-9" style="font-size: 12px; text-align : center ;">
+	<div class="col-lg-9 col-12" style="font-size: 12px; text-align : center ;">
 		 @if(session('msg')) <h5 style="color : #212529 ; background-color : #0080003b;">{!! session('msg') !!}</h5> <?php session(['msg' => '']); ?> @endif
 	</div>
 
-<div class="col-lg-9" style="font-size: 12px;">
-	<div id='calendar'></div>
+<div class="col-lg-9 col-12" style="font-size: 12px;">
+	<div class="mx-2" id='calendar'></div>
     <div style='clear:both'></div>
 </div>
-<div class="col-lg-3 box follow-scroll">
+<div class="col-lg-3 col-12 box follow-scroll">
     <div id='external-events' >
 	<div id='wrap' style="overflow-y: scroll; float: center; padding: 0 10px;border: 1px solid #ccc;width : 90%;    background: #eee;    text-align: left;	height: 600px ;text-align:center">
 		<h4> Appointments liste ({!! count($appointments_events) !!}) </h4>
@@ -446,7 +446,6 @@
                     x.style.display = "none";
                 }
             }
-         
         </script>
 
 
@@ -577,7 +576,7 @@
 </div>
 
 <div class="col-12" width="90%" style="font-size: 12px;">
-    <div id='calendar'></div>
+    <div class="mx-2" id='calendar'></div>
 </div>
 <div class="gmap_canvas">
 

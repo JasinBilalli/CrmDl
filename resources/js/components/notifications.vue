@@ -67,10 +67,10 @@ export default {
     },
     methods: {
         readall() {
-            axios.get('readnotifications');
+            axios.get(this.url + 'readnotifications');
         },
         getmessages() {
-            axios.get('getnotifications').then((response) => {
+            axios.get(this.url + 'getnotifications').then((response) => {
                 this.notifications = [];
                 this.notifications = response.data.notifications;
                 this.notcnt = response.data.cnt;
@@ -79,6 +79,9 @@ export default {
         openNotifyFunct: function () {
             $('#openNotification').slideToggle();
         }
+    },
+    props:{
+        url: {required: false}
     }
 }
 </script>

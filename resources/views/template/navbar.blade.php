@@ -1,5 +1,4 @@
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -1121,7 +1120,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 </div>
             @endif
 			    <div class="text-end mx-auto">
-                        <notifications></notifications>
+                        <notifications url="{{config('app.url')}}"></notifications>
                     </div>
             @yield('content')
         </div>
