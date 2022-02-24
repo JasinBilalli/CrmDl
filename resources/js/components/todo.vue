@@ -1,111 +1,102 @@
 <template>
-    <div class="row my-2">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0 pe-3">
-            <div class="to-do-div">
-                <div class="accordion accordion-flush mx-3" id="accordionFlush1">
-                    <div class="accordion-item my-1 py-2" style="background-color: #F7F7F7;">
-                        <div class="p-3">
-                            <span style="background-color: #F7F7F7; font-family: 'Montserrat';" class="col text-dark fw-bold fs-5">
-                                To Do
-                            </span>
-                        </div>
-                        <hr class="text-black" style="color: #fff !important; height: 2px; margin: 0 !important; opacity: 1;">
-                        <br>
-                        <div id="alrt">
-                            </div>
-
-                        <div class="mx-3" style=" font-family: 'Montserrat';">
-                            Admin
-                            <select name="admin" class="form-control mb-3" style="border: transparent !important; font-family: 'Montserrat';" @change="onChangeSelect($event)">
+    <div class="row g-0 m-0 p-0">
+        <div class="col-12 col-md-12 col-lg-6 g-0">
+            <div class="to-do-div-new">
+                <div class="header px-3 px-sm-3">
+                    <div class="">
+                        <span>To do</span>
+                    </div>
+                </div>
+                <div id="alrt">
+                </div>
+                <div class="content">
+                    <div class="form-div mx-3 pt-3">
+                        <div class="mb-2">
+                            <label for="admin-input" class="form-label mb-0">Admin</label>
+                            <select id="admin-input" name="admin" class="form-control" @change="onChangeSelect($event)">
                                 <option v-for="admin in todos.admins" :value="admin.id">{{ admin.name }}</option>
                             </select>
-
-                            Costumer
-                            <select name="costumer" class="form-control mb-3" style="border: transparent !important; font-family: 'Montserrat';" @change="onChangeCostumer($event)">
-                                <option v-for="costumer in todos.costumers" :value="costumer.id">{{
-                                        costumer.first_name
-                                    }}
+                        </div>
+                        <div class="mb-2">
+                            <label for="costumer-input" class="form-label mb-0">Customer</label>
+                            <select id="costumer-input" name="costumer" class="form-control" @change="onChangeCostumer($event)">
+                                <option v-for="costumer in todos.costumers" :value="costumer.id">{{costumer.first_name}}
                                     {{ costumer.last_name }}
                                 </option>
                             </select>
-                            Title
-                            <input type="text" id="title" class="form-control">
-                            Description (Required)
-                            <textarea type="text" id="desc" placeholder="Description" class="form-control mb-3" style="border: transparent !important; font-family: 'Montserrat';"></textarea>
                         </div>
-                        <div class="py-2 mx-3">
-                            <button @click="assignpendency" class="btn mt-1" style="background-color: #4EC590; color: #fff !important; font-family: 'Montserrat';">Assign pendency</button>
+                        <div class="mb-2">
+                            <label for="title" class="form-label mb-0">Title</label>
+                            <input class="form-control" id="title" type="text" required>
+                        </div>
+                        <div class="mb-2">
+                            <label for="desc" class="form-label">Description
+                                (Required)</label>
+                            <textarea type="text" id="desc" placeholder="Description" class="form-control" rows="3" required></textarea>
+
+                        </div>
+                    </div>
+                    <div class="button-div mx-3 mt-4">
+                        <button @click="assignpendency" class="py-2 px-2 px-sm-3">
+                            <span>Assign Pendency</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 g-0">
+                <div class="informational-numbers">
+                    <div class="header px-3 px-sm-3">
+                        <div class="">
+                            <span>Informational Numbers</span>
+                        </div>
+                    </div>
+                    <div class="content pt-2">
+                        <div class="overflow-div mx-3">
+                            <div class="py-2 d-flex number-item my-2 px-2 px-sm-3" v-for="number in numbers">
+                                <div class="col my-auto">
+                                    <div class="">
+                                        <span class="fw-600">{{ number.text }}</span>
+                                    </div>
+                                </div>
+                                <div class="col-auto d-flex align-items-center">
+                                    <div class="btn " @click="deletenumber(number.id)">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink" width="16.741" height="22.71"
+                                             viewBox="0 0 16.741 22.71">
+                                            <defs>
+                                                <clipPath id="clip-path">
+                                                    <rect id="Rectangle_693" data-name="Rectangle 693"
+                                                          width="16.741" height="22.71" fill="#0c71c3" />
+                                                </clipPath>
+                                            </defs>
+                                            <g id="Group_767" data-name="Group 767" clip-path="url(#clip-path)">
+                                                <path id="Path_345" data-name="Path 345"
+                                                      d="M34.214,169.833H48.56c.005.1.013.2.013.289q0,7.809,0,15.617a1.527,1.527,0,0,1-.036.412.687.687,0,0,1-.748.478q-1.783.005-3.565,0H35.142c-.706,0-.928-.223-.928-.934q0-7.757,0-15.513v-.35M45.7,178.215q0-2.876,0-5.751c0-.334-.064-.4-.391-.4q-.455-.007-.911,0c-.345,0-.409.07-.41.412q0,2.082,0,4.164,0,3.682,0,7.365c0,.337.059.4.389.4.286,0,.572,0,.859,0,.423,0,.464-.04.464-.459q0-2.863,0-5.725m-8.6,0q0,2.914,0,5.828c0,.3.056.353.346.356.338,0,.676,0,1.014,0,.223,0,.333-.083.333-.323q-.005-5.841,0-11.682c0-.237-.105-.334-.325-.336-.321,0-.642,0-.962,0-.352,0-.407.059-.407.406q0,2.875,0,5.75m3.443,0q0,2.914,0,5.828c0,.291.06.353.349.356.338,0,.676,0,1.015,0,.224,0,.333-.085.333-.323q0-5.841,0-11.683c0-.237-.1-.335-.324-.336-.321,0-.642,0-.963,0-.349,0-.411.065-.411.406q0,2.875,0,5.75"
+                                                      transform="translate(-33.023 -163.922)" fill="#0c71c3" />
+                                                <path id="Path_346" data-name="Path 346"
+                                                      d="M16.741,4.576H.017a13.711,13.711,0,0,1,.01-1.494A1.318,1.318,0,0,1,1.435,1.895c1.275-.006,2.55,0,3.826,0h.346c0-.284,0-.541,0-.8A1.008,1.008,0,0,1,6.691,0Q8.369,0,10.048,0a1.026,1.026,0,0,1,1.1,1.08c.008.258,0,.516,0,.809h4.053a1.377,1.377,0,0,1,1.534,1.521c0,.387,0,.773,0,1.161"
+                                                      transform="translate(-0.001 0)" fill="#0c71c3" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-div mx-3 mt-3">
+                            <div class="input-group">
+                                <input type="text" name="todo" id="number" class="form-control" v-on:keyup.enter="addnumber">
+                                <div style="cursor: pointer" class="add-text px-2 px-sm-3" @click="addnumber">
+                                        <span>
+                                            Add
+                                        </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
-
-
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0 ps-3">
-            <div class="">
-                <div class="internal-nr-div pb-2">
-                    <div class="accordion accordion-flush mx-3 " id="accordionFlush4">
-                        <div class="accordion-item my-1 py-2"
-                             style="background-color: #F7F7F7;">
-                            <div class="p-3">
-                                <span style="background-color: #F7F7F7; font-family: 'Montserrat';" class="col text-dark fw-bold fs-5">
-                                Informational Numbers
-                                 </span>
-                            </div>
-                            <hr class="text-black" style="color: #fff !important; height: 2px; margin: 0 !important; opacity: 1;">
-                            <div id="flush-collapse4" class="accordion-collapse collapse show pt-3"
-                                 aria-labelledby="flush-heading4" data-bs-parent="#accordionFlush4">
-                                <div class="accordion-body p-0 mx-3 overflow-div3 pe-3"
-                                     style="background-color: #F7F7F7; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 310px; overflow-y: scroll !important; overflow-x: hidden !important;">
-                                    <div class="py-2 my-2 mx-2" v-for="number in numbers"
-                                         style="background-color: #fff; border-radius: 15px; color: #000;">
-                                        <div class="mx-3 ">
-                                            <div class="row ">
-                                                <div class="col">
-                                                    <span class="fw-bold fs-5 text-color123">
-                                                        {{ number.text }}
-                                                    </span>
-                                                </div>
-                                                <div class="col-2 text-end g-0 pe-2">
-                                                    <button @click="deletenumber(number.id)"
-                                                            class="border-0  p-0 text-center bg-white text-danger">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                             height="16" fill="currentColor" class="bi bi-trash"
-                                                             viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                                            <path fill-rule="evenodd"
-                                                                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                                        </svg>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mx-3">
-                                    <div class="input-group my-3">
-                                        <input style="size: auto; font-family: 'Montserrat'" class="form-control" name="todo" id="number"
-                                               v-on:keyup.enter="addnumber"
-                                               type="text">
-                                        <button @click="addnumber" class="btn" style="background-color: #4EC590; color: #fff !important; font-family: 'Montserrat';">Add</button>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 </template>
 <script>

@@ -4,7 +4,6 @@
 <div class="p-3 text-center d-flex justify-content-center">
 <div class="row col-10">
         <div class="col-3 pe-0 openLeadsFirstDiv">
-
             <div class="">
                 <div class="whiteee p-3">
                     <div class="namme mb-2">

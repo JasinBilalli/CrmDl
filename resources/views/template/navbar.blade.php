@@ -236,7 +236,7 @@
         background: #4EC590;
     }
 
- 
+
 
     .person-box {
         color: #fff;
@@ -530,157 +530,8 @@
         }
     }
 
-    .grayyy1 {
-        color: #88889D;
-    }
 
-    .assigned-leads-div {
-        border-radius: 25px;
-    }
 
-    .t {
-        color: #88889D;
-    }
-
-    .fw-600 {
-        font-weight: 600;
-
-    }
-
-    .fw-500 {
-        font-weight: 500;
-    }
-
-    .whiteee {
-        background-color: #fff;
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 30px !important;
-        border-top-right-radius: 30px !important;
-    }
-
-    .lead-offnen {
-        background-color: #88889D;
-        color: #fff;
-        border-bottom-left-radius: 30px !important;
-        border-bottom-right-radius: 30px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    .overflow-divvv::-webkit-scrollbar {
-        width: 0px;
-    }
-
-    /* Track */
-    .overflow-divvv::-webkit-scrollbar-track {
-        background: transparent !important;
-        border-radius: 10px;
-    }
-
-    /* Handle */
-    .overflow-divvv::-webkit-scrollbar-thumb {
-        background: #c9cad8;
-        border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    .overflow-divvv::-webkit-scrollbar-thumb:hover {
-        background: #707070;
-        border-radius: 10px;
-    }
-
-    .lead-statistics-header {
-        background-color: #F7F7F7;
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 30px !important;
-        border-top-right-radius: 30px !important;
-    }
-
-    .lead-statistics {
-        background-color: #F7F7F7;
-        border-bottom-left-radius: 30px !important;
-        border-bottom-right-radius: 30px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    .grayyy1 {
-        color: #88889D;
-    }
-
-    .assigned-leads-div {
-        border-radius: 25px;
-    }
-
-    .t {
-        color: #88889D;
-    }
-
-    .fw-600 {
-        font-weight: 600;
-
-    }
-
-    .fw-500 {
-        font-weight: 500;
-    }
-
-    .whiteee {
-        background-color: #fff;
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 30px !important;
-        border-top-right-radius: 30px !important;
-    }
-
-    .lead-offnen {
-        background-color: #88889D;
-        color: #fff;
-        border-bottom-left-radius: 30px !important;
-        border-bottom-right-radius: 30px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
-
-    .overflow-divvv::-webkit-scrollbar {
-        width: 0px;
-    }
-
-    /* Track */
-    .overflow-divvv::-webkit-scrollbar-track {
-        background: transparent !important;
-        border-radius: 10px;
-    }
-
-    /* Handle */
-    .overflow-divvv::-webkit-scrollbar-thumb {
-        background: #c9cad8;
-        border-radius: 10px;
-    }
-
-    /* Handle on hover */
-    .overflow-divvv::-webkit-scrollbar-thumb:hover {
-        background: #707070;
-        border-radius: 10px;
-    }
-
-    .lead-statistics-header {
-        background-color: #F7F7F7;
-        border-bottom-left-radius: 0px !important;
-        border-bottom-right-radius: 0px !important;
-        border-top-left-radius: 30px !important;
-        border-top-right-radius: 30px !important;
-    }
-
-    .lead-statistics {
-        background-color: #F7F7F7;
-        border-bottom-left-radius: 30px !important;
-        border-bottom-right-radius: 30px !important;
-        border-top-left-radius: 0px !important;
-        border-top-right-radius: 0px !important;
-    }
 
     .openLeadsSpanText {
         font-size: 17px;
@@ -1275,8 +1126,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             @yield('content')
         </div>
 
-        <div class="form-group container text-center pt-4">
-        </div>
+    {{--        <div class="form-group container text-center pt-4">--}}
+    {{--        </div>--}}
     </div>
 
     {{--        mobile--}}
