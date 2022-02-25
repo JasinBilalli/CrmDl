@@ -45,11 +45,12 @@
                                                                     <option value="Terminiert">Terminiert</option>
                                                                 </select>
                                                             </div>
+                                                            <div class="modal-footer m-0" style="border-top: none !important; display: block;margin:0 !important;">
+                                                                <button type="submit" class="btn w-100 m-0 my-3" style="background-color: #0C71C3; color: #fff !important;"><b>Save</b></button>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div class="modal-footer row mx-5 mb-4" style="border-top: none !important; display: block; padding-top: 0 !important;">
-                                                        <button type="submit" class="btn w-25" style="background-color: #4EC590; color: #fff !important;"><b>Save</b></button>
-                                                    </div>
+
                                                 </div>
                                             </form>
                                         </div>
@@ -59,7 +60,7 @@
                                          data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                          aria-hidden="true">
                                         <div class="modal-dialog modaldialogg" >
-                                            <form action="rejectedleadsNalt" method="post">
+                                            <form action="pending_rejectedlead" method="post">
                                                 <input type="hidden" name="_token" :value="csrf">
                                                 <div class="modal-content" style="border-radius: 24px !important;">
                                                     <div class="modal-header mx-4 pt-4" style="border-bottom: none !important;">
@@ -68,19 +69,23 @@
                                                     </div>
                                                     <div class="modal-body mx-5" >
                                                         <input type="hidden" :value="lead.id" name="leadsid" >
-                                                        <div class="row g-3 align-items-center py-1 mx-5">
-                                                            <div class="col-12 text-center">
+                                                        <div class="row mb-3">
+                                                            <h5 class="modal-title"><b>Reject Lead</b></h5>
+                                                        </div>
+                                                        <div class="row py-1 ">
+                                                            <div class="col-12">
                                                                 <label for="inputTxt4" class="col-form-label">Begrundung: </label>
                                                             </div>
                                                             <div class="col-12">
-                                                                <input type="text" id="inputTxt5" name="reason" class="form-control"
-                                                                       aria-describedby="passwordHelpInline">
+                                                                <textarea type="text" id="inputTxt5" name="reason" class="form-control"
+                                                                          aria-describedby="passwordHelpInline" ></textarea>
+                                                            </div>
+                                                            <div class="modal-footer m-0" style="border-top: none !important; display: block;margin:0 !important;">
+                                                                <button type="submit" class="btn w-100 m-0 my-3" style="background-color: #0C71C3; color: #fff !important;"><b>Save</b></button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="modal-footer row mx-5 mb-4 d-flex justify-content-center" style="border-top: none !important; display: block; padding-top: 0 !important;">
-                                                        <button type="submit" class="btn w-25" style="background-color: #4EC590; color: #fff !important;"><b>Save</b></button>
-                                                    </div>
+
                                                 </div>
                                             </form>
                                         </div>
@@ -90,7 +95,7 @@
                                          data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                          aria-hidden="true">
                                         <div class="modal-dialog modaldialogg" >
-                                            <form action="rejectedleads" method="post">
+                                            <form action="pending_rejectedlead" method="post">
                                                 <input type="hidden" name="_token" :value="csrf">
                                                 <div class="modal-content" style="border-radius: 24px !important;">
                                                     <div class="modal-header mx-4 pt-4" style="border-bottom: none !important;">
@@ -100,18 +105,21 @@
                                                     <div class="modal-body mx-5" >
                                                         <input type="hidden" :value="lead.id" name="leadsid" >
                                                         <input type="hidden" :value="1" name="pending" >
-                                                        <div class="row g-3 align-items-center py-1 mx-5">
-                                                            <div class="col-12 text-center">
+                                                        <div class="row mb-3">
+                                                            <h5 class="modal-title"><b>Pending Lead</b></h5>
+                                                        </div>
+                                                        <div class="row py-1 ">
+                                                            <div class="col-12">
                                                                 <label for="inputTxt4" class="col-form-label">Begrundung: </label>
                                                             </div>
                                                             <div class="col-12">
-                                                                <input type="text" id="inputTxt4" name="reason" class="form-control"
-                                                                       aria-describedby="passwordHelpInline">
+                                                                <textarea type="text" id="inputTxt4" name="reason" class="form-control"
+                                                                          aria-describedby="passwordHelpInline" ></textarea>
+                                                            </div>
+                                                            <div class="modal-footer col-12" style="border-top: none !important; display: block;margin:0 !important;">
+                                                                <button type="submit" class="btn w-100 m-0 my-3" style="background-color: #0C71C3; color: #fff !important;"><b>Save</b></button>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="modal-footer row mx-5 mb-4 d-flex justify-content-center" style="border-top: none !important; display: block; padding-top: 0 !important;">
-                                                        <button type="submit" class="btn w-25" style="background-color: #4EC590; color: #fff !important;"><b>Save</b></button>
                                                     </div>
                                                 </div>
                                             </form>
