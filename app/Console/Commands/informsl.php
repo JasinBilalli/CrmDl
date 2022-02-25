@@ -50,8 +50,12 @@ class informsl extends Command
             ->where('pendencies.completed',0)
             ->where('pendencies.created_at','<',Carbon::now()->subDays(30)->format('Y-m-d'))
             ->count();
+            if($count > 0){
             $url = '<a href="' . route("tasks") . '"> You have ' . $count . ' pendencies open for more than a month </a>';
             $sl->notify(new SendNotificationn($url));
+            }
+          
+            
         }
         return $this->comment('Done');
     }

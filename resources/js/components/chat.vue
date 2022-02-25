@@ -1,6 +1,6 @@
 <template>
  <div class="container-fluid my-3">
-        <div class="row ">
+        <div class="row">
             <div class="col-lg-12 g-0">
                 <div class="card chat-app">
                     <div id="plist" class="people-list">
@@ -14,7 +14,7 @@
                                                     <i class="fa fa-search"></i>
                                                 </span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Search Notifications">
+                                            <input @click="search()" v-on:keyup.enter="search" type="text" class="form-control" placeholder="Search Notifications" id="sn">
                                         </div>
                                     </div>
                                 </div>
@@ -29,210 +29,30 @@
                             </div>
 
                         </div>
-                        <div class="px-2 sectionn "
+                        <div class="px-2 sectionn"
                             style="width: 319px; margin-bottom: 119px; bottom: 0; position: fixed;">
                             <ul class="list-unstyled chat-list overflow-11 my-2 pe-1"
-                                style="overflow: auto; height: 90vh; padding-top: 120px;">
+                                style="overflow: auto; height: 90vh; align-items-center; display:flex; padding-top: 140px;">
                                 <li class="clearfix py-2 px-0">
                                     <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
+                                    <div class="about" v-for="notification in notifications">
+                                     
+                                        <div class="status py-1 name" style="font-size: 17px;" v-html="notification.data">
                                         </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
+                                    <hr class="m-0 g-0 p-0">
                                     </div>
+                                      
                                 </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
-                                <li class="clearfix py-2 px-0">
-                                    <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about">
-                                        <div class="name">Lorem Ipsum</div>
-                                        <div class="status py-1"> Lorem ipsum dolor sit
-                                            amet, consectetuer adipiscing elit
-                                        </div>
-                                        <div class="status-time">
-                                            Yesterday, 13:30pm
-                                        </div>
-                                    </div>
-                                </li>
-                                <hr class="m-0 g-0 p-0">
+                              
+                              
+                               
+                              
+                                
                             </ul>
                         </div>
                         <div class="new-message-divv fixed-bottom d-flex justify-content-center">
                             <div class="">
-                                <button class="btn-dark bg-white button-new-msg px-3 py-2 btn text-dark">
+                                <button @click=" getnotifications()" class="btn-dark bg-white button-new-msg px-3 py-2 btn text-dark">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" viewBox="0 0 28.789 29.329">
                                         <g id="Group_1070" data-name="Group 1070" transform="translate(0)">
                                             <path id="Path_1959" data-name="Path 1959"
@@ -252,15 +72,7 @@
                         <div class="chat-header clearfix fixed-top" style="margin-left:321px; align-items: center;">
                             <div class="row">
                                 <div class="col col-lg-6">
-                                    <div class="d-flex p-2" style="align-items: center;">
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="chat-about my-auto ">
-                                            <div class="my-auto">lorem Ipsum</div>
-                                            <!-- <small>Last seen: 2 hours ago</small>   -->
-                                        </div>
-                                    </div>
+                                
                                 </div>
                                 <div class="col-auto my-auto">
                                     <div class="notify-page-button text-end pe-2">
@@ -272,263 +84,40 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="" style="margin-bottom: 120px; bottom: 0; position: fixed;">
-                            <div class="chat-history overflow-22"
+                         <div class="" style="margin-bottom: 120px; bottom: 0;">
+                            <div class="chat-history overflow-22" id="bchat" 
                                 style="overflow: auto; height: 90vh;padding-top: 120px;">
-                                <ul class="m-b-0">
-                                    <li class="py-1 d-flex">
+                                <ul class="m-b-0" style=" padding-bottom: 30px;">
+                                    <li v-for="msg in messages" v-if="msg.messageable_id != admin" class="py-1 d-flex">
                                         <!-- <div class="message-data">
                                             <span class="message-data-time">10:12 AM, Today</span>
                                         </div> -->
                                         <div class="col-auto mx-2"
                                             style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
                                         </div>
-                                        <div class="col message my-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
+                                        <div class="col message my-message my-1 ">
+                                           {{msg.body}}
                                         </div>
                                     </li>
-                                    <li class="py-1 d-flex justify-content-end">
+                                    <li class="py-1 d-flex justify-content-end" v-else>
                                         <div class="col message other-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
+                                            {{msg.body}}
                                         </div>
                                         <div class="col-auto mx-2 mt-auto"
                                             style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
                                         </div>
-                                    </li>
-                                    <li class="py-1 d-flex">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="col message my-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex justify-content-end">
-                                        <div class="col message other-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                        <div class="col-auto mx-2 mt-auto"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="col message my-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex justify-content-end">
-                                        <div class="col message other-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                        <div class="col-auto mx-2 mt-auto"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="col message my-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex justify-content-end">
-                                        <div class="col message other-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                        <div class="col-auto mx-2 mt-auto"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="col message my-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex justify-content-end">
-                                        <div class="col message other-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                        <div class="col-auto mx-2 mt-auto"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="col message my-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex justify-content-end">
-                                        <div class="col message other-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                        <div class="col-auto mx-2 mt-auto"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="col message my-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex justify-content-end">
-                                        <div class="col message other-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                        <div class="col-auto mx-2 mt-auto"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="col message my-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex justify-content-end">
-                                        <div class="col message other-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                        <div class="col-auto mx-2 mt-auto"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="col message my-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                    </li>
-                                    <li class="py-1 d-flex justify-content-end">
-                                        <div class="col message other-message my-1">
-                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh
-                                            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                                            enim ad
-                                            minim veniam, quis nostrud exerci tation
-                                        </div>
-                                        <div class="col-auto mx-2 mt-auto"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
-                                        </div>
-                                    </li>
+                                    </li> 
+                                 
                                 </ul>
                             </div>
                         </div>
                         <div class="chat-message fixed-bottom p-3">
                             <div class="row">
                                 <div class="col">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="text" rows="3" v-on:keyup.enter="sendmessage"></textarea>
                                 </div>
                                 <div class="col-auto g-0">
-                                    <button type="button" class="btn send-button px-2 py-2 px-md-5 mb-1 m-md-1 py-md-1 w-100">
+                                    <button @click="sendmessage" type="button" id="sendButton" class="btn send-button px-2 py-2 px-md-5 mb-1 m-md-1 py-md-1 w-100">
                                         <span class="desktop-send">Send</span>
                                         <span class="mobile-send">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
@@ -574,24 +163,53 @@
     </div>
 </template>
 <script>
+    // document.getElementById('sendButton').addEventListener('click', function(){
+    //     var element = document.getElementById('bchat');
+    //     element.scrollTop = element.scrollHeight;
+    // });
 export default {
+
   data() {
     return {
       messages: [],
       pag: 1,
-      cnt: 0
+      cnt: 0,
+      notifications: null,
+      yes: false
     };
   },
   mounted() {
-    // this.getmessages();
-    // setInterval(() => {
-    //   this.getmessages();
-    // }, 330);
-    // axios.get(this.url + 'getadmin').then((response) => { this.admin = response.data;});
+    this.getmessages();
+      this.getnotifications();
+    setInterval(() => {
+      this.getmessages()
+    }, 330);
+    axios.get(this.url + 'getadmin').then((response) => { this.admin = response.data;});
+    
   },
   methods: {
+      search(){
+                this.getnotifications();
+var sn = document.getElementById('sn').value;
+                 if(sn != '' || sn != null && this.yes) {
+         var filtered =  this.notifications.filter(item => item.data.indexOf(sn) >= 0);
+         this.notifications = filtered;
+                 }
+  
+      },
+      readall() {
+            axios.get(this.url + 'readnotifications');
+        },
+        getnotifications() {
+            this.yes = false;
+            axios.get(this.url + 'getnotifications').then((response) => {
+                this.notifications = [];
+                this.notifications = response.data.notifications;
+            });
+            this.yes = true;
+        },
     sendmessage() {
-      if(document.getElementById('file-input-0').value == '' || document.getElementById('file-input-0').value == null){
+      if(document.getElementById('file-inp-4').value == '' || document.getElementById('file-inp-4').value == null){
       axios
         .get(
           this.url +
@@ -606,18 +224,20 @@ export default {
       }
       else{
         var formdata = new FormData();
-        var file = document.getElementById('file-input-0').files[0];
+        var file = document.getElementById('file-inp-4').files[0];
         formdata.append('file',file);
         axios.post(this.url + 'sendmessage/' + this.u1 + '/' + this.u2,
         formdata,{
 headers:{
        'Content-Type' : 'multipart/form-data'
 }
-        }).then((document.getElementById('file-input-0').value = ""));
+        }).then((document.getElementById('file-inp-4').value = ""));
       }
+      $('#bchat').scrollTop($('#bchat')[0].scrollHeight);
 
     },
     getmessages() {
+       
       axios
         .get(
           this.url + "getchat/" + this.u1 + "/" + this.u2 + "?page=" + this.pag
@@ -633,6 +253,7 @@ headers:{
             this.messages[i].created_at = new Date(this.messages[i].created_at);
           }
         });
+
     },
   },
 

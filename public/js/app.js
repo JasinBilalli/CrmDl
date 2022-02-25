@@ -6101,458 +6101,85 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// document.getElementById('sendButton').addEventListener('click', function(){
+//     var element = document.getElementById('bchat');
+//     element.scrollTop = element.scrollHeight;
+// });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       messages: [],
       pag: 1,
-      cnt: 0
+      cnt: 0,
+      notifications: null,
+      yes: false
     };
   },
-  mounted: function mounted() {// this.getmessages();
-    // setInterval(() => {
-    //   this.getmessages();
-    // }, 330);
-    // axios.get(this.url + 'getadmin').then((response) => { this.admin = response.data;});
+  mounted: function mounted() {
+    var _this = this;
+
+    this.getmessages();
+    this.getnotifications();
+    setInterval(function () {
+      _this.getmessages();
+    }, 330);
+    axios.get(this.url + 'getadmin').then(function (response) {
+      _this.admin = response.data;
+    });
   },
   methods: {
+    search: function search() {
+      this.getnotifications();
+      var sn = document.getElementById('sn').value;
+
+      if (sn != '' || sn != null && this.yes) {
+        var filtered = this.notifications.filter(function (item) {
+          return item.data.indexOf(sn) >= 0;
+        });
+        this.notifications = filtered;
+      }
+    },
+    readall: function readall() {
+      axios.get(this.url + 'readnotifications');
+    },
+    getnotifications: function getnotifications() {
+      var _this2 = this;
+
+      this.yes = false;
+      axios.get(this.url + 'getnotifications').then(function (response) {
+        _this2.notifications = [];
+        _this2.notifications = response.data.notifications;
+      });
+      this.yes = true;
+    },
     sendmessage: function sendmessage() {
-      if (document.getElementById('file-input-0').value == '' || document.getElementById('file-input-0').value == null) {
+      if (document.getElementById('file-inp-4').value == '' || document.getElementById('file-inp-4').value == null) {
         axios.get(this.url + "sendmessage/" + this.u1 + "/" + this.u2 + "?text=" + document.getElementById("text").value).then(document.getElementById("text").value = "");
       } else {
         var formdata = new FormData();
-        var file = document.getElementById('file-input-0').files[0];
+        var file = document.getElementById('file-inp-4').files[0];
         formdata.append('file', file);
         axios.post(this.url + 'sendmessage/' + this.u1 + '/' + this.u2, formdata, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
-        }).then(document.getElementById('file-input-0').value = "");
+        }).then(document.getElementById('file-inp-4').value = "");
       }
+
+      $('#bchat').scrollTop($('#bchat')[0].scrollHeight);
     },
     getmessages: function getmessages() {
-      var _this = this;
+      var _this3 = this;
 
       axios.get(this.url + "getchat/" + this.u1 + "/" + this.u2 + "?page=" + this.pag).then(function (response) {
-        _this.messages = [];
-        _this.cnt = response.data.total;
+        _this3.messages = [];
+        _this3.cnt = response.data.total;
         var cntt = 0; // if(this.messages.length == 0){
 
-        for (var i = 0; i < _this.cnt; i++) {
-          _this.messages.push(response.data.data[i]);
+        for (var i = 0; i < _this3.cnt; i++) {
+          _this3.messages.push(response.data.data[i]);
 
-          _this.messages[i].created_at = new Date(_this.messages[i].created_at);
+          _this3.messages[i].created_at = new Date(_this3.messages[i].created_at);
         }
       });
     }
@@ -7968,9 +7595,9 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    this.getmessages();
+    this.getnotifications();
     setInterval(function () {
-      _this.getmessages();
+      _this.getnotifications();
     }, 350);
   },
   data: function data() {
@@ -7984,7 +7611,7 @@ __webpack_require__.r(__webpack_exports__);
     readall: function readall() {
       axios.get(this.url + 'readnotifications');
     },
-    getmessages: function getmessages() {
+    getnotifications: function getnotifications() {
       var _this2 = this;
 
       axios.get(this.url + 'getnotifications').then(function (response) {
@@ -32815,13 +32442,112 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container-fluid my-3" }, [
-    _c("div", { staticClass: "row " }, [
+    _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-lg-12 g-0" }, [
         _c("div", { staticClass: "card chat-app" }, [
           _c("div", { staticClass: "people-list", attrs: { id: "plist" } }, [
-            _vm._m(0),
+            _c(
+              "div",
+              {
+                staticClass: "search-notif fixed-top ",
+                staticStyle: { width: "320px" },
+              },
+              [
+                _c("div", { staticClass: "row px-2 g-0" }, [
+                  _c("div", { staticClass: "col g-0" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "d-flex p-2",
+                        staticStyle: { "align-items": "center" },
+                      },
+                      [
+                        _c("div", { staticClass: "input-group" }, [
+                          _vm._m(0),
+                          _vm._v(" "),
+                          _c("input", {
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "text",
+                              placeholder: "Search Notifications",
+                              id: "sn",
+                            },
+                            on: {
+                              click: function ($event) {
+                                return _vm.search()
+                              },
+                              keyup: function ($event) {
+                                if (
+                                  !$event.type.indexOf("key") &&
+                                  _vm._k(
+                                    $event.keyCode,
+                                    "enter",
+                                    13,
+                                    $event.key,
+                                    "Enter"
+                                  )
+                                ) {
+                                  return null
+                                }
+                                return _vm.search.apply(null, arguments)
+                              },
+                            },
+                          }),
+                        ]),
+                      ]
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1),
+                ]),
+              ]
+            ),
             _vm._v(" "),
-            _vm._m(1),
+            _c(
+              "div",
+              {
+                staticClass: "px-2 sectionn",
+                staticStyle: {
+                  width: "319px",
+                  "margin-bottom": "119px",
+                  bottom: "0",
+                  position: "fixed",
+                },
+              },
+              [
+                _c(
+                  "ul",
+                  {
+                    staticClass:
+                      "list-unstyled chat-list overflow-11 my-2 pe-1",
+                    staticStyle: {
+                      overflow: "auto",
+                      height: "90vh",
+                      display: "flex",
+                      "padding-top": "140px",
+                    },
+                  },
+                  [
+                    _c(
+                      "li",
+                      { staticClass: "clearfix py-2 px-0" },
+                      _vm._l(_vm.notifications, function (notification) {
+                        return _c("div", { staticClass: "about" }, [
+                          _c("div", {
+                            staticClass: "status py-1 name",
+                            staticStyle: { "font-size": "17px" },
+                            domProps: { innerHTML: _vm._s(notification.data) },
+                          }),
+                          _vm._v(" "),
+                          _c("hr", { staticClass: "m-0 g-0 p-0" }),
+                        ])
+                      }),
+                      0
+                    ),
+                  ]
+                ),
+              ]
+            ),
             _vm._v(" "),
             _c(
               "div",
@@ -32836,6 +32562,11 @@ var render = function () {
                     {
                       staticClass:
                         "btn-dark bg-white button-new-msg px-3 py-2 btn text-dark",
+                      on: {
+                        click: function ($event) {
+                          return _vm.getnotifications()
+                        },
+                      },
                     },
                     [
                       _c(
@@ -32895,11 +32626,119 @@ var render = function () {
           _c("div", { staticClass: "chat", attrs: { id: "chatt" } }, [
             _vm._m(2),
             _vm._v(" "),
-            _vm._m(3),
+            _c(
+              "div",
+              { staticStyle: { "margin-bottom": "120px", bottom: "0" } },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "chat-history overflow-22",
+                    staticStyle: {
+                      overflow: "auto",
+                      height: "90vh",
+                      "padding-top": "120px",
+                    },
+                    attrs: { id: "bchat" },
+                  },
+                  [
+                    _c(
+                      "ul",
+                      {
+                        staticClass: "m-b-0",
+                        staticStyle: { "padding-bottom": "30px" },
+                      },
+                      _vm._l(_vm.messages, function (msg) {
+                        return msg.messageable_id != _vm.admin
+                          ? _c("li", { staticClass: "py-1 d-flex" }, [
+                              _c("div", {
+                                staticClass: "col-auto mx-2",
+                                staticStyle: {
+                                  width: "40px",
+                                  height: "40px",
+                                  "border-radius": "50%",
+                                  "background-color": "#fff",
+                                  border: "1px #70707080 solid",
+                                },
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "col message my-message my-1 " },
+                                [
+                                  _vm._v(
+                                    "\n                                          " +
+                                      _vm._s(msg.body) +
+                                      "\n                                       "
+                                  ),
+                                ]
+                              ),
+                            ])
+                          : _c(
+                              "li",
+                              {
+                                staticClass: "py-1 d-flex justify-content-end",
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "col message other-message my-1",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                           " +
+                                        _vm._s(msg.body) +
+                                        "\n                                       "
+                                    ),
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", {
+                                  staticClass: "col-auto mx-2 mt-auto",
+                                  staticStyle: {
+                                    width: "40px",
+                                    height: "40px",
+                                    "border-radius": "50%",
+                                    "background-color": "#0C71C3",
+                                  },
+                                }),
+                              ]
+                            )
+                      }),
+                      0
+                    ),
+                  ]
+                ),
+              ]
+            ),
             _vm._v(" "),
             _c("div", { staticClass: "chat-message fixed-bottom p-3" }, [
               _c("div", { staticClass: "row" }, [
-                _vm._m(4),
+                _c("div", { staticClass: "col" }, [
+                  _c("textarea", {
+                    staticClass: "form-control",
+                    attrs: { id: "text", rows: "3" },
+                    on: {
+                      keyup: function ($event) {
+                        if (
+                          !$event.type.indexOf("key") &&
+                          _vm._k(
+                            $event.keyCode,
+                            "enter",
+                            13,
+                            $event.key,
+                            "Enter"
+                          )
+                        ) {
+                          return null
+                        }
+                        return _vm.sendmessage.apply(null, arguments)
+                      },
+                    },
+                  }),
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-auto g-0" }, [
                   _c(
@@ -32907,7 +32746,8 @@ var render = function () {
                     {
                       staticClass:
                         "btn send-button px-2 py-2 px-md-5 mb-1 m-md-1 py-md-1 w-100",
-                      attrs: { type: "button" },
+                      attrs: { type: "button", id: "sendButton" },
+                      on: { click: _vm.sendmessage },
                     },
                     [
                       _c("span", { staticClass: "desktop-send" }, [
@@ -33025,392 +32865,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "search-notif fixed-top ",
-        staticStyle: { width: "320px" },
-      },
-      [
-        _c("div", { staticClass: "row px-2 g-0" }, [
-          _c("div", { staticClass: "col g-0" }, [
-            _c(
-              "div",
-              {
-                staticClass: "d-flex p-2",
-                staticStyle: { "align-items": "center" },
-              },
-              [
-                _c("div", { staticClass: "input-group" }, [
-                  _c(
-                    "div",
-                    { staticClass: "my-auto btn search-icon ps-3 pe-2" },
-                    [_c("span", {}, [_c("i", { staticClass: "fa fa-search" })])]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      placeholder: "Search Notifications",
-                    },
-                  }),
-                ]),
-              ]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-auto my-auto" }, [
-            _c("div", { staticClass: "message-page-button text-end pe-2" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn  bg-white",
-                  staticStyle: { "font-weight": "500" },
-                  attrs: { onclick: "showMssgFunct()" },
-                },
-                [
-                  _vm._v(
-                    "\n                                           Messages\n                                       "
-                  ),
-                ]
-              ),
-            ]),
-          ]),
-        ]),
-      ]
-    )
+    return _c("div", { staticClass: "my-auto btn search-icon ps-3 pe-2" }, [
+      _c("span", {}, [_c("i", { staticClass: "fa fa-search" })]),
+    ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "px-2 sectionn ",
-        staticStyle: {
-          width: "319px",
-          "margin-bottom": "119px",
-          bottom: "0",
-          position: "fixed",
-        },
-      },
-      [
+    return _c("div", { staticClass: "col-auto my-auto" }, [
+      _c("div", { staticClass: "message-page-button text-end pe-2" }, [
         _c(
-          "ul",
+          "button",
           {
-            staticClass: "list-unstyled chat-list overflow-11 my-2 pe-1",
-            staticStyle: {
-              overflow: "auto",
-              height: "90vh",
-              "padding-top": "120px",
-            },
+            staticClass: "btn  bg-white",
+            staticStyle: { "font-weight": "500" },
+            attrs: { onclick: "showMssgFunct()" },
           },
           [
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
-            _vm._v(" "),
-            _c("li", { staticClass: "clearfix py-2 px-0" }, [
-              _c("div", { staticClass: "about" }, [
-                _c("div", { staticClass: "name" }, [_vm._v("Lorem Ipsum")]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status py-1" }, [
-                  _vm._v(
-                    " Lorem ipsum dolor sit\n                                           amet, consectetuer adipiscing elit\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "status-time" }, [
-                  _vm._v(
-                    "\n                                           Yesterday, 13:30pm\n                                       "
-                  ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("hr", { staticClass: "m-0 g-0 p-0" }),
+            _vm._v(
+              "\n                                           Messages\n                                       "
+            ),
           ]
         ),
-      ]
-    )
+      ]),
+    ])
   },
   function () {
     var _vm = this
@@ -33424,33 +32903,7 @@ var staticRenderFns = [
       },
       [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col col-lg-6" }, [
-            _c(
-              "div",
-              {
-                staticClass: "d-flex p-2",
-                staticStyle: { "align-items": "center" },
-              },
-              [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "chat-about my-auto " }, [
-                  _c("div", { staticClass: "my-auto" }, [
-                    _vm._v("lorem Ipsum"),
-                  ]),
-                ]),
-              ]
-            ),
-          ]),
+          _c("div", { staticClass: "col col-lg-6" }),
           _vm._v(" "),
           _c("div", { staticClass: "col-auto my-auto" }, [
             _c("div", { staticClass: "notify-page-button text-end pe-2" }, [
@@ -33472,381 +32925,6 @@ var staticRenderFns = [
         ]),
       ]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticStyle: {
-          "margin-bottom": "120px",
-          bottom: "0",
-          position: "fixed",
-        },
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "chat-history overflow-22",
-            staticStyle: {
-              overflow: "auto",
-              height: "90vh",
-              "padding-top": "120px",
-            },
-          },
-          [
-            _c("ul", { staticClass: "m-b-0" }, [
-              _c("li", { staticClass: "py-1 d-flex" }, [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col message my-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex justify-content-end" }, [
-                _c("div", { staticClass: "col message other-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "col-auto mx-2 mt-auto",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#0C71C3",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex" }, [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col message my-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex justify-content-end" }, [
-                _c("div", { staticClass: "col message other-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "col-auto mx-2 mt-auto",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#0C71C3",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex" }, [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col message my-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex justify-content-end" }, [
-                _c("div", { staticClass: "col message other-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "col-auto mx-2 mt-auto",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#0C71C3",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex" }, [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col message my-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex justify-content-end" }, [
-                _c("div", { staticClass: "col message other-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "col-auto mx-2 mt-auto",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#0C71C3",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex" }, [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col message my-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex justify-content-end" }, [
-                _c("div", { staticClass: "col message other-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "col-auto mx-2 mt-auto",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#0C71C3",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex" }, [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col message my-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex justify-content-end" }, [
-                _c("div", { staticClass: "col message other-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "col-auto mx-2 mt-auto",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#0C71C3",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex" }, [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col message my-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex justify-content-end" }, [
-                _c("div", { staticClass: "col message other-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "col-auto mx-2 mt-auto",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#0C71C3",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex" }, [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col message my-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex justify-content-end" }, [
-                _c("div", { staticClass: "col message other-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "col-auto mx-2 mt-auto",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#0C71C3",
-                  },
-                }),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex" }, [
-                _c("div", {
-                  staticClass: "col-auto mx-2",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#fff",
-                    border: "1px #70707080 solid",
-                  },
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "col message my-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "py-1 d-flex justify-content-end" }, [
-                _c("div", { staticClass: "col message other-message my-1" }, [
-                  _vm._v(
-                    "\n                                           Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy\n                                           nibh\n                                           euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi\n                                           enim ad\n                                           minim veniam, quis nostrud exerci tation\n                                       "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", {
-                  staticClass: "col-auto mx-2 mt-auto",
-                  staticStyle: {
-                    width: "40px",
-                    height: "40px",
-                    "border-radius": "50%",
-                    "background-color": "#0C71C3",
-                  },
-                }),
-              ]),
-            ]),
-          ]
-        ),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col" }, [
-      _c("textarea", {
-        staticClass: "form-control",
-        attrs: { id: "exampleFormControlTextarea1", rows: "3" },
-      }),
-    ])
   },
 ]
 render._withStripped = true
