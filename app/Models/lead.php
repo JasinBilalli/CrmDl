@@ -50,5 +50,8 @@ class lead extends Model
     public function admin(){
         return $this->belongsTo(Admins::class,'assign_to_id','id');
     }
-    
+    public function pending_reject_lead(){
+        return $this->belongsTo(PendingRejectedLead::class,'lead_id');
+    }
+
 }

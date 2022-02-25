@@ -7815,6 +7815,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -34006,12 +34014,12 @@ var render = function () {
                                                             _vm._m(2, true),
                                                           ]
                                                         ),
+                                                        _vm._v(" "),
+                                                        _vm._m(3, true),
                                                       ]
                                                     ),
                                                   ]
                                                 ),
-                                                _vm._v(" "),
-                                                _vm._m(3, true),
                                               ]
                                             ),
                                           ]
@@ -34046,7 +34054,7 @@ var render = function () {
                                           "form",
                                           {
                                             attrs: {
-                                              action: "rejectedleadsNalt",
+                                              action: "pending_rejectedlead",
                                               method: "post",
                                             },
                                           },
@@ -34122,10 +34130,10 @@ var render = function () {
                                                     }),
                                                     _vm._v(" "),
                                                     _vm._m(4, true),
+                                                    _vm._v(" "),
+                                                    _vm._m(5, true),
                                                   ]
                                                 ),
-                                                _vm._v(" "),
-                                                _vm._m(5, true),
                                               ]
                                             ),
                                           ]
@@ -34160,7 +34168,7 @@ var render = function () {
                                           "form",
                                           {
                                             attrs: {
-                                              action: "rejectedleads",
+                                              action: "pending_rejectedlead",
                                               method: "post",
                                             },
                                           },
@@ -34244,10 +34252,10 @@ var render = function () {
                                                     }),
                                                     _vm._v(" "),
                                                     _vm._m(6, true),
+                                                    _vm._v(" "),
+                                                    _vm._m(7, true),
                                                   ]
                                                 ),
-                                                _vm._v(" "),
-                                                _vm._m(7, true),
                                               ]
                                             ),
                                           ]
@@ -37358,20 +37366,20 @@ var staticRenderFns = [
     return _c(
       "div",
       {
-        staticClass: "modal-footer row mx-5 mb-4",
+        staticClass: "modal-footer m-0",
         staticStyle: {
           "border-top": "none !important",
           display: "block",
-          "padding-top": "0 !important",
+          margin: "0 !important",
         },
       },
       [
         _c(
           "button",
           {
-            staticClass: "btn w-25",
+            staticClass: "btn w-100 m-0 my-3",
             staticStyle: {
-              "background-color": "#4EC590",
+              "background-color": "#0C71C3",
               color: "#fff !important",
             },
             attrs: { type: "submit" },
@@ -37385,8 +37393,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row g-3 align-items-center py-1 mx-5" }, [
-      _c("div", { staticClass: "col-12 text-center" }, [
+    return _c("div", { staticClass: "row mb-3" }, [
+      _c("h5", { staticClass: "modal-title" }, [
+        _c("b", [_vm._v("Reject Lead")]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row py-1 " }, [
+      _c("div", { staticClass: "col-12" }, [
         _c(
           "label",
           { staticClass: "col-form-label", attrs: { for: "inputTxt4" } },
@@ -37395,7 +37413,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
-        _c("input", {
+        _c("textarea", {
           staticClass: "form-control",
           attrs: {
             type: "text",
@@ -37405,44 +37423,50 @@ var staticRenderFns = [
           },
         }),
       ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "modal-footer m-0",
+          staticStyle: {
+            "border-top": "none !important",
+            display: "block",
+            margin: "0 !important",
+          },
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "btn w-100 m-0 my-3",
+              staticStyle: {
+                "background-color": "#0C71C3",
+                color: "#fff !important",
+              },
+              attrs: { type: "submit" },
+            },
+            [_c("b", [_vm._v("Save")])]
+          ),
+        ]
+      ),
     ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal-footer row mx-5 mb-4 d-flex justify-content-center",
-        staticStyle: {
-          "border-top": "none !important",
-          display: "block",
-          "padding-top": "0 !important",
-        },
-      },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn w-25",
-            staticStyle: {
-              "background-color": "#4EC590",
-              color: "#fff !important",
-            },
-            attrs: { type: "submit" },
-          },
-          [_c("b", [_vm._v("Save")])]
-        ),
-      ]
-    )
+    return _c("div", { staticClass: "row mb-3" }, [
+      _c("h5", { staticClass: "modal-title" }, [
+        _c("b", [_vm._v("Pending Lead")]),
+      ]),
+    ])
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row g-3 align-items-center py-1 mx-5" }, [
-      _c("div", { staticClass: "col-12 text-center" }, [
+    return _c("div", { staticClass: "row py-1 " }, [
+      _c("div", { staticClass: "col-12" }, [
         _c(
           "label",
           { staticClass: "col-form-label", attrs: { for: "inputTxt4" } },
@@ -37451,7 +37475,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
-        _c("input", {
+        _c("textarea", {
           staticClass: "form-control",
           attrs: {
             type: "text",
@@ -37461,37 +37485,33 @@ var staticRenderFns = [
           },
         }),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal-footer row mx-5 mb-4 d-flex justify-content-center",
-        staticStyle: {
-          "border-top": "none !important",
-          display: "block",
-          "padding-top": "0 !important",
-        },
-      },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn w-25",
-            staticStyle: {
-              "background-color": "#4EC590",
-              color: "#fff !important",
-            },
-            attrs: { type: "submit" },
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "modal-footer col-12",
+          staticStyle: {
+            "border-top": "none !important",
+            display: "block",
+            margin: "0 !important",
           },
-          [_c("b", [_vm._v("Save")])]
-        ),
-      ]
-    )
+        },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "btn w-100 m-0 my-3",
+              staticStyle: {
+                "background-color": "#0C71C3",
+                color: "#fff !important",
+              },
+              attrs: { type: "submit" },
+            },
+            [_c("b", [_vm._v("Save")])]
+          ),
+        ]
+      ),
+    ])
   },
   function () {
     var _vm = this
