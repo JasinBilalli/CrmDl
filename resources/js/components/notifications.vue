@@ -53,9 +53,9 @@
 <script>
 export default {
     mounted() {
-        this.getmessages();
+        this.getnotifications();
         setInterval(() => {
-            this.getmessages()
+            this.getnotifications()
         }, 350);
     },
     data() {
@@ -69,7 +69,7 @@ export default {
         readall() {
             axios.get(this.url + 'readnotifications');
         },
-        getmessages() {
+        getnotifications() {
             axios.get(this.url + 'getnotifications').then((response) => {
                 this.notifications = [];
                 this.notifications = response.data.notifications;

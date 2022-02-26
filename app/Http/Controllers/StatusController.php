@@ -21,6 +21,9 @@ class StatusController extends Controller
 
            $cnt = 0;
            $msgs = [];
+         $links = [];
+
+         
            /** @var \Webklex\PHPIMAP\Message $message */
            foreach($messages as $message){
                 $msgs[$cnt]['subject'] = $message->getSubject();
@@ -28,6 +31,7 @@ class StatusController extends Controller
                $msgs[$cnt]['body'] =  $message->getHTMLBody();
               $cnt++;
            }
+         
         return view('status',compact('clientss','msgs'));
     }
     public function editclientdata($id){

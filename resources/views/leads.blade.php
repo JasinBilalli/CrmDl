@@ -11,7 +11,7 @@
                             <span class="fs-5 fw-bold">Import Leads</span>
                         </div>
                         <div class="content py-3">
-                            <input type="file" class="form-control" name="" id="file">
+                            <input type="file" class="form-control" name="file" id="file">
                             <input type="submit" class="mt-2 btn py-2"
                                    style="background-color: #4EC590; color: #ffffff; font-weight: bold; border: none; border-radius: 12px;">
                         </div>
