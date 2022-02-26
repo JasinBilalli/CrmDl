@@ -6085,14 +6085,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 // document.getElementById('sendButton').addEventListener('click', function(){
 //     var element = document.getElementById('bchat');
 //     element.scrollTop = element.scrollHeight;
@@ -32656,32 +32648,13 @@ var render = function () {
                       "ul",
                       { staticClass: "m-b-0" },
                       _vm._l(_vm.messages, function (msg) {
-                        return msg.messageable_id != _vm.admin
-                          ? _c("li", { staticClass: "py-1 d-flex" }, [
-                              _c("div", {
-                                staticClass: "col-auto mx-2",
-                                staticStyle: {
-                                  width: "40px",
-                                  height: "40px",
-                                  "border-radius": "50%",
-                                  "background-color": "#fff",
-                                  border: "1px #70707080 solid",
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                { staticClass: "col message my-message my-1 " },
-                                [
-                                  _vm._v(
-                                    "\n                                          " +
-                                      _vm._s(msg.body) +
-                                      "\n                                       "
-                                  ),
-                                ]
-                              ),
-                            ])
-                          : _vm._e()
+                        return _c("li", [
+                          _vm._v(
+                            "\n                                  " +
+                              _vm._s(msg.body) +
+                              "\n                                  "
+                          ),
+                        ])
                       }),
                       0
                     ),

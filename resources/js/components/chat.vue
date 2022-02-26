@@ -35,8 +35,7 @@
                                 style="overflow: auto; height: 90vh; align-items-center; display:flex; padding-top: 140px;">
                                 <li class="clearfix py-2 px-0">
                                     <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about" v-for="notification in notifications">
-                                     
+                                    <div class="about" v-for="notification in notifications">                        
                                         <div class="status py-1 name" style="font-size: 17px;" v-html="notification.data">
                                         </div>
                                     <hr class="m-0 g-0 p-0">
@@ -88,17 +87,10 @@
                             <div class="chat-history overflow-22" id="bchat" 
                                 style="overflow: auto; height: 90vh;padding-top: 120px;">
                               <ul class="m-b-0">
-                                <li v-for="msg in messages" v-if="msg.messageable_id != admin" class="py-1 d-flex">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="col-auto mx-2"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
-                                        </div>
-                                        <div class="col message my-message my-1 ">
-                                           {{msg.body}}
-                                        </div>
-                                    </li>
+                               <li v-for="msg in messages">
+                                   {{msg.body}}
+                                   </li>
+                         
                               </ul>
                             </div>
                         </div>
@@ -239,7 +231,6 @@ headers:{
 
     },
     getmessages() {
-       
       axios
         .get(
           this.url + "getchat/" + this.u1 + "/" + this.u2 + "?page=" + this.pag
