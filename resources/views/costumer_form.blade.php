@@ -1023,77 +1023,90 @@
                                             <span class="fw-bold">Anhänge</span>
                                         </div>
                                         <div class="my-1">
-                                            <label for="">Vorversicherer</label>
-                                            <a style="text-decoration: none; cursor: pointer !important;" href="{{route('showfile',$dataKK->pre_insurer)}}" target="_blank">
-                                                <input
-                                                    type="text" class="form-control"
-                                                    id="file-input-0c" disabled
-                                                    style="background-color: #ffffff; cursor: pointer"
-                                                    value="{{$dataKK->pre_insurer}}"
-                                                >
-                                            </a>
-                                            <label for="">ID Notwending</label>
-                                            <a style="text-decoration: none;" href="{{route('showfile',$dataKK->id_required)}}" target="_blank">
-                                                <input
-                                                    type="text" class="form-control"
-                                                    id="file-input-0c" disabled
-                                                    style="background-color: #ffffff; cursor: pointer"
-                                                    value="{{$dataKK->id_required}}"
-                                                >
-                                            </a>
-                                            <label for="">Kundingung durch</label>
-                                            <a style="text-decoration: none;" href="{{route('showfile',$dataKK->notice_by)}}" target="_blank">
-                                                <input
-                                                    type="text" class="form-control"
-                                                    id="file-input-0c" disabled
-                                                    style="background-color: #ffffff; cursor: pointer"
-                                                    value="{{$dataKK->notice_by}}"
-                                                >
-                                            </a>
-                                            <label for="">Vollmacht</label>
-                                            <a style="text-decoration: none;" href="{{route('showfile',$dataKK->power_of_attorney)}}" target="_blank">
-                                                <input
-                                                    type="text" class="form-control"
-                                                    id="file-input-0c" disabled
-                                                    style="background-color: #ffffff; cursor: pointer"
-                                                    value="{{$dataKK->power_of_attorney}}"
-                                                >
-                                            </a>
+                                            @if($dataKK->pre_insurer != null)
+                                                <label for="">Vorversicherer</label>
+                                                <a style="text-decoration: none; cursor: pointer !important;" href="{{route('showfile',$dataKK->pre_insurer)}}" target="_blank">
+                                                    <input
+                                                        type="text" class="form-control"
+                                                        id="file-input-0c" disabled
+                                                        style="background-color: #ffffff; cursor: pointer"
+                                                        value="{{$dataKK->pre_insurer}}"
+                                                    >
+                                                </a>
+                                            @endif
+                                            @if($dataKK->id_required != null)
+                                                <label for="">ID Notwending</label>
+                                                <a style="text-decoration: none;" href="{{route('showfile',$dataKK->id_required)}}" target="_blank">
+                                                    <input
+                                                        type="text" class="form-control"
+                                                        id="file-input-0c" disabled
+                                                        style="background-color: #ffffff; cursor: pointer"
+                                                        value="{{$dataKK->id_required}}"
+                                                    >
+                                                </a>
+                                            @endif
+                                            @if($dataKK->notice_by != null)
+                                                <label for="">Kundingung durch</label>
+                                                <a style="text-decoration: none;" href="{{route('showfile',$dataKK->notice_by)}}" target="_blank">
+                                                    <input
+                                                        type="text" class="form-control"
+                                                        id="file-input-0c" disabled
+                                                        style="background-color: #ffffff; cursor: pointer"
+                                                        value="{{$dataKK->notice_by}}"
+                                                    >
+                                                </a>
+                                            @endif
+                                            @if($dataKK->power_of_attorney != null)
+                                                <label for="">Vollmacht</label>
+                                                <a style="text-decoration: none;" href="{{route('showfile',$dataKK->power_of_attorney)}}" target="_blank">
+                                                    <input
+                                                        type="text" class="form-control"
+                                                        id="file-input-0c" disabled
+                                                        style="background-color: #ffffff; cursor: pointer"
+                                                        value="{{$dataKK->power_of_attorney}}"
+                                                    >
+                                                </a>
+                                            @endif
                                         </div>
                                         <div class="my-1">
-                                            <label for="">Gegenofferte:</label>
-                                            <a style="text-decoration: none;" href="{{route('showfile',$dataFahrzeug->upload_police)}}" target="_blank">
-                                                <input
-                                                    type="text" class="form-control"
-                                                    id="file-input-0c" disabled
-                                                    style="background-color: #ffffff; cursor: pointer"
-                                                    value="{{$dataFahrzeug->upload_police}}"
-                                                >
-                                            </a>
+                                            @if($dataFahrzeug->upload_police != null)
+                                                <label for="">Gegenofferte:</label>
+                                                <a style="text-decoration: none;" href="{{route('showfile',$dataFahrzeug->upload_police)}}" target="_blank">
+                                                    <input
+                                                        type="text" class="form-control"
+                                                        id="file-input-0c" disabled
+                                                        style="background-color: #ffffff; cursor: pointer"
+                                                        value="{{$dataFahrzeug->upload_police}}"
+                                                    >
+                                                </a>
+                                            @endif
                                         </div>
                                         <div class="my-1">
-                                            <label for="">Neues Fahrzeug:</label>
-                                            <a style="text-decoration: none;" href="{{route('showfile',$dataFahrzeug->vehicle_id)}}" target="_blank">
-                                                <input
-                                                    type="text" class="form-control"
-                                                    id="file-input-0c" disabled
-                                                    style="background-color: #ffffff; cursor: pointer"
-                                                    value="{{$dataFahrzeug->vehicle_id}}"
-                                                >
-                                            </a>
+                                            @if($dataFahrzeug->vehicle_id != null)
+                                                <label for="">Neues Fahrzeug:</label>
+                                                <a style="text-decoration: none;" href="{{route('showfile',$dataFahrzeug->vehicle_id)}}" target="_blank">
+                                                    <input
+                                                        type="text" class="form-control"
+                                                        id="file-input-0c" disabled
+                                                        style="background-color: #ffffff; cursor: pointer"
+                                                        value="{{$dataFahrzeug->vehicle_id}}"
+                                                    >
+                                                </a>
+                                            @endif
                                         </div>
                                         <div class="my-1">
-                                            <label for="">Gegenofferte (Hausrat- & Privathaftpflicht):</label>
-                                            <a style="text-decoration: none;" href="{{route('showfile',$dataPrevention->upload_police)}}" target="_blank">
-                                                <input
-                                                    type="text" class="form-control"
-                                                    id="file-input-0c" disabled
-                                                    style="background-color: #ffffff; cursor: pointer"
-                                                    value="{{$dataPrevention->upload_police}}"
-                                                >
-                                            </a>
+                                            @if($dataPrevention->upload_police != null)
+                                                <label for="">Gegenofferte (Hausrat- & Privathaftpflicht):</label>
+                                                <a style="text-decoration: none;" href="{{route('showfile',$dataPrevention->upload_police)}}" target="_blank">
+                                                    <input
+                                                        type="text" class="form-control"
+                                                        id="file-input-0c" disabled
+                                                        style="background-color: #ffffff; cursor: pointer"
+                                                        value="{{$dataPrevention->upload_police}}"
+                                                    >
+                                                </a>
+                                            @endif
                                         </div>
-
                                     </div>
                                 </div>
                                 <div class="text-center mt-3 pb-3">
