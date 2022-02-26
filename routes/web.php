@@ -130,7 +130,7 @@ $leadinfo = lead_info::where('lead_id',$leads['leads'][$i]->id)->first();
       route::post('completeapp/{id}',[UserController::class,'completeapp'])->name('completeapp');
     route::get('dealnotclosed/{id}',[UserController::class,'dealnotclosed'])->name('dealnotclosed');
     route::post('rejectedleads',[UserController::class,'rejectedleads'])->name('rejectedleads');
-    route::post('rejectedleadsNalt',[UserController::class,'rejectedleadsNalt'])->name('rejectedleadsNalt');
+    route::post('pending_rejectedlead',[UserController::class,'pending_rejectedlead'])->name('pending_rejectedlead');
     route::post('rejectlead/{id}',[UserController::class,'rejectlead'])->name('rejectlead');
     route::get('addnewuser',[UserController::class,'addnewuser'])->name('addnewuser');
     route::post('registernewuser',[UserController::class,'registernewuser'])->name('registernewuser');
