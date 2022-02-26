@@ -287,4 +287,7 @@ route::get('getnotifications',function(){
 route::get('readnotifications',function(){
 Auth::user()->unreadNotifications->markAsRead();
 });
+route::get('getrole',function(){
+ return Auth::user()->getRoleNames()[0];
+});
 

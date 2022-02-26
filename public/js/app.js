@@ -6093,14 +6093,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 // document.getElementById('sendButton').addEventListener('click', function(){
 //     var element = document.getElementById('bchat');
 //     element.scrollTop = element.scrollHeight;
@@ -6119,38 +6111,50 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.getmessages();
-    this.getnotifications();
-    setInterval(function () {
-      _this.getmessages();
-    }, 330);
+    this.getnotifications(); // setInterval(() => {
+    //   this.getmessages()
+    // }, 330);
+
     axios.get(this.url + 'getadmin').then(function (response) {
       _this.admin = response.data;
     });
   },
   methods: {
     search: function search() {
+      var _this2 = this;
+
       this.getnotifications();
       var sn = document.getElementById('sn').value;
 
-      if (sn != '' || sn != null && this.yes) {
-        var filtered = this.notifications.filter(function (item) {
-          return item.data.indexOf(sn) >= 0;
+      if (sn != '' || sn != null) {
+        sn = sn.toLowerCase();
+        axios.get(this.url + 'getnotifications').then(function (response) {
+          _this2.notifications = [];
+          _this2.notifications = response.data.notifications;
+
+          var filtered = _this2.notifications.filter(function (item) {
+            return item.data.toLowerCase().indexOf(sn) >= 0;
+          });
+
+          _this2.notifications = filtered;
         });
-        this.notifications = filtered;
+      } else {
+        axios.get(this.url + 'getnotifications').then(function (response) {
+          _this2.notifications = [];
+          _this2.notifications = response.data.notifications;
+        });
       }
     },
     readall: function readall() {
       axios.get(this.url + 'readnotifications');
     },
     getnotifications: function getnotifications() {
-      var _this2 = this;
+      var _this3 = this;
 
-      this.yes = false;
       axios.get(this.url + 'getnotifications').then(function (response) {
-        _this2.notifications = [];
-        _this2.notifications = response.data.notifications;
+        _this3.notifications = [];
+        _this3.notifications = response.data.notifications;
       });
-      this.yes = true;
     },
     sendmessage: function sendmessage() {
       if (document.getElementById('file-inp-4').value == '' || document.getElementById('file-inp-4').value == null) {
@@ -6169,17 +6173,15 @@ __webpack_require__.r(__webpack_exports__);
       $('#bchat').scrollTop($('#bchat')[0].scrollHeight);
     },
     getmessages: function getmessages() {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.get(this.url + "getchat/" + this.u1 + "/" + this.u2 + "?page=" + this.pag).then(function (response) {
-        _this3.messages = [];
-        _this3.cnt = response.data.total;
+        _this4.messages = [];
+        _this4.cnt = response.data.total;
         var cntt = 0; // if(this.messages.length == 0){
 
-        for (var i = 0; i < _this3.cnt; i++) {
-          _this3.messages.push(response.data.data[i]);
-
-          _this3.messages[i].created_at = new Date(_this3.messages[i].created_at);
+        for (var i = 0; i < _this4.cnt; i++) {
+          _this4.messages.push(response.data.data[i]);
         }
       });
     }
@@ -32652,10 +32654,7 @@ var render = function () {
                   [
                     _c(
                       "ul",
-                      {
-                        staticClass: "m-b-0",
-                        staticStyle: { "padding-bottom": "30px" },
-                      },
+                      { staticClass: "m-b-0" },
                       _vm._l(_vm.messages, function (msg) {
                         return msg.messageable_id != _vm.admin
                           ? _c("li", { staticClass: "py-1 d-flex" }, [
@@ -32682,38 +32681,7 @@ var render = function () {
                                 ]
                               ),
                             ])
-                          : _c(
-                              "li",
-                              {
-                                staticClass: "py-1 d-flex justify-content-end",
-                              },
-                              [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "col message other-message my-1",
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                                           " +
-                                        _vm._s(msg.body) +
-                                        "\n                                       "
-                                    ),
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("div", {
-                                  staticClass: "col-auto mx-2 mt-auto",
-                                  staticStyle: {
-                                    width: "40px",
-                                    height: "40px",
-                                    "border-radius": "50%",
-                                    "background-color": "#0C71C3",
-                                  },
-                                }),
-                              ]
-                            )
+                          : _vm._e()
                       }),
                       0
                     ),
@@ -32789,70 +32757,80 @@ var render = function () {
                   _c("br"),
                   _vm._v(" "),
                   _c(
-                    "button",
+                    "div",
                     {
-                      staticClass:
-                        "btn send-button px-2 py-2 px-md-3 m-md-1 py-md-1 w-100",
-                      attrs: { type: "button" },
+                      staticClass: "text-center",
+                      staticStyle: { cursor: "pointer" },
                     },
                     [
-                      _c("label", { attrs: { for: "file-inp-4" } }, [
-                        _c("span", { staticClass: "desktop-send" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "text-center",
+                          attrs: { for: "file-inp-4" },
+                        },
+                        [
                           _c(
-                            "svg",
-                            {
-                              staticClass: "bi bi-file-earmark-image",
-                              attrs: {
-                                xmlns: "http://www.w3.org/2000/svg",
-                                width: "22",
-                                fill: "currentColor",
-                                viewBox: "0 0 16 16",
-                              },
-                            },
+                            "span",
+                            { staticClass: "desktop-send text-center" },
                             [
-                              _c("path", {
-                                attrs: {
-                                  d: "M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z",
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "bi bi-file-earmark-image",
+                                  attrs: {
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    width: "28",
+                                    fill: "currentColor",
+                                    viewBox: "0 0 16 16",
+                                  },
                                 },
-                              }),
-                              _vm._v(" "),
-                              _c("path", {
-                                attrs: {
-                                  d: "M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z",
-                                },
-                              }),
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      d: "M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _c("path", {
+                                    attrs: {
+                                      d: "M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z",
+                                    },
+                                  }),
+                                ]
+                              ),
                             ]
                           ),
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "mobile-send" }, [
-                          _c(
-                            "svg",
-                            {
-                              staticClass: "bi bi-file-earmark-image",
-                              attrs: {
-                                xmlns: "http://www.w3.org/2000/svg",
-                                width: "25",
-                                fill: "currentColor",
-                                viewBox: "0 0 16 16",
+                          _vm._v(" "),
+                          _c("span", { staticClass: "mobile-send" }, [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "bi bi-file-earmark-image",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  width: "28",
+                                  fill: "currentColor",
+                                  viewBox: "0 0 16 16",
+                                },
                               },
-                            },
-                            [
-                              _c("path", {
-                                attrs: {
-                                  d: "M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z",
-                                },
-                              }),
-                              _vm._v(" "),
-                              _c("path", {
-                                attrs: {
-                                  d: "M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z",
-                                },
-                              }),
-                            ]
-                          ),
-                        ]),
-                      ]),
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d: "M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z",
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c("path", {
+                                  attrs: {
+                                    d: "M14 14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5V14zM4 1a1 1 0 0 0-1 1v10l2.224-2.224a.5.5 0 0 1 .61-.075L8 11l2.157-3.02a.5.5 0 0 1 .76-.063L13 10V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4z",
+                                  },
+                                }),
+                              ]
+                            ),
+                          ]),
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("input", {
                         attrs: { type: "file", id: "file-inp-4" },
