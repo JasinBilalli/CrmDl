@@ -87,8 +87,8 @@
                          <div class="" style="margin-bottom: 120px; bottom: 0;">
                             <div class="chat-history overflow-22" id="bchat" 
                                 style="overflow: auto; height: 90vh;padding-top: 120px;">
-                                <ul class="m-b-0" style=" padding-bottom: 30px;">
-                                    <li v-for="msg in messages" v-if="msg.messageable_id != admin" class="py-1 d-flex">
+                              <ul class="m-b-0">
+                                <li v-for="msg in messages" v-if="msg.messageable_id != admin" class="py-1 d-flex">
                                         <!-- <div class="message-data">
                                             <span class="message-data-time">10:12 AM, Today</span>
                                         </div> -->
@@ -99,16 +99,7 @@
                                            {{msg.body}}
                                         </div>
                                     </li>
-                                    <li class="py-1 d-flex justify-content-end" v-else>
-                                        <div class="col message other-message my-1">
-                                            {{msg.body}}
-                                        </div>
-                                        <div class="col-auto mx-2 mt-auto"
-                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
-                                        </div>
-                                    </li> 
-                                 
-                                </ul>
+                              </ul>
                             </div>
                         </div>
                         <div class="chat-message fixed-bottom p-3">
@@ -128,12 +119,12 @@
                                         </span>
                                     </button>
                                     <br>
-                                    <button type="button" class="btn send-button px-2 py-2 px-md-3 m-md-1 py-md-1 w-100">
-                                       
-                                        <label for="file-inp-4">
-                                           <span class="desktop-send">
+                                  
+                                       <div class="text-center" style="cursor:pointer;">
+                                        <label for="file-inp-4" class="text-center">
+                                           <span class="desktop-send text-center">
                                             
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" fill="currentColor"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" fill="currentColor"
                                                 class="bi bi-file-earmark-image" viewBox="0 0 16 16">
                                                 <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
                                                 <path
@@ -141,7 +132,7 @@
                                             </svg>
                                         </span>
                                         <span class="mobile-send">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="28" fill="currentColor"
                                                 class="bi bi-file-earmark-image" viewBox="0 0 16 16">
                                                 <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
                                                 <path
@@ -150,7 +141,8 @@
                                         </span>
                                         </label>
                                         <input type="file" id="file-inp-4">
-                                    </button>
+                                        </div>
+                                   
                                 </div>
                                 <!-- <span class="form-control input-text-22" id="exampleFormControlTextarea1" contenteditable
                                     placeholder="Enter text here..." rows=" "></span> -->
@@ -181,9 +173,9 @@ export default {
   mounted() {
     this.getmessages();
       this.getnotifications();
-    setInterval(() => {
-      this.getmessages()
-    }, 330);
+    // setInterval(() => {
+    //   this.getmessages()
+    // }, 330);
     axios.get(this.url + 'getadmin').then((response) => { this.admin = response.data;});
     
   },
@@ -191,22 +183,32 @@ export default {
       search(){
                 this.getnotifications();
 var sn = document.getElementById('sn').value;
-                 if(sn != '' || sn != null && this.yes) {
-         var filtered =  this.notifications.filter(item => item.data.indexOf(sn) >= 0);
-         this.notifications = filtered;
+                 if(sn != '' || sn != null) {
+                     sn = sn.toLowerCase();
+                       axios.get(this.url + 'getnotifications').then((response) => {
+                this.notifications = [];
+                this.notifications = response.data.notifications;
+                var filtered =  this.notifications.filter(item => item.data.toLowerCase().indexOf(sn) >= 0);
+                this.notifications = filtered;
+            });
                  }
-  
+                 else{
+                     axios.get(this.url + 'getnotifications').then((response) => {
+                this.notifications = [];
+                this.notifications = response.data.notifications;
+            });
+                 }
       },
       readall() {
             axios.get(this.url + 'readnotifications');
         },
         getnotifications() {
-            this.yes = false;
+         
             axios.get(this.url + 'getnotifications').then((response) => {
                 this.notifications = [];
                 this.notifications = response.data.notifications;
             });
-            this.yes = true;
+         
         },
     sendmessage() {
       if(document.getElementById('file-inp-4').value == '' || document.getElementById('file-inp-4').value == null){
@@ -250,7 +252,6 @@ headers:{
           // if(this.messages.length == 0){
           for (let i = 0; i < this.cnt; i++) {
             this.messages.push(response.data.data[i]);
-            this.messages[i].created_at = new Date(this.messages[i].created_at);
           }
         });
 
