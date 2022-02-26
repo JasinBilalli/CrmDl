@@ -518,23 +518,22 @@
     {{--    mobile--}}
 
     <div class="mobile-kunden container-fluid px-2">
-        <div class="header py-4 my-2">
+        <div class="header py-4 my-2 mx-3">
             <span class="fs-1 fw-bold" style="color:#535353;">Kundenportfolio</span>
         </div>
-        <div class="filters">
+        <div class="filters mx-3">
             <div class="row">
-                <div class="col-12 my-2" id="inputShow">
+                <div class="col-12  g-0" id="inputShow">
                     <form method="post" action="{{route('search')}}">
                         @csrf
                         <div class="input-group">
-
                             <input type="text" class="form-control" name="searchname"
                                    placeholder="Suche (Kundenname, Vert )">
                         </div>
                     </form>
                 </div>
-                <div class="col-6" id="inputPress" onclick="NanaBleronit();">
-                    <div class="search-filter p-2 text-center">
+                <div class="col-6 g-0 " id="inputPress" onclick="NaBleronit();">
+                    <div class="search-filter  m-1 py-2 text-center">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="#C5C7CD" class="bi bi-search"
                                  viewBox="0 0 16 16">
@@ -544,20 +543,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col" id="ascDscSort">
-                    <div class="date-filter p-2 text-center">
+                <div class="col g-0 " id="ascDscSort">
+
                         <a href="{{route('searchword')}}" style="text-decoration: none;color: #434343;cursor: pointer"
-                           class="px-2 my-auto fw-600 border-0">
-                            <svg width="27" viewBox="0 0 27 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M1.04553 3.86903L5.00958 0.922532C5.31924 0.692453 5.82153 0.692526 6.13099 0.922532L10.0949 3.86903C10.594 4.23991 10.2386 4.87501 9.53416 4.87501H7.15625V16.6607C7.15625 16.9862 6.80124 17.25 6.36328 17.25H4.77734C4.33937 17.25 3.98437 16.9862 3.98437 16.6607V4.87501H1.60626C0.900466 4.87501 0.547496 4.23918 1.04553 3.86903ZM12.707 3.10716H25.3945C25.8325 3.10716 26.1875 2.84334 26.1875 2.51787V1.3393C26.1875 1.01383 25.8325 0.750018 25.3945 0.750018H12.707C12.2691 0.750018 11.9141 1.01383 11.9141 1.3393V2.51787C11.9141 2.84334 12.2691 3.10716 12.707 3.10716ZM11.9141 7.23215V6.05358C11.9141 5.72811 12.2691 5.4643 12.707 5.4643H22.2227C22.6606 5.4643 23.0156 5.72811 23.0156 6.05358V7.23215C23.0156 7.55762 22.6606 7.82144 22.2227 7.82144H12.707C12.2691 7.82144 11.9141 7.55762 11.9141 7.23215ZM11.9141 16.6607V15.4821C11.9141 15.1567 12.2691 14.8929 12.707 14.8929H15.8789C16.3169 14.8929 16.6719 15.1567 16.6719 15.4821V16.6607C16.6719 16.9862 16.3169 17.25 15.8789 17.25H12.707C12.2691 17.25 11.9141 16.9862 11.9141 16.6607ZM11.9141 11.9464V10.7679C11.9141 10.4424 12.2691 10.1786 12.707 10.1786H19.0508C19.4887 10.1786 19.8437 10.4424 19.8437 10.7679V11.9464C19.8437 12.2719 19.4887 12.5357 19.0508 12.5357H12.707C12.2691 12.5357 11.9141 12.2719 11.9141 11.9464Z"
-                                    fill="#C5C7CD"/>
+                           class="">
+                            <div class="date-filter m-1 py-2  text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="#C5C7CD" class="bi bi-sort-down" viewBox="0 0 16 16">
+                                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
                             </svg>
+                            </div>
                         </a>
-                    </div>
+
                 </div>
-                <div class="col" id="filterSort">
-                    <div class="sort-filter p-2 text-center">
+                <div class="col pe-0" id="filterSort">
+                    <div class="sort-filter  m-1 py-2 text-center">
                         <div class="dropdown ">
                             <button class="dropdown-toggle border-0 bg-transparent" type="button"
                                     id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -630,7 +629,7 @@
                         $datId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                         @endphp
 
-                        <div class="content-box my-2 mx-1 px-1 px-2 py-2">
+                        <div class="content-box my-2 mx-3 px-1 px-2 py-2">
                             <div class="top">
                                 @if(Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('salesmanager'))
                                     @if($family_person[$i]->kundportfolio == 0)
@@ -687,38 +686,38 @@
                                                         @endif
                                                     @endforeach
                                                     @if($offen > 0)
-                                                        <div class="status-check bg-warning">
+                                                        <div class="status-check bg-warning  py-1">
                                                             <span>OFFEN</span>
                                                         </div>
                                                     @else
-                                                        <div class="status-check bg-success">
+                                                        <div class="status-check bg-success py-1">
                                                             <span>PROVISIONERT</span>
                                                         </div>
                                                     @endif
                                                 @else
 
                                                 @if($grundversicherungP[$i]->status_PG == 'Aufgenomen')
-                                                    <div class="status-check greencol">
+                                                    <div class="status-check greencol py-1">
                                                         <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($grundversicherungP[$i]->status_PG == 'Offen')
-                                                    <div class="status-check bg-warning">
+                                                    <div class="status-check bg-warning py-1">
                                                         <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($grundversicherungP[$i]->status_PG == 'Provisionert')
-                                                    <div class="status-check bg-success">
+                                                    <div class="status-check bg-success py-1">
                                                         <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($grundversicherungP[$i]->status_PG == 'Zuruckgezogen')
-                                                    <div class="status-check bg-secondary">
+                                                    <div class="status-check bg-secondary py-1">
                                                         <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($grundversicherungP[$i]->status_PG == 'Abgelehnt')
-                                                    <div class="status-check bg-danger">
+                                                    <div class="status-check bg-danger py-1">
                                                         <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
                                                     </div>
                                                 @endif
@@ -740,23 +739,23 @@
                                             </div>
                                             <div class="col-6">
                                                 @if($retchsschutzP[$i]->status_PR == 'Aufgenomen')
-                                                    <div class="status-check greencol">
+                                                    <div class="status-check greencol py-1">
                                                         <span>{{strtoupper($retchsschutzP[$i]->status_PR)}}</span></div>
                                                 @endif
                                                 @if($retchsschutzP[$i]->status_PR == 'Offen')
-                                                    <div class="status-check bg-warning">
+                                                    <div class="status-check bg-warning py-1">
                                                         <span>{{strtoupper($retchsschutzP[$i]->status_PR)}}</span></div>
                                                 @endif
                                                 @if($retchsschutzP[$i]->status_PR == 'Provisionert')
-                                                    <div class="status-check bg-success">
+                                                    <div class="status-check bg-success py-1">
                                                         <span>{{strtoupper($retchsschutzP[$i]->status_PR)}}</span></div>
                                                 @endif
                                                 @if($retchsschutzP[$i]->status_PR == 'Zuruckgezogen')
-                                                    <div class="status-check bg-secondary">
+                                                    <div class="status-check bg-secondary py-1">
                                                         <span>{{strtoupper($retchsschutzP[$i]->status_PR)}}</span></div>
                                                 @endif
                                                 @if($retchsschutzP[$i]->status_PR == 'Abgelehnt')
-                                                    <div class="status-check bg-danger">
+                                                    <div class="status-check bg-danger py-1">
                                                         <span>{{strtoupper($retchsschutzP[$i]->status_PR)}}</span></div>
                                                 @endif
                                             </div>
@@ -776,23 +775,23 @@
                                             </div>
                                             <div class="col-6">
                                                 @if($vorsorgeP[$i]->status_PV == 'Aufgenomen')
-                                                    <div class="status-check greencol">
+                                                    <div class="status-check greencol py-1">
                                                         <span>{{strtoupper($vorsorgeP[$i]->status_PV)}}</span></div>
                                                 @endif
                                                 @if($vorsorgeP[$i]->status_PV == 'Offen')
-                                                    <div class="status-check bg-warning">
+                                                    <div class="status-check bg-warning py-1">
                                                         <span>{{strtoupper($vorsorgeP[$i]->status_PV)}}</span></div>
                                                 @endif
                                                 @if($vorsorgeP[$i]->status_PV == 'Provisionert')
-                                                    <div class="status-check bg-success">
+                                                    <div class="status-check bg-success py-1">
                                                         <span>{{strtoupper($vorsorgeP[$i]->status_PV)}}</span></div>
                                                 @endif
                                                 @if($vorsorgeP[$i]->status_PV == 'Zuruckgezogen')
-                                                    <div class="status-check bg-secondary">
+                                                    <div class="status-check bg-secondary py-1">
                                                         <span>{{strtoupper($vorsorgeP[$i]->status_PV)}}</span></div>
                                                 @endif
                                                 @if($vorsorgeP[$i]->status_PV == 'Abgelehnt')
-                                                    <div class="status-check bg-danger">
+                                                    <div class="status-check bg-danger py-1">
                                                         <span>{{strtoupper($vorsorgeP[$i]->status_PV)}}</span></div>
                                                 @endif
                                             </div>
@@ -820,37 +819,37 @@
                                                         @endif
                                                     @endforeach
                                                     @if($offen > 0)
-                                                        <div class="status-check bg-warning">
+                                                        <div class="status-check bg-warning py-1">
                                                             <span>OFFEN</span>
                                                         </div>
                                                     @else
-                                                        <div class="status-check bg-success">
+                                                        <div class="status-check bg-success py-1">
                                                             <span>PROVISIONERT</span>
                                                         </div>
                                                     @endif
                                                 @else
                                                 @if($zusatzversicherungP[$i]->status_PZ == 'Aufgenomen')
-                                                    <div class="status-check greencol">
+                                                    <div class="status-check greencol py-1">
                                                         <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($zusatzversicherungP[$i]->status_PZ == 'Offen')
-                                                    <div class="status-check bg-warning">
+                                                    <div class="status-check bg-warning py-1">
                                                         <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($zusatzversicherungP[$i]->status_PZ == 'Provisionert')
-                                                    <div class="status-check bg-success">
+                                                    <div class="status-check bg-success py-1">
                                                         <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($zusatzversicherungP[$i]->status_PZ == 'Zuruckgezogen')
-                                                    <div class="status-check bg-secondary">
+                                                    <div class="status-check bg-secondary py-1">
                                                         <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($zusatzversicherungP[$i]->status_PZ == 'Abgelehnt')
-                                                    <div class="status-check bg-danger">
+                                                    <div class="status-check bg-danger py-1">
                                                         <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
                                                     </div>
                                                 @endif
@@ -872,27 +871,27 @@
                                             </div>
                                             <div class="col-6">
                                                 @if($autoversicherungP[$i]->status_PA == 'Aufgenomen')
-                                                    <div class="status-check greencol">
+                                                    <div class="status-check greencol py-1">
                                                         <span>{{strtoupper($autoversicherungP[$i]->status_PA)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($autoversicherungP[$i]->status_PA == 'Offen')
-                                                    <div class="status-check bg-warning">
+                                                    <div class="status-check bg-warning py-1">
                                                         <span>{{strtoupper($autoversicherungP[$i]->status_PA)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($autoversicherungP[$i]->status_PA == 'Provisionert')
-                                                    <div class="status-check bg-success">
+                                                    <div class="status-check bg-success py-1">
                                                         <span>{{strtoupper($autoversicherungP[$i]->status_PA)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($autoversicherungP[$i]->status_PA == 'Zuruckgezogen')
-                                                    <div class="status-check bg-secondary">
+                                                    <div class="status-check bg-secondary py-1">
                                                         <span>{{strtoupper($autoversicherungP[$i]->status_PA)}}</span>
                                                     </div>
                                                 @endif
                                                 @if($autoversicherungP[$i]->status_PA == 'Abgelehnt')
-                                                    <div class="status-check bg-danger">
+                                                    <div class="status-check bg-danger py-1">
                                                         <span>{{strtoupper($autoversicherungP[$i]->status_PA)}}</span>
                                                     </div>
                                                 @endif
@@ -912,23 +911,23 @@
                                             </div>
                                             <div class="col-6">
                                                 @if($hausratP[$i]->status_PH == 'Aufgenomen')
-                                                    <div class="status-check greencol">
+                                                    <div class="status-check greencol py-1">
                                                         <span>{{strtoupper($hausratP[$i]->status_PH)}}</span></div>
                                                 @endif
                                                 @if($hausratP[$i]->status_PH == 'Offen')
-                                                    <div class="status-check bg-warning">
+                                                    <div class="status-check bg-warning py-1">
                                                         <span>{{strtoupper($hausratP[$i]->status_PH)}}</span></div>
                                                 @endif
                                                 @if($hausratP[$i]->status_PH == 'Provisionert')
-                                                    <div class="status-check bg-success">
+                                                    <div class="status-check bg-success py-1">
                                                         <span>{{strtoupper($hausratP[$i]->status_PH)}}</span></div>
                                                 @endif
                                                 @if($hausratP[$i]->status_PH == 'Zuruckgezogen')
-                                                    <div class="status-check bg-secondary">
+                                                    <div class="status-check bg-secondary py-1">
                                                         <span>{{strtoupper($hausratP[$i]->status_PH)}}</span></div>
                                                 @endif
                                                 @if($hausratP[$i]->status_PH == 'Abgelehnt')
-                                                    <div class="status-check bg-danger">
+                                                    <div class="status-check bg-danger py-1">
                                                         <span>{{strtoupper($hausratP[$i]->status_PH)}}</span></div>
                                                 @endif
                                             </div>
@@ -946,7 +945,7 @@
 
 
     <script>
-        function NanaBleronit() {
+        function NaBleronit() {
             document.getElementById("inputPress").style.display = "none";
             document.getElementById("inputShow").style.display = "block";
             document.getElementById("ascDscSort").classList.remove('col');
@@ -1149,6 +1148,14 @@
         font-weight: bold;
         text-align: center;
         border-radius: 33px;
+    }
+    @media (max-width: 575.98px) {
+        .status-check {
+            font-size: 11px;
+        }
+        .title-status {
+            font-size: 13px;
+        }
     }
 
     .aufg-s {
