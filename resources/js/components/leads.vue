@@ -443,8 +443,6 @@
             </div>
         </div>
     </section>
-
-
         <section v-else>
             <div class="container-fluid p-0">
                 <div class="row">
