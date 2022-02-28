@@ -49,10 +49,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\URL;
-
-
-
 use function Clue\StreamFilter\fun;
+
 
 route::prefix('')->middleware('confirmcode')->group(function(){
    route::get('addlead',function(){
@@ -240,10 +238,9 @@ route::get('file/{file?}',function($file = null,Request $request){
            return $response;
         }
         else{
-
            return $request->session()->get('_previous');
         }
-})->middleware('role:admin|backoffice|salesmanager|management,admins')->name('showfile');
+})->middleware('role:admin|backoffice|salesmanager|management|fs,admins')->name('showfile');
 });
 Route::get('Appointments', 'App\Http\Controllers\AppointmentsController@index')->name('Appointments');
 Route::get('Dropajax', 'App\Http\Controllers\AppointmentsController@Dropajax')->name('Dropajax');
@@ -275,7 +272,7 @@ route::get('fsadmins',[TodoController::class,'fsadmins']);
 route::post('rejectupdate',[LeadDataController::class,'rejectupdate'])->name('rejectupdate');
 route::get('getnotifications',function(){
    $cnt = 0;
-   foreach(Auth::user()->notifications()->orderBy('created_at','desc')->paginate(100) as $not){
+   foreach(Auth::user()->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at','notifications.notifiable_id')->paginate(70) as $not){
       $data['notifications'][$cnt] = $not;
       $obj = Carbon::parse($not->created_at);
       $data['notifications'][$cnt]['data'] = $data['notifications'][$cnt]['data'] . '    ' . $obj->format('m.d H:i');

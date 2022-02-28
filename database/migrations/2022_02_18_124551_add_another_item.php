@@ -13,11 +13,14 @@ class AddAnotherItem extends Migration
      */
     public function up()
     {
+       
         Schema::create('add_another_item_g', function (Blueprint $table) {
             $table->id();
+            
             $table->string('upload_policeFahrzeug')->nullable();
             $table->string('comparison_type')->nullable();
             $table->string('commentFahrenzug')->nullable();
+            $table->string('offer')->nullable();
             $table->integer('person_id');
             $table->timestamps();
         });

@@ -14,10 +14,7 @@ class LeadDataFahrzeug extends Migration
     public function up()
     {
         //
-        Schema::table('lead_data_fahrzeug',function(Blueprint $table){
-            $table->drop('lead_data_fahrzeug');
-        }
-    );
+
         Schema::create('lead_data_fahrzeug',function(Blueprint $table){
             $table->id();
             $table->integer('leads_id'); //Foreign Key
@@ -48,6 +45,7 @@ class LeadDataFahrzeug extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
             $table->string('first_intro')->nullable();
+            $table->string('offer')->nullable();
         });
     }
 

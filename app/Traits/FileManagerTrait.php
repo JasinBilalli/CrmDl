@@ -16,12 +16,5 @@ trait FileManagerTrait
         return $fileName . '.' . $ext;
     }
 
-    public function getFile($fileName, $folderName)
-    {
-        if ($fileName) {
-            return url('storage/' . $folderName . '/' . $fileName);
-        } else {
-            return null;
-        }
-    }
+
 }

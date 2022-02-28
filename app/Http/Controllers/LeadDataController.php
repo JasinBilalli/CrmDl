@@ -106,6 +106,7 @@ return redirect()->route('tasks');
                 'comment' => $request->comment
             ]);
             LeadDataFahrzeug::create([
+               
                 'mandatiert' => $request->mandatiert ? $this->storeFile($request->mandatiert, FolderPaths::KK_FILES) : null,
                 'leads_id' => $leadId,
                 'person_id' => $personId,
@@ -132,7 +133,8 @@ return redirect()->route('tasks');
                 'parking_damage' => $request->parking_damage,
                 'hour_breakdown_assistance' => $request->hour_breakdown_assistance,
                 'comment' => $request->commentFahrenzug,
-                'first_intro' => $request->first_intro
+                'first_intro' => $request->first_intro,
+                'offer' => $request->hasFile('offer') ? $this->storeFile($request->offer,FolderPaths::KK_FILES) : null
             ]);
             LeadDataThings::create([
                 'leads_id' => $leadId,
@@ -179,6 +181,7 @@ newgegen::create([
     'comparison_type' => $request->input('comparison_type' . $i) ? $request->input('comparison_type' . $i) : null,
     'upload_policeFahrzeug' => $request->hasFile('upload_policeFahrzeug' . $i) ? $this->storeFile($file, FolderPaths::KK_FILES) : null,
     'commentFahrenzug' => $request->input('commentFahrenzug' . $i) ? $request->input('commentFahrenzug' . $i) : "",
+    'offer' => $request->file('offer'. $i) ? $this->storeFile($request->file('offer' . $i),FolderPaths::KK_FILES) : "",
     'person_id' => $personId
 ]);
 }
@@ -261,13 +264,12 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
     for($i = 0; $i< $count; $i++){
         $curr = $i+1;
  if(isset($gegen[$i])){
-
-                    $file = $request->file('upload_policeFahrzeug'. $curr);
+                   $file = $request->file('upload_policeFahrzeug'. $curr);
                    $gegen[$i]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i]->upload_policeFahrzeug;
                    $gegen[$i]->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : $gegen[$i]->comparison_type;
                    $gegen[$i]->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : $gegen[$i]->commentFahrenzug;
+                   $gegen[$i]->offer = $request->file('offer' . $curr) ? $this->storeFile($request->file('offer' . $curr),FolderPaths::KK_FILES) : $gegen[$i]->offer;
                    $gegen[$i]->save();
-              
                     }
                    else{
                        $gegen = new newgegen();
@@ -276,8 +278,8 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
                        $gegen->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : null;
                        $gegen->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : null;
                        $gegen->person_id = $personId;
+                       $gegen->offer = $request->file('offer' . $curr) ? $this->storeFile($request->file('offer'. $curr),FolderPaths::KK_FILES) : null;
                        $gegen->save();
-                       
                    }
                 }
 
@@ -369,6 +371,7 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
             'leads_id' => $leadId,
             'person_id' => $personId,
             'upload_police' => $request->hasFile('upload_policeFahrzeug') ? $this->storeFile($request->upload_policeFahrzeug, FolderPaths::KK_FILES) : $existingLeadDataFahrzeug->upload_police,
+            'offer' => $request->hasFile('offer') ? $this->storeFile($request->offer, FolderPaths::KK_FILES) : $existingLeadDataFahrzeug->offer,
             'vehicle_id' => $request->hasFile('vehicle_id') ? $this->storeFile($request->vehicle_id, FolderPaths::KK_FILES) : $existingLeadDataFahrzeug->vehicle_id,
             'leasing' => $request->leasing,
             'leasing_name' => $request->leasing_name,
