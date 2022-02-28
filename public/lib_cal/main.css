@@ -200,18 +200,19 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc .fc-button-primary {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
-    background-color: #2C3E50;
-    background-color: var(--fc-button-bg-color, #2C3E50);
-    border-color: #2C3E50;
-    border-color: var(--fc-button-border-color, #2C3E50);
+    background-color: #0C71C3;
+    background-color: var(--fc-button-bg-color, #0C71C3);
+    border-radius: 8px;
+    /*border-color: #2C3E50;*/
+    /*border-color: var(--fc-button-border-color, #2C3E50);*/
   }
 .fc .fc-button-primary:hover {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
     background-color: #1e2b37;
-    background-color: var(--fc-button-hover-bg-color, #1e2b37);
-    border-color: #1a252f;
-    border-color: var(--fc-button-hover-border-color, #1a252f);
+    background-color: var(--fc-button-hover-bg-color, #6ebeff);
+    /*border-color: #1a252f;*/
+    /*border-color: var(--fc-button-hover-border-color, #1a252f);*/
   }
 .fc .fc-button-primary:disabled { /* not DRY */
     color: #fff;
@@ -228,10 +229,10 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   .fc .fc-button-primary:not(:disabled).fc-button-active {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
-    background-color: #1a252f;
-    background-color: var(--fc-button-active-bg-color, #1a252f);
-    border-color: #151e27;
-    border-color: var(--fc-button-active-border-color, #151e27);
+    background-color: #214c75;
+    background-color: var(--fc-button-active-bg-color, #214c75);
+    /*border-color: #151e27;*/
+    /*border-color: var(--fc-button-active-border-color, #151e27);*/
   }
 .fc .fc-button-primary:not(:disabled):active:focus,
   .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
@@ -286,6 +287,14 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     justify-content: space-between;
     align-items: center;
   }
+.fc-toolbar-title {
+    border:1px solid #434343;
+    border-radius: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right:30px;
+}
 .fc .fc-toolbar.fc-header-toolbar {
     margin-bottom: 1.5em;
   }
@@ -293,7 +302,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     margin-top: 1.5em;
   }
 .fc .fc-toolbar-title {
-    font-size: 1.75em;
+    font-size: 1.4em;
     margin: 0;
   }
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {

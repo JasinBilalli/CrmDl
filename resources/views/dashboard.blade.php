@@ -25,7 +25,7 @@
                 </div>
                 <div class="py-3 mx-3">
                     <div class="row">
-                        <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl g-0 px-3 mb-3 "
+                        <div class="col-md-3 col-6 g-0 px-3 mb-3 "
                              style="font-family: 'Montserrat'">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 303.571 190.391">
@@ -68,11 +68,11 @@
                                 </text>
                                 <text id="Abschlussquote" transform="translate(31.871 144.225)" fill="#fff"
                                       font-size="23" font-family="Montserrat-SemiBold, Montserrat" font-weight="600">
-                                    <tspan x="0" y="0">Privisionert</tspan>
+                                    <tspan x="0" y="0" style="font-size: larger !important;">Provisioniert</tspan>
                                 </text>
                             </svg>
                         </div>
-                        <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl g-0 px-3 mb-3"
+                        <div class="col-md-3 col-6 g-0 px-3 mb-3"
                              style="font-family: 'Montserrat'">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 303.571 190.391">
@@ -115,12 +115,12 @@
                                     <text id="Aufgenommen" transform="translate(780.002 287.762)" fill="#fff"
                                           font-size="23" font-family="Montserrat-SemiBold, Montserrat"
                                           font-weight="600">
-                                        <tspan x="0" y="0">Aufgenommen</tspan>
+                                        <tspan x="0" y="0" style="font-size: larger !important;">Aufgenommen</tspan>
                                     </text>
                                 </g>
                             </svg>
                         </div>
-                        <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl g-0 px-3 mb-3"
+                        <div class="col-md-3 col-6 g-0 px-3 mb-3"
                              style="font-family: 'Montserrat'">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 303.571 190.391">
@@ -159,7 +159,7 @@
                                     <text id="Aufgenommen" transform="translate(1137.893 287.762)" fill="#fff"
                                           font-size="23" font-family="Montserrat-SemiBold, Montserrat"
                                           font-weight="600">
-                                        <tspan x="0" y="0">Ausstehend</tspan>
+                                        <tspan x="0" y="0" style="font-size: larger !important;">Ausstehend</tspan>
                                     </text>
                                     <ellipse id="Ellipse_57" onclick="window.location.href='{{route('costumers')}}'"
                                              style="cursor: pointer;" data-name="Ellipse 57" cx="2.711" cy="2.582"
@@ -167,7 +167,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-3 col-xl g-0 px-3 mb-3"
+                        <div class="col-md-3 col-6 g-0 px-3 mb-3"
                              style="font-family: 'Montserrat'">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 303.571 190.391">
@@ -208,7 +208,7 @@
                                 </text>
                                 <text id="Abschlussquote" transform="translate(31.565 144.474)" fill="#fff"
                                       font-size="23" font-family="Montserrat-SemiBold, Montserrat" font-weight="600">
-                                    <tspan x="0" y="0">Abschlussquote</tspan>
+                                    <tspan x="0" y="0" style="font-size: larger !important;">Abschlussquote</tspan>
                                 </text>
                             </svg>
 
@@ -222,10 +222,10 @@
                             <div class="calendar-div mx-3">
                                 <calendar></calendar>
                             </div>
-                            <div class="text-center" style="margin-top: -30px">
+                            <div class="text-center" style="margin-top: -45px">
                                 <a href="{{route('insertappointment')}}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="#0C71C3"
-                                         class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                                         class="bi bi-plus-square-fill mb-4" viewBox="0 0 16 16">
                                         <path
                                             d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
                                     </svg>

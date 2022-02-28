@@ -124,8 +124,6 @@
                 Auth::guard('admins')->user()->hasRole('salesmanager') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                    @if(Auth::guard('admins')->user()->hasRole('salesmanager') ||
-                    Auth::guard('admins')->user()->hasRole('fs'))
                         <a href="{{route('Appointments')}}" class="nav-link  {{ (request()->is('Appointments')) ? 'activeClassNav__' : '' }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-calendar-check" viewBox="0 0 16 16">
                                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
@@ -133,37 +131,6 @@
                             </svg>
                             <span class="ps-2 txt-dn">Calendar</span>
                         </a>
-                    @else
-                        <a href="{{route('calendar')}}" class="nav-link  {{ (request()->is('calendar')) ? 'activeClassNav__' : '' }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-calendar-check" viewBox="0 0 16 16">
-                                <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                            </svg>
-                            <span class="ps-2 txt-dn">Calendar</span>
-                        </a>
-                    @endif
-
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('salesmanager')
-                ||Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                    @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
-                        <a href="{{route('calendar')}}" class="nav-link  {{ (request()->is('calendar')) ? 'activeClassNav__' : '' }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-calendar-date" viewBox="0 0 16 16">
-                                <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                            </svg>
-                            <span class="ps-2 txt-dn">Dates</span>
-                        </a>
-                    @else
-                        <a href="{{route('Appointments')}}" class="nav-link {{ (request()->is('Appointments')) ? 'activeClassNav__' : '' }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-calendar-date" viewBox="0 0 16 16">
-                                <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                            </svg>
-                            <span class="ps-2 txt-dn">Dates</span>
-                        </a>
-                    @endif
                 @endif
                 @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
@@ -2243,8 +2210,6 @@
                 Auth::guard('admins')->user()->hasRole('salesmanager') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                @if(Auth::guard('admins')->user()->hasRole('salesmanager') ||
-                Auth::guard('admins')->user()->hasRole('fs'))
                     <a href="{{route('Appointments')}}"
                        class="m-nav text-decoration-none {{ (request()->is('Appointments')) ? 'activeClassNavMob__' : '' }}">
                         <span class="px-2 active-dot">
@@ -2265,79 +2230,6 @@
                             CALENDAR
                         </span>
                     </a>
-                @else
-                    <a href="{{route('calendar')}}"
-                       class="m-nav text-decoration-none {{ (request()->is('calendar')) ? 'activeClassNavMob__' : '' }}">
-                                <span class="px-2 active-dot">
-                                    <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                                    </svg>
-                                </span>
-                        <span class="px-3 ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                                         class="bi bi-calendar-check" viewBox="0 0 16 16">
-                                        <path
-                                            d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                                        <path
-                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                                    </svg>
-                                </span>
-                        <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
-                                CALENDAR
-                            </span>
-                    </a>
-                @endif
-                <hr>
-            @endif
-        </div>
-        <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('salesmanager')
-                ||Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="{{route('calendar')}}"
-                       class="m-nav text-decoration-none {{ (request()->is('calendar')) ? 'activeClassNavMob__' : '' }}">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                        </svg>
-                    </span>
-                        <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-calendar-date" viewBox="0 0 16 16">
-                            <path
-                                d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
-                            <path
-                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                        </svg>
-                        </span>
-                        <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
-                        DATES
-                    </span>
-                    </a>
-                @else
-                    <a href="{{route('Appointments')}}"
-                       class="m-nav text-decoration-none {{ (request()->is('Appointments')) ? 'activeClassNavMob__' : '' }}">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                        </svg>
-                    </span>
-                        <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-calendar-date" viewBox="0 0 16 16">
-                            <path
-                                d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
-                            <path
-                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                        </svg>
-                        </span>
-                        <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
-                        DATES
-                    </span>
-                    </a>
-
-                @endif
                 <hr>
             @endif
         </div>
