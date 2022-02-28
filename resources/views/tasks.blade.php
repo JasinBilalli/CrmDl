@@ -144,7 +144,7 @@
                                     5
                                 </div>
                             </div>
-                            <div class="content px-0 px-sm-3">
+                            <div class="content ps-3">
                                 <div class="overflow-div">
                                     <table class="table table-borderless table-striped table-1">
                                         <thead>
@@ -249,7 +249,7 @@
                                     5
                                 </div>
                             </div>
-                            <div class="content px-0 px-sm-3">
+                            <div class="content  ps-3">
                                 <div class="overflow-div">
                                     <table class="table table-borderless table-striped table-2">
                                         <thead>
@@ -422,7 +422,7 @@
                                     3
                                 </div>
                             </div>
-                            <div class="content px-0 px-sm-3">
+                            <div class="content ps-3">
                                 <div class="overflow-div mt-3">
                                     <table class="table table-borderless">
                                         <thead>
@@ -545,14 +545,15 @@
                                                                          style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
                                                                         Datum:
                                                                         <br>
-                                                                        {{$task->created_at}}
+                                                                        {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('Y-m-d')}}
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <div class="text-center my-1 fw-bold"
                                                                          style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
-                                                                        <br><br>
-
+                                                                        Time:
+                                                                        <br>
+                                                                        {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('H:i')}}
 
                                                                     </div>
                                                                 </div>
@@ -660,7 +661,7 @@
                                     </div>
 
                                 </div>
-                                <div class="overflow-div px-1 px-sm-1 px-md-2 me-2">
+                                <div class="overflow-div px-3 px-sm-3 px-md-3 me-2">
                                     <script>
                                         var intvaluecount = 1;
                                         var truefalsee = [];
@@ -679,10 +680,10 @@
                                                     $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                                     $pend_id = $task->pid;
                                                 @endphp
-                                                <div class="answered-items ms-1 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
+                                                <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
                                                     <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
                                                        style="text-decoration:none;">
-                                                        <div class="px-3 py-2 ">
+                                                        <div class="px-2 py-2 ">
                                                             <h5 class="m-1">
                                                                 <b>{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </b>
                                                                 <span style="float: right;">
@@ -792,7 +793,7 @@
                                                     $pend_id = $task->pid;
                                                 @endphp
 
-                                                <div class="answered-items ms-1 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
+                                                <div class="answered-items ms-3 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
 
                                                     @php
                                                         $leadss = $task->admin_id * 1244;
@@ -804,7 +805,7 @@
                                                     @endphp
                                                     <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
                                                        style="text-decoration:none;">
-                                                        <div class="px-3 py-2">
+                                                        <div class="px-2 py-2">
                                                             <h5 class="m-1"
                                                                 style="text-overflow: ellipsis; overflow:hidden;">
                                                                 <b>{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </b>
