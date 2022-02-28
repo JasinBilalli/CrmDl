@@ -555,7 +555,7 @@
                         </a>
 
                 </div>
-                <div class="col pe-0" id="filterSort">
+                <div class="col px-0" id="filterSort">
                     <div class="sort-filter  m-1 py-2 text-center">
                         <div class="dropdown ">
                             <button class="dropdown-toggle border-0 bg-transparent" type="button"
