@@ -5909,6 +5909,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('todayappointments?date=' + vall + '?page=' + this.apage).then(function (response) {
         _this4.today = response.data;
+        alert(1);
       });
     },
     loadmore: function loadmore() {
@@ -6085,6 +6086,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // document.getElementById('sendButton').addEventListener('click', function(){
 //     var element = document.getElementById('bchat');
 //     element.scrollTop = element.scrollHeight;
@@ -6092,7 +6104,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      messages: [],
+      messages: null,
       pag: 1,
       cnt: 0,
       notifications: null,
@@ -6167,6 +6179,7 @@ __webpack_require__.r(__webpack_exports__);
     getmessages: function getmessages() {
       var _this4 = this;
 
+      this.yes = false;
       axios.get(this.url + "getchat/" + this.u1 + "/" + this.u2 + "?page=" + this.pag).then(function (response) {
         _this4.messages = [];
         _this4.cnt = response.data.total;
@@ -6176,6 +6189,7 @@ __webpack_require__.r(__webpack_exports__);
           _this4.messages.push(response.data.data[i]);
         }
       });
+      this.yes = true;
     }
   },
   props: {
@@ -6215,454 +6229,6 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -32628,7 +32194,13 @@ var render = function () {
             _vm._v(" "),
             _c(
               "div",
-              { staticStyle: { "margin-bottom": "120px", bottom: "0" } },
+              {
+                staticStyle: {
+                  "margin-bottom": "120px",
+                  bottom: "0",
+                  position: "fixed",
+                },
+              },
               [
                 _c(
                   "div",
@@ -32642,20 +32214,45 @@ var render = function () {
                     attrs: { id: "bchat" },
                   },
                   [
-                    _c(
-                      "ul",
-                      { staticClass: "m-b-0" },
-                      _vm._l(_vm.messages, function (msg) {
-                        return _c("li", [
-                          _vm._v(
-                            "\n                                  " +
-                              _vm._s(msg.body) +
-                              "\n                                  "
-                          ),
-                        ])
-                      }),
-                      0
-                    ),
+                    _vm.yes
+                      ? _c(
+                          "ul",
+                          { staticClass: "m-b-0" },
+                          _vm._l(_vm.messages, function (msg) {
+                            return _c("li", [
+                              _c("div", { staticClass: "py-1 d-flex" }, [
+                                _c("div", {
+                                  staticClass: "col-auto mx-2",
+                                  staticStyle: {
+                                    width: "40px",
+                                    height: "40px",
+                                    "border-radius": "50%",
+                                    "background-color": "#fff",
+                                    border: "1px #70707080 solid",
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "col message my-message my-1",
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                     " +
+                                        _vm._s(msg.body) +
+                                        "\n                                       "
+                                    ),
+                                  ]
+                                ),
+                              ]),
+                              _vm._v(" "),
+                              _vm._m(3, true),
+                            ])
+                          }),
+                          0
+                        )
+                      : _vm._e(),
                   ]
                 ),
               ]
@@ -32882,6 +32479,24 @@ var staticRenderFns = [
         ]),
       ]
     )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "py-1 d-flex justify-content-end" }, [
+      _c("div", { staticClass: "col message other-message my-1" }),
+      _vm._v(" "),
+      _c("div", {
+        staticClass: "col-auto mx-2 mt-auto",
+        staticStyle: {
+          width: "40px",
+          height: "40px",
+          "border-radius": "50%",
+          "background-color": "#0C71C3",
+        },
+      }),
+    ])
   },
 ]
 render._withStripped = true
@@ -33344,11 +32959,11 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                  " +
+                                                                "\r\n                                                  " +
                                                                   _vm._s(
                                                                     lead.first_name
                                                                   ) +
-                                                                  "\n                                                "
+                                                                  "\r\n                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -33390,7 +33005,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\n                                                                    Call\n                                                                "
+                                                                    "\r\n                                                                    Call\r\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33439,7 +33054,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\n                                                                        Reject\n                                                                "
+                                                                    "\r\n                                                                        Reject\r\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -34147,7 +33762,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                    Pending\n                                                                "
+                                                                "\r\n                                                                    Pending\r\n                                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -34186,7 +33801,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                Reject\n                                                            "
+                                                                "\r\n                                                                Reject\r\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34220,7 +33835,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                Go\n                                                            "
+                                                                "\r\n                                                                Go\r\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34330,7 +33945,7 @@ var render = function () {
                                           },
                                           [
                                             _vm._v(
-                                              "\n                                                Lead öffnen\n                                            "
+                                              "\r\n                                                Lead öffnen\r\n                                            "
                                             ),
                                           ]
                                         ),
@@ -34497,9 +34112,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\n                                        Instagram: " +
+                                  "\r\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\n                                    "
+                                    "\r\n                                    "
                                 ),
                               ]),
                             ]
@@ -34578,9 +34193,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Facebook: " +
+                                "\r\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -34658,9 +34273,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                         Sanascout: " +
+                                "\r\n                                         Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -34832,11 +34447,11 @@ var render = function () {
                                                         },
                                                         [
                                                           _vm._v(
-                                                            "\n                                                      " +
+                                                            "\r\n                                                      " +
                                                               _vm._s(
                                                                 lead.first_name
                                                               ) +
-                                                              "\n                                                    "
+                                                              "\r\n                                                    "
                                                           ),
                                                         ]
                                                       ),
@@ -35533,7 +35148,7 @@ var render = function () {
                                                     },
                                                     [
                                                       _vm._v(
-                                                        "\n                                                                Assign\n                                                            "
+                                                        "\r\n                                                                Assign\r\n                                                            "
                                                       ),
                                                     ]
                                                   ),
@@ -35733,7 +35348,7 @@ var render = function () {
                                               },
                                               [
                                                 _vm._v(
-                                                  "\n                                                            Lead öffnen\n                                                        "
+                                                  "\r\n                                                            Lead öffnen\r\n                                                        "
                                                 ),
                                               ]
                                             ),
@@ -36039,9 +35654,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\n                                        Instagram: " +
+                                  "\r\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\n                                    "
+                                    "\r\n                                    "
                                 ),
                               ]),
                             ]
@@ -36120,9 +35735,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Facebook: " +
+                                "\r\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -36200,9 +35815,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Sanascout: " +
+                                "\r\n                                        Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -36676,7 +36291,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            History of Leads\n                                        "
+              "\r\n                                            History of Leads\r\n                                        "
             ),
           ]
         ),
@@ -36702,7 +36317,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                        Rejected Leads\n                                    "
+              "\r\n                                        Rejected Leads\r\n                                    "
             ),
           ]
         ),
@@ -36823,7 +36438,7 @@ var staticRenderFns = [
         },
         [
           _vm._v(
-            "\n                                             Assign\n                                        "
+            "\r\n                                             Assign\r\n                                        "
           ),
         ]
       ),
@@ -36887,7 +36502,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            History of Leads\n                                            "
+              "\r\n                                            History of Leads\r\n                                            "
             ),
           ]
         ),
@@ -36913,7 +36528,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            Rejected Leads\n                                            "
+              "\r\n                                            Rejected Leads\r\n                                            "
             ),
           ]
         ),

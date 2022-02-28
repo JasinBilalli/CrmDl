@@ -17,8 +17,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('informfs')->dailyAt("07:00");
-        $schedule->command('informfscomm')->everyFourHours();
+        $schedule->command('informfs')->twiceDaily(7, 13);
         $schedule->command('informbo')->dailyAt("07:00");
         $schedule->command('informsl')->dailyAt("07:00");
     }

@@ -164,7 +164,7 @@
         },
         searchapp(vall){
             axios.get('todayappointments?date=' + vall + '?page=' + this.apage).then(
-                (response) => { this.today = response.data;}
+                (response) => { this.today = response.data; alert(1);}
             );
         },
         loadmore:function(){

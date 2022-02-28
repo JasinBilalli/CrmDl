@@ -28,8 +28,6 @@ class AdminSeeder extends Seeder
        ];
        foreach($admins as $id => $admin){
            Admins::create([
-       
-        
                'name' => $admin['name'],
                'email' => $admin['email'],
                'password' => $admin['password']

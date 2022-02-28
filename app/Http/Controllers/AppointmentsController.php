@@ -23,7 +23,7 @@ class AppointmentsController extends Controller
 		if(array_key_exists('date_in', $input) ){ $date_in = $input['date_in'];}else { $date_in = date('Y-m-d'); }
 		$date_in =  new DateTime($date_in);
 		
-
+		
 
 		if(array_key_exists('region', $input) ){if($input['region'] == "all"){$regionQ='appointment_date' ; $regionI = $date_in ; $regionO="all";}else{$regionQ='city' ; $regionI  = $input['region'];$regionO= $input['region'] ;}}else{ $regionQ='appointment_date' ; $regionI = $date_in ;$regionO="all";};
 

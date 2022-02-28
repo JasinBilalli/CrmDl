@@ -39,14 +39,8 @@
                                         <div class="status py-1 name" style="font-size: 17px;" v-html="notification.data">
                                         </div>
                                     <hr class="m-0 g-0 p-0">
-                                    </div>
-                                      
+                                    </div>    
                                 </li>
-                              
-                              
-                               
-                              
-                                
                             </ul>
                         </div>
                         <div class="new-message-divv fixed-bottom d-flex justify-content-center">
@@ -83,15 +77,32 @@
                                 </div>
                             </div>
                         </div>
-                         <div class="" style="margin-bottom: 120px; bottom: 0;">
-                            <div class="chat-history overflow-22" id="bchat" 
+                       <div class="" style="margin-bottom: 120px; bottom: 0; position: fixed;">
+                            <div class="chat-history overflow-22" id="bchat"
                                 style="overflow: auto; height: 90vh;padding-top: 120px;">
-                              <ul class="m-b-0">
-                               <li v-for="msg in messages">
-                                   {{msg.body}}
-                                   </li>
-                         
-                              </ul>
+                                <ul class="m-b-0" v-if="yes">
+                                    <li v-for="msg in messages">
+                                        <!-- <div class="message-data">
+                                            <span class="message-data-time">10:12 AM, Today</span>
+                                        </div> -->
+                                        <div class="py-1 d-flex">
+                                        <div class="col-auto mx-2"
+                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
+                                        </div>
+                                        <div class="col message my-message my-1">
+                                      {{msg.body}}
+                                        </div>
+                                        </div>
+                                         <div class="py-1 d-flex justify-content-end">
+                                        <div class="col message other-message my-1">
+                                         
+                                        </div>
+                                        <div class="col-auto mx-2 mt-auto"
+                                            style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
+                                        </div>
+                                    </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="chat-message fixed-bottom p-3">
@@ -155,7 +166,7 @@ export default {
 
   data() {
     return {
-      messages: [],
+      messages: null,
       pag: 1,
       cnt: 0,
       notifications: null,
@@ -231,6 +242,7 @@ headers:{
 
     },
     getmessages() {
+        this.yes = false;
       axios
         .get(
           this.url + "getchat/" + this.u1 + "/" + this.u2 + "?page=" + this.pag
@@ -245,7 +257,7 @@ headers:{
             this.messages.push(response.data.data[i]);
           }
         });
-
+this.yes = true;
     },
   },
 
