@@ -50,27 +50,50 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 row text-center my-3">
-                <div class="col-6 col-md-6 g-0" style="color: #0C71C3">
-                    <i @click="searchfor()" class="dateee px-1 pb-1" style="cursor:pointer; border-radius: 50px !important;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-left fw-bold" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            <div class="row text-center my-3">
+                <div class="col-6 col-md-6">
+                    <i @click="searchfor()" class="hoveri-butonit px-1 pb-1" style="cursor:pointer;">
+                        <svg id="Group_757" data-name="Group 757" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36.372" height="36.372" viewBox="0 0 36.372 36.372">
+                            <defs>
+                                <filter id="Path_281" x="7.637" y="5.959" width="18.755" height="24.454" filterUnits="userSpaceOnUse">
+                                    <feOffset input="SourceAlpha"/>
+                                    <feGaussianBlur stdDeviation="1" result="blur"/>
+                                    <feFlood flood-opacity="0.161"/>
+                                    <feComposite operator="in" in2="blur"/>
+                                    <feComposite in="SourceGraphic"/>
+                                </filter>
+                            </defs>
+                            <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Path_281)">
+                                <path id="Path_281-2" data-name="Path 281" d="M0,0,10.354,7.826,0,15.652" transform="translate(21.99 26.01) rotate(180)" fill="none" stroke="#0c71c3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            </g>
+                            <g id="Ellipse_55" data-name="Ellipse 55" fill="none" stroke="#0c71c3" stroke-width="2">
+                                <circle cx="18.186" cy="18.186" r="18.186" stroke="none"/>
+                                <circle cx="18.186" cy="18.186" r="17.186" fill="none"/>
+                            </g>
                         </svg>
                     </i>
                 </div>
-                <div class="col-6 col-md-6" style="color: #0C71C3">
-                    <i  class="dateee px-1 pb-1" style=" cursor:pointer; border-radius: 50px !important;" @click="searchfor2()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-right fw-bold" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                <div class="col-6 col-md-6">
+                    <i  class=" px-1 pb-1 hoveri-butonit" style=" cursor:pointer;" @click="searchfor2()">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36.372" height="36.372" viewBox="0 0 36.372 36.372">
+                            <g id="Group_758" data-name="Group 758" transform="translate(36.372 36.372) rotate(180)">
+                                <g transform="matrix(-1, 0, 0, -1, 36.37, 36.37)"   >
+                                    <path id="Path_281-2" data-name="Path 281" d="M0,0,10.354,7.826,0,15.652" transform="translate(13.96 10.36)" fill="none" stroke="#0c71c3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                                </g>
+                                <g id="Ellipse_55" data-name="Ellipse 55" transform="translate(0)" fill="none" stroke="#0c71c3" stroke-width="2">
+                                    <circle cx="18.186" cy="18.186" r="18.186" stroke="none"/>
+                                    <circle cx="18.186" cy="18.186" r="17.186" fill="none"/>
+                                </g>
+                            </g>
                         </svg>
                     </i>
                 </div>
             </div>
-            <div class="px-4 pt-4 mb-4" style="height: 300px; background: #0C71C3; border-radius: 25px;  overflow:hidden !important; background-color: #F5F4F4; border-radius: 25px; font-family: 'Montserrat';">
+            <div class="px-4 py-4" style="height: 300px; background: #0C71C3; border-radius: 25px;  overflow:hidden !important; background-color: #F5F4F4; border-radius: 25px; font-family: 'Montserrat';">
                 <div class="text-center" v-if="today == null">
                     No appointments for today
                 </div>
-                <div class="scroll-2 pb-5 pe-3" id="appscroll">
+                <div class="scroll-2  pe-3" id="appscroll">
                     <a style="text-decoration: none; " v-if="today != null" v-for="tod in today"  :href="'acceptappointment/'+tod.id">
                         <div  class="mb-2 text-white" style="min-height: 60px;cursor: pointer;">
                             <div class="person-box py-2 px-2">
@@ -179,5 +202,6 @@
     }
 
 </script>
+
 
 

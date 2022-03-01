@@ -11,7 +11,7 @@
                             </div>
                         </div>
                         <div class="content p-0 p-sm-3"  >
-                            <div class="overflow-div row ms-1 ms-sm-3 me-2" >
+                            <div class="overflow-div row mx-2 mx-sm-3 me-2" >
                                 <div class="col-12 col-sm-12 col-md-6 g-0" v-for="lead in leads">
 <!--                                    Rejecti Posht-->
                                     <div class="modal fade" :id="lead.slug + 'r'" data-bs-backdrop="static"
@@ -223,25 +223,25 @@
                                                 </div>
                                                 <div class="modal-footer" style="border-top: none !important; display: block;">
                                                     <div v-if="role == 'fs'" class="row mx-4 pb-4">
-                                                        <div class="col-3">
-                                                            <button type="button" class="btn w-100" style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;" data-bs-dismiss="modal"><b>Close</b></button>
+                                                        <div class="col-6 col-sm-3">
+                                                            <button type="button" class="btn m-1 w-100" style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;" data-bs-dismiss="modal"><b>Close</b></button>
                                                         </div>
-                                                        <div class="col-3">
-                                                                <button class="btn fw-bold fs-6 py-2 w-100" data-bs-dismiss="modal"  data-bs-toggle="modal"
+                                                        <div class="col-6 col-sm-3 ">
+                                                                <button class="btn fw-bold  m-1 fs-6 py-2 w-100" data-bs-dismiss="modal"  data-bs-toggle="modal"
                                                                         :data-bs-target="'#' + lead.slug + 'rp'"
                                                                         style="background-color:#FF860D !important;color: #fff !important; border-radius: 8px !important;">
                                                                     Pending
                                                                 </button>
                                                         </div>
-                                                        <div class="col-3">
-                                                            <button class="btn fw-bold fs-6 w-100" data-bs-dismiss="modal"  data-bs-toggle="modal"
+                                                        <div class="col-6 col-sm-3">
+                                                            <button class="btn fw-bold m-1 fs-6 w-100" data-bs-dismiss="modal"  data-bs-toggle="modal"
                                                                     :data-bs-target="'#' + lead.slug + 'r'"
                                                                     style="background-color:#E50A10 !important; color: #fff !important; border-radius: 8px !important;">
                                                                 Reject
                                                             </button>
                                                         </div>
-                                                        <div class="col-3">
-                                                            <a :href="'alead/' + lead.id" class="btn fw-bold fs-6  w-100"
+                                                        <div class="col-6 col-sm-3">
+                                                            <a :href="'alead/' + lead.id" class="btn fw-bold fs-6  w-100  m-1"
                                                                style="background-color:#4EC590 !important;color: #fff !important; border-radius: 8px !important;">
                                                                 Go
                                                             </a>

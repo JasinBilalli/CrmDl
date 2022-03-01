@@ -5848,6 +5848,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var _this = this;
@@ -31747,105 +31770,232 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-12 row text-center my-3" }, [
-      _c(
-        "div",
-        {
-          staticClass: "col-6 col-md-6 g-0",
-          staticStyle: { color: "#0C71C3" },
-        },
-        [
-          _c(
-            "i",
-            {
-              staticClass: "dateee px-1 pb-1",
-              staticStyle: {
-                cursor: "pointer",
-                "border-radius": "50px !important",
-              },
-              on: {
-                click: function ($event) {
-                  return _vm.searchfor()
-                },
+    _c("div", { staticClass: "row text-center my-3" }, [
+      _c("div", { staticClass: "col-6 col-md-6" }, [
+        _c(
+          "i",
+          {
+            staticClass: "hoveri-butonit px-1 pb-1",
+            staticStyle: { cursor: "pointer" },
+            on: {
+              click: function ($event) {
+                return _vm.searchfor()
               },
             },
-            [
-              _c(
-                "svg",
-                {
-                  staticClass: "bi bi-chevron-left fw-bold",
-                  attrs: {
-                    xmlns: "http://www.w3.org/2000/svg",
-                    width: "18",
-                    height: "18",
-                    fill: "currentColor",
-                    viewBox: "0 0 16 16",
-                  },
+          },
+          [
+            _c(
+              "svg",
+              {
+                attrs: {
+                  id: "Group_757",
+                  "data-name": "Group 757",
+                  xmlns: "http://www.w3.org/2000/svg",
+                  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                  width: "36.372",
+                  height: "36.372",
+                  viewBox: "0 0 36.372 36.372",
                 },
-                [
-                  _c("path", {
-                    attrs: {
-                      "fill-rule": "evenodd",
-                      d: "M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z",
+              },
+              [
+                _c("defs", [
+                  _c(
+                    "filter",
+                    {
+                      attrs: {
+                        id: "Path_281",
+                        x: "7.637",
+                        y: "5.959",
+                        width: "18.755",
+                        height: "24.454",
+                        filterUnits: "userSpaceOnUse",
+                      },
                     },
-                  }),
-                ]
-              ),
-            ]
-          ),
-        ]
-      ),
+                    [
+                      _c("feOffset", { attrs: { input: "SourceAlpha" } }),
+                      _vm._v(" "),
+                      _c("feGaussianBlur", {
+                        attrs: { stdDeviation: "1", result: "blur" },
+                      }),
+                      _vm._v(" "),
+                      _c("feFlood", { attrs: { "flood-opacity": "0.161" } }),
+                      _vm._v(" "),
+                      _c("feComposite", {
+                        attrs: { operator: "in", in2: "blur" },
+                      }),
+                      _vm._v(" "),
+                      _c("feComposite", { attrs: { in: "SourceGraphic" } }),
+                    ],
+                    1
+                  ),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "g",
+                  {
+                    attrs: {
+                      transform: "matrix(1, 0, 0, 1, 0, 0)",
+                      filter: "url(#Path_281)",
+                    },
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        id: "Path_281-2",
+                        "data-name": "Path 281",
+                        d: "M0,0,10.354,7.826,0,15.652",
+                        transform: "translate(21.99 26.01) rotate(180)",
+                        fill: "none",
+                        stroke: "#0c71c3",
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "stroke-width": "2",
+                      },
+                    }),
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "g",
+                  {
+                    attrs: {
+                      id: "Ellipse_55",
+                      "data-name": "Ellipse 55",
+                      fill: "none",
+                      stroke: "#0c71c3",
+                      "stroke-width": "2",
+                    },
+                  },
+                  [
+                    _c("circle", {
+                      attrs: {
+                        cx: "18.186",
+                        cy: "18.186",
+                        r: "18.186",
+                        stroke: "none",
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c("circle", {
+                      attrs: {
+                        cx: "18.186",
+                        cy: "18.186",
+                        r: "17.186",
+                        fill: "none",
+                      },
+                    }),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        ),
+      ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-6 col-md-6", staticStyle: { color: "#0C71C3" } },
-        [
-          _c(
-            "i",
-            {
-              staticClass: "dateee px-1 pb-1",
-              staticStyle: {
-                cursor: "pointer",
-                "border-radius": "50px !important",
-              },
-              on: {
-                click: function ($event) {
-                  return _vm.searchfor2()
-                },
+      _c("div", { staticClass: "col-6 col-md-6" }, [
+        _c(
+          "i",
+          {
+            staticClass: " px-1 pb-1 hoveri-butonit",
+            staticStyle: { cursor: "pointer" },
+            on: {
+              click: function ($event) {
+                return _vm.searchfor2()
               },
             },
-            [
-              _c(
-                "svg",
-                {
-                  staticClass: "bi bi-chevron-right fw-bold",
-                  attrs: {
-                    xmlns: "http://www.w3.org/2000/svg",
-                    width: "18",
-                    height: "18",
-                    fill: "currentColor",
-                    viewBox: "0 0 16 16",
-                  },
+          },
+          [
+            _c(
+              "svg",
+              {
+                attrs: {
+                  xmlns: "http://www.w3.org/2000/svg",
+                  "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                  width: "36.372",
+                  height: "36.372",
+                  viewBox: "0 0 36.372 36.372",
                 },
-                [
-                  _c("path", {
+              },
+              [
+                _c(
+                  "g",
+                  {
                     attrs: {
-                      "fill-rule": "evenodd",
-                      d: "M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z",
+                      id: "Group_758",
+                      "data-name": "Group 758",
+                      transform: "translate(36.372 36.372) rotate(180)",
                     },
-                  }),
-                ]
-              ),
-            ]
-          ),
-        ]
-      ),
+                  },
+                  [
+                    _c(
+                      "g",
+                      {
+                        attrs: {
+                          transform: "matrix(-1, 0, 0, -1, 36.37, 36.37)",
+                        },
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            id: "Path_281-2",
+                            "data-name": "Path 281",
+                            d: "M0,0,10.354,7.826,0,15.652",
+                            transform: "translate(13.96 10.36)",
+                            fill: "none",
+                            stroke: "#0c71c3",
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round",
+                            "stroke-width": "2",
+                          },
+                        }),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "g",
+                      {
+                        attrs: {
+                          id: "Ellipse_55",
+                          "data-name": "Ellipse 55",
+                          transform: "translate(0)",
+                          fill: "none",
+                          stroke: "#0c71c3",
+                          "stroke-width": "2",
+                        },
+                      },
+                      [
+                        _c("circle", {
+                          attrs: {
+                            cx: "18.186",
+                            cy: "18.186",
+                            r: "18.186",
+                            stroke: "none",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("circle", {
+                          attrs: {
+                            cx: "18.186",
+                            cy: "18.186",
+                            r: "17.186",
+                            fill: "none",
+                          },
+                        }),
+                      ]
+                    ),
+                  ]
+                ),
+              ]
+            ),
+          ]
+        ),
+      ]),
     ]),
     _vm._v(" "),
     _c(
       "div",
       {
-        staticClass: "px-4 pt-4 mb-4",
+        staticClass: "px-4 py-4",
         staticStyle: {
           height: "300px",
           background: "#0C71C3",
@@ -31864,7 +32014,7 @@ var render = function () {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "scroll-2 pb-5 pe-3", attrs: { id: "appscroll" } },
+          { staticClass: "scroll-2  pe-3", attrs: { id: "appscroll" } },
           [
             _vm._l(_vm.today, function (tod) {
               return _vm.today != null
@@ -32600,7 +32750,7 @@ var render = function () {
                       _c("div", { staticClass: "content p-0 p-sm-3" }, [
                         _c(
                           "div",
-                          { staticClass: "overflow-div row ms-1 ms-sm-3 me-2" },
+                          { staticClass: "overflow-div row mx-2 mx-sm-3 me-2" },
                           _vm._l(_vm.leads, function (lead) {
                             return _c(
                               "div",
@@ -33025,11 +33175,11 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\r\n                                                  " +
+                                                                "\n                                                  " +
                                                                   _vm._s(
                                                                     lead.first_name
                                                                   ) +
-                                                                  "\r\n                                                "
+                                                                  "\n                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -33071,7 +33221,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\r\n                                                                    Call\r\n                                                                "
+                                                                    "\n                                                                    Call\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33120,7 +33270,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\r\n                                                                        Reject\r\n                                                                "
+                                                                    "\n                                                                        Reject\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33799,14 +33949,15 @@ var render = function () {
                                                       _c(
                                                         "div",
                                                         {
-                                                          staticClass: "col-3",
+                                                          staticClass:
+                                                            "col-6 col-sm-3 ",
                                                         },
                                                         [
                                                           _c(
                                                             "button",
                                                             {
                                                               staticClass:
-                                                                "btn fw-bold fs-6 py-2 w-100",
+                                                                "btn fw-bold  m-1 fs-6 py-2 w-100",
                                                               staticStyle: {
                                                                 "background-color":
                                                                   "#FF860D !important",
@@ -33828,7 +33979,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\r\n                                                                    Pending\r\n                                                                "
+                                                                "\n                                                                    Pending\n                                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -33838,14 +33989,15 @@ var render = function () {
                                                       _c(
                                                         "div",
                                                         {
-                                                          staticClass: "col-3",
+                                                          staticClass:
+                                                            "col-6 col-sm-3",
                                                         },
                                                         [
                                                           _c(
                                                             "button",
                                                             {
                                                               staticClass:
-                                                                "btn fw-bold fs-6 w-100",
+                                                                "btn fw-bold m-1 fs-6 w-100",
                                                               staticStyle: {
                                                                 "background-color":
                                                                   "#E50A10 !important",
@@ -33867,7 +34019,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\r\n                                                                Reject\r\n                                                            "
+                                                                "\n                                                                Reject\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -33877,14 +34029,15 @@ var render = function () {
                                                       _c(
                                                         "div",
                                                         {
-                                                          staticClass: "col-3",
+                                                          staticClass:
+                                                            "col-6 col-sm-3",
                                                         },
                                                         [
                                                           _c(
                                                             "a",
                                                             {
                                                               staticClass:
-                                                                "btn fw-bold fs-6  w-100",
+                                                                "btn fw-bold fs-6  w-100  m-1",
                                                               staticStyle: {
                                                                 "background-color":
                                                                   "#4EC590 !important",
@@ -33901,7 +34054,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\r\n                                                                Go\r\n                                                            "
+                                                                "\n                                                                Go\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34011,7 +34164,7 @@ var render = function () {
                                           },
                                           [
                                             _vm._v(
-                                              "\r\n                                                Lead öffnen\r\n                                            "
+                                              "\n                                                Lead öffnen\n                                            "
                                             ),
                                           ]
                                         ),
@@ -34178,9 +34331,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\r\n                                        Instagram: " +
+                                  "\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\r\n                                    "
+                                    "\n                                    "
                                 ),
                               ]),
                             ]
@@ -34259,9 +34412,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\r\n                                        Facebook: " +
+                                "\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\r\n                                    "
+                                  "\n                                    "
                               ),
                             ]),
                           ]),
@@ -34339,9 +34492,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\r\n                                         Sanascout: " +
+                                "\n                                         Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\r\n                                    "
+                                  "\n                                    "
                               ),
                             ]),
                           ]),
@@ -34513,11 +34666,11 @@ var render = function () {
                                                         },
                                                         [
                                                           _vm._v(
-                                                            "\r\n                                                      " +
+                                                            "\n                                                      " +
                                                               _vm._s(
                                                                 lead.first_name
                                                               ) +
-                                                              "\r\n                                                    "
+                                                              "\n                                                    "
                                                           ),
                                                         ]
                                                       ),
@@ -35214,7 +35367,7 @@ var render = function () {
                                                     },
                                                     [
                                                       _vm._v(
-                                                        "\r\n                                                                Assign\r\n                                                            "
+                                                        "\n                                                                Assign\n                                                            "
                                                       ),
                                                     ]
                                                   ),
@@ -35414,7 +35567,7 @@ var render = function () {
                                               },
                                               [
                                                 _vm._v(
-                                                  "\r\n                                                            Lead öffnen\r\n                                                        "
+                                                  "\n                                                            Lead öffnen\n                                                        "
                                                 ),
                                               ]
                                             ),
@@ -35720,9 +35873,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\r\n                                        Instagram: " +
+                                  "\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\r\n                                    "
+                                    "\n                                    "
                                 ),
                               ]),
                             ]
@@ -35801,9 +35954,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\r\n                                        Facebook: " +
+                                "\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\r\n                                    "
+                                  "\n                                    "
                               ),
                             ]),
                           ]),
@@ -35881,9 +36034,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\r\n                                        Sanascout: " +
+                                "\n                                        Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\r\n                                    "
+                                  "\n                                    "
                               ),
                             ]),
                           ]),
@@ -36280,11 +36433,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-3" }, [
+    return _c("div", { staticClass: "col-6 col-sm-3" }, [
       _c(
         "button",
         {
-          staticClass: "btn w-100",
+          staticClass: "btn m-1 w-100",
           staticStyle: {
             color: "#ffffff !important",
             "background-color": "#6C757D !important",
@@ -36357,7 +36510,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\r\n                                            History of Leads\r\n                                        "
+              "\n                                            History of Leads\n                                        "
             ),
           ]
         ),
@@ -36383,7 +36536,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\r\n                                        Rejected Leads\r\n                                    "
+              "\n                                        Rejected Leads\n                                    "
             ),
           ]
         ),
@@ -36504,7 +36657,7 @@ var staticRenderFns = [
         },
         [
           _vm._v(
-            "\r\n                                             Assign\r\n                                        "
+            "\n                                             Assign\n                                        "
           ),
         ]
       ),
@@ -36568,7 +36721,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\r\n                                            History of Leads\r\n                                            "
+              "\n                                            History of Leads\n                                            "
             ),
           ]
         ),
@@ -36594,7 +36747,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\r\n                                            Rejected Leads\r\n                                            "
+              "\n                                            Rejected Leads\n                                            "
             ),
           ]
         ),
@@ -36730,7 +36883,7 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n                              " +
+                              "\n                                " +
                                 _vm._s(notification.time) +
                                 "\n                            "
                             ),

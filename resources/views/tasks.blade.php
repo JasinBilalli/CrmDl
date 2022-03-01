@@ -631,7 +631,7 @@
                             </div>
                             <div class="content">
                                 <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
-                                    <div class="d-flex py-2 px-1 px-sm-2" style="align-items: center;">
+                                    <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
                                         <form action="{{route('tasks')}}" style="width: 100%;" method="post">
                                             @csrf
                                             <div class="input-group">
@@ -684,17 +684,17 @@
                                                     <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
                                                        style="text-decoration:none;">
                                                         <div class="px-2 py-2 ">
-                                                            <h5 class="m-1">
-                                                                <b>{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </b>
-                                                                <span style="float: right;">
+                                                            <div class="m-1 d-flex justify-content-between">
+                                                                <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
+                                                                <div class="col-auto">
                                                                     <span>
                                                                         <span class="px-2" style="font-size: 19px;">
                                                                             <i class="bi bi-chat justify-content-end"></i>
                                                                         </span>
                                                                     </span>
                                                                     <span id="demo23span{{$taskId}}" class="bi bi-chevron-down"></span>
-                                                                </span>
-                                                            </h5>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </a>
                                                     <div id="demo{{$taskId}}" class="collapse px-3 py-2">
@@ -752,7 +752,7 @@
                             </div>
                             <div class="content">
                                 <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
-                                    <div class="d-flex py-2 px-1 px-sm-2" style="align-items: center;">
+                                    <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
                                         <form action="{{route('tasks')}}" style="width: 100%;" method="post">
                                             @csrf
                                             <div class="input-group">
@@ -806,18 +806,18 @@
                                                     <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
                                                        style="text-decoration:none;">
                                                         <div class="px-2 py-2">
-                                                            <h5 class="m-1"
+                                                            <div class="m-1 d-flex justify-content-between"
                                                                 style="text-overflow: ellipsis; overflow:hidden;">
-                                                                <b>{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </b>
-                                                                <span style="float: right;">
+                                                                <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
+                                                                <div class="col-auto">
                                                                     <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$authUserId])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
                                                                             <i class="bi bi-chat justify-content-end"></i>
                                                                         </span>
                                                                     </span>
                                                                     <span id="demo23span_2{{$authUserId}}" class="bi bi-chevron-down"></span>
-                                                                </span>
-                                                            </h5>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </a>
                                                     <div id="demo_2{{$authUserId}}" class="collapse px-3 py-2">

@@ -8,10 +8,10 @@
             {!! implode('<br />', $errors->all(':message')) !!}
         </div>
     @endif
-            <div class="form-div my-4 py-4 col-10 mx-auto" style="background-color: #EFEFEF; border-radius: 20px;">
+            <div class="form-div my-4 py-4 mx-3 mx-sm-5" style="background-color: #EFEFEF; border-radius: 20px;">
                 <form action="{{route('addappointment')}}" method="post">
                     @csrf
-                <div class="row mx-4">
+                <div class="row mx-3">
                     <div class="col">
                         <div class="mx-2">
                             <div class="mb-2">
@@ -80,14 +80,14 @@
                                         <option value="{{$admins->id}}">{{$admins->name}}</option>
                                     </select>
                                 @elseif(Auth::user()->hasRole('salesmanager'))
-                                
+
                                 @else
                                 <label for="" class="mb-1">Besprechungsformular</label>
                                 <select onchange="hideadmin()" name="online" id="selecti" class="form-control">
                                 <option value="no">Physically</option>
                                 <option value="yes">Online</option>
                                 </select>
-                                
+
                             </div>
                             <div id="admin">
                                 <label for="admin" class="">Zuweisen</label>
@@ -118,7 +118,7 @@
                 </div>
                     <div class="my-4">
                         <button class="py-2 px-5 mx-5 border-0 fw-bold"
-                                style="background-color: #63D4A4; color: #fff; border-radius: 8px;">Accept</button>
+                                style="background-color: #0C71C3; color: #fff; border-radius: 8px;">Accept</button>
                     </div>
                 </form>
             </div>
@@ -129,13 +129,13 @@
 
         <section>
             <div class="container">
-                <div class="form-div my-4 py-4 col-10 mx-auto" style="background-color: #EFEFEF; border-radius: 20px;">
+                <div class="form-div my-4 py-4 mx-3  mx-sm-5" style="background-color: #EFEFEF; border-radius: 20px;">
                     <div class="mb-4 mx-5">
                         <span class="fs-5 fw-600">Or Insert By File</span>
                     </div>
                     <form method="post" action="{{route('addappointmentfile')}}" enctype="multipart/form-data">
                         @csrf
-                    <div class="row mx-4">
+                    <div class="row mx-3">
                             <div class="col">
                                 <div class="mx-2">
                                     <div class="input-group">
@@ -143,7 +143,7 @@
                                     </div>
                                     <div class="my-4">
                                         <button type="submit" class="py-2 px-5 border-0 fw-bold"
-                                                style="background-color: #63D4A4; color: #fff; border-radius: 8px;">Accept</button>
+                                                style="background-color: #0C71C3; color: #fff; border-radius: 8px;">Accept</button>
                                     </div>
                                 </div>
                             </div>

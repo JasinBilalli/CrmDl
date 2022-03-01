@@ -199,8 +199,6 @@
                     Auth::guard('admins')->user()->hasRole('salesmanager') ||
                     Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('admin'))
-                    @if(Auth::guard('admins')->user()->hasRole('salesmanager') ||
-                    Auth::guard('admins')->user()->hasRole('fs'))
                     <a href="{{route('Appointments')}}" class="nav-link  {{ (request()->is('Appointments')) ? 'activeClassNav__' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-calendar-check" viewBox="0 0 16 16">
                             <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
@@ -208,37 +206,6 @@
                         </svg>
                         <span class="ps-2 txt-dn">Calendar</span>
                     </a>
-                    @else
-                    <a href="{{route('calendar')}}" class="nav-link  {{ (request()->is('calendar')) ? 'activeClassNav__' : '' }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-calendar-check" viewBox="0 0 16 16">
-                            <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                        </svg>
-                        <span class="ps-2 txt-dn">Calendar</span>
-                    </a>
-                    @endif
-
-                    @endif
-                    @if(Auth::guard('admins')->user()->hasRole('salesmanager')
-                    ||Auth::guard('admins')->user()->hasRole('menagment') ||
-                    Auth::guard('admins')->user()->hasRole('admin'))
-                    @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="{{route('calendar')}}" class="nav-link  {{ (request()->is('calendar')) ? 'activeClassNav__' : '' }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-calendar-date" viewBox="0 0 16 16">
-                            <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                        </svg>
-                        <span class="ps-2 txt-dn">Dates</span>
-                    </a>
-                    @else
-                    <a href="{{route('Appointments')}}" class="nav-link {{ (request()->is('Appointments')) ? 'activeClassNav__' : '' }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-calendar-date" viewBox="0 0 16 16">
-                            <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                        </svg>
-                        <span class="ps-2 txt-dn">Dates</span>
-                    </a>
-                    @endif
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('admin') ||
                     Auth::guard('admins')->user()->hasRole('menagment') ||
@@ -334,7 +301,7 @@
                 <input type="hidden" name="newncount" id="newncount" value="0">
 
 
-                <div class="my-5 mx-4">
+                <div class="my-1 my-sm-5 mx-0 mx-sm-4">
                     <div class="" style="background-color: #EFEFEF;border-radius: 22px;">
                         <div class="py-4 px-3">
                             <span class="fs-4 input-group">
@@ -351,23 +318,23 @@
                                 {{$lead->address}}
                             </span>
                         </div>
-                        <div class="row mx-4">
+                        <div class="row mx-2 mx-sm-4">
                             <nav class="g-0 nav-form-links">
                                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link active col krankenkasse-btn" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="changecnt(0)">Krankenkasse
+                                    <button class="nav-link active col krankenkasse-btn" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="changecnt(0)"><span class="desk-t">Krankenkasse</span><span class="mobile-t">KK</span><div><span class="mobile-t" style="font-size: 10px;">KK</span></div>
                                     </button>
-                                    <button class="nav-link col auto-btn" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="changecnt(1)">Auto
+                                    <button class="nav-link col auto-btn" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="changecnt(1)"><span class="desk-t">Auto</span><span class="mobile-t">A</span><div><span class="mobile-t" style="font-size: 10px;">Auto</span></div>
                                     </button>
-                                    <button class="nav-link  col sachen-btn" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)">Vorsorge
+                                    <button class="nav-link  col sachen-btn" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)"><span class="desk-t">Vorsorge</span><span class="mobile-t">V</span><div><span class="mobile-t" style="font-size: 10px;">Vorsage</span></div>
                                     </button>
-                                    <button class="nav-link  col vorsorge-btn" id="nav-fourth-tab" data-bs-toggle="tab" data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth" aria-selected="false" onclick="changecnt(3)">Sachen
+                                    <button class="nav-link  col vorsorge-btn" id="nav-fourth-tab" data-bs-toggle="tab" data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth" aria-selected="false" onclick="changecnt(3)"><span class="desk-t">Sachen</span><span class="mobile-t">S</span><div><span class="mobile-t" style="font-size: 10px;">Sachen</span></div>
                                     </button>
                                 </div>
                             </nav>
                         </div>
-                        <div class="tab-content mx-4 pb-3" id="nav-tabContent">
+                        <div class="tab-content  mx-2 mx-sm-4 pb-2" id="nav-tabContent">
                             <div class="tab-pane fade show active krankenkasse-content mb-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <div class="row mx-4">
+                                <div class="row  mx-2 mx-sm-4">
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                         <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                             <div class="py-2 px-2">
@@ -379,15 +346,15 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="col g-0 d-flex justify-content-end">
-                                              <div class="select-div text-end">
-                                                <select name="pre_insurer" class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
-                                                  <option selected>Select</option>
-                                                  <option value="1">Ja</option>
-                                                  <option value="2">Nein</option>
-                                                </select>
-                                              </div>
-                                            </div> -->
+                                                    <div class="col g-0 d-flex justify-content-end">
+                                                      <div class="select-div text-end">
+                                                        <select class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                          <option selected>Select</option>
+                                                          <option value="1">Ja</option>
+                                                          <option value="2">Nein</option>
+                                                        </select>
+                                                      </div>
+                                                    </div>
                                                 </div>
                                                 <div class="upload-box mx-1 my-2">
                                                     <div class="mx-1 my-2 p-4 text-center">
@@ -422,16 +389,16 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="col g-0 d-flex justify-content-end">
-                                              <div class="select-div text-end">
-                                                <select name="id_required" class="fw-bold" id=""
-                                                  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
-                                                  <option selected>Select</option>
-                                                  <option value="1">Ja</option>
-                                                  <option value="2">Nein</option>
-                                                </select>
-                                              </div>
-                                            </div> -->
+                                                    <div class="col g-0 d-flex justify-content-end">
+                                                      <div class="select-div text-end">
+                                                        <select class="fw-bold" id=""
+                                                          style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                          <option selected>Select</option>
+                                                          <option value="1">Ja</option>
+                                                          <option value="2">Nein</option>
+                                                        </select>
+                                                      </div>
+                                                    </div>
                                                 </div>
                                                 <div class="upload-box mx-1 my-2">
                                                     <div class="mx-1 my-2 p-4 text-center">
@@ -464,16 +431,16 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="col g-0 d-flex justify-content-end">
-                                              <div class="select-div text-end">
-                                                <select name="noname" class="fw-bold" id=""
-                                                  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
-                                                  <option selected>Select</option>
-                                                  <option value="1">Ja</option>
-                                                  <option value="2">Nein</option>
-                                                </select>
-                                              </div>
-                                            </div> -->
+                                                    <div class="col g-0 d-flex justify-content-end">
+                                                      <div class="select-div text-end">
+                                                        <select class="fw-bold" id=""
+                                                          style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                          <option selected>Select</option>
+                                                          <option value="DLF">DLF</option>
+                                                          <option value="Kunden">Kunden</option>
+                                                        </select>
+                                                      </div>
+                                                    </div>
                                                 </div>
                                                 <div class="upload-box mx-1 my-2">
                                                     <div class="mx-1 my-2 p-4 text-center">
@@ -506,16 +473,16 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="col g-0 d-flex justify-content-end">
-                                              <div class="select-div text-end ">
-                                                <select name="power_of_attorney" class="fw-bold" id=""
-                                                  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
-                                                  <option selected>Select</option>
-                                                  <option value="1">Ja</option>
-                                                  <option value="2">Nein</option>
-                                                </select>
-                                              </div>
-                                            </div> -->
+                                                    <div class="col g-0 d-flex justify-content-end">
+                                                      <div class="select-div text-end ">
+                                                        <select class="fw-bold" id=""
+                                                          style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                          <option selected>Select</option>
+                                                          <option value="1">Ja</option>
+                                                          <option value="2">Nein</option>
+                                                        </select>
+                                                      </div>
+                                                    </div>
                                                 </div>
                                                 <div class="upload-box mx-1 my-2">
                                                     <div class="mx-1 my-2 p-4 text-center">
@@ -549,12 +516,17 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <div class="text-end">
-                                                        <select onchange="msheleqeta()" style="background:none" id="manval">
-                                                            <option value="Yes">Yes</option>
-                                                            <option value="No">No</option>
-                                                        </select>
+                                                    <div class="col g-0 d-flex justify-content-end">
+                                                        <div class="select-div text-end ">
+                                                            <select onchange="msheleqeta()" class="fw-bold" id="manval"
+                                                                    style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                                <option selected>Select</option>
+                                                                <option value="Yes">Ja</option>
+                                                                <option value="No">Nein</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
+
                                                     <!-- <div class="col g-0 d-flex justify-content-end">
                                               <div class="select-div text-end">
                                                 <select name="pre_insurer" class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
@@ -589,9 +561,13 @@
 
                                 </div>
                                 <div class="text-center mt-3 pb-3">
-                                    <div class="row mx-4">
-                                        <div class="col text-start">
-
+                                    <div class="row">
+                                        <div class="col g-0 text-end my-auto">
+                                            <div class="">
+                                                <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F; cursor: pointer">
+                                                    Uberspringen
+                                                </span>
+                                            </div>
                                         </div>
                                         <div class="col g-0 text-start">
                                             <div id="buton">
@@ -610,7 +586,7 @@
                             </div>
 
                             <div class="tab-pane fade auto-content" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <div class="row mx-4">
+                                <div class="row mx-2 mx-sm-4">
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 my-4 ">
                                         <div class="accordion accordion-flush" id="accordionFlushExample1">
                                             <div class="accordion-item">
@@ -833,33 +809,16 @@
                                                                                     Fahrzeuginformationen
                                                                                 </span>
                                                                             </div>
-                                                                            <div class="select-div text-end d-flex my-2">
+                                                                            <div class="input-select-div mb-2">
                                                                                 <div class="text-nowrap">
                                                                                     <span class="fw-normal">
                                                                                         Kaufjahr
                                                                                     </span>
                                                                                 </div>
-                                                                                <select name="year_of_purchase" class="fw-normal" id="" style="background-color: #EFEFEF;">
-
-                                                                                    <option value="2021" selected>2021
-                                                                                    </option>
-                                                                                    <option value="2020">2020</option>
-                                                                                    <option value="2019">2019</option>
-                                                                                    <option value="2019">2018</option>
-                                                                                    <option value="2019">2017</option>
-                                                                                    <option value="2019">2016</option>
-                                                                                    <option value="2019">2015</option>
-                                                                                    <option value="2019">2014</option>
-                                                                                    <option value="2019">2013</option>
-                                                                                    <option value="2019">2012</option>
-                                                                                    <option value="2019">2011</option>
-                                                                                    <option value="2019">2010</option>
-                                                                                    <option value="2019">2009</option>
-                                                                                    <option value="2019">2008</option>
-                                                                                    <option value="2019">2007</option>
-                                                                                    <option value="2019">2006</option>
-                                                                                    <option value="2019">2005</option>
-
+                                                                                <select name="year_of_purchase"  class="form-select w-75" aria-label="Default select example" id="">
+                                                                                    @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)
+                                                                                    <option value="{{$i}}">{{$i}}</option>
+                                                                                    @endfor
                                                                                 </select>
                                                                             </div>
                                                                         </div>
@@ -926,7 +885,7 @@
                                                                                 </span>
                                                                             </div>
 
-                                                                            <input name="km_stood" class="py-1" type="text" id="">
+                                                                            <input name="km_stood" class="py-1" type="number" id="">
 
                                                                         </div>
                                                                     </div>
@@ -941,7 +900,7 @@
                                                                         <div class="date-input-div mb-2">
                                                                             <div class="">
                                                                                 <span>
-                                                                                    Erste inverkehrssetzung:
+                                                                                    Ausstelldatum Fuhrerausweis:
                                                                                 </span>
                                                                             </div>
 
@@ -954,7 +913,312 @@
                                                                                     Nationalitat:
                                                                                 </span>
                                                                             </div>
-                                                                            <input class="py-1 border-0" name="nationality" type="text">
+                                                                            <select  class="form-select w-75" name="nationality">
+                                                                            <option value="CH" selected>Schweiz</option>
+                                                                            <option value="DE">Deutschland</option>
+                                                                            <option value="AT">Österreich</option>
+                                                                            <optgroup label="A">
+                                                                                <option value="AF">Afghanistan</option>
+                                                                                <option value="EG">Ägypten</option>
+                                                                                <option value="AX">Åland</option>
+                                                                                <option value="AL">Albanien</option>
+                                                                                <option value="DZ">Algerien</option>
+                                                                                <option value="AS">Amerikanisch-Samoa</option>
+                                                                                <option value="VI">Amerikanische Jungferninseln</option>
+                                                                                <option value="AD">Andorra</option>
+                                                                                <option value="AO">Angola</option>
+                                                                                <option value="AI">Anguilla</option>
+                                                                                <option value="AQ">Antarktis</option>
+                                                                                <option value="AG">Antigua und Barbuda</option>
+                                                                                <option value="GQ">Äquatorialguinea</option>
+                                                                                <option value="AR">Argentinien</option>
+                                                                                <option value="AM">Armenien</option>
+                                                                                <option value="AW">Aruba</option>
+                                                                                <option value="AC">Ascension</option>
+                                                                                <option value="AZ">Aserbaidschan</option>
+                                                                                <option value="ET">Äthiopien</option>
+                                                                                <option value="AU">Australien</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="B">
+                                                                                <option value="BS">Bahamas</option>
+                                                                                <option value="BH">Bahrain</option>
+                                                                                <option value="BD">Bangladesch</option>
+                                                                                <option value="BB">Barbados</option>
+                                                                                <option value="BY">Belarus (Weißrussland)</option>
+                                                                                <option value="BE">Belgien</option>
+                                                                                <option value="BZ">Belize</option>
+                                                                                <option value="BJ">Benin</option>
+                                                                                <option value="BM">Bermuda</option>
+                                                                                <option value="BT">Bhutan</option>
+                                                                                <option value="BO">Bolivien</option>
+                                                                                <option value="BA">Bosnien und Herzegowina</option>
+                                                                                <option value="BW">Botswana</option>
+                                                                                <option value="BV">Bouvetinsel</option>
+                                                                                <option value="BR">Brasilien</option>
+                                                                                <option value="VG">Britische Jungferninseln</option>
+                                                                                <option value="IO">Britisches Territorium im Indischen Ozean</option>
+                                                                                <option value="BN">Brunei Darussalam</option>
+                                                                                <option value="BG">Bulgarien</option>
+                                                                                <option value="BF">Burkina Faso</option>
+                                                                                <option value="BI">Burundi</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="C">
+                                                                                <option value="EA">Ceuta, Melilla</option>
+                                                                                <option value="CL">Chile</option>
+                                                                                <option value="CN">Volksrepublik China</option>
+                                                                                <option value="CP">Clipperton</option>
+                                                                                <option value="CK">Cookinseln</option>
+                                                                                <option value="CR">Costa Rica</option>
+                                                                                <option value="CI">Côte d'Ivoire (Elfenbeinküste)</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="D">
+                                                                                <option value="DK">Dänemark</option>
+                                                                                <option value="DE">Deutschland</option>
+                                                                                <option value="DG">Diego Garcia</option>
+                                                                                <option value="DM">Dominica</option>
+                                                                                <option value="DO">Dominikanische Republik</option>
+                                                                                <option value="DJ">Dschibuti</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="E">
+                                                                                <option value="EC">Ecuador</option>
+                                                                                <option value="SV">El Salvador</option>
+                                                                                <option value="ER">Eritrea</option>
+                                                                                <option value="EE">Estland</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="F">
+                                                                                <option value="FK">Falklandinseln</option>
+                                                                                <option value="FO">Färöer</option>
+                                                                                <option value="FJ">Fidschi</option>
+                                                                                <option value="FI">Finnland</option>
+                                                                                <option value="FR">Frankreich</option>
+                                                                                <option value="GF">Französisch-Guayana</option>
+                                                                                <option value="PF">Französisch-Polynesien</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="G">
+                                                                                <option value="GA">Gabun</option>
+                                                                                <option value="GM">Gambia</option>
+                                                                                <option value="GE">Georgien</option>
+                                                                                <option value="GH">Ghana</option>
+                                                                                <option value="GI">Gibraltar</option>
+                                                                                <option value="GD">Grenada</option>
+                                                                                <option value="GR">Griechenland</option>
+                                                                                <option value="GL">Grönland</option>
+                                                                                <option value="GB">Großbritannien</option>
+                                                                                <option value="GP">Guadeloupe</option>
+                                                                                <option value="GU">Guam</option>
+                                                                                <option value="GT">Guatemala</option>
+                                                                                <option value="GG">Guernsey (Kanalinsel)</option>
+                                                                                <option value="GN">Guinea</option>
+                                                                                <option value="GW">Guinea-Bissau</option>
+                                                                                <option value="GY">Guyana</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="H">
+                                                                                <option value="HT">Haiti</option>
+                                                                                <option value="HM">Heard- und McDonald-Inseln</option>
+                                                                                <option value="HN">Honduras</option>
+                                                                                <option value="HK">Hongkong</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="I">
+                                                                                <option value="IN">Indien</option>
+                                                                                <option value="ID">Indonesien</option>
+                                                                                <option value="IM">Insel Man</option>
+                                                                                <option value="IQ">Irak</option>
+                                                                                <option value="IR">Iran</option>
+                                                                                <option value="IE">Irland</option>
+                                                                                <option value="IS">Island</option>
+                                                                                <option value="IL">Israel</option>
+                                                                                <option value="IT">Italien</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="J">
+                                                                                <option value="JM">Jamaika</option>
+                                                                                <option value="JP">Japan</option>
+                                                                                <option value="YE">Jemen</option>
+                                                                                <option value="JE">Jersey (Kanalinsel)</option>
+                                                                                <option value="JO">Jordanien</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="K">
+                                                                                <option value="KY">Kaimaninseln</option>
+                                                                                <option value="KH">Kambodscha</option>
+                                                                                <option value="CM">Kamerun</option>
+                                                                                <option value="CA">Kanada</option>
+                                                                                <option value="IC">Kanarische Inseln</option>
+                                                                                <option value="CV">Kap Verde</option>
+                                                                                <option value="KZ">Kasachstan</option>
+                                                                                <option value="QA">Katar</option>
+                                                                                <option value="KE">Kenia</option>
+                                                                                <option value="KG">Kirgisistan</option>
+                                                                                <option value="KI">Kiribati</option>
+                                                                                <option value="CC">Kokosinseln</option>
+                                                                                <option value="CO">Kolumbien</option>
+                                                                                <option value="KM">Komoren</option>
+                                                                                <option value="CD">Demokratische Republik Kongo</option>
+                                                                                <option value="KP">Demokratische Volksrepublik Korea (Nordkorea)</option>
+                                                                                <option value="KR">Republik Korea (Südkorea)</option>
+                                                                                <option value="KOS">Kosovo</option>
+                                                                                <option value="HR">Kroatien</option>
+                                                                                <option value="CU">Kuba</option>
+                                                                                <option value="KW">Kuwait</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="L">
+                                                                                <option value="LA">Laos</option>
+                                                                                <option value="LS">Lesotho</option>
+                                                                                <option value="LV">Lettland</option>
+                                                                                <option value="LB">Libanon</option>
+                                                                                <option value="LR">Liberia</option>
+                                                                                <option value="LY">Libyen</option>
+                                                                                <option value="LI">Liechtenstein</option>
+                                                                                <option value="LT">Litauen</option>
+                                                                                <option value="LU">Luxemburg</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="M">
+                                                                                <option value="MO">Macao</option>
+                                                                                <option value="MG">Madagaskar</option>
+                                                                                <option value="MW">Malawi</option>
+                                                                                <option value="MY">Malaysia</option>
+                                                                                <option value="MV">Malediven</option>
+                                                                                <option value="ML">Mali</option>
+                                                                                <option value="MT">Malta</option>
+                                                                                <option value="MA">Marokko</option>
+                                                                                <option value="MH">Marshallinseln</option>
+                                                                                <option value="MQ">Martinique</option>
+                                                                                <option value="MR">Mauretanien</option>
+                                                                                <option value="MU">Mauritius</option>
+                                                                                <option value="YT">Mayotte</option>
+                                                                                <option value="MK">Mazedonien</option>
+                                                                                <option value="MX">Mexiko</option>
+                                                                                <option value="FM">Mikronesien</option>
+                                                                                <option value="MD">Moldawien (Republik Moldau)</option>
+                                                                                <option value="MC">Monaco</option>
+                                                                                <option value="MN">Mongolei</option>
+                                                                                <option value="ME">Montenegro</option>
+                                                                                <option value="MS">Montserrat</option>
+                                                                                <option value="MZ">Mosambik</option>
+                                                                                <option value="MM">Myanmar (Burma)</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="N">
+                                                                                <option value="NA">Namibia</option>
+                                                                                <option value="NR">Nauru</option>
+                                                                                <option value="NP">Nepal</option>
+                                                                                <option value="NC">Neukaledonien</option>
+                                                                                <option value="NZ">Neuseeland</option>
+                                                                                <option value="NI">Nicaragua</option>
+                                                                                <option value="NL">Niederlande</option>
+                                                                                <option value="AN">Niederländische Antillen</option>
+                                                                                <option value="NE">Niger</option>
+                                                                                <option value="NG">Nigeria</option>
+                                                                                <option value="NU">Niue</option>
+                                                                                <option value="MP">Nördliche Marianen</option>
+                                                                                <option value="NF">Norfolkinsel</option>
+                                                                                <option value="NO">Norwegen</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="O">
+                                                                                <option value="OM">Oman</option>
+                                                                                <option value="XO">Orbit</option>
+                                                                                <option value="AT">Österreich</option>
+                                                                                <option value="TL">Osttimor (Timor-Leste)</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="P">
+                                                                                <option value="PK">Pakistan</option>
+                                                                                <option value="PS">Palästinensische Autonomiegebiete</option>
+                                                                                <option value="PW">Palau</option>
+                                                                                <option value="PA">Panama</option>
+                                                                                <option value="PG">Papua-Neuguinea</option>
+                                                                                <option value="PY">Paraguay</option>
+                                                                                <option value="PE">Peru</option>
+                                                                                <option value="PH">Philippinen</option>
+                                                                                <option value="PN">Pitcairninseln</option>
+                                                                                <option value="PL">Polen</option>
+                                                                                <option value="PT">Portugal</option>
+                                                                                <option value="PR">Puerto Rico</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Q"></option>
+                                                                            </optgroup>
+                                                                            <optgroup label="R">
+                                                                                <option value="TW">Republik China (Taiwan)</option>
+                                                                                <option value="CG">Republik Kongo</option>
+                                                                                <option value="RE">Réunion</option>
+                                                                                <option value="RW">Ruanda</option>
+                                                                                <option value="RO">Rumänien</option>
+                                                                                <option value="RU">Russische Föderation</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="S">
+                                                                                <option value="BL">Saint-Barthélemy</option>
+                                                                                <option value="MF">Saint-Martin</option>
+                                                                                <option value="SB">Salomonen</option>
+                                                                                <option value="ZM">Sambia</option>
+                                                                                <option value="WS">Samoa</option>
+                                                                                <option value="SM">San Marino</option>
+                                                                                <option value="ST">São Tomé und Príncipe</option>
+                                                                                <option value="SA">Saudi-Arabien</option>
+                                                                                <option value="SE">Schweden</option>
+                                                                                <option value="CH">Schweiz</option>
+                                                                                <option value="SN">Senegal</option>
+                                                                                <option value="RS">Serbien</option>
+                                                                                <option value="SC">Seychellen</option>
+                                                                                <option value="SL">Sierra Leone</option>
+                                                                                <option value="ZW">Simbabwe</option>
+                                                                                <option value="SG">Singapur</option>
+                                                                                <option value="SK">Slowakei</option>
+                                                                                <option value="SI">Slowenien</option>
+                                                                                <option value="SO">Somalia</option>
+                                                                                <option value="ES">Spanien</option>
+                                                                                <option value="LK">Sri Lanka</option>
+                                                                                <option value="SH">St. Helena</option>
+                                                                                <option value="KN">St. Kitts und Nevis</option>
+                                                                                <option value="LC">St. Lucia</option>
+                                                                                <option value="PM">Saint-Pierre und Miquelon</option>
+                                                                                <option value="VC">St. Vincent und die Grenadinen</option>
+                                                                                <option value="ZA">Südafrika</option>
+                                                                                <option value="SD">Sudan</option>
+                                                                                <option value="GS">Südgeorgien und die Südlichen Sandwichinseln</option>
+                                                                                <option value="SR">Suriname</option>
+                                                                                <option value="SJ">Svalbard und Jan Mayen</option>
+                                                                                <option value="SZ">Swasiland</option>
+                                                                                <option value="SY">Syrien</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="T">
+                                                                                <option value="TJ">Tadschikistan</option>
+                                                                                <option value="TZ">Tansania</option>
+                                                                                <option value="TH">Thailand</option>
+                                                                                <option value="TG">Togo</option>
+                                                                                <option value="TK">Tokelau</option>
+                                                                                <option value="TO">Tonga</option>
+                                                                                <option value="TT">Trinidad und Tobago</option>
+                                                                                <option value="TA">Tristan da Cunha</option>
+                                                                                <option value="TD">Tschad</option>
+                                                                                <option value="CZ">Tschechische Republik</option>
+                                                                                <option value="TN">Tunesien</option>
+                                                                                <option value="TR">Türkei</option>
+                                                                                <option value="TM">Turkmenistan</option>
+                                                                                <option value="TC">Turks- und Caicosinseln</option>
+                                                                                <option value="TV">Tuvalu</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="U">
+                                                                                <option value="UG">Uganda</option>
+                                                                                <option value="UA">Ukraine</option>
+                                                                                <option value="HU">Ungarn</option>
+                                                                                <option value="UY">Uruguay</option>
+                                                                                <option value="UZ">Usbekistan</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="V">
+                                                                                <option value="VU">Vanuatu</option>
+                                                                                <option value="VA">Vatikanstadt</option>
+                                                                                <option value="VE">Venezuela</option>
+                                                                                <option value="AE">Vereinigte Arabische Emirate</option>
+                                                                                <option value="US">Vereinigte Staaten von Amerika (USA)</option>
+                                                                                <option value="GB">Vereinigtes Königreich Großbritannien und Nordirland</option>
+                                                                                <option value="VN">Vietnam</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="W">
+                                                                                <option value="WF">Wallis und Futuna</option>
+                                                                                <option value="CX">Weihnachtsinsel</option>
+                                                                                <option value="EH">Westsahara</option>
+                                                                            </optgroup>
+                                                                            <optgroup label="Z">
+                                                                                <option value="CF">Zentralafrikanische Republik</option>
+                                                                                <option value="CY">Zypern</option>
+                                                                            </optgroup>
+                                                                            </select>
                                                                         </div>
                                                                         <div class="input-select-div mb-2">
                                                                             <div class="">
@@ -1148,15 +1412,28 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="buton" class="py-2 text-center">
-                                        <button class="px-5 py-2" type="button" style="border: none; border-radius: 9px; background-color:#285F52;" id="nextonee__" onclick="nextonee()">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="58.155" height="19.159" viewBox="0 0 58.155 19.159">
-                                                <g id="Group_453" data-name="Group 453" transform="translate(0.004)">
-                                                    <line id="Line_16" data-name="Line 16" x2="51.954" y2="0.2" transform="translate(0 9.287)" fill="none" stroke="#3fd599" stroke-width="2" />
-                                                    <path id="Polygon_2" data-name="Polygon 2" d="M9.58,0l9.58,11.642H0Z" transform="translate(58.151 0) rotate(90)" fill="#3fd599" />
-                                                </g>
-                                            </svg>
-                                        </button>
+                                    <div id="buton" class="py-2 text-end">
+                                        <div class="row">
+                                            <div class="col g-0 text-end my-auto">
+                                                <div class="">
+                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F; cursor: pointer">
+                                                        Uberspringen
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col g-0 text-start">
+                                            <div>
+                                            <button class="px-5 py-2" type="button" style="border: none; border-radius: 9px; background-color:#285F52;" id="nextonee__" onclick="nextonee()">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="58.155" height="19.159" viewBox="0 0 58.155 19.159">
+                                                    <g id="Group_453" data-name="Group 453" transform="translate(0.004)">
+                                                        <line id="Line_16" data-name="Line 16" x2="51.954" y2="0.2" transform="translate(0 9.287)" fill="none" stroke="#3fd599" stroke-width="2" />
+                                                        <path id="Polygon_2" data-name="Polygon 2" d="M9.58,0l9.58,11.642H0Z" transform="translate(58.151 0) rotate(90)" fill="#3fd599" />
+                                                    </g>
+                                                </svg>
+                                            </button>
+                                            </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1181,9 +1458,314 @@
                                                                         Nationalitat:
                                                                     </span>
                                                                 </div>
-                                                                <input name="nationality_sachen" class="py-1" type="text" id="">
+                                                                <select onchange="hideNation()"  class="form-select w-75" name="nationality_sachen" id="schweiz">
+                                                                    <option value="CH" selected>Schweiz</option>
+                                                                    <option value="DE">Deutschland</option>
+                                                                    <option value="AT">Österreich</option>
+                                                                    <optgroup label="A">
+                                                                        <option value="AF">Afghanistan</option>
+                                                                        <option value="EG">Ägypten</option>
+                                                                        <option value="AX">Åland</option>
+                                                                        <option value="AL">Albanien</option>
+                                                                        <option value="DZ">Algerien</option>
+                                                                        <option value="AS">Amerikanisch-Samoa</option>
+                                                                        <option value="VI">Amerikanische Jungferninseln</option>
+                                                                        <option value="AD">Andorra</option>
+                                                                        <option value="AO">Angola</option>
+                                                                        <option value="AI">Anguilla</option>
+                                                                        <option value="AQ">Antarktis</option>
+                                                                        <option value="AG">Antigua und Barbuda</option>
+                                                                        <option value="GQ">Äquatorialguinea</option>
+                                                                        <option value="AR">Argentinien</option>
+                                                                        <option value="AM">Armenien</option>
+                                                                        <option value="AW">Aruba</option>
+                                                                        <option value="AC">Ascension</option>
+                                                                        <option value="AZ">Aserbaidschan</option>
+                                                                        <option value="ET">Äthiopien</option>
+                                                                        <option value="AU">Australien</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="B">
+                                                                        <option value="BS">Bahamas</option>
+                                                                        <option value="BH">Bahrain</option>
+                                                                        <option value="BD">Bangladesch</option>
+                                                                        <option value="BB">Barbados</option>
+                                                                        <option value="BY">Belarus (Weißrussland)</option>
+                                                                        <option value="BE">Belgien</option>
+                                                                        <option value="BZ">Belize</option>
+                                                                        <option value="BJ">Benin</option>
+                                                                        <option value="BM">Bermuda</option>
+                                                                        <option value="BT">Bhutan</option>
+                                                                        <option value="BO">Bolivien</option>
+                                                                        <option value="BA">Bosnien und Herzegowina</option>
+                                                                        <option value="BW">Botswana</option>
+                                                                        <option value="BV">Bouvetinsel</option>
+                                                                        <option value="BR">Brasilien</option>
+                                                                        <option value="VG">Britische Jungferninseln</option>
+                                                                        <option value="IO">Britisches Territorium im Indischen Ozean</option>
+                                                                        <option value="BN">Brunei Darussalam</option>
+                                                                        <option value="BG">Bulgarien</option>
+                                                                        <option value="BF">Burkina Faso</option>
+                                                                        <option value="BI">Burundi</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="C">
+                                                                        <option value="EA">Ceuta, Melilla</option>
+                                                                        <option value="CL">Chile</option>
+                                                                        <option value="CN">Volksrepublik China</option>
+                                                                        <option value="CP">Clipperton</option>
+                                                                        <option value="CK">Cookinseln</option>
+                                                                        <option value="CR">Costa Rica</option>
+                                                                        <option value="CI">Côte d'Ivoire (Elfenbeinküste)</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="D">
+                                                                        <option value="DK">Dänemark</option>
+                                                                        <option value="DE">Deutschland</option>
+                                                                        <option value="DG">Diego Garcia</option>
+                                                                        <option value="DM">Dominica</option>
+                                                                        <option value="DO">Dominikanische Republik</option>
+                                                                        <option value="DJ">Dschibuti</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="E">
+                                                                        <option value="EC">Ecuador</option>
+                                                                        <option value="SV">El Salvador</option>
+                                                                        <option value="ER">Eritrea</option>
+                                                                        <option value="EE">Estland</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="F">
+                                                                        <option value="FK">Falklandinseln</option>
+                                                                        <option value="FO">Färöer</option>
+                                                                        <option value="FJ">Fidschi</option>
+                                                                        <option value="FI">Finnland</option>
+                                                                        <option value="FR">Frankreich</option>
+                                                                        <option value="GF">Französisch-Guayana</option>
+                                                                        <option value="PF">Französisch-Polynesien</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="G">
+                                                                        <option value="GA">Gabun</option>
+                                                                        <option value="GM">Gambia</option>
+                                                                        <option value="GE">Georgien</option>
+                                                                        <option value="GH">Ghana</option>
+                                                                        <option value="GI">Gibraltar</option>
+                                                                        <option value="GD">Grenada</option>
+                                                                        <option value="GR">Griechenland</option>
+                                                                        <option value="GL">Grönland</option>
+                                                                        <option value="GB">Großbritannien</option>
+                                                                        <option value="GP">Guadeloupe</option>
+                                                                        <option value="GU">Guam</option>
+                                                                        <option value="GT">Guatemala</option>
+                                                                        <option value="GG">Guernsey (Kanalinsel)</option>
+                                                                        <option value="GN">Guinea</option>
+                                                                        <option value="GW">Guinea-Bissau</option>
+                                                                        <option value="GY">Guyana</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="H">
+                                                                        <option value="HT">Haiti</option>
+                                                                        <option value="HM">Heard- und McDonald-Inseln</option>
+                                                                        <option value="HN">Honduras</option>
+                                                                        <option value="HK">Hongkong</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="I">
+                                                                        <option value="IN">Indien</option>
+                                                                        <option value="ID">Indonesien</option>
+                                                                        <option value="IM">Insel Man</option>
+                                                                        <option value="IQ">Irak</option>
+                                                                        <option value="IR">Iran</option>
+                                                                        <option value="IE">Irland</option>
+                                                                        <option value="IS">Island</option>
+                                                                        <option value="IL">Israel</option>
+                                                                        <option value="IT">Italien</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="J">
+                                                                        <option value="JM">Jamaika</option>
+                                                                        <option value="JP">Japan</option>
+                                                                        <option value="YE">Jemen</option>
+                                                                        <option value="JE">Jersey (Kanalinsel)</option>
+                                                                        <option value="JO">Jordanien</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="K">
+                                                                        <option value="KY">Kaimaninseln</option>
+                                                                        <option value="KH">Kambodscha</option>
+                                                                        <option value="CM">Kamerun</option>
+                                                                        <option value="CA">Kanada</option>
+                                                                        <option value="IC">Kanarische Inseln</option>
+                                                                        <option value="CV">Kap Verde</option>
+                                                                        <option value="KZ">Kasachstan</option>
+                                                                        <option value="QA">Katar</option>
+                                                                        <option value="KE">Kenia</option>
+                                                                        <option value="KG">Kirgisistan</option>
+                                                                        <option value="KI">Kiribati</option>
+                                                                        <option value="CC">Kokosinseln</option>
+                                                                        <option value="CO">Kolumbien</option>
+                                                                        <option value="KM">Komoren</option>
+                                                                        <option value="CD">Demokratische Republik Kongo</option>
+                                                                        <option value="KP">Demokratische Volksrepublik Korea (Nordkorea)</option>
+                                                                        <option value="KR">Republik Korea (Südkorea)</option>
+                                                                        <option value="KOS">Kosovo</option>
+                                                                        <option value="HR">Kroatien</option>
+                                                                        <option value="CU">Kuba</option>
+                                                                        <option value="KW">Kuwait</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="L">
+                                                                        <option value="LA">Laos</option>
+                                                                        <option value="LS">Lesotho</option>
+                                                                        <option value="LV">Lettland</option>
+                                                                        <option value="LB">Libanon</option>
+                                                                        <option value="LR">Liberia</option>
+                                                                        <option value="LY">Libyen</option>
+                                                                        <option value="LI">Liechtenstein</option>
+                                                                        <option value="LT">Litauen</option>
+                                                                        <option value="LU">Luxemburg</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="M">
+                                                                        <option value="MO">Macao</option>
+                                                                        <option value="MG">Madagaskar</option>
+                                                                        <option value="MW">Malawi</option>
+                                                                        <option value="MY">Malaysia</option>
+                                                                        <option value="MV">Malediven</option>
+                                                                        <option value="ML">Mali</option>
+                                                                        <option value="MT">Malta</option>
+                                                                        <option value="MA">Marokko</option>
+                                                                        <option value="MH">Marshallinseln</option>
+                                                                        <option value="MQ">Martinique</option>
+                                                                        <option value="MR">Mauretanien</option>
+                                                                        <option value="MU">Mauritius</option>
+                                                                        <option value="YT">Mayotte</option>
+                                                                        <option value="MK">Mazedonien</option>
+                                                                        <option value="MX">Mexiko</option>
+                                                                        <option value="FM">Mikronesien</option>
+                                                                        <option value="MD">Moldawien (Republik Moldau)</option>
+                                                                        <option value="MC">Monaco</option>
+                                                                        <option value="MN">Mongolei</option>
+                                                                        <option value="ME">Montenegro</option>
+                                                                        <option value="MS">Montserrat</option>
+                                                                        <option value="MZ">Mosambik</option>
+                                                                        <option value="MM">Myanmar (Burma)</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="N">
+                                                                        <option value="NA">Namibia</option>
+                                                                        <option value="NR">Nauru</option>
+                                                                        <option value="NP">Nepal</option>
+                                                                        <option value="NC">Neukaledonien</option>
+                                                                        <option value="NZ">Neuseeland</option>
+                                                                        <option value="NI">Nicaragua</option>
+                                                                        <option value="NL">Niederlande</option>
+                                                                        <option value="AN">Niederländische Antillen</option>
+                                                                        <option value="NE">Niger</option>
+                                                                        <option value="NG">Nigeria</option>
+                                                                        <option value="NU">Niue</option>
+                                                                        <option value="MP">Nördliche Marianen</option>
+                                                                        <option value="NF">Norfolkinsel</option>
+                                                                        <option value="NO">Norwegen</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="O">
+                                                                        <option value="OM">Oman</option>
+                                                                        <option value="XO">Orbit</option>
+                                                                        <option value="AT">Österreich</option>
+                                                                        <option value="TL">Osttimor (Timor-Leste)</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="P">
+                                                                        <option value="PK">Pakistan</option>
+                                                                        <option value="PS">Palästinensische Autonomiegebiete</option>
+                                                                        <option value="PW">Palau</option>
+                                                                        <option value="PA">Panama</option>
+                                                                        <option value="PG">Papua-Neuguinea</option>
+                                                                        <option value="PY">Paraguay</option>
+                                                                        <option value="PE">Peru</option>
+                                                                        <option value="PH">Philippinen</option>
+                                                                        <option value="PN">Pitcairninseln</option>
+                                                                        <option value="PL">Polen</option>
+                                                                        <option value="PT">Portugal</option>
+                                                                        <option value="PR">Puerto Rico</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="Q">
+                                                                    </optgroup>
+                                                                    <optgroup label="R">
+                                                                        <option value="TW">Republik China (Taiwan)</option>
+                                                                        <option value="CG">Republik Kongo</option>
+                                                                        <option value="RE">Réunion</option>
+                                                                        <option value="RW">Ruanda</option>
+                                                                        <option value="RO">Rumänien</option>
+                                                                        <option value="RU">Russische Föderation</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="S">
+                                                                        <option value="BL">Saint-Barthélemy</option>
+                                                                        <option value="MF">Saint-Martin</option>
+                                                                        <option value="SB">Salomonen</option>
+                                                                        <option value="ZM">Sambia</option>
+                                                                        <option value="WS">Samoa</option>
+                                                                        <option value="SM">San Marino</option>
+                                                                        <option value="ST">São Tomé und Príncipe</option>
+                                                                        <option value="SA">Saudi-Arabien</option>
+                                                                        <option value="SE">Schweden</option>
+                                                                        <option value="CH">Schweiz</option>
+                                                                        <option value="SN">Senegal</option>
+                                                                        <option value="RS">Serbien</option>
+                                                                        <option value="SC">Seychellen</option>
+                                                                        <option value="SL">Sierra Leone</option>
+                                                                        <option value="ZW">Simbabwe</option>
+                                                                        <option value="SG">Singapur</option>
+                                                                        <option value="SK">Slowakei</option>
+                                                                        <option value="SI">Slowenien</option>
+                                                                        <option value="SO">Somalia</option>
+                                                                        <option value="ES">Spanien</option>
+                                                                        <option value="LK">Sri Lanka</option>
+                                                                        <option value="SH">St. Helena</option>
+                                                                        <option value="KN">St. Kitts und Nevis</option>
+                                                                        <option value="LC">St. Lucia</option>
+                                                                        <option value="PM">Saint-Pierre und Miquelon</option>
+                                                                        <option value="VC">St. Vincent und die Grenadinen</option>
+                                                                        <option value="ZA">Südafrika</option>
+                                                                        <option value="SD">Sudan</option>
+                                                                        <option value="GS">Südgeorgien und die Südlichen Sandwichinseln</option>
+                                                                        <option value="SR">Suriname</option>
+                                                                        <option value="SJ">Svalbard und Jan Mayen</option>
+                                                                        <option value="SZ">Swasiland</option>
+                                                                        <option value="SY">Syrien</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="T">
+                                                                        <option value="TJ">Tadschikistan</option>
+                                                                        <option value="TZ">Tansania</option>
+                                                                        <option value="TH">Thailand</option>
+                                                                        <option value="TG">Togo</option>
+                                                                        <option value="TK">Tokelau</option>
+                                                                        <option value="TO">Tonga</option>
+                                                                        <option value="TT">Trinidad und Tobago</option>
+                                                                        <option value="TA">Tristan da Cunha</option>
+                                                                        <option value="TD">Tschad</option>
+                                                                        <option value="CZ">Tschechische Republik</option>
+                                                                        <option value="TN">Tunesien</option>
+                                                                        <option value="TR">Türkei</option>
+                                                                        <option value="TM">Turkmenistan</option>
+                                                                        <option value="TC">Turks- und Caicosinseln</option>
+                                                                        <option value="TV">Tuvalu</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="U">
+                                                                        <option value="UG">Uganda</option>
+                                                                        <option value="UA">Ukraine</option>
+                                                                        <option value="HU">Ungarn</option>
+                                                                        <option value="UY">Uruguay</option>
+                                                                        <option value="UZ">Usbekistan</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="V">
+                                                                        <option value="VU">Vanuatu</option>
+                                                                        <option value="VA">Vatikanstadt</option>
+                                                                        <option value="VE">Venezuela</option>
+                                                                        <option value="AE">Vereinigte Arabische Emirate</option>
+                                                                        <option value="US">Vereinigte Staaten von Amerika (USA)</option>
+                                                                        <option value="GB">Vereinigtes Königreich Großbritannien und Nordirland</option>
+                                                                        <option value="VN">Vietnam</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="W">
+                                                                        <option value="WF">Wallis und Futuna</option>
+                                                                        <option value="CX">Weihnachtsinsel</option>
+                                                                        <option value="EH">Westsahara</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="Z">
+                                                                        <option value="CF">Zentralafrikanische Republik</option>
+                                                                        <option value="CY">Zypern</option>
+                                                                    </optgroup>
+                                                                </select>
                                                             </div>
-                                                            <div class="input-select-div mb-2">
+                                                            <div class="input-select-div mb-2" id="admin">
                                                                 <div class="">
                                                                     <span class="" style="font-size: 15px;">
                                                                         Aufenthaltsgenehmigung
@@ -1223,6 +1805,7 @@
                                                                 </div>
                                                                 <select name="zivilstand" class="form-select w-75" aria-label="Default select example">
                                                                     <option selected></option>
+                                                                    <option value="ledig">Ledig</option>
                                                                     <option value="Verheiratet">Verheiratet</option>
                                                                     <option value="Verwitwet">Verwitwet</option>
                                                                     <option value="Geschieden">Geschieden</option>
@@ -1301,7 +1884,11 @@
                                                                         Vertragsbeginn ab:
                                                                     </span>
                                                                 </div>
-                                                                <input name="start_of_contract" type="date" class="py-1 border-0">
+                                                                <select name="start_of_contract" class="form-select w-75" aria-label="Default select example">
+                                                                    @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)
+                                                                        <option value="{{$i}}">{{$i}}</option>
+                                                                    @endfor
+                                                                </select>
                                                             </div>
                                                             <div class="group-button-div mb-2">
                                                                 <div class="">
@@ -1379,8 +1966,8 @@
                                     <div class="row">
                                         <div class="col g-0 text-end my-auto">
                                             <div class="">
-                                                <span class="pe-2" style="color: #9F9F9F;">
-
+                                                <span onclick="nextonee()" class="pe-2" style="color: #9F9F9F; cursor: pointer">
+                                                    Uberspringen
                                                 </span>
                                             </div>
                                         </div>
@@ -1401,7 +1988,7 @@
                             </div>
 
                             <div class="tab-pane fade  vorsorge-content" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
-                                <div class="row mx-4">
+                                <div class="row mx-2 mx-sm-4">
                                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3 ">
                                         <div class="mb-2">
                                             <span class="fw-bold fs-6">
@@ -1488,7 +2075,7 @@
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3 ">
                                         <div class="mb-2">
-                                            <span class="fw-bold fs-6">
+                                            <span class="fw-bold fs-6 text-white">
                                                 Hausrat- & Privathaftpflicht
                                             </span>
                                         </div>
@@ -1891,7 +2478,7 @@
                             <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         STATUS
                     </span>
                 </a>
@@ -1915,7 +2502,7 @@
                             <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         DEPOSIT
                     </span>
                 </a>
@@ -1937,7 +2524,7 @@
                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         CANCELATIONS
                     </span>
                 </a>
@@ -1949,8 +2536,6 @@
                 Auth::guard('admins')->user()->hasRole('salesmanager') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                @if(Auth::guard('admins')->user()->hasRole('salesmanager') ||
-                Auth::guard('admins')->user()->hasRole('fs'))
                 <a href="{{route('Appointments')}}" class="m-nav text-decoration-none {{ (request()->is('Appointments')) ? 'activeClassNavMob__' : '' }}">
                     <span class="px-2 active-dot">
                         <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1963,71 +2548,10 @@
                             <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         CALENDAR
                     </span>
                 </a>
-                @else
-                <a href="{{route('calendar')}}" class="m-nav text-decoration-none {{ (request()->is('calendar')) ? 'activeClassNavMob__' : '' }}">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591" />
-                        </svg>
-                    </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d" class="bi bi-calendar-check" viewBox="0 0 16 16">
-                            <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                        </svg>
-                    </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
-                        CALENDAR
-                    </span>
-                </a>
-                @endif
-                <hr>
-                @endif
-            </div>
-            <div class="my-3 m-burger">
-                @if(Auth::guard('admins')->user()->hasRole('salesmanager')
-                ||Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="{{route('calendar')}}" class="m-nav text-decoration-none {{ (request()->is('calendar')) ? 'activeClassNavMob__' : '' }}">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591" />
-                        </svg>
-                    </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d" class="bi bi-calendar-date" viewBox="0 0 16 16">
-                            <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                        </svg>
-                    </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
-                        DATES
-                    </span>
-                </a>
-                @else
-                <a href="{{route('Appointments')}}" class="m-nav text-decoration-none {{ (request()->is('Appointments')) ? 'activeClassNavMob__' : '' }}">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591" />
-                        </svg>
-                    </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d" class="bi bi-calendar-date" viewBox="0 0 16 16">
-                            <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                        </svg>
-                    </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
-                        DATES
-                    </span>
-                </a>
-
-                @endif
                 <hr>
                 @endif
             </div>
@@ -2048,7 +2572,7 @@
                             <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         EMPLOYEES
                     </span>
                 </a>
@@ -2069,7 +2593,7 @@
                             <path d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         COMMISIONS
                     </span>
                 </a>
@@ -2088,7 +2612,7 @@
                             <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         FINANCE
                     </span>
                 </a>
@@ -2109,7 +2633,7 @@
                             <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         PROV.SYSTEM
                     </span>
                 </a>
@@ -2131,7 +2655,7 @@
                             <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         STATISTIC
                     </span>
                 </a>
@@ -2153,7 +2677,7 @@
                             <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         TRUST
                     </span>
                 </a>
@@ -2174,7 +2698,7 @@
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         ADD NEW USER
                     </span>
                 </a>
@@ -2194,7 +2718,7 @@
                             <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         SIGN OUT
                     </span>
                 </a>
@@ -2318,6 +2842,7 @@
         .nav-form-links button.active {
             color: #434343 !important;
         }
+        .nav-form-links
 
         .nav-form-links button:hover {
             color: #434343 !important;
@@ -2532,6 +3057,9 @@
             border: none !important;
             border-top-left-radius: 15px !important;
             border-top-right-radius: 15px !important;
+            border-bottom-left-radius: 0px !important;
+            /*border-top-right-radius: 15px !important;*/
+
         }
 
         .krankenkasse-btn:hover {
@@ -2544,6 +3072,8 @@
             border: none !important;
             border-top-left-radius: 15px !important;
             border-top-right-radius: 15px !important;
+            border-bottom-left-radius: 0px !important;
+
         }
 
         .auto-btn:hover {
@@ -2556,6 +3086,8 @@
             border: none !important;
             border-top-left-radius: 15px !important;
             border-top-right-radius: 15px !important;
+            border-bottom-left-radius: 0px !important;
+
         }
 
         .sachen-btn:hover {
@@ -2568,6 +3100,8 @@
             border: none !important;
             border-top-left-radius: 15px !important;
             border-top-right-radius: 15px !important;
+            border-bottom-left-radius: 0px !important;
+
         }
 
         .vorsorge-btn:hover {
@@ -2750,6 +3284,20 @@
             }
 
             .img-collapsed {
+                display: block;
+            }
+        }
+        .desk-t {
+            display: block;
+        }
+        .mobile-t {
+            display: none;
+        }
+        @media (max-width: 575.98px) {
+            .desk-t {
+                display: none;
+            }
+            .mobile-t {
                 display: block;
             }
         }
@@ -3032,35 +3580,16 @@
                 '                                                                                </span>' +
                 '                                                                        </div>' +
                 '                                                                        <div' +
-                '                                                                            class="select-div text-end d-flex my-2">' +
+                '                                                                            class="input-select-div mb-2">' +
                 '                                                                            <div class="text-nowrap">' +
                 '                                                                                    <span class="fw-normal">' +
                 '                                                                                        Kaufjahr' +
                 '                                                                                    </span>' +
                 '                                                                            </div>' +
                 '                                                                            <select name="year_of_purchase' + newncnt + '"' +
-                '                                                                                    class="fw-normal" id=""' +
-                '                                                                                    style="background-color: #EFEFEF;">' +
-                '' +
-                '                                                                                <option value="2021" selected>2021' +
-                '                                                                                </option>' +
-                '                                                                                <option value="2020">2020</option>' +
-                '                                                                                <option value="2019">2019</option>' +
-                '                                                                                <option value="2019">2018</option>' +
-                '                                                                                <option value="2019">2017</option>' +
-                '                                                                                <option value="2019">2016</option>' +
-                '                                                                                <option value="2019">2015</option>' +
-                '                                                                                <option value="2019">2014</option>' +
-                '                                                                                <option value="2019">2013</option>' +
-                '                                                                                <option value="2019">2012</option>' +
-                '                                                                                <option value="2019">2011</option>' +
-                '                                                                                <option value="2019">2010</option>' +
-                '                                                                                <option value="2019">2009</option>' +
-                '                                                                                <option value="2019">2008</option>' +
-                '                                                                                <option value="2019">2007</option>' +
-                '                                                                                <option value="2019">2006</option>' +
-                '                                                                                <option value="2019">2005</option>' +
-                '' +
+                '                                                                                    id=""' +
+                '                                                                                    class="form-select w-75" aria-label="Default select example">' +
+                '                                                                                   @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)<option value="{{$i}}">{{$i}}</option>@endfor'+
                 '                                                                            </select>' +
                 '                                                                        </div>' +
                 '                                                                    </div>' +
@@ -3132,7 +3661,7 @@
                 '                                                                        </div>' +
                 '' +
                 '                                                                        <input name="km_stood' + newncnt + '" class="py-1"' +
-                '                                                                               type="text" id="">' +
+                '                                                                               type="number" id="">' +
                 '' +
                 '                                                                    </div>' +
                 '                                                                </div>' +
@@ -3147,7 +3676,7 @@
                 '                                                                    <div class="date-input-div mb-2">' +
                 '                                                                        <div class="">' +
                 '                                                                                <span>' +
-                '                                                                                    Erste inverkehrssetzung:' +
+                '                                                                                    Ausstelldatum Fuhrerausweis:' +
                 '                                                                                </span>' +
                 '                                                                        </div>' +
                 '' +
@@ -3161,8 +3690,25 @@
                 '                                                                                    Nationalitat:' +
                 '                                                                                </span>' +
                 '                                                                        </div>' +
-                '                                                                        <input class="py-1 border-0"' +
-                '                                                                               name="nationality' + newncnt + '" type="text">' +
+                '                                                                        <select  class="form-select w-75" name="nationality'+ newncnt +'">'+
+                '                                                                               <option value="CH" selected>Schweiz</option> <option value="DE">Deutschland</option> <option value="AT">Österreich</option>'+
+                '                                                                               <optgroup label="A"> <option value="AF">Afghanistan</option> <option value="EG">Ägypten</option> <option value="AX">Åland</option> <option value="AL">Albanien</option> <option value="DZ">Algerien</option> <option value="AS">Amerikanisch-Samoa</option> <option value="VI">Amerikanische Jungferninseln</option> <option value="AD">Andorra</option> <option value="AO">Angola</option> <option value="AI">Anguilla</option> <option value="AQ">Antarktis</option> <option value="AG">Antigua und Barbuda</option> <option value="GQ">Äquatorialguinea</option> <option value="AR">Argentinien</option> <option value="AM">Armenien</option> <option value="AW">Aruba</option> <option value="AC">Ascension</option> <option value="AZ">Aserbaidschan</option> <option value="ET">Äthiopien</option> <option value="AU">Australien</option> </optgroup>'+
+                '                                                                               <optgroup label="B"> <option value="BS">Bahamas</option> <option value="BH">Bahrain</option> <option value="BD">Bangladesch</option> <option value="BB">Barbados</option> <option value="BY">Belarus (Weißrussland)</option> <option value="BE">Belgien</option> <option value="BZ">Belize</option> <option value="BJ">Benin</option> <option value="BM">Bermuda</option> <option value="BT">Bhutan</option> <option value="BO">Bolivien</option> <option value="BA">Bosnien und Herzegowina</option> <option value="BW">Botswana</option> <option value="BV">Bouvetinsel</option> <option value="BR">Brasilien</option> <option value="VG">Britische Jungferninseln</option> <option value="IO">Britisches Territorium im Indischen Ozean</option> <option value="BN">Brunei Darussalam</option> <option value="BG">Bulgarien</option> <option value="BF">Burkina Faso</option> <option value="BI">Burundi</option> </optgroup>'+
+                '                                                                               <optgroup label="C"> <option value="EA">Ceuta, Melilla</option> <option value="CL">Chile</option> <option value="CN">Volksrepublik China</option> <option value="CP">Clipperton</option> <option value="CK">Cookinseln</option> <option value="CR">Costa Rica</option> <option value="CI">Côte dIvoire </option> </optgroup>' +
+                '                                                                               <optgroup label="D"> <option value="DK">Dänemark</option> <option value="DE">Deutschland</option> <option value="DG">Diego Garcia</option> <option value="DM">Dominica</option> <option value="DO">Dominikanische Republik</option> <option value="DJ">Dschibuti</option> </optgroup>'+
+                '                                                                               <optgroup label="E"> <option value="EC">Ecuador</option> <option value="SV">El Salvador</option> <option value="ER">Eritrea</option> <option value="EE">Estland</option> </optgroup> <optgroup label="F"> <option value="FK">Falklandinseln</option> <option value="FO">Färöer</option> <option value="FJ">Fidschi</option> <option value="FI">Finnland</option> <option value="FR">Frankreich</option> <option value="GF">Französisch-Guayana</option> <option value="PF">Französisch-Polynesien</option> </optgroup>'+
+                '                                                                               <optgroup label="G"> <option value="GA">Gabun</option> <option value="GM">Gambia</option> <option value="GE">Georgien</option> <option value="GH">Ghana</option> <option value="GI">Gibraltar</option> <option value="GD">Grenada</option> <option value="GR">Griechenland</option> <option value="GL">Grönland</option> <option value="GB">Großbritannien</option> <option value="GP">Guadeloupe</option> <option value="GU">Guam</option> <option value="GT">Guatemala</option> <option value="GG">Guernsey (Kanalinsel)</option> <option value="GN">Guinea</option> <option value="GW">Guinea-Bissau</option> <option value="GY">Guyana</option> </optgroup>'+
+                '                                                                               <optgroup label="H"> <option value="HT">Haiti</option> <option value="HM">Heard- und McDonald-Inseln</option> <option value="HN">Honduras</option> <option value="HK">Hongkong</option> </optgroup> <optgroup label="I"> <option value="IN">Indien</option> <option value="ID">Indonesien</option> <option value="IM">Insel Man</option> <option value="IQ">Irak</option> <option value="IR">Iran</option> <option value="IE">Irland</option> <option value="IS">Island</option> <option value="IL">Israel</option> <option value="IT">Italien</option> </optgroup>'+
+                '                                                                               <optgroup label="J"> <option value="JM">Jamaika</option> <option value="JP">Japan</option> <option value="YE">Jemen</option> <option value="JE">Jersey (Kanalinsel)</option> <option value="JO">Jordanien</option> </optgroup> <optgroup label="K"> <option value="KY">Kaimaninseln</option> <option value="KH">Kambodscha</option> <option value="CM">Kamerun</option> <option value="CA">Kanada</option> <option value="IC">Kanarische Inseln</option> <option value="CV">Kap Verde</option> <option value="KZ">Kasachstan</option> <option value="QA">Katar</option> <option value="KE">Kenia</option> <option value="KG">Kirgisistan</option> <option value="KI">Kiribati</option> <option value="CC">Kokosinseln</option> <option value="CO">Kolumbien</option> <option value="KM">Komoren</option> <option value="CD">Demokratische Republik Kongo</option> <option value="KP">Demokratische Volksrepublik Korea (Nordkorea)</option> <option value="KR">Republik Korea (Südkorea)</option> <option value="KOS">Kosovo</option> <option value="HR">Kroatien</option> <option value="CU">Kuba</option> <option value="KW">Kuwait</option> </optgroup>'+
+                '                                                                               <optgroup label="L"> <option value="LA">Laos</option> <option value="LS">Lesotho</option> <option value="LV">Lettland</option> <option value="LB">Libanon</option> <option value="LR">Liberia</option> <option value="LY">Libyen</option> <option value="LI">Liechtenstein</option> <option value="LT">Litauen</option> <option value="LU">Luxemburg</option> </optgroup>'+
+                '                                                                               <optgroup label="M"> <option value="MO">Macao</option> <option value="MG">Madagaskar</option> <option value="MW">Malawi</option> <option value="MY">Malaysia</option> <option value="MV">Malediven</option> <option value="ML">Mali</option> <option value="MT">Malta</option> <option value="MA">Marokko</option> <option value="MH">Marshallinseln</option> <option value="MQ">Martinique</option> <option value="MR">Mauretanien</option> <option value="MU">Mauritius</option> <option value="YT">Mayotte</option> <option value="MK">Mazedonien</option> <option value="MX">Mexiko</option> <option value="FM">Mikronesien</option> <option value="MD">Moldawien (Republik Moldau)</option> <option value="MC">Monaco</option> <option value="MN">Mongolei</option> <option value="ME">Montenegro</option> <option value="MS">Montserrat</option> <option value="MZ">Mosambik</option> <option value="MM">Myanmar (Burma)</option> </optgroup>'+
+                '                                                                               <optgroup label="N"> <option value="NA">Namibia</option> <option value="NR">Nauru</option> <option value="NP">Nepal</option> <option value="NC">Neukaledonien</option> <option value="NZ">Neuseeland</option> <option value="NI">Nicaragua</option> <option value="NL">Niederlande</option> <option value="AN">Niederländische Antillen</option> <option value="NE">Niger</option> <option value="NG">Nigeria</option> <option value="NU">Niue</option> <option value="MP">Nördliche Marianen</option> <option value="NF">Norfolkinsel</option> <option value="NO">Norwegen</option> </optgroup>'+
+                '                                                                                <optgroup label="O"> <option value="OM">Oman</option> <option value="XO">Orbit</option> <option value="AT">Österreich</option> <option value="TL">Osttimor (Timor-Leste)</option> </optgroup> <optgroup label="P"> <option value="PK">Pakistan</option> <option value="PS">Palästinensische Autonomiegebiete</option> <option value="PW">Palau</option> <option value="PA">Panama</option> <option value="PG">Papua-Neuguinea</option> <option value="PY">Paraguay</option> <option value="PE">Peru</option> <option value="PH">Philippinen</option> <option value="PN">Pitcairninseln</option> <option value="PL">Polen</option> <option value="PT">Portugal</option> <option value="PR">Puerto Rico</option> </optgroup>'+
+                '                                                                               <optgroup label="Q"> </optgroup> <optgroup label="R"> <option value="TW">Republik China (Taiwan)</option> <option value="CG">Republik Kongo</option> <option value="RE">Réunion</option> <option value="RW">Ruanda</option> <option value="RO">Rumänien</option> <option value="RU">Russische Föderation</option> </optgroup>'+
+                '                                                                               <optgroup label="S"> <option value="BL">Saint-Barthélemy</option> <option value="MF">Saint-Martin</option> <option value="SB">Salomonen</option> <option value="ZM">Sambia</option> <option value="WS">Samoa</option> <option value="SM">San Marino</option> <option value="ST">São Tomé und Príncipe</option> <option value="SA">Saudi-Arabien</option> <option value="SE">Schweden</option> <option value="CH">Schweiz</option> <option value="SN">Senegal</option> <option value="RS">Serbien</option> <option value="SC">Seychellen</option> <option value="SL">Sierra Leone</option> <option value="ZW">Simbabwe</option> <option value="SG">Singapur</option> <option value="SK">Slowakei</option> <option value="SI">Slowenien</option> <option value="SO">Somalia</option> <option value="ES">Spanien</option> <option value="LK">Sri Lanka</option> <option value="SH">St. Helena</option> <option value="KN">St. Kitts und Nevis</option> <option value="LC">St. Lucia</option> <option value="PM">Saint-Pierre und Miquelon</option> <option value="VC">St. Vincent und die Grenadinen</option> <option value="ZA">Südafrika</option> <option value="SD">Sudan</option> <option value="GS">Südgeorgien und die Südlichen Sandwichinseln</option> <option value="SR">Suriname</option> <option value="SJ">Svalbard und Jan Mayen</option> <option value="SZ">Swasiland</option> <option value="SY">Syrien</option> </optgroup>'+
+                '                                                                               <optgroup label="T"> <option value="TJ">Tadschikistan</option> <option value="TZ">Tansania</option> <option value="TH">Thailand</option> <option value="TG">Togo</option> <option value="TK">Tokelau</option> <option value="TO">Tonga</option> <option value="TT">Trinidad und Tobago</option> <option value="TA">Tristan da Cunha</option> <option value="TD">Tschad</option> <option value="CZ">Tschechische Republik</option> <option value="TN">Tunesien</option> <option value="TR">Türkei</option> <option value="TM">Turkmenistan</option> <option value="TC">Turks- und Caicosinseln</option> <option value="TV">Tuvalu</option> </optgroup> <optgroup label="U"> <option value="UG">Uganda</option> <option value="UA">Ukraine</option> <option value="HU">Ungarn</option> <option value="UY">Uruguay</option> <option value="UZ">Usbekistan</option> </optgroup>'+
+                '                                                                               <optgroup label="V"> <option value="VU">Vanuatu</option> <option value="VA">Vatikanstadt</option> <option value="VE">Venezuela</option> <option value="AE">Vereinigte Arabische Emirate</option> <option value="US">Vereinigte Staaten von Amerika (USA)</option> <option value="GB">Vereinigtes Königreich Großbritannien und Nordirland</option> <option value="VN">Vietnam</option> </optgroup> <optgroup label="W"> <option value="WF">Wallis und Futuna</option> <option value="CX">Weihnachtsinsel</option> <option value="EH">Westsahara</option> </optgroup> <optgroup label="Z"> <option value="CF">Zentralafrikanische Republik</option> <option value="CY">Zypern</option> </optgroup>'+
+                '                                                                               </select>'+
                 '                                                                    </div>' +
                 '                                                                    <div class="input-select-div mb-2">' +
                 '                                                                        <div class="">' +
@@ -3506,6 +4052,14 @@
             if (x == "No") {
                 document.getElementById('mandat').innerHTML = "";
 
+            }
+        }
+        function hideNation() {
+            var x = document.getElementById('schweiz').value;
+            if (x == "CH") {
+                document.getElementById('admin').style.display = "none";
+            } else {
+                document.getElementById('admin').style.display = "inline";
             }
         }
     </script>
