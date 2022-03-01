@@ -50,7 +50,8 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\URL;
 use function Clue\StreamFilter\fun;
-
+use App\Models\TestClass;
+use Monolog\Test\TestCase;
 
 route::prefix('')->middleware('confirmcode')->group(function(){
    route::get('addlead',function(){
@@ -238,7 +239,7 @@ route::get('file/{file?}',function($file = null,Request $request){
            return $response;
         }
         else{
-           return $request->session()->get('_previous');
+           return redirect(URL::previous());
         }
 })->middleware('role:admin|backoffice|salesmanager|management|fs,admins')->name('showfile');
 });
@@ -272,7 +273,7 @@ route::get('fsadmins',[TodoController::class,'fsadmins']);
 route::post('rejectupdate',[LeadDataController::class,'rejectupdate'])->name('rejectupdate');
 route::get('getnotifications',function(){
    $cnt = 0;
-   foreach(Auth::user()->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at')->paginate(70) as $not){
+   foreach(Auth::user()->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at')->paginate(60) as $not){
       $data['notifications'][$cnt] = $not;
       $obj = Carbon::parse($not->created_at);
       $data['notifications'][$cnt]['data'] = $data['notifications'][$cnt]['data'] . '    ' . $obj->format('m.d H:i');
@@ -287,4 +288,5 @@ Auth::user()->unreadNotifications->markAsRead();
 route::get('getrole',function(){
  return Auth::user()->getRoleNames()[0];
 });
+
 

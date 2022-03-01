@@ -9,11 +9,7 @@
                                 <div class="col g-0">
                                     <div class="d-flex p-2" style="align-items: center;">
                                         <div class="input-group">
-                                            <div class="my-auto btn search-icon ps-3 pe-2">
-                                                <span class="">
-                                                    <i class="fa fa-search"></i>
-                                                </span>
-                                            </div>
+                                           <i @click="back()" class="fa fa-chevron-circle-left m-2" style="font-size: 27px;"></i>
                                             <input @click="search()" v-on:keyup.enter="search" type="text" class="form-control" placeholder="Search Notifications" id="sn">
                                         </div>
                                     </div>
@@ -88,13 +84,15 @@
                                             style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
                                         </div>
                                         <div class="col message my-message" style="margin-bottom: 50px;">
-                                      {{msg.body}}
+                                     <a target="_blank" :href="url + 'file/' + msg.body" v-if="msg.type == 'file'" id="msg"><i class="fa fa-file-archive-o" aria-hidden="true"></i> {{msg.body}}</a>
+                                     <div v-if="msg.type == 'text'">{{msg.body}}</div>
                                         </div>
                                       
                                     </li>
                                       <li v-else class="py-1 d-flex justify-content-end" style="margin-bottom: 50px;">
                                         <div class="col message other-message my-1">
-                                         {{msg.body}}
+                                          <a target="_blank" :href="url + 'file/' + msg.body" v-if="msg.type == 'file'" id="msg"><i class="fa fa-file-archive-o" aria-hidden="true"></i> {{msg.body}}</a>
+                                     <div v-if="msg.type == 'text'">{{msg.body}}</div>
                                         </div>
                                         <div class="col-auto mx-2 mt-auto"
                                             style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
@@ -164,24 +162,27 @@ export default {
 
   data() {
     return {
-      messages: null,
+      messages: [],
       pag: 1,
       cnt: 0,
       notifications: null,
-      yes: false
+      yes: false,
+      tcnt: 0
     };
   },
   mounted() {
+     
     this.getmessages();
       this.getnotifications();
     setInterval(() => {
       this.getmessages()
     }, 320);
-
     axios.get(this.url + 'getadmin').then((response) => { this.admin = response.data;});
-    
   },
   methods: {
+      back(){
+          history.back()
+      },
       search(){
                 this.getnotifications();
 var sn = document.getElementById('sn').value;
@@ -205,15 +206,13 @@ var sn = document.getElementById('sn').value;
             axios.get(this.url + 'readnotifications');
         },
         getnotifications() {
-         
             axios.get(this.url + 'getnotifications').then((response) => {
                 this.notifications = [];
                 this.notifications = response.data.notifications;
             });
-         
         },
     sendmessage() {
-      if(document.getElementById('file-inp-4').value == '' || document.getElementById('file-inp-4').value == null){
+      if(document.getElementById('file-inp-4').value == '' || document.getElementById('file-inp-4').files[0] == null){
       axios
         .get(
           this.url +
@@ -235,11 +234,13 @@ var sn = document.getElementById('sn').value;
 headers:{
        'Content-Type' : 'multipart/form-data'
 }
-        }).then((document.getElementById('file-inp-4').value = ""));
+        }).then((document.getElementById('file-inp-4').value = null));
       }
-      $('#bchat').scrollTop($('#bchat')[0].scrollHeight);
-
-    },
+        
+       setTimeout(() => {
+$('#bchat').scrollTop($('#bchat')[0].scrollHeight);
+       },850);
+    },  
     getmessages() {
         this.yes = false;
       axios
@@ -247,17 +248,18 @@ headers:{
           this.url + "getchat/" + this.u1 + "/" + this.u2 + "?page=" + this.pag
         )
         .then((response) => {
-          this.messages = [];
           this.cnt = response.data.total;
           var cntt = 0;
-
           // if(this.messages.length == 0){
-          for (let i = 0; i < this.cnt; i++) {
+              if(this.messages.length < this.cnt){
+          for (let i = this.messages.length; i < this.cnt; i++) {
             this.messages.push(response.data.data[i]);
           }
+              }
         });
 this.yes = true;
- document.getElementById('bchat').scroll({ top: document.getElementById('bchat').scrollHeight, behavior: 'smooth' });
+this.tcnt++;
+
     },
   },
 

@@ -221,10 +221,13 @@ newnue::create([
                 $pend->done = 1;
                 $pend->save();
             }
+            
+            family::find($personId)->update(['
+            status' => "Done"]);
+            
             $bo = Admins::role(['backoffice','admin'])->get();
 foreach($bo as $b){
     $url =  '<a href="' . route("costumer_form",[Crypt::encrypt($personId * 1244)]) . '"> Documentation for :' . family::find($personId)->first_name . ' has been submitted</a>';
-
     $b->notify(new SendNotificationn($url));
 }
             return redirect()->route('dashboard')->with('success', 'Successfully submitted and will be waiting for the backoffice!');
@@ -238,6 +241,7 @@ foreach($bo as $b){
     {
         $leadId = Crypt::decrypt($leadId) / 1244;
         $personId = Crypt::decrypt($personId) / 1244;
+        $offer = 0;
 
         $existingLeadDataKK = LeadDataKK::where('person_id', $personId)->latest()->first();
 $admin_id = Crypt::decrypt($request->admin_id) / 1244;
@@ -257,12 +261,15 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
  if($request->gofert != null){
         $garray = explode(',',$request->gofert);
            foreach($garray as $gofert){
-               newgegen::find($gofert)->delete();
+               $newg = newgegen::find($gofert);
+               if($newg){
+                   $newg->delete();}
            }
     }
     $gegen = newgegen::where('person_id',$personId)->get(); 
     for($i = 0; $i< $count; $i++){
         $curr = $i+1;
+        $request->file('offer' . $curr) ? $offer++ : $offer += 0;
  if(isset($gegen[$i])){
                    $file = $request->file('upload_policeFahrzeug'. $curr);
                    $gegen[$i]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i]->upload_policeFahrzeug;
@@ -289,9 +296,13 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
         if($request->nofert != null){
             $narray = explode(',',$request->nofert);
             foreach($narray as $nofert){
-                newnue::find($nofert)->delete();
+                $newn = newgegen::find($nofert);
+                if($newn){
+                    $newn->delete();
+                }
             }
-        }
+            }
+        
         $cc = 0;
         $gegen = newnue::where('person_id',$personId)->get();
         for($i = 1; $i <= $count; $i++){
@@ -365,7 +376,7 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
         }
 
         $existingLeadDataFahrzeug = LeadDataFahrzeug::where('person_id', $personId)->latest()->first();
-
+        $request->file('offer') ? $offer++ : $offer += 0;
         $leadDataFahrzeug = [
             'mandatiert' => $request->hasFile('mandatiert') ? $this->storeFile($request->mandatiert, FolderPaths::KK_FILES) : null,
             'leads_id' => $leadId,
@@ -394,7 +405,8 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
             'glass_protection' => $request->glass_protection,
             'parking_damage' => $request->parking_damage,
             'hour_breakdown_assistance' => $request->hour_breakdown_assistance,
-            'comment' => $request->commentFahrenzug
+            'comment' => $request->commentFahrenzug,
+            'offer' => $request->hasFile('offer') ?  $this->storeFile($request->file('offer'),FolderPaths::KK_FILES) : $existingLeadDataFahrzeug->offer
         ];
 
         if ($existingLeadDataFahrzeug) {
@@ -459,6 +471,10 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
             $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Documentation for :' . family::find($personId)->first_name . ' has been submitted </a>';
             $b->notify(new SendNotificationn($url));
         }
+          if($offer > 0){
+            $url =  '<a href="'  . route("costumer_form",Crypt::encrypt($personId * 1244)) . '">Received offer for client :' . family::find($personId)->first_name . ' has been submitted </a>';
+        Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
+          }
 
 
         return redirect()->route('acceptdata', ['id' => Crypt::encrypt($personId * 1244),'admin_id' => Crypt::encrypt($admin_id * 1244)]);

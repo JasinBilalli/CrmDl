@@ -33,7 +33,8 @@ class FamilyPersonsController extends Controller
 
 
             if (Auth::guard('admins')->user()->hasRole('fs')) {
-                if (Auth::guard('admins')->user()->id == $lead->lead->assign_to_id || Pendency::find((int) $req->pend_id)->admin_id == Auth::user()->id) {
+                
+                if ($lead->lead->assign_to_id == Auth::user()->id || Pendency::find((int) $req->pend_id)->admin_id == Auth::user()->id) {
                     try {
                         
                         $data = LeadDataKK::where('person_id', '=', $idd)->firstOrFail();
@@ -50,6 +51,7 @@ class FamilyPersonsController extends Controller
                     return redirect()->back();
                 }
             }
+        
             else {
                 try {
                     $data = LeadDataKK::where('person_id', '=', $idd)->firstOrFail();
@@ -59,7 +61,8 @@ class FamilyPersonsController extends Controller
                     return view('documentsform', compact('lead'));
                 }
             }
-
+        
+      
 
     }
 

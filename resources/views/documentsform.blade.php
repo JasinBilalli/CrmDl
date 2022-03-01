@@ -105,12 +105,12 @@
         <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
             <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
                 <div class="d-flex align-middle" style="height: 16vh;">
-                    <div class="my-auto">
+                <div class="my-auto">
                         <div class="img-normal text-center mx-3">
-                            <img src="/../imgs/logo2.png" class="img-fluid p-1" alt="">
+                            <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo2.png" class="img-fluid p-1" alt=""></a>
                         </div>
                         <div class="img-collapsed text-center ">
-                            <img src="/../imgs/logo1.png" class="img-fluid p-2" alt="">
+                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo1.png" class="img-fluid p-2" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -665,9 +665,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col">
+                                                            <div class="col-12">
                                                                 <div class="text-start">
-                                                                    <div class="upload-box1 mx-1 my-2">
+                                                                    <div class="upload-box mx-1 my-2 p-3">
                                                                         <div class="mx-1 my-2 text-center">
                                                                             <label for="file-input-4ww">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
@@ -687,7 +687,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col my-auto">
-                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 33%;" id="add_g" onclick="addanother_item_g()">
+                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 43%;" id="add_g" onclick="addanother_item_g()">
 
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="48.694"  viewBox="0 0 37.694 37.694" style="cursor:pointer;">
                                                                         <g id="Group_621" data-name="Group 621" transform="translate(-663.236 -976.679)">
@@ -3412,11 +3412,11 @@
                 '                                                            </div>' +
                 '                                                        </div>' +
                 '                                                   </div></div>' +
-                '<div class="row">'+
-'                                                            <div class="col" id="of' + newgcnt + '">'+
+                '<div class="row">'+ '@if(!Auth::user()->hasRole("fs"))'+
+'                                                            <div class="col-12" id="of' + newgcnt + '">Offer:'+
 '                                                                <div class="text-start">'+
-'                                                                    <div class="upload-box1 mx-1 my-2">'+
-'                                                                        <div class="mx-1 my-2 text-center">'+
+'                                                                    <div class="upload-box mx-1 my-2">'+
+'                                                                        <div class="mx-1 my-2 text-center p-3">'+
 '                                                                            <label for="file-input-' + newgcnt + 'w">' +
 '                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">'+
 '                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">'+
@@ -3434,8 +3434,9 @@
 '                                                                    </div>'+
 '                                                                </div>'+
 '                                                            </div>'+
-'                                                            <div class="col my-auto">'+
-'                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 33%;" id="add_g" onclick="addanother_item_g()">'+
+
+'                              @endif                              <div class="col my-auto">'+
+'                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 43%;" id="add_g" onclick="addanother_item_g()">'+
 ''+
 '                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="48.694"  viewBox="0 0 37.694 37.694" style="cursor:pointer;">'+
 '                                                                        <g id="Group_621" data-name="Group 621" transform="translate(-663.236 -976.679)">'+
@@ -3452,7 +3453,6 @@
 '                                                                </div>'+
 '                                                            </div>'+
 '                                                        </div>';
-
             document.getElementById('newgcount').value = newgcnt;
         }
 

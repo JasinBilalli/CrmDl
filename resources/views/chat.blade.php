@@ -500,13 +500,15 @@ body {
     <script>
         var booleanCahtTrueFalse = true;
         
-            setInterval(() => {
-                if(booleanCahtTrueFalse){
-                    document.getElementById('bchat').scroll({ top: document.getElementById('bchat').scrollHeight, behavior: 'smooth' });
-                    
-                    booleanCahtTrueFalse = false;
-                }
-            }, 850);
+        setInterval(() => {
+            if(booleanCahtTrueFalse){
+                document.getElementById('bchat').scroll({ top: document.getElementById('bchat').scrollHeight, behavior: 'smooth' });
+                
+                booleanCahtTrueFalse = false;
+            }
+        }, 850);
+        
+   
         function showMssgFunct() {
             document.getElementById('plist').style.display = "none";
             document.getElementById('chatt').style.display = "block";
@@ -545,5 +547,8 @@ document.getElementById(x.id + 'c').value = filename;
     }
     a {
         text-decoration: none;
+    }
+    #msg{
+        color: #84e184
     }
 </style>

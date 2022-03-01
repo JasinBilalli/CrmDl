@@ -7,11 +7,11 @@ use \Chat;
 use App\Models\Admins;
 use Illuminate\Support\Facades\Crypt;
 use App\Traits\FileManagerTrait;
-use Auth;
 use DB;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
 use PharIo\Manifest\Author;
 use Illuminate\Support\Collection;
+
 
 class ChatController extends Controller
 {
@@ -54,7 +54,7 @@ else{
    $type = "";
    if($req->hasFile('file')) { $type = "file"; $text = $this->storeFile($req->file('file'),'img');}
    else{
-     $type = 'text'; $text = filter_var($req->text,FILTER_SANITIZE_STRING);
+     $type = 'text'; $text = filter_var($req->text,FILTER_UNSAFE_RAW);
    }
   $conversation = Chat::conversations()->between(Admins::find($u1),Admins::find($u2));
   if($u1 == Auth::user()->id || $u2 == Auth::user()->id){
@@ -73,7 +73,7 @@ if($participants->contains('id',Auth::user()->id)){
 }
   else{
     $conversation = Chat::createConversation([Admins::find($u1),Admins::find($u2)])->makeDirect();
-    $message = Chat::message(filter_var($req->text,FILTER_SANITIZE_STRING))
+    $message = Chat::message(filter_var($req->text,FILTER_UNSAFE_RAW))
 		->type('file')
 		->from(Auth::user())
 		->to($conversation)
@@ -94,20 +94,25 @@ if($participants->contains('id',Auth::user()->id)){
     $conversation = Chat::conversations()->between(Admins::find($u1),Admins::find($u2));
 
 
-
+if($conversation != null){
   $data = DB::table('chat_participation')
   ->join('chat_messages','chat_participation.id','chat_messages.participation_id')
   ->where('chat_messages.conversation_id',$conversation->id)
   ->orderBy('chat_messages.created_at','asc')
   ->select('chat_messages.body','chat_messages.type','chat_participation.messageable_id')
-  ->paginate(50);
+  ->paginate(70);
+  $data['cnt'] = count($data->items());
+}
+else{
+$data = null;
+$data['cnt'] = 0;
+}
 
 
 
 
 
 
-$data['cnt'] = count($data->items());
 
 
 return $data;
