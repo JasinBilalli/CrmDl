@@ -601,7 +601,7 @@
                                 d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         STATUS
                     </span>
                 </a>
@@ -629,7 +629,7 @@
                             <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         DEPOSIT
                     </span>
                 </a>
@@ -654,7 +654,7 @@
                                 d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         CANCELATIONS
                     </span>
                 </a>
@@ -682,7 +682,7 @@
                                     d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg>
                         </span>
-                        <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                        <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             CALENDAR
                         </span>
                     </a>
@@ -708,7 +708,7 @@
                             <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         EMPLOYEES
                         </span>
                 </a>
@@ -731,7 +731,7 @@
                                 d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         COMMISIONS
                         </span>
                 </a>
@@ -755,7 +755,7 @@
                                   d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         PROV.SYSTEM
                         </span>
                 </a>
@@ -779,7 +779,7 @@
                                 d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             STATISTIC
                         </span>
                 </a>
@@ -803,7 +803,7 @@
                                   d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             TRUST
                         </span>
                 </a>
@@ -827,7 +827,7 @@
                                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             ADD NEW USER
                         </span>
                 </a>
@@ -850,7 +850,7 @@
                               d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                         </svg>
                         </span>
-                <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             SIGN OUT
                         </span>
             </a>

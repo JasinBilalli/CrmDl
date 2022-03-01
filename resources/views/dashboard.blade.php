@@ -222,7 +222,7 @@
                             <div class="calendar-div mx-3">
                                 <calendar></calendar>
                             </div>
-                            <div class="text-center" style="margin-top: -45px">
+                            <div class="text-center" style="margin-top: -15px">
                                 <a href="{{route('insertappointment')}}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="#0C71C3"
                                          class="bi bi-plus-square-fill mb-4" viewBox="0 0 16 16">
@@ -1809,4 +1809,5 @@
                     overflow: auto;
 
                 }
+
             </style>

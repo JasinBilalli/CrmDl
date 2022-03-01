@@ -132,17 +132,6 @@
                             <span class="ps-2 txt-dn">Calendar</span>
                         </a>
                 @endif
-                @if(Auth::guard('admins')->user()->hasRole('salesmanager')
-                ||Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                        <a href="{{route('Appointments')}}" class="nav-link {{ (request()->is('Appointments')) ? 'activeClassNav__' : '' }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-calendar-date" viewBox="0 0 16 16">
-                                <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
-                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                            </svg>
-                            <span class="ps-2 txt-dn">Dates</span>
-                        </a>
-                @endif
                 @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
@@ -227,45 +216,53 @@
 
 
         <div class="col">
-            <div class="my-5 mx-4">
+            <div class="my-1 my-sm-5 mx-0 mx-sm-4">
                 <div class="" style="background-color: #EFEFEF;border-radius: 22px;">
                     <div class="py-4 px-3">
-                            <span class="fs-4">
+                        <div class="pe-3 ">
+                            <a href="{{URL::previous()}}" class="my-auto" style="text-decoration: none !important;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                </svg>
+                            </a>
+                            <span class="fs-4 ps-3">
                                 {{$costumer->first_name}} {{$costumer->last_name}}
-                            </span> <br>
+                            </span>
+                        </div>
+                            <br>
                         <span class="fs-6 text-muted">
 
                             </span>
                     </div>
-                    <div class="row mx-4">
+                    <div class="row  mx-2 mx-sm-4">
                         <nav class="g-0 nav-form-links">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <button class="nav-link col active status-btn" id="nav-home-tab"
                                         data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab"
-                                        aria-controls="nav-home" aria-selected="true" onclick="changecnt(0)">Status
+                                        aria-controls="nav-home" aria-selected="true" onclick="changecnt(0)"><span class="desk-t">Status</span><span class="mobile-t">S</span><div><span class="mobile-t" style="font-size: 10px;">Status</span></div>
                                 </button>
                                 <button class="nav-link col auto-btn" id="nav-profile-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-profile" type="button" role="tab"
                                         aria-controls="nav-profile" aria-selected="false"
-                                        onclick="changecnt(1)">Angaben
+                                        onclick="changecnt(1)"><span class="desk-t">Angaben</span><span class="mobile-t">A</span><div><span class="mobile-t" style="font-size: 10px;">Angaben</span></div>
                                 </button>
                                 <button class="nav-link col sachen-btn" id="nav-contact-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-contact" type="button" role="tab"
                                         aria-controls="nav-contact" aria-selected="false"
-                                        onclick="changecnt(2)">Produkte
+                                        onclick="changecnt(2)"><span class="desk-t">Produkte</span><span class="mobile-t">P</span><div><span class="mobile-t" style="font-size: 10px;">Produkte</span></div>
                                 </button>
                                 <button onclick="window.location.href='{{route('leadfamilyperson',[Crypt::encrypt($costumer->id * 1244),'admin_id' => \Illuminate\Support\Facades\Crypt::encrypt(\App\Models\Pendency::where('family_id',$costumer->id)->first()->admin_id * 1244),'pend_id' => \App\Models\Pendency::where('family_id',$costumer->id)->first()->id])}}'" class="nav-link col vorsorge-btn" id="nav-fourth-tab" data-bs-toggle="tab"
                                             data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth"
-                                            aria-selected="false">Vorsorge
+                                            aria-selected="false"><span class="desk-t">Vorsorge</span><span class="mobile-t">V</span><div><span class="mobile-t" style="font-size: 10px;">Vorsorge</span></div>
                                 </button>
 
                             </div>
                         </nav>
                     </div>
-                    <div class="tab-content mx-4 pb-3" id="nav-tabContent">
+                    <div class="tab-content mx-2 mx-sm-4 pb-3" id="nav-tabContent">
                         <div class="tab-pane show active fade status-content mb-2" id="nav-home" role="tabpanel"
                              aria-labelledby="nav-home-tab">
-                            <div class="row mx-4">
+                            <div class="row  mx-2 mx-sm-4">
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
 
                                     <div class="py-3">
@@ -929,7 +926,7 @@
                         {{--                    ANGABEN                                      --}}
                         <div class="tab-pane fade auto-content" id="nav-profile" role="tabpanel"
                              aria-labelledby="nav-profile-tab">
-                            <div class="row mx-4">
+                            <div class="row  mx-2 mx-sm-4">
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
                                     <div class="angaben-content p-3 mb-3">
                                         <div class="my-1">
@@ -1111,7 +1108,7 @@
 
                         <div class="tab-pane fade  sachen-content" id="nav-contact" role="tabpanel"
                              aria-labelledby="nav-contact-tab">
-                            <div class="row mx-4">
+                            <div class="row  mx-2 mx-sm-4">
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
 
                                     <div class="py-3">
@@ -2099,7 +2096,7 @@
 
                         <div class="tab-pane fade  vorsorge-content" id="nav-fourth" role="tabpanel"
                              aria-labelledby="nav-fourth-tab">
-                            <div class="row mx-4">
+                            <div class="row  mx-2 mx-sm-4">
 
                             </div>
                         </div>
@@ -2261,7 +2258,7 @@
                                 d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         STATUS
                     </span>
                 </a>
@@ -2289,7 +2286,7 @@
                             <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
                         </svg>
                     </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         DEPOSIT
                     </span>
                 </a>
@@ -2314,7 +2311,7 @@
                                 d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         CANCELATIONS
                     </span>
                 </a>
@@ -2342,36 +2339,9 @@
                                     d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg>
                         </span>
-                        <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                        <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             CALENDAR
                         </span>
-                    </a>
-                <hr>
-            @endif
-        </div>
-        <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('salesmanager')
-                ||Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="{{route('Appointments')}}"
-                       class="m-nav text-decoration-none {{ (request()->is('Appointments')) ? 'activeClassNavMob__' : '' }}">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                        </svg>
-                    </span>
-                        <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-calendar-date" viewBox="0 0 16 16">
-                            <path
-                                d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
-                            <path
-                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                        </svg>
-                        </span>
-                        <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
-                        DATES
-                    </span>
                     </a>
                 <hr>
             @endif
@@ -2395,7 +2365,7 @@
                             <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         EMPLOYEES
                         </span>
                 </a>
@@ -2418,7 +2388,7 @@
                                 d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         COMMISIONS
                         </span>
                 </a>
@@ -2442,7 +2412,7 @@
                                   d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         PROV.SYSTEM
                         </span>
                 </a>
@@ -2466,7 +2436,7 @@
                                 d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             STATISTIC
                         </span>
                 </a>
@@ -2490,7 +2460,7 @@
                                   d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             TRUST
                         </span>
                 </a>
@@ -2514,7 +2484,7 @@
                                 d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                         </svg>
                         </span>
-                    <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             ADD NEW USER
                         </span>
                 </a>
@@ -2537,7 +2507,7 @@
                               d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                         </svg>
                         </span>
-                <span class="fs-5 fw-bold" style="color: #88889D; line-height: 1;">
+                <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                             SIGN OUT
                         </span>
             </a>
@@ -2936,6 +2906,8 @@
         border: none !important;
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
+        border-bottom-left-radius: 0px !important;
+
     }
 
     .status-btn:hover {
@@ -2948,6 +2920,8 @@
         border: none !important;
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
+        border-bottom-left-radius: 0px !important;
+
     }
 
     .auto-btn:hover {
@@ -2960,6 +2934,8 @@
         border: none !important;
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
+        border-bottom-left-radius: 0px !important;
+
     }
 
     .sachen-btn:hover {
@@ -2972,6 +2948,8 @@
         border: none !important;
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
+        border-bottom-left-radius: 0px !important;
+
     }
 
     .vorsorge-btn:hover {
@@ -3279,7 +3257,20 @@
             display: block;
         }
     }
-
+    .desk-t {
+        display: block;
+    }
+    .mobile-t {
+        display: none;
+    }
+    @media (max-width: 575.98px) {
+        .desk-t {
+            display: none;
+        }
+        .mobile-t {
+            display: block;
+        }
+    }
 
 </style>
 <style>
