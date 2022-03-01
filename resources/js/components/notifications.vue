@@ -16,8 +16,8 @@
                     <div class="ms-3" style="z-index: 333; height: 42vh; overflow-y: scroll;">
                         <div class="notifications text-decoration-none coloriii" style="list-style:none;">
                             <div v-for="notification in notifications" v-html="notification.data"
-                                style="border-bottom: 1px solid #C8C8C8;" class="py-3">
-                              {{ notification.time }}
+                                 style="border-bottom: 1px solid #C8C8C8;" class="py-3">
+                                {{ notification.time }}
                             </div>
                         </div>
                     </div>
