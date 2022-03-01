@@ -77,30 +77,28 @@
                                 </div>
                             </div>
                         </div>
-                       <div class="" style="margin-bottom: 120px; bottom: 0; position: fixed;">
+                       <div class="" style="margin-bottom: 120px; bottom: 0; width: 100%;">
                             <div class="chat-history overflow-22" id="bchat"
                                 style="overflow: auto; height: 90vh;padding-top: 120px;">
                                 <ul class="m-b-0" v-if="yes">
-                                    <li v-for="msg in messages">
-                                        <!-- <div class="message-data">
-                                            <span class="message-data-time">10:12 AM, Today</span>
-                                        </div> -->
-                                        <div class="py-1 d-flex">
+                                    <li class="py-1 d-flex mb-3" v-for="msg in messages" v-if="msg.messageable_id != admin">
+                                      
+                                        
                                         <div class="col-auto mx-2"
                                             style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
                                         </div>
-                                        <div class="col message my-message my-1">
+                                        <div class="col message my-message" style="margin-bottom: 50px;">
                                       {{msg.body}}
                                         </div>
-                                        </div>
-                                         <div class="py-1 d-flex justify-content-end">
+                                      
+                                    </li>
+                                      <li v-else class="py-1 d-flex justify-content-end" style="margin-bottom: 50px;">
                                         <div class="col message other-message my-1">
-                                         
+                                         {{msg.body}}
                                         </div>
                                         <div class="col-auto mx-2 mt-auto"
                                             style="width: 40px;height: 40px;border-radius: 50%;background-color: #0C71C3;">
                                         </div>
-                                    </div>
                                     </li>
                                 </ul>
                             </div>
@@ -176,9 +174,10 @@ export default {
   mounted() {
     this.getmessages();
       this.getnotifications();
-    // setInterval(() => {
-    //   this.getmessages()
-    // }, 330);
+    setInterval(() => {
+      this.getmessages()
+    }, 320);
+
     axios.get(this.url + 'getadmin').then((response) => { this.admin = response.data;});
     
   },
@@ -258,6 +257,7 @@ headers:{
           }
         });
 this.yes = true;
+ document.getElementById('bchat').scroll({ top: document.getElementById('bchat').scrollHeight, behavior: 'smooth' });
     },
   },
 

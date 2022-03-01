@@ -272,7 +272,7 @@ route::get('fsadmins',[TodoController::class,'fsadmins']);
 route::post('rejectupdate',[LeadDataController::class,'rejectupdate'])->name('rejectupdate');
 route::get('getnotifications',function(){
    $cnt = 0;
-   foreach(Auth::user()->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at','notifications.notifiable_id')->paginate(70) as $not){
+   foreach(Auth::user()->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at')->paginate(70) as $not){
       $data['notifications'][$cnt] = $not;
       $obj = Carbon::parse($not->created_at);
       $data['notifications'][$cnt]['data'] = $data['notifications'][$cnt]['data'] . '    ' . $obj->format('m.d H:i');

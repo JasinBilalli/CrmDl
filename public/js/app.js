@@ -6095,8 +6095,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 // document.getElementById('sendButton').addEventListener('click', function(){
 //     var element = document.getElementById('bchat');
 //     element.scrollTop = element.scrollHeight;
@@ -6115,10 +6113,10 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.getmessages();
-    this.getnotifications(); // setInterval(() => {
-    //   this.getmessages()
-    // }, 330);
-
+    this.getnotifications();
+    setInterval(function () {
+      _this.getmessages();
+    }, 320);
     axios.get(this.url + 'getadmin').then(function (response) {
       _this.admin = response.data;
     });
@@ -6190,6 +6188,10 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
       this.yes = true;
+      document.getElementById('bchat').scroll({
+        top: document.getElementById('bchat').scrollHeight,
+        behavior: 'smooth'
+      });
     }
   },
   props: {
@@ -32198,7 +32200,7 @@ var render = function () {
                 staticStyle: {
                   "margin-bottom": "120px",
                   bottom: "0",
-                  position: "fixed",
+                  width: "100%",
                 },
               },
               [
@@ -32219,36 +32221,68 @@ var render = function () {
                           "ul",
                           { staticClass: "m-b-0" },
                           _vm._l(_vm.messages, function (msg) {
-                            return _c("li", [
-                              _c("div", { staticClass: "py-1 d-flex" }, [
-                                _c("div", {
-                                  staticClass: "col-auto mx-2",
-                                  staticStyle: {
-                                    width: "40px",
-                                    height: "40px",
-                                    "border-radius": "50%",
-                                    "background-color": "#fff",
-                                    border: "1px #70707080 solid",
-                                  },
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
+                            return msg.messageable_id != _vm.admin
+                              ? _c("li", { staticClass: "py-1 d-flex mb-3" }, [
+                                  _c("div", {
+                                    staticClass: "col-auto mx-2",
+                                    staticStyle: {
+                                      width: "40px",
+                                      height: "40px",
+                                      "border-radius": "50%",
+                                      "background-color": "#fff",
+                                      border: "1px #70707080 solid",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "col message my-message",
+                                      staticStyle: { "margin-bottom": "50px" },
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                     " +
+                                          _vm._s(msg.body) +
+                                          "\n                                       "
+                                      ),
+                                    ]
+                                  ),
+                                ])
+                              : _c(
+                                  "li",
                                   {
-                                    staticClass: "col message my-message my-1",
+                                    staticClass:
+                                      "py-1 d-flex justify-content-end",
+                                    staticStyle: { "margin-bottom": "50px" },
                                   },
                                   [
-                                    _vm._v(
-                                      "\n                                     " +
-                                        _vm._s(msg.body) +
-                                        "\n                                       "
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col message other-message my-1",
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                        " +
+                                            _vm._s(msg.body) +
+                                            "\n                                       "
+                                        ),
+                                      ]
                                     ),
+                                    _vm._v(" "),
+                                    _c("div", {
+                                      staticClass: "col-auto mx-2 mt-auto",
+                                      staticStyle: {
+                                        width: "40px",
+                                        height: "40px",
+                                        "border-radius": "50%",
+                                        "background-color": "#0C71C3",
+                                      },
+                                    }),
                                   ]
-                                ),
-                              ]),
-                              _vm._v(" "),
-                              _vm._m(3, true),
-                            ])
+                                )
                           }),
                           0
                         )
@@ -32479,24 +32513,6 @@ var staticRenderFns = [
         ]),
       ]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "py-1 d-flex justify-content-end" }, [
-      _c("div", { staticClass: "col message other-message my-1" }),
-      _vm._v(" "),
-      _c("div", {
-        staticClass: "col-auto mx-2 mt-auto",
-        staticStyle: {
-          width: "40px",
-          height: "40px",
-          "border-radius": "50%",
-          "background-color": "#0C71C3",
-        },
-      }),
-    ])
   },
 ]
 render._withStripped = true
