@@ -91,16 +91,15 @@ if($participants->contains('id',Auth::user()->id)){
 
     $admin1 = Admins::find($u1);
     $admin2 = Admins::find($u2);
-
+    $conversation = Chat::conversations()->between(Admins::find($u1),Admins::find($u2));
 
 
 
   $data = DB::table('chat_participation')
   ->join('chat_messages','chat_participation.id','chat_messages.participation_id')
-  ->where('chat_participation.messageable_id',$admin1->id)
-  ->orWhere('chat_participation.messageable_id',$admin2->id)
-  ->orderBy('chat_participation.created_at','asc')
-  ->select('chat_messages.*','chat_participation.messageable_id')
+  ->where('chat_messages.conversation_id',$conversation->id)
+  ->orderBy('chat_messages.created_at','asc')
+  ->select('chat_messages.body','chat_messages.type','chat_participation.messageable_id')
   ->paginate(50);
 
 

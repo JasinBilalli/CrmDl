@@ -1067,7 +1067,7 @@
                                                                                 </svg>
                                                                             </label>
                                                                                  @if(isset($data->offer))
-                                                                            <a href="{{route('showfile',$data->offer)}}"><input type="file" id="file-input-{{$gcnt}}ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer{{$gcnt}}">
+                                                                            <a target="_blank" href="{{route('showfile',$data->offer)}}"><input type="file" id="file-input-{{$gcnt}}ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer{{$gcnt}}">
                                                                             <input type="text" value="{{$data->offer}}" class="form-control text-center" id="file-input-{{$gcnt}}wwc" disabled style="background:transparent; border:none;">
                                                                             </a>
                                                                             @else
