@@ -92,14 +92,14 @@
     <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
         <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
             <div class="d-flex align-middle" style="height: 16vh;">
-                <div class="my-auto">
-                    <div class="img-normal text-center mx-3">
-                        <img src="../imgs/logo2.png" class="img-fluid p-1" alt="">
+            <div class="my-auto">
+                        <div class="img-normal text-center mx-3">
+                            <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo2.png" class="img-fluid p-1" alt=""></a>
+                        </div>
+                        <div class="img-collapsed text-center ">
+                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo1.png" class="img-fluid p-2" alt=""></a>
+                        </div>
                     </div>
-                    <div class="img-collapsed text-center ">
-                        <img src="../imgs/logo1.png" class="img-fluid p-2" alt="">
-                    </div>
-                </div>
             </div>
             <div class="column-v">
 
@@ -927,8 +927,40 @@
                                                                               id="exampleFormControlTextarea1"
                                                                               rows="3"></textarea>
                                                                 @endif
+                                                                
                                                             </div>
                                                         </div>
+                                                        @if(!Auth::user()->hasRole('fs'))
+                                                    <div class="col-12">Offer:
+                                                                <div class="text-start">
+                                                                    <div class="upload-box mx-1 my-2">
+                                                                        <div class="mx-1 my-2 text-center p-3">
+                                                                            <label for="file-input-212121ww">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
+                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
+                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
+                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
+                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </svg>
+                                                                            </label>
+                                                                                 @if(isset($data->fahrzeug->offer))
+                                                                                
+                                                                            <a target="_blank" href="{{route('showfile',$data->fahrzeug->offer)}}"><input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
+                                                                            <input type="text" value="{{$data->fahrzeug->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
+                                                                            </a>
+                                                                            @else
+                                                                            <input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
+                                                                            <input type="text" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
+                                                                            @endif
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>  
+                                           
+                                                    @endif
 
                                                     </div>
                                                     @php $gcnt = 1; @endphp
@@ -1051,10 +1083,11 @@
                                                         </div>
 
                                                     </div>
-                                                    <div class="col">
+                                                    @if(!Auth::user()->hasRole('fs'))
+                                                    <div class="col-12" id="of{{$gcnt}}">Offer:
                                                                 <div class="text-start">
-                                                                    <div class="upload-box1 mx-1 my-2">
-                                                                        <div class="mx-1 my-2 text-center">
+                                                                    <div class="upload-box mx-1 my-2">
+                                                                        <div class="mx-1 my-2 text-center p-3">
                                                                             <label for="file-input-{{$gcnt}}ww">
                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
                                                                                     <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
@@ -1067,6 +1100,7 @@
                                                                                 </svg>
                                                                             </label>
                                                                                  @if(isset($data->offer))
+                                                                                
                                                                             <a target="_blank" href="{{route('showfile',$data->offer)}}"><input type="file" id="file-input-{{$gcnt}}ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer{{$gcnt}}">
                                                                             <input type="text" value="{{$data->offer}}" class="form-control text-center" id="file-input-{{$gcnt}}wwc" disabled style="background:transparent; border:none;">
                                                                             </a>
@@ -1077,9 +1111,9 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div>  
                                                     @php $gcnt++ @endphp
-
+                                                    @endif
                                                     @endforeach
                                                     <div class="text-center mt-3" style="margin-top: -30px" id="add_g" onclick="addanother_item_g()">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="37.694" height="37.694"
@@ -5407,11 +5441,11 @@
                 '                                                            </div>' +
                 '                                                        </div>' +
                 '                                                   </div></div>' +
-                '<div class="row">'+
-'                                                            <div class="col" id="of' + newgcnt + '">'+
+                '<div class="row">'+ '@if(!Auth::user()->hasRole("fs"))'+
+'                                                            <div class="col-12" id="of' + newgcnt + '">Offer:'+
 '                                                                <div class="text-start">'+
-'                                                                    <div class="upload-box1 mx-1 my-2">'+
-'                                                                        <div class="mx-1 my-2 text-center">'+
+'                                                                    <div class="upload-box mx-1 my-2">'+
+'                                                                        <div class="mx-1 my-2 text-center p-3">'+
 '                                                                            <label for="file-input-' + newgcnt + 'w">' +
 '                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">'+
 '                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">'+
@@ -5429,8 +5463,9 @@
 '                                                                    </div>'+
 '                                                                </div>'+
 '                                                            </div>'+
-'                                                            <div class="col my-auto">'+
-'                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 33%;" id="add_g" onclick="addanother_item_g()">'+
+
+'                              @endif                              <div class="col my-auto">'+
+'                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 43%;" id="add_g" onclick="addanother_item_g()">'+
 ''+
 '                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="48.694"  viewBox="0 0 37.694 37.694" style="cursor:pointer;">'+
 '                                                                        <g id="Group_621" data-name="Group 621" transform="translate(-663.236 -976.679)">'+
@@ -5998,6 +6033,7 @@ nofert.push(y);
     }
     function deletethat2(x,y){
         $('#g' + x).remove();
+        $('#of' + x).remove();
 newgcnt--;
 document.getElementById('newgcount').value = newgcnt;
 gofert.push(y);

@@ -41,7 +41,7 @@ $title = $req->title ? $req->title : "";
 
   $pendency->admin_id = (int) $req->admin;
   $pendency->family_id = (int) $req->id;
-  $pendency->description = filter_var($req->desc,FILTER_SANITIZE_STRING);
+  $pendency->description = filter_var($req->desc,FILTER_UNSAFE_RAW);
   $pendency->type = "task";
   $pendency->save();
   $url =  '<a href="'. route("leadfamilyperson",[Crypt::encrypt((int) $req->id * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pendency->id)->admin_id * 1244),"pend_id" => Pendency::find((int) $pendency->id)->id]) . '"> You were asigned with a pendency for:' . family::find((int) $req->id)->first_name . '</a>';
@@ -551,6 +551,7 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
       ->join('leads','family_person.leads_id','=','leads.id')
       ->where('status','Open')
       ->select('family_person.*')
+      ->orderBy('family_person.created_at','desc')
       ->paginate(20);
 
       $cntt = 0;
@@ -578,6 +579,7 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
       ->where('status','Open')
       ->where('leads.assign_to_id',Auth::guard('admins')->user()->id)
       ->select('family_person.*')
+      ->orderBy('family_person.created_at','desc')
       ->paginate(20);
 
        $tasks2 = [];

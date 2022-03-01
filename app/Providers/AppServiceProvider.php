@@ -5,9 +5,13 @@ namespace App\Providers;
 use App\Http\Middleware\cansee;
 use DB;
 use App;
+use App\Models\Admins;
+use App\Models\lead;
+use App\Models\TestClass;
 use Illuminate\Support\Facades\Route;
 
 use Illuminate\Support\ServiceProvider;
+use Leads;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-    
+      
     }
 
     /**
@@ -28,6 +32,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-              
+     
     }
 }

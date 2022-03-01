@@ -6093,8 +6093,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 // document.getElementById('sendButton').addEventListener('click', function(){
 //     var element = document.getElementById('bchat');
 //     element.scrollTop = element.scrollHeight;
@@ -6102,11 +6100,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      messages: null,
+      messages: [],
       pag: 1,
       cnt: 0,
       notifications: null,
-      yes: false
+      yes: false,
+      tcnt: 0
     };
   },
   mounted: function mounted() {
@@ -6122,6 +6121,9 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    back: function back() {
+      history.back();
+    },
     search: function search() {
       var _this2 = this;
 
@@ -6159,7 +6161,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     sendmessage: function sendmessage() {
-      if (document.getElementById('file-inp-4').value == '' || document.getElementById('file-inp-4').value == null) {
+      if (document.getElementById('file-inp-4').value == '' || document.getElementById('file-inp-4').files[0] == null) {
         axios.get(this.url + "sendmessage/" + this.u1 + "/" + this.u2 + "?text=" + document.getElementById("text").value).then(document.getElementById("text").value = "");
       } else {
         var formdata = new FormData();
@@ -6169,29 +6171,29 @@ __webpack_require__.r(__webpack_exports__);
           headers: {
             'Content-Type': 'multipart/form-data'
           }
-        }).then(document.getElementById('file-inp-4').value = "");
+        }).then(document.getElementById('file-inp-4').value = null);
       }
 
-      $('#bchat').scrollTop($('#bchat')[0].scrollHeight);
+      setTimeout(function () {
+        $('#bchat').scrollTop($('#bchat')[0].scrollHeight);
+      }, 850);
     },
     getmessages: function getmessages() {
       var _this4 = this;
 
       this.yes = false;
       axios.get(this.url + "getchat/" + this.u1 + "/" + this.u2 + "?page=" + this.pag).then(function (response) {
-        _this4.messages = [];
         _this4.cnt = response.data.total;
         var cntt = 0; // if(this.messages.length == 0){
 
-        for (var i = 0; i < _this4.cnt; i++) {
-          _this4.messages.push(response.data.data[i]);
+        if (_this4.messages.length < _this4.cnt) {
+          for (var i = _this4.messages.length; i < _this4.cnt; i++) {
+            _this4.messages.push(response.data.data[i]);
+          }
         }
       });
       this.yes = true;
-      document.getElementById('bchat').scroll({
-        top: document.getElementById('bchat').scrollHeight,
-        behavior: 'smooth'
-      });
+      this.tcnt++;
     }
   },
   props: {
@@ -32031,7 +32033,15 @@ var render = function () {
                       },
                       [
                         _c("div", { staticClass: "input-group" }, [
-                          _vm._m(0),
+                          _c("i", {
+                            staticClass: "fa fa-chevron-circle-left m-2",
+                            staticStyle: { "font-size": "27px" },
+                            on: {
+                              click: function ($event) {
+                                return _vm.back()
+                              },
+                            },
+                          }),
                           _vm._v(" "),
                           _c("input", {
                             staticClass: "form-control",
@@ -32066,7 +32076,7 @@ var render = function () {
                     ),
                   ]),
                   _vm._v(" "),
-                  _vm._m(1),
+                  _vm._m(0),
                 ]),
               ]
             ),
@@ -32192,7 +32202,7 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "chat", attrs: { id: "chatt" } }, [
-            _vm._m(2),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "div",
@@ -32241,11 +32251,33 @@ var render = function () {
                                       staticStyle: { "margin-bottom": "50px" },
                                     },
                                     [
-                                      _vm._v(
-                                        "\n                                     " +
-                                          _vm._s(msg.body) +
-                                          "\n                                       "
-                                      ),
+                                      msg.type == "file"
+                                        ? _c(
+                                            "a",
+                                            {
+                                              attrs: {
+                                                target: "_blank",
+                                                href:
+                                                  _vm.url + "file/" + msg.body,
+                                                id: "msg",
+                                              },
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass:
+                                                  "fa fa-file-archive-o",
+                                                attrs: {
+                                                  "aria-hidden": "true",
+                                                },
+                                              }),
+                                              _vm._v(" " + _vm._s(msg.body)),
+                                            ]
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      msg.type == "text"
+                                        ? _c("div", [_vm._v(_vm._s(msg.body))])
+                                        : _vm._e(),
                                     ]
                                   ),
                                 ])
@@ -32264,11 +32296,37 @@ var render = function () {
                                           "col message other-message my-1",
                                       },
                                       [
-                                        _vm._v(
-                                          "\n                                        " +
-                                            _vm._s(msg.body) +
-                                            "\n                                       "
-                                        ),
+                                        msg.type == "file"
+                                          ? _c(
+                                              "a",
+                                              {
+                                                attrs: {
+                                                  target: "_blank",
+                                                  href:
+                                                    _vm.url +
+                                                    "file/" +
+                                                    msg.body,
+                                                  id: "msg",
+                                                },
+                                              },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fa fa-file-archive-o",
+                                                  attrs: {
+                                                    "aria-hidden": "true",
+                                                  },
+                                                }),
+                                                _vm._v(" " + _vm._s(msg.body)),
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        msg.type == "text"
+                                          ? _c("div", [
+                                              _vm._v(_vm._s(msg.body)),
+                                            ])
+                                          : _vm._e(),
                                       ]
                                     ),
                                     _vm._v(" "),
@@ -32449,14 +32507,6 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "my-auto btn search-icon ps-3 pe-2" }, [
-      _c("span", {}, [_c("i", { staticClass: "fa fa-search" })]),
-    ])
-  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

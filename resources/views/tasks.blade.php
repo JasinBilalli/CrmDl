@@ -141,7 +141,7 @@
                                     <span>Offene Aufgaben</span>
                                 </div>
                                 <div class="col-auto ">
-                                    5
+                                    {{count($tasks)}}
                                 </div>
                             </div>
                             <div class="content ps-3">
@@ -246,7 +246,7 @@
                                     <span>Geburstage/Jubiläen</span>
                                 </div>
                                 <div class="col-auto">
-                                    5
+                                    {{count($birthdays) + count($personalApp)}}
                                 </div>
                             </div>
                             <div class="content  ps-3">

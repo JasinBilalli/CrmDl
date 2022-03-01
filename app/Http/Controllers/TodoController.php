@@ -23,7 +23,7 @@ class TodoController extends Controller
         if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
         {
         $todo = new todo();
-        $todo->text = filter_var($req->number,FILTER_SANITIZE_STRING);
+        $todo->text = filter_var($req->number,FILTER_UNSAFE_RAW);
         $todo->admin_id = Auth::guard('admins')->user()->id;
         $todo->number = 1;
         $todo->save();
@@ -47,7 +47,7 @@ class TodoController extends Controller
 
     public function addtodo(ToDoRequest $req){
       $todo = new todo();
-      $todo->text = filter_var($req->todo,FILTER_SANITIZE_STRING);
+      $todo->text = filter_var($req->todo,FILTER_UNSAFE_RAW);
       $todo->admin_id = Auth::guard('admins')->user()->id;
       if($todo->save()){
           return redirect()->route('dashboard')->with('success', 'Successfuly Inserted');
