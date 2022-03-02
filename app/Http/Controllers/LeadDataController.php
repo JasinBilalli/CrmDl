@@ -54,14 +54,9 @@ else{
                     $pend = Pendency::find(Session::get('pend_id'));
                 $pend->completed = 1;
                 $pend->save();
-                $pendencies = Pendency::where('family_id',$pend->family_id)->get();
-                $pcnt = 0;
-                foreach($pendencies as $pend) {
-                    if($pend->completed == 0){
-                           $pcnt++;
-                    }
-                }
-                if($pcnt == 0){ $person = family::find($pend->family_id); $person->status = "Done"; $person->save();}
+                $person = family::find($pend->family_id);
+                $person->status = "Done";
+                $person->save();
                 return redirect()->route('acceptdata', ['id' => Crypt::encrypt($id * 1244),'admin_id' => Crypt::encrypt($admin_id * 1244)]);
                 }
                 else{
@@ -93,10 +88,10 @@ return redirect()->route('tasks');
             LeadDataKK::create([
                 'leads_id' => $leadId,
                 'person_id' => $personId,
-                'pre_insurer' => $request->pre_insurer ? $this->storeFile($request->pre_insurer, FolderPaths::KK_FILES) : null,
-                'id_required' => $request->id_required ? $this->storeFile($request->id_required, FolderPaths::KK_FILES) : null,
-                'notice_by' => $request->notice_by ? $this->storeFile($request->notice_by, FolderPaths::KK_FILES) : null,
-                'power_of_attorney' => $request->power_of_attorney ? $this->storeFile($request->power_of_attorney, FolderPaths::KK_FILES) : null,
+                'pre_insurer' => $request->pre_insurer ? $this->storeFile($request->input('pre_insurer'), FolderPaths::KK_FILES) : null,
+                'id_required' => $request->id_required ? $this->storeFile($request->input('id_required'), FolderPaths::KK_FILES) : null,
+                'notice_by' => $request->notice_by ? $this->storeFile($request->input('notice_by'), FolderPaths::KK_FILES) : null,
+                'power_of_attorney' => $request->power_of_attorney ? $this->storeFile($request->input('power_of_attorney'), FolderPaths::KK_FILES) : null,
                 'vorversicherer_select' => $request->vorversicherer_select,
                 'id_notwending_select' => $request->id_notwending_select,
                 'kundingung_durch_select' => $request->kundingung_durch_select,
@@ -105,16 +100,16 @@ return redirect()->route('tasks');
             LeadDataCounteroffered::create([
                 'leads_id' => $leadId,
                 'person_id' => $personId,
-                'upload_police' => $request->upload_police ? $this->storeFile($request->upload_police, FolderPaths::KK_FILES) : null,
+                'upload_police' => $request->upload_police ? $this->storeFile($request->input('upload_police'), FolderPaths::KK_FILES) : null,
                 'comparison_type' => $request->comparison_type,
                 'comment' => $request->comment
             ]);
             LeadDataFahrzeug::create([
 
-                'mandatiert' => $request->mandatiert ? $this->storeFile($request->mandatiert, FolderPaths::KK_FILES) : null,
+                'mandatiert' => $request->mandatiert ? $this->storeFile($request->input('mandatiert'), FolderPaths::KK_FILES) : null,
                 'leads_id' => $leadId,
                 'person_id' => $personId,
-                'upload_police' => $request->upload_policeFahrzeug ? $this->storeFile($request->upload_policeFahrzeug, FolderPaths::KK_FILES) : null,
+                'upload_police' => $request->upload_policeFahrzeug ? $this->storeFile($request->input('upload_policeFahrzeug'), FolderPaths::KK_FILES) : null,
                 'vehicle_id' => $request->vehicle_id,
                 'leasing' => $request->leasing,
                 'leasing_name' => $request->leasing_name,
@@ -138,7 +133,7 @@ return redirect()->route('tasks');
                 'hour_breakdown_assistance' => $request->hour_breakdown_assistance,
                 'comment' => $request->commentFahrenzug,
                 'first_intro' => $request->first_intro,
-                'offer' => $request->hasFile('offer') ? $this->storeFile($request->offer,FolderPaths::KK_FILES) : null,
+                'offer' => $request->hasFile('offer') ? $this->storeFile($request->input('offer'),FolderPaths::KK_FILES) : null,
                 'vergleichsart_select' => $request->vergleichsart_select
             ]);
             LeadDataThings::create([
@@ -164,10 +159,10 @@ return redirect()->route('tasks');
             LeadDataPrevention::create([
                 'leads_id' => $leadId,
                 'person_id' => $personId,
-                'upload_police' => $request->upload_police__ ? $this->storeFile($request->upload_police__, FolderPaths::KK_FILES) : null,
+                'upload_police' => $request->upload_police__ ? $this->storeFile($request->input('upload_police__'), FolderPaths::KK_FILES) : null,
                 'comparison_type' => $request->comparison_type,
                 'comment' => $request->comment__,
-                'offer' => $request->offersach ? $this->storeFile($request->offersach, FolderPaths::KK_FILES) : null,
+                'offer' => $request->offersach ? $this->storeFile($request->input('offersach'), FolderPaths::KK_FILES) : null,
                 'number_of_people' => $request->number_of_people,
                 'number_of_rooms' => $request->number_of_rooms,
                 'sum_insured' => $request->sum_insured,
@@ -230,8 +225,9 @@ newnue::create([
                 $pend->save();
             }
 
-            family::find($personId)->update(['
-            status' => "Done"]);
+            $person = family::find($pend->family_id);
+            $person->status = "Done";
+            $person->save();
 
             $bo = Admins::role(['backoffice','admin'])->get();
 foreach($bo as $b){
@@ -252,7 +248,7 @@ foreach($bo as $b){
         $offer = 0;
 
         $existingLeadDataKK = LeadDataKK::where('person_id', $personId)->latest()->first();
-$admin_id = Crypt::decrypt($request->admin_id) / 1244;
+        $admin_id = Crypt::decrypt($request->admin_id) / 1244;
         $leadDataKK = [
             'leads_id' => $leadId,
             'person_id' => $personId,
@@ -458,7 +454,7 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
         $leadDataPrevention = [
             'leads_id' => $leadId,
             'person_id' => $personId,
-            'upload_police' => $request->hasFile('upload_police__') ? $this->storeFile($request->upload_police__, FolderPaths::KK_FILES) : $existingLeadDataPrevention->upload_police,
+            'upload_police' => $request->hasFile('upload_police__') ? $this->storeFile($request->file('upload_police__'), FolderPaths::KK_FILES) : $existingLeadDataPrevention->upload_police,
             'comparison_type' => $request->comparison_type,
             'comment' => $request->comment__,
             'number_of_people' => $request->number_of_people,
@@ -495,7 +491,9 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
         $pend1->description = 'Offer';
         $pend1->save();
           }
-          family::find($pend->family_id)->update(['status' => 'Done']);
+          $person = family::find($pend->family_id);
+          $person->status = "Done";
+          $person->save();
 
 
         return redirect()->route('acceptdata', ['id' => Crypt::encrypt($personId * 1244),'admin_id' => Crypt::encrypt($admin_id * 1244)]);

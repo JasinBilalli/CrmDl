@@ -27,9 +27,6 @@ class confirmedcode
             // }
             return $next($request);
         }
-
         return redirect()->route('rnlogin');
-
-
     }
 }

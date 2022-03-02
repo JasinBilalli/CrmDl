@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddStatusFamily extends Migration
+class AddFirstIntro extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class AddStatusFamily extends Migration
      */
     public function up()
     {
-        Schema::table('family_person', function (Blueprint $table) {
-            $table->string('status')->default('Open');
-     
+        Schema::table('addanother_thing_n', function (Blueprint $table) {
+            $table->string('first_intro')->nullable();
         });
-      
-        
     }
 
     /**
@@ -28,9 +25,8 @@ class AddStatusFamily extends Migration
      */
     public function down()
     {
-        Schema::table('family_person', function (Blueprint $table) {
-            $table->dropColumn('status');
-
+        Schema::table('addanother_thing_n', function (Blueprint $table) {
+            //
         });
     }
 }

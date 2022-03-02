@@ -848,10 +848,10 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 <div class="d-flex align-middle" style="height: 16vh;">
                     <div class="my-auto">
                         <div class="img-normal text-center mx-3">
-                            <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo2.png" class="img-fluid p-1" alt=""></a>
+                            <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}imgs/logo2.png" class="img-fluid p-1" alt=""></a>
                         </div>
                         <div class="img-collapsed text-center ">
-                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo1.png" class="img-fluid p-2" alt=""></a>
+                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}imgs/logo1.png" class="img-fluid p-2" alt=""></a>
                         </div>
                     </div>
                 </div>

@@ -449,8 +449,8 @@
                                                      style="background: #f8f8f8; border-radius: 43px">
                                                     <div class="modal-body p-3">
                                                         <div class="row">
-                                                    <span class="text-center">
-                                                        This Costumer Is On Pending Status
+                                                    <span style="font-size: 19px;" class="text-center">
+                                                        You cant enter right now!
                                                     </span>
                                                         </div>
                                                     </div>

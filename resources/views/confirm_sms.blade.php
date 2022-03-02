@@ -5,14 +5,10 @@
 <body>
 <section>
     <div class="row fixed-top header py-3">
-        <div class="col-8" >
-            <img class="w-15 " src="img/cropped-cropped-Dl-Finance-3-2048x708 copy.png">
+        <div class="col-8 mx-3">
+        <a href="{{route('dashboard')}}"><img width="256" height="256" src="{{env('APP_URL')}}imgs/logo2.png" class="img-fluid p-1" alt=""></a>
         </div>
-        <div class="col-4 pull-right">
-            <input type="button" value="hahha">
-            <input type="button" value="hahha">
-            <input type="button" value="hahha">
-        </div>
+     
     </div>
 </section>
 <div class="test">

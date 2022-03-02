@@ -418,6 +418,7 @@
                                                 <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end">
                                                       <select class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vorversicherer_select">
+                                                      @php $data->datakk = \App\Models\LeadDataKK::where('person_id',$id)->latest()->first() @endphp
                                                           @if(isset($data->datakk->vorversicherer_select))
                                                             <option value="{{$data->datakk->vorversicherer_select}}" selected>{{$data->datakk->vorversicherer_select}}</option>
                                                             <option value="Ja">Ja</option>
@@ -5471,6 +5472,7 @@
                                                                             </g>
                                                                         </svg>
                                                                     </label>
+                                                                    @php $data->prevention = \App\Models\LeadDataPrevention::where('person_id',$id)->latest()->first() @endphp
                                                                     @if(isset($data->prevention->upload_police))
                                                                         <input type="file" id="file-input-6"
                                                                                class="svg-div w-100 border-0  g-0"
@@ -5478,13 +5480,14 @@
                                                                                name="upload_police__"
                                                                                value="{{$data->prevention->upload_police}}">
                                                                         <a style="text-decoration: none"
-                                                                           href="{{route('showfile',$data->prevention->upload_police)}}"></a>
+                                                                           href="{{route('showfile',$data->prevention->upload_police)}}">
                                                                         <input type="text"
                                                                                class="form-control text-center"
                                                                                id="file-input-6c" disabled
                                                                                style="background:transparent;border:none;"
                                                                                value="{{$data->prevention->upload_police}}"
-                                                                               name="upload_police__">
+                                                                               name="">
+</a>
                                                                     @else
                                                                         <input type="file" id="file-input-6"
                                                                                class="svg-div w-100 border-0  g-0"
@@ -5494,7 +5497,7 @@
                                                                                class="form-control text-center"
                                                                                id="file-input-6c" disabled
                                                                                style="background:transparent;border:none;"
-                                                                               name="upload_police__">
+                                                                               >
                                                                     @endif
                                                                 </div>
                                                             </div>
@@ -5993,7 +5996,8 @@
                                       d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                             </svg>
                         </button>
-                        @if(\App\Models\Pendency::find(Session::get('pend_id'))->completed == 0 && \App\Models\Pendency::find(Session::get('pend_id'))->done == 1 && Auth::user()->hasRole('backoffice'))
+                        @if(Auth::user()->hasRole('backoffice') || Auth::user()->hasRole('admin'))
+                        @if(\App\Models\Pendency::find(Session::get('pend_id'))->completed == 0 && \App\Models\Pendency::find(Session::get('pend_id'))->done == 1)
                             <button class="px-5 py-2" id="submitt1" type="button"
                                     style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
                                     onclick="accept();">
@@ -6005,7 +6009,7 @@
                                 </svg>
                             </button>
                         @endif
-                        @if(\App\Models\Pendency::find(Session::get('pend_id'))->done == 1 && \App\Models\Pendency::find(Session::get('pend_id'))->completed == 0 && Auth::user()->hasRole('backoffice'))
+                        @if(\App\Models\Pendency::find(Session::get('pend_id'))->done == 1 && \App\Models\Pendency::find(Session::get('pend_id'))->completed == 0)
                             <button class="px-5 py-2" id="submitt1" type="button"
                                     style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
                                     onclick="reject();">
@@ -6016,6 +6020,7 @@
                                         d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                 </svg>
                             </button>
+                        @endif
                         @endif
                     </div>
                 </div>

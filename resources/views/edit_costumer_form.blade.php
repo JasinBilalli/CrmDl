@@ -305,6 +305,8 @@
                                                         </div>
                                                     </button>
                                                 </h2>
+                                               
+                                           
                                                 @php
                                                     $count = 1;
                                                 @endphp
@@ -393,6 +395,7 @@
                                                         </div>
                                                     <?php $count++ ?>
                                                     @endforeach
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -1056,6 +1059,7 @@
                                                 @php
                                                     $count = 1;
                                                 @endphp
+                                   
                                                 @foreach($grundversicherungP as $grundversicherungPP)
                                                 <div id="flush-collapse0006" class="accordion-collapse collapse"
                                                      aria-labelledby="flush-heading0006"
@@ -1139,8 +1143,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                    <?php $count++?>
+                                                    @php $count++ @endphp
                                                 @endforeach
+                                          
                                             </div>
                                         </div>
                                     </div>
