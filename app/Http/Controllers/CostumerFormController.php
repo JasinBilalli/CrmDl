@@ -261,6 +261,7 @@ class CostumerFormController extends Controller
         for ($i = 1; $i <= $cnt; $i++) {
             $zusatzversicherungP = new CostumerProduktZusatzversicherung();
             $zusatzversicherungP->person_id_PZ = $id;
+
                 $zusatzversicherungP->graduation_date_PZ = $request->input('graduation_date_PZ' . $i);
                 $zusatzversicherungP->society_PZ = $request->input('society_PZ' . $i);
                 $zusatzversicherungP->produkt_PZ = $request->input('produkt_PZ' . $i);

@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/css/intlTelInput.css" rel="stylesheet"/>
@@ -1162,14 +1164,26 @@
                                                         </div>
                                                         <div class="mb-3">
                                                             <div
-                                                                class="input-div1 input-groupp justify-content-between">
+                                                                class="input-div1 input-groupp justify-content-between text-center">
                                                                 <div class="pe-3">
                                                                 <span class="" style="font-size: 15px;">
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " type="text"
-                                                                       name="society_PG1" id="">
+                                                                <select class="py-1 form-control text-center" name="society_PG1" id="qeadd">
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                </select>
+                                                                <div class="row mt-1" id="addopt" style="display: none;">
+                                                                    <div class="col-9 col-md-9">
+                                                                <input type="text" class="form-control text-center" id="opti">
+</div>
+<div class="col-2 col-md-2">
+    <button type="button" onclick="added()" class="btn btn-info">Add</button>
+</div>
+</div>
+                                                                <i onclick="addoption()" style="font-size: 22px; cursor:pointer;" class="bi bi-plus-circle"></i>
+
                                                             </div>
 
                                                         </div>
@@ -2419,6 +2433,7 @@
 </div>
 {{--GEGENOFERTEN--}}
 <script>
+ 
     var count = <?php echo $newGegenOfertenCount +1;?>;
     for (i = 2; i <= count; i++) {
         $("#accordionFlushExample0006").append('<div class="accordion-item my-1" style="background-color: #EFEFEF !important;border-radius: 15px !important; border: none !important;">'+

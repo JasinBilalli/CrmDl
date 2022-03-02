@@ -58,7 +58,6 @@ route::prefix('')->middleware('confirmcode')->group(function(){
       $campaigns = campaigns::all();
       return view('addlead',compact('campaigns'));
    });
-
    route::post('importleads',function(Request $req){
       $file = $req->file('file');
       \Maatwebsite\Excel\Facades\Excel::import(new newlead, $file);
