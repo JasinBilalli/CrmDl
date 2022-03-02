@@ -431,6 +431,7 @@
                             </div>
                             <form method="post" action="{{route('addappointmentfile')}}" enctype="multipart/form-data">
                                 <div class="row mx-4">
+                                    @csrf
                                     <div class="col">
                                         <div class="mx-2">
                                             <div class="input-group">

@@ -2040,6 +2040,7 @@
                                                                         <input type="text" class="form-control text-center" id="file-input-6c" disabled style="background:transparent;border:none;" name="upload_police__">
                                                                     </div>
                                                                 </div>
+                                                                
                                                             </div>
                                                             <div class="">
                                                                 <div class="row mx-2">
@@ -2067,6 +2068,26 @@
                                                                     <textarea name="comment__" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
                                                                 </div>
                                                             </div>
+                                                            <div class="text-start">
+                                                                Offer
+                                                                    <div class="upload-box mx-1 my-2 p-3">
+                                                                        <div class="mx-1 my-2 text-center">
+                                                                            <label for="file-input-6ww">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
+                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
+                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
+                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
+                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                        </g>
+                                                                                    </g>
+                                                                                </svg>
+                                                                            </label>
+                                                                            <input type="file" id="file-input-6ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offersach">
+                                                                            <input type="text" class="form-control text-center" id="file-input-6wwc" disabled style="background:transparent; border:none;">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                         </div>
                                                     </div>
                                                 </div>

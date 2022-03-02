@@ -73,6 +73,7 @@ public function author(){
          'telephone' => $row[19],
          'bemerkung' => $row[58],
          'assigned' => $this->niorz(),
+         'campaign_id' => 1,
          'assign_to_id' => $this->author(),
          'latitude' => $this->latitude,
          'longitude' => $this->longitude

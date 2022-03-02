@@ -276,7 +276,7 @@ route::get('getnotifications',function(){
    foreach(Auth::user()->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at')->paginate(60) as $not){
       $data['notifications'][$cnt] = $not;
       $obj = Carbon::parse($not->created_at);
-      $data['notifications'][$cnt]['data'] = $data['notifications'][$cnt]['data'] . '    ' . $obj->format('m.d H:i');
+      $data['notifications'][$cnt]['data'] = $data['notifications'][$cnt]['data'] . '    ' . $obj->format('d.m H:i');
       $cnt++;
    }
  $data['cnt'] = Auth::user()->notifications()->whereNull('read_at')->count();
