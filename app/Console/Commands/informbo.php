@@ -42,6 +42,7 @@ class informbo extends Command
      */
     public function handle()
     {
+        
         $backoffice = Admins::role(['backoffice','admin'])->get();
         foreach($backoffice as $bo){
             $count = DB::table('pendencies')
@@ -53,6 +54,6 @@ class informbo extends Command
 
             $bo->notify(new SendNotificationn($url));
         }
-        return $this->comment('Done');
+        return $this->info('Done');
     }
 }

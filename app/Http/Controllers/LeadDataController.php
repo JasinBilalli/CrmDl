@@ -162,6 +162,7 @@ return redirect()->route('tasks');
                 'upload_police' => $request->upload_police__ ? $this->storeFile($request->upload_police__, FolderPaths::KK_FILES) : null,
                 'comparison_type' => $request->comparison_type,
                 'comment' => $request->comment__,
+                'offer' => $request->offersach ? $this->storeFile($request->offersach, FolderPaths::KK_FILES) : null,
                 'number_of_people' => $request->number_of_people,
                 'number_of_rooms' => $request->number_of_rooms,
                 'sum_insured' => $request->sum_insured,
@@ -474,28 +475,19 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
           if($offer > 0){
             $url =  '<a href="'  . route("costumer_form",Crypt::encrypt($personId * 1244)) . '">Received offer for client :' . family::find($personId)->first_name . ' has been submitted </a>';
         Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
+        $pend1 = new Pendency();
+        $pend1->admin_id = $pend->admin_id;
+        $pend1->family_id = $pend->family_id;
+        $pend1->description = 'Offer';
+        $pend1->save();
           }
+          family::find($pend->family_id)->update(['status' => 'Done']);
 
 
         return redirect()->route('acceptdata', ['id' => Crypt::encrypt($personId * 1244),'admin_id' => Crypt::encrypt($admin_id * 1244)]);
     }
 
-    public function getAllLeadDataById($leadId, $personId)
-    {
-        $leadDataKK = LeadDataKK::where('leads_id', $leadId)->where('person_id', $personId)->first();
-        $leadDataCounterOffered = LeadDataCounteroffered::where('leads_id', $leadId)->where('person_id', $personId)->first();
-        $leadDataFahrzeug = LeadDataFahrzeug::where('leads_id', $leadId)->where('person_id', $personId)->first();
-        $leadDataThings = LeadDataThings::where('leads_id', $leadId)->where('person_id', $personId)->first();
-        $leadDataPrevention = LeadDataPrevention::where('leads_id', $leadId)->where('person_id', $personId)->first();
-
-        return [
-            'dataKK' => $leadDataKK ? $leadDataKK : null,
-            'counterOffered' => $leadDataCounterOffered ? $leadDataCounterOffered : null,
-            'fahrzeug' => $leadDataFahrzeug ? $leadDataFahrzeug : null,
-            'things' => $leadDataThings ? $leadDataThings : null,
-            'prevention' => $leadDataPrevention ? $leadDataPrevention : null
-        ];
-    }
+   
 
     public function deleteLeadDataKK($dataId)
     {

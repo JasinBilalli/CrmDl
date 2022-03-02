@@ -5932,7 +5932,6 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('todayappointments?date=' + vall + '?page=' + this.apage).then(function (response) {
         _this4.today = response.data;
-        alert(1);
       });
     },
     loadmore: function loadmore() {
@@ -33175,11 +33174,11 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                  " +
+                                                                "\r\n                                                  " +
                                                                   _vm._s(
                                                                     lead.first_name
                                                                   ) +
-                                                                  "\n                                                "
+                                                                  "\r\n                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -33221,7 +33220,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\n                                                                    Call\n                                                                "
+                                                                    "\r\n                                                                    Call\r\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33270,7 +33269,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\n                                                                        Reject\n                                                                "
+                                                                    "\r\n                                                                        Reject\r\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33979,7 +33978,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                    Pending\n                                                                "
+                                                                "\r\n                                                                    Pending\r\n                                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -34019,7 +34018,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                Reject\n                                                            "
+                                                                "\r\n                                                                Reject\r\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34054,7 +34053,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                Go\n                                                            "
+                                                                "\r\n                                                                Go\r\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34164,7 +34163,7 @@ var render = function () {
                                           },
                                           [
                                             _vm._v(
-                                              "\n                                                Lead öffnen\n                                            "
+                                              "\r\n                                                Lead öffnen\r\n                                            "
                                             ),
                                           ]
                                         ),
@@ -34331,9 +34330,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\n                                        Instagram: " +
+                                  "\r\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\n                                    "
+                                    "\r\n                                    "
                                 ),
                               ]),
                             ]
@@ -34412,9 +34411,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Facebook: " +
+                                "\r\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -34492,9 +34491,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                         Sanascout: " +
+                                "\r\n                                         Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -34666,11 +34665,11 @@ var render = function () {
                                                         },
                                                         [
                                                           _vm._v(
-                                                            "\n                                                      " +
+                                                            "\r\n                                                      " +
                                                               _vm._s(
                                                                 lead.first_name
                                                               ) +
-                                                              "\n                                                    "
+                                                              "\r\n                                                    "
                                                           ),
                                                         ]
                                                       ),
@@ -35367,7 +35366,7 @@ var render = function () {
                                                     },
                                                     [
                                                       _vm._v(
-                                                        "\n                                                                Assign\n                                                            "
+                                                        "\r\n                                                                Assign\r\n                                                            "
                                                       ),
                                                     ]
                                                   ),
@@ -35567,7 +35566,7 @@ var render = function () {
                                               },
                                               [
                                                 _vm._v(
-                                                  "\n                                                            Lead öffnen\n                                                        "
+                                                  "\r\n                                                            Lead öffnen\r\n                                                        "
                                                 ),
                                               ]
                                             ),
@@ -35873,9 +35872,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\n                                        Instagram: " +
+                                  "\r\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\n                                    "
+                                    "\r\n                                    "
                                 ),
                               ]),
                             ]
@@ -35954,9 +35953,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Facebook: " +
+                                "\r\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -36034,9 +36033,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Sanascout: " +
+                                "\r\n                                        Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -36510,7 +36509,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            History of Leads\n                                        "
+              "\r\n                                            History of Leads\r\n                                        "
             ),
           ]
         ),
@@ -36536,7 +36535,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                        Rejected Leads\n                                    "
+              "\r\n                                        Rejected Leads\r\n                                    "
             ),
           ]
         ),
@@ -36657,7 +36656,7 @@ var staticRenderFns = [
         },
         [
           _vm._v(
-            "\n                                             Assign\n                                        "
+            "\r\n                                             Assign\r\n                                        "
           ),
         ]
       ),
@@ -36721,7 +36720,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            History of Leads\n                                            "
+              "\r\n                                            History of Leads\r\n                                            "
             ),
           ]
         ),
@@ -36747,7 +36746,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            Rejected Leads\n                                            "
+              "\r\n                                            Rejected Leads\r\n                                            "
             ),
           ]
         ),
