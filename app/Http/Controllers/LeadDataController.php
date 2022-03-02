@@ -97,6 +97,10 @@ return redirect()->route('tasks');
                 'id_required' => $request->id_required ? $this->storeFile($request->id_required, FolderPaths::KK_FILES) : null,
                 'notice_by' => $request->notice_by ? $this->storeFile($request->notice_by, FolderPaths::KK_FILES) : null,
                 'power_of_attorney' => $request->power_of_attorney ? $this->storeFile($request->power_of_attorney, FolderPaths::KK_FILES) : null,
+                'vorversicherer_select' => $request->vorversicherer_select,
+                'id_notwending_select' => $request->id_notwending_select,
+                'kundingung_durch_select' => $request->kundingung_durch_select,
+                'vollmacht_select' => $request->vollmacht_select
             ]);
             LeadDataCounteroffered::create([
                 'leads_id' => $leadId,
@@ -106,7 +110,7 @@ return redirect()->route('tasks');
                 'comment' => $request->comment
             ]);
             LeadDataFahrzeug::create([
-               
+
                 'mandatiert' => $request->mandatiert ? $this->storeFile($request->mandatiert, FolderPaths::KK_FILES) : null,
                 'leads_id' => $leadId,
                 'person_id' => $personId,
@@ -134,7 +138,8 @@ return redirect()->route('tasks');
                 'hour_breakdown_assistance' => $request->hour_breakdown_assistance,
                 'comment' => $request->commentFahrenzug,
                 'first_intro' => $request->first_intro,
-                'offer' => $request->hasFile('offer') ? $this->storeFile($request->offer,FolderPaths::KK_FILES) : null
+                'offer' => $request->hasFile('offer') ? $this->storeFile($request->offer,FolderPaths::KK_FILES) : null,
+                'vergleichsart_select' => $request->vergleichsart_select
             ]);
             LeadDataThings::create([
                 'leads_id' => $leadId,
@@ -170,6 +175,7 @@ return redirect()->route('tasks');
                 'personal_liability' => $request->personal_liability,
                 'society' => $request->society,
                 'n_of_p_legal_protection' => $request->n_of_p_legal_protection,
+                'Hvergleichsart_select' => $request->Hvergleichsart_select,
             ]);
             $family = family::where('id', $personId)->first();
             $status = ['status' => 'Submited'];
@@ -183,7 +189,8 @@ newgegen::create([
     'upload_policeFahrzeug' => $request->hasFile('upload_policeFahrzeug' . $i) ? $this->storeFile($file, FolderPaths::KK_FILES) : null,
     'commentFahrenzug' => $request->input('commentFahrenzug' . $i) ? $request->input('commentFahrenzug' . $i) : "",
     'offer' => $request->file('offer'. $i) ? $this->storeFile($request->file('offer' . $i),FolderPaths::KK_FILES) : "",
-    'person_id' => $personId
+    'person_id' => $personId,
+    'vergleichsart_select' => $request->vergleichsart_select
 ]);
 }
 for($i = 1; $i <= $newncount; $i++){
@@ -222,10 +229,10 @@ newnue::create([
                 $pend->done = 1;
                 $pend->save();
             }
-            
+
             family::find($personId)->update(['
             status' => "Done"]);
-            
+
             $bo = Admins::role(['backoffice','admin'])->get();
 foreach($bo as $b){
     $url =  '<a href="' . route("costumer_form",[Crypt::encrypt($personId * 1244)]) . '"> Documentation for :' . family::find($personId)->first_name . ' has been submitted</a>';
@@ -253,8 +260,11 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
             'id_required' => $request->hasFile('id_required') ? $this->storeFile($request->id_required, FolderPaths::KK_FILES) : $existingLeadDataKK->id_required,
             'notice_by' => $request->hasFile('notice_by') ? $this->storeFile($request->notice_by, FolderPaths::KK_FILES) : $existingLeadDataKK->notice_by,
             'power_of_attorney' => $request->hasFile('power_of_attorney') ? $this->storeFile($request->power_of_attorney, FolderPaths::KK_FILES) : $existingLeadDataKK->power_of_attorney,
+            'vorversicherer_select' => $request->vorversicherer_select,
+            'id_notwending_select' => $request->id_notwending_select,
+            'kundingung_durch_select' => $request->kundingung_durch_select,
+            'vollmacht_select' => $request->vollmacht_select,
         ];
-
         if ($existingLeadDataKK) {
             $existingLeadDataKK->update($leadDataKK);
         }
@@ -267,16 +277,17 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
                    $newg->delete();}
            }
     }
-    $gegen = newgegen::where('person_id',$personId)->get(); 
+    $gegen = newgegen::where('person_id',$personId)->get();
     for($i = 0; $i< $count; $i++){
         $curr = $i+1;
         $request->file('offer' . $curr) ? $offer++ : $offer += 0;
- if(isset($gegen[$i])){
+        if(isset($gegen[$i])){
                    $file = $request->file('upload_policeFahrzeug'. $curr);
                    $gegen[$i]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i]->upload_policeFahrzeug;
                    $gegen[$i]->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : $gegen[$i]->comparison_type;
                    $gegen[$i]->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : $gegen[$i]->commentFahrenzug;
                    $gegen[$i]->offer = $request->file('offer' . $curr) ? $this->storeFile($request->file('offer' . $curr),FolderPaths::KK_FILES) : $gegen[$i]->offer;
+                   $gegen[$i]->vergleichsart_select =$request->input('vergleichsart_select' . $curr);
                    $gegen[$i]->save();
                     }
                    else{
@@ -287,12 +298,13 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
                        $gegen->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : null;
                        $gegen->person_id = $personId;
                        $gegen->offer = $request->file('offer' . $curr) ? $this->storeFile($request->file('offer'. $curr),FolderPaths::KK_FILES) : null;
+                       $gegen->vergleichsart_select = $request->input('vergleichsart_select' . $curr);
                        $gegen->save();
                    }
                 }
 
-        
-       
+
+
         $count = (int) $request->input('newncount');
         if($request->nofert != null){
             $narray = explode(',',$request->nofert);
@@ -303,12 +315,12 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
                 }
             }
             }
-        
+
         $cc = 0;
         $gegen = newnue::where('person_id',$personId)->get();
         for($i = 1; $i <= $count; $i++){
             if(!empty($gegen[$i-1])){
-             
+
             $file = $request->file('vehicle_id'. $i);
            $gegen[$i-1]->vehicle_id = $request->hasFile('vehicle_id'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i-1]->vehicle_id;
            $gegen[$i-1]->leasing = $request->input('leasing' . $i) ? $request->input('leasing' . $i) : $gegen[$i-1]->leasing;
@@ -357,7 +369,7 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
                $gegen->person_id = $personId;
                $gegen->save();
            }
-     
+
         }
 
 
@@ -407,7 +419,8 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
             'parking_damage' => $request->parking_damage,
             'hour_breakdown_assistance' => $request->hour_breakdown_assistance,
             'comment' => $request->commentFahrenzug,
-            'offer' => $request->hasFile('offer') ?  $this->storeFile($request->file('offer'),FolderPaths::KK_FILES) : $existingLeadDataFahrzeug->offer
+            'offer' => $request->hasFile('offer') ?  $this->storeFile($request->file('offer'),FolderPaths::KK_FILES) : $existingLeadDataFahrzeug->offer,
+            'vergleichsart_select' => $request->vergleichsart_select
         ];
 
         if ($existingLeadDataFahrzeug) {
@@ -455,6 +468,7 @@ $admin_id = Crypt::decrypt($request->admin_id) / 1244;
             'personal_liability' => $request->personal_liability,
             'society' => $request->society,
             'n_of_p_legal_protection' => $request->n_of_p_legal_protection,
+            'Hvergleichsart_select' => $request->Hvergleichsart_select,
         ];
 
 

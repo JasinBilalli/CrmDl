@@ -24,5 +24,6 @@ class LeadDataPrevention extends Model
         'personal_liability',
         'society',
         'n_of_p_legal_protection',
+        'Hvergleichsart_select',
     ];
 }
