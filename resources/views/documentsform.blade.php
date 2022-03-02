@@ -348,10 +348,10 @@
                                                     </div>
                                                     <div class="col g-0 d-flex justify-content-end">
                                                       <div class="select-div text-end">
-                                                        <select class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                        <select name="vorversicherer_select" class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                           <option selected>Select</option>
-                                                          <option value="1">Ja</option>
-                                                          <option value="2">Nein</option>
+                                                          <option value="Ja">Ja</option>
+                                                          <option value="Nein">Nein</option>
                                                         </select>
                                                       </div>
                                                     </div>
@@ -391,11 +391,11 @@
                                                     </div>
                                                     <div class="col g-0 d-flex justify-content-end">
                                                       <div class="select-div text-end">
-                                                        <select class="fw-bold" id=""
+                                                        <select name="id_notwending_select" class="fw-bold" id=""
                                                           style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                           <option selected>Select</option>
-                                                          <option value="1">Ja</option>
-                                                          <option value="2">Nein</option>
+                                                          <option value="Ja">Ja</option>
+                                                          <option value="Nein">Nein</option>
                                                         </select>
                                                       </div>
                                                     </div>
@@ -433,7 +433,7 @@
                                                     </div>
                                                     <div class="col g-0 d-flex justify-content-end">
                                                       <div class="select-div text-end">
-                                                        <select class="fw-bold" id=""
+                                                        <select name="kundingung_durch_select" class="fw-bold" id=""
                                                           style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                           <option selected>Select</option>
                                                           <option value="DLF">DLF</option>
@@ -475,11 +475,11 @@
                                                     </div>
                                                     <div class="col g-0 d-flex justify-content-end">
                                                       <div class="select-div text-end ">
-                                                        <select class="fw-bold" id=""
+                                                        <select name="vollmacht_select" class="fw-bold" id=""
                                                           style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                           <option selected>Select</option>
-                                                          <option value="1">Ja</option>
-                                                          <option value="2">Nein</option>
+                                                          <option value="Ja">Ja</option>
+                                                          <option value="Nein">Nein</option>
                                                         </select>
                                                       </div>
                                                     </div>
@@ -646,12 +646,11 @@
                                                                     </div>
                                                                     <div class="col g-0 d-flex justify-content-end">
                                                                         <div class="select-div text-end ">
-                                                                            <select name="comparison_type" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
-
+                                                                            <select name="vergleichsart_select" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                                                 <option selected>Select</option>
-                                                                                <option value="1">1:1 Deckung</option>
-                                                                                <option value="2">1:1 Deckung</option>
-
+                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
+                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
+                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -1459,7 +1458,8 @@
                                                                     </span>
                                                                 </div>
                                                                 <select onchange="hideNation()"  class="form-select w-75" name="nationality_sachen" id="schweiz">
-                                                                    <option value="CH" selected>Schweiz</option>
+                                                                    <option selected></option>
+                                                                    <option value="CH">Schweiz</option>
                                                                     <option value="DE">Deutschland</option>
                                                                     <option value="AT">Österreich</option>
                                                                     <optgroup label="A">
@@ -1786,7 +1786,7 @@
                                                             <div class=" mb-2">
                                                                 <label for="telephone_nr">Telefonnumer </label> <br>
                                                                 <div class="input-group">
-                                                                    <input name="telephone_nr" id="int-tel" type="tel" class="form-control">
+                                                                    <input name="telephone_nr" id="int-tel" type="number" class="form-control">
                                                                 </div>
                                                             </div>
                                                             <div class="input-div1 mb-2">
@@ -1795,7 +1795,7 @@
                                                                         Email
                                                                     </span>
                                                                 </div>
-                                                                <input name="email" class="py-1" type="email" id="">
+                                                                <input name="email" class="form-control" type="email" id="">
                                                             </div>
                                                             <div class="input-select-div mb-2">
                                                                 <div class="">
@@ -2051,11 +2051,12 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col g-0 d-flex justify-content-end">
-                                                                        <div class="select-div text-end ">
-                                                                            <select name="comparison_type" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                                        <div class="select-div text-end">
+                                                                            <select name="Hvergleichsart_select" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                                                 <option selected>Select</option>
-                                                                                <option value="1">1:1 Deckung</option>
-                                                                                <option value="2">1:1 Deckung</option>
+                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
+                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
+                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -2101,7 +2102,7 @@
                                                 <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body" style="background-color: #EFEFEF !important; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
                                                         <div class="">
-                                                            <div class="row mx-2">
+                                                            <div class="row mx-0">
                                                                 <div class="col-5 d-flex g-0">
                                                                     <div class="text-nowrap">
                                                                         <span class="fw-bold" style=" font-size: 15px;">
@@ -2109,15 +2110,15 @@
                                                                         </span>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col g-0 d-flex justify-content-end">
-                                                                    <div class="select-div text-end ">
-                                                                        <select name="noname" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">
-                                                                            <option selected>Select</option>
-                                                                            <option value="1">Ja</option>
-                                                                            <option value="2">Nein</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
+{{--                                                                <div class="col g-0 d-flex justify-content-end">--}}
+{{--                                                                    <div class="select-div text-end ">--}}
+{{--                                                                        <select name="noname" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
+{{--                                                                            <option selected>Select</option>--}}
+{{--                                                                            <option value="1">Ja</option>--}}
+{{--                                                                            <option value="2">Nein</option>--}}
+{{--                                                                        </select>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
                                                             </div>
                                                             <div class="my-2">
                                                                 <div class="input-select-div">
@@ -2244,7 +2245,7 @@
                                                 <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExampleFive">
                                                     <div class="accordion-body" style="background-color: #EFEFEF !important; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
                                                         <div class="">
-                                                            <div class="row mx-2">
+                                                            <div class="row mx-0">
                                                                 <div class="col-5 d-flex g-0">
                                                                     <div class="text-nowrap">
                                                                         <span class="fw-bold" style=" font-size: 15px;">
@@ -2252,15 +2253,15 @@
                                                                         </span>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col g-0 d-flex justify-content-end">
-                                                                    <div class="select-div text-end ">
-                                                                        <select name="noname" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">
-                                                                            <option selected>Select</option>
-                                                                            <option value="1">Ja</option>
-                                                                            <option value="2">Nein</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
+{{--                                                                <div class="col g-0 d-flex justify-content-end">--}}
+{{--                                                                    <div class="select-div text-end ">--}}
+{{--                                                                        <select name="noname" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
+{{--                                                                            <option selected>Select</option>--}}
+{{--                                                                            <option value="1">Ja</option>--}}
+{{--                                                                            <option value="2">Nein</option>--}}
+{{--                                                                        </select>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
                                                             </div>
                                                             <div class="input-div1">
                                                                 <div class="">
@@ -3389,14 +3390,13 @@
                 '                                                                </div>' +
                 '                                                                <div class="col g-0 d-flex justify-content-end">' +
                 '                                                                    <div class="select-div text-end ">' +
-                '                                                                        <select name="comparison_type' + newgcnt + '"> ' +
+                '                                                                        <select name="vergleichsart_select' + newgcnt + '"> ' +
                 '                                                                                class="fw-bold" id=""' +
                 '                                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">' +
-                '' +
                 '                                                                            <option selected>Select</option>' +
-                '                                                                            <option value="1">1:1 Deckung</option>' +
-                '                                                                           <option value="2">1:1 Deckung</option>' +
-                '' +
+                '                                                                            <option value="1:0 Deckung">1:0 Deckung</option>' +
+                '                                                                            <option value="0:1 Deckung">0:1 Deckung</option>' +
+                '                                                                            <option value="1:1 Deckung">1:1 Deckung</option>' +
                 '                                                                        </select>' +
                 '                                                                   </div>' +
                 '                                                                </div>' +

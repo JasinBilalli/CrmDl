@@ -17,6 +17,11 @@ class LeadDataKK extends Model
         'pre_insurer',
         'id_required',
         'notice_by',
-        'power_of_attorney'
+        'power_of_attorney',
+        'vorversicherer_select',
+        'id_notwending_select',
+        'kundingung_durch_select',
+        'vollmacht_select'
+
     ];
 }
