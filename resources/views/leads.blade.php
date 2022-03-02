@@ -8,7 +8,7 @@
                     <form action="{{route('importleads')}}" enctype="multipart/form-data" method="post">
                         @csrf
                         <div class="head py-3">
-                            <span class="fs-5 fw-bold">Import Leads</span>
+                            <span class="fs-5 fw-bold">Leads Importieren</span>
                         </div>
                         <div class="content py-3">
                             <input type="file" class="form-control" name="file" id="file">

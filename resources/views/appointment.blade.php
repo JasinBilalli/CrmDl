@@ -157,7 +157,7 @@
                             //console.log('eventReceive',arg.draggedEl.innerText.trim());
 
 
-                            if (confirm('Are you sure you want to assign appointment of (' + arg.draggedEl.innerText.trim() + ') to <' + arg.resource.title + '>')) {
+                            if (confirm('Sind Sie sicher, dass Sie einen Termin zuweisen möchten? (' + arg.draggedEl.innerText.trim() + ') to <' + arg.resource.title + '>')) {
                                 // Save it!
                                 // console.log('Thing was saved to the database.');
 
@@ -243,11 +243,11 @@
                     <div class="modal-body">
 
 
-                        <p style="line-height :8px"><B>Name :</B><span id='name'></span></p>
-                        <p style="line-height :8px"><B>Telephone :</B><span id='telephone'></span></p>
-                        <p style="line-height :8px"><B>Birthdate :</B><span id='birthdate'></span></p>
-                        <p style="line-height :8px"><B>Nationality :</B><span id='nationality'></span></p>
-                        <p style="line-height :8px"><B>Status of task :</B><span id='status_task'></span></p>
+                        <p style="line-height :8px"><B>Vorname :</B><span id='name'></span></p>
+                        <p style="line-height :8px"><B>Telefonnummer :</B><span id='telephone'></span></p>
+                        <p style="line-height :8px"><B>Geburtstag :</B><span id='birthdate'></span></p>
+                        <p style="line-height :8px"><B>Nationalität :</B><span id='nationality'></span></p>
+                        <p style="line-height :8px"><B>Status der Aufgaben :</B><span id='status_task'></span></p>
                         <hr>
                         <!--<p><B>address :</B><span id='address'></span></p> -->
                         <div class="row">
@@ -306,18 +306,18 @@
         </div>
 
         <div class="col-12 col-sm-12 col-md-12  g-0">
-            <div class="fs-5 fw-bold mx-2 mb-2"> Appointments</div>
+            <div class="fs-5 fw-bold mx-2 mb-2"> Termine</div>
         </div>
         <div class="col-12 col-sm-12 col-md-12  g-0">
             {{ Form::open(array('url' => 'Appointments' , 'method' => 'get')) }}
             <div class="row px-2 py-3 justify-content-evenly mx-2" style="border: 1px solid #ccc;background: #eee; border-radius: 8px; ">
                 <div class="col-lg-auto"><br>
                     <input type="radio" id="html" name="trie" value="desc" @if($trie == "desc" )checked @endif>
-                    <label for="html" class="fw-bold"><i class="fas fa-sort-amount-down"></i> Time Desc</label>
+                    <label for="html" class="fw-bold"><i class="fas fa-sort-amount-down"></i> Zeit absteigend</label>
                 </div>
                 <div class="col-lg-auto"><br>
                     <input type="radio" id="css" name="trie" value="asc" @if($trie == "asc" )checked @endif>
-                    <label for="css" class="fw-bold"><i class="fas fa-sort-amount-up-alt"></i> Time Asc</label>
+                    <label for="css" class="fw-bold"><i class="fas fa-sort-amount-up-alt"></i> Zeit aufsteigend</label>
                 </div>
                 <div class="col-lg-auto">
                     <label class="fw-bold">Date</label>
@@ -327,7 +327,7 @@
                 <div class="col-lg-auto">
                     <label class="fw-bold">Region</label>
                     <select name="region" class="form-control form-select form-select-sm">
-                        <option value="all" @if($regionO == "all") selected @endif>All region</option>
+                        <option value="all" @if($regionO == "all") selected @endif>Alle Region</option>
                         @foreach ( $regions as $region)
                             <option value="{!! $region->city !!}"
                                     @if($regionO == $region->city) selected @endif >{!! $region->city !!}</option>
@@ -337,15 +337,15 @@
                 <div class="col-lg-auto">
                     <label class="fw-bold">Status</label>
                     <select name="rejected" class="form-control form-select form-select-sm">
-                        <option value="all" @if($rejectedO == "all") selected @endif>All</option>
-                        <option value="1" @if($rejectedO == "1") selected @endif>Rejected</option>
-                        <option value="0" @if($rejectedO == "0") selected @endif>Accepted</option>
+                        <option value="all" @if($rejectedO == "all") selected @endif>Alle</option>
+                        <option value="1" @if($rejectedO == "1") selected @endif>Abgelehnt</option>
+                        <option value="0" @if($rejectedO == "0") selected @endif>Akzeptiert</option>
                     </select>
                 </div>
                 <div class="col-lg-auto">
                     <label class="fw-bold">Language</label>
                     <select name="sprache" class="form-control form-select form-select-sm">
-                        <option value="all" @if($spracheO == "all") selected @endif>All language</option>
+                        <option value="all" @if($spracheO == "all") selected @endif>Alle Sprache</option>
                         @foreach ( $langues as $langue)
                             <option value="{!! $langue->sprache !!}"
                                     @if($spracheO == $langue->sprache) selected @endif >{!! $langue->sprache !!}</option>
@@ -376,7 +376,7 @@
                     <div id='external-events'>
                         <div id='wrap' class="me-2"
                              style="overflow-y: scroll;border: 1px solid #ccc;background: #eee;text-align: left;height: 600px ;text-align:center;border-radius: 12px;">
-                            <div class="fs-6 fw-bold my-3">Appointments liste ({!! count($appointments_events) !!}) </div>
+                            <div class="fs-6 fw-bold my-3">Terminliste ({!! count($appointments_events) !!}) </div>
                             <hr class="mx-2" style="height: 2px">
                             @foreach ( $appointments_events as $appointment )
                                 @if($appointment["rejected"] == 0)
@@ -386,8 +386,7 @@
                                             style="color:#fff">{!! date("d/M/Y H:i", strtotime($appointment["appointment_date"]." ".$appointment["time"])) !!}
                                             ({!! $appointment["number_of_persons"] !!}
                                             persons)</B><br>@if($appointment["assigned"] == '0')<a
-                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff; border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Not
-                                            Assigned </a>@endif</div>
+                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff; border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Nicht zugeordnet</a>@endif</div>
                                 @else
                                     <div class='fc-event  p-2 m-2'
                                          style="margin: 10px 0; cursor: pointer; text-align: left; color:#fff;border-radius: 10px; font-size: 14px;  background:#c40000;">{!! $appointment["id"] !!}
@@ -395,7 +394,7 @@
                                             style="color: #fff;">{!! date("d/M/Y H:i", strtotime($appointment["appointment_date"]." ".$appointment["time"])) !!}
                                             ({!! $appointment["number_of_persons"] !!}
                                             persons)</B><br>@if($appointment["assigned"] == '0')<a
-                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff;border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Rejected </a>@endif
+                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff;border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Abgelehnt </a>@endif
                                     </div>
                                 @endif
                             @endforeach
@@ -419,7 +418,7 @@
                         </svg>
                     </a>
                     <br>
-                    Add new one
+                    Neues hinzufügen
                 </div>
             </div>
             <div class="col-md-12">
@@ -427,7 +426,7 @@
                     <div class="container">
                         <div class="form-div my-4 py-4 mx-auto" style="background-color: #EFEFEF; border-radius: 20px;">
                             <div class="mb-4 mx-5">
-                                <span class="fs-5 fw-600">Or Insert By File</span>
+                                <span class="fs-5 fw-600">Oder per Datei einfügen</span>
                             </div>
                             <form method="post" action="{{route('addappointmentfile')}}" enctype="multipart/form-data">
                                 <div class="row mx-4">
@@ -440,7 +439,7 @@
                                             <div class="my-4">
                                                 <button type="submit" class="py-2 px-5 border-0 fw-bold"
                                                         style="background-color: #0C71C3; color: #fff; border-radius: 8px;">
-                                                    Accept
+                                                    Annehmen
                                                 </button>
                                             </div>
                                         </div>
@@ -448,7 +447,7 @@
                                 </div>
                             </form>
                             <div onclick="openExamplePic()">
-                                <span class="btn fw-600 mx-5" style="border: 1px solid #434343;border-radius: 5px">Example</span>
+                                <span class="btn fw-600 mx-5" style="border: 1px solid #434343;border-radius: 5px">Beispiel</span>
                             </div>
                             <br>
                             <div style="display: none" class="w-100" id="picture">
@@ -572,13 +571,13 @@
                             (<span id='number_of_persons'></span> persons )</h5>
 
                         <p><B>ID :</B><span id='id'></span></p>
-                        <p><B>Name :</B><span id='name'></span></p>
-                        <p><B>Telephone :</B><span id='telephone'></span></p>
-                        <p><B>Birthdate :</B><span id='birthdate'></span></p>
-                        <p><B>Nationality :</B><span id='nationality'></span></p>
-                        <p><B>Status of task :</B><span id='status_task'></span></p>
+                        <p><B>Vorname :</B><span id='name'></span></p>
+                        <p><B>Telefonnummer :</B><span id='telephone'></span></p>
+                        <p><B>Geburtstag :</B><span id='birthdate'></span></p>
+                        <p><B>Nationalität :</B><span id='nationality'></span></p>
+                        <p><B>Status der Aufgaben :</B><span id='status_task'></span></p>
                         <hr>
-                        <p><B>address :</B><span id='address'></span></p>
+                        <p><B>Adresse :</B><span id='address'></span></p>
                     </div>
 
                 </div>
@@ -589,7 +588,7 @@
 
 
         <div class="col-12">
-            <h3> Appointments</h3>
+            <h3> Termine</h3>
         </div>
 
         <div class="col-12" width="90%" style="font-size: 12px;">

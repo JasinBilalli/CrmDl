@@ -80,7 +80,7 @@
           </div>
           <div class="mb-2 mt-2 form-check">
             <input type="checkbox" class="form-check-input" style="border: 1px solid rgba(0,0,0,.25) !important;" id="remember" name="remember">
-            <label class="form-check-label" for="remember" style="font-family: 'Montserrat' !important;">Remember me</label>
+            <label class="form-check-label" for="remember" style="font-family: 'Montserrat' !important;">Angemeldet bleiben</label>
           </div>
           <div class="pt-2">
             <button type="submit" class="py-2 w-100 border-0 fw-bold btn_anmelden__" style="font-family: 'Montserrat' !important;">
@@ -97,7 +97,7 @@
           </div>
           <div class="text-center mt-2">
             <span class="forgot__" style="font-family: 'Montserrat' !important; font-weight: 500">
-              Forgot password?
+              Passwort vergessen?
             </span>
           </div>
         </form>

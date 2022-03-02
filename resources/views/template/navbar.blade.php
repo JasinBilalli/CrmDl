@@ -866,7 +866,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             <path fill-rule="evenodd"
                                   d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
                         </svg>
-                        <span class="ps-2 txt-dn">Home</span>
+                        <span class="ps-2 txt-dn">Startseite</span>
                     </a>
                     @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                     Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin'))
@@ -880,7 +880,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                 <path fill-rule="evenodd"
                                       d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
                             </svg>
-                            <span class="ps-2 txt-dn">Tasks</span>
+                            <span class="ps-2 txt-dn">Aufgaben</span>
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('admin') ||
@@ -905,7 +905,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             <path
                                 d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
                         </svg>
-                        <span class="ps-2 txt-dn">Finance</span>
+                        <span class="ps-2 txt-dn">Finanzen</span>
                     </a>
                     @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                     Auth::guard('admins')->user()->hasRole('admin'))
@@ -933,7 +933,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                 <path fill-rule="evenodd"
                                       d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                             </svg>
-                            <span class="ps-2 txt-dn">Costumers</span>
+                            <span class="ps-2 txt-dn">Kunden</span>
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
@@ -949,7 +949,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                     d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
                                 <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
                             </svg>
-                            <span class="ps-2 txt-dn">Deposit</span>
+                            <span class="ps-2 txt-dn">Einzahlung</span>
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
@@ -962,7 +962,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                 <path
                                     d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                             </svg>
-                            <span class="ps-2 txt-dn">Cancelations</span>
+                            <span class="ps-2 txt-dn">Stornierungen</span>
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('fs') ||
@@ -978,7 +978,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                     <path
                                         d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                 </svg>
-                                <span class="ps-2 txt-dn">Calendar</span>
+                                <span class="ps-2 txt-dn">Kalender</span>
                             </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('admin') ||
@@ -992,7 +992,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                       d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
                                 <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
                             </svg>
-                            <span class="ps-2 txt-dn">Employees</span>
+                            <span class="ps-2 txt-dn">Mitarbeiter</span>
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('finance') ||
@@ -1003,7 +1003,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                 <path
                                     d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
                             </svg>
-                            <span class="ps-2 txt-dn">Commisions</span>
+                            <span class="ps-2 txt-dn">Provisionen</span>
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('admin') ||
@@ -1027,7 +1027,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                 <path
                                     d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
                             </svg>
-                            <span class="ps-2 txt-dn">Statistics</span>
+                            <span class="ps-2 txt-dn">Statistik</span>
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('menagment') ||
@@ -1039,7 +1039,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                 <path fill-rule="evenodd"
                                       d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
                             </svg>
-                            <span class="ps-2 txt-dn">Trust</span>
+                            <span class="ps-2 txt-dn">Treuhand</span>
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('admin'))
@@ -1050,7 +1050,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                 <path
                                     d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                             </svg>
-                            <span class="ps-1 nav-texttt">Add New User</span>
+                            <span class="ps-1 nav-texttt">Registrieren</span>
                         </a>
                     @endif
 
@@ -1069,7 +1069,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                                   d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
                                         </svg>
                                     </span>
-                                <span class="ps-2 txt-dn"> Sign out</span>
+                                <span class="ps-2 txt-dn">Abmelden</span>
                             </button>
                         </a>
                     </div>
@@ -1275,7 +1275,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                     </span>
                         <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        DEPOSIT
+                        EINZAHLUNG
                     </span>
                     </a>
                     <hr>
@@ -1300,7 +1300,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             </svg>
                         </span>
                         <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        CANCELATIONS
+                        STORNIERUNGEN
                     </span>
                     </a>
                     <hr>
@@ -1328,7 +1328,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             </svg>
                         </span>
                             <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            CALENDAR
+                            KALENDER
                         </span>
                         </a>
                     <hr>
@@ -1354,7 +1354,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                         </span>
                         <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        EMPLOYEES
+                            MITARBEITER
                         </span>
                     </a>
                     <hr>
@@ -1377,7 +1377,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                         </span>
                         <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        COMMISIONS
+                            PROVISIONEN
                         </span>
                     </a>
                     <hr>
@@ -1398,7 +1398,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                         </span>
                     <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            FINANCE
+                            FINANZEN
                         </span>
                 </a>
                 <hr>
@@ -1421,7 +1421,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                         </span>
                         <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        PROV.SYSTEM
+                            PROV.SYSTEM
                         </span>
                     </a>
                     <hr>
@@ -1445,7 +1445,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                         </span>
                         <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            STATISTIC
+                            STATISTIK
                         </span>
                     </a>
                     <hr>
@@ -1469,7 +1469,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                         </span>
                         <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            TRUST
+                            TREUHAND
                         </span>
                     </a>
                     <hr>
@@ -1493,7 +1493,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                         </span>
                         <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            ADD NEW USER
+                            REGISTRIEREN
                         </span>
                     </a>
                     <hr>
@@ -1516,7 +1516,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                         </span>
                     <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            SIGN OUT
+                            ABMELDEN
                         </span>
                 </a>
             </div>

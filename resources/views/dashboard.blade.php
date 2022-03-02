@@ -392,7 +392,7 @@
                                                 </div>
                                                 <div class="py-1">
                                                         <span class="text-muted">
-                                                            Add New One
+                                                            Neues hinzufügen
                                                         </span>
                                                 </div>
                                             </div>
@@ -416,7 +416,7 @@
                     <div class="answered-pendencies">
                         <div class="header px-3 px-sm-3">
                             <div class="">
-                                <span>Answered Pendencies</span>
+                                <span>Beantwortete Pendenzen</span>
                             </div>
                         </div>
                         <div class="content pt-2">
@@ -460,7 +460,7 @@
                     <div class="open-for-month">
                         <div class="header px-3 px-sm-3">
                             <div class="">
-                                <span>Open for more than a month</span>
+                                <span>Seit mehr als einem Monat offen</span>
                             </div>
                         </div>
                         <div class="content pt-2">
@@ -505,7 +505,7 @@
                     <div class="personal-appointments">
                         <div class="header px-3 px-sm-3 justify-content-between">
                             <div class="">
-                                <span>Personal Appointments</span>
+                                <span>Persönliche Termine</span>
                             </div>
                             <div class="">
                                 <span>{{$countpersonalApp}}</span>
@@ -521,16 +521,16 @@
                                                     <span class="fw-600">{{$perApp->title}}</span>
                                                 </div>
                                                 <div class="">
-                                                    <span class="fw-400">Address: {{$perApp->address}}</span>
+                                                    <span class="fw-400">Adresse: {{$perApp->address}}</span>
                                                 </div>
                                                 <div class="">
-                                                    <span class="fw-400">Date: {{$perApp->date}}</span>
+                                                    <span class="fw-400">Datum: {{$perApp->date}}</span>
                                                 </div>
                                                 <div class="">
-                                                    <span class="fw-400">Time: {{$perApp->time}}</span>
+                                                    <span class="fw-400">Zeit: {{$perApp->time}}</span>
                                                 </div>
                                                 <div class="">
-                                                    <span class="fw-400">Comment: {{$perApp->comment}}</span>
+                                                    <span class="fw-400">Kommentar: {{$perApp->comment}}</span>
                                                 </div>
                                             </div>
                                             <div class="col-auto d-flex align-items-center">
@@ -574,8 +574,7 @@
                         <div class="modal-content p-3" style="border-radius: 43px !important;">
                             <div class="modal-header" style="border-bottom: 0 !important;">
                                 <h5 class="modal-title mx-2" id="exampleModalLabel"
-                                    style="font-family: 'Montserrat' !important;"><b>Add Personals
-                                        Appointment</b></h5>
+                                    style="font-family: 'Montserrat' !important;"><b>Privaten Termin hinzufügen</b></h5>
                                 <button type="button" class="btn-close" style="opacity: 1 !important;"
                                         data-bs-dismiss="modal"
                                         aria-label="Close"></button>
@@ -585,29 +584,29 @@
                                     @csrf
                                     <input type="hidden" name="apporconId" value="1">
                                     <div class="px-2">
-                                        <label style="font-family: 'Montserrat' !important;"><b>Title</b></label>
+                                        <label style="font-family: 'Montserrat' !important;"><b>Titel</b></label>
                                         <input type="text"
                                                style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                name="title" class="form-control mb-3" required>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Date</b></label>
+                                        <label style="font-family: 'Montserrat' !important;"><b>Datum</b></label>
                                         <input type="date"
                                                style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                name="date" class="form-control mb-3" required>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Time</b></label>
+                                        <label style="font-family: 'Montserrat' !important;"><b>Zeit</b></label>
                                         <input type="time"
                                                style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                name="time" class="form-control mb-3" required>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Address</b></label>
+                                        <label style="font-family: 'Montserrat' !important;"><b>Adress</b></label>
                                         <input type="text"
                                                style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                name="address" class="form-control mb-3" required>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Comment</b></label>
+                                        <label style="font-family: 'Montserrat' !important;"><b>Kommentar</b></label>
                                         <textarea type="text"
                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                   rows="3" name="comment" class="form-control mb-3"
                                                   required>
                                                     </textarea>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Assign To</b></label>
+                                        <label style="font-family: 'Montserrat' !important;"><b>Zuweisen</b></label>
 
                                         <select class="form-select mb-2"
                                                 style="font-family: 'Montserrat' !important;border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
@@ -636,7 +635,7 @@
                                                     <button type="button" class="btn py-2"
                                                             data-bs-dismiss="modal"
                                                             style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;">
-                                                        Close
+                                                        Schliessen
                                                     </button>
                                                 </div>
                                             </div>
@@ -714,7 +713,7 @@
                                     <div class="col-3 mx-auto">
                                         <button type="button" class="btn w-100 px-3"
                                                 style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                data-bs-dismiss="modal"><b>Close</b></button>
+                                                data-bs-dismiss="modal"><b>Schliessen</b></button>
                                     </div>
 
                                 </div>
@@ -787,7 +786,7 @@
           transform="translate(1143.395 541.77)"/>
   </g>
 </svg></span>
-                                                Finances
+                                                Finanzen
                                             </button>
                                         </div>
                                     </div>
@@ -808,7 +807,7 @@
 </svg>
                                                 </span>
 
-                                                Statments
+                                                Aussagen
                                             </button>
                                         </div>
                                     </div>
@@ -826,7 +825,7 @@
                                                 <div class="p-3">
                                                     <div class="row">
                                                         <div class="col">
-                                                            <h5><b>Consultations</b></h5>
+                                                            <h5><b>Konsultationen</b></h5>
                                                         </div>
                                                         <div style="color: #0a53be" class="col-3 text-end">
                                                             <h5><b>{{$countconsultation}}</b></h5>
@@ -875,17 +874,17 @@
                                                                 </div>
                                                                 <div class="">
                                                                     <span style="font-family: 'Montserrat';">
-                                                                        Date: {{$consult->date}}
+                                                                        Datum: {{$consult->date}}
                                                                     </span>
                                                                 </div>
                                                                 <div class="">
                                                                     <span style="font-family: 'Montserrat';">
-                                                                        Time: {{$consult->time}}
+                                                                        Zeit: {{$consult->time}}
                                                                     </span>
                                                                 </div>
                                                                 <div class="">
                                                 <span style="font-family: 'Montserrat';">
-                                                    Comment: {{$consult->comment}}
+                                                    Kommentar: {{$consult->comment}}
                                                 </span>
                                                                 </div>
                                                             </div>
@@ -986,7 +985,7 @@
                                                                                             class="btn py-2"
                                                                                             style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;"
                                                                                             data-bs-dismiss="modal">
-                                                                                        Close
+                                                                                        Schliessen
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
@@ -1017,7 +1016,7 @@
                                             <div class="p-3">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <h5><b>Personal Apponitments</b></h5>
+                                                        <h5><b>Persönliche Termine</b></h5>
                                                     </div>
                                                     <div style="color: #0a53be" class="col-3 text-end">
                                                         <h5><b>{{$countpersonalApp}}</b></h5>
@@ -1062,22 +1061,22 @@
                                                             </div>
                                                             <div class="">
                                             <span style="font-family: 'Montserrat';">
-                                                Address: {{$perApp->address}}
+                                                Adress: {{$perApp->address}}
                                             </span>
                                                             </div>
                                                             <div class="">
                                             <span style="font-family: 'Montserrat';">
-                                                Date: {{$perApp->date}}
+                                                Datum: {{$perApp->date}}
                                             </span>
                                                             </div>
                                                             <div class="">
                                             <span style="font-family: 'Montserrat';">
-                                                Time: {{$perApp->time}}
+                                                Zeit: {{$perApp->time}}
                                             </span>
                                                             </div>
                                                             <div class="">
                                             <span style="font-family: 'Montserrat';">
-                                                Comment: {{$perApp->comment}}
+                                                Kommentar: {{$perApp->comment}}
                                             </span>
                                                             </div>
                                                         </div>
@@ -1127,31 +1126,31 @@
                                                                 <input type="hidden" name="apporconId" value="1">
                                                                 <div class="px-2">
                                                                     <label
-                                                                        style="font-family: 'Montserrat';"><b>Title</b></label>
+                                                                        style="font-family: 'Montserrat';"><b>Titel</b></label>
                                                                     <input type="text"
                                                                            style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                            name="title" class="form-control mb-3"
                                                                            required>
                                                                     <label
-                                                                        style="font-family: 'Montserrat' !important;"><b>Date</b></label>
+                                                                        style="font-family: 'Montserrat' !important;"><b>Datum</b></label>
                                                                     <input type="date"
                                                                            style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                            name="date" class="form-control mb-3"
                                                                            required>
                                                                     <label
-                                                                        style="font-family: 'Montserrat';"><b>Time</b></label>
+                                                                        style="font-family: 'Montserrat';"><b>Zeit</b></label>
                                                                     <input type="time"
                                                                            style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                            name="time" class="form-control mb-3"
                                                                            required>
                                                                     <label
-                                                                        style="font-family: 'Montserrat';"><b>Address</b></label>
+                                                                        style="font-family: 'Montserrat';"><b>Adress</b></label>
                                                                     <input type="text"
                                                                            style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                            name="address" class="form-control mb-3"
                                                                            required>
                                                                     <label
-                                                                        style="font-family: 'Montserrat';"><b>Comment</b></label>
+                                                                        style="font-family: 'Montserrat';"><b>Kommentar</b></label>
                                                                     <textarea type="text"
                                                                               style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                               name="comment" class="form-control mb-3"
@@ -1173,7 +1172,7 @@
                                                                                 <button type="button" class="btn py-2"
                                                                                         data-bs-dismiss="modal"
                                                                                         style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;">
-                                                                                    Close
+                                                                                    Schliessen
                                                                                 </button>
                                                                             </div>
                                                                         </div>
@@ -1214,7 +1213,7 @@
                                             <br>
                                             <span class="fw-bold fs-5 text-white"
                                                   style="font-family: 'Montserrat' !important;">
-                                New Leads
+                                Neue Leads
                             </span>
                                         </div>
                                     </div>
@@ -1236,7 +1235,7 @@
                                             <br>
                                             <span class="fw-bold fs-5 text-white"
                                                   style="font-family: 'Montserrat' !important;">
-                                Open Tasks
+                                 Aufgaben öffnen
                             </span>
                                         </div>
                                     </div>
@@ -1258,7 +1257,7 @@
                                             <br>
                                             <span class="fw-bold fs-5 text-white"
                                                   style="font-family: 'Montserrat' !important;">
-                                Pendencies
+                                Steht Aus
                             </span>
                                         </div>
                                     </div>
@@ -1280,7 +1279,7 @@
                                             <br>
                                             <span class="fw-bold fs-5 text-white"
                                                   style="font-family: 'Montserrat' !important;">
-                                Today App
+                                Heute Termin
                             </span>
                                         </div>
                                     </div>
@@ -1335,7 +1334,7 @@
                                             </div>
                                             <div class="py-1">
                                 <span class="text-muted" style="font-family: 'Montserrat' !important;">
-                                    Add New One
+                                    Neues hinzufügen
                                 </span>
                                             </div>
                                         </div>

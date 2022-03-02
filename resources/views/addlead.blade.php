@@ -9,11 +9,11 @@
                     <div class="col-12 col-md-6 col-lg-6">
                         <div class="mx-2">
                             <div class="mb-2">
-                                <label for="" class="mb-1 ">Name:</label>
+                                <label for="" class="mb-1 ">Vorname:</label>
                                 <input type="text" name="name" class="form-control" required>
                             </div>
                             <div class="mb-2">
-                                <label for="" class="mb-1">Vorname:</label>
+                                <label for="" class="mb-1">Nachname:</label>
                                 <input type="text" name="lname" class="form-control" required>
                             </div>
                             <div class="mb-2">
@@ -21,7 +21,7 @@
                                 <input type="tel" name="telephone" class="form-control" required>
                             </div>
                             <div class="mb-2">
-                                <label for="" class="mb-1">Platfrom:</label>
+                                <label for="" class="mb-1">Plattform:</label>
                                 <select class="form-control" name="campaign">
                                   @foreach($campaigns as $campaign)
                                   <option value="{{$campaign->id}}">{{$campaign->name}}</option>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="my-4">
                         <button type="submit" class="py-2 px-5 border-0 fw-bold"
-                                style="background-color: #63D4A4; color: #fff; border-radius: 8px;">Accept</button>
+                                style="background-color: #63D4A4; color: #fff; border-radius: 8px;">Annehmen</button>
                     </div>
                 </div>
                 </form>
