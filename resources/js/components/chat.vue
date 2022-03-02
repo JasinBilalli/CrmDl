@@ -31,11 +31,11 @@
                                 style="overflow: auto; height: 90vh; align-items-center; display:flex; padding-top: 140px;">
                                 <li class="clearfix py-2 px-0">
                                     <!-- <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar">  -->
-                                    <div class="about" v-for="notification in notifications">                        
+                                    <div class="about" v-for="notification in notifications">
                                         <div class="status py-1 name" style="font-size: 17px;" v-html="notification.data">
                                         </div>
                                     <hr class="m-0 g-0 p-0">
-                                    </div>    
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -52,7 +52,7 @@
                                                 transform="translate(7.252 7.498)" fill="#535353" />
                                         </g>
                                     </svg>
-                                    <span class="ps-2">New Notifications</span>
+                                    <span class="ps-2">Neue Benachrichtigungen</span>
                                 </button>
                             </div>
                         </div>
@@ -61,13 +61,13 @@
                         <div class="chat-header clearfix fixed-top" style="margin-left:321px; align-items: center;">
                             <div class="row">
                                 <div class="col col-lg-6">
-                                
+
                                 </div>
                                 <div class="col-auto my-auto">
                                     <div class="notify-page-button text-end pe-2">
                                         <button class="btn bg-white" style="font-weight: 500;"
                                             onclick="showNotifFunct()">
-                                            Notifications
+                                            Benachrichtigungen
                                         </button>
                                     </div>
                                 </div>
@@ -78,8 +78,8 @@
                                 style="overflow: auto; height: 90vh;padding-top: 120px;">
                                 <ul class="m-b-0" v-if="yes">
                                     <li class="py-1 d-flex mb-3" v-for="msg in messages" v-if="msg.messageable_id != admin">
-                                      
-                                        
+
+
                                         <div class="col-auto mx-2"
                                             style="width: 40px;height: 40px;border-radius: 50%;background-color: #fff;border:1px #70707080 solid;">
                                         </div>
@@ -87,7 +87,7 @@
                                      <a target="_blank" :href="url + 'file/' + msg.body" v-if="msg.type == 'file'" id="msg"><i class="fa fa-file-archive-o" aria-hidden="true"></i> {{msg.body}}</a>
                                      <div v-if="msg.type == 'text'">{{msg.body}}</div>
                                         </div>
-                                      
+
                                     </li>
                                       <li v-else class="py-1 d-flex justify-content-end" style="margin-bottom: 50px;">
                                         <div class="col message other-message my-1">
@@ -118,11 +118,11 @@
                                         </span>
                                     </button>
                                     <br>
-                                  
+
                                        <div class="text-center" style="cursor:pointer;">
                                         <label for="file-inp-4" class="text-center">
                                            <span class="desktop-send text-center">
-                                            
+
                                             <svg xmlns="http://www.w3.org/2000/svg" width="28" fill="currentColor"
                                                 class="bi bi-file-earmark-image" viewBox="0 0 16 16">
                                                 <path d="M6.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
@@ -141,7 +141,7 @@
                                         </label>
                                         <input type="file" id="file-inp-4">
                                         </div>
-                                   
+
                                 </div>
                                 <!-- <span class="form-control input-text-22" id="exampleFormControlTextarea1" contenteditable
                                     placeholder="Enter text here..." rows=" "></span> -->
@@ -171,7 +171,7 @@ export default {
     };
   },
   mounted() {
-     
+
     this.getmessages();
       this.getnotifications();
     setInterval(() => {
@@ -236,11 +236,11 @@ headers:{
 }
         }).then((document.getElementById('file-inp-4').value = null));
       }
-        
+
        setTimeout(() => {
 $('#bchat').scrollTop($('#bchat')[0].scrollHeight);
        },850);
-    },  
+    },
     getmessages() {
         this.yes = false;
       axios
@@ -274,9 +274,9 @@ this.tcnt++;
       {required:false}
       ,
       admin:{
-       
+
       }
   },
- 
+
 };
 </script>

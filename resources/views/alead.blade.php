@@ -5,7 +5,7 @@
             {!! implode('<br />', $errors->all(':message')) !!}
         </div>
     @endif
-    <title>Assign Lead</title>
+    <title>Zugewiesen Lead</title>
 
     <section>
         <div class="container">
@@ -49,7 +49,7 @@
                                     <input type="text" class="form-control" value="{{$lead->nationality}}" name="nationality">
                                 </div>
                                 <div class="mb-2">
-                                    <label for="" class="mb-1">Name</label>
+                                    <label for="" class="mb-1">Vorname</label>
                                     <input type="text" name="name" class="form-control" value="{{$lead->first_name}}">
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                         <div class="col" >
                             <div class="mx-2">
                                 <div class="mb-2">
-                                    <label for="" class="mb-1">Vorname</label>
+                                    <label for="" class="mb-1">Nachname</label>
                                     <input type="text" class="form-control" value="{{$lead->last_name}}" name="lname" >
                                 </div>
                                 <div class="mb-2">
@@ -93,7 +93,7 @@
                     </div>
                     <div class="my-4">
                         <button type="submit" class="py-2 px-5 mx-5 border-0 fw-bold"
-                                style="background-color: #63D4A4; color: #fff; border-radius: 8px;">Accept
+                                style="background-color: #63D4A4; color: #fff; border-radius: 8px;">Annehmen
                         </button>
                     </div>
                 </form>

@@ -376,15 +376,15 @@
                                                                          style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
                                                                         Title: {{$perApp->title}}
                                                                         <br>
-                                                                        Comment: {{$perApp->comment}}
+                                                                        Kommentar: {{$perApp->comment}}
                                                                         <br>
-                                                                        Address: {{$perApp->address}}
+                                                                        Adress: {{$perApp->address}}
                                                                         <br>
-                                                                        Date: {{$perApp->date}}
+                                                                        Datum: {{$perApp->date}}
                                                                         <br>
-                                                                        Time: {{$perApp->time}}
+                                                                        Zeit: {{$perApp->time}}
                                                                         <br>
-                                                                        From: {{App\Models\Admins::find($perApp->assignfrom)->name}}
+                                                                        Von: {{App\Models\Admins::find($perApp->assignfrom)->name}}
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -395,7 +395,7 @@
                                                                 <div class="col-3 mx-auto">
                                                                     <button type="button" class="btn w-100 px-3"
                                                                             style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                            data-bs-dismiss="modal"><b>Close</b>
+                                                                            data-bs-dismiss="modal"><b>Schliessen</b>
                                                                     </button>
                                                                 </div>
 
@@ -429,9 +429,9 @@
                                         <tr class="sticky-class" style="border-bottom: 1px solid #70707050 !important;">
                                             <th scope="col">Datum</th>
                                             <th scope="col">Kundename</th>
-                                            <th scope="col">Title</th>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Type</th>
+                                            <th scope="col">Titel</th>
+                                            <th scope="col">Beschreibung</th>
+                                            <th scope="col">Art</th>
                                             <th scope="col" class="text-center">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="22"
                                                      viewBox="0 0 28.391 27.587">
@@ -500,7 +500,7 @@
                                                         {{ucfirst($task->type)}}
                                                         </span>
                                                     @else
-                                                        <span class="submited-btn py-2 px-4">Submited</span>
+                                                        <span class="submited-btn py-2 px-4">Eingereicht</span>
                                                     @endif
                                                 </td>
                                                 <td class="text-center" data-bs-target="#stats{{$task->pid}}"
@@ -597,7 +597,7 @@
                                                             <a href="{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}">
                                                                 <button type="button" class="btn px-3"
                                                                         style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                        data-bs-dismiss="modal"><b>Open</b></button>
+                                                                        data-bs-dismiss="modal"><b>Offen</b></button>
                                                             </a>
 
                                                         </div>
@@ -623,7 +623,7 @@
                         <div class="answered-div">
                             <div class="header px-3 px-sm-3 justify-content-between">
                                 <div class="">
-                                    <span>Answered Tasks</span>
+                                    <span>Beantwortete Aufgaben</span>
                                 </div>
                                 <div class="col-auto">
                                     {{count($answered)}}
@@ -654,7 +654,7 @@
                                                 </div>
                                                 <input type="text" class="form-control" placeholder="Search by name" name="searchpend">
                                                 <button type="submit" class="py-1 px-3 px-sm-4 px-md-5 ms-2 fw-bold border-0 search-button-task">
-                                                    Search
+                                                    Suche..
                                                 </button>
                                             </div>
                                         </form>
@@ -698,19 +698,19 @@
                                                         </div>
                                                     </a>
                                                     <div id="demo{{$taskId}}" class="collapse px-3 py-2">
-                                                        <h6 class="m-1"><b>Client:</b> {{ucfirst($task->first_name)}}
+                                                        <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->first_name)}}
                                                         </h6>
-                                                        <h6 class="m-1"><b>Title:</b> {{$task->title}}</h6>
-                                                        <h6 class="m-1"><b>Addressed
-                                                                to:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
+                                                        <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
+                                                        <h6 class="m-1"><b>Adresse
+                                                                zu:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
                                                         </h6>
-                                                        <h6 class="m-1"><b>Date & Time:</b> {{$task->updated_at}}</h6>
-                                                        <h6 class="m-1"><b>Description:</b>
+                                                            <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
+                                                        <h6 class="m-1"><b>Beschreibung:</b>
                                                             <span> {{$task->description }}</span></h6>
                                                         <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
                                                             <button class="btn m-1"
                                                                     style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
-                                                                Open
+                                                                Offen
                                                             </button>
                                                         </a>
                                                     </div>
@@ -744,7 +744,7 @@
                         <div class="open-tasks-bo">
                             <div class="header px-3 px-sm-3 justify-content-between">
                                 <div class="">
-                                    <span>Open Tasks</span>
+                                    <span>Aufgaben öffnen</span>
                                 </div>
                                 <div class="col-auto">
                                     {{count($opened)}}
@@ -775,7 +775,7 @@
                                             </div>
                                                 <input type="text" class="form-control" placeholder="Search by name" name="searchopen">
                                                 <button type="submit" class="py-1 px-3 px-sm-4 px-md-5 ms-2 fw-bold border-0 search-button-task">
-                                                    Search
+                                                    Suchen..
                                                 </button>
 
                                             </div>
@@ -821,19 +821,19 @@
                                                         </div>
                                                     </a>
                                                     <div id="demo_2{{$authUserId}}" class="collapse px-3 py-2">
-                                                        <h6 class="m-1"><b>Client: {{ucfirst($task->first_name)}}</b>
+                                                        <h6 class="m-1"><b>Klientin: {{ucfirst($task->first_name)}}</b>
                                                         </h6>
-                                                        <h6 class="m-1"><b>Title:</b> {{$task->title}}</h6>
-                                                        <h6 class="m-1"><b>Addressed
-                                                                to:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
+                                                        <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
+                                                        <h6 class="m-1"><b>Adresse
+                                                                zu:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
                                                         </h6>
-                                                        <h6 class="m-1"><b>Date & Time:</b> {{$task->updated_at}}</h6>
-                                                        <h6 class="m-1"><b>Description:</b>
+                                                        <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
+                                                        <h6 class="m-1"><b>Beschreibung:</b>
                                                             <span> {{$task->description}} </span></h6>
                                                         <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
                                                             <button class="btn m-1"
                                                                     style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
-                                                                Open
+                                                                Offen
                                                             </button>
                                                         </a>
 

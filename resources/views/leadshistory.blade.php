@@ -53,12 +53,12 @@
         <div class="col px-0 receivedCol">
             <div class="py-3 h-100">
                 <div class="text-center">
-                    <span class="openLeadsSpanText">Received/New</span>
+                    <span class="openLeadsSpanText">Erhalten/Neu</span>
                 </div>
                 <div class="my-auto h-75">
                     <div class="greyBorderDiv mt-2 my-auto">
                         <div class="receivedDiv h-100 my-auto ps-4">
-                            Received
+                            Empfangen
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
         <div class="col px-0 assignedToCol">
             <div class="py-3 h-100" >
                 <div class="text-center">
-                    <span class="openLeadsSpanText">Assigned to</span>
+                    <span class="openLeadsSpanText">Zugewiesen An</span>
                 </div>
                 <div class="my-auto h-75">
                     @if($lead->assign_to_id != null)
@@ -90,12 +90,12 @@
         <div class="col-6 px-0 lostCol">
             <div class="py-3 h-100">
                 <div class="text-center">
-                    <span class="openLeadsSpanText">Lost</span>
+                    <span class="openLeadsSpanText">Hat Verloren</span>
                 </div>
                 <div class="my-auto h-75">
                     <div class="redBorderDiv mt-2 my-auto h-100" style="background-color: #FF6262;">
                         <div class="lostDiv my-auto h-100 justify-content-center ps-4">
-                            Lost
+                            Hat Verloren
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
         <div class="col px-0 wonCol" style="display: none;">
             <div class="py-3 h-100">
                 <div class="text-center">
-                    <span class="openLeadsSpanText">Won</span>
+                    <span class="openLeadsSpanText">Gewonnen</span>
                 </div>
                 <div class="my-auto h-75">
                     <div class="greenBorderDiv mt-2 my-auto">
@@ -122,12 +122,12 @@
         <div class="col px-0 lostCol" style="display: none;">
             <div class="py-3 h-100">
                 <div class="text-center">
-                    <span class="openLeadsSpanText">Lost</span>
+                    <span class="openLeadsSpanText">Hat Verloren</span>
                 </div>
                 <div class="my-auto h-75">
                     <div class="redBorderDiv mt-2 my-auto h-100">
                         <div class="lostDiv my-auto h-100 justify-content-center ps-4">
-                            Lost
+                            Hat Verloren
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
         <div class="col-6 px-0 wonCol">
             <div class="py-3 h-100">
                 <div class="text-center">
-                    <span class="openLeadsSpanText">Won</span>
+                    <span class="openLeadsSpanText">Gewonnen</span>
                 </div>
                 <div class="my-auto h-75">
                     <div class="greenBorderDiv mt-2 my-auto" style="background-color: #4EC590;">
@@ -153,12 +153,12 @@
         <div class="col px-0 lostCol">
             <div class="py-3 h-100">
                 <div class="text-center">
-                    <span class="openLeadsSpanText">Lost</span>
+                    <span class="openLeadsSpanText">Hat Verloren</span>
                 </div>
                 <div class="my-auto h-75">
                     <div class="redBorderDiv mt-2 my-auto h-100">
                         <div class="lostDiv my-auto h-100 justify-content-center ps-4">
-                            Lost
+                            Hat Verloren
                         </div>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
         <div class="col px-0 wonCol">
             <div class="py-3 h-100">
                 <div class="text-center">
-                    <span class="openLeadsSpanText">Won</span>
+                    <span class="openLeadsSpanText">Gewonnen</span>
                 </div>
                 <div class="my-auto h-75">
                     <div class="greenBorderDiv mt-2 my-auto">
@@ -188,11 +188,11 @@
     <div class="d-flex justify-content-center mt-4"><nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-between">
         @if($leads->currentPage() > 1)
         <span> <a href="{{route('leadshistory',['page' => $leads->currentPage() -1])}}" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"></span>
-        « Previous
+        « Vorherige
             @endif
 
                 </span> <a href="{{route('leadshistory',['page' => $leads->currentPage() +1 ,])}}" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-                    Next »
+                    Nächste »
                 </a></div> <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"><div><p class="text-sm text-gray-700 leading-5">
 
                 </p></div> <div></div></div></nav>

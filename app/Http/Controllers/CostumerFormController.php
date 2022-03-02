@@ -183,7 +183,7 @@ class CostumerFormController extends Controller
                     $grundversicherungP->total_commisions_PG = $request->input('total_commisions_PG' . $i);
                     $grundversicherungP->save();
                     $pcnt++;
-                
+
             }
 
 
@@ -261,7 +261,6 @@ class CostumerFormController extends Controller
         for ($i = 1; $i <= $cnt; $i++) {
             $zusatzversicherungP = new CostumerProduktZusatzversicherung();
             $zusatzversicherungP->person_id_PZ = $id;
-            
 
                 $zusatzversicherungP->graduation_date_PZ = $request->input('graduation_date_PZ' . $i);
                 $zusatzversicherungP->society_PZ = $request->input('society_PZ' . $i);
@@ -275,7 +274,7 @@ class CostumerFormController extends Controller
                 $zusatzversicherungP->total_commisions_PZ = $request->input('total_commisions_PZ' . $i);
                 $zusatzversicherungP->save();
                 $pcnt++;
-            
+
         }
 
 

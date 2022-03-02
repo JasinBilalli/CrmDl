@@ -21,28 +21,28 @@
                                 <div class="col-3 g-0">
                                     <div class="">
                                         <span class="spn-muted">
-                                        Name
+                                        Vorname
                                         </span>
                                     </div>
                                 </div>
                                 <div class="col-3 g-0">
                                     <div class="">
                                         <span class="spn-muted">
-                                        Phone
+                                        Telefonnummer
                                         </span>
                                     </div>
                                 </div>
                                 <div class="col g-0">
                                     <div class="">
                                         <span class="spn-muted">
-                                        Number of People
+                                        Anzahl der Personen
                                         </span>
                                     </div>
                                 </div>
                                 <div class="col g-0">
                                     <div class="">
                                         <span class="spn-muted">
-                                         Reason
+                                         Grund
                                         </span>
                                     </div>
                                 </div>

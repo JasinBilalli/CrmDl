@@ -499,7 +499,7 @@ foreach($bo as $b){
         return redirect()->route('acceptdata', ['id' => Crypt::encrypt($personId * 1244),'admin_id' => Crypt::encrypt($admin_id * 1244)]);
     }
 
-   
+
 
     public function deleteLeadDataKK($dataId)
     {
