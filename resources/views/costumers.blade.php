@@ -83,9 +83,9 @@
                             <form method="post" action="{{route('search')}}" class="dropdown-menu px-2"
                                   aria-labelledby="dropdownMenuButton1">
                                 @csrf
-                                <label for="from-date" class="fw-600">From</label>
+                                <label for="from-date" class="fw-600">Von</label>
                                 <input type="date" class="dropdown-item" name="searchdate1">
-                                <label for="to-date" class="fw-600">To</label>
+                                <label for="to-date" class="fw-600">Zu</label>
                                 <input type="date" class="dropdown-item" name="searchdate2">
                                 <input type="submit"
                                        class="border-0 bg-secondary text-light fw-600 my-2 text-center rounded dropdown-item"
@@ -98,7 +98,7 @@
             </div>
 
             <div class="content kundenstyle2 px-3">
-                <div class="table-responsive bg-color1 ovrflw " style="overflow: auto; height: 62vh;">
+                <div class="table-responsive ovrflw " style="overflow: auto; height: 62vh;">
                     <table class="table table-borderless bg-white">
                         <thead style="border-bottom: 4px solid #fff !important;">
                         <tr class="bg-color1" style="border: none; border-bottom: 2px #fff solid !important;">
@@ -149,9 +149,10 @@
                                             @endif
                                             @endif
                                             @if($mandatiert[$i]['mandatiert'])
-                                                <td><span class="fw-bold">Nein</span></td>
-                                            @else
                                                 <td><span class="fw-bold">Ja</span></td>
+
+                                            @else
+                                                <td><span class="fw-bold">Nein</span></td>
                                             @endif
 
 
@@ -660,9 +661,7 @@
                                         <span class="fw-bold">Mandatiert: Ja</span>
                                     </div>
                                 @else
-                                    <div class="text-danger">
-                                        <span class="fw-bold">Mandatiert: Nein</span>
-                                    </div>
+
                                 @endif
                             </div>
                             <div class="info-divider">

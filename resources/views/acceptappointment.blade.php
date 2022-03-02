@@ -1,7 +1,7 @@
 @extends('template.navbar')
 @section('content')
 
-    <title>Accept Appointments</title>
+    <title>Termine annehmen</title>
 
 <section class="my-5">
     <div class="container-fluid">
@@ -149,12 +149,12 @@
                             <div class="button-div d-flex justify-content-center">
                                 <a style="text-decoration: none" href="{{route('dealnotclosed',Crypt::decrypt($leadId) / 1244)}}">
                                 <button class="close-btn py-2 mx-2">
-                                    Close
+                                    Schliessen
                                 </button>
                                 </a>
                                 <a style="text-decoration: none" href="{{route('dealclosed',$leadId)}}">
                                 <button class="go-btn py-2 mx-2">
-                                    Go
+                                    Weiter
                                 </button>
                                 </a>
                             </div>
@@ -165,7 +165,7 @@
                             @endphp
                             <a style="text-decoration: none" href="{{route('acceptleadinfo',$leadId)}}">
                                 <button class="go-btn py-2 mx-2">
-                                    Accept
+                                    Annehmen
                                 </button>
                             </a>
                         @endif

@@ -1,13 +1,13 @@
 @if(Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin'))
 @extends('template.navbar')
 @section('content')
-    <title>Edit Client</title>
+    <title>Mandant Bearbeiten</title>
     <div class="" style="margin-top: 20vh">
 
     <div class="test col-11 col-sm-11 col-md-9 col-lg-6 mx-auto my-3" >
         <div class="pt-3">
             <span class="fs-4 fw-600 ps-4">
-                Edit Client
+                Mandant Bearbeiten
              </span>
         </div>
         @php
@@ -29,23 +29,23 @@
                 <select class="form-control" name="status">
                     @if($client->status == 'Open')
                         <option>{{$client->status}}</option>
-                        <option>Submited</option>
-                        <option>Done</option>
+                        <option>Eingereicht</option>
+                        <option>Getan</option>
                     @endif
                     @if($client->status == 'Done')
                         <option>{{$client->status}}</option>
-                        <option>Submited</option>
-                        <option>Open</option>
+                        <option>Eingereicht</option>
+                        <option>Getan</option>
                     @endif
                     @if($client->status == 'Submited')
                         <option>{{$client->status}}</option>
-                        <option>Done</option>
-                        <option>Open</option>
+                        <option>Eingereicht</option>
+                        <option>Getan</option>
                     @endif
                 </select>
             </div>
             <div class="text-center">
-                <input type="submit" value="Save" class="btn btn-secondary px-4 mt-3">
+                    <input type="submit" value="Speichern" class="btn btn-secondary px-4 mt-3">
             </div>
         </form>
     </div>

@@ -19,18 +19,18 @@ class AppointmentsController extends Controller
     {
 		$input = $request->all();
 		if(array_key_exists('trie', $input) && ( $input['trie'] == "asc" || $input['trie']== "desc" )){$trie = $input['trie'];}else{$trie = "asc" ;};
-		
+
 		if(array_key_exists('date_in', $input) ){ $date_in = $input['date_in'];}else { $date_in = date('Y-m-d'); }
 		$date_in =  new DateTime($date_in);
-		
-		
+
+
 
 		if(array_key_exists('region', $input) ){if($input['region'] == "all"){$regionQ='appointment_date' ; $regionI = $date_in ; $regionO="all";}else{$regionQ='city' ; $regionI  = $input['region'];$regionO= $input['region'] ;}}else{ $regionQ='appointment_date' ; $regionI = $date_in ;$regionO="all";};
 
 		if(array_key_exists('rejected', $input) ){if($input['rejected'] == "all"){$rejectedQ='appointment_date' ; $rejectedI = $date_in ;$rejectedO="all";}else{$rejectedQ='rejected' ; $rejectedI = $input['rejected'];$rejectedO=$input['rejected'];}}else{ $rejectedQ='appointment_date' ; $rejectedI = $date_in ;$rejectedO="all";};
 
 		if(array_key_exists('sprache', $input) ){if($input['sprache'] == "all"){$spracheQ='appointment_date' ; $spracheI = $date_in ; $spracheO="all"; }else{$spracheQ='sprache' ; $spracheI = $input['sprache']; $spracheO=$input['sprache']; }}else{ $spracheQ='appointment_date' ; $spracheI = $date_in ;$spracheO="all";};
-		
+
 
 
 		if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager'))
@@ -43,12 +43,12 @@ class AppointmentsController extends Controller
 			$langues = lead::select('sprache')->whereNull('assign_to_id')->distinct()->orderBy('sprache', 'asc')->whereNotNull('sprache')->where('appointment_date',Carbon::now()->format('Y-m-d'))->get();
 
 			$appointments_events = lead::select('*')->whereNull('assign_to_id')->where('appointment_date',$date_in)->orderBy('time', $trie)->where($regionQ,$regionI)->where($rejectedQ,$rejectedI)->where($spracheQ,$spracheI)->where('completed',0)->get();
-						
-			
+
+
 			$appointments = lead::select('*','leads.id as id')->join('model_has_roles', 'model_has_roles.model_id', '=', 'leads.assign_to_id')
-			->where('model_has_roles.role_id',7)->whereNotNull('leads.assign_to_id')->where('leads.assigned',1)->where('leads.completed',0)->whereNotNull('leads.appointment_date')->where('leads.wantsonline',0)->where('leads.rejected',0)->get(); 
-			
-			
+			->where('model_has_roles.role_id',7)->whereNotNull('leads.assign_to_id')->where('leads.assigned',1)->where('leads.completed',0)->whereNotNull('leads.appointment_date')->where('leads.wantsonline',0)->where('leads.rejected',0)->get();
+
+
 			$maps = DB::table('leads')->where('appointment_date',Carbon::now()->format('Y-m-d'))->select('leads.first_name','leads.last_name','leads.latitude','leads.longitude')->get();
 
 			return view('appointment')->with('users',$users)->with('appointments_events',$appointments_events)->with('appointments',$appointments)->with('regions',$regions)->with('langues',$langues)->with('regionO',$regionO)->with('rejectedO',$rejectedO)->with('spracheO',$spracheO)->with('trie',$trie)->with('maps',$maps)->with('date_in',$date_in);
@@ -88,10 +88,10 @@ class AppointmentsController extends Controller
 	if(lead::find($id_lead)->appointment_date == $date){
 		$appointment = lead::where('id', $pieces['0'])
               ->update(['assigned' => 1,'assign_to_id' => $input['id_user'],'rejected' => 0]);
-		if($appointment){return "Assigned with success !!!!";} else {return "ERROR !!!";}
+		if($appointment){return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
 	}
 	else{
-		return "Wrong, appointment should be assigned to its date (" . lead::find($id_lead)->appointment_date . ") !!!";
+		return "Falsch, Termin sollte seinem Datum zugeordnet werden (" . lead::find($id_lead)->appointment_date . ") !!!";
 	}
 }
 

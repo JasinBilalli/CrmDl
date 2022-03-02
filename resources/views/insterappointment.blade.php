@@ -1,6 +1,6 @@
 @extends('template.navbar')
 @section('content')
-        <title>Insert Appointment</title>
+        <title>Termin Einfügen</title>
     <section>
         <div class="container">
         @if($errors->any())
@@ -47,7 +47,7 @@
                                 <input type="number" name="count" class="form-control" required="required">
                             </div>
                             <div class="mb-2">
-                                <label for="" class="mb-1">Nationalitat:</label>
+                                <label for="" class="mb-1">Nationalität:</label>
                                 <input type="text" name="country" class="form-control" required>
                             </div>
 
@@ -84,7 +84,7 @@
                                 @else
                                 <label for="" class="mb-1">Besprechungsformular</label>
                                 <select onchange="hideadmin()" name="online" id="selecti" class="form-control">
-                                <option value="no">Physically</option>
+                                <option value="no">Physisch</option>
                                 <option value="yes">Online</option>
                                 </select>
 
@@ -118,7 +118,7 @@
                 </div>
                     <div class="my-4">
                         <button class="py-2 px-5 mx-5 border-0 fw-bold"
-                                style="background-color: #0C71C3; color: #fff; border-radius: 8px;">Accept</button>
+                                style="background-color: #0C71C3; color: #fff; border-radius: 8px;">Annehmen</button>
                     </div>
                 </form>
             </div>
@@ -131,7 +131,7 @@
             <div class="container">
                 <div class="form-div my-4 py-4 mx-3  mx-sm-5" style="background-color: #EFEFEF; border-radius: 20px;">
                     <div class="mb-4 mx-5">
-                        <span class="fs-5 fw-600">Or Insert By File</span>
+                        <span class="fs-5 fw-600">Oder per Datei einfügen</span>
                     </div>
                     <form method="post" action="{{route('addappointmentfile')}}" enctype="multipart/form-data">
                         @csrf
@@ -143,14 +143,14 @@
                                     </div>
                                     <div class="my-4">
                                         <button type="submit" class="py-2 px-5 border-0 fw-bold"
-                                                style="background-color: #0C71C3; color: #fff; border-radius: 8px;">Accept</button>
+                                                style="background-color: #0C71C3; color: #fff; border-radius: 8px;">Annehmen</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
                     <div onclick="openExamplePic()">
-                        <span class="btn fw-600 mx-5" style="border: 1px solid #434343;border-radius: 5px">Example</span>
+                        <span class="btn fw-600 mx-5" style="border: 1px solid #434343;border-radius: 5px">Beispiel</span>
                     </div>
                     <br>
                     <div style="display: none" class="w-100" id="picture">

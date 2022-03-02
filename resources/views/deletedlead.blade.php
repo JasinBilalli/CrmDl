@@ -1,6 +1,6 @@
 @extends('template.navbar')
     @section('content')
-    <title>Appointments</title>
+    <title>Termine</title>
 <section>
     <div class="px-4">
         <div class="row">
