@@ -19,7 +19,7 @@
                                                 </svg>
                                                 <div class="mx-3 my-auto">
                                                   <span>
-                                                    Add new task !
+                                                    Neue Aufgabe hinzufügen !
                                                   </span>
                                                 </div>
                                             </div>
@@ -32,31 +32,31 @@
                                                  style="background-color: #EFEFEF; border-radius: 13px;">
                                                 <div class="py-2">
                                                     <div class="py-2">
-                                                        <label for="">Costumer</label>
+                                                        <label for="">Kunden</label>
                                                         <input type="text" class="form-control"
                                                                :value="client.first_name" readonly>
                                                     </div>
-                                                    <label for="">Field Service:</label>
+                                                    <label for="">Außendienst:</label>
                                                     <select class="form-select" aria-label="Default select example" @change="onChangeSelect($event)">
                                                         <option :value="admins.id">{{admins.name}}</option>
                                                     </select>
                                                 </div>
                                                 <div class="py-2">
-                                                    <label for="">Title</label>
+                                                    <label for="">Titel</label>
                                                     <input type="text" id="title" class="form-control">
                                                 </div>
                                                 <div class="py-2">
-                                                    <label for="Textarea1" class="form-label">Comment</label>
+                                                    <label for="Textarea1" class="form-label">Kommentar</label>
                                                     <textarea class="form-control" id="description" rows="4"></textarea>
                                                 </div>
                                                 <div class="py-2 input-group ">
                                                     <button type="button" class="btn px-5 text-dark mx-1 rounded" onclick="saveContentFunct2()" id="save-btn"
                                                             style="background-color: #fff;border:1px solid #000">
-                                                        Cancel
+                                                        Abbrechen
                                                     </button>
                                                     <button @click="asign" type="button" class="btn px-5 text-white mx-1 rounded" id="save-btn"
                                                             style="background-color: #5f5f5f;">
-                                                        Submit
+                                                        Senden
                                                     </button>
                                                 </div>
                                             </div>
@@ -90,7 +90,7 @@ admin: null
          onChangeSelect(event) {
             this.admin = parseInt(event.target.value);
         },
-       
+
     },
     mounted(){
     this.getclient();

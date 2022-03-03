@@ -124,4 +124,9 @@
   body {
     padding: 0 !important;
   }
+  @media (max-width: 575.98px) {
+      .div_ {
+          box-shadow:none;
+      }
+  }
 </style>

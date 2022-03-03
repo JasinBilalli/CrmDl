@@ -7,7 +7,7 @@
                     <div class="assigned-leads">
                         <div class="header px-3 px-sm-5">
                             <div class="fs-5">
-                                <span>Assigned Leads</span>
+                                <span>Zugewiesen Leads</span>
                             </div>
                         </div>
                         <div class="content p-0 p-sm-3"  >
@@ -27,7 +27,7 @@
                                                     </div>
                                                     <div class="modal-body mx-5">
                                                         <div class="row mb-3">
-                                                            <h5 class="modal-title" id="staticBackdropLabel"><b>Reject Lead</b></h5>
+                                                            <h5 class="modal-title" id="staticBackdropLabel"><b>Abgelehnt Lead</b></h5>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-12 col-12">
@@ -46,7 +46,7 @@
                                                                 </select>
                                                             </div>
                                                             <div class="modal-footer m-0" style="border-top: none !important; display: block;margin:0 !important;">
-                                                                <button type="submit" class="btn w-100 m-0 my-3" style="background-color: #0C71C3; color: #fff !important;"><b>Save</b></button>
+                                                                <button type="submit" class="btn w-100 m-0 my-3" style="background-color: #0C71C3; color: #fff !important;"><b>Sparen</b></button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -70,7 +70,7 @@
                                                     <div class="modal-body mx-5" >
                                                         <input type="hidden" :value="lead.id" name="leadsid" >
                                                         <div class="row mb-3">
-                                                            <h5 class="modal-title"><b>Reject Lead</b></h5>
+                                                            <h5 class="modal-title"><b>Abgelehnt Lead</b></h5>
                                                         </div>
                                                         <div class="row py-1 ">
                                                             <div class="col-12">
@@ -81,7 +81,7 @@
                                                                           aria-describedby="passwordHelpInline" ></textarea>
                                                             </div>
                                                             <div class="modal-footer m-0" style="border-top: none !important; display: block;margin:0 !important;">
-                                                                <button type="submit" class="btn w-100 m-0 my-3" style="background-color: #0C71C3; color: #fff !important;"><b>Save</b></button>
+                                                                <button type="submit" class="btn w-100 m-0 my-3" style="background-color: #0C71C3; color: #fff !important;"><b>Sparen</b></button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -106,7 +106,7 @@
                                                         <input type="hidden" :value="lead.id" name="leadsid" >
                                                         <input type="hidden" :value="1" name="pending" >
                                                         <div class="row mb-3">
-                                                            <h5 class="modal-title"><b>Pending Lead</b></h5>
+                                                            <h5 class="modal-title"><b>Steht aus Lead</b></h5>
                                                         </div>
                                                         <div class="row py-1 ">
                                                             <div class="col-12">
@@ -117,7 +117,7 @@
                                                                           aria-describedby="passwordHelpInline" ></textarea>
                                                             </div>
                                                             <div class="modal-footer col-12" style="border-top: none !important; display: block;margin:0 !important;">
-                                                                <button type="submit" class="btn w-100 m-0 my-3" style="background-color: #0C71C3; color: #fff !important;"><b>Save</b></button>
+                                                                <button type="submit" class="btn w-100 m-0 my-3" style="background-color: #0C71C3; color: #fff !important;"><b>Sparen</b></button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -144,7 +144,7 @@
                                                             <div class="d-flex justify-content-center">
                                                                 <a :href="'tel:' + lead.telephone" class="btn fw-bold fs-5 py-2 w-100"
                                                                    style="background-color:#4EC590;color: #fff; border-radius: 8px;">
-                                                                    Call
+                                                                    Anrufen
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -152,7 +152,7 @@
                                                             <div class="d-flex justify-content-start">
                                                                 <button class="btn fw-bold fs-5 py-2 w-100" data-bs-dismiss="modal"  data-bs-toggle="modal"
                                                                         :data-bs-target="'#' + lead.slug + 'rc'" style="background-color:#E50A10;color: #fff; border-radius: 8px;">
-                                                                        Reject
+                                                                        Abgelehnt
                                                                 </button>
 <!--                                                                <a :href="'pendingreject/' + lead.id + '/1'" class="btn fw-bold fs-5 py-2 w-100"-->
 <!--                                                                   style="background-color:#E50A10;color: #fff; border-radius: 8px;">-->
@@ -230,20 +230,20 @@
                                                                 <button class="btn fw-bold  m-1 fs-6 py-2 w-100" data-bs-dismiss="modal"  data-bs-toggle="modal"
                                                                         :data-bs-target="'#' + lead.slug + 'rp'"
                                                                         style="background-color:#FF860D !important;color: #fff !important; border-radius: 8px !important;">
-                                                                    Pending
+                                                                        Steht aus
                                                                 </button>
                                                         </div>
                                                         <div class="col-6 col-sm-3">
                                                             <button class="btn fw-bold m-1 fs-6 w-100" data-bs-dismiss="modal"  data-bs-toggle="modal"
                                                                     :data-bs-target="'#' + lead.slug + 'r'"
                                                                     style="background-color:#E50A10 !important; color: #fff !important; border-radius: 8px !important;">
-                                                                Reject
+                                                                Abgelehnt
                                                             </button>
                                                         </div>
                                                         <div class="col-6 col-sm-3">
                                                             <a :href="'alead/' + lead.id" class="btn fw-bold fs-6  w-100  m-1"
                                                                style="background-color:#4EC590 !important;color: #fff !important; border-radius: 8px !important;">
-                                                                Go
+                                                                Weiter
                                                             </a>
                                                         </div>
                                                     </div>
@@ -302,7 +302,7 @@
                     <div class="lead-statistics">
                         <div class="header px-3 px-sm-3">
                             <div class="fs-5">
-                                <span>Lead Statistics</span>
+                                <span>Statistik der Leads</span>
                             </div>
                         </div>
                         <div class="content">
@@ -409,7 +409,7 @@
 
                                         <a href="leadhistory"  style="text-decoration: none;">
                                         <span class="fs-5 fw-500 ps-2 text-decoration-underline" style="color: #0c71c3;">
-                                            History of Leads
+                                            Historie der Leads
                                         </span>
                                         </a>
 
@@ -431,7 +431,7 @@
                                     </span>
                                     <a href="rleads" style="text-decoration: none; color: black;">
                                     <span class="fs-5 fw-500 ps-2  text-decoration-underline" style="color: #b70000;">
-                                        Rejected Leads
+                                        Abgelehnte Leads
                                     </span>
                                     </a>
                                 </div>
@@ -452,7 +452,7 @@
                         <div class="assigned-leads1">
                             <div class="header px-3 px-sm-5">
                                 <div class="fs-5">
-                                    <span>Assigned Leads</span>
+                                    <span>Zugewiesene Leads</span>
                                 </div>
                             </div>
                             <div class="content p-0 p-sm-3" >
@@ -538,7 +538,7 @@
                                                                     data-bs-toggle="modal"
                                                                     data-bs-target="#asign"
                                                                     style="background-color: #63D4A4; color: #fff; border-radius: 13px;">
-                                                                Assign
+                                                                Zuweisen
                                                             </button>
                                                         </div>
                                                     </div>
@@ -603,7 +603,7 @@
                                 <div v-if="role != 'fs'" class=" py-2">
                                     <div class="button-div my-auto mx-5 py-3">
                                         <button type="submit" class="px-5 py-2 fs-4 btn" data-bs-toggle="modal" data-bs-target="#asign">
-                                             Assign
+                                            Zuweisen
                                         </button>
                                     </div>
                                     <div class="modal fade" id="asign" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -611,7 +611,7 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content p-3" style="border-radius: 23px !important;">
                                                 <div class="modal-header" style="border-bottom: none !important;">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Assign Leads</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Zugewiesene Leads</h5>
                                                     <button type="button" class="btn-close" style="opacity: 1 !important;" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                 </div>
@@ -637,7 +637,7 @@
                         <div class="lead-statistics1">
                             <div class="header px-3 px-sm-3">
                                 <div class="fs-5">
-                                    <span>Lead Statistics</span>
+                                    <span>Statistik der Leads</span>
                                 </div>
                             </div>
                             <div class="content">
@@ -743,7 +743,7 @@
                                     </span>
                                         <a href="leadhistory" style="text-decoration: none; color: black;">
                                             <span class="fs-5 fw-500 ps-2 text-decoration-underline" style="color: #0c71c3;">
-                                            History of Leads
+                                            Historie der Leads
                                             </span>
                                         </a>
                                     </div>
@@ -763,7 +763,7 @@
                                     </span>
                                         <a href="rleads" style="text-decoration: none; color: black;">
                                             <span class="fs-5 fw-500 ps-2  text-decoration-underline" style="color: #b70000;">
-                                            Rejected Leads
+                                            Abgelehnte Leads
                                             </span>
                                         </a>
                                     </div>

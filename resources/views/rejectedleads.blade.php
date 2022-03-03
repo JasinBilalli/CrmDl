@@ -1,21 +1,23 @@
 @extends('template.navbar')
 @section('content')
-<section class="my-5">
+<section class="my-0 my-sm-5">
     <div class="container-fluid">
-        <div class="wrapper-div px-4 py-4 mx-3">
+        <div class="wrapper-div px-4 py-0 py-sm-4 mx-0 mx-sm-3">
             <div class="row">
                 <div class="row">
                     <div class="col-2 col-md-1 pe-0 my-auto">
-                        <button class="bg-white w-100 rounded border-0 p-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#EF696A"
-                                 class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                      d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-                            </svg>
-                        </button>
+                        <a style="text-decoration: none" href="{{URL::previous()}}">
+                            <button class="bg-white w-100 rounded border-0 p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#7DBF9A"
+                                     class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                            </button>
+                        </a>
                     </div>
                     <div class="col py-1">
-                        <div class="mx-3">
+                        <div class="mx-3 my-3">
                                 <span class="fs-3 fw-bold text-white">
                                     {{$leads->first_name}}
                                 </span>
@@ -66,13 +68,14 @@
                                             <span class="fw-600 ">Strasse:</span> <span class="fs-6">{{$leads->address}}</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
                                             <span class="fw-600 ">PLZ:</span> <span class="fs-6">{{$leads->postal_code}}</span>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
                                             <span class="fw-600 ">Zufriedenheit:</span> <span class="fs-6">{{$leads->zufriedenheit}}</span>
@@ -98,6 +101,11 @@
                                             <span class="fw-600 ">Nationalitat:</span> <span class="fs-6">{{$leads->nationality}}</span>
                                         </div>
                                     </div>
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$leads->address}}</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
                                     <div class="white-thingy my-2">
@@ -107,19 +115,20 @@
                                     </div>
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Name:</span> <span class="fs-6">{{$leads->first_name}} </span>
+                                            <span class="fw-600 ">Vorname:</span> <span class="fs-6">{{$leads->first_name}} </span>
                                         </div>
                                     </div>
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Vorname:</span> <span class="fs-6">{{$leads->last_name}}</span>
+                                            <span class="fw-600 ">Nachname:</span> <span class="fs-6">{{$leads->last_name}}</span>
                                         </div>
                                     </div>
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$leads->address}}</span>
+                                            <span class="fw-600 ">Gesundheit:</span><span class="fs-6">{{$leads->gesundheit}}</span>
                                         </div>
                                     </div>
+
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
                                             <span class="fw-600 ">Tel. Privat</span> <span class="fs-6">{{$leads->telephone}}</span>
@@ -136,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 ps-0">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 px-0 ps-sm-0">
                     @php
                         $leadss = $leads->id * 1244;
                         $leadsId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
@@ -151,8 +160,8 @@
                                             Termin nicht stattgefunden
                                         </span>
                                 </div>
-                                <div class="row g-3 align-items-center py-1 mx-5">
-                                    <div class="col-12 col-md-6 text-center">
+                                <div class="row g-3 align-items-center py-1 mx-2 mx-sm-5">
+                                    <div class="col-12 col-md-6 text-sm-center">
                                         <label for="inputTxt4" class="col-form-label">Begrundung: </label>
                                     </div>
                                     <div class="col-12 col-md-6">
@@ -160,7 +169,7 @@
                                                aria-describedby="passwordHelpInline">
                                     </div>
                                 </div>
-                                <div class="row mx-2 text-center my-3 mx-5">
+                                <div class="row mx-2 text-center my-1 my-sm-3 mx-3 mx-sm-5">
                                     <div class="col g-0 upload-div">
                                         <div class="text-start">
                                             <div class="">
@@ -205,8 +214,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="decline-btn-div text-end mx-5">
-                                    <button type="button" onclick="deleteupladfile()" class="decline-btn py-1 px-4">
+                                <div class="decline-btn-div text-end mx-3 mx-sm-5">
+                                    <button type="button" onclick="deleteupladfile()" class="decline-btn py-2 px-5">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="19.145" height="19.524"
                                              viewBox="0 0 33.145 33.524">
                                             <g id="Group_620" data-name="Group 620"
@@ -377,6 +386,12 @@
     .wrapper-div {
         background-color: #EF696A;
         border-radius: 25px;
+    }
+    @media (max-width: 575.98px) {
+
+        .wrapper-div {
+            border-radius: 0px;
+        }
     }
 
     .decline-btn {

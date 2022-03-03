@@ -203,7 +203,7 @@
     </div>
 
 
-    <div class="my-5 col-12 col-sm-11 col-md-11 col-lg-10">
+    <div class="my-0 my-sm-5 col-12 col-sm-11 col-md-11 col-lg-10 g-0">
         <div class="col">
             <section>
                 @if(\Session::has('success'))
@@ -214,11 +214,11 @@
             </section>
         </div>
         <div class="d-flex justify-content-end">
-            <div class="wrapper-div px-4 py-4 mx-3">
-                <div class="row">
+            <div class="wrapper-div px-4 py-0 py-sm-4 mx-0 mx-sm-3">
+                <div class="row g-0">
                     <div class="row">
                         <div class="col-2 col-md-1 pe-0 my-auto">
-                            <a style="text-decoration: none" href="#">
+                            <a style="text-decoration: none" href="{{URL::previous()}}">
                                 <button class="bg-white w-100 rounded border-0 p-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#7DBF9A"
                                          class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -229,7 +229,7 @@
                             </a>
                         </div>
                         <div class="col py-1">
-                            <div class="mx-3">
+                            <div class="mx-3 my-3">
                                 <span class="fs-3 fw-bold text-white">
                                     {{$app->first_name}}
                                 </span>
@@ -277,18 +277,20 @@
                                         </div>
 
 
+
                                         <div class="white-thingy my-2">
                                             <div class="text-div py-3 ps-2">
                                                 <span class="fw-600 ">Strasse:</span> <span class="fs-6">{{$app->address}}</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
                                         <div class="white-thingy my-2">
                                             <div class="text-div py-3 ps-2">
                                                 <span class="fw-600 ">PLZ:</span> <span class="fs-6">{{$app->postal_code}}</span>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+
                                         <div class="white-thingy my-2">
                                             <div class="text-div py-3 ps-2">
                                                 <span class="fw-600 ">Zufriedenheit:</span> <span class="fs-6">{{$app->zufriedenheit}}</span>
@@ -315,6 +317,11 @@
                                                     class="fs-6">{{$app->nationality}}</span>
                                             </div>
                                         </div>
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$app->address}}</span>
+                                            </div>
+                                        </div>
 
                                     </div>
                                     <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
@@ -339,11 +346,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$app->address}}</span>
-                                            </div>
-                                        </div>
                                         <div class="white-thingy my-2">
                                             <div class="text-div py-3 ps-2">
                                                 <span class="fw-600 ">Tel. Privat</span> <span class="fs-6">{{$app->telephone}}</span>
@@ -1117,6 +1119,7 @@
 
     }
 
+
     @media (max-width: 991.98px) {
         .hr-style {
             display: block;
@@ -1164,6 +1167,12 @@
     .wrapper-div {
         background-color: #7DBF9A;
         border-radius: 25px;
+    }
+    @media (max-width: 575.98px) {
+
+        .wrapper-div {
+            border-radius: 0px;
+        }
     }
 
     .decline-btn {
