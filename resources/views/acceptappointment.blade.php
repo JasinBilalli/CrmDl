@@ -3,12 +3,12 @@
 
     <title>Termine annehmen</title>
 
-<section class="my-5">
+<section class="my-0 my-sm-5">
     <div class="container-fluid">
-        <div class="wrapper-div px-4 py-4 mx-3">
+        <div class="wrapper-div  px-4 py-0 py-sm-4 mx-0 mx-sm-3">
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
-                    <div class="map-div mx-4">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-6">
+                    <div class="map-div mx-1 mx-sm-4 my-3">
                         <div class="mapouter">
                             <div class="gmap_canvas img-fluid">
                                 <iframe width="100%" height="100%" id="gmap_canvas"
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="mb-3">
+                    <div class="my-3">
                         <div class="py-1">
                             <div class="mx-3">
                                     <span class="fs-3 fw-bold text-color-header">
@@ -72,13 +72,14 @@
                                             <span class="fw-600 ">Strasse:</span> <span class="fs-6">{{$lead->address}}</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
                                             <span class="fw-600 ">PLZ:</span> <span class="fs-6">{{$lead->postal_code}}</span>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
                                             <span class="fw-600 ">Zufriedenheit:</span> <span class="fs-6">{{$lead->zufriedenheit}}</span>
@@ -105,6 +106,11 @@
                                                 class="fs-6">{{$lead->nationality}}</span>
                                         </div>
                                     </div>
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$lead->address}}</span>
+                                        </div>
+                                    </div>
 
                                 </div>
                                 <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
@@ -115,19 +121,20 @@
                                     </div>
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Name:</span> <span class="fs-6">{{$lead->first_name}} </span>
+                                            <span class="fw-600 ">Varname:</span> <span class="fs-6">{{$lead->first_name}} </span>
                                         </div>
                                     </div>
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Vorname:</span> <span class="fs-6">{{$lead->last_name}}</span>
+                                            <span class="fw-600 ">Nachname:</span> <span class="fs-6">{{$lead->last_name}}</span>
                                         </div>
                                     </div>
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$lead->address}}</span>
+                                            <span class="fw-600 ">Gesundheit:</span><span class="fs-6">{{$lead->gesundheit}}</span>
                                         </div>
                                     </div>
+
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
                                             <span class="fw-600 ">Tel. Privat</span> <span class="fs-6">{{$lead->telephone}}</span>
@@ -267,7 +274,16 @@
          position: relative;
          text-align: right;
          width: 100%;
+         height: 70vh;
      }
+    @media (max-width: 575.98px) {
+        .mapouter {
+            height:40vh;
+        }
+        .wrapper-div {
+            border-radius: 0px;
+        }
+    }
 
     .gmap_canvas {
         overflow: hidden;

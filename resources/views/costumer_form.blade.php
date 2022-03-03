@@ -16,6 +16,8 @@
 
     <title>Costumer Kundenportfolio</title>
     <link rel="icon" type="image/png" href="img/Favicon.png">
+    <script src="jquery-3.5.1.min.js"></script>
+
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
@@ -1164,25 +1166,27 @@
                                                         </div>
                                                         <div class="mb-3">
                                                             <div
-                                                                class="input-div1 input-groupp justify-content-between text-center">
+                                                                class="input-div1 input-groupp justify-content-between">
                                                                 <div class="pe-3">
                                                                 <span class="" style="font-size: 15px;">
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <select class="py-1 form-control text-center" name="society_PG1" id="qeadd">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                </select>
-                                                                <div class="row mt-1" id="addopt" style="display: none;">
-                                                                    <div class="col-9 col-md-9">
-                                                                <input type="text" class="form-control text-center" id="opti">
-</div>
-<div class="col-2 col-md-2">
-    <button type="button" onclick="added()" class="btn btn-info">Add</button>
-</div>
-</div>
-                                                                <i onclick="addoption()" style="font-size: 22px; cursor:pointer;" class="bi bi-plus-circle"></i>
+                                                                <input class="py-1 form-control " type="text"
+                                                                       name="society_PG1" id="">
+{{--                                                                <select class="py-1 form-control" name="society_PG1" id="qeadd">--}}
+{{--                                                                    <option value="Option">Option</option>--}}
+{{--                                                                    <option value="New Thing" >New Option</option>--}}
+{{--                                                                </select>--}}
+{{--                                                                <div class="row mt-1" id="addopt" style="display: none;">--}}
+{{--                                                                    <div class="col-9 col-md-9">--}}
+{{--                                                                <input type="text" class="form-control text-center" id="opti">--}}
+{{--                                                                    </div>--}}
+{{--                                                                    <div class="col-2 col-md-2">--}}
+{{--                                                                        <button type="button" onclick="added()" class="btn btn-info">Add</button>--}}
+{{--                                                                    </div>--}}
+{{--                                                                    </div>--}}
+{{--                                                                <i onclick="addoption()" style="font-size: 22px; cursor:pointer;" class="bi bi-plus-circle"></i>--}}
 
                                                             </div>
 
@@ -2433,7 +2437,7 @@
 </div>
 {{--GEGENOFERTEN--}}
 <script>
- 
+
     var count = <?php echo $newGegenOfertenCount +1;?>;
     for (i = 2; i <= count; i++) {
         $("#accordionFlushExample0006").append('<div class="accordion-item my-1" style="background-color: #EFEFEF !important;border-radius: 15px !important; border: none !important;">'+
@@ -2784,6 +2788,19 @@
             cntt++;
         }
     }
+    {{--function addNewOption() {--}}
+    {{--    if(document.getElementById('qeadd').value == 'New Thing') {--}}
+    {{--        var newThing = prompt('Enter new option:');--}}
+    {{--        if(newThing != null) {--}}
+
+    {{--            document.location.href="{!! route('addMoreOption'); !!}";--}}
+    {{--            // document.getElementById('qeadd').innerHTML = '';--}}
+    {{--            // document.getElementById('qeadd').innerHTML += '<option value="' + newThing + '" selected> ' + newThing + '</option>';--}}
+    {{--            // document.getElementById('qeadd').innerHTML += oldhtml;--}}
+    {{--        }--}}
+    {{--    }--}}
+    {{--}--}}
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

@@ -11,7 +11,7 @@
              style="position: absolute; display:none; right: 1rem; top: 3.2rem;">
             <div class="bg-white dropdown-container text-start" style="border: 1px solid black;border-radius: 8px; z-index: 150; min-width:368px;">
                 <div class="dropdown-toolbar" style="z-index: 150">
-                    <h3 class="dropdown-toolbar-title pt-2" style="padding-left:1rem; font-weight: 600">Recent Notifications</h3>
+                    <h3 class="dropdown-toolbar-title pt-2" style="padding-left:1rem; font-weight: 600">Aktuelle Meldungen</h3>
                     <hr class="m-0 g-0 p-0">
                     <div class="ms-3" style="z-index: 333; height: 42vh; overflow-y: scroll;">
                         <div class="notifications text-decoration-none coloriii" style="list-style:none;">

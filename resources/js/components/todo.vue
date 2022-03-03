@@ -4,7 +4,7 @@
             <div class="to-do-div-new">
                 <div class="header px-3 px-sm-3">
                     <div class="">
-                        <span>To do</span>
+                        <span>Zu erledigen</span>
                     </div>
                 </div>
                 <div id="alrt">
@@ -18,18 +18,18 @@
                             </select>
                         </div>
                         <div class="mb-2">
-                            <label for="costumer-input" class="form-label mb-0">Customer</label>
+                            <label for="costumer-input" class="form-label mb-0">Kunde</label>
                             <select id="costumer-input" name="costumer" class="form-control" @change="onChangeCostumer($event)">
                                 <option v-for="costumer in todos.costumers" :value="costumer.id">{{costumer.first_name}}
                                     {{ costumer.last_name }}
                                 </option>
                             </select>
                         </div>
-                      
+
                     </div>
                     <div class="button-div mx-3 mt-4">
                         <button @click="assignpendency" class="py-2 px-2 px-sm-3">
-                            <span>Assign Pendency</span>
+                            <span>Pendenz Zuordnen</span>
                         </button>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="informational-numbers">
                     <div class="header px-3 px-sm-3">
                         <div class="">
-                            <span>Informational Numbers</span>
+                            <span>Info-Nummern</span>
                         </div>
                     </div>
                     <div class="content pt-2">
@@ -79,7 +79,7 @@
                                 <input type="text" name="todo" id="number" class="form-control" v-on:keyup.enter="addnumber">
                                 <div style="cursor: pointer;" class="add-text px-2 px-sm-3" @click="addnumber">
                                         <span>
-                                            Add
+                                            Hinzufügen
                                         </span>
                                 </div>
                             </div>

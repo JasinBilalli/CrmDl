@@ -5433,7 +5433,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -30674,7 +30673,7 @@ var render = function () {
           [
             _c("div", { staticClass: "py-2" }, [
               _c("div", { staticClass: "py-2" }, [
-                _c("label", { attrs: { for: "" } }, [_vm._v("Costumer")]),
+                _c("label", { attrs: { for: "" } }, [_vm._v("Kunden")]),
                 _vm._v(" "),
                 _c("input", {
                   staticClass: "form-control",
@@ -30683,7 +30682,7 @@ var render = function () {
                 }),
               ]),
               _vm._v(" "),
-              _c("label", { attrs: { for: "" } }, [_vm._v("Field Service:")]),
+              _c("label", { attrs: { for: "" } }, [_vm._v("Außendienst:")]),
               _vm._v(" "),
               _c(
                 "select",
@@ -30725,7 +30724,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Cancel\n                                                    "
+                    "\n                                                        Abbrechen\n                                                    "
                   ),
                 ]
               ),
@@ -30740,7 +30739,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Submit\n                                                    "
+                    "\n                                                        Senden\n                                                    "
                   ),
                 ]
               ),
@@ -30759,7 +30758,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "mx-3 my-auto" }, [
       _c("span", [
         _vm._v(
-          "\n                                                    Add new task !\n                                                  "
+          "\n                                                    Neue Aufgabe hinzufügen !\n                                                  "
         ),
       ]),
     ])
@@ -30769,7 +30768,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "py-2" }, [
-      _c("label", { attrs: { for: "" } }, [_vm._v("Title")]),
+      _c("label", { attrs: { for: "" } }, [_vm._v("Titel")]),
       _vm._v(" "),
       _c("input", {
         staticClass: "form-control",
@@ -30783,7 +30782,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "py-2" }, [
       _c("label", { staticClass: "form-label", attrs: { for: "Textarea1" } }, [
-        _vm._v("Comment"),
+        _vm._v("Kommentar"),
       ]),
       _vm._v(" "),
       _c("textarea", {
@@ -30904,7 +30903,7 @@ var render = function () {
           [
             _c("div", { staticClass: "py-2" }, [
               _c("div", { staticClass: "py-2" }, [
-                _c("label", { attrs: { for: "" } }, [_vm._v("Costumer")]),
+                _c("label", { attrs: { for: "" } }, [_vm._v("Kunden")]),
                 _vm._v(" "),
                 _c("input", {
                   staticClass: "form-control",
@@ -30913,7 +30912,7 @@ var render = function () {
                 }),
               ]),
               _vm._v(" "),
-              _c("label", { attrs: { for: "" } }, [_vm._v("Field Service:")]),
+              _c("label", { attrs: { for: "" } }, [_vm._v("Außendienst:")]),
               _vm._v(" "),
               _c(
                 "select",
@@ -30955,7 +30954,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Cancel\n                                                    "
+                    "\n                                                        Abbrechen\n                                                    "
                   ),
                 ]
               ),
@@ -30970,7 +30969,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Submit\n                                                    "
+                    "\n                                                        Senden\n                                                    "
                   ),
                 ]
               ),
@@ -30989,7 +30988,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "mx-3 my-auto" }, [
       _c("span", [
         _vm._v(
-          "\n                                                    Add new task !\n                                                  "
+          "\n                                                    Neue Aufgabe hinzufügen !\n                                                  "
         ),
       ]),
     ])
@@ -30999,7 +30998,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "py-2" }, [
-      _c("label", { attrs: { for: "" } }, [_vm._v("Title")]),
+      _c("label", { attrs: { for: "" } }, [_vm._v("Titel")]),
       _vm._v(" "),
       _c("input", {
         staticClass: "form-control",
@@ -31013,7 +31012,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "py-2" }, [
       _c("label", { staticClass: "form-label", attrs: { for: "Textarea1" } }, [
-        _vm._v("Comment"),
+        _vm._v("Kommentar"),
       ]),
       _vm._v(" "),
       _c("textarea", {
@@ -31134,7 +31133,7 @@ var render = function () {
           [
             _c("div", { staticClass: "py-2" }, [
               _c("div", { staticClass: "py-2" }, [
-                _c("label", { attrs: { for: "" } }, [_vm._v("Costumer")]),
+                _c("label", { attrs: { for: "" } }, [_vm._v("Kunden")]),
                 _vm._v(" "),
                 _c("input", {
                   staticClass: "form-control",
@@ -31143,7 +31142,7 @@ var render = function () {
                 }),
               ]),
               _vm._v(" "),
-              _c("label", { attrs: { for: "" } }, [_vm._v("Field Service:")]),
+              _c("label", { attrs: { for: "" } }, [_vm._v("Außendienst:")]),
               _vm._v(" "),
               _c(
                 "select",
@@ -31185,7 +31184,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Cancel\n                                                    "
+                    "\n                                                        Abbrechen\n                                                    "
                   ),
                 ]
               ),
@@ -31200,7 +31199,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Submit\n                                                    "
+                    "\n                                                        Senden\n                                                    "
                   ),
                 ]
               ),
@@ -31219,7 +31218,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "mx-3 my-auto" }, [
       _c("span", [
         _vm._v(
-          "\n                                                    Add new task !\n                                                  "
+          "\n                                                    Neue Aufgabe hinzufügen !\n                                                  "
         ),
       ]),
     ])
@@ -31229,7 +31228,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "py-2" }, [
-      _c("label", { attrs: { for: "" } }, [_vm._v("Title")]),
+      _c("label", { attrs: { for: "" } }, [_vm._v("Titel")]),
       _vm._v(" "),
       _c("input", {
         staticClass: "form-control",
@@ -31243,7 +31242,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "py-2" }, [
       _c("label", { staticClass: "form-label", attrs: { for: "Textarea1" } }, [
-        _vm._v("Comment"),
+        _vm._v("Kommentar"),
       ]),
       _vm._v(" "),
       _c("textarea", {
@@ -31364,7 +31363,7 @@ var render = function () {
           [
             _c("div", { staticClass: "py-2" }, [
               _c("div", { staticClass: "py-2" }, [
-                _c("label", { attrs: { for: "" } }, [_vm._v("Costumer")]),
+                _c("label", { attrs: { for: "" } }, [_vm._v("Kunden")]),
                 _vm._v(" "),
                 _c("input", {
                   staticClass: "form-control",
@@ -31373,7 +31372,7 @@ var render = function () {
                 }),
               ]),
               _vm._v(" "),
-              _c("label", { attrs: { for: "" } }, [_vm._v("Field Service:")]),
+              _c("label", { attrs: { for: "" } }, [_vm._v("Außendienst:")]),
               _vm._v(" "),
               _c(
                 "select",
@@ -31415,7 +31414,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Cancel\n                                                    "
+                    "\n                                                     Abbrechen\n                                                 "
                   ),
                 ]
               ),
@@ -31430,7 +31429,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Submit\n                                                    "
+                    "\n                                                     Senden\n                                                 "
                   ),
                 ]
               ),
@@ -31449,7 +31448,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "mx-3 my-auto" }, [
       _c("span", [
         _vm._v(
-          "\n                                                    Add new task !\n                                                  "
+          "\n                                                 Neue Aufgabe hinzufügen !\n                                               "
         ),
       ]),
     ])
@@ -31459,7 +31458,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "py-2" }, [
-      _c("label", { attrs: { for: "" } }, [_vm._v("Title")]),
+      _c("label", { attrs: { for: "" } }, [_vm._v("Titel")]),
       _vm._v(" "),
       _c("input", {
         staticClass: "form-control",
@@ -31473,7 +31472,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "py-2" }, [
       _c("label", { staticClass: "form-label", attrs: { for: "Textarea1" } }, [
-        _vm._v("Comment"),
+        _vm._v("Kommentar"),
       ]),
       _vm._v(" "),
       _c("textarea", {
@@ -31781,8 +31780,7 @@ var render = function () {
                   "data-name": "Group 757",
                   xmlns: "http://www.w3.org/2000/svg",
                   "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                  width: "36.372",
-                  height: "36.372",
+                  width: "30",
                   viewBox: "0 0 36.372 36.372",
                 },
               },
@@ -31900,8 +31898,7 @@ var render = function () {
                 attrs: {
                   xmlns: "http://www.w3.org/2000/svg",
                   "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                  width: "36.372",
-                  height: "36.372",
+                  width: "30",
                   viewBox: "0 0 36.372 36.372",
                 },
               },
@@ -31984,11 +31981,11 @@ var render = function () {
     _c(
       "div",
       {
-        staticClass: "px-4 py-4",
+        staticClass: " p-3 p-sm-4",
         staticStyle: {
           height: "300px",
           background: "#0C71C3",
-          "border-radius": "25px",
+          "border-radius": "15px",
           overflow: "hidden !important",
           "background-color": "#F5F4F4",
           "font-family": "'Montserrat'",
@@ -31997,13 +31994,13 @@ var render = function () {
       [
         _vm.today == null
           ? _c("div", { staticClass: "text-center" }, [
-              _vm._v("\n            No appointments for today\n        "),
+              _vm._v("\n            Keine Termine für heute\n        "),
             ])
           : _vm._e(),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "scroll-2  pe-3", attrs: { id: "appscroll" } },
+          { staticClass: "scroll-2 pe-1 pe-sm-3", attrs: { id: "appscroll" } },
           [
             _vm._l(_vm.today, function (tod) {
               return _vm.today != null
@@ -32103,7 +32100,7 @@ var render = function () {
                 },
               },
               [
-                _vm._v("\n                Load more "),
+                _vm._v("\n                Mehr laden "),
                 _c("i", { staticClass: "fas fa-caret-down" }),
               ]
             ),
@@ -33164,11 +33161,11 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\r\n                                                  " +
+                                                                "\n                                                  " +
                                                                   _vm._s(
                                                                     lead.first_name
                                                                   ) +
-                                                                  "\r\n                                                "
+                                                                  "\n                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -33210,7 +33207,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\r\n                                                                    Call\r\n                                                                "
+                                                                    "\n                                                                    Anrufen\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33259,7 +33256,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\r\n                                                                        Reject\r\n                                                                "
+                                                                    "\n                                                                        Abgelehnt\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33968,7 +33965,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\r\n                                                                    Pending\r\n                                                                "
+                                                                "\n                                                                        Steht aus\n                                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -34008,7 +34005,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\r\n                                                                Reject\r\n                                                            "
+                                                                "\n                                                                Abgelehnt\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34043,7 +34040,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\r\n                                                                Go\r\n                                                            "
+                                                                "\n                                                                Weiter\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34153,7 +34150,7 @@ var render = function () {
                                           },
                                           [
                                             _vm._v(
-                                              "\r\n                                                Lead öffnen\r\n                                            "
+                                              "\n                                                Lead öffnen\n                                            "
                                             ),
                                           ]
                                         ),
@@ -34320,9 +34317,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\r\n                                        Instagram: " +
+                                  "\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\r\n                                    "
+                                    "\n                                    "
                                 ),
                               ]),
                             ]
@@ -34401,9 +34398,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\r\n                                        Facebook: " +
+                                "\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\r\n                                    "
+                                  "\n                                    "
                               ),
                             ]),
                           ]),
@@ -34481,9 +34478,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\r\n                                         Sanascout: " +
+                                "\n                                         Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\r\n                                    "
+                                  "\n                                    "
                               ),
                             ]),
                           ]),
@@ -34655,11 +34652,11 @@ var render = function () {
                                                         },
                                                         [
                                                           _vm._v(
-                                                            "\r\n                                                      " +
+                                                            "\n                                                      " +
                                                               _vm._s(
                                                                 lead.first_name
                                                               ) +
-                                                              "\r\n                                                    "
+                                                              "\n                                                    "
                                                           ),
                                                         ]
                                                       ),
@@ -35356,7 +35353,7 @@ var render = function () {
                                                     },
                                                     [
                                                       _vm._v(
-                                                        "\r\n                                                                Assign\r\n                                                            "
+                                                        "\n                                                                Zuweisen\n                                                            "
                                                       ),
                                                     ]
                                                   ),
@@ -35556,7 +35553,7 @@ var render = function () {
                                               },
                                               [
                                                 _vm._v(
-                                                  "\r\n                                                            Lead öffnen\r\n                                                        "
+                                                  "\n                                                            Lead öffnen\n                                                        "
                                                 ),
                                               ]
                                             ),
@@ -35862,9 +35859,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\r\n                                        Instagram: " +
+                                  "\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\r\n                                    "
+                                    "\n                                    "
                                 ),
                               ]),
                             ]
@@ -35943,9 +35940,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\r\n                                        Facebook: " +
+                                "\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\r\n                                    "
+                                  "\n                                    "
                               ),
                             ]),
                           ]),
@@ -36023,9 +36020,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\r\n                                        Sanascout: " +
+                                "\n                                        Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\r\n                                    "
+                                  "\n                                    "
                               ),
                             ]),
                           ]),
@@ -36138,7 +36135,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header px-3 px-sm-5" }, [
       _c("div", { staticClass: "fs-5" }, [
-        _c("span", [_vm._v("Assigned Leads")]),
+        _c("span", [_vm._v("Zugewiesen Leads")]),
       ]),
     ])
   },
@@ -36150,7 +36147,7 @@ var staticRenderFns = [
       _c(
         "h5",
         { staticClass: "modal-title", attrs: { id: "staticBackdropLabel" } },
-        [_c("b", [_vm._v("Reject Lead")])]
+        [_c("b", [_vm._v("Abgelehnt Lead")])]
       ),
     ])
   },
@@ -36234,7 +36231,7 @@ var staticRenderFns = [
             },
             attrs: { type: "submit" },
           },
-          [_c("b", [_vm._v("Save")])]
+          [_c("b", [_vm._v("Sparen")])]
         ),
       ]
     )
@@ -36245,7 +36242,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row mb-3" }, [
       _c("h5", { staticClass: "modal-title" }, [
-        _c("b", [_vm._v("Reject Lead")]),
+        _c("b", [_vm._v("Abgelehnt Lead")]),
       ]),
     ])
   },
@@ -36295,7 +36292,7 @@ var staticRenderFns = [
               },
               attrs: { type: "submit" },
             },
-            [_c("b", [_vm._v("Save")])]
+            [_c("b", [_vm._v("Sparen")])]
           ),
         ]
       ),
@@ -36307,7 +36304,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row mb-3" }, [
       _c("h5", { staticClass: "modal-title" }, [
-        _c("b", [_vm._v("Pending Lead")]),
+        _c("b", [_vm._v("Steht aus Lead")]),
       ]),
     ])
   },
@@ -36357,7 +36354,7 @@ var staticRenderFns = [
               },
               attrs: { type: "submit" },
             },
-            [_c("b", [_vm._v("Save")])]
+            [_c("b", [_vm._v("Sparen")])]
           ),
         ]
       ),
@@ -36476,7 +36473,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header px-3 px-sm-3" }, [
       _c("div", { staticClass: "fs-5" }, [
-        _c("span", [_vm._v("Lead Statistics")]),
+        _c("span", [_vm._v("Statistik der Leads")]),
       ]),
     ])
   },
@@ -36499,7 +36496,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\r\n                                            History of Leads\r\n                                        "
+              "\n                                            Historie der Leads\n                                        "
             ),
           ]
         ),
@@ -36525,7 +36522,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\r\n                                        Rejected Leads\r\n                                    "
+              "\n                                        Abgelehnte Leads\n                                    "
             ),
           ]
         ),
@@ -36538,7 +36535,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header px-3 px-sm-5" }, [
       _c("div", { staticClass: "fs-5" }, [
-        _c("span", [_vm._v("Assigned Leads")]),
+        _c("span", [_vm._v("Zugewiesene Leads")]),
       ]),
     ])
   },
@@ -36646,7 +36643,7 @@ var staticRenderFns = [
         },
         [
           _vm._v(
-            "\r\n                                             Assign\r\n                                        "
+            "\n                                            Zuweisen\n                                        "
           ),
         ]
       ),
@@ -36666,7 +36663,7 @@ var staticRenderFns = [
         _c(
           "h5",
           { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
-          [_vm._v("Assign Leads")]
+          [_vm._v("Zugewiesene Leads")]
         ),
         _vm._v(" "),
         _c("button", {
@@ -36687,7 +36684,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header px-3 px-sm-3" }, [
       _c("div", { staticClass: "fs-5" }, [
-        _c("span", [_vm._v("Lead Statistics")]),
+        _c("span", [_vm._v("Statistik der Leads")]),
       ]),
     ])
   },
@@ -36710,7 +36707,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\r\n                                            History of Leads\r\n                                            "
+              "\n                                            Historie der Leads\n                                            "
             ),
           ]
         ),
@@ -36736,7 +36733,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\r\n                                            Rejected Leads\r\n                                            "
+              "\n                                            Abgelehnte Leads\n                                            "
             ),
           ]
         ),
@@ -36837,7 +36834,7 @@ var render = function () {
                       "font-weight": "600",
                     },
                   },
-                  [_vm._v("Recent Notifications")]
+                  [_vm._v("Aktuelle Meldungen")]
                 ),
                 _vm._v(" "),
                 _c("hr", { staticClass: "m-0 g-0 p-0" }),
@@ -36960,7 +36957,7 @@ var render = function () {
                   staticClass: "form-label mb-0",
                   attrs: { for: "costumer-input" },
                 },
-                [_vm._v("Customer")]
+                [_vm._v("Kunde")]
               ),
               _vm._v(" "),
               _c(
@@ -36996,7 +36993,7 @@ var render = function () {
                 staticClass: "py-2 px-2 px-sm-3",
                 on: { click: _vm.assignpendency },
               },
-              [_c("span", [_vm._v("Assign Pendency")])]
+              [_c("span", [_vm._v("Pendenz Zuordnen")])]
             ),
           ]),
         ]),
@@ -37142,7 +37139,7 @@ var render = function () {
                   [
                     _c("span", [
                       _vm._v(
-                        "\n                                        Add\n                                    "
+                        "\n                                        Hinzufügen\n                                    "
                       ),
                     ]),
                   ]
@@ -37161,7 +37158,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header px-3 px-sm-3" }, [
-      _c("div", {}, [_c("span", [_vm._v("To do")])]),
+      _c("div", {}, [_c("span", [_vm._v("Zu erledigen")])]),
     ])
   },
   function () {
@@ -37169,7 +37166,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header px-3 px-sm-3" }, [
-      _c("div", {}, [_c("span", [_vm._v("Informational Numbers")])]),
+      _c("div", {}, [_c("span", [_vm._v("Info-Nummern")])]),
     ])
   },
 ]

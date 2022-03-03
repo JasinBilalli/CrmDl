@@ -1076,7 +1076,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 </div>
             </div>
         </div>
-        <div class="container-fluid col-12 col-sm-10 " id="app">
+        <div class="container-fluid col-12 col-sm-10 g-0" id="app">
             @if(\Session::has('success'))
                 <div class="alert alert-success alert-dismissible fade show m-3" role="alert">
                     <strong>{!! \Session::get('success') !!}</strong>

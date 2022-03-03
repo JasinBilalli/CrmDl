@@ -3,7 +3,7 @@
     <title>Home</title>
     @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('digital'))
         <section>
-            <div class="col-md-12 col-11 mx-auto">
+            <div class="col-12 col-md-12">
                 <div class="py-3 mx-3">
                     <div class="text-start">
                             <span class="fw-bolder" style="font-family: 'Montserrat'">

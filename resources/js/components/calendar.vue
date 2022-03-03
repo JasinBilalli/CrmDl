@@ -53,7 +53,7 @@
             <div class="row text-center my-3">
                 <div class="col-6 col-md-6">
                     <i @click="searchfor()" class="hoveri-butonit px-1 pb-1" style="cursor:pointer;">
-                        <svg id="Group_757" data-name="Group 757" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36.372" height="36.372" viewBox="0 0 36.372 36.372">
+                        <svg id="Group_757" data-name="Group 757" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"  viewBox="0 0 36.372 36.372">
                             <defs>
                                 <filter id="Path_281" x="7.637" y="5.959" width="18.755" height="24.454" filterUnits="userSpaceOnUse">
                                     <feOffset input="SourceAlpha"/>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="col-6 col-md-6">
                     <i  class=" px-1 pb-1 hoveri-butonit" style=" cursor:pointer;" @click="searchfor2()">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36.372" height="36.372" viewBox="0 0 36.372 36.372">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"  viewBox="0 0 36.372 36.372">
                             <g id="Group_758" data-name="Group 758" transform="translate(36.372 36.372) rotate(180)">
                                 <g transform="matrix(-1, 0, 0, -1, 36.37, 36.37)"   >
                                     <path id="Path_281-2" data-name="Path 281" d="M0,0,10.354,7.826,0,15.652" transform="translate(13.96 10.36)" fill="none" stroke="#0c71c3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -89,11 +89,11 @@
                     </i>
                 </div>
             </div>
-            <div class="px-4 py-4" style="height: 300px; background: #0C71C3; border-radius: 25px;  overflow:hidden !important; background-color: #F5F4F4; border-radius: 25px; font-family: 'Montserrat';">
+            <div class=" p-3 p-sm-4" style="height: 300px; background: #0C71C3; border-radius: 25px;  overflow:hidden !important; background-color: #F5F4F4; border-radius: 15px; font-family: 'Montserrat';">
                 <div class="text-center" v-if="today == null">
-                    No appointments for today
+                    Keine Termine für heute
                 </div>
-                <div class="scroll-2  pe-3" id="appscroll">
+                <div class="scroll-2 pe-1 pe-sm-3" id="appscroll">
                     <a style="text-decoration: none; " v-if="today != null" v-for="tod in today"  :href="'acceptappointment/'+tod.id">
                         <div  class="mb-2 text-white" style="min-height: 60px;cursor: pointer;">
                             <div class="person-box py-2 px-2">
@@ -115,7 +115,7 @@
                         </div>
                     </a>
                     <div class="mt-2 text-center p-1" style="background: #DDDADA; border-radius: 20px; cursor: pointer; font-family: 'Montserrat';" @click="loadmore()">
-                        Load more <i class="fas fa-caret-down"></i>
+                        Mehr laden <i class="fas fa-caret-down"></i>
                     </div>
                 </div>
             </div>
