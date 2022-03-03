@@ -234,7 +234,7 @@ newnue::create([
 
             $bo = Admins::role(['backoffice','admin'])->get();
 foreach($bo as $b){
-    $url =  '<a href="' . route("costumer_form",[Crypt::encrypt($personId * 1244)]) . '"> Documentation for :' . family::find($personId)->first_name . ' has been submitted</a>';
+    $url =  '<a href="' . route("costumer_form",[Crypt::encrypt($personId * 1244)]) . '"> Die Dokumentation für: ' . family::find($personId)->first_name . ' has been submitted</a>';
     $b->notify(new SendNotificationn($url));
 }
             return redirect()->route('dashboard')->with('success', 'Successfully submitted and will be waiting for the backoffice!');
@@ -319,7 +319,6 @@ foreach($bo as $b){
         $gegen = newnue::where('person_id',$personId)->get();
         for($i = 1; $i <= $count; $i++){
             if(!empty($gegen[$i-1])){
-
             $file = $request->file('vehicle_id'. $i);
            $gegen[$i-1]->vehicle_id = $request->hasFile('vehicle_id'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i-1]->vehicle_id;
            $gegen[$i-1]->leasing = $request->input('leasing' . $i) ? $request->input('leasing' . $i) : $gegen[$i-1]->leasing;
@@ -492,6 +491,7 @@ foreach($bo as $b){
         $pend1->admin_id = $pend->admin_id;
         $pend1->family_id = $pend->family_id;
         $pend1->description = 'Offer';
+        $pend1->type = 'Offer';
         $pend1->save();
           }
           $person = family::find($pend->family_id);

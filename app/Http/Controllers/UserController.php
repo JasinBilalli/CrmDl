@@ -477,7 +477,7 @@ class UserController extends Controller
         }
         $bo = Admins::role(['backoffice', 'admin'])->get();
         foreach ($bo as $b) {
-            $url = '<a href="' . route("tasks") . '">There are added ' . $pcnt . ' persons from an appointment </a>';
+            $url = '<a href="' . route("tasks") . '">' . $pcnt . 'Personen wurden aus einem Termin hinzugefügt </a>';
             $b->notify(new SendNotificationn($url));
         }
         $lead->status_task = "open";

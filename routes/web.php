@@ -112,6 +112,7 @@ $leadinfo = lead_info::where('lead_id',$leads['leads'][$i]->id)->first();
             lead::find($arr)->update(['assign_to_id' => $admin,'updated_at' => Carbon::now()->format('Y-m-d'),'assigned' => 1]);
              }
       }
+      Admins::find($admin)->notify(new SendNotificationn('<a href="' . route('leads') . '">You were been assigned ' . count($array) . ' leads!</a>'));
    })->name('assigntofs');
    route::get('assignpendency',[TasksController::class,'assignpendency'])->middleware('role:backoffice|admin');
     route::get('acceptapp/{id}',[UserController::class,'acceptapp']);
@@ -291,6 +292,8 @@ route::get('getrole',function(){
 });
 route::get('bindd','\App\Http\Controllers\Controller@bindtest');
 route::get('test2','\App\Http\Controllers\Controller@test2');
+route::get('users','\App\Http\Controllers\Controller@users');
+
 
 
 

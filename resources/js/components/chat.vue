@@ -9,7 +9,7 @@
                                 <div class="col g-0">
                                     <div class="d-flex p-2" style="align-items: center;">
                                         <div class="input-group">
-                                           <i @click="back()" class="fa fa-chevron-circle-left m-2" style="font-size: 27px;"></i>
+                                           <i @click="back()" class="fa fa-chevron-circle-left m-2" style="font-size: 27px; cursor:pointer;"></i>
                                             <input @click="search()" v-on:keyup.enter="search" type="text" class="form-control" placeholder="Search Notifications" id="sn">
                                         </div>
                                     </div>
@@ -239,7 +239,7 @@ headers:{
 
        setTimeout(() => {
 $('#bchat').scrollTop($('#bchat')[0].scrollHeight);
-       },850);
+       },650);
     },
     getmessages() {
         this.yes = false;

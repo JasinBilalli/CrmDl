@@ -361,7 +361,7 @@ $title = $req->title ? $req->title : "";
       $data = DB::table('family_person')
             ->join('leads','family_person.leads_id','=','leads.id')
             ->where('leads.assign_to_id','=',Auth::guard('admins')->user()->id)
-            ->where('family_person.status','Done')
+            ->whereIn('family_person.status',['Done'])
             ->select('family_person.*')
             ->get();
 
@@ -370,7 +370,7 @@ $title = $req->title ? $req->title : "";
             $data = DB::table('family_person')
                 ->join('leads','family_person.leads_id','=','leads.id')
                 ->where('leads.assign_to_id',Auth::guard('admins')->user()->id)
-                ->where('family_person.status','Done')
+                ->whereIn('family_person.status',['Done'])
                 ->where('family_person.first_name','like','%'.$searchname.'%')
                 ->orWhere('family_person.last_name','like','%'.$searchname.'%')
                 ->select('family_person.*')
@@ -381,7 +381,7 @@ $title = $req->title ? $req->title : "";
             $data = DB::table('family_person')
                 ->join('leads','family_person.leads_id','=','leads.id')
                 ->where('leads.assign_to_id','=',Auth::guard('admins')->user()->id)
-                ->where('family_person.status','Done')
+                ->whereIn('family_person.status',['Done'])
                 ->whereBetween('family_person.created_at', [$date1, $date2])
                 ->select('family_person.*')
                 ->get();
@@ -427,15 +427,14 @@ $title = $req->title ? $req->title : "";
 
         if ($searchname != null) {
 
-            $data = family::where('status','=','Done')
-                ->where('last_name', 'like', '%' . $searchname . '%')
+            $data = family::where('last_name', 'like', '%' . $searchname . '%')
                 ->orWhere('first_name', 'like', '%' . $searchname . '%')
+                ->whereIn('status',['Done'])
                 ->paginate(100);
 
         }
         if (isset($request->searchdate1) && isset($request->searchdate2)) {
-            $data = family::where('status', 'Done')
-                ->whereBetween('created_at', [$date1, $date2])->get();
+            $data = family::whereBetween('created_at', [$date1, $date2])->whereIn('status',['Done'])->get();
 
         }
             $contracts = [];

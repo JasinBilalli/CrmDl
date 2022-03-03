@@ -5,10 +5,10 @@
             <div class="row text-center px-1">
                 <div class="g-0 col-md-3 col-3 calendarspan">
                     <div class="dayy this-month dateee p-2 mx-2 " @click="searchapp(lista[0].date)" style="cursor: pointer">
-                        <span @click="searchapp(lista[0].date)"
+                        <span 
                               class="monthh p-0" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[0].day }} {{ lista[0].month }}, {{ lista[0].year }}</b></span>
                         <br>
-                        <span @click="searchapp(lista[0].date)"
+                        <span
                               class="not-this-month  text-center" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[0].dayn }}</b>
                         </span>
                         <br>
@@ -16,34 +16,34 @@
                 </div>
                 <div class="g-0 col-md-3 col-3 calendarspan">
                     <div class="dayy this-month dateee p-2 mx-2" @click="searchapp(lista[1].date)" style="cursor: pointer">
-                        <span @click="searchapp(lista[1].date)"
+                        <span 
                           class="monthh p-0" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[1].day }} {{ lista[1].month }}, {{ lista[1].year }}</b></span>
                         <br>
-                        <span @click="searchapp(lista[1].date)"
+                        <span 
                               class="not-this-month  text-center" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[1].dayn }}</b>
                         </span>
                         <br>
                     </div>
                 </div>
                 <div class="g-0 col-md-3 col-3 calendarspan">
-                    <div class="dayy this-month dateee p-2 mx-2" style="cursor: pointer">
-                        <span @click="searchapp(lista[2].date)"
+                    <div class="dayy this-month dateee p-2 mx-2" @click="searchapp(lista[2].date)" style="cursor: pointer">
+                        <span 
                           class="monthh p-0" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[2].day }} {{ lista[2].month }}, {{ lista[2].year }}</b></span>
                         <br>
-                        <span @click="searchapp(lista[2].date)"
+                        <span
                               class="not-this-month  text-center" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[2].dayn }}</b>
                         </span>
                         <br>
                     </div>
                 </div>
                 <div class="g-0 col-md-3 col-3 calendarspan">
-                    <div class="dayy this-month dateee p-2 mx-2" style="cursor: pointer">
+                    <div class="dayy this-month dateee p-2 mx-2" @click="searchapp(lista[3].date)" style="cursor: pointer">
 
-                          <span @click="searchapp(lista[3].date)"
+                          <span 
                                 class="monthh p-0" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[3].day }} {{ lista[3].month }}, {{ lista[3].year }}</b>
                           </span>
                         <br>
-                        <span @click="searchapp(lista[3].date)"
+                        <span 
                               class="not-this-month  text-center" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[3].dayn }}</b>
                         </span>
                         <br>

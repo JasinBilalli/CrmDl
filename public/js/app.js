@@ -6197,7 +6197,7 @@ __webpack_require__.r(__webpack_exports__);
 
       setTimeout(function () {
         $('#bchat').scrollTop($('#bchat')[0].scrollHeight);
-      }, 850);
+      }, 650);
     },
     getmessages: function getmessages() {
       var _this4 = this;
@@ -7327,6 +7327,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.fetchnumbers();
@@ -7357,7 +7363,7 @@ __webpack_require__.r(__webpack_exports__);
       this.costumer = this.todos.costumers[0].id;
     },
     assignpendency: function assignpendency() {
-      axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer);
+      axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value);
       document.getElementById('alrt').innerHTML = "";
       document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully</div>';
     },
@@ -31532,11 +31538,6 @@ var render = function () {
                   "font-family": "'Montserrat'",
                   "font-size": "15px",
                 },
-                on: {
-                  click: function ($event) {
-                    return _vm.searchapp(_vm.lista[0].date)
-                  },
-                },
               },
               [
                 _c("b", [
@@ -31560,11 +31561,6 @@ var render = function () {
                 staticStyle: {
                   "font-family": "'Montserrat'",
                   "font-size": "15px",
-                },
-                on: {
-                  click: function ($event) {
-                    return _vm.searchapp(_vm.lista[0].date)
-                  },
                 },
               },
               [_c("b", [_vm._v(_vm._s(_vm.lista[0].dayn))])]
@@ -31596,11 +31592,6 @@ var render = function () {
                   "font-family": "'Montserrat'",
                   "font-size": "15px",
                 },
-                on: {
-                  click: function ($event) {
-                    return _vm.searchapp(_vm.lista[1].date)
-                  },
-                },
               },
               [
                 _c("b", [
@@ -31625,11 +31616,6 @@ var render = function () {
                   "font-family": "'Montserrat'",
                   "font-size": "15px",
                 },
-                on: {
-                  click: function ($event) {
-                    return _vm.searchapp(_vm.lista[1].date)
-                  },
-                },
               },
               [_c("b", [_vm._v(_vm._s(_vm.lista[1].dayn))])]
             ),
@@ -31645,6 +31631,11 @@ var render = function () {
           {
             staticClass: "dayy this-month dateee p-2 mx-2",
             staticStyle: { cursor: "pointer" },
+            on: {
+              click: function ($event) {
+                return _vm.searchapp(_vm.lista[2].date)
+              },
+            },
           },
           [
             _c(
@@ -31654,11 +31645,6 @@ var render = function () {
                 staticStyle: {
                   "font-family": "'Montserrat'",
                   "font-size": "15px",
-                },
-                on: {
-                  click: function ($event) {
-                    return _vm.searchapp(_vm.lista[2].date)
-                  },
                 },
               },
               [
@@ -31684,11 +31670,6 @@ var render = function () {
                   "font-family": "'Montserrat'",
                   "font-size": "15px",
                 },
-                on: {
-                  click: function ($event) {
-                    return _vm.searchapp(_vm.lista[2].date)
-                  },
-                },
               },
               [_c("b", [_vm._v(_vm._s(_vm.lista[2].dayn))])]
             ),
@@ -31704,6 +31685,11 @@ var render = function () {
           {
             staticClass: "dayy this-month dateee p-2 mx-2",
             staticStyle: { cursor: "pointer" },
+            on: {
+              click: function ($event) {
+                return _vm.searchapp(_vm.lista[3].date)
+              },
+            },
           },
           [
             _c(
@@ -31713,11 +31699,6 @@ var render = function () {
                 staticStyle: {
                   "font-family": "'Montserrat'",
                   "font-size": "15px",
-                },
-                on: {
-                  click: function ($event) {
-                    return _vm.searchapp(_vm.lista[3].date)
-                  },
                 },
               },
               [
@@ -31742,11 +31723,6 @@ var render = function () {
                 staticStyle: {
                   "font-family": "'Montserrat'",
                   "font-size": "15px",
-                },
-                on: {
-                  click: function ($event) {
-                    return _vm.searchapp(_vm.lista[3].date)
-                  },
                 },
               },
               [_c("b", [_vm._v(_vm._s(_vm.lista[3].dayn))])]
@@ -32171,7 +32147,10 @@ var render = function () {
                         _c("div", { staticClass: "input-group" }, [
                           _c("i", {
                             staticClass: "fa fa-chevron-circle-left m-2",
-                            staticStyle: { "font-size": "27px" },
+                            staticStyle: {
+                              "font-size": "27px",
+                              cursor: "pointer",
+                            },
                             on: {
                               click: function ($event) {
                                 return _vm.back()
@@ -33161,11 +33140,11 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                  " +
+                                                                "\r\n                                                  " +
                                                                   _vm._s(
                                                                     lead.first_name
                                                                   ) +
-                                                                  "\n                                                "
+                                                                  "\r\n                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -33207,7 +33186,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\n                                                                    Anrufen\n                                                                "
+                                                                    "\r\n                                                                    Anrufen\r\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33256,7 +33235,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\n                                                                        Abgelehnt\n                                                                "
+                                                                    "\r\n                                                                        Abgelehnt\r\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33965,7 +33944,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                        Steht aus\n                                                                "
+                                                                "\r\n                                                                        Steht aus\r\n                                                                "
                                                               ),
                                                             ]
                                                           ),
@@ -34005,7 +33984,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                Abgelehnt\n                                                            "
+                                                                "\r\n                                                                Abgelehnt\r\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34040,7 +34019,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                Weiter\n                                                            "
+                                                                "\r\n                                                                Weiter\r\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34150,7 +34129,7 @@ var render = function () {
                                           },
                                           [
                                             _vm._v(
-                                              "\n                                                Lead öffnen\n                                            "
+                                              "\r\n                                                Lead öffnen\r\n                                            "
                                             ),
                                           ]
                                         ),
@@ -34317,9 +34296,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\n                                        Instagram: " +
+                                  "\r\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\n                                    "
+                                    "\r\n                                    "
                                 ),
                               ]),
                             ]
@@ -34398,9 +34377,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Facebook: " +
+                                "\r\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -34478,9 +34457,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                         Sanascout: " +
+                                "\r\n                                         Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -34652,11 +34631,11 @@ var render = function () {
                                                         },
                                                         [
                                                           _vm._v(
-                                                            "\n                                                      " +
+                                                            "\r\n                                                      " +
                                                               _vm._s(
                                                                 lead.first_name
                                                               ) +
-                                                              "\n                                                    "
+                                                              "\r\n                                                    "
                                                           ),
                                                         ]
                                                       ),
@@ -35353,7 +35332,7 @@ var render = function () {
                                                     },
                                                     [
                                                       _vm._v(
-                                                        "\n                                                                Zuweisen\n                                                            "
+                                                        "\r\n                                                                Zuweisen\r\n                                                            "
                                                       ),
                                                     ]
                                                   ),
@@ -35553,7 +35532,7 @@ var render = function () {
                                               },
                                               [
                                                 _vm._v(
-                                                  "\n                                                            Lead öffnen\n                                                        "
+                                                  "\r\n                                                            Lead öffnen\r\n                                                        "
                                                 ),
                                               ]
                                             ),
@@ -35859,9 +35838,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\n                                        Instagram: " +
+                                  "\r\n                                        Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\n                                    "
+                                    "\r\n                                    "
                                 ),
                               ]),
                             ]
@@ -35940,9 +35919,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Facebook: " +
+                                "\r\n                                        Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -36020,9 +35999,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Sanascout: " +
+                                "\r\n                                        Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\n                                    "
+                                  "\r\n                                    "
                               ),
                             ]),
                           ]),
@@ -36496,7 +36475,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            Historie der Leads\n                                        "
+              "\r\n                                            Historie der Leads\r\n                                        "
             ),
           ]
         ),
@@ -36522,7 +36501,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                        Abgelehnte Leads\n                                    "
+              "\r\n                                        Abgelehnte Leads\r\n                                    "
             ),
           ]
         ),
@@ -36643,7 +36622,7 @@ var staticRenderFns = [
         },
         [
           _vm._v(
-            "\n                                            Zuweisen\n                                        "
+            "\r\n                                            Zuweisen\r\n                                        "
           ),
         ]
       ),
@@ -36707,7 +36686,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            Historie der Leads\n                                            "
+              "\r\n                                            Historie der Leads\r\n                                            "
             ),
           ]
         ),
@@ -36733,7 +36712,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            Abgelehnte Leads\n                                            "
+              "\r\n                                            Abgelehnte Leads\r\n                                            "
             ),
           ]
         ),
@@ -36927,7 +36906,7 @@ var render = function () {
                   staticClass: "form-label mb-0",
                   attrs: { for: "admin-input" },
                 },
-                [_vm._v("Admin")]
+                [_vm._v("Field service")]
               ),
               _vm._v(" "),
               _c(
@@ -36957,7 +36936,7 @@ var render = function () {
                   staticClass: "form-label mb-0",
                   attrs: { for: "costumer-input" },
                 },
-                [_vm._v("Kunde")]
+                [_vm._v("Customer")]
               ),
               _vm._v(" "),
               _c(
@@ -36984,6 +36963,8 @@ var render = function () {
                 0
               ),
             ]),
+            _vm._v(" "),
+            _vm._m(1),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "button-div mx-3 mt-4" }, [
@@ -36993,7 +36974,7 @@ var render = function () {
                 staticClass: "py-2 px-2 px-sm-3",
                 on: { click: _vm.assignpendency },
               },
-              [_c("span", [_vm._v("Pendenz Zuordnen")])]
+              [_c("span", [_vm._v("Assign Pendency")])]
             ),
           ]),
         ]),
@@ -37002,7 +36983,7 @@ var render = function () {
     _vm._v(" "),
     _c("div", { staticClass: "col-12 col-md-12 col-lg-6 g-0" }, [
       _c("div", { staticClass: "informational-numbers" }, [
-        _vm._m(1),
+        _vm._m(2),
         _vm._v(" "),
         _c("div", { staticClass: "content pt-2" }, [
           _c(
@@ -37105,48 +37086,41 @@ var render = function () {
             0
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "button-div mx-3 mt-3",
-              staticStyle: { "padding-bottom": "40px" },
-            },
-            [
-              _c("div", { staticClass: "input-group" }, [
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: { type: "text", name: "todo", id: "number" },
-                  on: {
-                    keyup: function ($event) {
-                      if (
-                        !$event.type.indexOf("key") &&
-                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                      ) {
-                        return null
-                      }
-                      return _vm.addnumber.apply(null, arguments)
-                    },
+          _c("div", { staticClass: "button-div mx-3 mt-3" }, [
+            _c("div", { staticClass: "input-group" }, [
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { type: "text", name: "todo", id: "number" },
+                on: {
+                  keyup: function ($event) {
+                    if (
+                      !$event.type.indexOf("key") &&
+                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                    ) {
+                      return null
+                    }
+                    return _vm.addnumber.apply(null, arguments)
                   },
-                }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "add-text px-2 px-sm-3",
-                    staticStyle: { cursor: "pointer" },
-                    on: { click: _vm.addnumber },
-                  },
-                  [
-                    _c("span", [
-                      _vm._v(
-                        "\n                                        Hinzufügen\n                                    "
-                      ),
-                    ]),
-                  ]
-                ),
-              ]),
-            ]
-          ),
+                },
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "add-text px-2 px-sm-3",
+                  staticStyle: { cursor: "pointer" },
+                  on: { click: _vm.addnumber },
+                },
+                [
+                  _c("span", [
+                    _vm._v(
+                      "\n                                        Add\n                                    "
+                    ),
+                  ]),
+                ]
+              ),
+            ]),
+          ]),
         ]),
       ]),
     ]),
@@ -37158,7 +37132,28 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header px-3 px-sm-3" }, [
-      _c("div", {}, [_c("span", [_vm._v("Zu erledigen")])]),
+      _c("div", {}, [_c("span", [_vm._v("To do")])]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-2" }, [
+      _c("label", { staticClass: "form-label", attrs: { for: "desc" } }, [
+        _vm._v("Description\n                            (Required)"),
+      ]),
+      _vm._v(" "),
+      _c("textarea", {
+        staticClass: "form-control",
+        attrs: {
+          type: "text",
+          id: "desc",
+          placeholder: "Description",
+          rows: "3",
+          required: "",
+        },
+      }),
     ])
   },
   function () {
@@ -37166,7 +37161,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header px-3 px-sm-3" }, [
-      _c("div", {}, [_c("span", [_vm._v("Info-Nummern")])]),
+      _c("div", {}, [_c("span", [_vm._v("Informational Numbers")])]),
     ])
   },
 ]
