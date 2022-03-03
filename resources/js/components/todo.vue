@@ -4,7 +4,7 @@
             <div class="to-do-div-new">
                 <div class="header px-3 px-sm-3">
                     <div class="">
-                        <span>Zu erledigen</span>
+                        <span>To do</span>
                     </div>
                 </div>
                 <div id="alrt">
@@ -12,24 +12,30 @@
                 <div class="content">
                     <div class="form-div mx-3 pt-3">
                         <div class="mb-2">
-                            <label for="admin-input" class="form-label mb-0">Admin</label>
+                            <label for="admin-input" class="form-label mb-0">Field service</label>
                             <select id="admin-input" name="admin" class="form-control" @change="onChangeSelect($event)">
                                 <option v-for="admin in todos.admins" :value="admin.id">{{ admin.name }}</option>
                             </select>
                         </div>
                         <div class="mb-2">
-                            <label for="costumer-input" class="form-label mb-0">Kunde</label>
+                            <label for="costumer-input" class="form-label mb-0">Customer</label>
                             <select id="costumer-input" name="costumer" class="form-control" @change="onChangeCostumer($event)">
                                 <option v-for="costumer in todos.costumers" :value="costumer.id">{{costumer.first_name}}
                                     {{ costumer.last_name }}
                                 </option>
                             </select>
                         </div>
+                       
+                        <div class="mb-2">
+                            <label for="desc" class="form-label">Description
+                                (Required)</label>
+                            <textarea type="text" id="desc" placeholder="Description" class="form-control" rows="3" required></textarea>
 
+                        </div>
                     </div>
                     <div class="button-div mx-3 mt-4">
                         <button @click="assignpendency" class="py-2 px-2 px-sm-3">
-                            <span>Pendenz Zuordnen</span>
+                            <span>Assign Pendency</span>
                         </button>
                     </div>
                 </div>
@@ -39,7 +45,7 @@
                 <div class="informational-numbers">
                     <div class="header px-3 px-sm-3">
                         <div class="">
-                            <span>Info-Nummern</span>
+                            <span>Informational Numbers</span>
                         </div>
                     </div>
                     <div class="content pt-2">
@@ -74,12 +80,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="button-div mx-3 mt-3" style="padding-bottom: 40px;">
+                        <div class="button-div mx-3 mt-3">
                             <div class="input-group">
                                 <input type="text" name="todo" id="number" class="form-control" v-on:keyup.enter="addnumber">
-                                <div style="cursor: pointer;" class="add-text px-2 px-sm-3" @click="addnumber">
+                                <div style="cursor: pointer" class="add-text px-2 px-sm-3" @click="addnumber">
                                         <span>
-                                            Hinzufügen
+                                            Add
                                         </span>
                                 </div>
                             </div>
@@ -96,10 +102,7 @@ export default {
         this.fetchnumbers();
         this.fetchtasks();
         this.defaultvalue();
-
     },
-
-
     data() {
         return {
             todos: null,
@@ -126,8 +129,7 @@ export default {
             this.costumer = this.todos.costumers[0].id;
         },
         assignpendency: function () {
-
-            axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer);
+            axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value);
             document.getElementById('alrt').innerHTML = "";
             document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully</div>';
         },

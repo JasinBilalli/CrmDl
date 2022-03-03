@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \Chat;
 use App\Models\Admins;
+use Auth;
 use Illuminate\Support\Facades\Crypt;
 use App\Traits\FileManagerTrait;
 use DB;
