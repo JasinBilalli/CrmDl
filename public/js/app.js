@@ -7328,15 +7328,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.fetchnumbers();
@@ -7367,8 +7358,7 @@ __webpack_require__.r(__webpack_exports__);
       this.costumer = this.todos.costumers[0].id;
     },
     assignpendency: function assignpendency() {
-      var title = document.getElementById('title').value;
-      axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&title=' + title);
+      axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer);
       document.getElementById('alrt').innerHTML = "";
       document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully</div>';
     },
@@ -32341,7 +32331,7 @@ var render = function () {
                       ),
                       _vm._v(" "),
                       _c("span", { staticClass: "ps-2" }, [
-                        _vm._v("New Notifications"),
+                        _vm._v("Neue Benachrichtigungen"),
                       ]),
                     ]
                   ),
@@ -32703,7 +32693,7 @@ var staticRenderFns = [
                 },
                 [
                   _vm._v(
-                    "\n                                           Notifications\n                                       "
+                    "\n                                           Benachrichtigungen\n                                       "
                   ),
                 ]
               ),
@@ -36997,10 +36987,6 @@ var render = function () {
                 0
               ),
             ]),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._m(2),
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "button-div mx-3 mt-4" }, [
@@ -37019,7 +37005,7 @@ var render = function () {
     _vm._v(" "),
     _c("div", { staticClass: "col-12 col-md-12 col-lg-6 g-0" }, [
       _c("div", { staticClass: "informational-numbers" }, [
-        _vm._m(3),
+        _vm._m(1),
         _vm._v(" "),
         _c("div", { staticClass: "content pt-2" }, [
           _c(
@@ -37122,41 +37108,48 @@ var render = function () {
             0
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "button-div mx-3 mt-3" }, [
-            _c("div", { staticClass: "input-group" }, [
-              _c("input", {
-                staticClass: "form-control",
-                attrs: { type: "text", name: "todo", id: "number" },
-                on: {
-                  keyup: function ($event) {
-                    if (
-                      !$event.type.indexOf("key") &&
-                      _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                    ) {
-                      return null
-                    }
-                    return _vm.addnumber.apply(null, arguments)
+          _c(
+            "div",
+            {
+              staticClass: "button-div mx-3 mt-3",
+              staticStyle: { "padding-bottom": "40px" },
+            },
+            [
+              _c("div", { staticClass: "input-group" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", name: "todo", id: "number" },
+                  on: {
+                    keyup: function ($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      return _vm.addnumber.apply(null, arguments)
+                    },
                   },
-                },
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "add-text px-2 px-sm-3",
-                  staticStyle: { cursor: "pointer" },
-                  on: { click: _vm.addnumber },
-                },
-                [
-                  _c("span", [
-                    _vm._v(
-                      "\n                                        Add\n                                    "
-                    ),
-                  ]),
-                ]
-              ),
-            ]),
-          ]),
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "add-text px-2 px-sm-3",
+                    staticStyle: { cursor: "pointer" },
+                    on: { click: _vm.addnumber },
+                  },
+                  [
+                    _c("span", [
+                      _vm._v(
+                        "\n                                        Add\n                                    "
+                      ),
+                    ]),
+                  ]
+                ),
+              ]),
+            ]
+          ),
         ]),
       ]),
     ]),
@@ -37169,42 +37162,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "header px-3 px-sm-3" }, [
       _c("div", {}, [_c("span", [_vm._v("To do")])]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-2" }, [
-      _c("label", { staticClass: "form-label mb-0", attrs: { for: "title" } }, [
-        _vm._v("Title"),
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { id: "title", type: "text", required: "" },
-      }),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-2" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "desc" } }, [
-        _vm._v("Description\n                            (Required)"),
-      ]),
-      _vm._v(" "),
-      _c("textarea", {
-        staticClass: "form-control",
-        attrs: {
-          type: "text",
-          id: "desc",
-          placeholder: "Description",
-          rows: "3",
-          required: "",
-        },
-      }),
     ])
   },
   function () {
