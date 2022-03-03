@@ -419,7 +419,7 @@
                                     <span>Pendenze / Zur Nachbearbeitung </span>
                                 </div>
                                 <div class="col-auto">
-                                    3
+                                    {{count($pending)}}
                                 </div>
                             </div>
                             <div class="content ps-3">

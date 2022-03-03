@@ -36,6 +36,7 @@ use App\Imports\leadinfo;
 use App\Imports\newlead;
 use App\Listeners\SendNotificationListener;
 use App\Models\campaigns;
+use App\Models\data;
 use App\Models\lead;
 use App\Models\lead_info;
 use App\Models\LeadDataPlus;
@@ -52,6 +53,7 @@ use Illuminate\Support\Facades\URL;
 use function Clue\StreamFilter\fun;
 use App\Models\TestClass;
 use Monolog\Test\TestCase;
+use Vonage\Voice\Endpoint\App;
 
 route::prefix('')->middleware('confirmcode')->group(function(){
    route::get('addlead',function(){
@@ -287,5 +289,8 @@ Auth::user()->unreadNotifications->markAsRead();
 route::get('getrole',function(){
  return Auth::user()->getRoleNames()[0];
 });
+route::get('bindd','\App\Http\Controllers\Controller@bindtest');
+route::get('test2','\App\Http\Controllers\Controller@test2');
+
 
 

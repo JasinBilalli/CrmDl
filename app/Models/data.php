@@ -9,7 +9,15 @@ class data extends Model
 {
     use HasFactory;
     public $counter,$fahrzeug,$datakk,$prevention,$things;
+    public function __construct($counter)
+    {
+        $this->counter = $counter;
+    }
      public function getdata($id){
-
+      
      }
+     public function addanother(){
+         $this->counter = $this->counter . 'a';
+     }
+
 }

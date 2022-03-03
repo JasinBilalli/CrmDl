@@ -53,6 +53,7 @@ else{
                 if (Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin')) {
                     $pend = Pendency::find(Session::get('pend_id'));
                 $pend->completed = 1;
+                $pend->type = 'Eingereicht';
                 $pend->save();
                 $person = family::find($pend->family_id);
                 $person->status = "Done";
@@ -216,12 +217,14 @@ newnue::create([
             $pend = Pendency::where('family_id', $personId)->first();
             if ($pend) {
                 $pend->done = 1;
+                $pend->type = 'Eingereicht';
                 $pend->save();
             } else {
                 $pend = new Pendency();
                 $pend->admin_id = Auth::user()->id;
                 $pend->family_id = $personId;
                 $pend->done = 1;
+                $pend->type = 'Eingereicht';
                 $pend->save();
             }
 

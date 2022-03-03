@@ -493,9 +493,7 @@
                                                                 </div>
                                                                 <input class="py-1 form-control " readonly value="" type="text" name="cidV" id="">
                                                             </div>
-
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>

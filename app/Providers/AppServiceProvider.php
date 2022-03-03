@@ -9,7 +9,7 @@ use App\Models\Admins;
 use App\Models\lead;
 use App\Models\TestClass;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\data;
 use Illuminate\Support\ServiceProvider;
 use Leads;
 
@@ -22,7 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-      
+        $this->app->singleton(data::class,function($app){
+            return new data('aaa');
+                 });
     }
 
     /**
@@ -32,6 +34,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-     
+       
     }
 }
