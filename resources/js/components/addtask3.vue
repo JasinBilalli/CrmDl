@@ -49,12 +49,12 @@
                                                     <label for="Textarea1" class="form-label">Kommentar</label>
                                                     <textarea class="form-control" id="description" rows="4"></textarea>
                                                 </div>
-                                                <div class="py-2 input-group ">
-                                                    <button type="button" class="btn px-5 text-dark mx-1 rounded" onclick="saveContentFunct2()" id="save-btn"
+                                                <div class="py-2 d-flex justify-content-between">
+                                                    <button type="button" class="btn col-auto text-dark rounded" onclick="saveContentFunct2()" id="save-btn"
                                                             style="background-color: #fff;border:1px solid #000">
                                                         Abbrechen
                                                     </button>
-                                                    <button @click="asign" type="button" class="btn px-5 text-white mx-1 rounded" id="save-btn"
+                                                    <button @click="asign" type="button" class="btn col-auto text-white rounded" id="save-btn"
                                                             style="background-color: #5f5f5f;">
                                                         Senden
                                                     </button>

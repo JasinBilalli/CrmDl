@@ -9,11 +9,10 @@ class data extends Model
 {
     use HasFactory;
     public $counter,$fahrzeug,$datakk,$prevention,$things;
-    public function __construct()
-    {
-  
-    }
+
      public function getdata($id){
 
      }
+
+
 }
