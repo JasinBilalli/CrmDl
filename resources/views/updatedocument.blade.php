@@ -5030,41 +5030,44 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-center  pb-3">
-                                <div class="row mx-3">
+                            <div class="text-center mt-3 pb-3">
+                                <div class="row mx-2 mx-sm-4">
                                     @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
                                         <addtask4 url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                   :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask4>
                                     @endif
-                                    <div class="col g-0 d-flex justify-content-end">
-                                        <div class="col g-0 text-end my-auto">
-                                            <div class="">
-                                                <span onclick="nextonee()" class="pe-2" style="color: #9F9F9F; cursor:pointer;">
-                                                    Uberspringen
-                                                </span>
+                                    <div class="text-center mt-3 pb-3">
+                                        <div class="row">
+                                            <div class="col g-0 text-end my-auto">
+                                                <div class="">
+                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">
+                                                        Uberspringen
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col g-0 text-start">
+                                                <div id="buton">
+                                                    <button class="px-5 py-2" type="button"
+                                                            style="border: none; border-radius: 9px; background-color:#285F52;"
+                                                            id="nextonee__" onclick="nextonee()">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="58.155"
+                                                             height="19.159" viewBox="0 0 58.155 19.159">
+                                                            <g id="Group_453" data-name="Group 453"
+                                                               transform="translate(0.004)">
+                                                                <line id="Line_16" data-name="Line 16" x2="51.954"
+                                                                      y2="0.2"
+                                                                      transform="translate(0 9.287)" fill="none"
+                                                                      stroke="#3fd599" stroke-width="2"/>
+                                                                <path id="Polygon_2" data-name="Polygon 2"
+                                                                      d="M9.58,0l9.58,11.642H0Z"
+                                                                      transform="translate(58.151 0) rotate(90)"
+                                                                      fill="#3fd599"/>
+                                                            </g>
+                                                        </svg>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col g-0 text-start">
-                                        <div class="">
-                                            <button class="px-5 py-2" type="button"
-                                                    style="border: none; border-radius: 9px; background-color:#285F52;"
-                                                    onclick="nextonee()">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="58.155"
-                                                     height="19.159" viewBox="0 0 58.155 19.159">
-                                                    <g id="Group_453" data-name="Group 453"
-                                                       transform="translate(0.004)">
-                                                        <line id="Line_16" data-name="Line 16" x2="51.954" y2="0.2"
-                                                              transform="translate(0 9.287)" fill="none"
-                                                              stroke="#3fd599" stroke-width="2"/>
-                                                        <path id="Polygon_2" data-name="Polygon 2"
-                                                              d="M9.58,0l9.58,11.642H0Z"
-                                                              transform="translate(58.151 0) rotate(90)"
-                                                              fill="#3fd599"/>
-                                                    </g>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -5613,8 +5616,8 @@
                                     </div>
                                 </div>
 
-                                <div class="text-center mt-3 pb-3">
-                                    <div class="row mx-2 mx-sm-4">
+                                <div class="text-center g-0 mt-3 pb-3">
+                                    <div class="row mx-0 mx-sm-4">
                                         @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
                                             <addtask url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                      :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
@@ -5623,7 +5626,9 @@
                                             <div class="row">
                                                 <div class="col g-0 text-end my-auto">
                                                     <div class="">
+                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">
 
+                                                    </span>
                                                     </div>
                                                 </div>
                                                 <div class="col g-0 text-start">
@@ -5653,8 +5658,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
                     <div class="col g-0 text-center pb-3">
@@ -5695,7 +5700,7 @@
                                 </svg>
                             </button>
                         @endif
-                        @endif
+                    @endif
                     </div>
                 </div>
             </div>

@@ -7033,6 +7033,184 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -30707,24 +30885,24 @@ var render = function () {
             _vm._v(" "),
             _vm._m(2),
             _vm._v(" "),
-            _c("div", { staticClass: "py-2 input-group " }, [
+            _c("div", { staticClass: "py-2 d-flex justify-content-between" }, [
               _c(
                 "button",
                 {
-                  staticClass: "btn px-5 text-dark mx-1 rounded",
+                  staticClass: "btn  text-dark col-auto  rounded",
                   staticStyle: {
                     "background-color": "#fff",
                     border: "1px solid #000",
                   },
                   attrs: {
                     type: "button",
-                    onclick: "saveContentFunct2()",
+                    onclick: "saveContentFunct()",
                     id: "save-btn",
                   },
                 },
                 [
                   _vm._v(
-                    "\n                                                        Abbrechen\n                                                    "
+                    "\n                                                     Abbrechend\n                                                 "
                   ),
                 ]
               ),
@@ -30732,14 +30910,14 @@ var render = function () {
               _c(
                 "button",
                 {
-                  staticClass: "btn px-5 text-white mx-1 rounded",
+                  staticClass: "btn col-auto text-white  rounded",
                   staticStyle: { "background-color": "#5f5f5f" },
                   attrs: { type: "button", id: "save-btn" },
                   on: { click: _vm.asign },
                 },
                 [
                   _vm._v(
-                    "\n                                                        Senden\n                                                    "
+                    "\n                                                     Senden\n                                                 "
                   ),
                 ]
               ),
@@ -30758,7 +30936,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "mx-3 my-auto" }, [
       _c("span", [
         _vm._v(
-          "\n                                                    Neue Aufgabe hinzufügen !\n                                                  "
+          "\n                                                 Neue Aufgabe hinzufügen !\n                                               "
         ),
       ]),
     ])
@@ -30937,11 +31115,11 @@ var render = function () {
             _vm._v(" "),
             _vm._m(2),
             _vm._v(" "),
-            _c("div", { staticClass: "py-2 input-group " }, [
+            _c("div", { staticClass: "py-2 d-flex justify-content-between" }, [
               _c(
                 "button",
                 {
-                  staticClass: "btn px-5 text-dark mx-1 rounded",
+                  staticClass: "btn col-auto text-dark  rounded",
                   staticStyle: {
                     "background-color": "#fff",
                     border: "1px solid #000",
@@ -30954,7 +31132,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Abbrechen\n                                                    "
+                    "\n                                                     Abbrechen\n                                                 "
                   ),
                 ]
               ),
@@ -30962,14 +31140,14 @@ var render = function () {
               _c(
                 "button",
                 {
-                  staticClass: "btn px-5 text-white mx-1 rounded",
+                  staticClass: "btn col-auto  text-white  rounded",
                   staticStyle: { "background-color": "#5f5f5f" },
                   attrs: { type: "button", id: "save-btn" },
                   on: { click: _vm.asign },
                 },
                 [
                   _vm._v(
-                    "\n                                                        Senden\n                                                    "
+                    "\n                                                     Senden\n                                                 "
                   ),
                 ]
               ),
@@ -30988,7 +31166,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "mx-3 my-auto" }, [
       _c("span", [
         _vm._v(
-          "\n                                                    Neue Aufgabe hinzufügen !\n                                                  "
+          "\n                                                 Neue Aufgabe hinzufügen !\n                                               "
         ),
       ]),
     ])
@@ -31167,11 +31345,11 @@ var render = function () {
             _vm._v(" "),
             _vm._m(2),
             _vm._v(" "),
-            _c("div", { staticClass: "py-2 input-group " }, [
+            _c("div", { staticClass: "py-2 d-flex justify-content-between" }, [
               _c(
                 "button",
                 {
-                  staticClass: "btn px-5 text-dark mx-1 rounded",
+                  staticClass: "btn col-auto text-dark rounded",
                   staticStyle: {
                     "background-color": "#fff",
                     border: "1px solid #000",
@@ -31192,7 +31370,7 @@ var render = function () {
               _c(
                 "button",
                 {
-                  staticClass: "btn px-5 text-white mx-1 rounded",
+                  staticClass: "btn col-auto text-white rounded",
                   staticStyle: { "background-color": "#5f5f5f" },
                   attrs: { type: "button", id: "save-btn" },
                   on: { click: _vm.asign },
@@ -31397,11 +31575,11 @@ var render = function () {
             _vm._v(" "),
             _vm._m(2),
             _vm._v(" "),
-            _c("div", { staticClass: "py-2 input-group " }, [
+            _c("div", { staticClass: "py-2 d-flex justify-content-between" }, [
               _c(
                 "button",
                 {
-                  staticClass: "btn px-5 text-dark mx-1 rounded",
+                  staticClass: "btn text-dark col-auto rounded",
                   staticStyle: {
                     "background-color": "#fff",
                     border: "1px solid #000",
@@ -31422,7 +31600,7 @@ var render = function () {
               _c(
                 "button",
                 {
-                  staticClass: "btn px-5 text-white mx-1 rounded",
+                  staticClass: "btn text-white col-auto rounded",
                   staticStyle: { "background-color": "#5f5f5f" },
                   attrs: { type: "button", id: "save-btn" },
                   on: { click: _vm.asign },
@@ -33136,7 +33314,10 @@ var render = function () {
                                           _vm._v(" "),
                                           _c(
                                             "div",
-                                            { staticClass: "modal-body p-3" },
+                                            {
+                                              staticClass:
+                                                "modal-body p-2 p-sm-3",
+                                            },
                                             [
                                               _vm.role == "fs"
                                                 ? _c(
@@ -33161,11 +33342,11 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                  " +
+                                                                "\n                                              " +
                                                                   _vm._s(
                                                                     lead.first_name
                                                                   ) +
-                                                                  "\n                                                "
+                                                                  "\n                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -33256,7 +33437,7 @@ var render = function () {
                                                                 },
                                                                 [
                                                                   _vm._v(
-                                                                    "\n                                                                        Abgelehnt\n                                                                "
+                                                                    "\n                                                                    Abgelehnt\n                                                                "
                                                                   ),
                                                                 ]
                                                               ),
@@ -33270,26 +33451,19 @@ var render = function () {
                                                   )
                                                 : _vm._e(),
                                               _vm._v(" "),
-                                              _c("br"),
-                                              _vm._v(" "),
-                                              _c("br"),
-                                              _vm._v(" "),
                                               _c(
                                                 "div",
                                                 { staticClass: "mt-3" },
                                                 [
                                                   _c(
                                                     "div",
-                                                    {
-                                                      staticClass:
-                                                        "mx-3 pb-3 row",
-                                                    },
+                                                    { staticClass: "mx-3 row" },
                                                     [
                                                       _c(
                                                         "div",
                                                         {
                                                           staticClass:
-                                                            "col-md-6 col-12",
+                                                            "col-md-6 col-12 my-2",
                                                         },
                                                         [
                                                           _c(
@@ -33519,7 +33693,7 @@ var render = function () {
                                                         "div",
                                                         {
                                                           staticClass:
-                                                            "col-md-6 col-12 px-2",
+                                                            "col-md-6 col-12 my-2",
                                                         },
                                                         [
                                                           _c(
@@ -33965,7 +34139,7 @@ var render = function () {
                                                             },
                                                             [
                                                               _vm._v(
-                                                                "\n                                                                        Steht aus\n                                                                "
+                                                                "\n                                                                Steht aus\n                                                            "
                                                               ),
                                                             ]
                                                           ),
@@ -34317,9 +34491,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\n                                        Instagram: " +
+                                  "\n                                    Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\n                                    "
+                                    "\n                                "
                                 ),
                               ]),
                             ]
@@ -34398,9 +34572,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Facebook: " +
+                                "\n                                    Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\n                                    "
+                                  "\n                                "
                               ),
                             ]),
                           ]),
@@ -34478,9 +34652,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                         Sanascout: " +
+                                "\n                                     Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\n                                    "
+                                  "\n                                "
                               ),
                             ]),
                           ]),
@@ -34590,11 +34764,12 @@ var render = function () {
                     _c("div", { staticClass: "assigned-leads1" }, [
                       _vm._m(20),
                       _vm._v(" "),
-                      _c("div", { staticClass: "content p-0 p-sm-3" }, [
+                      _c("div", { staticClass: "content px-3 p-sm-3" }, [
                         _c(
                           "div",
                           {
-                            staticClass: "overflow-div1 row ms-1 ms-sm-3 me-2",
+                            staticClass:
+                              "overflow-div1 p-0 row ms-1 ms-sm-3 me-2",
                           },
                           _vm._l(_vm.leads, function (lead) {
                             return _c(
@@ -34652,11 +34827,11 @@ var render = function () {
                                                         },
                                                         [
                                                           _vm._v(
-                                                            "\n                                                      " +
+                                                            "\n                                                  " +
                                                               _vm._s(
                                                                 lead.first_name
                                                               ) +
-                                                              "\n                                                    "
+                                                              "\n                                                "
                                                           ),
                                                         ]
                                                       ),
@@ -34669,11 +34844,9 @@ var render = function () {
                                               _vm._v(" "),
                                               _c("br"),
                                               _vm._v(" "),
-                                              _c("br"),
-                                              _vm._v(" "),
                                               _c(
                                                 "div",
-                                                { staticClass: "mt-3" },
+                                                { staticClass: "mt-sm-3 mt-1" },
                                                 [
                                                   _c(
                                                     "div",
@@ -34686,14 +34859,14 @@ var render = function () {
                                                         "div",
                                                         {
                                                           staticClass:
-                                                            "col-md-6 col-12",
+                                                            "col-md-6 col-12 my-2",
                                                         },
                                                         [
                                                           _c(
                                                             "div",
                                                             {
                                                               staticClass:
-                                                                "text-dark text-left p-3 h-100",
+                                                                "text-dark text-left p-3 m-2 h-100",
                                                               staticStyle: {
                                                                 "border-radius":
                                                                   "15px",
@@ -34916,14 +35089,14 @@ var render = function () {
                                                         "div",
                                                         {
                                                           staticClass:
-                                                            "col-md-6 col-12 px-2",
+                                                            "col-md-6 col-12  my-2",
                                                         },
                                                         [
                                                           _c(
                                                             "div",
                                                             {
                                                               staticClass:
-                                                                "text-dark text-left p-3",
+                                                                "text-dark text-left p-3 m-2",
                                                               staticStyle: {
                                                                 "border-radius":
                                                                   "15px",
@@ -35353,7 +35526,7 @@ var render = function () {
                                                     },
                                                     [
                                                       _vm._v(
-                                                        "\n                                                                Zuweisen\n                                                            "
+                                                        "\n                                                            Zuweisen\n                                                        "
                                                       ),
                                                     ]
                                                   ),
@@ -35553,7 +35726,7 @@ var render = function () {
                                               },
                                               [
                                                 _vm._v(
-                                                  "\n                                                            Lead öffnen\n                                                        "
+                                                  "\n                                                        Lead öffnen\n                                                    "
                                                 ),
                                               ]
                                             ),
@@ -35638,7 +35811,12 @@ var render = function () {
                                                         value: admin.id,
                                                       },
                                                     },
-                                                    [_vm._v(_vm._s(admin.name))]
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(admin.name) +
+                                                          "\n                                                    "
+                                                      ),
+                                                    ]
                                                   )
                                                 }
                                               ),
@@ -35859,9 +36037,9 @@ var render = function () {
                               _vm._v(" "),
                               _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                                 _vm._v(
-                                  "\n                                        Instagram: " +
+                                  "\n                                    Instagram: " +
                                     _vm._s(_vm.instagram) +
-                                    "\n                                    "
+                                    "\n                                "
                                 ),
                               ]),
                             ]
@@ -35940,9 +36118,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Facebook: " +
+                                "\n                                    Facebook: " +
                                   _vm._s(_vm.facebook) +
-                                  "\n                                    "
+                                  "\n                                "
                               ),
                             ]),
                           ]),
@@ -36020,9 +36198,9 @@ var render = function () {
                             _vm._v(" "),
                             _c("span", { staticClass: "fs-5 fw-500 ps-2" }, [
                               _vm._v(
-                                "\n                                        Sanascout: " +
+                                "\n                                    Sanascout: " +
                                   _vm._s(_vm.sanascout) +
-                                  "\n                                    "
+                                  "\n                                "
                               ),
                             ]),
                           ]),
@@ -36147,7 +36325,13 @@ var staticRenderFns = [
       _c(
         "h5",
         { staticClass: "modal-title", attrs: { id: "staticBackdropLabel" } },
-        [_c("b", [_vm._v("Abgelehnt Lead")])]
+        [
+          _c("b", [
+            _vm._v(
+              "Abgelehnt\n                                                                Lead"
+            ),
+          ]),
+        ]
       ),
     ])
   },
@@ -36167,37 +36351,53 @@ var staticRenderFns = [
       },
       [
         _c("option", { attrs: { value: "Falsche nummer" } }, [
-          _vm._v("Falsche nummer"),
+          _vm._v(
+            "Falsche nummer\n                                                                    "
+          ),
         ]),
         _vm._v(" "),
         _c("option", { attrs: { value: "Hat schon gewechselt" } }, [
-          _vm._v("Hat schon gewechselt"),
+          _vm._v(
+            "Hat schon\n                                                                        gewechselt\n                                                                    "
+          ),
         ]),
         _vm._v(" "),
         _c("option", { attrs: { value: "Kein interesse" } }, [
-          _vm._v("Kein interesse"),
+          _vm._v(
+            "Kein interesse\n                                                                    "
+          ),
         ]),
         _vm._v(" "),
         _c("option", { attrs: { value: "Krank" } }, [_vm._v("Krank")]),
         _vm._v(" "),
         _c("option", { attrs: { value: "Kunde bereits terminiert" } }, [
-          _vm._v("Kunde bereits terminiert"),
+          _vm._v(
+            "Kunde\n                                                                        bereits terminiert\n                                                                    "
+          ),
         ]),
         _vm._v(" "),
         _c("option", { attrs: { value: "Nicht Brauchbar" } }, [
-          _vm._v("Nicht Brauchbar"),
+          _vm._v(
+            "Nicht\n                                                                        Brauchbar\n                                                                    "
+          ),
         ]),
         _vm._v(" "),
         _c("option", { attrs: { value: "Nicht erreicht" } }, [
-          _vm._v("Nicht erreicht"),
+          _vm._v(
+            "Nicht erreicht\n                                                                    "
+          ),
         ]),
         _vm._v(" "),
         _c("option", { attrs: { value: "Online Offerte" } }, [
-          _vm._v("Online Offerte"),
+          _vm._v(
+            "Online Offerte\n                                                                    "
+          ),
         ]),
         _vm._v(" "),
         _c("option", { attrs: { value: "Spater Anrufen" } }, [
-          _vm._v("Spater Anrufen"),
+          _vm._v(
+            "Spater Anrufen\n                                                                    "
+          ),
         ]),
         _vm._v(" "),
         _c("option", { attrs: { value: "Terminiert" } }, [
@@ -36387,7 +36587,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mx-4" }, [
+    return _c("div", { staticClass: "row g-0" }, [
       _c("hr", {
         staticClass: "text-black mx-3",
         staticStyle: {
@@ -36496,7 +36696,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            Historie der Leads\n                                        "
+              "\n                                        Historie der Leads\n                                    "
             ),
           ]
         ),
@@ -36522,7 +36722,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                        Abgelehnte Leads\n                                    "
+              "\n                                    Abgelehnte Leads\n                                "
             ),
           ]
         ),
@@ -36566,7 +36766,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mx-4" }, [
+    return _c("div", { staticClass: "row g-0" }, [
       _c("hr", {
         staticClass: "text-black mx-3",
         staticStyle: {
@@ -36630,24 +36830,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "button-div my-auto mx-5 py-3" }, [
-      _c(
-        "button",
-        {
-          staticClass: "px-5 py-2 fs-4 btn",
-          attrs: {
-            type: "submit",
-            "data-bs-toggle": "modal",
-            "data-bs-target": "#asign",
+    return _c(
+      "div",
+      { staticClass: "button-div my-auto mx-3 mx-smmoda-5 py-3" },
+      [
+        _c(
+          "button",
+          {
+            staticClass: "px-5 py-2 fs-4 btn",
+            attrs: {
+              type: "submit",
+              "data-bs-toggle": "modal",
+              "data-bs-target": "#asign",
+            },
           },
-        },
-        [
-          _vm._v(
-            "\n                                            Zuweisen\n                                        "
-          ),
-        ]
-      ),
-    ])
+          [
+            _vm._v(
+              "\n                                        Zuweisen\n                                    "
+            ),
+          ]
+        ),
+      ]
+    )
   },
   function () {
     var _vm = this
@@ -36663,7 +36867,11 @@ var staticRenderFns = [
         _c(
           "h5",
           { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
-          [_vm._v("Zugewiesene Leads")]
+          [
+            _vm._v(
+              "Zugewiesene\n                                                    Leads"
+            ),
+          ]
         ),
         _vm._v(" "),
         _c("button", {
@@ -36707,7 +36915,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            Historie der Leads\n                                            "
+              "\n                                        Historie der Leads\n                                        "
             ),
           ]
         ),
@@ -36733,7 +36941,7 @@ var staticRenderFns = [
           },
           [
             _vm._v(
-              "\n                                            Abgelehnte Leads\n                                            "
+              "\n                                        Abgelehnte Leads\n                                        "
             ),
           ]
         ),

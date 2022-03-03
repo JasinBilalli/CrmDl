@@ -635,30 +635,30 @@
                                 @if(Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('salesmanager'))
                                     @if($family_person[$i]->kundportfolio == 0)
                                         <div class="name-div">
-                                            <span class="fs-4">{{$data[$i]->first_name}} {{$data[$i]->last_name}}</span>
+                                            <span class="fs-6">{{$data[$i]->first_name}} {{$data[$i]->last_name}} ({{$data[$i]->birthdate}})</span>
                                         </div>
                                     @else
                                         <div class="name-div"
                                              onclick="window.location.href='{{route('costumer_form', $datId)}}'">
-                                            <span class="fs-4">{{$data[$i]->first_name}} {{$data[$i]->last_name}}</span>
+                                            <span class="fs-6">{{$data[$i]->first_name}} {{$data[$i]->last_name}} ({{$data[$i]->birthdate}})</span>
                                         </div>
                                     @endif
                                 @else
                                     @if($family_person[$i]->kundportfolio == 0)
                                         <div class="name-div"
                                              onclick="window.location.href='{{route('costumer_form', $datId)}}'">
-                                            <span class="fs-4">{{$data[$i]->first_name}} {{$data[$i]->last_name}}</span>
+                                            <span class="fs-6">{{$data[$i]->first_name}} {{$data[$i]->last_name}} ({{$data[$i]->birthdate}})</span>
                                         </div>
                                     @else
                                         <div class="name-div"
                                              onclick="window.location.href='{{route('costumer_form', $datId)}}'">
-                                            <span class="fs-4">{{$data[$i]->first_name}} {{$data[$i]->last_name}}</span>
+                                            <span class="fs-6">{{$data[$i]->first_name}} {{$data[$i]->last_name}} ({{$data[$i]->birthdate}})</span>
                                         </div>
                                     @endif
                                 @endif
                                 @if($mandatiert[$i]['mandatiert'])
                                     <div class="mandatiert-div">
-                                        <span class="fw-bold">Mandatiert: Ja</span>
+                                        <span class="fw-bold">Mandatiert</span>
                                     </div>
                                 @else
 

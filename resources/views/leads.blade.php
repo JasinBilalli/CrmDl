@@ -13,7 +13,7 @@
                         <div class="content py-3">
                             <input type="file" class="form-control" name="file" id="file">
                             <input type="submit" class="mt-2 btn py-2" value="Senden"
-                                   style="background-color: #4EC590; color: #ffffff; font-weight: bold; border: none; border-radius: 12px;">
+                                   style="background-color: #0C71C3; color: #ffffff; font-weight: bold; border: none; border-radius: 12px;">
                         </div>
                     </form>
                 </div>
@@ -262,7 +262,7 @@
     }
 
     .assigned-leads1 .button-div button {
-        background-color: #4EC590;
+        background-color: #0C71C3;
         color: #fff;
         font-weight: bold;
         border: none;
