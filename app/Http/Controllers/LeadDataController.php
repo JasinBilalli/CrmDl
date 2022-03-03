@@ -37,12 +37,13 @@ class LeadDataController extends Controller
                 $data = new data();
                 $lead = family::find($id);
                 $data->getdata($id);
-if(LeadDataFahrzeug::where('person_id',$id)->first()){
-               $mandatiert = LeadDataFahrzeug::where('person_id',$id)->first()->mandatiert != null ? true : false;
-}
-else{
-    $mandatiert = false;
-}
+                if(LeadDataFahrzeug::where('person_id',$id)->first()){
+                               $mandatiert = LeadDataFahrzeug::where('person_id',$id)->first()->mandatiert != null ? true : false;
+
+                }
+                else{
+                    $mandatiert = false;
+                }
                $mandatiert ? $mandatierturl = LeadDataFahrzeug::where('person_id',$id)->first()->mandatiert : $mandatierturl = "";
 
 
@@ -89,10 +90,10 @@ return redirect()->route('tasks');
             LeadDataKK::create([
                 'leads_id' => $leadId,
                 'person_id' => $personId,
-                'pre_insurer' => $request->pre_insurer ? $this->storeFile($request->input('pre_insurer'), FolderPaths::KK_FILES) : null,
-                'id_required' => $request->id_required ? $this->storeFile($request->input('id_required'), FolderPaths::KK_FILES) : null,
-                'notice_by' => $request->notice_by ? $this->storeFile($request->input('notice_by'), FolderPaths::KK_FILES) : null,
-                'power_of_attorney' => $request->power_of_attorney ? $this->storeFile($request->input('power_of_attorney'), FolderPaths::KK_FILES) : null,
+                'pre_insurer' => $request->pre_insurer ? $this->storeFile($request->file('pre_insurer'), FolderPaths::KK_FILES) : null,
+                'id_required' => $request->id_required ? $this->storeFile($request->file('id_required'), FolderPaths::KK_FILES) : null,
+                'notice_by' => $request->notice_by ? $this->storeFile($request->file('notice_by'), FolderPaths::KK_FILES) : null,
+                'power_of_attorney' => $request->power_of_attorney ? $this->storeFile($request->file('power_of_attorney'), FolderPaths::KK_FILES) : null,
                 'vorversicherer_select' => $request->vorversicherer_select,
                 'id_notwending_select' => $request->id_notwending_select,
                 'kundingung_durch_select' => $request->kundingung_durch_select,
@@ -107,10 +108,10 @@ return redirect()->route('tasks');
             ]);
             LeadDataFahrzeug::create([
 
-                'mandatiert' => $request->mandatiert ? $this->storeFile($request->input('mandatiert'), FolderPaths::KK_FILES) : null,
+                'mandatiert' => $request->mandatiert ? $this->storeFile($request->file('mandatiert'), FolderPaths::KK_FILES) : null,
                 'leads_id' => $leadId,
                 'person_id' => $personId,
-                'upload_police' => $request->upload_policeFahrzeug ? $this->storeFile($request->input('upload_policeFahrzeug'), FolderPaths::KK_FILES) : null,
+                'upload_police' => $request->upload_policeFahrzeug ? $this->storeFile($request->file('upload_policeFahrzeug'), FolderPaths::KK_FILES) : null,
                 'vehicle_id' => $request->vehicle_id,
                 'leasing' => $request->leasing,
                 'leasing_name' => $request->leasing_name,
@@ -134,7 +135,7 @@ return redirect()->route('tasks');
                 'hour_breakdown_assistance' => $request->hour_breakdown_assistance,
                 'comment' => $request->commentFahrenzug,
                 'first_intro' => $request->first_intro,
-                'offer' => $request->hasFile('offer') ? $this->storeFile($request->input('offer'),FolderPaths::KK_FILES) : null,
+                'offer' => $request->hasFile('offer') ? $this->storeFile($request->file('offer'),FolderPaths::KK_FILES) : null,
                 'vergleichsart_select' => $request->vergleichsart_select
             ]);
             LeadDataThings::create([
@@ -160,7 +161,7 @@ return redirect()->route('tasks');
             LeadDataPrevention::create([
                 'leads_id' => $leadId,
                 'person_id' => $personId,
-                'upload_police' => $request->upload_police__ ? $this->storeFile($request->input('upload_police__'), FolderPaths::KK_FILES) : null,
+                'upload_police' => $request->upload_police__ ? $this->storeFile($request->file('upload_police__'), FolderPaths::KK_FILES) : null,
                 'comparison_type' => $request->comparison_type,
                 'comment' => $request->comment__,
                 'offer' => $request->offersach ? $this->storeFile($request->input('offersach'), FolderPaths::KK_FILES) : null,

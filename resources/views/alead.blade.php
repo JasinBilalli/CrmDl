@@ -9,7 +9,7 @@
 
     <section>
         <div class="container">
-            <div class="form-div my-4 py-4 col-7 mx-auto" style="background-color: #EFEFEF; border-radius: 20px;">
+            <div class="form-div my-4 py-4 mx-2 mx-sm-5" style="background-color: #EFEFEF; border-radius: 20px;">
                 <form action="{{route('asignlead',$lead->id)}}" method="post">
                     @csrf
                     <input type="hidden" name="countt" id="countt">
@@ -18,7 +18,7 @@
                             <div class="mx-2">
                                 <div class="mb-2">
                                     <label for="" class="mb-1">Agent:</label>
-                                    <input type="text"  class="form-control" value="{{$admin->name}}" name="agent" >
+                                    <input type="text"  class="form-control" value="{{$lead->agent}}" name="agent" >
                                 </div>
                                 <div class="mb-2">
                                     <label for="" class="mb-1">Qualität:</label>
