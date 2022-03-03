@@ -25,16 +25,7 @@
                                 </option>
                             </select>
                         </div>
-                        <div class="mb-2">
-                            <label for="title" class="form-label mb-0">Title</label>
-                            <input class="form-control" id="title" type="text" required>
-                        </div>
-                        <div class="mb-2">
-                            <label for="desc" class="form-label">Description
-                                (Required)</label>
-                            <textarea type="text" id="desc" placeholder="Description" class="form-control" rows="3" required></textarea>
-
-                        </div>
+                      
                     </div>
                     <div class="button-div mx-3 mt-4">
                         <button @click="assignpendency" class="py-2 px-2 px-sm-3">
@@ -83,10 +74,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="button-div mx-3 mt-3">
+                        <div class="button-div mx-3 mt-3" style="padding-bottom: 40px;">
                             <div class="input-group">
                                 <input type="text" name="todo" id="number" class="form-control" v-on:keyup.enter="addnumber">
-                                <div style="cursor: pointer" class="add-text px-2 px-sm-3" @click="addnumber">
+                                <div style="cursor: pointer;" class="add-text px-2 px-sm-3" @click="addnumber">
                                         <span>
                                             Add
                                         </span>
@@ -135,8 +126,8 @@ export default {
             this.costumer = this.todos.costumers[0].id;
         },
         assignpendency: function () {
-            var title = document.getElementById('title').value;
-            axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&title=' + title);
+
+            axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer);
             document.getElementById('alrt').innerHTML = "";
             document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully</div>';
         },
