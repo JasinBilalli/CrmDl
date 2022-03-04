@@ -693,7 +693,7 @@
                                                                     class="py-2 px-5 fw-bold border-0 "
                                                                     data-bs-toggle="modal"
                                                                     data-bs-target="#asign"
-                                                                    style="background-color: #63D4A4; color: #fff; border-radius: 13px;">
+                                                                    style="background-color: #0C71C3; color: #fff; border-radius: 13px;">
                                                                 Zuweisen
                                                             </button>
                                                         </div>

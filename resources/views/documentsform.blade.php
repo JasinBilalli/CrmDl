@@ -616,7 +616,6 @@
                                                                 </span>
                                                             </div>
                                                             <div class="">
-
                                                                 <div class="upload-box mx-1 my-2">
                                                                     <div class="mx-1 my-2 p-4 text-center">
                                                                         <label for="file-input-4">
