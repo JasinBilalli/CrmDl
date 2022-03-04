@@ -33,7 +33,7 @@ $status = "Done";
             'first_name' => $this->faker->firstName(),
             'last_name' => $this->faker->lastName(),
             'birthdate' => Carbon::now()->subDays(random_int(0,12000))->format('Y-m-d'),
-            'leads_id' => random_int(1,400),
+            'leads_id' => random_int(1,100),
             'status' => $this->randomm(),
             'status_updated_at' => Carbon::now()->subDays(random_int(1,60))->format('Y-m-d')
         ];

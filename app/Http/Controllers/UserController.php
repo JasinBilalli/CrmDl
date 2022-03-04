@@ -34,7 +34,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Maatwebsite\Excel\Excel;
-use MongoDB\Driver\Session;
+use Illuminate\Support\Facades\Session;
 use Nexmo;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
@@ -477,7 +477,7 @@ class UserController extends Controller
         }
         $bo = Admins::role(['backoffice', 'admin'])->get();
         foreach ($bo as $b) {
-            $url = '<a href="' . route("tasks") . '">' . $pcnt . 'Personen wurden aus einem Termin hinzugefügt </a>';
+            $url = '<a href="' . route("tasks") . '">' . $pcnt . ' Personen wurden aus einem Termin hinzugefügt </a>';
             $b->notify(new SendNotificationn($url));
         }
         $lead->status_task = "open";
@@ -686,6 +686,7 @@ class UserController extends Controller
                     ->where('pendencies.done', '<>', 1)
                     ->orderBy('family_person.first_name', 'asc')
                     ->count();
+                 
 
             }
             if (Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager') || Auth::user()->hasRole('digital')) {
@@ -697,6 +698,7 @@ class UserController extends Controller
                         ->where('pendencies.done', '<>', 1)
                         ->where('pendencies.admin_id', Auth::user()->id)
                         ->count();
+                        
 
                     $tasks = DB::table('leads')
                         ->where('completed', '=', '0')
@@ -759,12 +761,17 @@ class UserController extends Controller
                 }
 
                 if (Auth::user()->hasRole('fs')) {
-                    $offen = DB::table('family_person')->where('status', 'Open')->count();
+                    $offen = DB::table('leads')
+                    ->join('family_person','leads.id','family_person.leads_id')
+                    ->where('leads.assign_to_id',Auth::user()->id)
+                    ->whereIn('family_person.status',['Open'])
+                    ->count();
+                 
                     $leadscount = $leadscount = DB::table('leads')->where('completed', '0')->where('assigned', 0)->orderBy('updated_at', 'asc')->where('leads.assign_to_id', Auth::user()->id)->where('wantsonline', 0)->where('rejected', 0)->count();
                 } else {
                     $offen = DB::table('family_person')
                         ->join('leads', 'family_person.leads_id', '=', 'leads.id')
-                        ->where('status', 'Open')
+                        ->whereIn('family_person.status',['Open'])
                         ->where('leads.assign_to_id', Auth::guard('admins')->user()->id)
                         ->count();
 

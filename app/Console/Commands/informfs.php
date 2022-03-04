@@ -54,7 +54,7 @@ class informfs extends Command
         ->where('appointment_date', Carbon::now()->addDays()->toDateString())
         ->where('leads.assign_to_id',$f->id)
         ->count();
-        $url = '<a href="' . route("Appointments") . '"> You are assigned with ' . $count . ' appointments for tomorrow </a>';
+        $url = '<a href="' . route("Appointments") . '"> Du hast für morgen ' . $count . ' termine bekommen </a>';
 
         $f->notify(new SendNotificationn($url));
         }
