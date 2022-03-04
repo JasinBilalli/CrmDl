@@ -1,7 +1,6 @@
 @extends('template.navbar')
 @section('content')
     <style>
-
         body {
             margin-top: 40px;
             font-size: 14px;
@@ -119,7 +118,7 @@
                     resources: [
                             @foreach($users as $user)
                         {
-                            id: '{!! $user->id !!}', title: '{!! $user->name !!}', eventColor: 'green'
+                            id: '{!! $user->id !!}', title: '{!! $user->name !!}', eventColor: 'rgb(12, 113, 195)'
                         },
                         @endforeach
 
@@ -137,7 +136,7 @@
                             number_of_persons: '{{ $appointmentAGG["number_of_persons"] }}',
                             nationality: '{{ $appointmentAGG["nationality"] }}',
                             status_task: '{{ $appointmentAGG["status_task"] }}',
-                            eventColor: 'green',
+                            eventColor: 'rgb(12, 113, 195)',
                             name: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}',
                             user_to: '{{ $appointmentAGG["assign_to_id"] }}',
 
@@ -314,7 +313,7 @@
                     <input type="radio" id="html" name="trie" value="desc" @if($trie == "desc" )checked @endif>
                     <label for="html" class="fw-bold"><i class="fas fa-sort-amount-down"></i> Zeit absteigend</label>
                 </div>
-                <div class="col-lg-auto"><br>
+                <div class="col-lg-auto mb-3"><br>
                     <input type="radio" id="css" name="trie" value="asc" @if($trie == "asc" )checked @endif>
                     <label for="css" class="fw-bold"><i class="fas fa-sort-amount-up-alt"></i> Zeit aufsteigend</label>
                 </div>
@@ -351,7 +350,7 @@
                         @endforeach
                     </select><br>
                 </div>
-                <div class="col-lg-auto g-0 my-auto">
+                <div class="col-lg-auto my-auto">
                    <div class="my-2">
                        {!! Form::button('<i class="fas fa-filter my-auto"></i><span class="ps-2">Filter</span>', ['type' => 'submit', 'class' => 'btn buttoni-filter px-5 d-flex']) !!}
                    </div>
@@ -360,6 +359,7 @@
             </div>{{ Form::close() }}
 
         </div>
+
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 g-0"><br>
             <div class="row">
                 <div class="col-lg-9 col-12" style="font-size: 12px; text-align : center ;">
@@ -367,7 +367,7 @@
                         style="color : #212529 ; background-color : #0080003b;">{!! session('msg') !!}</h5> <?php session(['msg' => '']); ?> @endif
                 </div>
 
-                <div class="col-lg-9 col-12" style="font-size: 12px;">
+                <div class="col-lg-9 col-12 mb-3" style="font-size: 12px;">
                     <div class="mx-2" id='calendar'></div>
                     <div style='clear:both'></div>
                 </div>
@@ -590,7 +590,7 @@
             <h3> Termine</h3>
         </div>
 
-        <div class="col-7" width="90%" style="font-size: 12px;">
+        <div class="col-12" width="90%" style="font-size: 12px;">
             <div class="mx-2" id='calendar'></div>
         </div>
         <div class="col-md-5 col-lg-5">

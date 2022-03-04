@@ -1,12 +1,27 @@
 <template>
+
     <div class="mt-3 pe-4 mb-1">
-        <button type="button" @click="openNotifyFunct(); readall();" class="btn btn-primary position-relative">
-            <i class="far fa-bell"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-   <span style="font-size: 11px;"></span>
-{{ notcnt }}
-  </span>
-        </button>
+        <div type="button" class="notification-divvv22" @click="openNotifyFunct(); readall();">
+            <div class="hover-visible-div" id="hoverVisibleDiv">
+                <div class="txt-notif fs-6">
+                    You have {{ notcnt }} new notifications
+                </div>
+            </div>
+            <div class="rounded-notid-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" fill="currentColor" class="bi bi-bell"
+                     viewBox="0 0 16 16">
+                    <path
+                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                </svg>
+            </div>
+        </div>
+<!--        <button type="button" @click="openNotifyFunct(); readall();" class="btn btn-primary position-relative">-->
+<!--            <i class="far fa-bell"></i>-->
+<!--            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">-->
+<!--               <span style="font-size: 11px;"></span>-->
+<!--                     {{ notcnt }}-->
+<!--              </span>-->
+<!--        </button>-->
         <div class="btn-group dropdown dropdown-notifications sw-open" id="openNotification"
              style="position: absolute; display:none; right: 1rem; top: 3.2rem;">
             <div class="bg-white dropdown-container text-start" style="border: 1px solid black;border-radius: 8px; z-index: 150; min-width:368px;">

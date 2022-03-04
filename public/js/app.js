@@ -6114,6 +6114,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 // document.getElementById('sendButton').addEventListener('click', function(){
 //     var element = document.getElementById('bchat');
 //     element.scrollTop = element.scrollHeight;
@@ -7314,6 +7315,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -36974,9 +36990,9 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "mt-3 pe-4 mb-1" }, [
     _c(
-      "button",
+      "div",
       {
-        staticClass: "btn btn-primary position-relative",
+        staticClass: "notification-divvv22",
         attrs: { type: "button" },
         on: {
           click: function ($event) {
@@ -36986,19 +37002,44 @@ var render = function () {
         },
       },
       [
-        _c("i", { staticClass: "far fa-bell" }),
-        _vm._v(" "),
         _c(
-          "span",
+          "div",
           {
-            staticClass:
-              "position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger",
+            staticClass: "hover-visible-div",
+            attrs: { id: "hoverVisibleDiv" },
           },
           [
-            _c("span", { staticStyle: { "font-size": "11px" } }),
-            _vm._v("\n" + _vm._s(_vm.notcnt) + "\n  "),
+            _c("div", { staticClass: "txt-notif fs-6" }, [
+              _vm._v(
+                "\n                    You have " +
+                  _vm._s(_vm.notcnt) +
+                  " new notifications\n                "
+              ),
+            ]),
           ]
         ),
+        _vm._v(" "),
+        _c("div", { staticClass: "rounded-notid-icon" }, [
+          _c(
+            "svg",
+            {
+              staticClass: "bi bi-bell",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                width: "36",
+                fill: "currentColor",
+                viewBox: "0 0 16 16",
+              },
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d: "M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z",
+                },
+              }),
+            ]
+          ),
+        ]),
       ]
     ),
     _vm._v(" "),

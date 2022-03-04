@@ -984,7 +984,14 @@ class UserController extends Controller
         $admins->name = filter_var($request->user_name, FILTER_UNSAFE_RAW);
         $admins->email = filter_var($request->user_email, FILTER_UNSAFE_RAW);
         $admins->phonenumber = filter_var($request->user_name, FILTER_UNSAFE_RAW);
-        $admins->password = Hash::make($request->user_password);
+        if ($request->user_password == $request->retype_password){
+            if ($request->user_password != '' && ($request->user_password > 8)) {
+                $admins->password = Hash::make($request->user_password);
+            }
+        }else{
+            return redirect()->back()->with('fail', 'Ncuk');
+        }
+
 
         $admins->assignRole(filter_var($request->role_name, FILTER_UNSAFE_RAW));
 
