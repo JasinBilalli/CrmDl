@@ -163,7 +163,7 @@ return redirect()->route('tasks');
                 'upload_police' => $request->upload_police__ ? $this->storeFile($request->file('upload_police__'), FolderPaths::KK_FILES) : null,
                 'comparison_type' => $request->comparison_type,
                 'comment' => $request->comment__,
-                'offer' => $request->offersach ? $this->storeFile($request->input('offersach'), FolderPaths::KK_FILES) : null,
+                'offer' => $request->offersach ? $this->storeFile($request->file('offersach'), FolderPaths::KK_FILES) : null,
                 'number_of_people' => $request->number_of_people,
                 'number_of_rooms' => $request->number_of_rooms,
                 'sum_insured' => $request->sum_insured,
@@ -237,7 +237,7 @@ foreach($bo as $b){
     $url =  '<a href="' . route("costumer_form",[Crypt::encrypt($personId * 1244)]) . '"> Die Dokumentation für: ' . family::find($personId)->first_name . ' has been submitted</a>';
     $b->notify(new SendNotificationn($url));
 }
-            return redirect()->route('dashboard')->with('success', 'Successfully submitted and will be waiting for the backoffice!');
+            return redirect()->route('dashboard')->with('success', 'Erfolgreich eingereicht und wartet auf das Backoffice!');
         } else {
             return redirect()->back();
         }
@@ -499,7 +499,7 @@ foreach($bo as $b){
           $person->save();
 
 
-        return redirect()->route('acceptdata', ['id' => Crypt::encrypt($personId * 1244),'admin_id' => Crypt::encrypt($admin_id * 1244)]);
+        return redirect()->route('tasks')->with('success', 'Aufgabe erfolgreich übermittelt');
     }
 
 

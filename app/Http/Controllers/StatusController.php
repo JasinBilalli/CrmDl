@@ -23,7 +23,7 @@ class StatusController extends Controller
            $msgs = [];
          $links = [];
 
-         
+
            /** @var \Webklex\PHPIMAP\Message $message */
            foreach($messages as $message){
                 $msgs[$cnt]['subject'] = $message->getSubject();
@@ -31,7 +31,7 @@ class StatusController extends Controller
                $msgs[$cnt]['body'] =  $message->getHTMLBody();
               $cnt++;
            }
-         
+
         return view('status',compact('clientss','msgs'));
     }
     public function editclientdata($id){
@@ -58,9 +58,9 @@ class StatusController extends Controller
             'birthdate'=>$birthdate,
             'status' => $status
         ])) {
-            return redirect()->back()->with('success', 'Client Edited Successfuly');
+            return redirect()->back()->with('success', 'Kunde erfolgreich bearbeitet');
         }else{
-            return redirect()->back()->with('fail', 'Client Edited Fail');
+            return redirect()->back()->with('fail', 'Kunde bearbeitet fehlgeschlagen');
         }
     }
 

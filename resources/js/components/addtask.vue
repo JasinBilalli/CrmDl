@@ -54,7 +54,7 @@
                                                             style="background-color: #fff;border:1px solid #000">
                                                         Abbrechend
                                                     </button>
-                                                    <button @click="asign" type="button" class="btn col-auto text-white  rounded" id="save-btn"
+                                                    <button @click="asign" onclick="saveContentFunct()" type="button" class="btn col-auto text-white  rounded" id="save-btn"
                                                             style="background-color: #5f5f5f;">
                                                         Senden
                                                     </button>
@@ -84,9 +84,12 @@ admin: null
             var title = document.getElementById('title').value;
             axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
              document.getElementById('alrt').innerHTML = "";
-            document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully !</div>';
+            document.getElementById('alrt').innerHTML += ' <div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' +
+                '                    <strong>Pendency Assigned Successfuly</strong>\n' +
+                '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' +
+                '                </div>';
             console.log(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
-        },
+            },
          onChangeSelect(event) {
             this.admin = parseInt(event.target.value);
         },

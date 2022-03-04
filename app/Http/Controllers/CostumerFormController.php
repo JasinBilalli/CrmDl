@@ -102,7 +102,7 @@ class CostumerFormController extends Controller
                 }
             }
         }else{
-            echo 'You Dont Have Permissions To Access In This Page';
+            echo 'Sie haben keine Berechtigung zum Zugriff auf diese Seite';
         }
     }
 
@@ -288,9 +288,9 @@ class CostumerFormController extends Controller
             $zusatzversicherung->save() && $retchsschutzP->save() && $vorsorgeP->save() && $autoversicherungP->save()
             && $hausratP->save()) {
             family::where('id',$id)->update(['kundportfolio'=>1]);
-            return redirect()->route('costumers')->with('success', 'Action Successfully Made');
+            return redirect()->route('costumers')->with('success', 'Aktion erfolgreich durchgeführt');
         }else{
-            return redirect()->back()->with('fail', 'Action Not Done');
+            return redirect()->back()->with('fail', 'Aktion nicht erledigt');
         }
 
     }
@@ -444,7 +444,7 @@ class CostumerFormController extends Controller
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
 
-        return redirect()->route('costumers')->with('success' , 'Your changes has been successfully done');
+        return redirect()->route('costumers')->with('success' , 'Ihre Änderungen wurden erfolgreich durchgeführt');
 
 
 

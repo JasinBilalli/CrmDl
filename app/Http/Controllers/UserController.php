@@ -98,9 +98,9 @@ class UserController extends Controller
         $leadi->save();
         $lead->slug = 'qwesssewssew-' . uniqid();
         if ($lead->save()) {
-            return redirect()->route('leads')->with('success', 'Lead was succesfully inserted');
+            return redirect()->route('leads')->with('success', 'Lead wurde erfolgreich eingefügt');
         } else {
-            return redirect()->back()->with('fail', 'Fail To Insert');
+            return redirect()->back()->with('fail', 'Fehler beim Einfügen');
         }
     }
 
@@ -229,9 +229,9 @@ class UserController extends Controller
             }
             $lead->slug = Str::slug($req->input('fname')) . '-' . $lead->id;
             $lead->save();
-            return redirect()->back()->with('success', 'Appointment was done successfully!');
+            return redirect()->back()->with('success', 'Termin wurde erfolgreich durchgeführt!');
         } else {
-            return redirect()->back()->with('fail', 'Your joined fail');
+            return redirect()->back()->with('fail', 'Ihre Aktion schlägt fehl');
         }
     }
 
@@ -261,9 +261,9 @@ class UserController extends Controller
 
 
             if ($leads->delete()) {
-                return redirect()->route('leads')->with('success', 'Lead Deleted Successfuly');
+                return redirect()->route('leads')->with('success', 'Lead erfolgreich gelöscht');
             } else {
-                return redirect()->route('leads')->with('fail', 'Lead Deleted Fail');
+                return redirect()->route('leads')->with('fail', 'Lead gelöscht fehlgeschlagen');
             }
         } else {
             return redirect()->back();
@@ -353,9 +353,9 @@ class UserController extends Controller
 
 
         if ($lead->save()) {
-            return redirect()->route('leads')->with('success', 'Your action has been done successfuly');
+            return redirect()->route('leads')->with('success', 'Ihre Aktion wurde erfolgreich ausgeführt');
         } else {
-            return redirect()->route('leads')->with('fail', 'Your action has failed');
+            return redirect()->route('leads')->with('fail', 'Ihre Aktion ist fehlgeschlagen');
         }
     }
 
@@ -538,9 +538,9 @@ class UserController extends Controller
 
             if ($pending_rejcted->save()) {
                 lead::where('id', $leads_id)->update(['assign_to_id' => null, 'assigned' => 0, 'rejected' => 1]);
-                return redirect()->back()->with('success', 'Successfuly Rejected');
+                return redirect()->back()->with('success', 'Erfolgreich abgelehnt');
             } else {
-                return redirect()->back()->with('fail', 'Faild To Reject');
+                return redirect()->back()->with('fail', 'Kann nicht abgelehnt werden');
             }
         } else {
             $pending_rejcted = new PendingRejectedLead();
@@ -550,9 +550,9 @@ class UserController extends Controller
 
             if ($pending_rejcted->save()) {
                 lead::where('id', $leads_id)->update(['assign_to_id' => null, 'assigned' => 0, 'rejected' => 1]);
-                return redirect()->back()->with('success', 'Successfuly Rejected');
+                return redirect()->back()->with('success', 'Erfolgreich abgelehnt');
             } else {
-                return redirect()->back()->with('fail', 'Faild To Reject');
+                return redirect()->back()->with('fail', 'Kann nicht abgelehnt werden');
             }
         }
 
@@ -573,9 +573,9 @@ class UserController extends Controller
 
         if ($rejectedlead->save()) {
             lead::where('id', $leads_id)->update(['assign_to_id' => 9999999]);
-            return redirect()->back()->with('success', 'Action was done succesfully');
+            return redirect()->back()->with('success', 'Aktion wurde erfolgreich durchgeführt');
         } else {
-            return redirect()->back()->with('success', 'Action failed');
+            return redirect()->back()->with('success', 'Aktion fehlgeschlagen');
         }
 
     }
@@ -592,9 +592,9 @@ class UserController extends Controller
         $rejectlead->image = $this->storeFile($file, 'img');
 
         if ($rejectlead->save()) {
-            return redirect()->route('dashboard')->with('success', 'Action Made Successfuly');
+            return redirect()->route('dashboard')->with('success', 'Aktion erfolgreich durchgeführt');
         } else {
-            return redirect()->route('dashboard')->with('fail', 'Action Fail');
+            return redirect()->route('dashboard')->with('fail', 'Aktion fehlgeschlagen');
 
         }
     }
@@ -989,9 +989,9 @@ class UserController extends Controller
         $admins->assignRole(filter_var($request->role_name, FILTER_UNSAFE_RAW));
 
         if ($admins->save()) {
-            return redirect()->back()->with('success', 'User Register Successfuly');
+            return redirect()->route('dashboard')->with('success', 'Benutzerregistrierung erfolgreich');
         } else {
-            return redirect()->back()->with('fail', 'User Faild To Register');
+            return redirect()->route('dashboard')->with('fail', 'Benutzer konnte sich nicht registrieren');
         }
     }
 }

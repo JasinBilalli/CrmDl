@@ -52,8 +52,7 @@
     <script src='lib_cal/main.js'></script>
     <script src='lib_cal/moment.min.js'></script>
     <script src='lib_cal/moment.js'></script>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyDFBE1cuoGyzaiyvog5Zi6-tBvRwyXHiz8"
-            type="text/javascript"></script>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -591,14 +590,17 @@
             <h3> Termine</h3>
         </div>
 
-        <div class="col-12" width="90%" style="font-size: 12px;">
+        <div class="col-7" width="90%" style="font-size: 12px;">
             <div class="mx-2" id='calendar'></div>
         </div>
-        <div class="gmap_canvas">
+        <div class="col-md-5 col-lg-5">
+{{--            <script src="https://maps.google.com/maps/api/js?key=AIzaSyD_grqAdVA3qsZw5JLlURyeu8UI0E_dlY8"--}}
+{{--                    type="text/javascript"></script>--}}
+            <div class="gmap_canvas d-flex justify-content-center">
 
-            <div id="map"
-                 style="z-index: 0 !important;width: 90% !important; height:70vh !important; border-radius: 15px !important;"></div>
+                <div id="map" style="z-index: 0 !important;width: 100% !important; height:70vh !important; border-radius: 15px !important;"></div>
 
+            </div>
         </div>
 
 
@@ -647,7 +649,7 @@
 
     @else
 
-        You don't have permission // {!! Auth::guard('admins')->user()->hasRole('admin') !!} ---  {!! Auth::guard('admins')->user()->getRoleNames() !!}
+        Sie haben keine Berechtigung // {!! Auth::guard('admins')->user()->hasRole('admin') !!} ---  {!! Auth::guard('admins')->user()->getRoleNames() !!}
 
 
     @endif
