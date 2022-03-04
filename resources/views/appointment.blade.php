@@ -71,7 +71,6 @@
                     eventData: function (eventEl) {
                         return {
                             title: eventEl.innerText.trim(),
-
                         }
                     }
                 });
@@ -197,13 +196,14 @@
                         document.getElementById("name").innerHTML = calEvent.event.title;
                         document.getElementById("telephone").innerHTML = calEvent.event.extendedProps.telephone;
                         document.getElementById("birthdate").innerHTML = calEvent.event.extendedProps.birthdate;
-                        //document.getElementById("address").innerHTML = calEvent.event.extendedProps.address;
+                        document.getElementById("address").innerHTML = calEvent.event.extendedProps.address;
                         document.getElementById("number_of_persons").innerHTML = calEvent.event.extendedProps.number_of_persons;
                         document.getElementById("nationality").innerHTML = calEvent.event.extendedProps.nationality;
                         document.getElementById("status_task").innerHTML = calEvent.event.extendedProps.status_task;
                         document.getElementById("id").innerHTML = calEvent.event.id;
                         document.getElementById("id_lead_input").value = calEvent.event.id;
                         document.getElementById("id_lead_input2").value = calEvent.event.id;
+
                         document.getElementById("date_new").value = moment(calEvent.event.start).format('Y-MM-DD');
                         document.getElementById("date_new2").value = moment(calEvent.event.start).format('Y-MM-DD');
                         document.getElementById("time_new").value = moment(calEvent.event.start).format('HH:mm');
@@ -211,7 +211,6 @@
                         document.getElementById("OP-" + calEvent.event.extendedProps.user_to).selected = true;
 
                         $(exampleModal).modal('show');
-
                     }
                 });
                 calendar.render();

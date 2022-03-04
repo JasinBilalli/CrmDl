@@ -250,7 +250,7 @@ class CostumerFormController extends Controller
 
             if($request->status_PH == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
-                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
 
@@ -372,7 +372,6 @@ class CostumerFormController extends Controller
             $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
-
         $vorsorgeP = CostumerProduktVorsorge::where('person_id_PV',$id)->update([
             'graduation_date_PV'=> $request->graduation_date_PV,
             'begin_PV' => $request->begin_PV,

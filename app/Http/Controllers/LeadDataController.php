@@ -481,11 +481,11 @@ foreach($bo as $b){
 
         $bo = Admins::role(['backoffice','admin'])->get();
         foreach($bo as $b){
-            $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Documentation for :' . family::find($personId)->first_name . ' has been submitted </a>';
+            $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Dokumentation für :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
             $b->notify(new SendNotificationn($url));
         }
           if($offer > 0){
-            $url =  '<a href="'  . route("costumer_form",Crypt::encrypt($personId * 1244)) . '">Received offer for client :' . family::find($personId)->first_name . ' has been submitted </a>';
+            $url =  '<a href="'  . route("costumer_form",Crypt::encrypt($personId * 1244)) . '">Das erhaltene Angebot für den Kunden :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
         Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
         $pend1 = new Pendency();
         $pend1->admin_id = $pend->admin_id;

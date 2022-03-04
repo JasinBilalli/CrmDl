@@ -19,7 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>Document</title>
-    <link rel="icon" type="image/png" href="img/Favicon.png">
+    <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
 </head>
 <style>
     /*nav ARti*/
@@ -6142,7 +6142,6 @@
 
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function openBurgerFunct() {
         $("#bottom-burger").slideToggle();
@@ -6735,9 +6734,7 @@
         }
 
 </style>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+
 <script>
     var cntt = 0;
     var newgcnt = <?php echo \App\Models\newgegen::where('person_id', $id)->count() ?>;
@@ -7578,3 +7575,7 @@ document.getElementById('gofert').value = gofert.toString();
         color: black !important;
     }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
