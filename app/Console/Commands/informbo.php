@@ -51,8 +51,9 @@ class informbo extends Command
             ->where('pendencies.created_at','<',Carbon::now()->subDay()->format('Y-m-d'))
             ->count();
             $url = '<a href="' . route("tasks") . '"> Sie haben ' . $count . ' Hänge länger als einen Tag geöffnet </a>';
-
+if($count > 0){
             $bo->notify(new SendNotificationn($url));
+}
         }
         return $this->info('Done');
     }

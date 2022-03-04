@@ -7599,6 +7599,7 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].component('addtask', (__webpack_requ
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component('addtask2', (__webpack_require__(/*! ./components/addtask2.vue */ "./resources/js/components/addtask2.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component('addtask3', (__webpack_require__(/*! ./components/addtask3.vue */ "./resources/js/components/addtask3.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component('addtask4', (__webpack_require__(/*! ./components/addtask4.vue */ "./resources/js/components/addtask4.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_0__["default"].config.productionTip = false;
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -32168,19 +32169,19 @@ var render = function () {
         },
       },
       [
-        _vm.today == null
+        _vm.today == null || _vm.today == ""
           ? _c("div", { staticClass: "text-center" }, [
-              _vm._v("\n            Keine Termine für heute\n        "),
+              _c("h5", [_vm._v("Keine Termine für heute")]),
             ])
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "scroll-2 pe-1 pe-sm-3", attrs: { id: "appscroll" } },
-          [
-            _vm._l(_vm.today, function (tod) {
-              return _vm.today != null
-                ? _c(
+          : _c(
+              "div",
+              {
+                staticClass: "scroll-2 pe-1 pe-sm-3",
+                attrs: { id: "appscroll" },
+              },
+              [
+                _vm._l(_vm.today, function (tod) {
+                  return _c(
                     "a",
                     {
                       staticStyle: { "text-decoration": "none" },
@@ -32256,33 +32257,32 @@ var render = function () {
                       ),
                     ]
                   )
-                : _vm._e()
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "mt-2 text-center p-1",
-                staticStyle: {
-                  background: "#DDDADA",
-                  "border-radius": "20px",
-                  cursor: "pointer",
-                  "font-family": "'Montserrat'",
-                },
-                on: {
-                  click: function ($event) {
-                    return _vm.loadmore()
+                }),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "mt-2 text-center p-1",
+                    staticStyle: {
+                      background: "#DDDADA",
+                      "border-radius": "20px",
+                      cursor: "pointer",
+                      "font-family": "'Montserrat'",
+                    },
+                    on: {
+                      click: function ($event) {
+                        return _vm.loadmore()
+                      },
+                    },
                   },
-                },
-              },
-              [
-                _vm._v("\n                Mehr laden "),
-                _c("i", { staticClass: "fas fa-caret-down" }),
-              ]
+                  [
+                    _vm._v("\n                Mehr laden "),
+                    _c("i", { staticClass: "fas fa-caret-down" }),
+                  ]
+                ),
+              ],
+              2
             ),
-          ],
-          2
-        ),
       ]
     ),
     _vm._v(" "),

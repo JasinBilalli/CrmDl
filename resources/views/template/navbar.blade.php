@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="icon" type="image/png" href="img/Favicon.png">
+    <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
 <style>

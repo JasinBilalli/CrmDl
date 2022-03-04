@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>Login</title>
-    <link rel="icon" type="image/png" href="img/Favicon.png">
+    <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
 </head>
 
 <body>

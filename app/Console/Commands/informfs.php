@@ -55,8 +55,9 @@ class informfs extends Command
         ->where('leads.assign_to_id',$f->id)
         ->count();
         $url = '<a href="' . route("Appointments") . '"> Du hast für morgen ' . $count . ' termine bekommen </a>';
-
+        if($count > 0){
         $f->notify(new SendNotificationn($url));
+        }
         }
         return $this->comment('Done');
     }

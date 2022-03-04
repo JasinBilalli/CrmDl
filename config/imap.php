@@ -53,7 +53,7 @@ return [
             'encryption'    => 'ssl', // Supported: false, 'ssl', 'tls', 'notls', 'starttls'
             'validate_cert' =>  true,
             'username' => 'bulzart@outlook.com',
-            'password' => 'paswordi123.',
+            'password' => '',
             'authentication' =>  null,
             'proxy' => [
                 'socket' => null,

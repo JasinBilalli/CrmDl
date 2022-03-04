@@ -229,7 +229,7 @@ class UserController extends Controller
             }
             $lead->slug = Str::slug($req->input('fname')) . '-' . $lead->id;
             $lead->save();
-            return redirect()->back()->with('success', 'Termin wurde erfolgreich durchgeführt!');
+            return redirect()->route('dashboard')->with('success', 'Termin wurde erfolgreich durchgeführt!');
         } else {
             return redirect()->back()->with('fail', 'Ihre Aktion schlägt fehl');
         }

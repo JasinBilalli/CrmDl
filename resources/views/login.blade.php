@@ -13,7 +13,7 @@
       width: 400px !important;
     }
   </style>
-  <link rel="icon" type="image/png" href="img/Favicon.png">
+  <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
 </head>
 
 <body>

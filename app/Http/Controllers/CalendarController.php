@@ -30,15 +30,6 @@ class CalendarController extends Controller
 {
     public function calendar()
     {
-        $maps = null;
 
-        if(Auth::guard('admins')->user()->hasRole('admin')){
-            $maps = DB::table('leads')->where('appointment_date',Carbon::now()->format('Y-m-d'))->select('leads.first_name','leads.last_name','leads.latitude','leads.longitude')->get();
-        }else{
-            $maps = DB::table('leads')->where('appointment_date',Carbon::now()->format('Y-m-d'))->where('assign_to_id',Auth::guard('admins')->user()->id)->select('leads.first_name','leads.last_name','leads.latitude','leads.longitude')->get();
-        }
-        $personalApp = PersonalAppointment::where('user_id',Auth::user()->id)->where('AppOrCon',1)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
-
-        return view('calendar',compact('maps','personalApp'));
     }
 }
