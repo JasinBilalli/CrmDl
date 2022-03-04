@@ -18,7 +18,6 @@ Vue.component('addtask4', require('./components/addtask4.vue').default);
 
 Vue.config.productionTip = false;
 
-
 require('./bootstrap');
 import Vue from 'vue'
 import axios from 'axios'
