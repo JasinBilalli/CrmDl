@@ -35482,7 +35482,7 @@ var render = function () {
                                                         "py-2 px-5 fw-bold border-0 ",
                                                       staticStyle: {
                                                         "background-color":
-                                                          "#63D4A4",
+                                                          "#0C71C3",
                                                         color: "#fff",
                                                         "border-radius": "13px",
                                                       },

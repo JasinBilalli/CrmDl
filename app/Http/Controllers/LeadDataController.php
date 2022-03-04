@@ -107,7 +107,6 @@ return redirect()->route('tasks');
                 'comment' => $request->comment
             ]);
             LeadDataFahrzeug::create([
-
                 'mandatiert' => $request->mandatiert ? $this->storeFile($request->file('mandatiert'), FolderPaths::KK_FILES) : null,
                 'leads_id' => $leadId,
                 'person_id' => $personId,
