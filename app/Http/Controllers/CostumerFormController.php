@@ -190,7 +190,7 @@ class CostumerFormController extends Controller
 
             if($request->status_PG == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
-                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
 
@@ -204,7 +204,7 @@ class CostumerFormController extends Controller
 
             if($request->status_PR == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
-                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
 
@@ -223,7 +223,7 @@ class CostumerFormController extends Controller
 
             if($request->status_PV == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
-                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
 
@@ -237,7 +237,7 @@ class CostumerFormController extends Controller
 
             if($request->status_PA == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
-                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
             $hausratP->person_id_PH = $id;
@@ -280,7 +280,7 @@ class CostumerFormController extends Controller
 
             if($request->statusPZ == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
-            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+                $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
 
@@ -355,7 +355,7 @@ class CostumerFormController extends Controller
 
         if($request->status_PG == 'Provisionert'){
             $familyperson = family::find($id)->lead->assign_to_id;
-            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
 
@@ -369,7 +369,7 @@ class CostumerFormController extends Controller
         ]);
         if($request->status_PR == 'Provisionert'){
             $familyperson = family::find($id)->lead->assign_to_id;
-            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
 
@@ -388,7 +388,7 @@ class CostumerFormController extends Controller
         ]);
         if($request->status_PV == 'Provisionert'){
             $familyperson = family::find($id)->lead->assign_to_id;
-            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
 
@@ -403,7 +403,7 @@ class CostumerFormController extends Controller
         ]);
         if($request->status_PA == 'Provisionert'){
             $familyperson = family::find($id)->lead->assign_to_id;
-            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
 
@@ -417,7 +417,7 @@ class CostumerFormController extends Controller
         ]);
         if($request->status_PH == 'Provisionert'){
             $familyperson = family::find($id)->lead->assign_to_id;
-            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
 
@@ -440,7 +440,7 @@ class CostumerFormController extends Controller
         }
         if($request->status_PZ == 'Provisionert'){
             $familyperson = family::find($id)->lead->assign_to_id;
-            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Your costumer :' . family::find($id)->first_name . ' has been provisionert</a>';
+            $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
 

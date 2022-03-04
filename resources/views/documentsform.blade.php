@@ -663,6 +663,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
+                                                            @if(!Auth::user()->hasRole('fs'))
                                                             <div class="col-12">
                                                                 <div class="text-start">
                                                                     <div class="upload-box mx-1 my-2 p-3">
@@ -684,6 +685,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                           @endif 
                                                             <div class="col my-auto">
                                                                 <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 43%;" id="add_g" onclick="addanother_item_g()">
 
@@ -2077,6 +2079,7 @@
                                                                     <textarea name="comment__" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
                                                                 </div>
                                                             </div>
+                                                            @if(!Auth::user()->hasRole('fs'))
                                                             <div class="text-start">
                                                                 Offer
                                                                     <div class="upload-box mx-1 my-2 p-3">
@@ -2097,6 +2100,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                @endif
                                                         </div>
                                                     </div>
                                                 </div>

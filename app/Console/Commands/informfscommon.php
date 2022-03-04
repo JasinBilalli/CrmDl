@@ -53,7 +53,7 @@ class informfscommon extends Command
         ->where('appointment_date', Carbon::now()->format('Y-m-d'))
         ->where('leads.assign_to_id',$f->id)
         ->count();
-        $url = '<a href="' . route("Appointments") . '"> You have ' . $count . ' appointments for today </a>';
+        $url = '<a href="' . route("Appointments") . '">Sie haben heute ' . $count . ' Termine </a>';
 
         $f->notify(new SendNotificationn($url));
         }

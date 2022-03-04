@@ -13,6 +13,4 @@ class data extends Model
      public function getdata($id){
 
      }
-
-
 }
