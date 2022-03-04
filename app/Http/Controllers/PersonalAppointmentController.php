@@ -27,9 +27,9 @@ class PersonalAppointmentController extends Controller
         $personalApp->AppOrCon = $request->apporconId;
 
         if($personalApp->save()){
-            return redirect()->route('dashboard')->with('success','Your Action Successfuly Inserted');
+            return redirect()->route('dashboard')->with('success','Ihre Aktion erfolgreich abgeschlossen');
         }else{
-            return redirect()->route('dashboard')->with('fail','Your Personal Appointmant Fail To Insert');
+            return redirect()->route('dashboard')->with('fail','Ihre Aktion schlägt fehl');
 
         }
     }

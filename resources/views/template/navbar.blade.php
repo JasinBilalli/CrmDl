@@ -835,7 +835,7 @@
             display: block;
         }
     }
-    
+
 </style>
 
 <body>
@@ -1078,15 +1078,15 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             </div>
         </div>
         <div class="container-fluid col-12 col-sm-10 g-0" id="app">
-            @if(\Session::has('success'))
+            @if(Illuminate\Support\Facades\Session::has('success'))
                 <div class="alert alert-success alert-dismissible fade show m-3" role="alert">
-                    <strong>{!! \Session::get('success') !!}</strong>
+                    <strong>{!! Illuminate\Support\Facades\Session::get('success') !!}</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            @if(\Session::has('fail'))
+            @if(Illuminate\Support\Facades\Session::has('fail'))
                 <div class="alert alert-danger alert-dismissible fade show m-3" role="alert">
-                    <strong>{!! \Session::get('fail') !!}</strong>
+                    <strong>{!! Illuminate\Support\Facades\Session::get('fail') !!}</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif

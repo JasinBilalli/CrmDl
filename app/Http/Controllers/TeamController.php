@@ -27,7 +27,7 @@ class TeamController extends Controller
             ]);
         }
 
-        return redirect()->back()->with('message', 'Team was created successfully.');
+        return redirect()->back()->with('message', 'Team wurde erfolgreich erstellt.');
     }
 
     public function deleteTeam($teamId)
@@ -40,7 +40,7 @@ class TeamController extends Controller
 
         Team::where('id', $teamId)->delete();
 
-        return redirect()->back()->with('message', 'Team was deleted successfully.');
+        return redirect()->back()->with('message', 'Team wurde erfolgreich gelöscht.');
     }
 
     public function showTeamById($teamId)
@@ -71,7 +71,7 @@ class TeamController extends Controller
             foreach($teamConsultants as $teamConsultant){
                 TeamConsultant::where('id', $teamConsultant->id)->delete();
             }
-    
+
             Team::where('id', $teamId)->delete();
         }
 
@@ -84,6 +84,6 @@ class TeamController extends Controller
             ]);
         }
 
-        return redirect()->back()->with('message', 'Team was updated successfully.');
+        return redirect()->back()->with('message', 'Team wurde erfolgreich aktualisiert.');
     }
 }

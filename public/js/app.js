@@ -5332,7 +5332,7 @@ __webpack_require__.r(__webpack_exports__);
       var title = document.getElementById('title').value;
       axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
       document.getElementById('alrt').innerHTML = "";
-      document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully !</div>';
+      document.getElementById('alrt').innerHTML += ' <div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                    <strong>Pendency Assigned Successfuly</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div>';
       console.log(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
     },
     onChangeSelect: function onChangeSelect(event) {
@@ -5453,11 +5453,11 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     asign: function asign() {
-      var description = document.getElementById('description').value;
-      var title = document.getElementById('title').value;
+      var description = document.getElementById('description1').value;
+      var title = document.getElementById('title1').value;
       axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
-      document.getElementById('alrt').innerHTML = "";
-      document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully !</div>';
+      document.getElementById('alrt1').innerHTML = "";
+      document.getElementById('alrt1').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                   <strong>Pendency Assigned Successfuly</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div> ';
     },
     onChangeSelect: function onChangeSelect(event) {
       this.admin = parseInt(event.target.value);
@@ -5578,11 +5578,11 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     asign: function asign() {
-      var description = document.getElementById('description').value;
-      var title = document.getElementById('title').value;
+      var description = document.getElementById('description2').value;
+      var title = document.getElementById('title2').value;
       axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
-      document.getElementById('alrt').innerHTML = "";
-      document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully !</div>';
+      document.getElementById('alrt2').innerHTML = "";
+      document.getElementById('alrt2').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                   <strong>Pendency Assigned Successfuly</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div> ';
     },
     onChangeSelect: function onChangeSelect(event) {
       this.admin = parseInt(event.target.value);
@@ -5703,11 +5703,11 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     asign: function asign() {
-      var description = document.getElementById('description').value;
-      var title = document.getElementById('title').value;
+      var description = document.getElementById('description3').value;
+      var title = document.getElementById('title3').value;
       axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
-      document.getElementById('alrt').innerHTML = "";
-      document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully !</div>';
+      document.getElementById('alrt3').innerHTML = "";
+      document.getElementById('alrt3').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                   <strong>Pendency Assigned Successfuly</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div> ';
     },
     onChangeSelect: function onChangeSelect(event) {
       this.admin = parseInt(event.target.value);
@@ -7239,14 +7239,20 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       var _this = this;
 
       axios.get("getleads").then(function (response) {
-        _this.leads = response.data.leads.data;
-        _this.admins = response.data.admins;
-        _this.admin = response.data.admins[0].id;
-        _this.role = response.data.admin[0];
-        _this.instagram = response.data.instagram;
-        _this.facebook = response.data.facebook;
-        _this.sanascout = response.data.sanascout;
-        _this.gati = true;
+        if (response.data != null) {
+          _this.leads = response.data.leads.data;
+          _this.admins = response.data.admins;
+
+          if (response.data.admins.length > 0) {
+            _this.admin = response.data.admins[0].id;
+          }
+
+          _this.role = response.data.admin[0];
+          _this.instagram = response.data.instagram;
+          _this.facebook = response.data.facebook;
+          _this.sanascout = response.data.sanascout;
+          _this.gati = true;
+        }
       });
     },
     getit: function getit(event) {
@@ -30918,7 +30924,11 @@ var render = function () {
                 {
                   staticClass: "btn col-auto text-white  rounded",
                   staticStyle: { "background-color": "#5f5f5f" },
-                  attrs: { type: "button", id: "save-btn" },
+                  attrs: {
+                    onclick: "saveContentFunct()",
+                    type: "button",
+                    id: "save-btn",
+                  },
                   on: { click: _vm.asign },
                 },
                 [
@@ -31065,7 +31075,7 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _c("div", { attrs: { id: "alrt" } }),
+    _c("div", { attrs: { id: "alrt1" } }),
     _vm._v(" "),
     _c(
       "div",
@@ -31148,7 +31158,11 @@ var render = function () {
                 {
                   staticClass: "btn col-auto  text-white  rounded",
                   staticStyle: { "background-color": "#5f5f5f" },
-                  attrs: { type: "button", id: "save-btn" },
+                  attrs: {
+                    onclick: "saveContentFunct1()",
+                    type: "button",
+                    id: "save-btn",
+                  },
                   on: { click: _vm.asign },
                 },
                 [
@@ -31186,7 +31200,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("input", {
         staticClass: "form-control",
-        attrs: { type: "text", id: "title" },
+        attrs: { type: "text", id: "title1" },
       }),
     ])
   },
@@ -31201,7 +31215,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("textarea", {
         staticClass: "form-control",
-        attrs: { id: "description", rows: "4" },
+        attrs: { id: "description1", rows: "4" },
       }),
     ])
   },
@@ -31295,7 +31309,7 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _c("div", { attrs: { id: "alrt" } }),
+    _c("div", { attrs: { id: "alrt2" } }),
     _vm._v(" "),
     _c(
       "div",
@@ -31368,7 +31382,7 @@ var render = function () {
                 },
                 [
                   _vm._v(
-                    "\n                                                        Abbrechen\n                                                    "
+                    "\n                                                     Abbrechen\n                                                 "
                   ),
                 ]
               ),
@@ -31378,12 +31392,16 @@ var render = function () {
                 {
                   staticClass: "btn col-auto text-white rounded",
                   staticStyle: { "background-color": "#5f5f5f" },
-                  attrs: { type: "button", id: "save-btn" },
+                  attrs: {
+                    onclick: "saveContentFunct2()",
+                    type: "button",
+                    id: "save-btn",
+                  },
                   on: { click: _vm.asign },
                 },
                 [
                   _vm._v(
-                    "\n                                                        Senden\n                                                    "
+                    "\n                                                     Senden\n                                                 "
                   ),
                 ]
               ),
@@ -31402,7 +31420,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "mx-3 my-auto" }, [
       _c("span", [
         _vm._v(
-          "\n                                                    Neue Aufgabe hinzufügen !\n                                                  "
+          "\n                                                 Neue Aufgabe hinzufügen !\n                                               "
         ),
       ]),
     ])
@@ -31416,7 +31434,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("input", {
         staticClass: "form-control",
-        attrs: { type: "text", id: "title" },
+        attrs: { type: "text", id: "title2" },
       }),
     ])
   },
@@ -31431,7 +31449,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("textarea", {
         staticClass: "form-control",
-        attrs: { id: "description", rows: "4" },
+        attrs: { id: "description2", rows: "4" },
       }),
     ])
   },
@@ -31525,7 +31543,7 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _c("div", { attrs: { id: "alrt" } }),
+    _c("div", { attrs: { id: "alrt3" } }),
     _vm._v(" "),
     _c(
       "div",
@@ -31608,7 +31626,11 @@ var render = function () {
                 {
                   staticClass: "btn text-white col-auto rounded",
                   staticStyle: { "background-color": "#5f5f5f" },
-                  attrs: { type: "button", id: "save-btn" },
+                  attrs: {
+                    onclick: "saveContentFunct3()",
+                    type: "button",
+                    id: "save-btn",
+                  },
                   on: { click: _vm.asign },
                 },
                 [
@@ -31646,7 +31668,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("input", {
         staticClass: "form-control",
-        attrs: { type: "text", id: "title" },
+        attrs: { type: "text", id: "title3" },
       }),
     ])
   },
@@ -31661,7 +31683,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("textarea", {
         staticClass: "form-control",
-        attrs: { id: "description", rows: "4" },
+        attrs: { id: "description3", rows: "4" },
       }),
     ])
   },

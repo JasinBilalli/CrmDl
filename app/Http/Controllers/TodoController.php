@@ -50,9 +50,9 @@ class TodoController extends Controller
       $todo->text = filter_var($req->todo,FILTER_UNSAFE_RAW);
       $todo->admin_id = Auth::guard('admins')->user()->id;
       if($todo->save()){
-          return redirect()->route('dashboard')->with('success', 'Successfuly Inserted');
+          return redirect()->route('dashboard')->with('success', 'Erfolgreich eingefügt');
       }else{
-          return redirect()->route('dashboard')->with('fail','Fail To Insert');
+          return redirect()->route('dashboard')->with('fail','Fehler beim Einfügen');
       }
 
     }

@@ -6,7 +6,8 @@
 {{--            <calendar class="calendar-divider"></calendar>--}}
 {{--</div>--}}
 {{--<div class="col-md-5 col-lg-5">--}}
-{{--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFBE1cuoGyzaiyvog5Zi6-tBvRwyXHiz8"></script>--}}
+{{--    <script src="https://maps.google.com/maps/api/js?key=AIzaSyD_grqAdVA3qsZw5JLlURyeu8UI0E_dlY8"--}}
+{{--            type="text/javascript"></script>--}}
 
 {{--<div class="gmap_canvas d-flex justify-content-center">--}}
 

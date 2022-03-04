@@ -338,7 +338,7 @@
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                         <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                             <div class="py-2 px-2">
-                                                <div class="row mx-2">
+                                                <div class="row justify-content-between mx-2">
                                                     <div class="col-7 d-flex g-0">
                                                         <div class="">
                                                             <span class="fw-bold" style=" font-size: 12px;">
@@ -346,7 +346,7 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <div class="col g-0 d-flex justify-content-end">
+                                                    <div class="col-auto g-0">
                                                       <div class="select-div text-end">
                                                         <select name="vorversicherer_select" class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                           <option selected>Auswählen</option>
@@ -381,7 +381,7 @@
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                         <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                             <div class="py-2 px-2">
-                                                <div class="row mx-2">
+                                                <div class="row justify-content-between mx-2">
                                                     <div class="col-7 d-flex g-0">
                                                         <div class="">
                                                             <span class="fw-bold" style="font-size: 12px;">
@@ -389,7 +389,7 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <div class="col g-0 d-flex justify-content-end">
+                                                    <div class="col-auto g-0 ">
                                                       <div class="select-div text-end">
                                                         <select name="id_notwending_select" class="fw-bold" id=""
                                                           style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
@@ -423,15 +423,15 @@
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                         <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                             <div class="py-2 px-2">
-                                                <div class="row mx-2">
-                                                    <div class="col-8 g-0 d-flex">
+                                                <div class="row justify-content-between mx-2">
+                                                    <div class="col g-0 d-flex">
                                                         <div class="text-nowrap">
                                                             <span class="fw-bold" style=" font-size: 12px;">
                                                                 Kundingung durch
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <div class="col g-0 d-flex justify-content-end">
+                                                    <div class="col-auto g-0 ">
                                                       <div class="select-div text-end">
                                                         <select name="kundingung_durch_select" class="fw-bold" id=""
                                                           style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
@@ -465,7 +465,7 @@
                                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                         <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                             <div class="py-2 px-2">
-                                                <div class="row mx-2">
+                                                <div class="row justify-content-between mx-2">
                                                     <div class="col-7 d-flex g-0">
                                                         <div class="">
                                                             <span class="fw-bold" style=" font-size: 12px;">
@@ -473,7 +473,7 @@
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <div class="col g-0 d-flex justify-content-end">
+                                                    <div class="col-auto g-0">
                                                       <div class="select-div text-end ">
                                                         <select name="vollmacht_select" class="fw-bold" id=""
                                                           style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
@@ -2341,18 +2341,16 @@
                                             <div class="col g-0 text-end my-auto">
                                                 <div class="">
                                                     <span class="pe-2" style="color: #9F9F9F;">
-
+                                                        Einreichen
                                                     </span>
                                                 </div>
                                             </div>
                                             <div class="col g-0 text-start">
                                                 <div class="">
                                                     <button class="px-5 py-2" id="submitt" type="button" style="border: none; border-radius: 9px; background-color:#285F52;">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="58.155" height="19.159" viewBox="0 0 58.155 19.159">
-                                                            <g id="Group_453" data-name="Group 453" transform="translate(0.004)">
-                                                                <line id="Line_16" data-name="Line 16" x2="51.954" y2="0.2" transform="translate(0 9.287)" fill="none" stroke="#3fd599" stroke-width="2" />
-                                                                <path id="Polygon_2" data-name="Polygon 2" d="M9.58,0l9.58,11.642H0Z" transform="translate(58.151 0) rotate(90)" fill="#3fd599" />
-                                                            </g>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#fff" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
                                                         </svg>
                                                     </button>
                                                 </div>

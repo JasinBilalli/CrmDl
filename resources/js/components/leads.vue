@@ -984,14 +984,20 @@ export default {
         },
         getleads: function () {
             axios.get("getleads").then((response) => {
-                this.leads = response.data.leads.data;
-                this.admins = response.data.admins;
-                this.admin = response.data.admins[0].id;
-                this.role = response.data.admin[0];
-                this.instagram = response.data.instagram;
-                this.facebook = response.data.facebook;
-                this.sanascout = response.data.sanascout;
-                this.gati = true;
+
+                if (response.data != null) {
+                    this.leads = response.data.leads.data;
+                    this.admins = response.data.admins;
+
+                    if (response.data.admins.length > 0) {
+                        this.admin = response.data.admins[0].id;
+                    }
+                    this.role = response.data.admin[0];
+                    this.instagram = response.data.instagram;
+                    this.facebook = response.data.facebook;
+                    this.sanascout = response.data.sanascout;
+                    this.gati = true;
+                }
             });
         },
         getit: function (event) {

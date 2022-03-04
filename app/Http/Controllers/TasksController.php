@@ -500,7 +500,7 @@ $title = $req->title ? $req->title : "";
                 ->where('pendencies.completed',0)
                 ->where('family_person.first_name', 'like', '%' . $req->searchpend . '%')
                 ->orderBy('family_person.first_name', 'asc')
-                ->paginate(20);
+                ->get();
 
         }else {
             $pend = DB::table('family_person')
@@ -509,7 +509,7 @@ $title = $req->title ? $req->title : "";
                 ->where('pendencies.completed',0)
                 ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id','pendencies.*','family_person.id', 'family_person.last_name','pendencies.id as pid')
                 ->orderBy('family_person.first_name', 'asc')
-                ->paginate(20);
+                ->get();
         }
         if (isset($req->searchopen)) {
             $open = DB::table('family_person')
@@ -519,7 +519,7 @@ $title = $req->title ? $req->title : "";
                 ->where('family_person.first_name', 'like', '%' . $req->searchopen . '%')
                 ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id', 'family_person.id', 'family_person.last_name','pendencies.*','pendencies.id as pid')
                 ->orderBy('family_person.first_name', 'asc')
-                ->paginate(20);
+                ->get();
         } else {
             $open = DB::table('family_person')
                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
@@ -527,7 +527,7 @@ $title = $req->title ? $req->title : "";
                 ->where('pendencies.completed',0)
                 ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id', 'family_person.id', 'family_person.last_name','pendencies.*','pendencies.id as pid')
                 ->orderBy('family_person.first_name', 'asc')
-                ->paginate(20);
+                ->get();
         }
 
         $answered = [];
@@ -545,7 +545,7 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
       ->where('status','Open')
       ->select('family_person.*')
       ->orderBy('family_person.created_at','desc')
-      ->paginate(20);
+      ->get();
 
       $cntt = 0;
 
@@ -556,13 +556,13 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
 
 
 
-          $opencnt = $tasks->total();
+          $opencnt = $tasks->count();
 
       $pending = DB::table('family_person')
       ->join('pendencies','family_person.id','=','pendencies.family_id')
       ->where('pendencies.completed','=',0)
       ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
-      ->paginate(20);
+      ->get();
 
 
     }
@@ -573,7 +573,7 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
       ->where('leads.assign_to_id',Auth::guard('admins')->user()->id)
       ->select('family_person.*')
       ->orderBy('family_person.created_at','desc')
-      ->paginate(20);
+      ->get();
 
        $tasks2 = [];
       $cntt = 0;
@@ -585,14 +585,14 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
 
 
 
-       $opencnt = $tasks->total();
+       $opencnt = $tasks->count();
 
       $pending = DB::table('family_person')
       ->join('pendencies','family_person.id','=','pendencies.family_id')
       ->where('pendencies.completed','=',0)
       ->where('pendencies.admin_id','=',Auth::guard('admins')->user()->id)
       ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
-      ->paginate(20);
+      ->get();
 
 
 

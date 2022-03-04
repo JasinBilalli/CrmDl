@@ -25,7 +25,7 @@
                                             </div>
                                         </div>
 
-                                    <div id="alrt">
+                                    <div id="alrt1">
                                         </div>
                                         <div class="added-content" id="added-content1" style="display: none;">
                                             <div class="to-do-content mb-2 p-4"
@@ -43,18 +43,18 @@
                                                 </div>
                                                 <div class="py-2">
                                                     <label for="">Titel</label>
-                                                    <input type="text" id="title" class="form-control">
+                                                    <input type="text" id="title1" class="form-control">
                                                 </div>
                                                 <div class="py-2">
                                                     <label for="Textarea1" class="form-label">Kommentar</label>
-                                                    <textarea class="form-control" id="description" rows="4"></textarea>
+                                                    <textarea class="form-control" id="description1" rows="4"></textarea>
                                                 </div>
                                                 <div class="py-2 d-flex justify-content-between">
                                                     <button type="button" class="btn col-auto text-dark  rounded" onclick="saveContentFunct1()" id="save-btn"
                                                             style="background-color: #fff;border:1px solid #000">
                                                         Abbrechen
                                                     </button>
-                                                    <button @click="asign" type="button" class="btn col-auto  text-white  rounded" id="save-btn"
+                                                    <button @click="asign" onclick="saveContentFunct1()" type="button" class="btn col-auto  text-white  rounded" id="save-btn"
                                                             style="background-color: #5f5f5f;">
                                                         Senden
                                                     </button>
@@ -80,11 +80,14 @@ admin: null
             axios.get(this.url + 'costumer/' + this.client_id).then((response) => {this.client = response.data;});
         },
         asign(){
-            var description = document.getElementById('description').value;
-            var title = document.getElementById('title').value;
+            var description = document.getElementById('description1').value;
+            var title = document.getElementById('title1').value;
             axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
-             document.getElementById('alrt').innerHTML = "";
-            document.getElementById('alrt').innerHTML += ' <div class="alert alert-success" role="alert"> Pendency was assigned successfully !</div>';
+             document.getElementById('alrt1').innerHTML = "";
+            document.getElementById('alrt1').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' +
+                '                   <strong>Pendency Assigned Successfuly</strong>\n' +
+                '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' +
+                '                </div> ';
         },
          onChangeSelect(event) {
             this.admin = parseInt(event.target.value);
