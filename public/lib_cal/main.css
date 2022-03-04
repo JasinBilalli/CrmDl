@@ -57,8 +57,10 @@
 }
 .fc-theme-standard td,
   .fc-theme-standard th {
-    border: 1px solid #ddd;
-    border: 1px solid var(--fc-border-color, #ddd);
+    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--fc-border-color, #ddd);
+    border-top: 1px solid var(--fc-border-color, #ddd);
+    border-left: 1px solid var(--fc-border-color, #ddd);
   }
 /* for FF, which doesn't expand a 100% div within a table cell. use absolute positioning */
 /* inner-wrappers are responsible for being absolute */
@@ -282,11 +284,38 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+
 .fc .fc-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+@media only screen and (max-width: 575px) {
+    .fc .fc-toolbar {
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .fc-toolbar-chunk{
+        margin-bottom: 3%;
+        text-align: center;
+    }
+
+    .fc-toolbar-chunk:nth-child(2){
+        width: 80%;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 3%;
+    }
+    .fc-toolbar-chunk:nth-child(3) .fc-button-group{
+        width: 80%;
+    }
+}
+
+.fc-scrollgrid{
+    border-radius: 10px;
+}
 .fc-toolbar-title {
     border:1px solid #434343;
     border-radius: 8px;
@@ -453,8 +482,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     background: var(--fc-non-business-color, rgba(215, 215, 215, 0.3));
   }
 .fc .fc-bg-event {
-    background: rgb(143, 223, 130);
-    background: var(--fc-bg-event-color, rgb(143, 223, 130));
+    background: rgb(12, 113, 195);
+    background: var(--fc-bg-event-color, rgb(12, 113, 195));
     opacity: 0.3;
     opacity: var(--fc-bg-event-opacity, 0.3)
   }
@@ -720,8 +749,8 @@ A HORIZONTAL event
     z-index: 1; /* container inner z-index's because <tr>s can't do it */
   }
 .fc .fc-daygrid-day.fc-day-today {
-      background-color: rgba(255, 220, 40, 0.15);
-      background-color: var(--fc-today-bg-color, rgba(255, 220, 40, 0.15));
+      background-color: rgba(234, 245, 255);
+      background-color: var(--fc-today-bg-color, rgba(234, 245, 255));
     }
 .fc .fc-daygrid-day-frame {
     position: relative;
@@ -1141,8 +1170,8 @@ A VERTICAL event
   left: 0;
   }
 .fc .fc-timegrid-col.fc-day-today {
-      background-color: rgba(255, 220, 40, 0.15);
-      background-color: var(--fc-today-bg-color, rgba(255, 220, 40, 0.15));
+      background-color: rgba(234, 245, 255);
+      background-color: var(--fc-today-bg-color, rgba(234, 245, 255));
     }
 .fc .fc-timegrid-col-frame {
     min-height: 100%; /* liquid-hack is below */

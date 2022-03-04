@@ -900,7 +900,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             <span class="ps-2 txt-dn">Leads</span>
                         </a>
                     @endif
-                    <a href="#" class="nav-link ">
+                    <a onclick="workingOnIt()" href="#" class="nav-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-grid"
                              viewBox="0 0 16 16">
                             <path
@@ -939,7 +939,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                     Auth::guard('admins')->user()->hasRole('admin'))
-                        <a href="#" class="nav-link ">
+                        <a onclick="workingOnIt()" href="#" class="nav-link ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                                  class="bi bi-cash-coin" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -955,7 +955,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                     Auth::guard('admins')->user()->hasRole('admin'))
-                        <a href="#" class="nav-link">
+                        <a onclick="workingOnIt()" href="#" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                                  class="bi bi-x-square" viewBox="0 0 16 16">
                                 <path
@@ -985,7 +985,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     @if(Auth::guard('admins')->user()->hasRole('admin') ||
                     Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('salesmanager'))
-                        <a href="#" class="nav-link">
+                        <a onclick="workingOnIt()" href="#" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                                  class="bi bi-people-fill" viewBox="0 0 16 16">
                                 <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -998,7 +998,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('finance') ||
                     Auth::guard('admins')->user()->hasRole('admin'))
-                        <a href="#" class="nav-link ">
+                        <a onclick="workingOnIt()" href="#" class="nav-link ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                                  class="bi bi-percent" viewBox="0 0 16 16">
                                 <path
@@ -1010,7 +1010,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     @if(Auth::guard('admins')->user()->hasRole('admin') ||
                     Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('salesmanager'))
-                        <a href="#" class="nav-link">
+                        <a onclick="workingOnIt()" href="#" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                                  class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -1022,7 +1022,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     @if(Auth::guard('admins')->user()->hasRole('admin') ||
                     Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('salesmanager'))
-                        <a href="#" class="nav-link">
+                        <a onclick="workingOnIt()" href="#" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                                  class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                                 <path
@@ -1034,7 +1034,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     @if(Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('finance')
                     ||Auth::guard('admins')->user()->hasRole('admin') )
-                        <a href="#" class="nav-link">
+                        <a onclick="workingOnIt()" href="#" class="nav-link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                                  class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -1257,7 +1257,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             <div class="my-3 m-burger">
                 @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="m-nav text-decoration-none">
+                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                     <span class="px-2 active-dot">
                         <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -1285,7 +1285,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             <div class="my-3 m-burger">
                 @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                     Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="m-nav text-decoration-none">
+                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                     <span class="px-2 active-dot">
                         <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -1339,7 +1339,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 @if(Auth::guard('admins')->user()->hasRole('admin') ||
                     Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="m-nav text-decoration-none">
+                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -1364,7 +1364,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             <div class="my-3 m-burger">
                 @if(Auth::guard('admins')->user()->hasRole('finance') ||
                     Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="m-nav text-decoration-none">
+                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -1385,7 +1385,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 @endif
             </div>
             <div class="my-3 m-burger">
-                <a href="#" class="m-nav text-decoration-none">
+                <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -1408,7 +1408,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 @if(Auth::guard('admins')->user()->hasRole('admin') ||
                     Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="m-nav text-decoration-none">
+                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -1432,7 +1432,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 @if(Auth::guard('admins')->user()->hasRole('admin') ||
                     Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="m-nav text-decoration-none">
+                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -1456,7 +1456,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 @if(Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('finance')
                     ||Auth::guard('admins')->user()->hasRole('admin') )
-                    <a href="#" class="m-nav text-decoration-none">
+                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -1567,6 +1567,10 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 
         // Your code to run since DOM is loaded and ready
     });
+
+    function workingOnIt(){
+        alert('Kommt Bald...');
+    }
 </script>
 <script>
     var cnttt = 1;
@@ -1638,6 +1642,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         document.getElementById('countt').value = cnttt;
         cnttt++;
     }
+
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -2016,5 +2021,43 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             }
         }
         </style>
+<style>
+    .notification-divvv22 {
+        position: fixed;
+        display: flex;
+        bottom: 30px;
+        right: 30px;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        z-index: 9999;
+        transition: all ease-in-out 0.5s;
+    }
+
+    .rounded-notid-icon {
+        background-color: #0C71C3;
+        border-radius: 50px;
+        color: #fff;
+        padding: 20px;
+    }
+    .hover-visible-div {
+        background-color: #fff;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        display: none;
+        align-items: center;
+    }
+    .txt-notif {
+        padding-left: 25px;
+        padding-right: 15px;
+        font-weight: 500;
+    }
+    .notification-divvv22:hover .hover-visible-div{
+        display: flex;
+    }
+</style>
 
 
