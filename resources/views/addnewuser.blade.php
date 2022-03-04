@@ -5,7 +5,7 @@
 <section style="display:flex; justify-content: center; width: 100%;">
     <div class="col-md-5 my-auto p-5" style="border-radius: 39px;position: absolute; top: 12%; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
         <div class="">
-            <form class="form1" method="post" action="{{route('registernewuser')}}">
+            <form class="form1" method="post" action="{{route('registernewuser')}}" onsubmit ="return verifyPassword()">
                 @csrf
                 <div class="text-center my-3">
                     <div class="">
@@ -27,8 +27,13 @@
                     <input placeholder="Telefonnummer" autocomplete="off" type="number" name="phone_number" class="form-control"
                            aria-describedby="basic-addon1">
                 </div>
+                <span id = "message" style="color:red"> </span>
                 <div class="input-group mb-3">
                     <input placeholder="Passwort" type="password" name="user_password" class="form-control"
+                           aria-describedby="basic-addon1"  id = "pswd" autocomplete="off">
+                </div>
+                <div class="input-group mb-3">
+                    <input placeholder=" Retype Passwort" type="password" name="retype_password" class="form-control"
                            aria-describedby="basic-addon1" id="password" autocomplete="off">
                 </div>
                 <div class="mb-3">
@@ -49,6 +54,33 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+        <script>
+        function verifyPassword() {
+        var pw = document.getElementById("pswd").value;
+        var pw2 = document.getElementById("password").value;
+        //check empty password field
+        if(pw == "") {
+        document.getElementById("message").innerHTML = "**Geben Sie bitte das Passwort ein!";
+        return false;
+        }
+
+        //minimum password length validation
+        if(pw.length < 8) {
+        document.getElementById("message").innerHTML = "**Die Passwortlänge muss mindestens 8 Zeichen betragen";
+        return false;
+        }
+
+        //maximum length of password validation
+        if(pw.length > 15) {
+        document.getElementById("message").innerHTML = "**Die Passwortlänge darf 15 Zeichen nicht überschreiten";
+        return false;
+        }
+        if(pw != pw2){
+            document.getElementById("message").innerHTML = "**Passwort stimmt nicht überein";
+            return false;
+        }
+        }
+        </script>
     @endsection
 <style>
     .form1 input {

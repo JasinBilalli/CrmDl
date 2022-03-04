@@ -90,7 +90,7 @@
                 @endif
                 @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="nav-link ">
+                    <a onclick="workingOnIt()" href="#" class="nav-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-cash-coin" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" />
                             <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z" />
@@ -102,7 +102,7 @@
                 @endif
                 @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="nav-link">
+                    <a onclick="workingOnIt()" href="#" class="nav-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-x-square" viewBox="0 0 16 16">
                             <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
@@ -125,7 +125,7 @@
                 @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="nav-link">
+                    <a onclick="workingOnIt()" href="#" class="nav-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-people-fill" viewBox="0 0 16 16">
                             <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                             <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
@@ -136,7 +136,7 @@
                 @endif
                 @if(Auth::guard('admins')->user()->hasRole('finance') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="nav-link ">
+                    <a onclick="workingOnIt()" href="#" class="nav-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-percent" viewBox="0 0 16 16">
                             <path d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
                         </svg>
@@ -146,7 +146,7 @@
                 @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="nav-link">
+                    <a onclick="workingOnIt()" href="#" class="nav-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z" />
                         </svg>
@@ -156,7 +156,7 @@
                 @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="nav-link">
+                    <a onclick="workingOnIt()" href="#" class="nav-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
                             <path d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z" />
                         </svg>
@@ -166,7 +166,7 @@
                 @if(Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('finance')
                 ||Auth::guard('admins')->user()->hasRole('admin') )
-                    <a href="#" class="nav-link">
+                    <a onclick="workingOnIt()" href="#" class="nav-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z" />
                         </svg>
@@ -613,7 +613,7 @@
         <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
             Auth::guard('admins')->user()->hasRole('admin'))
-                <a href="#" class="m-nav text-decoration-none">
+                <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                     <span class="px-2 active-dot">
                         <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -641,7 +641,7 @@
         <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                <a href="#" class="m-nav text-decoration-none">
+                <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                     <span class="px-2 active-dot">
                         <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -695,7 +695,7 @@
             @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="#" class="m-nav text-decoration-none">
+                <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -720,7 +720,7 @@
         <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('finance') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                <a href="#" class="m-nav text-decoration-none">
+                <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -741,7 +741,7 @@
             @endif
         </div>
         <div class="my-3 m-burger">
-            <a href="#" class="m-nav text-decoration-none">
+            <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -764,7 +764,7 @@
             @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="#" class="m-nav text-decoration-none">
+                <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -788,7 +788,7 @@
             @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="#" class="m-nav text-decoration-none">
+                <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -812,7 +812,7 @@
             @if(Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('finance')
                 ||Auth::guard('admins')->user()->hasRole('admin') )
-                <a href="#" class="m-nav text-decoration-none">
+                <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="2" cy="2" r="2" fill="#4DC591"/>
@@ -951,6 +951,9 @@
 <script>
     function openBurgerFunct() {
         $("#bottom-burger").slideToggle();
+    }
+    function workingOnIt(){
+        alert('Kommt Bald...');
     }
 </script>
 </body>
@@ -1404,127 +1407,6 @@
     }
 
 </style>
-{{--<style>--}}
-
-{{--    body {--}}
-{{--        overflow-x: hidden;--}}
-{{--    }--}}
-
-{{--    .collapsed .d-btnn {--}}
-{{--        background-color: #c8ddd1;--}}
-{{--        opacity: 0.4;--}}
-{{--    }--}}
-
-{{--    .d-btnn {--}}
-{{--        opacity: 1;--}}
-{{--    }--}}
-
-{{--    .form-control:focus {--}}
-{{--        border-color: #ced4da;--}}
-{{--        box-shadow: none;--}}
-{{--    }--}}
-
-{{--    .accordion-button {--}}
-{{--        color: #7DBF9A;--}}
-{{--        font-weight: bold;--}}
-{{--        border-radius: 15px !important;--}}
-{{--    }--}}
-
-{{--    .accordion-item {--}}
-{{--        border-radius: 15px !important;--}}
-{{--    }--}}
-
-{{--    .hr-style {--}}
-{{--        color: #fff !important;--}}
-{{--        height: 3px !important;--}}
-{{--        border-radius: 50px;--}}
-{{--        opacity: 1;--}}
-{{--        display: none;--}}
-{{--    }--}}
-
-{{--    .border-left-div {--}}
-{{--        border: none !important;--}}
-{{--        border-left: 3px solid #fff !important;--}}
-
-{{--    }--}}
-
-{{--    @media (max-width: 991.98px) {--}}
-{{--        .hr-style {--}}
-{{--            display: block;--}}
-{{--        }--}}
-
-{{--        .border-left-div {--}}
-{{--            border: none !important;--}}
-{{--            border-left: none !important;--}}
-{{--        }--}}
-{{--    }--}}
-
-
-{{--    .accepted-section {--}}
-{{--            background-color: #7DBF9A;--}}
-{{--        border-radius: 19px;--}}
-{{--    }--}}
-
-{{--    .decline-btn {--}}
-{{--        border: 2px solid #FF0D13;--}}
-{{--        border-radius: 13px !important;--}}
-{{--        background-color: #fff;--}}
-{{--        color: #FF0D13;--}}
-
-{{--    }--}}
-
-{{--    .decline-btn:hover {--}}
-{{--        background-color: #FF0D13;--}}
-{{--        color: #fff !important;--}}
-{{--    }--}}
-
-{{--    .accept-btn {--}}
-{{--        border: 2px solid #63D4A4;--}}
-{{--        border-radius: 13px !important;--}}
-{{--        background-color: #fff;--}}
-{{--        color: #63D4A4 !important;--}}
-{{--    }--}}
-
-{{--    .accept-btn:hover {--}}
-{{--        border: 2px solid #63D4A4;--}}
-{{--        background-color: #63D4A4;--}}
-{{--        color: #fff !important;--}}
-{{--    }--}}
-
-{{--    .text-color-header1 {--}}
-{{--        color: #fff;--}}
-{{--    }--}}
-
-{{--    .people-icon-div {--}}
-{{--        background-color: #525353;--}}
-{{--        margin: 3px;--}}
-{{--    }--}}
-
-{{--    .static-btn1 {--}}
-{{--        background-color: #fff !important;--}}
-{{--        border-radius: 8px !important;--}}
-{{--    }--}}
-
-{{--    .people-svg-span {--}}
-{{--        border-radius: 8px;--}}
-{{--    }--}}
-
-{{--    .accordion-button:not(.collapsed) {--}}
-{{--        color: #7DBF9A;--}}
-{{--        background-color: #fff;--}}
-{{--        box-shadow: none;--}}
-{{--    }--}}
-
-{{--    .accordion-button:not(.collapsed)::after {--}}
-{{--        content: '';--}}
-{{--    }--}}
-
-{{--    .accordion-button:focus {--}}
-{{--        border-color: transparent !important;--}}
-{{--        border: none !important;--}}
-{{--        box-shadow: none !important;--}}
-{{--    }--}}
-{{--</style>--}}
 <style>
     /*nav ARti*/
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
