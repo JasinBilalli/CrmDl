@@ -19,12 +19,12 @@ class leadinfo implements ToModel
       
 
         return new lead_info([
-            'lead_id' => $lead->id,
-            'kampagne' => $row[7],
-            'grund' => $row[8],
-            'krankenkasse' => $row[9],
-            'bewertung' => $row[10],
-            'wichtig' => $row[11],
+            'lead_id' => (int) $lead->id,
+            'kampagne' => filter_var($row[7],FILTER_SANITIZE_STRING),
+            'grund' => filter_var($row[8],FILTER_SANITIZE_STRING),
+            'krankenkasse' => filter_var($row[9],FILTER_SANITIZE_STRING),
+            'bewertung' => filter_var($row[10],FILTER_SANITIZE_STRING),
+            'wichtig' => filter_var($row[11],FILTER_SANITIZE_STRING)
         ]);
 
    

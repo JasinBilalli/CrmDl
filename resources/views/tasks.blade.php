@@ -4,132 +4,10 @@
         <title>
             Tasks
         </title>
-        <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
+        <link rel="icon" type="image/png" href="img/Favicon.png">
     </head>
 
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-
-        .overflow-divvv::-webkit-scrollbar {
-            width: 1px !important;
-        }
-
-        /* Track */
-        .overflow-divvv::-webkit-scrollbar-track {
-            background: transparent !important;
-            border-radius: 10px !important;
-        }
-
-        /* Handle */
-        .overflow-divvv::-webkit-scrollbar-thumb {
-            background: #c9cad8 !important;
-            border-radius: 10px !important;
-        }
-
-        /* Handle on hover */
-        .overflow-divvv::-webkit-scrollbar-thumb:hover {
-            background: #707070 !important;
-            border-radius: 10px !important;
-        }
-
-        .tab-lookalike2 {
-            background-color: #FFEAE4 !important;
-            color: #434343 !important;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 5px !important;
-            border-top-right-radius: 5px !important;
-        }
-
-        .tab-lookalike1 {
-            background-color: #F7F7F7 !important;
-            color: #434343 !important;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 5px !important;
-            border-top-right-radius: 5px !important;
-        }
-
-        .tab-lookalike {
-            background-color: #F7F7F7 !important;
-            color: #FF4000 !important;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 5px !important;
-            border-top-right-radius: 5px !important;
-        }
-
-        .header-open-task1 {
-            background-color: #F7F7F7 !important;
-            border-bottom-left-radius: 20px !important;
-            border-bottom-right-radius: 20px !important;
-            border-top-left-radius: 20px !important;
-            border-top-right-radius: 0px !important;
-
-        }
-
-        .header-open-task1-pink {
-            background-color: #FFEAE4 !important;
-            border-bottom-left-radius: 20px !important;
-            border-bottom-right-radius: 20px !important;
-            border-top-left-radius: 20px !important;
-            border-top-right-radius: 0px;
-
-        }
-
-
-        .priority-spnn {
-            background-color: #ad2b2b !important;
-            border-radius: 35px !important;
-            color: #fff !important;
-        }
-
-        .open-task-box {
-            border-radius: 35px !important;
-            background-color: #fff;
-            border: none !important;
-        }
-
-        .pendzen-box {
-            border-radius: 35px !important;
-            background-color: #EAECF0 !important;
-            border: none !important;
-
-        }
-
-        .third-box {
-            border-radius: 35px !important;
-            background-color: #fff !important;
-            border: #707070 1px solid !important;
-
-        }
-
-        .task-box {
-            background-color: #F7F7F7 !important;
-            border-radius: 12px !important;
-        }
-
-        .name-spnnnn {
-            font-weight: 600 !important;
-        }
-
-        .fw-600 {
-            font-weight: 600 !important;
-        }
-
-        .spn-muted {
-            color: #707070 !important;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-        }
-
-        .spn-normal {
-            font-weight: 600;
-            font-size: 14px !important;
-        }
-    </style>
+   
 {{--    mobile tasks--}}
 
     </style>
@@ -951,191 +829,7 @@
         </section>
     @endif
     @if(Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin'))
-        <section class="mobile-tasks">
-            <div class="row g-0">
-                <div class="col-12 col-md-6">
-                    <div class="offene-div my-3 mx-3">
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-600 fs-5">Beantwortete Aufgaben</span>
-                            <span onclick="secondDivToggleFunct33()" class="fw-600 px-4 pb-1 pt-1 fs-5 number-offene"
-                                  style="background-color: #F7F7F7; color: #FF4000;">{{count($answered)}}</span>
-                        </div>
-                        <div id="firstDivToggle33" class="py-5 sjfg" onclick="firstDivToggleFunct33()">
-                            <div class="text-center">
-                            <span class="fs-4 fw-bold" style="color: #BCC1CD;">
-                                Drücken um
-                                aufzuklappen
-                            </span>
-                            </div>
-                        </div>
-                        <script>
-                            var intvaluecount = 1;
-                            var truefalsee = [];
-
-                            var intvaluecount2 = 1;
-                            var truefalsee2 = [];
-                        </script>
-                        <div id="secondDivToggle33" class="wrapper p-2" style="display: none;">
-                            <div class="overflow-divv1">
-                                @foreach($answered as $task)
-                                    @php
-                                        $leadss = $task->family_id * 1244;
-                                        $admin_id = Crypt::encrypt($task->admin_id * 1244);
-
-                                        $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                        $pend_id = $task->pid;
-                                    @endphp
-                                    <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
-                                        <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
-                                           style="text-decoration:none;">
-                                            <div class="px-2 py-2 ">
-                                                <div class="m-1 d-flex justify-content-between">
-                                                    <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
-                                                    <div class="col-auto">
-                                                                    <span>
-                                                                        <span class="px-2" style="font-size: 19px;">
-                                                                            <i class="bi bi-chat justify-content-end"></i>
-                                                                        </span>
-                                                                    </span>
-                                                        <span id="demo23span{{$taskId}}" class="bi bi-chevron-down"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div id="demo{{$taskId}}" class="collapse px-3 py-2">
-                                            <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->first_name)}}
-                                            </h6>
-                                            <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
-                                            <h6 class="m-1"><b>Adresse
-                                                    zu:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
-                                            </h6>
-                                            <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
-                                            <h6 class="m-1"><b>Beschreibung:</b>
-                                                <span> {{$task->description }}</span></h6>
-                                            <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
-                                                <button class="btn m-1"
-                                                        style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
-                                                    Offen
-                                                </button>
-                                            </a>
-                                        </div>
-                                        <script>
-                                            truefalsee["sss" + intvaluecount] = false;
-                                            $(document).ready(function () {
-                                                $("#demo23{{$taskId}}").click(function () {
-
-                                                    $("#demo{{$taskId}}").collapse('toggle');
-                                                    if (truefalsee["sss" + intvaluecount] === false) {
-                                                        $("#demo23span{{$taskId}}").addClass("bi bi-chevron-down bi-chevron-up");
-                                                        truefalsee["sss" + intvaluecount] = true;
-                                                    } else {
-                                                        $("#demo23span{{$taskId}}").removeClass("bi bi-chevron-up");
-                                                        truefalsee["sss" + intvaluecount] = false;
-                                                    }
-                                                });
-                                            });
-                                            intvaluecount++;
-                                        </script>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12  col-md-6">
-                    <div class="pendzen-div  my-3 mx-3">
-                        <div class="d-flex justify-content-between">
-                            <span class="fw-600 fs-5">Aufgaben öffnen</span>
-                            <span onclick="secondDivToggleFunct44()" class="fw-600 px-4 pb-1 pt-1 fs-5 number-offene"
-                                  style="background-color: #F7F7F7; color: #FF4000;">{{count($opened)}}</span>
-                        </div>
-                        <div id="firstDivToggle44" class="py-5 sjfg2" onclick="firstDivToggleFunct44()">
-                            <div class="text-center">
-                            <span class="fs-4 fw-bold" style="color: #BCC1CD;">
-                                Drücken um
-                                aufzuklappen
-                            </span>
-                            </div>
-                        </div>
-                        <div id="secondDivToggle44" class="wrapper3 p-2" style="display: none;">
-                            <div class="overflow-divv2">
-                                @foreach($opened as $task)
-                                    @php
-                                        $leadss = $task->family_id * 1244;
-                                        $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                        $pend_id = $task->pid;
-                                    @endphp
-                                    <div class="answered-items ms-3 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
-
-                                        @php
-                                            $leadss = $task->admin_id * 1244;
-                                            $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-
-                                            $leadss = Auth::user()->id * 1244;
-                                            $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
-                                        @endphp
-                                        <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
-                                           style="text-decoration:none;">
-                                            <div class="px-2 py-2">
-                                                <div class="m-1 d-flex justify-content-between"
-                                                     style="text-overflow: ellipsis; overflow:hidden;">
-                                                    <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
-                                                    <div class="col-auto">
-                                                                    <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$authUserId])}}'">
-                                                                        <span class="px-2" style="font-size: 19px;">
-                                                                            <i class="bi bi-chat justify-content-end"></i>
-                                                                        </span>
-                                                                    </span>
-                                                        <span id="demo23span_2{{$authUserId}}" class="bi bi-chevron-down"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div id="demo_2{{$authUserId}}" class="collapse px-3 py-2">
-                                            <h6 class="m-1"><b>Klientin: {{ucfirst($task->first_name)}}</b>
-                                            </h6>
-                                            <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
-                                            <h6 class="m-1"><b>Adresse
-                                                    zu:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
-                                            </h6>
-                                            <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
-                                            <h6 class="m-1"><b>Beschreibung:</b>
-                                                <span> {{$task->description}} </span></h6>
-                                            <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
-                                                <button class="btn m-1"
-                                                        style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
-                                                    Offen
-                                                </button>
-                                            </a>
-
-                                        </div>
-                                        <script>
-                                            truefalsee2["sss" + intvaluecount2] = false;
-                                            $(document).ready(function () {
-                                                $("#demo23_2{{$authUserId}}").click(function () {
-
-                                                    $("#demo_2{{$authUserId}}").collapse('toggle');
-                                                    if (truefalsee2["sss" + intvaluecount2] === false) {
-                                                        $("#demo23span_2{{$authUserId}}").addClass("bi bi-chevron-down bi-chevron-up");
-                                                        truefalsee2["sss" + intvaluecount2] = true;
-                                                    } else {
-                                                        $("#demo23span_2{{$authUserId}}").removeClass("bi bi-chevron-up");
-                                                        truefalsee2["sss" + intvaluecount2] = false;
-                                                    }
-                                                });
-                                            });
-                                            intvaluecount2++;
-                                        </script>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="desktop-tasks">
+        <section>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-6 g-0">
@@ -1181,7 +875,7 @@
 
                                 </div>
                                 <div class="overflow-div px-3 px-sm-3 px-md-3 me-2">
-                     
+                                    
                                     <div id="collapse__">
                                         <div class="collapse2___ "
                                         >
@@ -1192,6 +886,10 @@
 
                                                     $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                                     $pend_id = $task->pid;
+                                                    $leadss = $task->admin_id * 1244;
+                                                    $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                    $leadss = Auth::user()->id * 1244;
+                                                    $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                                 @endphp
                                                 <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
                                                     <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
@@ -1201,9 +899,11 @@
                                                                 <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
                                                                 <div class="col-auto">
                                                                     <span>
+                                                                         <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$authUserId])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
                                                                             <i class="bi bi-chat justify-content-end"></i>
                                                                         </span>
+                                                                    </span>
                                                                     </span>
                                                                     <span id="demo23span{{$taskId}}" class="bi bi-chevron-down"></span>
                                                                 </div>
@@ -1351,76 +1051,7 @@
                                                         </a>
 
                                                     </div>
-                                                 
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-    @endif
- 
-@endsection
-<script>
-        function firstDivToggleFunct() {
-            $('#firstDivToggle').slideUp(200);
-            $('#secondDivToggle').slideDown(200);
-
-        }
-        function firstDivToggleFunct22() {
-            $('#firstDivToggle22').slideUp(200);
-            $('#secondDivToggle22').slideDown(200);
-
-        }
-        function firstDivToggleFunct33() {
-            $('#firstDivToggle33').slideUp(200);
-            $('#secondDivToggle33').slideDown(200);
-
-        }
-        function firstDivToggleFunct44() {
-            $('#firstDivToggle44').slideUp(200);
-            $('#secondDivToggle44').slideDown(200);
-
-        }
-        function secondDivToggleFunct() {
-            $('#secondDivToggle').slideUp(200);
-            $('#firstDivToggle').slideDown(200);
-
-        }
-        function secondDivToggleFunct22() {
-            $('#secondDivToggle22').slideUp(200);
-            $('#firstDivToggle22').slideDown(200);
-
-        }
-        function secondDivToggleFunct33() {
-            $('#secondDivToggle33').slideUp(200);
-            $('#firstDivToggle33').slideDown(200);
-
-        }
-        function secondDivToggleFunct44() {
-            $('#secondDivToggle44').slideUp(200);
-            $('#firstDivToggle44').slideDown(200);
-
-        }
-
-
-    </script>
-              <script>
-                                        var intvaluecount = 1;
-                                        var truefalsee = [];
-
-                                        var intvaluecount2 = 1;
-                                        var truefalsee2 = [];
-                                    </script>
-
-<script>
+                                                    <script>
                                                         truefalsee2["sss" + intvaluecount2] = false;
                                                         $(document).ready(function () {
                                                             $("#demo23_2{{$authUserId}}").click(function () {
@@ -1437,6 +1068,46 @@
                                                         });
                                                         intvaluecount2++;
                                                     </script>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    @endif
+    
+@endsection
+<script>
+        function firstDivToggleFunct() {
+            $('#firstDivToggle').slideUp(200);
+            $('#secondDivToggle').slideDown(200);
+
+        }
+        function secondDivToggleFunct() {
+            $('#secondDivToggle').slideUp(200);
+            $('#firstDivToggle').slideDown(200);
+
+        }
+        function firstDivToggleFunct22() {
+            $('#firstDivToggle22').slideUp(200);
+            $('#secondDivToggle22').slideDown(200);
+
+        }
+        function secondDivToggleFunct22() {
+            $('#secondDivToggle22').slideUp(200);
+            $('#firstDivToggle22').slideDown(200);
+
+        }
+
+
+    </script>
 <style>
     body {
         overflow-x: hidden;
@@ -1608,12 +1279,6 @@
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
     }
-    .sjfg2 {
-        background-color: #f7f7f7;
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
 
     .offene-item-one {
         background-color: #fff;
@@ -1645,12 +1310,6 @@
 
     .wrapper2 {
         background-color: #fff;
-        border-bottom-left-radius: 15px;
-        border-top-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-    .wrapper3 {
-        background-color: #F7F7F7;
         border-bottom-left-radius: 15px;
         border-top-left-radius: 15px;
         border-bottom-right-radius: 15px;
@@ -2013,3 +1672,133 @@
 
     }
 </style>
+<script>
+                                        var intvaluecount = 1;
+                                        var truefalsee = [];
+
+                                        var intvaluecount2 = 1;
+                                        var truefalsee2 = [];
+                                    </script>
+                                     <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .overflow-divvv::-webkit-scrollbar {
+            width: 1px !important;
+        }
+
+        /* Track */
+        .overflow-divvv::-webkit-scrollbar-track {
+            background: transparent !important;
+            border-radius: 10px !important;
+        }
+
+        /* Handle */
+        .overflow-divvv::-webkit-scrollbar-thumb {
+            background: #c9cad8 !important;
+            border-radius: 10px !important;
+        }
+
+        /* Handle on hover */
+        .overflow-divvv::-webkit-scrollbar-thumb:hover {
+            background: #707070 !important;
+            border-radius: 10px !important;
+        }
+
+        .tab-lookalike2 {
+            background-color: #FFEAE4 !important;
+            color: #434343 !important;
+            border-bottom-left-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+            border-top-left-radius: 5px !important;
+            border-top-right-radius: 5px !important;
+        }
+
+        .tab-lookalike1 {
+            background-color: #F7F7F7 !important;
+            color: #434343 !important;
+            border-bottom-left-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+            border-top-left-radius: 5px !important;
+            border-top-right-radius: 5px !important;
+        }
+
+        .tab-lookalike {
+            background-color: #F7F7F7 !important;
+            color: #FF4000 !important;
+            border-bottom-left-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+            border-top-left-radius: 5px !important;
+            border-top-right-radius: 5px !important;
+        }
+
+        .header-open-task1 {
+            background-color: #F7F7F7 !important;
+            border-bottom-left-radius: 20px !important;
+            border-bottom-right-radius: 20px !important;
+            border-top-left-radius: 20px !important;
+            border-top-right-radius: 0px !important;
+
+        }
+
+        .header-open-task1-pink {
+            background-color: #FFEAE4 !important;
+            border-bottom-left-radius: 20px !important;
+            border-bottom-right-radius: 20px !important;
+            border-top-left-radius: 20px !important;
+            border-top-right-radius: 0px;
+
+        }
+
+
+        .priority-spnn {
+            background-color: #ad2b2b !important;
+            border-radius: 35px !important;
+            color: #fff !important;
+        }
+
+        .open-task-box {
+            border-radius: 35px !important;
+            background-color: #fff;
+            border: none !important;
+        }
+
+        .pendzen-box {
+            border-radius: 35px !important;
+            background-color: #EAECF0 !important;
+            border: none !important;
+
+        }
+
+        .third-box {
+            border-radius: 35px !important;
+            background-color: #fff !important;
+            border: #707070 1px solid !important;
+
+        }
+
+        .task-box {
+            background-color: #F7F7F7 !important;
+            border-radius: 12px !important;
+        }
+
+        .name-spnnnn {
+            font-weight: 600 !important;
+        }
+
+        .fw-600 {
+            font-weight: 600 !important;
+        }
+
+        .spn-muted {
+            color: #707070 !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+        }
+
+        .spn-normal {
+            font-weight: 600;
+            font-size: 14px !important;
+        }
+    </style>

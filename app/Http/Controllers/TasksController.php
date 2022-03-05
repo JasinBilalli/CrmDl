@@ -41,7 +41,7 @@ $title = $req->title ? $req->title : "";
 
   $pendency->admin_id = (int) $req->admin;
   $pendency->family_id = (int) $req->id;
-  $pendency->description = filter_var($req->desc,FILTER_UNSAFE_RAW);
+  $pendency->description = filter_var($req->desc,FILTER_SANITIZE_STRING);
   $pendency->type = "task";
   $pendency->save();
   $url =  '<a href="'. route("leadfamilyperson",[Crypt::encrypt((int) $req->id * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pendency->id)->admin_id * 1244),"pend_id" => Pendency::find((int) $pendency->id)->id]) . '"> Ihnen wurde ein Anhängsel zugeteilt für:' . family::find((int) $req->id)->first_name . '</a>';

@@ -58,7 +58,6 @@ class AppointmentsController extends Controller
 			$langues = "";
 			$appointments = lead::select('*')->where('assign_to_id',auth::guard('admins')->user()->id)->whereNotNull('appointment_date')->where('completed',0)->where('wantsonline',0)->where('rejected',0)->get();
 
-
             $personalApp = PersonalAppointment::where('AppOrCon',1)->where('user_id', \Illuminate\Support\Facades\Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
 
             $maps = DB::table('leads')->where('appointment_date',Carbon::now()->format('Y-m-d'))->where('assign_to_id', \Illuminate\Support\Facades\Auth::guard('admins')->user()->id)->select('leads.first_name','leads.last_name','leads.latitude','leads.longitude')->get();
@@ -83,7 +82,7 @@ class AppointmentsController extends Controller
     {
 		$input = $request->all();
 		$pieces = explode("-", $input['nom_lead']);
-		$id_lead = $pieces['0'];
+		$id_lead = (int) $pieces['0'];
 		$date = Carbon::parse(substr($request->ctime,0,15))->format('Y-m-d');
 	if(lead::find($id_lead)->appointment_date == $date){
 		$appointment = lead::where('id', $pieces['0'])
