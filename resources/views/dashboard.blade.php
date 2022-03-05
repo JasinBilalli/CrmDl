@@ -217,7 +217,7 @@
                 </div>
 
                 <div class="section-after-boxes">
-                    <div class="row">
+                    <div class="row g-0">
                         <div class="d-grid col-12 col-md-12 col-lg-6 col-xl-6">
                             <div class="calendar-div mx-3">
                                 <calendar></calendar>
@@ -233,9 +233,9 @@
                             </div>
                         </div>
 
-                        <div class="col-12 col-md-12 col-lg-6 col-xl-6 pe-4">
+                        <div class="col-12 col-md-12 col-lg-6 col-xl-6">
                             <div class="my-1 px-3">
-                                <div class="row">
+                                <div class="row g-0">
                                     <div class="col">
                                         <div class="">
                                                 <span class="fw-bold fs-5" style="font-family: 'Montserrat'">
@@ -246,7 +246,7 @@
                                 </div>
                             </div>
                             <div class="my-3">
-                                <div class="row">
+                                <div class="row g-0">
                                     <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
@@ -1348,7 +1348,7 @@
 
             @endif
 
-       
+
             </script>
             @endsection
             <style>

@@ -216,7 +216,7 @@
 
 
         <div class="col">
-            <div class="my-1 my-sm-5 mx-0 mx-sm-4">
+            <div class="my-1 my-sm-5 mx-2 mx-sm-4">
                 <div class="" style="background-color: #EFEFEF;border-radius: 22px;">
                     <div class="py-4 px-3">
                         <div class="pe-3 ">
@@ -2609,6 +2609,7 @@
 
     .activeClassNavMob__ .active-dot {
         visibility: visible !important;
+
     }
     /* .firstHr {
         width: 5px;
@@ -2686,6 +2687,7 @@
 
     .active-dot {
         visibility: visible;
+        display: none;
     }
 
     .mobile-nav {

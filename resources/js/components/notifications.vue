@@ -1,6 +1,6 @@
 <template>
 
-    <div class="mt-3 pe-4 mb-1">
+    <div class="">
         <div type="button" class="notification-divvv22" @click="openNotifyFunct(); readall();">
             <div class="hover-visible-div" id="hoverVisibleDiv">
                 <div class="txt-notif fs-6">

@@ -230,7 +230,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <div class="my-1 my-sm-5 mx-0 mx-sm-4">
+        <div class="my-1 my-sm-5 mx-2 mx-sm-4">
 
             <div class="" style="background-color: #EFEFEF;border-radius: 22px;">
                 @php
@@ -2890,6 +2890,7 @@
 
     .active-dot {
         visibility: visible;
+        display: none;
     }
 
     .mobile-nav {

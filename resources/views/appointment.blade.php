@@ -360,7 +360,7 @@
         </div>
 
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 g-0"><br>
-            <div class="row">
+            <div class="row g-0">
                 <div class="col-lg-9 col-12" style="font-size: 12px; text-align : center ;">
                     @if(session('msg')) <h5
                         style="color : #212529 ; background-color : #0080003b;">{!! session('msg') !!}</h5> <?php session(['msg' => '']); ?> @endif
@@ -371,8 +371,8 @@
                     <div style='clear:both'></div>
                 </div>
                 <div class="col-lg-3 col-12 box follow-scroll">
-                    <div id='external-events'>
-                        <div id='wrap' class="me-2"
+                    <div id='external-events' class="ms-2 ms-sm-2 ms-md-0 ms-lg-0 ms-xl-0 ms-xxl-0 me-2">
+                        <div id='wrap'
                              style="overflow-y: scroll;border: 1px solid #ccc;background: #eee;text-align: left;height: 600px ;text-align:center;border-radius: 12px;">
                             <div class="fs-6 fw-bold my-3">Terminliste ({!! count($appointments_events) !!}) </div>
                             <hr class="mx-2" style="height: 2px">
@@ -404,7 +404,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row g-0">
             <div class="col-md-12">
 
                 <div class="text-center" style="margin-top: 30px">
@@ -422,7 +422,7 @@
             <div class="col-md-12">
                 <section>
                     <div class="container">
-                        <div class="form-div my-4 py-4 mx-auto" style="background-color: #EFEFEF; border-radius: 20px;">
+                        <div class="form-div my-4 py-4 mx-2" style="background-color: #EFEFEF; border-radius: 20px;">
                             <div class="mb-4 mx-5">
                                 <span class="fs-5 fw-600">Oder per Datei einfügen</span>
                             </div>

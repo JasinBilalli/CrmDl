@@ -2,8 +2,8 @@
     <div v-if="gati">
         <section v-if="role == 'fs'">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-md-12 col-lg-9 g-0">
+                <div class="row g-0">
+                    <div class="col-12 col-md-12 col-lg-9 g-0 desktop-lead">
                         <div class="assigned-leads">
                             <div class="header px-3 px-sm-5">
                                 <div class="fs-5">
@@ -181,9 +181,9 @@
                                                     <div class="modal-body p-2 p-sm-3">
                                                         <div v-if="role == 'fs'" class="row mx-3 my-auto">
                                                             <div class="col-12 col-md-4 my-auto">
-                                                <span class="fs-4 fw-bold text-dark">
-                                                  {{ lead.first_name }}
-                                                </span>
+                                                                <span class="fs-4 fw-bold text-dark">
+                                                                  {{ lead.first_name }}
+                                                                </span>
                                                             </div>
                                                             <div class="col-6 col-md-4 py-3 my-auto">
                                                                 <div class="d-flex justify-content-center">
@@ -353,9 +353,7 @@
                                         <div class="assigned-items p-2 p-sm-3 m-2" data-bs-toggle="modal"
                                              :data-bs-target="'#' + lead.slug">
                                             <div class="namme mb-2">
-                                                <span class="fs-4 fw-bold">{{ lead.first_name }} {{
-                                                        lead.last_name
-                                                    }}</span>
+                                                <span class="fs-4 fw-bold">{{ lead.first_name }} {{lead.last_name}}</span>
                                             </div>
                                             <div class="adresse row">
                                                 <div class="col-4 pe-0">
@@ -389,8 +387,8 @@
                                                     <span class="grayyy1 fw-500">{{ lead.kampagne }}</span>
                                                 </div>
                                             </div>
-                                            <div class="button-div my-2">
-                                                <button class="btn px-5 py-1 fw-bold" data-toggle="modal"
+                                            <div class="button-div my-2 w-100">
+                                                <button class="btn px-5 py-1 fw-bold hhh" data-toggle="modal"
                                                         :data-target="'#' + lead.slug">
                                                     Lead öffnen
                                                 </button>
@@ -551,7 +549,7 @@
 
         <section v-else>
             <div class="container-fluid p-0">
-                <div class="row">
+                <div class="row g-0">
                     <div class="col-12 col-md-12 col-lg-9 g-0">
                         <div class="assigned-leads1">
                             <div class="header px-3 px-sm-5">
