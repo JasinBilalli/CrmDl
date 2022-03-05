@@ -1151,7 +1151,12 @@
 
                                 </div>
                                 <div class="overflow-div px-3 px-sm-3 px-md-3 me-2">
-
+                                    <script>
+                                        var intvaluecount = 1;
+                                        var truefalsee = [];
+                                        var intvaluecount2 = 1;
+                                        var truefalsee2 = [];
+                                    </script>
                                     <div id="collapse__">
                                         <div class="collapse2___ "
                                         >
@@ -1318,7 +1323,22 @@
                                                         </a>
 
                                                     </div>
-
+                                                    <script>
+                                                        truefalsee2["sss" + intvaluecount2] = false;
+                                                        $(document).ready(function () {
+                                                            $("#demo23_2{{$authUserId}}").click(function () {
+                                                                $("#demo_2{{$authUserId}}").collapse('toggle');
+                                                                if (truefalsee2["sss" + intvaluecount2] === false) {
+                                                                    $("#demo23span_2{{$authUserId}}").addClass("bi bi-chevron-down bi-chevron-up");
+                                                                    truefalsee2["sss" + intvaluecount2] = true;
+                                                                } else {
+                                                                    $("#demo23span_2{{$authUserId}}").removeClass("bi bi-chevron-up");
+                                                                    truefalsee2["sss" + intvaluecount2] = false;
+                                                                }
+                                                            });
+                                                        });
+                                                        intvaluecount2++;
+                                                    </script>
                                                 </div>
                                             @endforeach
                                         </div>
