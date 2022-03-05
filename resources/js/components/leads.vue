@@ -108,7 +108,7 @@
                                                                 <textarea type="text" id="inputTxt5" name="reason"
                                                                           class="form-control"
                                                                           aria-describedby="passwordHelpInline"></textarea>
-                                                                </div>
+                                                     </div>
                                                                 <div class="modal-footer m-0"
                                                                      style="border-top: none !important; display: block;margin:0 !important;">
                                                                     <button type="submit" class="btn w-100 m-0 my-3"
