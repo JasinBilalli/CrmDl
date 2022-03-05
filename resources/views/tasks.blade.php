@@ -953,10 +953,14 @@
                             <div class="overflow-divv1">
                                 @foreach($answered as $task)
                                     @php
-                                        $leadss = $task->family_id * 1244;
-                                        $admin_id = Crypt::encrypt($task->admin_id * 1244);
-                                        $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                        $pend_id = $task->pid;
+                                                   $leadss = $task->family_id * 1244;
+                                                    $admin_id = Crypt::encrypt($task->admin_id * 1244);
+                                                    $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                    $pend_id = $task->pid;
+                                                    $leadss = $task->admin_id * 1244;
+                                                    $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                    $leadss = Auth::user()->id * 1244;
+                                                    $authUserId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                     @endphp
                                     <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
                                         <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
@@ -996,6 +1000,7 @@
                                             truefalsee["sss" + intvaluecount] = false;
                                             $(document).ready(function () {
                                                 $("#demo23{{$taskId}}").click(function () {
+
                                                     $("#demo{{$taskId}}").collapse('toggle');
                                                     if (truefalsee["sss" + intvaluecount] === false) {
                                                         $("#demo23span{{$taskId}}").addClass("bi bi-chevron-down bi-chevron-up");
@@ -1376,22 +1381,6 @@
     var truefalsee2 = [];
 </script>
 
-<script>
-    truefalsee2["sss" + intvaluecount2] = false;
-    $(document).ready(function () {
-        $("#demo23_2{{$authUserId}}").click(function () {
-            $("#demo_2{{$authUserId}}").collapse('toggle');
-            if (truefalsee2["sss" + intvaluecount2] === false) {
-                $("#demo23span_2{{$authUserId}}").addClass("bi bi-chevron-down bi-chevron-up");
-                truefalsee2["sss" + intvaluecount2] = true;
-            } else {
-                $("#demo23span_2{{$authUserId}}").removeClass("bi bi-chevron-up");
-                truefalsee2["sss" + intvaluecount2] = false;
-            }
-        });
-    });
-    intvaluecount2++;
-</script>
 <style>
     body {
         overflow-x: hidden;
