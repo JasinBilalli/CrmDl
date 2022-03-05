@@ -7343,69 +7343,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var _this = this;
@@ -37126,9 +37063,9 @@ var render = function () {
       [
         _c("div", { staticClass: "txt-notif fs-6" }, [
           _vm._v(
-            "\n                You have " +
+            "\n            You have " +
               _vm._s(_vm.notcnt) +
-              " new notifications\n            "
+              " new notifications\n        "
           ),
         ]),
       ]
@@ -37147,6 +37084,13 @@ var render = function () {
           },
         },
         [
+          _vm.notcnt > 0
+            ? _c("span", {
+                staticClass:
+                  "position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle",
+              })
+            : _vm._e(),
+          _vm._v(" "),
           _c(
             "svg",
             {
