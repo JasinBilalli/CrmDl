@@ -1093,7 +1093,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 			    <div class="text-end mx-auto">
                         <notifications url="{{config('app.url')}}"></notifications>
                     </div>
+                <div class="container-fluid">
             @yield('content')
+                </div>
         </div>
 
     {{--        <div class="form-group container text-center pt-4">--}}
@@ -1666,8 +1668,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 
     .bottom-burger-modal {
         width: 100%;
-        height: 100vh;
-        overflow: auto;
+        height: 100%;
+        overflow: scroll;
         background: #F1F1F1;
         position: absolute;
         margin: 0;
@@ -2058,6 +2060,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     .notification-divvv22:hover .hover-visible-div{
         display: flex;
     }
+
 </style>
 
 

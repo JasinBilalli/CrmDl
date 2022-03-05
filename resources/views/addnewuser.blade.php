@@ -3,7 +3,7 @@
     @section('content')
         <title>Registrieren</title>
 <section style="display:flex; justify-content: center; width: 100%;">
-    <div class="col-md-5 my-auto p-5" style="border-radius: 39px;position: absolute; top: 12%; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
+    <div class="col-12 col-sm-10 col-md-5 my-auto p-5 boxShadowMob" style="border-radius: 39px;position: absolute; top: 12%; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
         <div class="">
             <form class="form1" method="post" action="{{route('registernewuser')}}" onsubmit ="return verifyPassword()">
                 @csrf
@@ -54,7 +54,7 @@
 
 
     @endsection
-    
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
@@ -115,6 +115,11 @@
     .form1 .form-control:focus {
         box-shadow: none;
         background-color: #EFEFEF;
+    }
+    @media (max-width: 575.98px) {
+        .boxShadowMob {
+            box-shadow: none !important;
+        }
     }
 </style>
 @endif
