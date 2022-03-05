@@ -85,10 +85,24 @@ class AppointmentsController extends Controller
 		$id_lead = (int) $pieces['0'];
 		$date = Carbon::parse(substr($request->ctime,0,15))->format('Y-m-d');
 	if(lead::find($id_lead)->appointment_date == $date){
+		if(lead::find($id_lead)->wantsonline == 0 && Admins::find($input['id_user'])->getRoleNames()[0] == 'fs'){
 		$appointment = lead::where('id', $pieces['0'])
               ->update(['assigned' => 1,'assign_to_id' => $input['id_user'],'rejected' => 0]);
 		if($appointment){return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
 	}
+	elseif(lead::find($id_lead)->wantsonline == 1 && Admins::find($input['id_user'])->getRoleNames()[0] == 'digital'){
+	$appointment = lead::where('id', $pieces['0'])
+              ->update(['assigned' => 1,'assign_to_id' => $input['id_user'],'rejected' => 0]);
+		if($appointment){return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
+	}
+	elseif(strtotime(lead::find($id_lead)->time) > strtotime("19:30") || strtotime(lead::find($id_lead)->time) < strtotime("07:59")){
+		return "";
+	}
+	else{
+		return "Appointment should not be assigned to that consultant (maybe to digital or field service) !";
+	}
+}
+
 	else{
 		return "Falsch, Termin sollte seinem Datum zugeordnet werden (" . lead::find($id_lead)->appointment_date . ") !!!";
 	}
