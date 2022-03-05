@@ -906,8 +906,7 @@
 
                                                             <a href="{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}">
                                                                 <button type="button" class="btn px-3"
-                                                                        style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                        data-bs-dismiss="modal"><b>Offen</b></button>
+                                                                        style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"><b>Offen</b></button>
                                                             </a>
 
                                                         </div>
