@@ -15,13 +15,7 @@
                 </svg>
             </div>
         </div>
-<!--        <button type="button" @click="openNotifyFunct(); readall();" class="btn btn-primary position-relative">-->
-<!--            <i class="far fa-bell"></i>-->
-<!--            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">-->
-<!--               <span style="font-size: 11px;"></span>-->
-<!--                     {{ notcnt }}-->
-<!--              </span>-->
-<!--        </button>-->
+
         <div class="btn-group dropdown dropdown-notifications sw-open" id="openNotification"
              style="position: absolute; display:none; right: 1rem; top: 3.2rem;">
             <div class="bg-white dropdown-container text-start" style="border: 1px solid black;border-radius: 8px; z-index: 150; min-width:368px;">

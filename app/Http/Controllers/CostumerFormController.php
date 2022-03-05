@@ -124,63 +124,63 @@ class CostumerFormController extends Controller
         $hausratP = new CostumerProduktHausrat();
 
 
-            $grundversicherung->person_idG = $id;
-            $grundversicherung->societyG = $request->societyG;
-            $grundversicherung->kvg_premiumG = $request->kvg_premiumG;
-            $grundversicherung->statusG = $request->statusG;
-            $grundversicherung->modification_dateG = $request->modification_dateG;
-            $grundversicherung->provisionG = $request->provisionG;
-            $grundversicherung->cidG = $request->cidG;
+            $grundversicherung->person_idG = filter_var($id,FILTER_SANITIZE_STRING);
+            $grundversicherung->societyG = filter_var($request->societyG,FILTER_SANITIZE_STRING);
+            $grundversicherung->kvg_premiumG = filter_var($request->kvg_premiumG,FILTER_SANITIZE_STRING);
+            $grundversicherung->statusG = filter_var($request->statusG,FILTER_SANITIZE_STRING);
+            $grundversicherung->modification_dateG = filter_var($request->modification_dateG,FILTER_SANITIZE_STRING);
+            $grundversicherung->provisionG = filter_var($request->provisionG,FILTER_SANITIZE_STRING);
+            $grundversicherung->cidG = filter_var($request->cidG,FILTER_SANITIZE_STRING);
 
 
-            $hausrat->person_idH = $id;
-            $hausrat->societyH = $request->societyH;
-            $hausrat->kvg_premiumH = $request->kvg_premiumH;
-            $hausrat->modification_dateH = $request->modification_dateH;
-            $hausrat->provisionH = $request->provisionH;
-            $hausrat->cidH = $request->cidH;
+            $hausrat->person_idH = filter_var($id,FILTER_SANITIZE_STRING);
+            $hausrat->societyH = filter_var($request->societyH,FILTER_SANITIZE_STRING);
+            $hausrat->kvg_premiumH = filter_var($request->kvg_premiumH,FILTER_SANITIZE_URL);
+            $hausrat->modification_dateH = filter_var($request->modification_dateH,FILTER_SANITIZE_STRING);
+            $hausrat->provisionH = filter_var($request->provisionH,FILTER_SANITIZE_STRING);
+            $hausrat->cidH = filter_var($request->cidH,FILTER_SANITIZE_STRING);
 
-            $retchsschutz->person_idR = $id;
-            $retchsschutz->productR = $request->productR;
-            $retchsschutz->durationR = $request->durationR;
-            $retchsschutz->statusR = $request->statusR;
-            $retchsschutz->modification_dateR = $request->modification_dateR;
-            $retchsschutz->provisionR = $request->provisionR;
-            $retchsschutz->cidR = $request->cidR;
-
-
-
-            $vorsorge->person_idV = $id;
-            $vorsorge->societyV = $request->societyV;
-            $vorsorge->productionV = $request->productionV;
-            $vorsorge->statusV = $request->statusV;
-            $vorsorge->modification_dateV = $request->modification_dateV;
-            $vorsorge->provisionV = $request->provisionV;
-            $vorsorge->cidV = $request->cidV;
+            $retchsschutz->person_idR = filter_var($id,FILTER_SANITIZE_STRING);
+            $retchsschutz->productR = filter_var($request->productR,FILTER_SANITIZE_STRING);
+            $retchsschutz->durationR = filter_var($request->durationR,FILTER_SANITIZE_STRING);
+            $retchsschutz->statusR = filter_var($request->statusR,FILTER_SANITIZE_STRING);
+            $retchsschutz->modification_dateR = filter_var($request->modification_dateR,FILTER_SANITIZE_STRING);
+            $retchsschutz->provisionR = filter_var($request->provisionR,FILTER_SANITIZE_STRING);
+            $retchsschutz->cidR = filter_var($request->cidR,FILTER_SANITIZE_STRING);
 
 
 
+            $vorsorge->person_idV = filter_var($id,FILTER_SANITIZE_STRING);
+            $vorsorge->societyV = filter_var($request->societyV,FILTER_SANITIZE_STRING);
+            $vorsorge->productionV = filter_var($request->productionV,FILTER_SANITIZE_STRING);
+            $vorsorge->statusV = filter_var($request->statusV,FILTER_SANITIZE_STRING);
+            $vorsorge->modification_dateV = filter_var($request->modification_dateV,FILTER_SANITIZE_STRING);
+            $vorsorge->provisionV = filter_var($request->provisionV,FILTER_SANITIZE_STRING);
+            $vorsorge->cidV = filter_var($request->cidV,FILTER_SANITIZE_STRING);
 
-            $zusatzversicherung->person_idZ = $id;
-            $zusatzversicherung->societyZ = $request->societyZ;
-            $zusatzversicherung->vvg_premiumZ = $request->vvg_premiumZ;
-            $zusatzversicherung->statusZ = $request->statusZ;
-            $zusatzversicherung->modification_dateZ = $request->modification_dateZ;
-            $zusatzversicherung->provisionZ = $request->provisionZ;
-            $zusatzversicherung->cidZ = $request->cidZ;
+
+
+
+            $zusatzversicherung->person_idZ = filter_var($id,FILTER_SANITIZE_STRING);
+            $zusatzversicherung->societyZ = filter_var($request->societyZ,FILTER_SANITIZE_STRING);
+            $zusatzversicherung->vvg_premiumZ = filter_var($request->vvg_premiumZ,FILTER_SANITIZE_STRING);
+            $zusatzversicherung->statusZ = filter_var($request->statusZ,FILTER_SANITIZE_STRING);
+            $zusatzversicherung->modification_dateZ = filter_var($request->modification_dateZ,FILTER_SANITIZE_STRING);
+            $zusatzversicherung->provisionZ = filter_var($request->provisionZ,FILTER_SANITIZE_STRING);
+            $zusatzversicherung->cidZ = filter_var($request->cidZ,FILTER_SANITIZE_STRING);
 
 
             $cnt =  newgegen::where('person_id',$id)->count() +1;
             $pcnt = 0;
             for ($i = 1; $i <= $cnt; $i++) {
                     $grundversicherungP = new CostumerProduktGrundversicherung();
-                    $grundversicherungP->person_id_PG = $id;
-                    $grundversicherungP->graduation_date_PG = $request->input('graduation_date_PG' . $i);
-                    $grundversicherungP->society_PG = $request->input('society_PG' . $i);
-                    $grundversicherungP->product_PG = $request->input('product_PG' . $i);
-                    $grundversicherungP->status_PG = $request->input('status_PG' . $i);
-                    $grundversicherungP->last_adjustment_PG = $request->input('last_adjustment_PG' . $i);
-                    $grundversicherungP->total_commisions_PG = $request->input('total_commisions_PG' . $i);
+                    $grundversicherungP->person_id_PG = filter_var($id,FILTER_SANITIZE_URL);
+                    $grundversicherungP->graduation_date_PG = filter_var($request->input('graduation_date_PG' . $i),FILTER_SANITIZE_STRING);
+                    $grundversicherungP->society_PG = filter_var($request->input('society_PG' . $i),FILTER_SANITIZE_STRING);
+                    $grundversicherungP->product_PG = filter_var($request->input('product_PG' . $i),FILTER_SANITIZE_STRING);
+                    $grundversicherungP->status_PG = filter_var($request->input('status_PG' . $i),FILTER_SANITIZE_STRING);
+                    $grundversicherungP->last_adjustment_PG = filter_var($request->input('last_adjustment_PG' . $i),FILTER_SANITIZE_STRING);
+                    $grundversicherungP->total_commisions_PG = filter_var($request->input('total_commisions_PG' . $i),FILTER_SANITIZE_STRING);
                     $grundversicherungP->save();
                     $pcnt++;
 
@@ -194,13 +194,13 @@ class CostumerFormController extends Controller
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
 
-            $retchsschutzP->person_id_PR = $id;
-            $retchsschutzP->graduation_date_PR = $request->graduation_date_PR;
-            $retchsschutzP->society_PR = $request->society_PR;
-            $retchsschutzP->produkt_PR = $request->produkt_PR;
-            $retchsschutzP->status_PR = $request->status_PR;
-            $retchsschutzP->last_adjustment_PR = $request->last_adjustment_PR;
-            $retchsschutzP->total_commisions_PR = $request->total_commisions_PR;
+            $retchsschutzP->person_id_PR = filter_var($id,FILTER_SANITIZE_STRING);
+            $retchsschutzP->graduation_date_PR = filter_var($request->graduation_date_PR,FILTER_SANITIZE_STRING);
+            $retchsschutzP->society_PR = filter_var($request->society_PR,FILTER_SANITIZE_STRING);
+            $retchsschutzP->produkt_PR = filter_var($request->produkt_PR,FILTER_SANITIZE_STRING);
+            $retchsschutzP->status_PR = filter_var($request->status_PR,FILTER_SANITIZE_STRING);
+            $retchsschutzP->last_adjustment_PR = filter_var($request->last_adjustment_PR,FILTER_SANITIZE_STRING);
+            $retchsschutzP->total_commisions_PR = filter_var($request->total_commisions_PR,FILTER_SANITIZE_STRING);
 
             if($request->status_PR == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
@@ -208,18 +208,18 @@ class CostumerFormController extends Controller
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
 
-            $vorsorgeP->person_id_PV = $id;
-            $vorsorgeP->graduation_date_PV = $request->graduation_date_PV;
-            $vorsorgeP->begin_PV = $request->begin_PV;
-            $vorsorgeP->society_PV = $request->society_PV;
-            $vorsorgeP->pramie_PV = $request->pramie_PV;
-            $vorsorgeP->payment_rythm_PV = $request->payment_rythm_PV;
-            $vorsorgeP->duration_from_PV = $request->duration_from_PV;
-            $vorsorgeP->duration_to_PV = $request->duration_to_PV;
-            $vorsorgeP->production_PV = $request->production_PV;
-            $vorsorgeP->status_PV = $request->status_PV;
-            $vorsorgeP->last_adjustment_PV = $request->last_adjustment_PV;
-            $vorsorgeP->total_commisions_PV = $request->total_commisions_PV;
+            $vorsorgeP->person_id_PV = filter_var($id,FILTER_SANITIZE_STRING);
+            $vorsorgeP->graduation_date_PV = filter_var($request->graduation_date_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->begin_PV = filter_var($request->begin_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->society_PV = filter_var($request->society_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->pramie_PV = filter_var($request->pramie_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->payment_rythm_PV = filter_var($request->payment_rythm_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->duration_from_PV = filter_var($request->duration_from_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->duration_to_PV = filter_var($request->duration_to_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->production_PV = filter_var($request->production_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->status_PV = filter_var($request->status_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->last_adjustment_PV = filter_var($request->last_adjustment_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->total_commisions_PV = filter_var($request->total_commisions_PV,FILTER_SANITIZE_STRING);
 
             if($request->status_PV == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
@@ -227,26 +227,26 @@ class CostumerFormController extends Controller
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
 
-            $autoversicherungP->person_id_PA = $id;
-            $autoversicherungP->society_PA = $request->society_PA;
-            $autoversicherungP->beginning_insurance_PA = $request->beginning_insurance_PA;
-            $autoversicherungP->insurance_PA = $request->insurance_PA;
-            $autoversicherungP->status_PA = $request->status_PA;
-            $autoversicherungP->last_adjustment_PA = $request->last_adjustment_PA;
-            $autoversicherungP->total_commisions_PA = $request->total_commisions_PA;
+            $autoversicherungP->person_id_PA = filter_var($id,FILTER_SANITIZE_STRING);
+            $autoversicherungP->society_PA = filter_var($request->society_PA,FILTER_SANITIZE_STRING);
+            $autoversicherungP->beginning_insurance_PA = filter_var($request->beginning_insurance_PA,FILTER_SANITIZE_STRING);
+            $autoversicherungP->insurance_PA = filter_var($request->insurance_PA,FILTER_SANITIZE_STRING);
+            $autoversicherungP->status_PA = filter_var($request->status_PA,FILTER_SANITIZE_STRING);
+            $autoversicherungP->last_adjustment_PA = filter_var($request->last_adjustment_PA,FILTER_SANITIZE_STRING);
+            $autoversicherungP->total_commisions_PA = filter_var($request->total_commisions_PA,FILTER_SANITIZE_STRING);
 
             if($request->status_PA == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
                 $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
-            $hausratP->person_id_PH = $id;
-            $hausratP->society_PH = $request->society_PH;
-            $hausratP->beginning_insurance_PH = $request->beginning_insurance_PH;
-            $hausratP->insurance_PH = $request->insurance_PH;
-            $hausratP->status_PH = $request->status_PH;
-            $hausratP->last_adjustment_PH = $request->last_adjustment_PH;
-            $hausratP->total_commisions_PH = $request->total_commisions_PH;
+            $hausratP->person_id_PH = filter_var($id,FILTER_SANITIZE_STRING);
+            $hausratP->society_PH = filter_var($request->society_PH,FILTER_SANITIZE_STRING);
+            $hausratP->beginning_insurance_PH = filter_var($request->beginning_insurance_PH,FILTER_SANITIZE_STRING);
+            $hausratP->insurance_PH = filter_var($request->insurance_PH,FILTER_SANITIZE_STRING);
+            $hausratP->status_PH = filter_var($request->status_PH,FILTER_SANITIZE_STRING);
+            $hausratP->last_adjustment_PH = filter_var($request->last_adjustment_PH,FILTER_SANITIZE_STRING);
+            $hausratP->total_commisions_PH = filter_var($request->total_commisions_PH,FILTER_SANITIZE_STRING);
 
             if($request->status_PH == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
@@ -262,14 +262,14 @@ class CostumerFormController extends Controller
             $zusatzversicherungP = new CostumerProduktZusatzversicherung();
             $zusatzversicherungP->person_id_PZ = $id;
 
-                $zusatzversicherungP->graduation_date_PZ = $request->input('graduation_date_PZ' . $i);
-                $zusatzversicherungP->society_PZ = $request->input('society_PZ' . $i);
-                $zusatzversicherungP->produkt_PZ = $request->input('produkt_PZ' . $i);
-                $zusatzversicherungP->vvg_premium_PZ = $request->input('vvg_premium_PZ' . $i);
-                $zusatzversicherungP->duration_from_PZ = $request->input('duration_from_PZ' . $i);
-                $zusatzversicherungP->duration_to_PZ = $request->input('duration_to_PZ' . $i);
-                $zusatzversicherungP->status_PZ = $request->input('status_PZ' . $i);
-                $zusatzversicherungP->last_adjustment_PZ = $request->input('last_adjustment_PZ' . $i);
+                $zusatzversicherungP->graduation_date_PZ = filter_var($request->input('graduation_date_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->society_PZ = filter_var($request->input('society_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->produkt_PZ = filter_var($request->input('produkt_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->vvg_premium_PZ = filter_var($request->input('vvg_premium_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->duration_from_PZ = filter_var($request->input('duration_from_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->duration_to_PZ = filter_var($request->input('duration_to_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->status_PZ = filter_var($request->input('status_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->last_adjustment_PZ = filter_var($request->input('last_adjustment_PZ' . $i),FILTER_SANITIZE_STRING);
                 $zusatzversicherungP->provision_PZ = $request->input('provision_PZ' . $i);
                 $zusatzversicherungP->total_commisions_PZ = $request->input('total_commisions_PZ' . $i);
                 $zusatzversicherungP->save();

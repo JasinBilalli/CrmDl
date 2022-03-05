@@ -55,7 +55,7 @@ else{
    $type = "";
    if($req->hasFile('file')) { $type = "file"; $text = $this->storeFile($req->file('file'),'img');}
    else{
-     $type = 'text'; $text = filter_var($req->text,FILTER_UNSAFE_RAW);
+     $type = 'text'; $text = filter_var($req->text,FILTER_SANITIZE_STRING);
    }
   $conversation = Chat::conversations()->between(Admins::find($u1),Admins::find($u2));
   if($u1 == Auth::user()->id || $u2 == Auth::user()->id){
@@ -74,12 +74,13 @@ if($participants->contains('id',Auth::user()->id)){
 }
   else{
     $conversation = Chat::createConversation([Admins::find($u1),Admins::find($u2)])->makeDirect();
-    $message = Chat::message(filter_var($req->text,FILTER_UNSAFE_RAW))
+    $message = Chat::message(filter_var($req->text,FILTER_SANITIZE_STRING))
 		->type('file')
 		->from(Auth::user())
 		->to($conversation)
 		->send();
   }
+  return $text;
  }
  else{
    return redirect()->back();

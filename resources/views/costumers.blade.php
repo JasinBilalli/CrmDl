@@ -48,36 +48,7 @@
                             <button class="dropdown-toggle border-0 bg-transparent" type="button"
                                     id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20.391" height="20.587"
-                                 viewBox="0 0 28.391 27.587">
-                                <g id="Group_980" data-name="Group 980" transform="translate(1.25)">
-                                    <g id="Group_17" data-name="Group 17">
-                                        <line id="Line_5" data-name="Line 5" x2="25.891" transform="translate(0 24.217)"
-                                              fill="none" stroke="#000" stroke-linecap="round" stroke-width="2.5"/>
-                                        <line id="Line_6" data-name="Line 6" x2="25.891" transform="translate(0 13.488)"
-                                              fill="none" stroke="#000" stroke-linecap="round" stroke-width="2.5"/>
-                                        <line id="Line_7" data-name="Line 7" x2="25.891" transform="translate(0 2.76)"
-                                              fill="none" stroke="#000" stroke-linecap="round" stroke-width="2.5"/>
-                                        <g id="Ellipse_4" data-name="Ellipse 4" transform="translate(4.926 21.457)"
-                                           stroke="#000" stroke-width="1">
-                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065" stroke="none"/>
-                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565" fill="none"/>
-                                        </g>
-                                        <g id="Ellipse_5" data-name="Ellipse 5" transform="translate(16.186 10.728)"
-                                           stroke="#000" stroke-width="1">
-                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065" stroke="none"/>
-                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565" fill="none"/>
-                                        </g>
-                                        <g id="Ellipse_6" data-name="Ellipse 6" transform="translate(4.926)"
-                                           stroke="#000" stroke-width="1">
-                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065" stroke="none"/>
-                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565" fill="none"/>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                        </span>
+                   
 
                             </button>
                             <form method="post" action="{{route('search')}}" class="dropdown-menu px-2"
@@ -473,43 +444,7 @@
 
                 </div>
                 <div class="d-flex justify-content-end pt-3 pb-5" style="background-color: #fff;">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70"
-                         height="34" viewBox="0 0 97 34">
-                        <defs>
-                            <filter id="Path_281" x="71.499" y="5.284" width="18.08" height="23.433"
-                                    filterUnits="userSpaceOnUse">
-                                <feOffset input="SourceAlpha"/>
-                                <feGaussianBlur stdDeviation="1" result="blur"/>
-                                <feFlood flood-opacity="0.161"/>
-                                <feComposite operator="in" in2="blur"/>
-                                <feComposite in="SourceGraphic"/>
-                            </filter>
-                        </defs>
-                        <g id="Group_981" data-name="Group 981" transform="translate(-0.094)">
-                            <g id="Group_757" data-name="Group 757">
-                                <path id="Path_281-2" data-name="Path 281" d="M0,0,9.679,7.316,0,14.631"
-                                      transform="translate(20.684 24.316) rotate(180)" fill="none" stroke="#000"
-                                      stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                                <g id="Ellipse_55" data-name="Ellipse 55" transform="translate(0.094)" fill="none"
-                                   stroke="#000" stroke-width="2">
-                                    <circle cx="17" cy="17" r="17" stroke="none"/>
-                                    <circle cx="17" cy="17" r="16" fill="none"/>
-                                </g>
-                            </g>
-                            <g id="Group_758" data-name="Group 758" transform="translate(97 34) rotate(180)">
-                                <g transform="matrix(-1, 0, 0, -1, 96.91, 34)">
-                                    <path id="Path_281-3" data-name="Path 281" d="M0,0,9.679,7.316,0,14.631"
-                                          transform="translate(75.9 9.68)" fill="none" stroke="#000"
-                                          stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-                                </g>
-                                <g id="Ellipse_55-2" data-name="Ellipse 55" transform="translate(-0.094)" fill="none"
-                                   stroke="#000" stroke-width="2">
-                                    <circle cx="17" cy="17" r="17" stroke="none"/>
-                                    <circle cx="17" cy="17" r="16" fill="none"/>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
+   
                 </div>
             </div>
         </div>

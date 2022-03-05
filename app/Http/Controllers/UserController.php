@@ -79,22 +79,22 @@ class UserController extends Controller
     public function addslead(Request $req)
     {
         $lead = new lead();
-        $lead->first_name = filter_var($req->name, FILTER_UNSAFE_RAW);
-        $lead->last_name = filter_var($req->lname, FILTER_UNSAFE_RAW);
-        $lead->telephone = filter_var($req->telephone, FILTER_UNSAFE_RAW);
-        $lead->birthdate = $req->geburstdatum;
+        $lead->first_name = filter_var($req->name, FILTER_SANITIZE_STRING);
+        $lead->last_name = filter_var($req->lname, FILTER_SANITIZE_STRING);
+        $lead->telephone = filter_var($req->telephone, FILTER_SANITIZE_STRING);
+        $lead->birthdate = filter_var($req->geburstdatum, FILTER_SANITIZE_STRING);
         $lead->number_of_persons = (int)$req->haushalt;
         $lead->campaign_id = (int)$req->campaign;
-        $lead->address = $req->plzort;
+        $lead->address = filter_var($req->plzort,FILTER_SANITIZE_STRING);
         $lead->save();
         $leadi = new lead_info();
-        $leadi->grund = $req->grund;
-        $leadi->kampagne = $req->kampagne;
-        $leadi->lead_id = $lead->id;
-        $leadi->krankenkasse = $req->krankenkasse;
-        $leadi->wichtig = $req->wichtig;
-        $leadi->bewertung = $req->bewertung;
-        $leadi->teilnahme = $req->teilnahme;
+        $leadi->grund = filter_var($req->grund,FILTER_SANITIZE_STRING);
+        $leadi->kampagne = filter_var($req->kampagne,FILTER_SANITIZE_STRING);
+        $leadi->lead_id = (int) $lead->id;
+        $leadi->krankenkasse = filter_var($req->krankenkasse,FILTER_SANITIZE_STRING);
+        $leadi->wichtig = filter_var($req->wichtig,FILTER_SANITIZE_STRING);
+        $leadi->bewertung = filter_var($req->bewertung,FILTER_SANITIZE_STRING);
+        $leadi->teilnahme = filter_var($req->teilnahme,FILTER_SANITIZE_STRING);
         $leadi->save();
         $lead->slug = 'qwesssewssew-' . uniqid();
         if ($lead->save()) {
@@ -169,21 +169,20 @@ class UserController extends Controller
         ]);
 
         $lead = new lead();
-        $lead->agent = filter_var($req->input('agent'), FILTER_UNSAFE_RAW);
-        $lead->berater = filter_var($req->input('berater'), FILTER_UNSAFE_RAW);
-        $lead->first_name = filter_var($req->input('fname'), FILTER_UNSAFE_RAW);
-        $lead->last_name = filter_var($req->input('lname'), FILTER_UNSAFE_RAW);
-        $lead->telephone = filter_var($req->input('phone'), FILTER_UNSAFE_RAW);
-        $lead->address = filter_var($req->input('address'), FILTER_UNSAFE_RAW);
-        $lead->postal_code = filter_var($req->input('postal'), FILTER_UNSAFE_RAW);
-        $lead->city = filter_var($req->input('nr') . $req->input('location'), FILTER_UNSAFE_RAW);
-        $lead->nationality = filter_var($req->input('country'), FILTER_UNSAFE_RAW);
-        $lead->appointment_date = filter_var($req->input('appdate'), FILTER_UNSAFE_RAW);
-        $lead->time = filter_var($req->input('apptime'), FILTER_UNSAFE_RAW);
-        // $lead->birthdate = filter_var($req->input('appbirthdate'), FILTER_UNSAFE_RAW);
-        $lead->sprache = filter_var($req->input('sprache'), FILTER_UNSAFE_RAW);
-        $lead->zufriedenheit = filter_var($req->input('zufriedenheit'), FILTER_UNSAFE_RAW);
-        $lead->bemerkung = filter_var($req->input('bemerkung'), FILTER_UNSAFE_RAW);
+        $lead->agent = filter_var($req->input('agent'), FILTER_SANITIZE_STRING);
+        $lead->berater = filter_var($req->input('berater'), FILTER_SANITIZE_STRING);
+        $lead->first_name = filter_var($req->input('fname'), FILTER_SANITIZE_STRING);
+        $lead->last_name = filter_var($req->input('lname'), FILTER_SANITIZE_STRING);
+        $lead->telephone = filter_var($req->input('phone'), FILTER_SANITIZE_STRING);
+        $lead->address = filter_var($req->input('address'), FILTER_SANITIZE_STRING);
+        $lead->postal_code = filter_var($req->input('postal'), FILTER_SANITIZE_STRING);
+        $lead->city = filter_var($req->input('nr') . $req->input('location'), FILTER_SANITIZE_STRING);
+        $lead->nationality = filter_var($req->input('country'), FILTER_SANITIZE_STRING);
+        $lead->appointment_date = filter_var($req->input('appdate'), FILTER_SANITIZE_STRING);
+        $lead->time = filter_var($req->input('apptime'), FILTER_SANITIZE_STRING);
+        $lead->sprache = filter_var($req->input('sprache'), FILTER_SANITIZE_STRING);
+        $lead->zufriedenheit = filter_var($req->input('zufriedenheit'), FILTER_SANITIZE_STRING);
+        $lead->bemerkung = filter_var($req->input('bemerkung'), FILTER_SANITIZE_STRING);
         $lead->number_of_persons = (int)$req->input('count');
         $lead->campaign_id = (int)$req->input('campaign');
         $lead->assigned = 1;
@@ -205,7 +204,7 @@ class UserController extends Controller
         }
         $address = [];
 
-        $address = filter_var($req->input('address'), FILTER_UNSAFE_RAW);
+        $address = filter_var($req->input('address'), FILTER_SANITIZE_STRING);
         $url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($address) . '&key=AIzaSyDscxZzYju_pJGNA2zu1lXOqJuubCdPu0o';
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -227,7 +226,7 @@ class UserController extends Controller
             if (Auth::user()->hasRole('salesmanager')) {
                 $lead->assign_to_id = null;
             }
-            $lead->slug = Str::slug($req->input('fname')) . '-' . $lead->id;
+            $lead->slug = Str::slug(filter_var($req->input('fname'),FILTER_SANITIZE_STRING)) . '-' . $lead->id;
             $lead->save();
             return redirect()->route('dashboard')->with('success', 'Termin wurde erfolgreich durchgeführt!');
         } else {
@@ -250,12 +249,12 @@ class UserController extends Controller
         $leads = lead::find($id);
         if (Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice') || $leads->assign_to_id == Auth::guard('admins')->user()->id) {
             $deletedlead = new Deletedlead();
-            $deletedlead->name = $leads->first_name;
-            $deletedlead->address = $leads->address;
-            $deletedlead->count = $leads->number_of_persons;
+            $deletedlead->name = filter_var($leads->first_name,FILTER_SANITIZE_STRING);
+            $deletedlead->address = filter_var($leads->address,FILTER_SANITIZE_STRING);
+            $deletedlead->count = (int) $leads->number_of_persons;
             $deletedlead->date = Carbon::now();
-            $deletedlead->reason = $request->reason;
-            $deletedlead->comment = $request->comment;
+            $deletedlead->reason = filter_var($request->reason,FILTER_SANITIZE_STRING);
+            $deletedlead->comment = filter_var($request->comment,FILTER_SANITIZE_STRING);
 
             $deletedlead->save();
 
@@ -337,13 +336,13 @@ class UserController extends Controller
         $lead->assign_to_id = Auth::user()->id;
         $lead->nationality = $req->nationality ? $req->nationality : $lead->nationality;
         $lead->telephone = $req->telephone ? $req->telephone : $lead->telephone;
-        $lead->time = $req->apptime ? filter_var($req->input('apptime'), FILTER_UNSAFE_RAW) : null;
+        $lead->time = $req->apptime ? filter_var($req->input('apptime'), FILTER_SANITIZE_STRING) : null;
         $lead->postal_code = $req->zip ? $req->zip : $lead->postal_code;
         $lead->first_name = $req->name ? $req->name : $lead->first_name;
         $lead->last_name = $req->lname ? $req->lname : $lead->last_name;
         $lead->number_of_persons = $req->personen ? $req->personen : $lead->number_of_persons;
         $lead->city = $req->ort ? $req->ort : $lead->city;
-        $lead->appointment_date = $req->appointmentdate ? filter_var($req->input('appointmentdate'), FILTER_UNSAFE_RAW) : null;
+        $lead->appointment_date = $req->appointmentdate ? filter_var($req->input('appointmentdate'), FILTER_SANITIZE_STRING) : null;
         $lead->assigned = 1;
         $lead->gesundheit = $req->gesundheit ? $req->gesundheit : $lead->gesundheit;
         $lead->zufriedenheit = $req->zufriedenheit ? $req->zufriedenheit : $lead->zufriedenheit;
@@ -390,8 +389,8 @@ class UserController extends Controller
 
     public function trylogin(Request $req)
     {
-        $email = filter_var($req->input('email'), FILTER_UNSAFE_RAW);
-        $password = filter_var($req->input('password'), FILTER_UNSAFE_RAW);
+        $email = filter_var($req->input('email'), FILTER_SANITIZE_STRING);
+        $password = filter_var($req->input('password'), FILTER_SANITIZE_STRING);
 
         $remember = $req->input('remember') == 'on' ? true : false;
         if (Auth::guard('admins')->attempt(['email' => $email, 'password' => $password], $remember)) {
@@ -988,9 +987,9 @@ class UserController extends Controller
     {
         $admins = new Admins();
 
-        $admins->name = filter_var($request->user_name, FILTER_UNSAFE_RAW);
-        $admins->email = filter_var($request->user_email, FILTER_UNSAFE_RAW);
-        $admins->phonenumber = filter_var($request->user_name, FILTER_UNSAFE_RAW);
+        $admins->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+        $admins->email = filter_var($request->user_email, FILTER_SANITIZE_STRING);
+        $admins->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
         if ($request->user_password == $request->retype_password){
             if ($request->user_password != '' && ($request->user_password > 8)) {
                 $admins->password = Hash::make($request->user_password);
@@ -1000,7 +999,7 @@ class UserController extends Controller
         }
 
 
-        $admins->assignRole(filter_var($request->role_name, FILTER_UNSAFE_RAW));
+        $admins->assignRole(filter_var($request->role_name, FILTER_SANITIZE_STRING));
 
         if ($admins->save()) {
             return redirect()->route('dashboard')->with('success', 'Benutzerregistrierung erfolgreich');
