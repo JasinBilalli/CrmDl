@@ -103,7 +103,7 @@
 
 <body>
 
-<div class="row" id="app">
+<div class="row g-0" id="app">
     <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
         <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
             <div class="d-flex align-middle" style="height: 16vh;">
@@ -6237,6 +6237,7 @@
 
     .active-dot {
         visibility: visible;
+        display: none;
     }
 
     .mobile-nav {

@@ -22,7 +22,7 @@
     @endif
 
     @php $csrf_token = csrf_token();@endphp
-   
+
 
 
 @endsection
@@ -292,5 +292,91 @@
         .overflow-div {
             padding-right: 5px;
         }
+    }
+</style>
+
+{{--Mobile Leads Style--}}
+<style>
+    .gray-div-1 {
+        color: #88889D;
+    }
+
+    .assigned-leads-div-11 {
+        border-radius: 0;
+    }
+
+    .t {
+        color: #88889D;
+    }
+
+    .fw-600 {
+        font-weight: 600;
+
+    }
+
+    .fw-500 {
+        font-weight: 500;
+    }
+
+    .white-divv {
+        background-color: #fff;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        border-top-left-radius: 15px !important;
+        border-top-right-radius: 15px !important;
+    }
+
+    .lead-offnen-new {
+        background-color: #0C71C3;
+        color: #fff;
+        border-bottom-left-radius: 15px !important;
+        border-bottom-right-radius: 15px !important;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+    }
+
+    .overflow-divvv::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    /* Track */
+    .overflow-divvv::-webkit-scrollbar-track {
+        background: transparent !important;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    .overflow-divvv::-webkit-scrollbar-thumb {
+        background: #c9cad8;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    .overflow-divvv::-webkit-scrollbar-thumb:hover {
+        background: #707070;
+        border-radius: 10px;
+    }
+
+    .form-check .form-check-input[type=checkbox] {
+        border-radius: 0.25em;
+        height: 29px;
+        width: 29px;
+    }
+    .mobile-leads {
+        display: none;
+    }
+    .desktop-leads {
+        display: block;
+    }
+    @media (max-width: 575.98px) {
+        .hhh {
+            width: 100%;
+        }
+        /*.mobile-leads {*/
+        /*    display: block;*/
+        /*}*/
+        /*.desktop-leads {*/
+        /*    display: none;*/
+        /*}*/
     }
 </style>

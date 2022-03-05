@@ -229,7 +229,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <div class="my-1 my-sm-5 mx-0 mx-sm-4">
+        <div class="my-1 my-sm-5 mx-2 mx-sm-4">
             <div class="" style="background-color: #EFEFEF;border-radius: 22px;">
                 @php
                     $leadss = $costumer->id * 1244;
@@ -305,8 +305,8 @@
                                                         </div>
                                                     </button>
                                                 </h2>
-                                               
-                                           
+
+
                                                 @php
                                                     $count = 1;
                                                 @endphp
@@ -395,7 +395,7 @@
                                                         </div>
                                                     <?php $count++ ?>
                                                     @endforeach
-                                               
+
                                             </div>
                                         </div>
                                     </div>
@@ -1057,7 +1057,7 @@
                                                 @php
                                                     $count = 1;
                                                 @endphp
-                                   
+
                                                 @foreach($grundversicherungP as $grundversicherungPP)
                                                 <div id="flush-collapse0006" class="accordion-collapse collapse"
                                                      aria-labelledby="flush-heading0006"
@@ -1143,7 +1143,7 @@
                                                 </div>
                                                     @php $count++ @endphp
                                                 @endforeach
-                                          
+
                                             </div>
                                         </div>
                                     </div>
@@ -2481,6 +2481,7 @@
 
     .active-dot {
         visibility: visible;
+        display: none;
     }
 
     .mobile-nav {

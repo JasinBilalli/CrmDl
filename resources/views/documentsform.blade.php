@@ -101,7 +101,7 @@
         }
     </style>
 
-    <div class="row">
+    <div class="row g-0">
         <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
             <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
                 <div class="d-flex align-middle" style="height: 16vh;">
@@ -301,7 +301,7 @@
                 <input type="hidden" name="newncount" id="newncount" value="0">
 
 
-                <div class="my-1 my-sm-5 mx-0 mx-sm-4">
+                <div class="my-1 my-sm-5 mx-2 mx-sm-4">
                     <div class="" style="background-color: #EFEFEF;border-radius: 22px;">
                         <div class="py-4 px-3">
                             <span class="fs-4 input-group">
@@ -685,7 +685,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                           @endif 
+                                                           @endif
                                                             <div class="col my-auto">
                                                                 <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 43%;" id="add_g" onclick="addanother_item_g()">
 
@@ -2842,6 +2842,7 @@
 
         .active-dot {
             visibility: hidden;
+            display: none;
         }
 
         .mobile-nav {
