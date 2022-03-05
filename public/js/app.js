@@ -7374,6 +7374,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var _this = this;
@@ -37087,38 +37119,34 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", {}, [
+  return _c("div", { staticClass: "notification-divvv22" }, [
     _c(
       "div",
-      {
-        staticClass: "notification-divvv22",
-        attrs: { type: "button" },
-        on: {
-          click: function ($event) {
-            _vm.openNotifyFunct()
-            _vm.readall()
+      { staticClass: "hover-visible-div", attrs: { id: "hoverVisibleDiv" } },
+      [
+        _c("div", { staticClass: "txt-notif fs-6" }, [
+          _vm._v(
+            "\n                You have " +
+              _vm._s(_vm.notcnt) +
+              " new notifications\n            "
+          ),
+        ]),
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "btn-group dropup" }, [
+      _c(
+        "button",
+        {
+          staticClass: "rounded-notid-icon dropdown-toggle",
+          attrs: {
+            type: "button",
+            "data-bs-toggle": "dropdown",
+            id: "dropdownFunct",
+            "aria-expanded": "false",
           },
         },
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "hover-visible-div",
-            attrs: { id: "hoverVisibleDiv" },
-          },
-          [
-            _c("div", { staticClass: "txt-notif fs-6" }, [
-              _vm._v(
-                "\n                You have " +
-                  _vm._s(_vm.notcnt) +
-                  " new notifications\n            "
-              ),
-            ]),
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "rounded-notid-icon" }, [
+        [
           _c(
             "svg",
             {
@@ -37138,103 +37166,44 @@ var render = function () {
               }),
             ]
           ),
-        ]),
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass: "btn-group dropdown dropdown-notifications sw-open",
-        staticStyle: {
-          position: "absolute",
-          display: "none",
-          right: "1rem",
-          top: "3.2rem",
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "ul",
+        {
+          staticClass: "dropdown-menu px-2",
+          attrs: { "aria-labelledby": "dropdownFunct" },
         },
-        attrs: { id: "openNotification" },
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "bg-white dropdown-container text-start",
-            staticStyle: {
-              border: "1px solid black",
-              "border-radius": "8px",
-              "z-index": "150",
-              "min-width": "368px",
-            },
-          },
-          [
-            _c(
-              "div",
-              {
-                staticClass: "dropdown-toolbar",
-                staticStyle: { "z-index": "150" },
-              },
-              [
-                _c(
-                  "h3",
-                  {
-                    staticClass: "dropdown-toolbar-title pt-2",
-                    staticStyle: {
-                      "padding-left": "1rem",
-                      "font-weight": "600",
-                    },
-                  },
-                  [_vm._v("Aktuelle Meldungen")]
-                ),
-                _vm._v(" "),
-                _c("hr", { staticClass: "m-0 g-0 p-0" }),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "ms-3",
-                    staticStyle: {
-                      "z-index": "333",
-                      height: "42vh",
-                      "overflow-y": "scroll",
-                    },
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "notifications text-decoration-none coloriii",
-                        staticStyle: { "list-style": "none" },
-                      },
-                      _vm._l(_vm.notifications, function (notification) {
-                        return _c(
-                          "div",
-                          {
-                            staticClass: "py-3",
-                            staticStyle: {
-                              "border-bottom": "1px solid #C8C8C8",
-                            },
-                            domProps: { innerHTML: _vm._s(notification.data) },
-                          },
-                          [
-                            _vm._v(
-                              "\n                            " +
-                                _vm._s(notification.time) +
-                                "\n                        "
-                            ),
-                          ]
-                        )
-                      }),
-                      0
-                    ),
-                  ]
-                ),
-              ]
-            ),
-          ]
-        ),
-      ]
-    ),
+        [
+          _c("div", { staticClass: "fw-bold fs-5 py-2" }, [
+            _vm._v("Recent Notifications"),
+          ]),
+          _vm._v(" "),
+          _c("hr", { staticClass: "my-1 g-0 p-0" }),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "overflow-div2212" },
+            _vm._l(_vm.notifications, function (notification) {
+              return _c(
+                "div",
+                {
+                  staticClass: "nottif-item p-2 m-1 ",
+                  domProps: { innerHTML: _vm._s(notification.data) },
+                },
+                [
+                  _c("div", { staticClass: "fw-bold" }, [
+                    _vm._v(_vm._s(notification.time)),
+                  ]),
+                ]
+              )
+            }),
+            0
+          ),
+        ]
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []
