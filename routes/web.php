@@ -149,10 +149,10 @@ $leadinfo = lead_info::where('lead_id',$leads['leads'][$i]->id)->first();
         $app = lead::find($idd)->update(['assigned' => 1]);
         return redirect()->back();
     })->name('acceptleadinfo')->middleware('role:admin|fs|salesmanager');
-   
+
    route::get('leadfamilyperson/{id}/{admin_id?}',[FamilyPersonsController::class,'family_persons'])->name('leadfamilyperson')->middleware('role:admin|fs|backoffice');
- 
-   
+
+
     route::post('createLeadDataKK/{leadIdd}/{personIdd}',[LeadDataController::class,'createLeadDataKK'])->name('createLeadDataKK')->middleware('role:admin|fs|backoffice');
     route::post('updateLeadDataKK/{leadId}/{personId}',[LeadDataController::class,'updateLeadDataKK'])->name('updateLeadDataKK')->middleware('role:admin|fs|backoffice');
 
@@ -167,7 +167,7 @@ $leadinfo = lead_info::where('lead_id',$leads['leads'][$i]->id)->first();
    route::get('chat/{u1}/{u2}',[ChatController::class,'chat'])->name('chat');
    route::any('addappointmentfile',[UserController::class,'addappointmentfile'])->name('addappointmentfile')->middleware('role:admin|fs|backoffice');
       route::get('addtodo',[TodoController::class,'addtodo']);
- 
+
    route::get('todos',[TodoController::class,'todos']);
    route::get('deletetodo',[TodoController::class,'deletetodo']);
    route::get('donetodo',[TodoController::class,'donetodo']);
@@ -189,8 +189,8 @@ route::get('smsconfirm',function (){
 route::post('confirmcode',[UserController::class,'confirmcode'])->name('confirmcode')->withoutMiddleware([confirmedcode::class]);
 route::get('logout',[UserController::class,'logout'])->name('logout')->withoutMiddleware([confirmedcode::class]);
 route::get('status',[StatusController::class,'status'])->name('status');
-// route::get('editclientdata/{id}',[StatusController::class,'editclientdata'])->name('editclientdata'); 
-// route::post('editclientform/{id}',[StatusController::class,'editclientform'])->name('editclientform'); 
+// route::get('editclientdata/{id}',[StatusController::class,'editclientdata'])->name('editclientdata');
+// route::post('editclientform/{id}',[StatusController::class,'editclientform'])->name('editclientform');
 route::get('file/{file?}',function($file = null,Request $request){
         if(Storage::disk('img')->exists($file)){
            $file = Storage::disk('img')->get($file);
@@ -227,7 +227,7 @@ route::get('getnotifications',function(){
    foreach(Auth::user()->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at')->paginate(60) as $not){
       $data['notifications'][$cnt] = $not;
       $obj = Carbon::parse($not->created_at);
-      $data['notifications'][$cnt]['data'] = $data['notifications'][$cnt]['data'] . '    ' . $obj->format('d.m H:i');
+      $data['notifications'][$cnt]['data'] = $data['notifications'][$cnt]['data'] . ' <div style="font-weight:600">   ' . $obj->format('d/m/y | H:i'). '</div>';
       $cnt++;
    }
  $data['cnt'] = Auth::user()->notifications()->whereNull('read_at')->count();

@@ -16,6 +16,8 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 </head>
 <style>
     div,
@@ -31,6 +33,9 @@
     input,
     a {
         font-family: 'Montserrat';
+    }
+    .notification-divvv22 a {
+        color: black;
     }
 
     .nav-itemsss {
@@ -2024,7 +2029,40 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         }
         </style>
 <style>
+    .nottif-item {
+        border: #70707060 1px solid;
+        border-radius: 5px;
+    }
+
+    .overflow-div2212 {
+        height: 40vh;
+        overflow: auto;
+    }
+
+    .notification-divvv22 .dropdown-menu {
+        max-width: 30rem;
+        z-index: 999;
+        width: 22rem;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 10px;
+    }
+
+    .notification-divvv22 .dropup .dropdown-toggle::after {
+        display: none;
+    }
+
+    .notif-div-content {
+        width: 340px;
+        position: fixed;
+        display: block;
+        bottom: 110px;
+        right: 30px;
+        background-color: #fff;
+    }
+
     .notification-divvv22 {
+        z-index: 999;
+
         position: fixed;
         display: flex;
         bottom: 30px;
@@ -2035,8 +2073,6 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         border-top-right-radius: 50px;
         border-bottom-left-radius: 50px;
         border-bottom-right-radius: 50px;
-        z-index: 9999;
-        transition: all ease-in-out 0.5s;
     }
 
     .rounded-notid-icon {
@@ -2044,7 +2080,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         border-radius: 50px;
         color: #fff;
         padding: 20px;
+        border: none;
     }
+
     .hover-visible-div {
         background-color: #fff;
         border-top-left-radius: 50px;
@@ -2052,15 +2090,75 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         display: none;
         align-items: center;
     }
+
     .txt-notif {
         padding-left: 25px;
         padding-right: 15px;
         font-weight: 500;
     }
-    .notification-divvv22:hover .hover-visible-div{
+
+    .notification-divvv22:hover .hover-visible-div {
         display: flex;
     }
 
+    /* overflow 1 */
+    .overflow-div2212::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Track */
+    .overflow-div2212::-webkit-scrollbar-track {
+        background: transparent !important;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    .overflow-div2212::-webkit-scrollbar-thumb {
+        background: #c9cad8;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    .overflow-div2212::-webkit-scrollbar-thumb:hover {
+        background: #707070;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 575.98px) {
+        .notification-divvv22 .dropdown-menu {
+            width: 99vw;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+
+        .notification-divvv22 {
+            position: fixed;
+            display: flex;
+            bottom: 80px;
+            right: 10px;
+        }
+
+        .rounded-notid-icon svg {
+            width: 25px;
+        }
+
+        .hover-visible-div {
+            display: none;
+        }
+
+        .notification-divvv22:hover .hover-visible-div {
+            display: none;
+        }
+
+        .rounded-notid-icon {
+            background-color: #0C71C350;
+            padding: 10px;
+        }
+
+        .rounded-notid-icon:hover {
+            background-color: #0C71C3;
+        }
+    }
 </style>
 
 
