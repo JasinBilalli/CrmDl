@@ -896,7 +896,7 @@
                             <div class="row mx-2 mx-sm-4">
                                 <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 my-4 ">
                                     <div class="accordion accordion-flush" id="accordionFlushExample1">
-                                        <div class="accordion-item">
+                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
                                             <h2 class="accordion-header" id="flush-headingOne">
                                                 <button id="button1" class="accordion-button collapsed"
                                                         type="button" data-bs-toggle="collapse" onclick="hideSpan();"
@@ -1295,7 +1295,7 @@
                                 @php $data->fahrzeug = \App\Models\LeadDataFahrzeug::where('person_id',$id)->latest()->first() @endphp
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 my-4">
                                     <div class="accordion accordion-flush" id="accordionFlushExample2">
-                                        <div class="accordion-item">
+                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
                                             <h2 class="accordion-header" id="flush-headingTwo">
                                                 <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
@@ -5085,7 +5085,7 @@
                                             </span>
                                     </div>
                                     <div class="accordion accordion-flush" id="accordionFlushExample3">
-                                        <div class="accordion-item">
+                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
                                             <h2 class="accordion-header" id="flush-headingThree">
                                                 <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
@@ -5245,7 +5245,7 @@
                                             </span>
                                     </div>
                                     <div class="accordion accordion-flush" id="accordionFlushExample4">
-                                        <div class="accordion-item">
+                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
                                             <h2 class="accordion-header" id="flush-headingFour">
                                                 <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
@@ -5490,7 +5490,7 @@
                                             </span>
                                     </div>
                                     <div class="accordion accordion-flush" id="accordionFlushExample5">
-                                        <div class="accordion-item">
+                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
                                             <h2 class="accordion-header" id="flush-headingFive">
                                                 <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
