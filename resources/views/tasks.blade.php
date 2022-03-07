@@ -37,7 +37,7 @@
                                     @php
                                         $leadss = $task->id * 1244;
                                         $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                        
+
                                     @endphp
                                     <a href="{{route('leadfamilyperson',[$taskId,$admin_id])}}">
                                         <div class="offene-item-one py-2 px-3 m-2">
@@ -807,7 +807,7 @@
                                                                     style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
                                                                     data-bs-dismiss="modal"><b>Close</b></button>
 
-                                                            <a href="{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}">
+                                                            <a onclick="window.location.href='{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}'">
                                                                 <button type="button" class="btn px-3"
                                                                         style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
                                                                         data-bs-dismiss="modal"><b>Offen</b></button>
@@ -854,7 +854,7 @@
                         </script>
                         <div id="secondDivToggle33" class="wrapper p-2" style="display: none;">
                             <div class="overflow-divv1">
-                               
+
                                 @foreach($answered as $task)
                                     @php
                                                    $leadss = $task->family_id * 1244;
@@ -864,7 +864,7 @@
                                                     $leadss = $task->admin_id * 1244;
                                                     $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
 
-                                                    
+
                                                     $authUserId = \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
 
                                     @endphp
@@ -953,7 +953,7 @@
                                         @php
                                             $leadss = $task->admin_id * 1244;
                                             $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                        
+
                                             $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
                                             $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
                                         @endphp
@@ -1195,7 +1195,7 @@
                                                     @php
                                                         $leadss = $task->admin_id * 1244;
                                                         $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                        
+
                                                         $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
                                                         $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
                                                     @endphp
