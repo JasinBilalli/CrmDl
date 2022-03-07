@@ -106,7 +106,7 @@
                     height: 600,
                     initialView: 'resourceTimeGridDay',
                     slotMinTime: "08:00:00",
-                    slotMaxTime: "20:00:00",
+                    slotMaxTime: "22:30:00",
                     slotDuration: '00:30:00',
                     slotLabelInterval: 30,
                     allDaySlot: false,
@@ -384,7 +384,8 @@
                                             style="color:#fff">{!! date("d/M/Y H:i", strtotime($appointment["appointment_date"]." ".$appointment["time"])) !!}
                                             ({!! $appointment["number_of_persons"] !!}
                                             persons)</B><br>@if($appointment["assigned"] == '0')<a
-                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff; border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Nicht zugeordnet</a>@endif</div>
+                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff; border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Nicht zugeordnet</a>
+                                            @endif @if($appointment["wantsonline"] == '1')(Online)@endif</div>
                                 @else
                                     <div class='fc-event  p-2 m-2'
                                          style="margin: 10px 0; cursor: pointer; text-align: left; color:#fff;border-radius: 10px; font-size: 14px;  background:#c40000;">{!! $appointment["id"] !!}
@@ -392,7 +393,8 @@
                                             style="color: #fff;">{!! date("d/M/Y H:i", strtotime($appointment["appointment_date"]." ".$appointment["time"])) !!}
                                             ({!! $appointment["number_of_persons"] !!}
                                             persons)</B><br>@if($appointment["assigned"] == '0')<a
-                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff;border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Abgelehnt </a>@endif
+                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff;border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Abgelehnt </a>
+                                            @endif @if($appointment["wantsonline"] == '1')(Online)@endif 
                                     </div>
                                 @endif
                             @endforeach
@@ -400,6 +402,20 @@
 
                         </div>
                     </div>
+                    @if($appointments_events->count() > 1)
+    <div class="d-flex justify-content-center mt-2">
+    <div class="d-flex justify-content-center"><nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-between">
+        @if($appointments_events->currentPage() > 1)
+        <span> <a href="{{route('Appointments',['events_page' => $appointments_events->currentPage() -1])}}" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"></span>
+            @endif
+                    « Previous
+                </span> <a href="{{route('Appointments',['events_page' => $appointments_events->currentPage() +1])}}" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+                    Next »
+                </a></div> <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"><div><p class="text-sm text-gray-700 leading-5">
+                
+                </p></div> <div></div></div></nav></div>
+                @endif
+                
                 </div>
             </div>
         </div>
@@ -508,7 +524,7 @@
                     dayMaxEvents: 3,
                     height: 600,
                     slotMinTime: "08:00:00",
-                    slotMaxTime: "20:00:00",
+                    slotMaxTime: "22:30:00",
                     slotDuration: '00:30:00',
                     slotLabelInterval: 30,
                     allDaySlot: false,

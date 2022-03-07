@@ -108,7 +108,8 @@ export default {
             todos: null,
             numbers: null,
             admin: null,
-            costumer: null
+            costumer: null,
+            readed: false
         }
     },
     methods: {

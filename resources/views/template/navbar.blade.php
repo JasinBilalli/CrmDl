@@ -2123,6 +2123,13 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         background: #707070;
         border-radius: 10px;
     }
+    .notification-divvv22 .bluefont{
+            background-color: #eaf5ff;
+           
+        }
+        .notification-divvv22 .bluefont a{
+            color: #0c71c3;
+        }
 
     @media (max-width: 575.98px) {
         .notification-divvv22 .dropdown-menu {
@@ -2137,6 +2144,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             bottom: 80px;
             right: 10px;
         }
+        
 
         .rounded-notid-icon svg {
             width: 25px;
@@ -2158,6 +2166,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         .rounded-notid-icon:hover {
             background-color: #0C71C3;
         }
+       
     }
 </style>
 

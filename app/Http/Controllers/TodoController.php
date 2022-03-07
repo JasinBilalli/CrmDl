@@ -8,6 +8,7 @@ use App\Models\Costumer;
 use App\Models\family;
 use Illuminate\Http\Request;
 use App\Models\todo;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -59,7 +60,7 @@ class TodoController extends Controller
     public function todos(){
         if(Auth::guard('admins')->check()){
             if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice')){
-        $data['costumers'] = family::all();
+        $data['costumers'] = family::whereIn('status',['Open'])->select('first_name','last_name','id')->get();
         $data['admins'] = Admins::role(['fs'])->get();
         return $data;
             }

@@ -19,7 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>Document</title>
-    <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
+    <link rel="icon" type="image/png" href="img/Favicon.png">
 </head>
 <style>
     /*nav ARti*/
@@ -103,7 +103,7 @@
 
 <body>
 
-<div class="row g-0" id="app">
+<div class="row" id="app">
     <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
         <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
             <div class="d-flex align-middle" style="height: 16vh;">
@@ -407,7 +407,7 @@
                                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                     <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                         <div class="py-2 px-2">
-                                            <div class="row justify-content-between mx-2">
+                                            <div class="row mx-2">
                                                 <div class="col-7 d-flex g-0">
                                                     <div class="">
                                                             <span class="fw-bold" style=" font-size: 12px;">
@@ -415,7 +415,7 @@
                                                             </span>
                                                     </div>
                                                 </div>
-                                                <div class="col-auto g-0 ">
+                                                <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end">
                                                       <select class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vorversicherer_select">
                                                       @php $data->datakk = \App\Models\LeadDataKK::where('person_id',$id)->latest()->first() @endphp
@@ -485,7 +485,7 @@
                                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                     <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                         <div class="py-2 px-2">
-                                            <div class="row justify-content-between mx-2">
+                                            <div class="row mx-2">
                                                 <div class="col-7 d-flex g-0">
                                                     <div class="">
                                                             <span class="fw-bold" style="font-size: 12px;">
@@ -493,7 +493,7 @@
                                                             </span>
                                                     </div>
                                                 </div>
-                                                <div class="col-auto g-0">
+                                                <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end">
                                                       <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="id_notwending_select">
                                                           @if(isset($data->datakk->id_notwending_select))
@@ -564,7 +564,7 @@
                                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                     <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                         <div class="py-2 px-2">
-                                            <div class="row justify-content-between mx-2">
+                                            <div class="row mx-2">
                                                 <div class="col-8 g-0 d-flex">
                                                     <div class="text-nowrap">
                                                             <span class="fw-bold" style=" font-size: 12px;">
@@ -572,7 +572,7 @@
                                                             </span>
                                                     </div>
                                                 </div>
-                                                <div class="col-auto g-0">
+                                                <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end">
                                                       <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="kundingung_durch_select">
                                                           @if(isset($data->datakk->kundingung_durch_select))
@@ -641,7 +641,7 @@
                                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                     <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                         <div class="py-2 px-2">
-                                            <div class="row justify-content-between mx-2">
+                                            <div class="row mx-2">
                                                 <div class="col-7 d-flex g-0">
                                                     <div class="">
                                                             <span class="fw-bold" style=" font-size: 12px;">
@@ -649,7 +649,7 @@
                                                             </span>
                                                     </div>
                                                 </div>
-                                                 <div class="col-auto g-0">
+                                                 <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end ">
                                                       <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vollmacht_select">
                                                           @if(isset($data->datakk->vollmacht_select))
@@ -919,8 +919,6 @@
                                                     </div>
                                                 </button>
                                             </h2>
-                                            @php $data->fahrzeug = \App\Models\LeadDataFahrzeug::where('person_id',$id)->first() @endphp
-
                                             <div id="flush-collapseOne" class="accordion-collapse collapse"
                                                  aria-labelledby="flush-headingOne"
                                                  data-bs-parent="#accordionFlushExample1">
@@ -5624,39 +5622,39 @@
                                             <addtask url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                      :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
                                         @endif
-{{--                                        <div class="text-center mt-3 pb-3">--}}
-{{--                                            <div class="row">--}}
-{{--                                                <div class="col g-0 text-end my-auto">--}}
-{{--                                                    <div class="">--}}
-{{--                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">--}}
+                                        <div class="text-center mt-3 pb-3">
+                                            <div class="row">
+                                                <div class="col g-0 text-end my-auto">
+                                                    <div class="">
+                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">
 
-{{--                                                    </span>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="col g-0 text-start">--}}
-{{--                                                    <div id="buton">--}}
-{{--                                                        <button class="px-5 py-2" type="button"--}}
-{{--                                                                style="border: none; border-radius: 9px; background-color:#285F52;"--}}
-{{--                                                                id="nextonee__" onclick="nextonee()">--}}
-{{--                                                            <svg xmlns="http://www.w3.org/2000/svg" width="58.155"--}}
-{{--                                                                 height="19.159" viewBox="0 0 58.155 19.159">--}}
-{{--                                                                <g id="Group_453" data-name="Group 453"--}}
-{{--                                                                   transform="translate(0.004)">--}}
-{{--                                                                    <line id="Line_16" data-name="Line 16" x2="51.954"--}}
-{{--                                                                          y2="0.2"--}}
-{{--                                                                          transform="translate(0 9.287)" fill="none"--}}
-{{--                                                                          stroke="#3fd599" stroke-width="2"/>--}}
-{{--                                                                    <path id="Polygon_2" data-name="Polygon 2"--}}
-{{--                                                                          d="M9.58,0l9.58,11.642H0Z"--}}
-{{--                                                                          transform="translate(58.151 0) rotate(90)"--}}
-{{--                                                                          fill="#3fd599"/>--}}
-{{--                                                                </g>--}}
-{{--                                                            </svg>--}}
-{{--                                                        </button>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                                    </span>
+                                                    </div>
+                                                </div>
+                                                <div class="col g-0 text-start">
+                                                    <div id="buton">
+                                                        <button class="px-5 py-2" type="button"
+                                                                style="border: none; border-radius: 9px; background-color:#285F52;"
+                                                                id="nextonee__" onclick="nextonee()">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="58.155"
+                                                                 height="19.159" viewBox="0 0 58.155 19.159">
+                                                                <g id="Group_453" data-name="Group 453"
+                                                                   transform="translate(0.004)">
+                                                                    <line id="Line_16" data-name="Line 16" x2="51.954"
+                                                                          y2="0.2"
+                                                                          transform="translate(0 9.287)" fill="none"
+                                                                          stroke="#3fd599" stroke-width="2"/>
+                                                                    <path id="Polygon_2" data-name="Polygon 2"
+                                                                          d="M9.58,0l9.58,11.642H0Z"
+                                                                          transform="translate(58.151 0) rotate(90)"
+                                                                          fill="#3fd599"/>
+                                                                </g>
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -5669,12 +5667,6 @@
                         <button class="px-5 py-2" id="submitt" type="button"
                                 style="border: none; border-radius: 9px; background-color:#285F52;" title="Edit"
                                 onclick="edit();">
-                            @if(Auth::user()->hasRole('fs'))
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25"  fill="#fff" class="bi bi-upload" viewBox="0 0 16 16">
-                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
-                                </svg>
-                            @else
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#fff" class="bi bi-pencil-square"
                                  viewBox="0 0 16 16">
                                 <path
@@ -5682,7 +5674,6 @@
                                 <path fill-rule="evenodd"
                                       d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                             </svg>
-                             @endif
                         </button>
                         @if(Auth::user()->hasRole('backoffice') || Auth::user()->hasRole('admin'))
                         @if(\App\Models\Pendency::find(Session::get('pend_id'))->completed == 0 && \App\Models\Pendency::find(Session::get('pend_id'))->done == 1)
@@ -6142,6 +6133,7 @@
 
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function openBurgerFunct() {
         $("#bottom-burger").slideToggle();
@@ -6237,7 +6229,6 @@
 
     .active-dot {
         visibility: visible;
-        display: none;
     }
 
     .mobile-nav {
@@ -6735,7 +6726,9 @@
         }
 
 </style>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 <script>
     var cntt = 0;
     var newgcnt = <?php echo \App\Models\newgegen::where('person_id', $id)->count() ?>;
@@ -6768,7 +6761,7 @@
         $("#add_g").remove();
         newgcnt++;
 
-        document.getElementById('shtogegen').innerHTML += '<div id="g' + newgcnt + '">' +
+        document.getElementById('shtogegen').innerHTML +=  '<div id="g' + newgcnt + '">' +
                 ' <div class="text-end mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16" style="cursor:pointer;" onclick="deletethat2(' + newgcnt + ')">' +
                 '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>' +
                 '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg></div>' +
@@ -6838,7 +6831,7 @@
                 '                                                                            <option selected>Select</option>' +
                 '                                                                            <option value="1:0 Deckung">1:0 Deckung</option>' +
                 '                                                                            <option value="0:1 Deckung">0:1 Deckung</option>' +
-                '                                                                            <option value="1:1 Deckung">1:1 Deckung</option>' +
+                '                                                                            <option value="1:1 Deckung">1:1 Deckung</option>'+
                 '                                                                        </select>' +
                 '                                                                   </div>' +
                 '                                                                </div>' +
@@ -7576,7 +7569,3 @@ document.getElementById('gofert').value = gofert.toString();
         color: black !important;
     }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

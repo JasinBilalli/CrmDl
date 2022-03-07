@@ -509,7 +509,7 @@ $title = $req->title ? $req->title : "";
                 ->where('pendencies.completed',0)
                 ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id','pendencies.*','family_person.id', 'family_person.last_name','pendencies.id as pid')
                 ->orderBy('family_person.first_name', 'asc')
-                ->get();
+                ->paginate(200);
         }
         if (isset($req->searchopen)) {
             $open = DB::table('family_person')
@@ -527,7 +527,7 @@ $title = $req->title ? $req->title : "";
                 ->where('pendencies.completed',0)
                 ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id', 'family_person.id', 'family_person.last_name','pendencies.*','pendencies.id as pid')
                 ->orderBy('family_person.first_name', 'asc')
-                ->get();
+                ->paginate(200);
         }
 
         $answered = [];
@@ -545,7 +545,7 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
       ->whereIn('family_person.status',['Open'])
       ->select('family_person.*')
       ->orderBy('family_person.created_at','desc')
-      ->get();
+      ->paginate(200);
 
       $cntt = 0;
 
@@ -562,7 +562,7 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
       ->join('pendencies','family_person.id','=','pendencies.family_id')
       ->where('pendencies.completed','=',0)
       ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
-      ->get();
+      ->paginate(200);
 
 
     }
@@ -573,7 +573,7 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
       ->where('leads.assign_to_id',Auth::guard('admins')->user()->id)
       ->select('family_person.*')
       ->orderBy('family_person.created_at','desc')
-      ->get();
+      ->paginate(200);
 
        $tasks2 = [];
       $cntt = 0;
@@ -592,13 +592,14 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
       ->where('pendencies.completed','=',0)
       ->where('pendencies.admin_id','=',Auth::guard('admins')->user()->id)
       ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
-      ->get();
+      ->paginate(200);
 
 
 
     }
     $cnt = 0;
-    $costumers = family::all();
+    $costumers = family::where('birthdate',Carbon::now()->format('Y-m-d'))->paginate(200);
+
     $todaydate = Carbon::now()->format('m-d');
 
     $birthdays = [];
@@ -616,8 +617,8 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
     }
   }
 
-  $personalApp = PersonalAppointment::where('AppOrCon',1)->where('user_id',Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
-
+  $personalApp = DB::table('personalappointment')->where('AppOrCon',1)->where('user_id',Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
+ 
 if(Auth::guard('admins')->user()->hasRole('backoffice')) return view('tasks',compact('answered','pend','opened'));
 if(Auth::guard('admins')->user()->hasRole('fs')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks'));
 if(Auth::guard('admins')->user()->hasRole('admin')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','answered','pend','opened'));

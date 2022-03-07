@@ -7,106 +7,7 @@
         <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
     </head>
 
-    <style>
-        body {
-            overflow-x: hidden;
-        }
-        .overflow-divvv::-webkit-scrollbar {
-            width: 1px !important;
-        }
-        /* Track */
-        .overflow-divvv::-webkit-scrollbar-track {
-            background: transparent !important;
-            border-radius: 10px !important;
-        }
-        /* Handle */
-        .overflow-divvv::-webkit-scrollbar-thumb {
-            background: #c9cad8 !important;
-            border-radius: 10px !important;
-        }
-        /* Handle on hover */
-        .overflow-divvv::-webkit-scrollbar-thumb:hover {
-            background: #707070 !important;
-            border-radius: 10px !important;
-        }
-        .tab-lookalike2 {
-            background-color: #FFEAE4 !important;
-            color: #434343 !important;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 5px !important;
-            border-top-right-radius: 5px !important;
-        }
-        .tab-lookalike1 {
-            background-color: #F7F7F7 !important;
-            color: #434343 !important;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 5px !important;
-            border-top-right-radius: 5px !important;
-        }
-        .tab-lookalike {
-            background-color: #F7F7F7 !important;
-            color: #FF4000 !important;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 5px !important;
-            border-top-right-radius: 5px !important;
-        }
-        .header-open-task1 {
-            background-color: #F7F7F7 !important;
-            border-bottom-left-radius: 20px !important;
-            border-bottom-right-radius: 20px !important;
-            border-top-left-radius: 20px !important;
-            border-top-right-radius: 0px !important;
-        }
-        .header-open-task1-pink {
-            background-color: #FFEAE4 !important;
-            border-bottom-left-radius: 20px !important;
-            border-bottom-right-radius: 20px !important;
-            border-top-left-radius: 20px !important;
-            border-top-right-radius: 0px;
-        }
-        .priority-spnn {
-            background-color: #ad2b2b !important;
-            border-radius: 35px !important;
-            color: #fff !important;
-        }
-        .open-task-box {
-            border-radius: 35px !important;
-            background-color: #fff;
-            border: none !important;
-        }
-        .pendzen-box {
-            border-radius: 35px !important;
-            background-color: #EAECF0 !important;
-            border: none !important;
-        }
-        .third-box {
-            border-radius: 35px !important;
-            background-color: #fff !important;
-            border: #707070 1px solid !important;
-        }
-        .task-box {
-            background-color: #F7F7F7 !important;
-            border-radius: 12px !important;
-        }
-        .name-spnnnn {
-            font-weight: 600 !important;
-        }
-        .fw-600 {
-            font-weight: 600 !important;
-        }
-        .spn-muted {
-            color: #707070 !important;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-        }
-        .spn-normal {
-            font-weight: 600;
-            font-size: 14px !important;
-        }
-    </style>
+    
     {{--    mobile tasks--}}
 
     </style>
@@ -1360,6 +1261,106 @@
     @endif
 
 @endsection
+<style>
+        body {
+            overflow-x: hidden;
+        }
+        .overflow-divvv::-webkit-scrollbar {
+            width: 1px !important;
+        }
+        /* Track */
+        .overflow-divvv::-webkit-scrollbar-track {
+            background: transparent !important;
+            border-radius: 10px !important;
+        }
+        /* Handle */
+        .overflow-divvv::-webkit-scrollbar-thumb {
+            background: #c9cad8 !important;
+            border-radius: 10px !important;
+        }
+        /* Handle on hover */
+        .overflow-divvv::-webkit-scrollbar-thumb:hover {
+            background: #707070 !important;
+            border-radius: 10px !important;
+        }
+        .tab-lookalike2 {
+            background-color: #FFEAE4 !important;
+            color: #434343 !important;
+            border-bottom-left-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+            border-top-left-radius: 5px !important;
+            border-top-right-radius: 5px !important;
+        }
+        .tab-lookalike1 {
+            background-color: #F7F7F7 !important;
+            color: #434343 !important;
+            border-bottom-left-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+            border-top-left-radius: 5px !important;
+            border-top-right-radius: 5px !important;
+        }
+        .tab-lookalike {
+            background-color: #F7F7F7 !important;
+            color: #FF4000 !important;
+            border-bottom-left-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+            border-top-left-radius: 5px !important;
+            border-top-right-radius: 5px !important;
+        }
+        .header-open-task1 {
+            background-color: #F7F7F7 !important;
+            border-bottom-left-radius: 20px !important;
+            border-bottom-right-radius: 20px !important;
+            border-top-left-radius: 20px !important;
+            border-top-right-radius: 0px !important;
+        }
+        .header-open-task1-pink {
+            background-color: #FFEAE4 !important;
+            border-bottom-left-radius: 20px !important;
+            border-bottom-right-radius: 20px !important;
+            border-top-left-radius: 20px !important;
+            border-top-right-radius: 0px;
+        }
+        .priority-spnn {
+            background-color: #ad2b2b !important;
+            border-radius: 35px !important;
+            color: #fff !important;
+        }
+        .open-task-box {
+            border-radius: 35px !important;
+            background-color: #fff;
+            border: none !important;
+        }
+        .pendzen-box {
+            border-radius: 35px !important;
+            background-color: #EAECF0 !important;
+            border: none !important;
+        }
+        .third-box {
+            border-radius: 35px !important;
+            background-color: #fff !important;
+            border: #707070 1px solid !important;
+        }
+        .task-box {
+            background-color: #F7F7F7 !important;
+            border-radius: 12px !important;
+        }
+        .name-spnnnn {
+            font-weight: 600 !important;
+        }
+        .fw-600 {
+            font-weight: 600 !important;
+        }
+        .spn-muted {
+            color: #707070 !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+        }
+        .spn-normal {
+            font-weight: 600;
+            font-size: 14px !important;
+        }
+    </style>
 <script>
     function firstDivToggleFunct() {
         $('#firstDivToggle').slideUp(200);
@@ -1871,4 +1872,3 @@
         overflow: auto;
     }
 </style>
-
