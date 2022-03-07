@@ -140,7 +140,7 @@
                                                  style="background: #f8f8f8; border-radius: 43px">
                                                 <div class="modal-header mx-3 pt-4"
                                                      style="border-bottom: none !important;">
-                                                    <h4>Pendenzen Info</h4>
+                                                    <h4>Pendenzen Infos</h4>
                                                     <button type="button" class="btn-close"
                                                             data-bs-dismiss="modal" aria-label="Close"
                                                             style="opacity: 1 !important;"></button>
@@ -158,7 +158,7 @@
                                                         <div class="col-6">
                                                             <div class="text-center my-1 fw-bold"
                                                                  style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
-                                                                Time:
+                                                                Zeit:
                                                                 <br>
                                                                 {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('H:i')}}
 
@@ -199,7 +199,7 @@
 
                                                     <button type="button" class="btn px-3"
                                                             style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                            data-bs-dismiss="modal"><b>Close</b></button>
+                                                            data-bs-dismiss="modal"><b>Schliessen</b></button>
 
                                                     <a href="{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}">
                                                         <button type="button" class="btn px-3"
@@ -745,7 +745,7 @@
                                                          style="background: #f8f8f8; border-radius: 43px">
                                                         <div class="modal-header mx-3 pt-4"
                                                              style="border-bottom: none !important;">
-                                                            <h4>Pendenzen Info</h4>
+                                                            <h4>Pendenzen Infos</h4>
                                                             <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"
                                                                     style="opacity: 1 !important;"></button>
@@ -763,7 +763,7 @@
                                                                 <div class="col-6">
                                                                     <div class="text-center my-1 fw-bold"
                                                                          style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
-                                                                        Time:
+                                                                        Zeit:
                                                                         <br>
                                                                         {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('H:i')}}
 
@@ -804,12 +804,11 @@
 
                                                             <button type="button" class="btn px-3"
                                                                     style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                    data-bs-dismiss="modal"><b>Close</b></button>
+                                                                    data-bs-dismiss="modal"><b>Schliessen</b></button>
 
                                                             <a href="{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}">
                                                                 <button type="button" class="btn px-3"
-                                                                        style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                        data-bs-dismiss="modal"><b>Offen</b></button>
+                                                                        style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"><b>Offen</b></button>
                                                             </a>
 
                                                         </div>

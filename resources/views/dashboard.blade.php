@@ -247,7 +247,7 @@
                             </div>
                             <div class="my-3">
                                 <div class="row g-0">
-                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
+                                    <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
                                              style="background-color: #8A8BF9; border-radius: 18px;  margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
@@ -272,7 +272,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
+                                    <div onclick="window.location.href='{{route('tasks')}}'" style="cursor: pointer"  class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
                                              style="background-color: #F88DC4; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
@@ -285,7 +285,7 @@
                                             </div>
                                             <div class="py-2">
                                                     <span class="fw-bold fs-5 text-white">
-{{$offen}}
+                                                        {{$offen}}
                                                     </span>
                                                 <br>
                                                 <span class="fw-bold fs-5 text-white">
@@ -294,7 +294,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
+                                    <div onclick="window.location.href='{{route('tasks')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
                                              style="background-color: #4EC590; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
@@ -307,9 +307,15 @@
                                                 </svg>
                                             </div>
                                             <div class="py-2">
-                                                    <span class="fw-bold fs-5 text-white">
+                                                @if($pendingcnt != 0)
+                                                    <span class="fw-bold fs-5 " style="color: red">
                                                         {{$pendingcnt}}
                                                     </span>
+                                                @else
+                                                    <span class="fw-bold fs-5 " style="color: white">
+                                                        {{$pendingcnt}}
+                                                    </span>
+                                                @endif
                                                 <br>
                                                 <span class="fw-bold fs-5 text-white">
                                                         Steht Aus
@@ -317,7 +323,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
+                                    <div onclick="window.location.href='{{route('Appointments')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
                                              style="background-color: #4e5ec5; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
@@ -340,29 +346,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
-                                         style="font-family: 'Montserrat';">
-                                        <div class="text-center"
-                                             style="background-color: #c7cb81; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
-                                            <div class="pt-3">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
-                                                     fill="#fff" class="bi bi-exclamation-octagon-fill"
-                                                     viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                                </svg>
-                                            </div>
-                                            <div class="py-2">
-                                                    <span class="fw-bold fs-5 text-white">
-                                                        0
-                                                    </span>
-                                                <br>
-                                                <span class="fw-bold fs-5 text-white">
-                                                        HR Comm
-                                                    </span>
-                                            </div>
-                                        </div>
-                                    </div>
+{{--                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"--}}
+{{--                                         style="font-family: 'Montserrat';">--}}
+{{--                                        <div class="text-center"--}}
+{{--                                             style="background-color: #c7cb81; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">--}}
+{{--                                            <div class="pt-3">--}}
+{{--                                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"--}}
+{{--                                                     fill="#fff" class="bi bi-exclamation-octagon-fill"--}}
+{{--                                                     viewBox="0 0 16 16">--}}
+{{--                                                    <path--}}
+{{--                                                        d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>--}}
+{{--                                                </svg>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="py-2">--}}
+{{--                                                    <span class="fw-bold fs-5 text-white">--}}
+{{--                                                        0--}}
+{{--                                                    </span>--}}
+{{--                                                <br>--}}
+{{--                                                <span class="fw-bold fs-5 text-white">--}}
+{{--                                                        HR Comm--}}
+{{--                                                    </span>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
 
                                     <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
@@ -710,7 +716,7 @@
                             </div>
                             <div class="modal-footer" style="border-top: none !important; display: block;">
                                 <div class="row mx-4 pb-4">
-                                    <div class="col-3 mx-auto">
+                                    <div class="col mx-auto">
                                         <button type="button" class="btn w-100 px-3"
                                                 style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
                                                 data-bs-dismiss="modal"><b>Schliessen</b></button>
@@ -762,55 +768,63 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-4">
-                                        <div class="my-1 text-start">
-                                            <button class="border-0 w-100 py-2 fw-bold text-start"
-                                                    style="background-color: #fff; color: #434343; border-radius: 8px;">
-                                                <span class="px-3"><svg xmlns="http://www.w3.org/2000/svg"
-                                                                        width="40"
-                                                                        viewBox="0 0 53.428 53.428">
-  <g id="Group_1038" data-name="Group 1038" transform="translate(-1191.744 -529.001)">
-    <path id="Path_1950" data-name="Path 1950"
-          d="M94.4,50.088a23.374,23.374,0,1,1,23.374-23.374A23.373,23.373,0,0,1,94.4,50.088m0,3.34A26.714,26.714,0,1,0,67.683,26.714,26.713,26.713,0,0,0,94.4,53.428"
-          transform="translate(1124.061 529.001)"/>
-    <path id="Path_1951" data-name="Path 1951"
-          d="M90.478,41.162A18.366,18.366,0,1,1,108.843,22.8,18.364,18.364,0,0,1,90.478,41.162m0,1.67A20.036,20.036,0,1,0,70.443,22.8,20.034,20.034,0,0,0,90.478,42.832"
-          transform="translate(1127.98 532.92)"/>
-    <path id="Path_1952" data-name="Path 1952"
-          d="M73.472,13.293a4.345,4.345,0,0,1,4.62-4.37A4.444,4.444,0,0,1,81.7,10.508l-1.51,1.367a2.5,2.5,0,0,0-1.982-.983,2.253,2.253,0,0,0-2.34,2.4,2.253,2.253,0,0,0,2.34,2.4,2.492,2.492,0,0,0,1.982-.987l1.51,1.372a4.444,4.444,0,0,1-3.613,1.585,4.346,4.346,0,0,1-4.62-4.37"
-          transform="translate(1132.28 541.671)"/>
-    <path id="Path_1953" data-name="Path 1953"
-          d="M85.3,8.993v8.4H82.923V14.118h-3.24v3.277H77.306v-8.4h2.376v3.156h3.24V8.993Z"
-          transform="translate(1137.725 541.771)"/>
-    <path id="Path_1954" data-name="Path 1954" d="M83.676,10.829v1.849h3.71v1.837h-3.71v2.88H81.3v-8.4h6.59v1.837Z"
-          transform="translate(1143.395 541.77)"/>
-  </g>
-</svg></span>
-                                                Finanzen
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <div class="my-1">
-                                            <button class="border-0 w-100 py-2 fw-bold text-start "
-                                                    style="background-color: #fff; color: #434343; border-radius: 8px;">
-                                                <span class="px-3">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="35.152"  viewBox="0 0 46.152 52.855">
-  <g id="Group_1041" data-name="Group 1041" transform="translate(-916 -529.621)">
-    <path id="Path_1943" data-name="Path 1943" d="M4.421.152h26.9c.047.052.095.107.145.157q7.218,7.233,14.437,14.458a.743.743,0,0,1,.247.583q-.011,13.693,0,27.389V48a4.693,4.693,0,0,1-.455,2.113A4.865,4.865,0,0,1,41.029,53q-13,0-26.009,0c-3.377,0-6.755.009-10.132,0A4.892,4.892,0,0,1,.206,49.411c-.092-.325-.14-.662-.206-.994V4.734c.017-.076.038-.152.05-.23A4.836,4.836,0,0,1,3.086.531,9.922,9.922,0,0,1,4.421.152m23.6,3.294h-.334q-10.474,0-20.945,0A3.318,3.318,0,0,0,3.3,6.878q0,19.7,0,39.393a3.869,3.869,0,0,0,.071.776A3.291,3.291,0,0,0,6.681,49.7H39.459a3.277,3.277,0,0,0,2.021-.633,3.381,3.381,0,0,0,1.369-2.9q-.014-13.725,0-27.448v-.4H42.5c-3.154,0-6.309.009-9.461-.012a5.707,5.707,0,0,1-1.613-.249,4.893,4.893,0,0,1-3.406-4.791q-.007-4.717,0-9.435V3.446m3.3,1.779v.221q0,3.088,0,6.174a3.29,3.29,0,0,0,3.4,3.4q3.074.007,6.145,0c.085,0,.171-.007.287-.012L31.317,5.225" transform="translate(916 529.469)"/>
-    <rect id="Rectangle_898" data-name="Rectangle 898" width="26.319" height="3.275" transform="translate(925.912 554.405)"/>
-    <rect id="Rectangle_899" data-name="Rectangle 899" width="26.322" height="3.271" transform="translate(925.909 567.622)"/>
-    <rect id="Rectangle_900" data-name="Rectangle 900" width="26.322" height="3.271" transform="translate(925.909 561.015)"/>
-    <rect id="Rectangle_901" data-name="Rectangle 901" width="9.848" height="3.275" transform="translate(925.916 541.199)"/>
-    <rect id="Rectangle_902" data-name="Rectangle 902" width="9.859" height="3.271" transform="translate(925.909 547.802)"/>
-  </g>
-</svg>
-                                                </span>
+{{--                                    <div class="col-12 col-md-4">--}}
+{{--                                        <div class="my-1 text-start">--}}
+{{--                                            <button class="border-0 w-100 py-2 fw-bold text-start"--}}
+{{--                                                    style="background-color: #fff; color: #434343; border-radius: 8px;">--}}
+{{--                                                <span class="px-3"><svg xmlns="http://www.w3.org/2000/svg"--}}
+{{--                                                                        width="40"--}}
+{{--                                                                        viewBox="0 0 53.428 53.428">--}}
+{{--                                                                      <g id="Group_1038" data-name="Group 1038" transform="translate(-1191.744 -529.001)">--}}
+{{--                                                                        <path id="Path_1950" data-name="Path 1950"--}}
+{{--                                                                              d="M94.4,50.088a23.374,23.374,0,1,1,23.374-23.374A23.373,23.373,0,0,1,94.4,50.088m0,3.34A26.714,26.714,0,1,0,67.683,26.714,26.713,26.713,0,0,0,94.4,53.428"--}}
+{{--                                                                              transform="translate(1124.061 529.001)"/>--}}
+{{--                                                                        <path id="Path_1951" data-name="Path 1951"--}}
+{{--                                                                              d="M90.478,41.162A18.366,18.366,0,1,1,108.843,22.8,18.364,18.364,0,0,1,90.478,41.162m0,1.67A20.036,20.036,0,1,0,70.443,22.8,20.034,20.034,0,0,0,90.478,42.832"--}}
+{{--                                                                              transform="translate(1127.98 532.92)"/>--}}
+{{--                                                                        <path id="Path_1952" data-name="Path 1952"--}}
+{{--                                                                              d="M73.472,13.293a4.345,4.345,0,0,1,4.62-4.37A4.444,4.444,0,0,1,81.7,10.508l-1.51,1.367a2.5,2.5,0,0,0-1.982-.983,2.253,2.253,0,0,0-2.34,2.4,2.253,2.253,0,0,0,2.34,2.4,2.492,2.492,0,0,0,1.982-.987l1.51,1.372a4.444,4.444,0,0,1-3.613,1.585,4.346,4.346,0,0,1-4.62-4.37"--}}
+{{--                                                                              transform="translate(1132.28 541.671)"/>--}}
+{{--                                                                        <path id="Path_1953" data-name="Path 1953"--}}
+{{--                                                                              d="M85.3,8.993v8.4H82.923V14.118h-3.24v3.277H77.306v-8.4h2.376v3.156h3.24V8.993Z"--}}
+{{--                                                                              transform="translate(1137.725 541.771)"/>--}}
+{{--                                                                        <path id="Path_1954" data-name="Path 1954" d="M83.676,10.829v1.849h3.71v1.837h-3.71v2.88H81.3v-8.4h6.59v1.837Z"--}}
+{{--                                                                              transform="translate(1143.395 541.77)"/>--}}
+{{--                                                                      </g>--}}
+{{--                                                                    </svg></span>--}}
+{{--                                                Finanzen--}}
+{{--                                            </button>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-12 col-md-4">--}}
+{{--                                        <div class="my-1">--}}
+{{--                                            <button class="border-0 w-100 py-2 fw-bold text-start "--}}
+{{--                                                    style="background-color: #fff; color: #434343; border-radius: 8px;">--}}
+{{--                                                <span class="px-3">--}}
+{{--                                                    <svg xmlns="http://www.w3.org/2000/svg" width="35.152"--}}
+{{--                                                         viewBox="0 0 46.152 52.855">--}}
+{{--  <g id="Group_1041" data-name="Group 1041" transform="translate(-916 -529.621)">--}}
+{{--    <path id="Path_1943" data-name="Path 1943"--}}
+{{--          d="M4.421.152h26.9c.047.052.095.107.145.157q7.218,7.233,14.437,14.458a.743.743,0,0,1,.247.583q-.011,13.693,0,27.389V48a4.693,4.693,0,0,1-.455,2.113A4.865,4.865,0,0,1,41.029,53q-13,0-26.009,0c-3.377,0-6.755.009-10.132,0A4.892,4.892,0,0,1,.206,49.411c-.092-.325-.14-.662-.206-.994V4.734c.017-.076.038-.152.05-.23A4.836,4.836,0,0,1,3.086.531,9.922,9.922,0,0,1,4.421.152m23.6,3.294h-.334q-10.474,0-20.945,0A3.318,3.318,0,0,0,3.3,6.878q0,19.7,0,39.393a3.869,3.869,0,0,0,.071.776A3.291,3.291,0,0,0,6.681,49.7H39.459a3.277,3.277,0,0,0,2.021-.633,3.381,3.381,0,0,0,1.369-2.9q-.014-13.725,0-27.448v-.4H42.5c-3.154,0-6.309.009-9.461-.012a5.707,5.707,0,0,1-1.613-.249,4.893,4.893,0,0,1-3.406-4.791q-.007-4.717,0-9.435V3.446m3.3,1.779v.221q0,3.088,0,6.174a3.29,3.29,0,0,0,3.4,3.4q3.074.007,6.145,0c.085,0,.171-.007.287-.012L31.317,5.225"--}}
+{{--          transform="translate(916 529.469)"/>--}}
+{{--    <rect id="Rectangle_898" data-name="Rectangle 898" width="26.319" height="3.275"--}}
+{{--          transform="translate(925.912 554.405)"/>--}}
+{{--    <rect id="Rectangle_899" data-name="Rectangle 899" width="26.322" height="3.271"--}}
+{{--          transform="translate(925.909 567.622)"/>--}}
+{{--    <rect id="Rectangle_900" data-name="Rectangle 900" width="26.322" height="3.271"--}}
+{{--          transform="translate(925.909 561.015)"/>--}}
+{{--    <rect id="Rectangle_901" data-name="Rectangle 901" width="9.848" height="3.275"--}}
+{{--          transform="translate(925.916 541.199)"/>--}}
+{{--    <rect id="Rectangle_902" data-name="Rectangle 902" width="9.859" height="3.271"--}}
+{{--          transform="translate(925.909 547.802)"/>--}}
+{{--  </g>--}}
+{{--</svg>--}}
+{{--                                                </span>--}}
 
-                                                Aussagen
-                                            </button>
-                                        </div>
-                                    </div>
+{{--                                                Aussagen--}}
+{{--                                            </button>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>
@@ -825,7 +839,7 @@
                                                 <div class="p-3">
                                                     <div class="row">
                                                         <div class="col">
-                                                            <h5><b>Konsultationen</b></h5>
+                                                            <h5><b>Mitarbeiterbesprechungen</b></h5>
                                                         </div>
                                                         <div style="color: #0a53be" class="col-3 text-end">
                                                             <h5><b>{{$countconsultation}}</b></h5>
@@ -922,8 +936,8 @@
                                                                  style="border-bottom: 0 !important;">
                                                                 <h5 class="modal-title mx-2"
                                                                     style="font-family: 'Montserrat' !important;"
-                                                                    id="exampleModalLabel"><b>Add
-                                                                        Consultation</b></h5>
+                                                                    id="exampleModalLabel"><b>Beratung Hinzufügen</b>
+                                                                </h5>
                                                                 <button type="button" style="opacity: 1 !important;"
                                                                         class="btn-close"
                                                                         data-bs-dismiss="modal"
@@ -937,31 +951,31 @@
                                                                     <input type="hidden" name="apporconId" value="2">
                                                                     <div class="px-2">
                                                                         <label
-                                                                            style="font-family: 'Montserrat' !important;">Title</label>
+                                                                            style="font-family: 'Montserrat' !important;">Titel</label>
                                                                         <input type="text"
                                                                                style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
                                                                                name="title" class="form-control mb-3"
                                                                                required>
                                                                         <label
-                                                                            style="font-family: 'Montserrat' !important;"><b>Date</b></label>
+                                                                            style="font-family: 'Montserrat' !important;">Datum</label>
                                                                         <input type="date"
                                                                                style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                                name="date" class="form-control mb-3"
                                                                                required>
                                                                         <label
-                                                                            style="font-family: 'Montserrat' !important;">Time</label>
+                                                                            style="font-family: 'Montserrat' !important;">Zeit</label>
                                                                         <input type="time"
                                                                                style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
                                                                                name="time" class="form-control mb-3"
                                                                                required>
                                                                         <label
-                                                                            style="font-family: 'Montserrat' !important;">Address</label>
+                                                                            style="font-family: 'Montserrat' !important;">Adress</label>
                                                                         <input type="text"
                                                                                style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
                                                                                name="address" class="form-control mb-3"
                                                                                required>
                                                                         <label
-                                                                            style="font-family: 'Montserrat' !important;">Comment</label>
+                                                                            style="font-family: 'Montserrat' !important;">Kommentar</label>
                                                                         <textarea type="text" name="comment"
                                                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
                                                                                   class="form-control mb-3"
@@ -973,20 +987,21 @@
                                                                         <div class="row" style="width: 100%;">
                                                                             <div class="col-md-4 col-5 p-0">
                                                                                 <div style="padding: 2%;">
-                                                                                    <input type="submit"
-                                                                                           style="font-family: 'Montserrat' !important; width: 100%; border: 1px solid #4EC590; font-weight: 600 !important; font-size: 18px !important; background-color: #4EC590; color: #fff; border-radius: 8px;"
-                                                                                           class="btn py-2"
-                                                                                           value="Save">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-md-4 col-5 p-0">
-                                                                                <div style="padding: 2%;">
                                                                                     <button type="button"
                                                                                             class="btn py-2"
                                                                                             style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;"
                                                                                             data-bs-dismiss="modal">
                                                                                         Schliessen
                                                                                     </button>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-4 col-5 p-0">
+                                                                                <div style="padding: 2%;">
+                                                                                    <input type="submit"
+                                                                                           style="font-family: 'Montserrat' !important; width: 100%; border: 1px solid #4EC590; font-weight: 600 !important; font-size: 18px !important; background-color: #4EC590; color: #fff; border-radius: 8px;"
+                                                                                           class="btn py-2"
+                                                                                           value="Sparen">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1113,8 +1128,8 @@
                                                          style="border-radius: 43px !important;">
                                                         <div class="modal-header" style="border-bottom: 0 !important;">
                                                             <h5 class="modal-title mx-2" id="exampleModalLabel"
-                                                                style="font-family: 'Montserrat';"><b>Add Personal
-                                                                    Appointment</b></h5>
+                                                                style="font-family: 'Montserrat';"><b>Persönlichen
+                                                                    Termin Hinzufügen</b></h5>
                                                             <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal"
                                                                     aria-label="Close"></button>
@@ -1126,31 +1141,31 @@
                                                                 <input type="hidden" name="apporconId" value="1">
                                                                 <div class="px-2">
                                                                     <label
-                                                                        style="font-family: 'Montserrat';"><b>Titel</b></label>
+                                                                        style="font-family: 'Montserrat';">Titel</label>
                                                                     <input type="text"
                                                                            style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                            name="title" class="form-control mb-3"
                                                                            required>
                                                                     <label
-                                                                        style="font-family: 'Montserrat' !important;"><b>Datum</b></label>
+                                                                        style="font-family: 'Montserrat' !important;">Datum</label>
                                                                     <input type="date"
                                                                            style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                            name="date" class="form-control mb-3"
                                                                            required>
                                                                     <label
-                                                                        style="font-family: 'Montserrat';"><b>Zeit</b></label>
+                                                                        style="font-family: 'Montserrat';">Zeit</label>
                                                                     <input type="time"
                                                                            style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                            name="time" class="form-control mb-3"
                                                                            required>
                                                                     <label
-                                                                        style="font-family: 'Montserrat';"><b>Adress</b></label>
+                                                                        style="font-family: 'Montserrat';">Adress</label>
                                                                     <input type="text"
                                                                            style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                            name="address" class="form-control mb-3"
                                                                            required>
                                                                     <label
-                                                                        style="font-family: 'Montserrat';"><b>Kommentar</b></label>
+                                                                        style="font-family: 'Montserrat';">Kommentar</label>
                                                                     <textarea type="text"
                                                                               style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
                                                                               name="comment" class="form-control mb-3"
@@ -1162,18 +1177,19 @@
                                                                     <div class="row" style="width: 100%;">
                                                                         <div class="col-md-4 col-5 p-0">
                                                                             <div style="padding: 2%;">
-                                                                                <input type="submit"
-                                                                                       style="font-family: 'Montserrat' !important; width: 100%; border: 1px solid #4EC590; font-weight: 600 !important; font-size: 18px !important; background-color: #4EC590; color: #fff; border-radius: 8px;"
-                                                                                       class="btn py-2" value="Save">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-5 p-0">
-                                                                            <div style="padding: 2%;">
                                                                                 <button type="button" class="btn py-2"
                                                                                         data-bs-dismiss="modal"
                                                                                         style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;">
                                                                                     Schliessen
                                                                                 </button>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-5 p-0">
+                                                                            <div style="padding: 2%;">
+                                                                                <input type="submit"
+                                                                                       style="font-family: 'Montserrat' !important; width: 100%; border: 1px solid #4EC590; font-weight: 600 !important; font-size: 18px !important; background-color: #4EC590; color: #fff; border-radius: 8px;"
+                                                                                       class="btn py-2" value="Sparen">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1193,7 +1209,7 @@
                         </div>
                         <div class="my-3">
                             <div class="row mx-2">
-                                <div class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
+                                <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
                                     <div class="text-center"
                                          style="background-color: #8A8BF9; border-radius: 18px;  margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
                                         <div class="pt-3">
@@ -1218,51 +1234,52 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center"
-                                         style="background-color: #F88DC4; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
-                                        <div class="pt-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"
-                                                 class="bi bi-bell-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
-                                            </svg>
-                                        </div>
-                                        <div class="py-2">
-                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">
-{{$offen}}
-                            </span>
-                                            <br>
-                                            <span class="fw-bold fs-5 text-white"
-                                                  style="font-family: 'Montserrat' !important;">
-                                 Aufgaben öffnen
-                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center"
-                                         style="background-color: #4EC590; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
-                                        <div class="pt-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"
-                                                 class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                            </svg>
-                                        </div>
-                                        <div class="py-2">
-                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">
-                                {{$pendingcnt}}
-                            </span>
-                                            <br>
-                                            <span class="fw-bold fs-5 text-white"
-                                                  style="font-family: 'Montserrat' !important;">
-                                Steht Aus
-                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
+{{--                                <div  class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">--}}
+{{--                                    <div  class="text-center"--}}
+{{--                                         style="background-color: #F88DC4; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">--}}
+{{--                                        <div  class="pt-3">--}}
+{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"--}}
+{{--                                                 class="bi bi-bell-fill" viewBox="0 0 16 16">--}}
+{{--                                                <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>--}}
+{{--                                            </svg>--}}
+{{--                                        </div>--}}
+{{--                                    <div class="py-2">--}}
+{{--                                        <span class="fw-bold fs-5 text-white"--}}
+{{--                                              style="font-family: 'Montserrat' !important;">--}}
+{{--                                            {{$offen}}--}}
+{{--                                        </span>--}}
+{{--                                            <br>--}}
+{{--                                            <span class="fw-bold fs-5 text-white"--}}
+{{--                                                  style="font-family: 'Montserrat' !important;">--}}
+{{--                                 Aufgaben öffnen--}}
+{{--                            </span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
+{{--                                <div  class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">--}}
+{{--                                    <div class="text-center"--}}
+{{--                                         style="background-color: #4EC590; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">--}}
+{{--                                        <div class="pt-3">--}}
+{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"--}}
+{{--                                                 class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">--}}
+{{--                                                <path--}}
+{{--                                                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>--}}
+{{--                                            </svg>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="py-2">--}}
+{{--                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">--}}
+{{--                                {{$pendingcnt}}--}}
+{{--                            </span>--}}
+{{--                                            <br>--}}
+{{--                                            <span class="fw-bold fs-5 text-white"--}}
+{{--                                                  style="font-family: 'Montserrat' !important;">--}}
+{{--                                Steht Aus--}}
+{{--                            </span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+                                <div onclick="window.location.href='{{route('Appointments')}}'" style="cursor: pointer" class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
                                     <div class="text-center"
                                          style="background-color: #4e5ec5; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
                                         <div class="pt-3">
@@ -1273,39 +1290,40 @@
                                             </svg>
                                         </div>
                                         <div class="py-2">
-                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">
-                                {{$todayAppointCount}}
-                            </span>
+                                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">
+                                                {{$todayAppointCount}}
+                                            </span>
                                             <br>
                                             <span class="fw-bold fs-5 text-white"
                                                   style="font-family: 'Montserrat' !important;">
-                                Heute Termin
-                            </span>
+                                                Heute Termin
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center"
-                                         style="background-color: #c7cb81; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
-                                        <div class="pt-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"
-                                                 class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                            </svg>
-                                        </div>
-                                        <div class="py-2">
-                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">
-                                0
-                            </span>
-                                            <br>
-                                            <span class="fw-bold fs-5 text-white"
-                                                  style="font-family: 'Montserrat' !important;">
-                                HR Comm
-                            </span>
-                                        </div>
-                                    </div>
-                                </div>
+
+{{--                                <div class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">--}}
+{{--                                    <div class="text-center"--}}
+{{--                                         style="background-color: #c7cb81; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">--}}
+{{--                                        <div class="pt-3">--}}
+{{--                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"--}}
+{{--                                                 class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">--}}
+{{--                                                <path--}}
+{{--                                                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>--}}
+{{--                                            </svg>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="py-2">--}}
+{{--                                                <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">--}}
+{{--                                                    0--}}
+{{--                                                </span>--}}
+{{--                                            <br>--}}
+{{--                                            <span class="fw-bold fs-5 text-white"--}}
+{{--                                                  style="font-family: 'Montserrat' !important;">--}}
+{{--                                                HR Comm--}}
+{{--                                            </span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
                                 <div class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
                                     <div class="text-center box-1 "
@@ -1346,465 +1364,465 @@
                 </section>
 
 
-            @endif
-
-
-            </script>
-            @endsection
-            <style>
-                .dateee {
-                    border-radius: 15px;
-                    border: #4CC590 1px solid;
-                    color: #000;
-                    background-color: #fff;
-                }
-
-                .dateee:hover {
-                    background-color: #4CC590;
-                    border-radius: 15px;
-                    color: #fff;
-                }
-
-                .dateee:focus {
-                    background-color: #4CC590;
-                    border-radius: 15px;
-                    color: #fff;
-                }
-
-                .box-1 {
-                    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='black' stroke-width='1' stroke-dasharray='7%2c 11' stroke-dashoffset='63' stroke-linecap='square'/%3e%3c/svg%3e");
-                    border-radius: 18px;
-                }
-
-                body {
-                    overflow-x: hidden !important;
-                }
-
-
-            </style>
-            <style>
-                /* overflow 1 */
-                .overflow-div1::-webkit-scrollbar {
-                    width: 8px;
-                }
-
-                /* Track */
-                .overflow-div1::-webkit-scrollbar-track {
-                    background: transparent !important;
-                    border-radius: 10px;
-                }
-
-                /* Handle */
-                .overflow-div1::-webkit-scrollbar-thumb {
-                    background: #c9cad8;
-                    border-radius: 10px;
-                }
-
-                /* Handle on hover */
-                .overflow-div1::-webkit-scrollbar-thumb:hover {
-                    background: #707070;
-                    border-radius: 10px;
-                }
-
-                /* ........................................................... */
-                /* overflow 2 */
-
-                .overflow-div2::-webkit-scrollbar {
-                    width: 8px;
-                }
-
-                /* Track */
-                .overflow-div2::-webkit-scrollbar-track {
-                    background: transparent !important;
-                    border-radius: 10px;
-                }
-
-                /* Handle */
-                .overflow-div2::-webkit-scrollbar-thumb {
-                    background: #fff;
-                    border-radius: 10px;
-                }
-
-                /* Handle on hover */
-                .overflow-div2::-webkit-scrollbar-thumb:hover {
-                    background: #fff1ff;
-                    border-radius: 10px;
-                }
-
-                /* ........................................................... */
-                /* overflow 3 */
-
-                .overflow-div3::-webkit-scrollbar {
-                    width: 8px;
-                }
-
-                /* Track */
-                .overflow-div3::-webkit-scrollbar-track {
-                    background: transparent !important;
-                    border-radius: 10px;
-                }
-
-                /* Handle */
-                .overflow-div3::-webkit-scrollbar-thumb {
-                    background: #c9cad8;
-                    border-radius: 10px;
-                }
-
-                /* Handle on hover */
-                .overflow-div3::-webkit-scrollbar-thumb:hover {
-                    background: #707070;
-                }
-
-                /* ...................................................... */
-                /* overflow 4 */
-
-                .overflow-div4::-webkit-scrollbar {
-                    width: 8px;
-                }
-
-                /* Track */
-                .overflow-div4::-webkit-scrollbar-track {
-                    background: transparent !important;
-                    border-radius: 10px;
-                }
-
-                /* Handle */
-                .overflow-div4::-webkit-scrollbar-thumb {
-                    background: #c9cad8;
-                    border-radius: 10px;
-                }
-
-                /* Handle on hover */
-                .overflow-div4::-webkit-scrollbar-thumb:hover {
-                    background: #707070;
-                }
-
-
-                /* ................................................. */
-
-                .collapsed .d-btnn {
-                    background-color: #c8ddd1;
-                    opacity: 0.4;
-                }
-
-                .d-btnn {
-                    opacity: 1;
-                }
-
-                .form-control:focus {
-                    border-color: #ced4da;
-                    box-shadow: none;
-                }
-
-                .accordion-button {
-                    color: #7DBF9A;
-                    font-weight: bold;
-                    border-radius: 15px !important;
-                }
-
-                .accordion-item {
-                    border-radius: 15px !important;
-                }
-
-
-                .accordion-button:not(.collapsed) {
-                    color: #7DBF9A;
-                    background-color: #fff;
-                    box-shadow: none;
-                }
-
-                .accordion-button:not(.collapsed)::after {
-                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-                    /* background-color: transparent !important; */
-                }
-
-                .accordion-button:not(.show)::after {
-                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-                    /* background-color: transparent !important; */
-                }
-
-                .accordion-button.green-acc:not(.collapsed)::after {
-                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-                    /* background-color: transparent !important; */
-                }
-
-                .accordion-button.green-acc:not(.show)::after {
-                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-                    /* background-color: transparent !important; */
-                }
-
-                .accordion-button:focus {
-                    border-color: transparent !important;
-                    border: none !important;
-                    box-shadow: none !important;
-                }
-
-                .name-spnnnn {
-                    font-weight: 600;
-                }
-
-                .fw-600 {
-                    font-weight: 600;
-                }
-
-                .spn-muted {
-                    color: #707070;
-                    font-weight: 600;
-                    font-size: 14px !important;
-                }
-
-                .spn-normal {
-                    font-weight: 600;
-                    font-size: 14px !important;
-                }
-
-                .activedate {
-                    background-color: #4CC590 !important;
-                    color: #ffffff !important;
-                }
-
-            </style>
-            <style scoped>
-                .form-control {
-                    border: transparent !important;
-                    font-family: 'Montserrat';
-                }
-            </style>
-            <style>
-                /*Per Notification */
-                .coloriii a {
-                    color: #7F00FF !important;
-                }
-            </style>
-            <style>
-                @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
-
-                body {
-                    font-family: 'Montserrat', sans-serif;
-                }
-
-                .number-item {
-                    background-color: #EFEFEF;
-                    border-radius: 8px;
-                }
-
-                .answer-item {
-                    background-color: #EFF8FF;
-                    border-radius: 8px;
-                }
-
-                .open-month-items {
-                    background-color: #FFC428;
-                    border-radius: 8px;
-                }
-
-                .personal-app-items {
-                    background-color: #fff;
-                    border: 1px solid #70707080;
-                    border-radius: 8px;
-                }
-
-                .fw-600 {
-                    font-weight: 600;
-                }
-
-                .add-text {
-                    background-color: #0C71C3;
-                    border-top-right-radius: 8px;
-                    border-bottom-right-radius: 8px;
-                    font-weight: 650;
-                    color: #fff;
-                    display: flex;
-                    align-items: center;
-                }
-
-
-                /* overflow-scroll divvvvvvvvv */
-                .overflow-div {
-                    padding-right: 15px;
-                }
-
-                .overflow-div::-webkit-scrollbar {
-                    width: 7px;
-                }
-
-                /* Track */
-                .overflow-div::-webkit-scrollbar-track {
-                    background: #EFEFEF !important;
-                    border-radius: 10px;
-                }
-
-                /* Handle */
-                .overflow-div::-webkit-scrollbar-thumb {
-                    background: #0C71C3;
-                    border-radius: 10px;
-                }
-
-                /* Handle on hover */
-                .overflow-div::-webkit-scrollbar-thumb:hover {
-                    background: #0C71C3;
-                    border-radius: 10px;
-                }
-
-
-                .to-do-div-new {
-                }
-
-                .to-do-div-new .header {
-                    border-bottom: 1px solid #70707050;
-                    border-top: 1px solid #70707050;
-                    border-left: 1px solid #70707050;
-                    display: flex;
-                    align-items: center;
-                    font-weight: bold;
-                    height: 60px;
-                    background-color: #D1EBFF;
-                }
-
-                .to-do-div-new .content {
-                    height: 60vh;
-                }
-
-                .to-do-div-new .content .overflow-div {
-                    overflow: auto;
-                    height: 50vh;
-
-                }
-
-                .to-do-div-new .content .button-div button {
-                    background-color: #0C71C3;
-                    font-weight: 700;
-                    color: #fff;
-                    border: none;
-                    border-radius: 8px;
-                }
-
-                .to-do-div-new .content label {
-                    font-weight: 500;
-                }
-
-                .to-do-div-new input {
-                    border: solid 1px #707070 !important;
-                }
-
-                .to-do-div-new textarea {
-                    border: solid 1px #707070 !important;
-                }
-
-                .to-do-div-new select {
-                    border: solid 1px #707070 !important;
-                }
-
-
-                .informational-numbers {
-                }
-
-                .informational-numbers .header {
-                    border-bottom: 1px solid #70707050;
-                    border-top: 1px solid #70707050;
-                    border-right: 1px solid #70707050;
-                    border-left: 1px solid #70707050;
-                    display: flex;
-                    align-items: center;
-                    font-weight: bold;
-                    height: 60px;
-                    background-color: #D1EBFF;
-                }
-
-                .informational-numbers .content {
-                    height: 60vh;
-                    border-left: 1px solid #70707050;
-                }
-
-                .informational-numbers .content input {
-                    border: solid 1px #707070 !important;
-                }
-
-                .informational-numbers .content .overflow-div {
-                    height: 50vh;
-                    overflow: auto;
-                }
-
-                .informational-numbers .content .overflow-div span {
-                    font-size: 18px;
-                }
-
-
-                .answered-pendencies {
-                }
-
-                .answered-pendencies .header {
-                    border-bottom: 1px solid #70707050;
-                    border-top: 1px solid #70707050;
-                    /* border-right: 1px solid #70707050; */
-                    border-left: 1px solid #70707050;
-                    display: flex;
-                    align-items: center;
-                    font-weight: bold;
-                    height: 60px;
-                    background-color: #EFEFEF;
-                }
-
-                .answered-pendencies .content {
-                    height: 60vh;
-                }
-
-                .answered-pendencies .content .overflow-div {
-                    overflow: auto;
-                    height: 50vh;
-                }
-
-
-                .open-for-month {
-                }
-
-                .open-for-month .header {
-                    border-bottom: 1px solid #70707050;
-                    border-top: 1px solid #70707050;
-                    border-right: 1px solid #70707050;
-                    border-left: 1px solid #70707050;
-                    display: flex;
-                    align-items: center;
-                    font-weight: bold;
-                    height: 60px;
-                    background-color: #EFEFEF;
-                }
-
-                .open-for-month .content {
-                    height: 60vh;
-                    border-left: 1px solid #70707050;
-
-                }
-
-                .open-for-month .content .overflow-div {
-                    overflow: auto;
-                    height: 50vh;
-                }
-
-
-                .personal-appointments {
-                }
-
-                .personal-appointments .header {
-                    border-bottom: 1px solid #70707050;
-                    border-top: 1px solid #70707050;
-                    border-right: 1px solid #70707050;
-                    border-left: 1px solid #70707050;
-                    display: flex;
-                    align-items: center;
-                    font-weight: bold;
-                    height: 60px;
-                    background-color: #EFEFEF;
-                }
-
-                .personal-appointments .content {
-                    height: 45vh;
-                }
-
-                .personal-appointments .content .overflow-div {
-                    height: 27vh;
-                    overflow: auto;
-
-                }
-
-            </style>
+                @endif
+
+
+                </script>
+                @endsection
+                <style>
+                    .dateee {
+                        border-radius: 15px;
+                        border: #4CC590 1px solid;
+                        color: #000;
+                        background-color: #fff;
+                    }
+
+                    .dateee:hover {
+                        background-color: #4CC590;
+                        border-radius: 15px;
+                        color: #fff;
+                    }
+
+                    .dateee:focus {
+                        background-color: #4CC590;
+                        border-radius: 15px;
+                        color: #fff;
+                    }
+
+                    .box-1 {
+                        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='black' stroke-width='1' stroke-dasharray='7%2c 11' stroke-dashoffset='63' stroke-linecap='square'/%3e%3c/svg%3e");
+                        border-radius: 18px;
+                    }
+
+                    body {
+                        overflow-x: hidden !important;
+                    }
+
+
+                </style>
+                <style>
+                    /* overflow 1 */
+                    .overflow-div1::-webkit-scrollbar {
+                        width: 8px;
+                    }
+
+                    /* Track */
+                    .overflow-div1::-webkit-scrollbar-track {
+                        background: transparent !important;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle */
+                    .overflow-div1::-webkit-scrollbar-thumb {
+                        background: #c9cad8;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle on hover */
+                    .overflow-div1::-webkit-scrollbar-thumb:hover {
+                        background: #707070;
+                        border-radius: 10px;
+                    }
+
+                    /* ........................................................... */
+                    /* overflow 2 */
+
+                    .overflow-div2::-webkit-scrollbar {
+                        width: 8px;
+                    }
+
+                    /* Track */
+                    .overflow-div2::-webkit-scrollbar-track {
+                        background: transparent !important;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle */
+                    .overflow-div2::-webkit-scrollbar-thumb {
+                        background: #fff;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle on hover */
+                    .overflow-div2::-webkit-scrollbar-thumb:hover {
+                        background: #fff1ff;
+                        border-radius: 10px;
+                    }
+
+                    /* ........................................................... */
+                    /* overflow 3 */
+
+                    .overflow-div3::-webkit-scrollbar {
+                        width: 8px;
+                    }
+
+                    /* Track */
+                    .overflow-div3::-webkit-scrollbar-track {
+                        background: transparent !important;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle */
+                    .overflow-div3::-webkit-scrollbar-thumb {
+                        background: #c9cad8;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle on hover */
+                    .overflow-div3::-webkit-scrollbar-thumb:hover {
+                        background: #707070;
+                    }
+
+                    /* ...................................................... */
+                    /* overflow 4 */
+
+                    .overflow-div4::-webkit-scrollbar {
+                        width: 8px;
+                    }
+
+                    /* Track */
+                    .overflow-div4::-webkit-scrollbar-track {
+                        background: transparent !important;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle */
+                    .overflow-div4::-webkit-scrollbar-thumb {
+                        background: #c9cad8;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle on hover */
+                    .overflow-div4::-webkit-scrollbar-thumb:hover {
+                        background: #707070;
+                    }
+
+
+                    /* ................................................. */
+
+                    .collapsed .d-btnn {
+                        background-color: #c8ddd1;
+                        opacity: 0.4;
+                    }
+
+                    .d-btnn {
+                        opacity: 1;
+                    }
+
+                    .form-control:focus {
+                        border-color: #ced4da;
+                        box-shadow: none;
+                    }
+
+                    .accordion-button {
+                        color: #7DBF9A;
+                        font-weight: bold;
+                        border-radius: 15px !important;
+                    }
+
+                    .accordion-item {
+                        border-radius: 15px !important;
+                    }
+
+
+                    .accordion-button:not(.collapsed) {
+                        color: #7DBF9A;
+                        background-color: #fff;
+                        box-shadow: none;
+                    }
+
+                    .accordion-button:not(.collapsed)::after {
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+                        /* background-color: transparent !important; */
+                    }
+
+                    .accordion-button:not(.show)::after {
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+                        /* background-color: transparent !important; */
+                    }
+
+                    .accordion-button.green-acc:not(.collapsed)::after {
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+                        /* background-color: transparent !important; */
+                    }
+
+                    .accordion-button.green-acc:not(.show)::after {
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+                        /* background-color: transparent !important; */
+                    }
+
+                    .accordion-button:focus {
+                        border-color: transparent !important;
+                        border: none !important;
+                        box-shadow: none !important;
+                    }
+
+                    .name-spnnnn {
+                        font-weight: 600;
+                    }
+
+                    .fw-600 {
+                        font-weight: 600;
+                    }
+
+                    .spn-muted {
+                        color: #707070;
+                        font-weight: 600;
+                        font-size: 14px !important;
+                    }
+
+                    .spn-normal {
+                        font-weight: 600;
+                        font-size: 14px !important;
+                    }
+
+                    .activedate {
+                        background-color: #4CC590 !important;
+                        color: #ffffff !important;
+                    }
+
+                </style>
+                <style scoped>
+                    .form-control {
+                        border: transparent !important;
+                        font-family: 'Montserrat';
+                    }
+                </style>
+                <style>
+                    /*Per Notification */
+                    .coloriii a {
+                        color: #7F00FF !important;
+                    }
+                </style>
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
+
+                    body {
+                        font-family: 'Montserrat', sans-serif;
+                    }
+
+                    .number-item {
+                        background-color: #EFEFEF;
+                        border-radius: 8px;
+                    }
+
+                    .answer-item {
+                        background-color: #EFF8FF;
+                        border-radius: 8px;
+                    }
+
+                    .open-month-items {
+                        background-color: #FFC428;
+                        border-radius: 8px;
+                    }
+
+                    .personal-app-items {
+                        background-color: #fff;
+                        border: 1px solid #70707080;
+                        border-radius: 8px;
+                    }
+
+                    .fw-600 {
+                        font-weight: 600;
+                    }
+
+                    .add-text {
+                        background-color: #0C71C3;
+                        border-top-right-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                        font-weight: 650;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                    }
+
+
+                    /* overflow-scroll divvvvvvvvv */
+                    .overflow-div {
+                        padding-right: 15px;
+                    }
+
+                    .overflow-div::-webkit-scrollbar {
+                        width: 7px;
+                    }
+
+                    /* Track */
+                    .overflow-div::-webkit-scrollbar-track {
+                        background: #EFEFEF !important;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle */
+                    .overflow-div::-webkit-scrollbar-thumb {
+                        background: #0C71C3;
+                        border-radius: 10px;
+                    }
+
+                    /* Handle on hover */
+                    .overflow-div::-webkit-scrollbar-thumb:hover {
+                        background: #0C71C3;
+                        border-radius: 10px;
+                    }
+
+
+                    .to-do-div-new {
+                    }
+
+                    .to-do-div-new .header {
+                        border-bottom: 1px solid #70707050;
+                        border-top: 1px solid #70707050;
+                        border-left: 1px solid #70707050;
+                        display: flex;
+                        align-items: center;
+                        font-weight: bold;
+                        height: 60px;
+                        background-color: #D1EBFF;
+                    }
+
+                    .to-do-div-new .content {
+                        height: 60vh;
+                    }
+
+                    .to-do-div-new .content .overflow-div {
+                        overflow: auto;
+                        height: 50vh;
+
+                    }
+
+                    .to-do-div-new .content .button-div button {
+                        background-color: #0C71C3;
+                        font-weight: 700;
+                        color: #fff;
+                        border: none;
+                        border-radius: 8px;
+                    }
+
+                    .to-do-div-new .content label {
+                        font-weight: 500;
+                    }
+
+                    .to-do-div-new input {
+                        border: solid 1px #707070 !important;
+                    }
+
+                    .to-do-div-new textarea {
+                        border: solid 1px #707070 !important;
+                    }
+
+                    .to-do-div-new select {
+                        border: solid 1px #707070 !important;
+                    }
+
+
+                    .informational-numbers {
+                    }
+
+                    .informational-numbers .header {
+                        border-bottom: 1px solid #70707050;
+                        border-top: 1px solid #70707050;
+                        border-right: 1px solid #70707050;
+                        border-left: 1px solid #70707050;
+                        display: flex;
+                        align-items: center;
+                        font-weight: bold;
+                        height: 60px;
+                        background-color: #D1EBFF;
+                    }
+
+                    .informational-numbers .content {
+                        height: 60vh;
+                        border-left: 1px solid #70707050;
+                    }
+
+                    .informational-numbers .content input {
+                        border: solid 1px #707070 !important;
+                    }
+
+                    .informational-numbers .content .overflow-div {
+                        height: 50vh;
+                        overflow: auto;
+                    }
+
+                    .informational-numbers .content .overflow-div span {
+                        font-size: 18px;
+                    }
+
+
+                    .answered-pendencies {
+                    }
+
+                    .answered-pendencies .header {
+                        border-bottom: 1px solid #70707050;
+                        border-top: 1px solid #70707050;
+                        /* border-right: 1px solid #70707050; */
+                        border-left: 1px solid #70707050;
+                        display: flex;
+                        align-items: center;
+                        font-weight: bold;
+                        height: 60px;
+                        background-color: #EFEFEF;
+                    }
+
+                    .answered-pendencies .content {
+                        height: 60vh;
+                    }
+
+                    .answered-pendencies .content .overflow-div {
+                        overflow: auto;
+                        height: 50vh;
+                    }
+
+
+                    .open-for-month {
+                    }
+
+                    .open-for-month .header {
+                        border-bottom: 1px solid #70707050;
+                        border-top: 1px solid #70707050;
+                        border-right: 1px solid #70707050;
+                        border-left: 1px solid #70707050;
+                        display: flex;
+                        align-items: center;
+                        font-weight: bold;
+                        height: 60px;
+                        background-color: #EFEFEF;
+                    }
+
+                    .open-for-month .content {
+                        height: 60vh;
+                        border-left: 1px solid #70707050;
+
+                    }
+
+                    .open-for-month .content .overflow-div {
+                        overflow: auto;
+                        height: 50vh;
+                    }
+
+
+                    .personal-appointments {
+                    }
+
+                    .personal-appointments .header {
+                        border-bottom: 1px solid #70707050;
+                        border-top: 1px solid #70707050;
+                        border-right: 1px solid #70707050;
+                        border-left: 1px solid #70707050;
+                        display: flex;
+                        align-items: center;
+                        font-weight: bold;
+                        height: 60px;
+                        background-color: #EFEFEF;
+                    }
+
+                    .personal-appointments .content {
+                        height: 45vh;
+                    }
+
+                    .personal-appointments .content .overflow-div {
+                        height: 27vh;
+                        overflow: auto;
+
+                    }
+
+                </style>

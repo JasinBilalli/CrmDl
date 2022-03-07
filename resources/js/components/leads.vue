@@ -3,7 +3,7 @@
         <section v-if="role == 'fs'">
             <div class="container-fluid">
                 <div class="row g-0">
-                    <div class="col-12 col-md-12 col-lg-9 g-0 desktop-lead">
+                    <div class="col-12 col-md-12 col-lg-9 g-0 ">
                         <div class="assigned-leads">
                             <div class="header px-3 px-sm-5">
                                 <div class="fs-5">
@@ -172,7 +172,7 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content"
                                                      style="background: #f8f8f8; border-radius: 43px">
-                                                    <div class="modal-header mx-3 pt-4"
+                                                    <div class="modal-header mx-3 pb-0"
                                                          style="border-bottom: none !important;">
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close"
@@ -350,45 +350,45 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="assigned-items p-2 p-sm-3 m-2" data-bs-toggle="modal"
+                                        <div class="assigned-items p-0 p-sm-2 p-sm-3 m-2" data-bs-toggle="modal"
                                              :data-bs-target="'#' + lead.slug">
-                                            <div class="namme mb-2">
+                                            <div class="namme mb-2 pt-2 pt-sm-0 px-2 px-sm-0">
                                                 <span class="fs-4 fw-bold">{{ lead.first_name }} {{lead.last_name}}</span>
                                             </div>
-                                            <div class="adresse row">
-                                                <div class="col-4 pe-0">
+                                            <div class="adresse row px-2 px-sm-0">
+                                                <div class="col-6 pe-0 ">
                                                     <span class="">Adresse:</span>
                                                 </div>
-                                                <div class="col ps-0">
+                                                <div class="col-auto">
                                                     <span class="grayyy1 fw-500 ">{{ lead.address }}</span>
                                                 </div>
                                             </div>
-                                            <div class="haushalt row">
-                                                <div class="col-4 pe-0">
+                                            <div class="haushalt row  px-2 px-sm-0">
+                                                <div class="col-6 pe-0">
                                                     <span class="">Haushalt:</span>
                                                 </div>
-                                                <div class="col ps-0">
+                                                <div class="col-auto">
                                                     <span class="grayyy1 fw-500">{{ lead.number_of_persons }}</span>
                                                 </div>
                                             </div>
-                                            <div class="grund row">
-                                                <div class="col-4 pe-0">
+                                            <div class="grund row  px-2 px-sm-0">
+                                                <div class="col-6 pe-0">
                                                     <span class="">Grund:</span>
                                                 </div>
-                                                <div class="col ps-0">
+                                                <div class="col-auto">
                                                     <span class="grayyy1 fw-500">{{ lead.grund }}</span>
                                                 </div>
                                             </div>
-                                            <div class="kampagne row">
-                                                <div class="col-4 pe-0">
+                                            <div class="kampagne row  px-2 px-sm-0">
+                                                <div class="col-6 pe-0">
                                                     <span class="">Kampagne:</span>
                                                 </div>
-                                                <div class="col ps-0">
+                                                <div class="col-auto">
                                                     <span class="grayyy1 fw-500">{{ lead.kampagne }}</span>
                                                 </div>
                                             </div>
-                                            <div class="button-div my-2 w-100">
-                                                <button class="btn px-5 py-1 fw-bold hhh" data-toggle="modal"
+                                            <div class="button-div my-2">
+                                                <button class="btn px-0 px-sm-5 py-2 py-sm-1 fw-bold hhh" data-toggle="modal"
                                                         :data-target="'#' + lead.slug">
                                                     Lead öffnen
                                                 </button>
@@ -557,7 +557,7 @@
                                     <span>Zugewiesene Leads</span>
                                 </div>
                             </div>
-                            <div class="content px-3 p-sm-3">
+                            <div class="content ">
                                 <div class="overflow-div1 p-0 row ms-1 ms-sm-3 me-2">
                                     <div class="col-12 col-sm-12 col-md-6 g-0" v-for="lead in leads">
                                         <div class="modal fade" :id="lead.slug" tabindex="-1"
@@ -565,7 +565,7 @@
                                             <div class="modal-dialog">
                                                 <div class="modal-content"
                                                      style="background: #f8f8f8; border-radius: 43px">
-                                                    <div class="modal-header mx-3 pt-4"
+                                                    <div class="modal-header mx-3 pb-0"
                                                          style="border-bottom: none !important;">
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close"
@@ -707,9 +707,10 @@
                                                            id="flexCheckDefault">
                                                 </div>
                                             </div>
-                                            <div class="col ps-0">
-                                                <div class="assigned-items p-2 p-sm-3 m-2">
-                                                    <div class="namme mb-2">
+                                            <div class="col ps-0" data-bs-toggle="modal"
+                                                 :data-bs-target="'#' + lead.slug">
+                                                <div class="assigned-items  p-0 p-sm-2 p-sm-3 m-2">
+                                                    <div class="namme mb-2 pt-2 pt-sm-0 px-2 px-sm-0">
                                                         <span v-if="lead.wantsonline == 1" class="fs-4 fw-bold">{{
                                                                 lead.first_name
                                                             }} {{ lead.last_name }} (Online)</span>
@@ -717,40 +718,40 @@
                                                                 lead.first_name
                                                             }} {{ lead.last_name }}</span>
                                                     </div>
-                                                    <div class="adresse row">
-                                                        <div class="col-4 pe-0">
+                                                    <div class="adresse row px-2 px-sm-0">
+                                                        <div class="col-6 pe-0 ">
                                                             <span class="">Adresse:</span>
                                                         </div>
-                                                        <div class="col ps-0">
+                                                        <div class="col-auto">
                                                             <span class="grayyy1 fw-500 ">{{ lead.address }}</span>
                                                         </div>
                                                     </div>
-                                                    <div class="haushalt row">
-                                                        <div class="col-4 pe-0">
+                                                    <div class="haushalt row  px-2 px-sm-0">
+                                                        <div class="col-6 pe-0">
                                                             <span class="">Haushalt:</span>
                                                         </div>
-                                                        <div class="col ps-0">
+                                                        <div class="col-auto">
                                                             <span class="grayyy1 fw-500">{{ lead.number_of_persons }} Personen</span>
                                                         </div>
                                                     </div>
-                                                    <div class="grund row">
-                                                        <div class="col-4 pe-0">
+                                                    <div class="grund  row  px-2 px-sm-0">
+                                                        <div class="col-6 pe-0">
                                                             <span class="">Grund:</span>
                                                         </div>
-                                                        <div class="col ps-0">
+                                                        <div class="col-auto">
                                                             <span class="grayyy1 fw-500">{{ lead.grund }}</span>
                                                         </div>
                                                     </div>
-                                                    <div class="kampagne row">
-                                                        <div class="col-4 pe-0">
+                                                    <div class="kampagne row  px-2 px-sm-0">
+                                                        <div class="col-6 pe-0">
                                                             <span class="">Kampagne:</span>
                                                         </div>
-                                                        <div class="col ps-0">
+                                                        <div class="col-auto">
                                                             <span class="grayyy1 fw-500">{{ lead.kampagne }}</span>
                                                         </div>
                                                     </div>
                                                     <div class="button-div my-2">
-                                                        <button class="btn px-5 py-1 fw-bold" data-bs-toggle="modal"
+                                                        <button class="btn px-0 px-sm-5 py-2 py-sm-1 fw-bold" data-bs-toggle="modal"
                                                                 :data-bs-target="'#' + lead.slug">
                                                             Lead öffnen
                                                         </button>
