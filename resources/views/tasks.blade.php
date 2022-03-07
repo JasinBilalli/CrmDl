@@ -419,11 +419,12 @@
                                         </tr>
                                         </thead>
                                         <tbody id="body-table-edit">
+                                            @php $admin_id = Crypt::encrypt(Auth::user()->id * 1244); @endphp
                                         @foreach($tasks as $task)
                                             @php
                                                 $leadss = $task->id * 1244;
                                                 $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                $admin_id = Crypt::encrypt(Auth::user()->id * 1244);
+                                                
                                             @endphp
                                             <tr class="table-content1" style="cursor: pointer">
                                                 <td scope="row"
@@ -852,6 +853,7 @@
                         </script>
                         <div id="secondDivToggle33" class="wrapper p-2" style="display: none;">
                             <div class="overflow-divv1">
+                                @php $leadss = Auth::user()->id * 1244; @endphp
                                 @foreach($answered as $task)
                                     @php
                                                    $leadss = $task->family_id * 1244;
@@ -860,7 +862,7 @@
                                                     $pend_id = $task->pid;
                                                     $leadss = $task->admin_id * 1244;
                                                     $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                    $leadss = Auth::user()->id * 1244;
+                                                    
                                                     $authUserId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                     @endphp
                                     <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
