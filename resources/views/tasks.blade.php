@@ -32,11 +32,12 @@
                         </div>
                         <div id="secondDivToggle" class="wrapper p-2" style="display: none;">
                             <div class="overflow-divv1">
+                                @php $admin_id = $leadsss; @endphp
                                 @foreach($tasks as $task)
                                     @php
                                         $leadss = $task->id * 1244;
                                         $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                        $admin_id = Crypt::encrypt(Auth::user()->id * 1244);
+                                        
                                     @endphp
                                     <a href="{{route('leadfamilyperson',[$taskId,$admin_id])}}">
                                         <div class="offene-item-one py-2 px-3 m-2">
@@ -140,7 +141,7 @@
                                                  style="background: #f8f8f8; border-radius: 43px">
                                                 <div class="modal-header mx-3 pt-4"
                                                      style="border-bottom: none !important;">
-                                                    <h4>Pendenzen Infos</h4>
+                                                    <h4>Pendenzen Info</h4>
                                                     <button type="button" class="btn-close"
                                                             data-bs-dismiss="modal" aria-label="Close"
                                                             style="opacity: 1 !important;"></button>
@@ -158,7 +159,7 @@
                                                         <div class="col-6">
                                                             <div class="text-center my-1 fw-bold"
                                                                  style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
-                                                                Zeit:
+                                                                Time:
                                                                 <br>
                                                                 {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('H:i')}}
 
@@ -199,7 +200,7 @@
 
                                                     <button type="button" class="btn px-3"
                                                             style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                            data-bs-dismiss="modal"><b>Schliessen</b></button>
+                                                            data-bs-dismiss="modal"><b>Close</b></button>
 
                                                     <a onclick="window.location.href='{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}'" >
                                                         <button type="button" class="btn px-3"
@@ -419,7 +420,7 @@
                                         </tr>
                                         </thead>
                                         <tbody id="body-table-edit">
-                                            @php $admin_id = Crypt::encrypt(Auth::user()->id * 1244); @endphp
+                                            @php  $admin_id = Crypt::encrypt($leadsss); @endphp
                                         @foreach($tasks as $task)
                                             @php
                                                 $leadss = $task->id * 1244;
@@ -745,7 +746,7 @@
                                                          style="background: #f8f8f8; border-radius: 43px">
                                                         <div class="modal-header mx-3 pt-4"
                                                              style="border-bottom: none !important;">
-                                                            <h4>Pendenzen Infos</h4>
+                                                            <h4>Pendenzen Info</h4>
                                                             <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"
                                                                     style="opacity: 1 !important;"></button>
@@ -763,7 +764,7 @@
                                                                 <div class="col-6">
                                                                     <div class="text-center my-1 fw-bold"
                                                                          style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
-                                                                        Zeit:
+                                                                        Time:
                                                                         <br>
                                                                         {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('H:i')}}
 
@@ -804,11 +805,12 @@
 
                                                             <button type="button" class="btn px-3"
                                                                     style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                    data-bs-dismiss="modal"><b>Schliessen</b></button>
+                                                                    data-bs-dismiss="modal"><b>Close</b></button>
 
                                                             <a href="{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}">
                                                                 <button type="button" class="btn px-3"
-                                                                        style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"><b>Offen</b></button>
+                                                                        style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
+                                                                        data-bs-dismiss="modal"><b>Offen</b></button>
                                                             </a>
 
                                                         </div>
@@ -852,7 +854,7 @@
                         </script>
                         <div id="secondDivToggle33" class="wrapper p-2" style="display: none;">
                             <div class="overflow-divv1">
-                                @php $leadss = Auth::user()->id * 1244; @endphp
+                               
                                 @foreach($answered as $task)
                                     @php
                                                    $leadss = $task->family_id * 1244;
@@ -862,7 +864,9 @@
                                                     $leadss = $task->admin_id * 1244;
                                                     $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
 
-                                                    $authUserId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                    
+                                                    $authUserId = \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
+
                                     @endphp
                                     <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
                                         <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
@@ -886,7 +890,7 @@
                                             </h6>
                                             <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                             <h6 class="m-1"><b>Adresse
-                                                    zu:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
+                                                    zu:</b> {{$task->adminpend->name}}
                                             </h6>
                                             <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
                                             <h6 class="m-1"><b>Beschreibung:</b>
@@ -949,8 +953,8 @@
                                         @php
                                             $leadss = $task->admin_id * 1244;
                                             $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                            $leadss = Auth::user()->id * 1244;
-                                            $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                        
+                                            $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
                                             $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
                                         @endphp
                                         <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
@@ -975,7 +979,7 @@
                                             </h6>
                                             <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                             <h6 class="m-1"><b>Adresse
-                                                    zu:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
+                                                    zu:</b> {{$task->adminpend->name}}
                                             </h6>
                                             <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
                                             <h6 class="m-1"><b>Beschreibung:</b>
@@ -1096,7 +1100,7 @@
                                                         </h6>
                                                         <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                                         <h6 class="m-1"><b>Adresse
-                                                                zu:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
+                                                                zu:</b> {{$task->adminpend->name}}
                                                         </h6>
                                                         <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
                                                         <h6 class="m-1"><b>Beschreibung:</b>
@@ -1191,8 +1195,8 @@
                                                     @php
                                                         $leadss = $task->admin_id * 1244;
                                                         $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                        $leadss = Auth::user()->id * 1244;
-                                                        $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                        
+                                                        $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
                                                         $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
                                                     @endphp
                                                     <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
@@ -1217,7 +1221,7 @@
                                                         </h6>
                                                         <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                                         <h6 class="m-1"><b>Adresse
-                                                                zu:</b> {{\App\Models\Admins::find($task->admin_id)->name}}
+                                                                zu:</b> {{$task->adminpend->name}}
                                                         </h6>
                                                         <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
                                                         <h6 class="m-1"><b>Beschreibung:</b>
