@@ -163,14 +163,14 @@
                         <span class="ps-2 txt-dn">Leads</span>
                     </a>
                 @endif
-                <a href="#" class="nav-link ">
+                <!-- <a href="#" class="nav-link ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-grid"
                          viewBox="0 0 16 16">
                         <path
                             d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
                     </svg>
                     <span class="ps-2 txt-dn">Finanzen</span>
-                </a>
+                </a> -->
                 @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
 
@@ -200,7 +200,7 @@
                         <span class="ps-2 txt-dn">Kunden</span>
                     </a>
                 @endif
-                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
+                <!-- @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
                     <a href="#" class="nav-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
@@ -215,8 +215,8 @@
                         </svg>
                         <span class="ps-2 txt-dn">Einzahlung</span>
                     </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
+                @endif -->
+                <!-- @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
                     <a href="#" class="nav-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
@@ -228,7 +228,7 @@
                         </svg>
                         <span class="ps-2 txt-dn">Stornierungen</span>
                     </a>
-                @endif
+                @endif -->
                 @if(Auth::guard('admins')->user()->hasRole('fs') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
@@ -245,7 +245,7 @@
                         <span class="ps-2 txt-dn">Kalender</span>
                     </a>
                 @endif
-                @if(Auth::guard('admins')->user()->hasRole('admin') ||
+                <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
                     <a href="#" class="nav-link">
@@ -258,8 +258,8 @@
                         </svg>
                         <span class="ps-2 txt-dn">Mitarbeiter</span>
                     </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('finance') ||
+                @endif -->
+                <!-- @if(Auth::guard('admins')->user()->hasRole('finance') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
                     <a href="#" class="nav-link ">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-percent"
@@ -269,8 +269,8 @@
                         </svg>
                         <span class="ps-2 txt-dn">Provisionen</span>
                     </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('admin') ||
+                @endif -->
+                <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
                     <a href="#" class="nav-link">
@@ -281,8 +281,8 @@
                         </svg>
                         <span class="ps-2 txt-dn">Prov.system</span>
                     </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('admin') ||
+                @endif -->
+                <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
                     <a href="#" class="nav-link">
@@ -293,8 +293,8 @@
                         </svg>
                         <span class="ps-2 txt-dn">Statistik</span>
                     </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('menagment') ||
+                @endif -->
+                <!-- @if(Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('finance')
                 ||Auth::guard('admins')->user()->hasRole('admin') )
                     <a href="#" class="nav-link">
@@ -305,7 +305,7 @@
                         </svg>
                         <span class="ps-2 txt-dn">Treuhand</span>
                     </a>
-                @endif
+                @endif -->
                 @if(Auth::guard('admins')->user()->hasRole('admin'))
                     <a class="nav-link" href="{{route('addnewuser')}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -5862,7 +5862,7 @@
                 <hr>
             @endif
         </div>
-        <div class="my-3 m-burger">
+        <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
             Auth::guard('admins')->user()->hasRole('admin'))
                 <a href="#" class="m-nav text-decoration-none">
@@ -5889,8 +5889,8 @@
                 </a>
                 <hr>
             @endif
-        </div>
-        <div class="my-3 m-burger">
+        </div> -->
+        <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
                 <a href="#" class="m-nav text-decoration-none">
@@ -5914,7 +5914,7 @@
                 </a>
                 <hr>
             @endif
-        </div>
+        </div> -->
         <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('fs') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager') ||
@@ -5943,7 +5943,7 @@
                 <hr>
             @endif
         </div>
-        <div class="my-3 m-burger">
+        <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
@@ -5968,8 +5968,8 @@
                 </a>
                 <hr>
             @endif
-        </div>
-        <div class="my-3 m-burger">
+        </div> -->
+        <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('finance') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
                 <a href="#" class="m-nav text-decoration-none">
@@ -5991,8 +5991,8 @@
                 </a>
                 <hr>
             @endif
-        </div>
-        <div class="my-3 m-burger">
+        </div> -->
+        <!-- <div class="my-3 m-burger">
             <a href="#" class="m-nav text-decoration-none">
                         <span class="px-2 active-dot">
                             <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6011,8 +6011,8 @@
                         </span>
             </a>
             <hr>
-        </div>
-        <div class="my-3 m-burger">
+        </div> -->
+        <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
@@ -6035,8 +6035,8 @@
                 </a>
                 <hr>
             @endif
-        </div>
-        <div class="my-3 m-burger">
+        </div> -->
+        <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
@@ -6059,8 +6059,8 @@
                 </a>
                 <hr>
             @endif
-        </div>
-        <div class="my-3 m-burger">
+        </div> -->
+        <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('finance')
                 ||Auth::guard('admins')->user()->hasRole('admin') )
@@ -6083,7 +6083,7 @@
                 </a>
                 <hr>
             @endif
-        </div>
+        </div> -->
         <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('admin'))
                 <a href="{{route('addnewuser')}}"
