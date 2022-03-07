@@ -107,14 +107,16 @@
     <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
         <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
             <div class="d-flex align-middle" style="height: 16vh;">
-            <div class="my-auto">
-                        <div class="img-normal text-center mx-3">
-                            <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo2.png" class="img-fluid p-1" alt=""></a>
-                        </div>
-                        <div class="img-collapsed text-center ">
-                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo1.png" class="img-fluid p-2" alt=""></a>
-                        </div>
+                <div class="my-auto">
+                    <div class="img-normal text-center mx-3">
+                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo2.png"
+                                                              class="img-fluid p-1" alt=""></a>
                     </div>
+                    <div class="img-collapsed text-center ">
+                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo1.png"
+                                                              class="img-fluid p-2" alt=""></a>
+                    </div>
+                </div>
             </div>
             <div class="column-v">
 
@@ -163,14 +165,14 @@
                         <span class="ps-2 txt-dn">Leads</span>
                     </a>
                 @endif
-                <a href="#" class="nav-link ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-grid"
-                         viewBox="0 0 16 16">
-                        <path
-                            d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
-                    </svg>
-                    <span class="ps-2 txt-dn">Finanzen</span>
-                </a>
+                {{--                <a href="#" class="nav-link ">--}}
+                {{--                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-grid"--}}
+                {{--                         viewBox="0 0 16 16">--}}
+                {{--                        <path--}}
+                {{--                            d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>--}}
+                {{--                    </svg>--}}
+                {{--                    <span class="ps-2 txt-dn">Finanzen</span>--}}
+                {{--                </a>--}}
                 @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
 
@@ -200,35 +202,35 @@
                         <span class="ps-2 txt-dn">Kunden</span>
                     </a>
                 @endif
-                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="nav-link ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-cash-coin" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
-                            <path
-                                d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
-                            <path
-                                d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
-                            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Einzahlung</span>
-                    </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-x-square" viewBox="0 0 16 16">
-                            <path
-                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Stornierungen</span>
-                    </a>
-                @endif
+                {{--                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('admin'))--}}
+                {{--                    <a href="#" class="nav-link ">--}}
+                {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
+                {{--                             class="bi bi-cash-coin" viewBox="0 0 16 16">--}}
+                {{--                            <path fill-rule="evenodd"--}}
+                {{--                                  d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>--}}
+                {{--                            <path--}}
+                {{--                                d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>--}}
+                {{--                            <path--}}
+                {{--                                d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>--}}
+                {{--                            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>--}}
+                {{--                        </svg>--}}
+                {{--                        <span class="ps-2 txt-dn">Einzahlung</span>--}}
+                {{--                    </a>--}}
+                {{--                @endif--}}
+                {{--                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('admin'))--}}
+                {{--                    <a href="#" class="nav-link">--}}
+                {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
+                {{--                             class="bi bi-x-square" viewBox="0 0 16 16">--}}
+                {{--                            <path--}}
+                {{--                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>--}}
+                {{--                            <path--}}
+                {{--                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>--}}
+                {{--                        </svg>--}}
+                {{--                        <span class="ps-2 txt-dn">Stornierungen</span>--}}
+                {{--                    </a>--}}
+                {{--                @endif--}}
                 @if(Auth::guard('admins')->user()->hasRole('fs') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
@@ -245,67 +247,67 @@
                         <span class="ps-2 txt-dn">Kalender</span>
                     </a>
                 @endif
-                @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-people-fill" viewBox="0 0 16 16">
-                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                            <path fill-rule="evenodd"
-                                  d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
-                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Mitarbeiter</span>
-                    </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('finance') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="nav-link ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-percent"
-                             viewBox="0 0 16 16">
-                            <path
-                                d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Provisionen</span>
-                    </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Prov.system</span>
-                    </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Statistik</span>
-                    </a>
-                @endif
-                @if(Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('finance')
-                ||Auth::guard('admins')->user()->hasRole('admin') )
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Treuhand</span>
-                    </a>
-                @endif
+                {{--                @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('menagment') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+                {{--                    <a href="#" class="nav-link">--}}
+                {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
+                {{--                             class="bi bi-people-fill" viewBox="0 0 16 16">--}}
+                {{--                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>--}}
+                {{--                            <path fill-rule="evenodd"--}}
+                {{--                                  d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>--}}
+                {{--                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>--}}
+                {{--                        </svg>--}}
+                {{--                        <span class="ps-2 txt-dn">Mitarbeiter</span>--}}
+                {{--                    </a>--}}
+                {{--                @endif--}}
+                {{--                @if(Auth::guard('admins')->user()->hasRole('finance') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('admin'))--}}
+                {{--                    <a href="#" class="nav-link ">--}}
+                {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-percent"--}}
+                {{--                             viewBox="0 0 16 16">--}}
+                {{--                            <path--}}
+                {{--                                d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>--}}
+                {{--                        </svg>--}}
+                {{--                        <span class="ps-2 txt-dn">Provisionen</span>--}}
+                {{--                    </a>--}}
+                {{--                @endif--}}
+                {{--                @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('menagment') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+                {{--                    <a href="#" class="nav-link">--}}
+                {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
+                {{--                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">--}}
+                {{--                            <path fill-rule="evenodd"--}}
+                {{--                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>--}}
+                {{--                        </svg>--}}
+                {{--                        <span class="ps-2 txt-dn">Prov.system</span>--}}
+                {{--                    </a>--}}
+                {{--                @endif--}}
+                {{--                @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('menagment') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+                {{--                    <a href="#" class="nav-link">--}}
+                {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
+                {{--                             class="bi bi-bar-chart-fill" viewBox="0 0 16 16">--}}
+                {{--                            <path--}}
+                {{--                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>--}}
+                {{--                        </svg>--}}
+                {{--                        <span class="ps-2 txt-dn">Statistik</span>--}}
+                {{--                    </a>--}}
+                {{--                @endif--}}
+                {{--                @if(Auth::guard('admins')->user()->hasRole('menagment') ||--}}
+                {{--                Auth::guard('admins')->user()->hasRole('finance')--}}
+                {{--                ||Auth::guard('admins')->user()->hasRole('admin') )--}}
+                {{--                    <a href="#" class="nav-link">--}}
+                {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
+                {{--                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">--}}
+                {{--                            <path fill-rule="evenodd"--}}
+                {{--                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>--}}
+                {{--                        </svg>--}}
+                {{--                        <span class="ps-2 txt-dn">Treuhand</span>--}}
+                {{--                    </a>--}}
+                {{--                @endif--}}
                 @if(Auth::guard('admins')->user()->hasRole('admin'))
                     <a class="nav-link" href="{{route('addnewuser')}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -364,10 +366,11 @@
                                     </a>
                                 </div>
                                 {{$lead->first_name}}
-                            </span<br>
+                            </span>
+                        <br>
                         <span class="fs-6 text-muted">
                                 {{$lead->address}}
-                            </span>
+                        </span>
                     </div>
                     <div class="row mx-2 mx-sm-4">
                         <nav class="g-0 nav-form-links">
@@ -417,20 +420,23 @@
                                                 </div>
                                                 <div class="col-auto g-0 ">
                                                     <div class="select-div text-end">
-                                                      <select class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vorversicherer_select">
-                                                      @php $data->datakk = \App\Models\LeadDataKK::where('person_id',$id)->latest()->first() @endphp
-                                                          @if(isset($data->datakk->vorversicherer_select))
-                                                            <option value="{{$data->datakk->vorversicherer_select}}" selected>{{$data->datakk->vorversicherer_select}}</option>
-                                                            <option value="Ja">Ja</option>
-                                                            <option value="Nein">Nein</option>
-                                                          @else
-                                                              <option selected>Auswählen</option>
-                                                              <option value="Ja">Ja</option>
-                                                              <option value="Nein">Nein</option>
-                                                          @endif
-                                                      </select>
+                                                        <select class="fw-bold" id=""
+                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;"
+                                                                name="vorversicherer_select">
+                                                            @php $data->datakk = \App\Models\LeadDataKK::where('person_id',$id)->latest()->first() @endphp
+                                                            @if(isset($data->datakk->vorversicherer_select))
+                                                                <option value="{{$data->datakk->vorversicherer_select}}"
+                                                                        selected>{{$data->datakk->vorversicherer_select}}</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @else
+                                                                <option selected>Auswählen</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
-                                                  </div>
+                                                </div>
                                             </div>
                                             <div class="upload-box mx-1 my-2">
                                                 <div class="mx-1 my-2 p-4 text-center">
@@ -495,19 +501,22 @@
                                                 </div>
                                                 <div class="col-auto g-0">
                                                     <div class="select-div text-end">
-                                                      <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="id_notwending_select">
-                                                          @if(isset($data->datakk->id_notwending_select))
-                                                            <option value="{{$data->datakk->id_notwending_select}}" selected>{{$data->datakk->id_notwending_select}}</option>
-                                                            <option value="Ja">Ja</option>
-                                                            <option value="Nein">Nein</option>
-                                                          @else
-                                                              <option selected>Auswählen</option>
-                                                              <option value="Ja">Ja</option>
-                                                              <option value="Nein">Nein</option>
-                                                          @endif
-                                                      </select>
+                                                        <select class="fw-bold" id=""
+                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;"
+                                                                name="id_notwending_select">
+                                                            @if(isset($data->datakk->id_notwending_select))
+                                                                <option value="{{$data->datakk->id_notwending_select}}"
+                                                                        selected>{{$data->datakk->id_notwending_select}}</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @else
+                                                                <option selected>Auswählen</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
-                                                  </div>
+                                                </div>
                                             </div>
                                             <div class="upload-box mx-1 my-2">
                                                 <div class="mx-1 my-2 p-4 text-center">
@@ -574,19 +583,23 @@
                                                 </div>
                                                 <div class="col-auto g-0">
                                                     <div class="select-div text-end">
-                                                      <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="kundingung_durch_select">
-                                                          @if(isset($data->datakk->kundingung_durch_select))
-                                                            <option value="{{$data->datakk->kundingung_durch_select}}" selected>{{$data->datakk->kundingung_durch_select}}</option>
-                                                            <option value="DLF">DLF</option>
-                                                            <option value="Kunden">Kunden</option>
-                                                          @else
-                                                              <option selected>Auswählen</option>
-                                                              <option value="DLF">DLF</option>
-                                                              <option value="Kunden">Kunden</option>
-                                                          @endif
-                                                      </select>
+                                                        <select class="fw-bold" id=""
+                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;"
+                                                                name="kundingung_durch_select">
+                                                            @if(isset($data->datakk->kundingung_durch_select))
+                                                                <option
+                                                                    value="{{$data->datakk->kundingung_durch_select}}"
+                                                                    selected>{{$data->datakk->kundingung_durch_select}}</option>
+                                                                <option value="DLF">DLF</option>
+                                                                <option value="Kunden">Kunden</option>
+                                                            @else
+                                                                <option selected>Auswählen</option>
+                                                                <option value="DLF">DLF</option>
+                                                                <option value="Kunden">Kunden</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
-                                                  </div>
+                                                </div>
                                             </div>
                                             <div class="upload-box mx-1 my-2">
                                                 <div class="mx-1 my-2 p-4 text-center">
@@ -649,21 +662,24 @@
                                                             </span>
                                                     </div>
                                                 </div>
-                                                 <div class="col-auto g-0">
+                                                <div class="col-auto g-0">
                                                     <div class="select-div text-end ">
-                                                      <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vollmacht_select">
-                                                          @if(isset($data->datakk->vollmacht_select))
-                                                              <option value="{{$data->datakk->vollmacht_select}}" selected>{{$data->datakk->vollmacht_select}}</option>
-                                                              <option value="Ja">Ja</option>
-                                                              <option value="Nein">Nein</option>
-                                                          @else
-                                                              <option selected>Auswählen</option>
-                                                              <option value="Ja">Ja</option>
-                                                              <option value="Nein">Nein</option>
-                                                          @endif
-                                                      </select>
+                                                        <select class="fw-bold" id=""
+                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;"
+                                                                name="vollmacht_select">
+                                                            @if(isset($data->datakk->vollmacht_select))
+                                                                <option value="{{$data->datakk->vollmacht_select}}"
+                                                                        selected>{{$data->datakk->vollmacht_select}}</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @else
+                                                                <option selected>Auswählen</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
-                                                  </div>
+                                                </div>
                                             </div>
                                             <div class="upload-box mx-1 my-2">
                                                 <div class="mx-1 my-2 p-4 text-center">
@@ -729,13 +745,14 @@
                                                         </div>
                                                     </div>
                                                     <div class="col g-0 d-flex justify-content-end">
-                                                      <div class="select-div text-end">
-                                                        <select onchange="msheleqeta();"  class="fw-bold" id="manval"  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
-                                                          <option selected>Auswählen</option>
-                                                          <option value="Yes">Ja</option>
-                                                          <option value="No">Nein</option>
-                                                        </select>
-                                                      </div>
+                                                        <div class="select-div text-end">
+                                                            <select onchange="msheleqeta();" class="fw-bold" id="manval"
+                                                                    style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                                <option selected>Auswählen</option>
+                                                                <option value="Yes">Ja</option>
+                                                                <option value="No">Nein</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="upload-box mx-1 my-2">
@@ -792,7 +809,8 @@
                                                     </div>
                                                     <div class="col g-0 d-flex justify-content-end">
                                                         <div class="select-div text-end">
-                                                            <select onchange="msheleqeta();"  class="fw-bold" id="manval"  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                            <select onchange="msheleqeta();" class="fw-bold" id="manval"
+                                                                    style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                                 <option selected>Auswählen</option>
                                                                 <option value="Yes">Ja</option>
                                                                 <option value="No">Nein</option>
@@ -858,7 +876,8 @@
                                         <div class="row">
                                             <div class="col g-0 text-end my-auto">
                                                 <div class="">
-                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F; cursor: pointer">
+                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2"
+                                                          style="color: #9F9F9F; cursor: pointer">
                                                         Uberspringen
                                                     </span>
                                                 </div>
@@ -896,7 +915,7 @@
                             <div class="row mx-2 mx-sm-4">
                                 <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 my-4 ">
                                     <div class="accordion accordion-flush" id="accordionFlushExample1">
-                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
+                                        <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingOne">
                                                 <button id="button1" class="accordion-button collapsed"
                                                         type="button" data-bs-toggle="collapse" onclick="hideSpan();"
@@ -1006,19 +1025,35 @@
                                                                 </div>
                                                                 <div class="col g-0 d-flex justify-content-end">
                                                                     <div class="select-div text-end ">
-                                                                        <select name="vergleichsart_select" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                                        <select name="vergleichsart_select"
+                                                                                class="fw-bold" id=""
+                                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                                             @if(isset($data->fahrzeug->vergleichsart_select))
-                                                                                <option value="{{$data->fahrzeug->vergleichsart_select}}" selected>
+                                                                                <option
+                                                                                    value="{{$data->fahrzeug->vergleichsart_select}}"
+                                                                                    selected>
                                                                                     {{$data->fahrzeug->vergleichsart_select}}
                                                                                 </option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Deckung">1:0
+                                                                                    Deckung
+                                                                                </option>
+                                                                                <option value="0:1 Deckung">0:1
+                                                                                    Deckung
+                                                                                </option>
+                                                                                <option value="1:1 Deckung">1:1
+                                                                                    Deckung
+                                                                                </option>
                                                                             @else
                                                                                 <option selected>Auswählen</option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Deckung">1:0
+                                                                                    Deckung
+                                                                                </option>
+                                                                                <option value="0:1 Deckung">0:1
+                                                                                    Deckung
+                                                                                </option>
+                                                                                <option value="1:1 Deckung">1:1
+                                                                                    Deckung
+                                                                                </option>
                                                                             @endif
                                                                         </select>
                                                                     </div>
@@ -1045,36 +1080,78 @@
                                                             </div>
                                                         </div>
                                                         @if(!Auth::user()->hasRole('fs'))
-                                                    <div class="col-12">Offer:
+                                                            <div class="col-12">Offer:
                                                                 <div class="text-start">
                                                                     <div class="upload-box mx-1 my-2">
                                                                         <div class="mx-1 my-2 text-center p-3">
                                                                             <label for="file-input-212121ww">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
-                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
-                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
-                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
-                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
-                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                     width="53" height="53"
+                                                                                     viewBox="0 0 53 53">
+                                                                                    <g id="Group_621"
+                                                                                       data-name="Group 621"
+                                                                                       transform="translate(-78.283 -14.777)">
+                                                                                        <circle id="Ellipse_31"
+                                                                                                data-name="Ellipse 31"
+                                                                                                cx="26.5" cy="26.5"
+                                                                                                r="26.5"
+                                                                                                transform="translate(78.283 14.777)"
+                                                                                                fill="#5f5f5f"/>
+                                                                                        <g id="Group_326"
+                                                                                           data-name="Group 326"
+                                                                                           transform="translate(95.656 31.893)">
+                                                                                            <path id="Path_234"
+                                                                                                  data-name="Path 234"
+                                                                                                  d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6"
+                                                                                                  transform="translate(0 1.82)"
+                                                                                                  fill="#fff"
+                                                                                                  stroke="#fff"
+                                                                                                  stroke-width="0.5"/>
+                                                                                            <path id="Path_235"
+                                                                                                  data-name="Path 235"
+                                                                                                  d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z"
+                                                                                                  transform="translate(0.92 0)"
+                                                                                                  fill="#fff"
+                                                                                                  stroke="#fff"
+                                                                                                  stroke-width="0.5"/>
                                                                                         </g>
                                                                                     </g>
                                                                                 </svg>
                                                                             </label>
-                                                                                 @if(isset($data->fahrzeug->offer))
+                                                                            @if(isset($data->fahrzeug->offer))
 
-                                                                            <a target="_blank" href="{{route('showfile',$data->fahrzeug->offer)}}"><input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
-                                                                            <input type="text" value="{{$data->fahrzeug->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
-                                                                            </a>
+                                                                                <a target="_blank"
+                                                                                   href="{{route('showfile',$data->fahrzeug->offer)}}"><input
+                                                                                        type="file"
+                                                                                        id="file-input-212121ww"
+                                                                                        class="svg-div w-100 border-0  g-0"
+                                                                                        onchange="upload(this);"
+                                                                                        name="offer">
+                                                                                    <input type="text"
+                                                                                           value="{{$data->fahrzeug->offer}}"
+                                                                                           class="form-control text-center"
+                                                                                           id="file-input-212121wwc"
+                                                                                           disabled
+                                                                                           style="background:transparent; border:none;">
+                                                                                </a>
                                                                             @else
-                                                                            <input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
-                                                                            <input type="text" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
+                                                                                <input type="file"
+                                                                                       id="file-input-212121ww"
+                                                                                       class="svg-div w-100 border-0  g-0"
+                                                                                       onchange="upload(this);"
+                                                                                       name="offer">
+                                                                                <input type="text"
+                                                                                       class="form-control text-center"
+                                                                                       id="file-input-212121wwc"
+                                                                                       disabled
+                                                                                       style="background:transparent; border:none;">
                                                                             @endif
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
-                                                    @endif
+                                                        @endif
 
                                                     </div>
                                                     @php $gcnt = 1; @endphp
@@ -1179,17 +1256,31 @@
                                                                                     class="fw-bold" id=""
                                                                                     style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                                                 @if(isset($data->vergleichsart_select))
-                                                                                    <option value="{{$data->vergleichsart_select}}" selected>
+                                                                                    <option
+                                                                                        value="{{$data->vergleichsart_select}}"
+                                                                                        selected>
                                                                                         {{$data->vergleichsart_select}}
                                                                                     </option>
-                                                                                    <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                    <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                    <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                    <option value="1:0 Deckung">1:0
+                                                                                        Deckung
+                                                                                    </option>
+                                                                                    <option value="0:1 Deckung">0:1
+                                                                                        Deckung
+                                                                                    </option>
+                                                                                    <option value="1:1 Deckung">1:1
+                                                                                        Deckung
+                                                                                    </option>
                                                                                 @else
                                                                                     <option selected>Auswählen</option>
-                                                                                    <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                    <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                    <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                    <option value="1:0 Deckung">1:0
+                                                                                        Deckung
+                                                                                    </option>
+                                                                                    <option value="0:1 Deckung">0:1
+                                                                                        Deckung
+                                                                                    </option>
+                                                                                    <option value="1:1 Deckung">1:1
+                                                                                        Deckung
+                                                                                    </option>
                                                                                 @endif
                                                                             </select>
                                                                         </div>
@@ -1223,20 +1314,54 @@
                                                                     <div class="upload-box mx-1 my-2">
                                                                         <div class="mx-1 my-2 text-center p-3">
                                                                             <label for="file-input-{{$gcnt}}ww">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
-                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
-                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
-                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
-                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
-                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                     width="53" height="53"
+                                                                                     viewBox="0 0 53 53">
+                                                                                    <g id="Group_621"
+                                                                                       data-name="Group 621"
+                                                                                       transform="translate(-78.283 -14.777)">
+                                                                                        <circle id="Ellipse_31"
+                                                                                                data-name="Ellipse 31"
+                                                                                                cx="26.5" cy="26.5"
+                                                                                                r="26.5"
+                                                                                                transform="translate(78.283 14.777)"
+                                                                                                fill="#5f5f5f"/>
+                                                                                        <g id="Group_326"
+                                                                                           data-name="Group 326"
+                                                                                           transform="translate(95.656 31.893)">
+                                                                                            <path id="Path_234"
+                                                                                                  data-name="Path 234"
+                                                                                                  d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6"
+                                                                                                  transform="translate(0 1.82)"
+                                                                                                  fill="#fff"
+                                                                                                  stroke="#fff"
+                                                                                                  stroke-width="0.5"/>
+                                                                                            <path id="Path_235"
+                                                                                                  data-name="Path 235"
+                                                                                                  d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z"
+                                                                                                  transform="translate(0.92 0)"
+                                                                                                  fill="#fff"
+                                                                                                  stroke="#fff"
+                                                                                                  stroke-width="0.5"/>
                                                                                         </g>
                                                                                     </g>
                                                                                 </svg>
                                                                             </label>
                                                                             @if(isset($data->offer))
 
-                                                                                <a target="_blank" href="{{route('showfile',$data->offer)}}"><input type="file" id="file-input-{{$gcnt}}ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer{{$gcnt}}">
-                                                                                    <input type="text" value="{{$data->offer}}" class="form-control text-center" id="file-input-{{$gcnt}}wwc" disabled style="background:transparent; border:none;">
+                                                                                <a target="_blank"
+                                                                                   href="{{route('showfile',$data->offer)}}"><input
+                                                                                        type="file"
+                                                                                        id="file-input-{{$gcnt}}ww"
+                                                                                        class="svg-div w-100 border-0  g-0"
+                                                                                        onchange="upload(this);"
+                                                                                        name="offer{{$gcnt}}">
+                                                                                    <input type="text"
+                                                                                           value="{{$data->offer}}"
+                                                                                           class="form-control text-center"
+                                                                                           id="file-input-{{$gcnt}}wwc"
+                                                                                           disabled
+                                                                                           style="background:transparent; border:none;">
 
                                                                                 </a>
                                                                             @else
@@ -1247,7 +1372,8 @@
                                                                                        name="offer{{$gcnt}}">
                                                                                 <input type="text"
                                                                                        class="form-control text-center"
-                                                                                       id="file-input-{{$gcnt}}wwc" disabled
+                                                                                       id="file-input-{{$gcnt}}wwc"
+                                                                                       disabled
                                                                                        style="background:transparent; border:none;">
                                                                             @endif
                                                                         </div>
@@ -1256,37 +1382,45 @@
                                                                 @php $gcnt++ @endphp
                                                                 @endif
                                                             </div>
-                                                                @endforeach
-                                                    <div class="text-center mt-3" style="margin-top: -30px" id="add_g"
-                                                         onclick="addanother_item_g()">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="37.694"
-                                                             height="37.694"
-                                                             viewBox="0 0 37.694 37.694" style="cursor:pointer;">
-                                                            <g id="Group_621" data-name="Group 621"
-                                                               transform="translate(-663.236 -976.679)">
-                                                                <g id="Group_550" data-name="Group 550"
-                                                                   transform="translate(663.236 976.679)">
-                                                                    <rect id="Rectangle_9" data-name="Rectangle 9"
-                                                                          width="37.694" height="37.694" rx="18.847"
-                                                                          fill="#C8C8C8"/>
-                                                                    <g id="Group_42" data-name="Group 42"
-                                                                       transform="translate(12.724 12.724)">
-                                                                        <line id="Line_11" data-name="Line 11"
-                                                                              y2="11.972"
-                                                                              transform="translate(5.986 0)" fill="none"
-                                                                              stroke="#fff" stroke-linecap="round"
-                                                                              stroke-width="2"/>
-                                                                        <line id="Line_12" data-name="Line 12"
-                                                                              x1="11.972"
-                                                                              transform="translate(0 5.634)" fill="none"
-                                                                              stroke="#fff" stroke-linecap="round"
-                                                                              stroke-width="2"/>
+                                                            @endforeach
+                                                            <div class="text-center mt-3" style="margin-top: -30px"
+                                                                 id="add_g"
+                                                                 onclick="addanother_item_g()">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="37.694"
+                                                                     height="37.694"
+                                                                     viewBox="0 0 37.694 37.694"
+                                                                     style="cursor:pointer;">
+                                                                    <g id="Group_621" data-name="Group 621"
+                                                                       transform="translate(-663.236 -976.679)">
+                                                                        <g id="Group_550" data-name="Group 550"
+                                                                           transform="translate(663.236 976.679)">
+                                                                            <rect id="Rectangle_9"
+                                                                                  data-name="Rectangle 9"
+                                                                                  width="37.694" height="37.694"
+                                                                                  rx="18.847"
+                                                                                  fill="#C8C8C8"/>
+                                                                            <g id="Group_42" data-name="Group 42"
+                                                                               transform="translate(12.724 12.724)">
+                                                                                <line id="Line_11" data-name="Line 11"
+                                                                                      y2="11.972"
+                                                                                      transform="translate(5.986 0)"
+                                                                                      fill="none"
+                                                                                      stroke="#fff"
+                                                                                      stroke-linecap="round"
+                                                                                      stroke-width="2"/>
+                                                                                <line id="Line_12" data-name="Line 12"
+                                                                                      x1="11.972"
+                                                                                      transform="translate(0 5.634)"
+                                                                                      fill="none"
+                                                                                      stroke="#fff"
+                                                                                      stroke-linecap="round"
+                                                                                      stroke-width="2"/>
+                                                                            </g>
+                                                                        </g>
                                                                     </g>
-                                                                </g>
-                                                            </g>
-                                                        </svg>
+                                                                </svg>
 
-                                                    </div>
+                                                            </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1295,7 +1429,7 @@
                                 @php $data->fahrzeug = \App\Models\LeadDataFahrzeug::where('person_id',$id)->latest()->first() @endphp
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 my-4">
                                     <div class="accordion accordion-flush" id="accordionFlushExample2">
-                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
+                                        <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingTwo">
                                                 <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
@@ -1522,7 +1656,9 @@
                                                                                     </span>
                                                                             </div>
                                                                             <select name="year_of_purchase"
-                                                                                    class="form-select w-75" aria-label="Default select example" id="">
+                                                                                    class="form-select w-75"
+                                                                                    aria-label="Default select example"
+                                                                                    id="">
                                                                                 @if(isset($data->fahrzeug->year_of_purchase))
                                                                                     <option
                                                                                         value="{{$data->fahrzeug->year_of_purchase}}"
@@ -1530,12 +1666,14 @@
                                                                                         {{$data->fahrzeug->year_of_purchase}}
                                                                                     </option>
                                                                                     @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)
-                                                                                        <option value="2021">{{$i}}</option>
+                                                                                        <option
+                                                                                            value="2021">{{$i}}</option>
                                                                                     @endfor
                                                                                 @else
                                                                                     <option selected></option>
                                                                                     @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)
-                                                                                        <option value="2021">{{$i}}</option>
+                                                                                        <option
+                                                                                            value="2021">{{$i}}</option>
                                                                                     @endfor
                                                                                 @endif
                                                                             </select>
@@ -1733,612 +1871,1374 @@
                                                                                     {{$data->fahrzeug->nationality}}
                                                                                 </option>
                                                                                 <option value="Swiss">Swiss</option>
-                                                                                <option value="Deutschland">Deutschland</option>
+                                                                                <option value="Deutschland">
+                                                                                    Deutschland
+                                                                                </option>
                                                                                 <option value="Italien">Italien</option>
                                                                                 <option value="French">French</option>
                                                                                 <optgroup label="A">
-                                                                                    <option value="Afghanistan">Afghanistan</option>
-                                                                                    <option value="Ägypten">Ägypten</option>
+                                                                                    <option value="Afghanistan">
+                                                                                        Afghanistan
+                                                                                    </option>
+                                                                                    <option value="Ägypten">Ägypten
+                                                                                    </option>
                                                                                     <option value="Åland">Åland</option>
-                                                                                    <option value="Albanien">Albanien</option>
-                                                                                    <option value="Algerien">Algerien</option>
-                                                                                    <option value="Amerikanisch-Samoa">Amerikanisch-Samoa</option>
-                                                                                    <option value="Amerikanische Jungferninseln">Amerikanische Jungferninseln</option>
-                                                                                    <option value="Andorra">Andorra</option>
-                                                                                    <option value="Angola">Angola</option>
-                                                                                    <option value="Anguilla">Anguilla</option>
-                                                                                    <option value="Antarktis">Antarktis</option>
-                                                                                    <option value="Antigua und Barbuda">Antigua und Barbuda</option>
-                                                                                    <option value="Äquatorialguinea">Äquatorialguinea</option>
-                                                                                    <option value="Argentinien">Argentinien</option>
-                                                                                    <option value="Armenien">Armenien</option>
+                                                                                    <option value="Albanien">Albanien
+                                                                                    </option>
+                                                                                    <option value="Algerien">Algerien
+                                                                                    </option>
+                                                                                    <option value="Amerikanisch-Samoa">
+                                                                                        Amerikanisch-Samoa
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Amerikanische Jungferninseln">
+                                                                                        Amerikanische Jungferninseln
+                                                                                    </option>
+                                                                                    <option value="Andorra">Andorra
+                                                                                    </option>
+                                                                                    <option value="Angola">Angola
+                                                                                    </option>
+                                                                                    <option value="Anguilla">Anguilla
+                                                                                    </option>
+                                                                                    <option value="Antarktis">
+                                                                                        Antarktis
+                                                                                    </option>
+                                                                                    <option value="Antigua und Barbuda">
+                                                                                        Antigua und Barbuda
+                                                                                    </option>
+                                                                                    <option value="Äquatorialguinea">
+                                                                                        Äquatorialguinea
+                                                                                    </option>
+                                                                                    <option value="Argentinien">
+                                                                                        Argentinien
+                                                                                    </option>
+                                                                                    <option value="Armenien">Armenien
+                                                                                    </option>
                                                                                     <option value="Aruba">Aruba</option>
-                                                                                    <option value="Ascension">Ascension</option>
-                                                                                    <option value="Aserbaidschan">Aserbaidschan</option>
-                                                                                    <option value="Äthiopien">Äthiopien</option>
-                                                                                    <option value="Australien">Australien</option>
+                                                                                    <option value="Ascension">
+                                                                                        Ascension
+                                                                                    </option>
+                                                                                    <option value="Aserbaidschan">
+                                                                                        Aserbaidschan
+                                                                                    </option>
+                                                                                    <option value="Äthiopien">
+                                                                                        Äthiopien
+                                                                                    </option>
+                                                                                    <option value="Australien">
+                                                                                        Australien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="B">
-                                                                                    <option value="Bahamas">Bahamas</option>
-                                                                                    <option value="Bahrain">Bahrain</option>
-                                                                                    <option value="Bangladesch">Bangladesch</option>
-                                                                                    <option value="Barbados">Barbados</option>
-                                                                                    <option value="Belarus">Belarus</option>
-                                                                                    <option value="Belgien">Belgien</option>
-                                                                                    <option value="Belize">Belize</option>
+                                                                                    <option value="Bahamas">Bahamas
+                                                                                    </option>
+                                                                                    <option value="Bahrain">Bahrain
+                                                                                    </option>
+                                                                                    <option value="Bangladesch">
+                                                                                        Bangladesch
+                                                                                    </option>
+                                                                                    <option value="Barbados">Barbados
+                                                                                    </option>
+                                                                                    <option value="Belarus">Belarus
+                                                                                    </option>
+                                                                                    <option value="Belgien">Belgien
+                                                                                    </option>
+                                                                                    <option value="Belize">Belize
+                                                                                    </option>
                                                                                     <option value="Benin">Benin</option>
-                                                                                    <option value="Bermuda">Bermuda</option>
-                                                                                    <option value="Bhutan">Bhutan</option>
-                                                                                    <option value="Bolivien">Bolivien</option>
-                                                                                    <option value="Bosnien und Herzegowina">Bosnien und Herzegowina</option>
-                                                                                    <option value="Botswana">Botswana</option>
-                                                                                    <option value="Bouvetinsel">Bouvetinsel</option>
-                                                                                    <option value="Brasilien">Brasilien</option>
-                                                                                    <option value="Britische Jungferninseln">Britische Jungferninseln</option>
-                                                                                    <option value="Britisches Territorium im Indischen Ozean">Britisches Territorium im Indischen Ozean</option>
-                                                                                    <option value="Brunei Darussalam">Brunei Darussalam</option>
-                                                                                    <option value="Bulgarien">Bulgarien</option>
-                                                                                    <option value="Burkina Faso">Burkina Faso</option>
-                                                                                    <option value="Burundi">Burundi</option>
+                                                                                    <option value="Bermuda">Bermuda
+                                                                                    </option>
+                                                                                    <option value="Bhutan">Bhutan
+                                                                                    </option>
+                                                                                    <option value="Bolivien">Bolivien
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Bosnien und Herzegowina">
+                                                                                        Bosnien und Herzegowina
+                                                                                    </option>
+                                                                                    <option value="Botswana">Botswana
+                                                                                    </option>
+                                                                                    <option value="Bouvetinsel">
+                                                                                        Bouvetinsel
+                                                                                    </option>
+                                                                                    <option value="Brasilien">
+                                                                                        Brasilien
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Britische Jungferninseln">
+                                                                                        Britische Jungferninseln
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Britisches Territorium im Indischen Ozean">
+                                                                                        Britisches Territorium im
+                                                                                        Indischen Ozean
+                                                                                    </option>
+                                                                                    <option value="Brunei Darussalam">
+                                                                                        Brunei Darussalam
+                                                                                    </option>
+                                                                                    <option value="Bulgarien">
+                                                                                        Bulgarien
+                                                                                    </option>
+                                                                                    <option value="Burkina Faso">Burkina
+                                                                                        Faso
+                                                                                    </option>
+                                                                                    <option value="Burundi">Burundi
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="C">
-                                                                                    <option value="Ceuta, Melilla">Ceuta, Melilla</option>
+                                                                                    <option value="Ceuta, Melilla">
+                                                                                        Ceuta, Melilla
+                                                                                    </option>
                                                                                     <option value="Chile">Chile</option>
-                                                                                    <option value="Volksrepublik China">Volksrepublik China</option>
-                                                                                    <option value="Clipperton">Clipperton</option>
-                                                                                    <option value="Cookinseln">Cookinseln</option>
-                                                                                    <option value="Costa Rica">Costa Rica</option>
-                                                                                    <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                                                                                    <option value="Volksrepublik China">
+                                                                                        Volksrepublik China
+                                                                                    </option>
+                                                                                    <option value="Clipperton">
+                                                                                        Clipperton
+                                                                                    </option>
+                                                                                    <option value="Cookinseln">
+                                                                                        Cookinseln
+                                                                                    </option>
+                                                                                    <option value="Costa Rica">Costa
+                                                                                        Rica
+                                                                                    </option>
+                                                                                    <option value="Côte d'Ivoire">Côte
+                                                                                        d'Ivoire
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="D">
-                                                                                    <option value="Dänemark">Dänemark</option>
-                                                                                    <option value="Deutschland">Deutschland</option>
-                                                                                    <option value="Diego Garcia">Diego Garcia</option>
-                                                                                    <option value="Dominica">Dominica</option>
-                                                                                    <option value="Dominikanische Republik">Dominikanische Republik</option>
-                                                                                    <option value="Dschibuti">Dschibuti</option>
+                                                                                    <option value="Dänemark">Dänemark
+                                                                                    </option>
+                                                                                    <option value="Deutschland">
+                                                                                        Deutschland
+                                                                                    </option>
+                                                                                    <option value="Diego Garcia">Diego
+                                                                                        Garcia
+                                                                                    </option>
+                                                                                    <option value="Dominica">Dominica
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Dominikanische Republik">
+                                                                                        Dominikanische Republik
+                                                                                    </option>
+                                                                                    <option value="Dschibuti">
+                                                                                        Dschibuti
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="E">
-                                                                                    <option value="Ecuador">Ecuador</option>
-                                                                                    <option value="El Salvador">El Salvador</option>
-                                                                                    <option value="Eritrea">Eritrea</option>
-                                                                                    <option value="Estland">Estland</option>
+                                                                                    <option value="Ecuador">Ecuador
+                                                                                    </option>
+                                                                                    <option value="El Salvador">El
+                                                                                        Salvador
+                                                                                    </option>
+                                                                                    <option value="Eritrea">Eritrea
+                                                                                    </option>
+                                                                                    <option value="Estland">Estland
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="F">
-                                                                                    <option value="Falklandinseln">Falklandinseln</option>
-                                                                                    <option value="Färöer">Färöer</option>
-                                                                                    <option value="Fidschi">Fidschi</option>
-                                                                                    <option value="Finnland">Finnland</option>
-                                                                                    <option value="Frankreich">Frankreich</option>
-                                                                                    <option value="Französisch-Guayana">Französisch-Guayana</option>
-                                                                                    <option value="Französisch-Polynesien">Französisch-Polynesien</option>
+                                                                                    <option value="Falklandinseln">
+                                                                                        Falklandinseln
+                                                                                    </option>
+                                                                                    <option value="Färöer">Färöer
+                                                                                    </option>
+                                                                                    <option value="Fidschi">Fidschi
+                                                                                    </option>
+                                                                                    <option value="Finnland">Finnland
+                                                                                    </option>
+                                                                                    <option value="Frankreich">
+                                                                                        Frankreich
+                                                                                    </option>
+                                                                                    <option value="Französisch-Guayana">
+                                                                                        Französisch-Guayana
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Französisch-Polynesien">
+                                                                                        Französisch-Polynesien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="G">
                                                                                     <option value="Gabun">Gabun</option>
-                                                                                    <option value="Gambia">Gambia</option>
-                                                                                    <option value="Georgien">Georgien</option>
+                                                                                    <option value="Gambia">Gambia
+                                                                                    </option>
+                                                                                    <option value="Georgien">Georgien
+                                                                                    </option>
                                                                                     <option value="Ghana">Ghana</option>
-                                                                                    <option value="Gibraltar">Gibraltar</option>
-                                                                                    <option value="Grenada">Grenada</option>
-                                                                                    <option value="Griechenland">Griechenland</option>
-                                                                                    <option value="Grönland">Grönland</option>
-                                                                                    <option value="Großbritannien">Großbritannien</option>
-                                                                                    <option value="Guadeloupe">Guadeloupe</option>
+                                                                                    <option value="Gibraltar">
+                                                                                        Gibraltar
+                                                                                    </option>
+                                                                                    <option value="Grenada">Grenada
+                                                                                    </option>
+                                                                                    <option value="Griechenland">
+                                                                                        Griechenland
+                                                                                    </option>
+                                                                                    <option value="Grönland">Grönland
+                                                                                    </option>
+                                                                                    <option value="Großbritannien">
+                                                                                        Großbritannien
+                                                                                    </option>
+                                                                                    <option value="Guadeloupe">
+                                                                                        Guadeloupe
+                                                                                    </option>
                                                                                     <option value="Guam">Guam</option>
-                                                                                    <option value="Guatemala">Guatemala</option>
-                                                                                    <option value="Guernsey (Kanalinsel)">Guernsey (Kanalinsel)</option>
-                                                                                    <option value="Guinea">Guinea</option>
-                                                                                    <option value="Guinea-Bissau">Guinea-Bissau</option>
-                                                                                    <option value="Guyana">Guyana</option>
+                                                                                    <option value="Guatemala">
+                                                                                        Guatemala
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Guernsey (Kanalinsel)">
+                                                                                        Guernsey (Kanalinsel)
+                                                                                    </option>
+                                                                                    <option value="Guinea">Guinea
+                                                                                    </option>
+                                                                                    <option value="Guinea-Bissau">
+                                                                                        Guinea-Bissau
+                                                                                    </option>
+                                                                                    <option value="Guyana">Guyana
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="H">
                                                                                     <option value="Haiti">Haiti</option>
-                                                                                    <option value="Heard- und McDonald-Inseln">Heard- und McDonald-Inseln</option>
-                                                                                    <option value="Honduras">Honduras</option>
-                                                                                    <option value="Hongkong">Hongkong</option>
+                                                                                    <option
+                                                                                        value="Heard- und McDonald-Inseln">
+                                                                                        Heard- und McDonald-Inseln
+                                                                                    </option>
+                                                                                    <option value="Honduras">Honduras
+                                                                                    </option>
+                                                                                    <option value="Hongkong">Hongkong
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="I">
-                                                                                    <option value="Indien">Indien</option>
-                                                                                    <option value="Indonesien">Indonesien</option>
-                                                                                    <option value="Insel Man">Insel Man</option>
+                                                                                    <option value="Indien">Indien
+                                                                                    </option>
+                                                                                    <option value="Indonesien">
+                                                                                        Indonesien
+                                                                                    </option>
+                                                                                    <option value="Insel Man">Insel
+                                                                                        Man
+                                                                                    </option>
                                                                                     <option value="Irak">Irak</option>
                                                                                     <option value="Iran">Iran</option>
-                                                                                    <option value="Irland">Irland</option>
-                                                                                    <option value="Island">Island</option>
-                                                                                    <option value="Israel">Israel</option>
-                                                                                    <option value="Italien">Italien</option>
+                                                                                    <option value="Irland">Irland
+                                                                                    </option>
+                                                                                    <option value="Island">Island
+                                                                                    </option>
+                                                                                    <option value="Israel">Israel
+                                                                                    </option>
+                                                                                    <option value="Italien">Italien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="J">
-                                                                                    <option value="Jamaika">Jamaika</option>
+                                                                                    <option value="Jamaika">Jamaika
+                                                                                    </option>
                                                                                     <option value="Japan">Japan</option>
                                                                                     <option value="Jemen">Jemen</option>
-                                                                                    <option value="Jersey (Kanalinsel)">Jersey (Kanalinsel)</option>
-                                                                                    <option value="Jordanien">Jordanien</option>
+                                                                                    <option value="Jersey (Kanalinsel)">
+                                                                                        Jersey (Kanalinsel)
+                                                                                    </option>
+                                                                                    <option value="Jordanien">
+                                                                                        Jordanien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="K">
-                                                                                    <option value="Kaimaninseln">Kaimaninseln</option>
-                                                                                    <option value="Kambodscha">Kambodscha</option>
-                                                                                    <option value="Kamerun">Kamerun</option>
-                                                                                    <option value="Kanada">Kanada</option>
-                                                                                    <option value="Kanarische Inseln">Kanarische Inseln</option>
-                                                                                    <option value="Kap Verde">Kap Verde</option>
-                                                                                    <option value="Kasachstan">Kasachstan</option>
+                                                                                    <option value="Kaimaninseln">
+                                                                                        Kaimaninseln
+                                                                                    </option>
+                                                                                    <option value="Kambodscha">
+                                                                                        Kambodscha
+                                                                                    </option>
+                                                                                    <option value="Kamerun">Kamerun
+                                                                                    </option>
+                                                                                    <option value="Kanada">Kanada
+                                                                                    </option>
+                                                                                    <option value="Kanarische Inseln">
+                                                                                        Kanarische Inseln
+                                                                                    </option>
+                                                                                    <option value="Kap Verde">Kap
+                                                                                        Verde
+                                                                                    </option>
+                                                                                    <option value="Kasachstan">
+                                                                                        Kasachstan
+                                                                                    </option>
                                                                                     <option value="Katar">Katar</option>
                                                                                     <option value="Kenia">Kenia</option>
-                                                                                    <option value="Kirgisistan">Kirgisistan</option>
-                                                                                    <option value="Kiribati">Kiribati</option>
-                                                                                    <option value="Kokosinseln">Kokosinseln</option>
-                                                                                    <option value="Kolumbien">Kolumbien</option>
-                                                                                    <option value="Komoren">Komoren</option>
-                                                                                    <option value="Demokratische Republik Kongo">Demokratische Republik Kongo</option>
-                                                                                    <option value="Demokratische Volksrepublik Korea (Nordkorea)">Demokratische Volksrepublik Korea (Nordkorea)</option>
-                                                                                    <option value="Republik Korea (Südkorea)">Republik Korea (Südkorea)</option>
-                                                                                    <option value="Kosovo">Kosovo</option>
-                                                                                    <option value="Kroatien">Kroatien</option>
+                                                                                    <option value="Kirgisistan">
+                                                                                        Kirgisistan
+                                                                                    </option>
+                                                                                    <option value="Kiribati">Kiribati
+                                                                                    </option>
+                                                                                    <option value="Kokosinseln">
+                                                                                        Kokosinseln
+                                                                                    </option>
+                                                                                    <option value="Kolumbien">
+                                                                                        Kolumbien
+                                                                                    </option>
+                                                                                    <option value="Komoren">Komoren
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Demokratische Republik Kongo">
+                                                                                        Demokratische Republik Kongo
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Demokratische Volksrepublik Korea (Nordkorea)">
+                                                                                        Demokratische Volksrepublik
+                                                                                        Korea (Nordkorea)
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Republik Korea (Südkorea)">
+                                                                                        Republik Korea (Südkorea)
+                                                                                    </option>
+                                                                                    <option value="Kosovo">Kosovo
+                                                                                    </option>
+                                                                                    <option value="Kroatien">Kroatien
+                                                                                    </option>
                                                                                     <option value="Kuba">Kuba</option>
-                                                                                    <option value="Kuwait">Kuwait</option>
+                                                                                    <option value="Kuwait">Kuwait
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="L">
                                                                                     <option value="Laos">Laos</option>
-                                                                                    <option value="Lesotho">Lesotho</option>
-                                                                                    <option value="Lettland">Lettland</option>
-                                                                                    <option value="Libanon">Libanon</option>
-                                                                                    <option value="Liberia">Liberia</option>
-                                                                                    <option value="Libyen">Libyen</option>
-                                                                                    <option value="Liechtenstein">Liechtenstein</option>
-                                                                                    <option value="Litauen">Litauen</option>
-                                                                                    <option value="Luxemburg">Luxemburg</option>
+                                                                                    <option value="Lesotho">Lesotho
+                                                                                    </option>
+                                                                                    <option value="Lettland">Lettland
+                                                                                    </option>
+                                                                                    <option value="Libanon">Libanon
+                                                                                    </option>
+                                                                                    <option value="Liberia">Liberia
+                                                                                    </option>
+                                                                                    <option value="Libyen">Libyen
+                                                                                    </option>
+                                                                                    <option value="Liechtenstein">
+                                                                                        Liechtenstein
+                                                                                    </option>
+                                                                                    <option value="Litauen">Litauen
+                                                                                    </option>
+                                                                                    <option value="Luxemburg">
+                                                                                        Luxemburg
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="M">
                                                                                     <option value="Macao">Macao</option>
-                                                                                    <option value="Madagaskar">Madagaskar</option>
-                                                                                    <option value="Malawi">Malawi</option>
-                                                                                    <option value="Malaysia">Malaysia</option>
-                                                                                    <option value="Malediven">Malediven</option>
+                                                                                    <option value="Madagaskar">
+                                                                                        Madagaskar
+                                                                                    </option>
+                                                                                    <option value="Malawi">Malawi
+                                                                                    </option>
+                                                                                    <option value="Malaysia">Malaysia
+                                                                                    </option>
+                                                                                    <option value="Malediven">
+                                                                                        Malediven
+                                                                                    </option>
                                                                                     <option value="Mali">Mali</option>
                                                                                     <option value="Malta">Malta</option>
-                                                                                    <option value="Marokko">Marokko</option>
-                                                                                    <option value="Marshallinseln">Marshallinseln</option>
-                                                                                    <option value="Martinique">Martinique</option>
-                                                                                    <option value="Mauretanien">Mauretanien</option>
-                                                                                    <option value="Mauritius">Mauritius</option>
-                                                                                    <option value="Mayotte">Mayotte</option>
-                                                                                    <option value="Mazedonien">Mazedonien</option>
-                                                                                    <option value="Mexiko">Mexiko</option>
-                                                                                    <option value="Mikronesien">Mikronesien</option>
-                                                                                    <option value="Moldawien (Republik Moldau)">Moldawien (Republik Moldau)</option>
-                                                                                    <option value="Monaco">Monaco</option>
-                                                                                    <option value="Mongolei">Mongolei</option>
-                                                                                    <option value="Montenegro">Montenegro</option>
-                                                                                    <option value="Montserrat">Montserrat</option>
-                                                                                    <option value="Mosambik">Mosambik</option>
-                                                                                    <option value="Myanmar">Myanmar (Burma)</option>
+                                                                                    <option value="Marokko">Marokko
+                                                                                    </option>
+                                                                                    <option value="Marshallinseln">
+                                                                                        Marshallinseln
+                                                                                    </option>
+                                                                                    <option value="Martinique">
+                                                                                        Martinique
+                                                                                    </option>
+                                                                                    <option value="Mauretanien">
+                                                                                        Mauretanien
+                                                                                    </option>
+                                                                                    <option value="Mauritius">
+                                                                                        Mauritius
+                                                                                    </option>
+                                                                                    <option value="Mayotte">Mayotte
+                                                                                    </option>
+                                                                                    <option value="Mazedonien">
+                                                                                        Mazedonien
+                                                                                    </option>
+                                                                                    <option value="Mexiko">Mexiko
+                                                                                    </option>
+                                                                                    <option value="Mikronesien">
+                                                                                        Mikronesien
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Moldawien (Republik Moldau)">
+                                                                                        Moldawien (Republik Moldau)
+                                                                                    </option>
+                                                                                    <option value="Monaco">Monaco
+                                                                                    </option>
+                                                                                    <option value="Mongolei">Mongolei
+                                                                                    </option>
+                                                                                    <option value="Montenegro">
+                                                                                        Montenegro
+                                                                                    </option>
+                                                                                    <option value="Montserrat">
+                                                                                        Montserrat
+                                                                                    </option>
+                                                                                    <option value="Mosambik">Mosambik
+                                                                                    </option>
+                                                                                    <option value="Myanmar">Myanmar
+                                                                                        (Burma)
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="N">
-                                                                                    <option value="Namibia">Namibia</option>
+                                                                                    <option value="Namibia">Namibia
+                                                                                    </option>
                                                                                     <option value="Nauru">Nauru</option>
                                                                                     <option value="Nepal">Nepal</option>
-                                                                                    <option value="Neukaledonien">Neukaledonien</option>
-                                                                                    <option value="Neuseeland">Neuseeland</option>
-                                                                                    <option value="Nicaragua">Nicaragua</option>
-                                                                                    <option value="Niederlande">Niederlande</option>
-                                                                                    <option value="Niederländische Antillen">Niederländische Antillen</option>
+                                                                                    <option value="Neukaledonien">
+                                                                                        Neukaledonien
+                                                                                    </option>
+                                                                                    <option value="Neuseeland">
+                                                                                        Neuseeland
+                                                                                    </option>
+                                                                                    <option value="Nicaragua">
+                                                                                        Nicaragua
+                                                                                    </option>
+                                                                                    <option value="Niederlande">
+                                                                                        Niederlande
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Niederländische Antillen">
+                                                                                        Niederländische Antillen
+                                                                                    </option>
                                                                                     <option value="Niger">Niger</option>
-                                                                                    <option value="Nigeria">Nigeria</option>
+                                                                                    <option value="Nigeria">Nigeria
+                                                                                    </option>
                                                                                     <option value="Niue">Niue</option>
-                                                                                    <option value="Nördliche Marianen">Nördliche Marianen</option>
-                                                                                    <option value="Norfolkinsel">Norfolkinsel</option>
-                                                                                    <option value="Norwegen">Norwegen</option>
+                                                                                    <option value="Nördliche Marianen">
+                                                                                        Nördliche Marianen
+                                                                                    </option>
+                                                                                    <option value="Norfolkinsel">
+                                                                                        Norfolkinsel
+                                                                                    </option>
+                                                                                    <option value="Norwegen">Norwegen
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="O">
                                                                                     <option value="Oman">Oman</option>
                                                                                     <option value="Orbit">Orbit</option>
-                                                                                    <option value="Österreich">Österreich</option>
-                                                                                    <option value="Osttimor (Timor-Leste)">Osttimor (Timor-Leste)</option>
+                                                                                    <option value="Österreich">
+                                                                                        Österreich
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Osttimor (Timor-Leste)">
+                                                                                        Osttimor (Timor-Leste)
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="P">
-                                                                                    <option value="Pakistan">Pakistan</option>
-                                                                                    <option value="Palästinensische Autonomiegebiete">Palästinensische Autonomiegebiete</option>
+                                                                                    <option value="Pakistan">Pakistan
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Palästinensische Autonomiegebiete">
+                                                                                        Palästinensische
+                                                                                        Autonomiegebiete
+                                                                                    </option>
                                                                                     <option value="Palau">Palau</option>
-                                                                                    <option value="Panama">Panama</option>
-                                                                                    <option value="Papua-Neuguinea">Papua-Neuguinea</option>
-                                                                                    <option value="Paraguay">Paraguay</option>
+                                                                                    <option value="Panama">Panama
+                                                                                    </option>
+                                                                                    <option value="Papua-Neuguinea">
+                                                                                        Papua-Neuguinea
+                                                                                    </option>
+                                                                                    <option value="Paraguay">Paraguay
+                                                                                    </option>
                                                                                     <option value="Peru">Peru</option>
-                                                                                    <option value="Philippinen">Philippinen</option>
-                                                                                    <option value="Pitcairninseln">Pitcairninseln</option>
+                                                                                    <option value="Philippinen">
+                                                                                        Philippinen
+                                                                                    </option>
+                                                                                    <option value="Pitcairninseln">
+                                                                                        Pitcairninseln
+                                                                                    </option>
                                                                                     <option value="Polen">Polen</option>
-                                                                                    <option value="Portugal">Portugal</option>
-                                                                                    <option value="Puerto Rico">Puerto Rico</option>
+                                                                                    <option value="Portugal">Portugal
+                                                                                    </option>
+                                                                                    <option value="Puerto Rico">Puerto
+                                                                                        Rico
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="R">
-                                                                                    <option value="Republik China (Taiwan)">Republik China (Taiwan)</option>
-                                                                                    <option value="Republik Kongo">Republik Kongo</option>
-                                                                                    <option value="Réunion">Réunion</option>
-                                                                                    <option value="Ruanda">Ruanda</option>
-                                                                                    <option value="Rumänien">Rumänien</option>
-                                                                                    <option value="Russische Föderation">Russische Föderation</option>
+                                                                                    <option
+                                                                                        value="Republik China (Taiwan)">
+                                                                                        Republik China (Taiwan)
+                                                                                    </option>
+                                                                                    <option value="Republik Kongo">
+                                                                                        Republik Kongo
+                                                                                    </option>
+                                                                                    <option value="Réunion">Réunion
+                                                                                    </option>
+                                                                                    <option value="Ruanda">Ruanda
+                                                                                    </option>
+                                                                                    <option value="Rumänien">Rumänien
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Russische Föderation">
+                                                                                        Russische Föderation
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="S">
-                                                                                    <option value="Saint-Barthélemy">Saint-Barthélemy</option>
-                                                                                    <option value="Saint-Martin">Saint-Martin</option>
-                                                                                    <option value="Salomonen">Salomonen</option>
-                                                                                    <option value="Sambia">Sambia</option>
+                                                                                    <option value="Saint-Barthélemy">
+                                                                                        Saint-Barthélemy
+                                                                                    </option>
+                                                                                    <option value="Saint-Martin">
+                                                                                        Saint-Martin
+                                                                                    </option>
+                                                                                    <option value="Salomonen">
+                                                                                        Salomonen
+                                                                                    </option>
+                                                                                    <option value="Sambia">Sambia
+                                                                                    </option>
                                                                                     <option value="Samoa">Samoa</option>
-                                                                                    <option value="San Marino">San Marino</option>
-                                                                                    <option value="São Tomé und Príncipe">São Tomé und Príncipe</option>
-                                                                                    <option value="Saudi-Arabien">Saudi-Arabien</option>
-                                                                                    <option value="Schweden">Schweden</option>
-                                                                                    <option value="Schweiz">Schweiz</option>
-                                                                                    <option value="Senegal">Senegal</option>
-                                                                                    <option value="Serbien">Serbien</option>
-                                                                                    <option value="Seychellen">Seychellen</option>
-                                                                                    <option value="Sierra Leone">Sierra Leone</option>
-                                                                                    <option value="Simbabwe">Simbabwe</option>
-                                                                                    <option value="Singapur">Singapur</option>
-                                                                                    <option value="Slowakei">Slowakei</option>
-                                                                                    <option value="Slowenien">Slowenien</option>
-                                                                                    <option value="Somalia">Somalia</option>
-                                                                                    <option value="Spanien">Spanien</option>
-                                                                                    <option value="Sri Lanka">Sri Lanka</option>
-                                                                                    <option value="St. Helena">St. Helena</option>
-                                                                                    <option value="St. Kitts und Nevis">St. Kitts und Nevis</option>
-                                                                                    <option value="St. Lucia">St. Lucia</option>
-                                                                                    <option value="Saint-Pierre und Miquelon">Saint-Pierre und Miquelon</option>
-                                                                                    <option value="St. Vincent und die Grenadinen">St. Vincent und die Grenadinen</option>
-                                                                                    <option value="Südafrika">Südafrika</option>
+                                                                                    <option value="San Marino">San
+                                                                                        Marino
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="São Tomé und Príncipe">
+                                                                                        São Tomé und Príncipe
+                                                                                    </option>
+                                                                                    <option value="Saudi-Arabien">
+                                                                                        Saudi-Arabien
+                                                                                    </option>
+                                                                                    <option value="Schweden">Schweden
+                                                                                    </option>
+                                                                                    <option value="Schweiz">Schweiz
+                                                                                    </option>
+                                                                                    <option value="Senegal">Senegal
+                                                                                    </option>
+                                                                                    <option value="Serbien">Serbien
+                                                                                    </option>
+                                                                                    <option value="Seychellen">
+                                                                                        Seychellen
+                                                                                    </option>
+                                                                                    <option value="Sierra Leone">Sierra
+                                                                                        Leone
+                                                                                    </option>
+                                                                                    <option value="Simbabwe">Simbabwe
+                                                                                    </option>
+                                                                                    <option value="Singapur">Singapur
+                                                                                    </option>
+                                                                                    <option value="Slowakei">Slowakei
+                                                                                    </option>
+                                                                                    <option value="Slowenien">
+                                                                                        Slowenien
+                                                                                    </option>
+                                                                                    <option value="Somalia">Somalia
+                                                                                    </option>
+                                                                                    <option value="Spanien">Spanien
+                                                                                    </option>
+                                                                                    <option value="Sri Lanka">Sri
+                                                                                        Lanka
+                                                                                    </option>
+                                                                                    <option value="St. Helena">St.
+                                                                                        Helena
+                                                                                    </option>
+                                                                                    <option value="St. Kitts und Nevis">
+                                                                                        St. Kitts und Nevis
+                                                                                    </option>
+                                                                                    <option value="St. Lucia">St.
+                                                                                        Lucia
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Saint-Pierre und Miquelon">
+                                                                                        Saint-Pierre und Miquelon
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="St. Vincent und die Grenadinen">
+                                                                                        St. Vincent und die Grenadinen
+                                                                                    </option>
+                                                                                    <option value="Südafrika">
+                                                                                        Südafrika
+                                                                                    </option>
                                                                                     <option value="Sudan">Sudan</option>
-                                                                                    <option value="Südgeorgien und die Südlichen Sandwichinseln">Südgeorgien und die Südlichen Sandwichinseln</option>
-                                                                                    <option value="Suriname">Suriname</option>
-                                                                                    <option value="Svalbard und Jan Mayen">Svalbard und Jan Mayen</option>
-                                                                                    <option value="Swasiland">Swasiland</option>
-                                                                                    <option value="Syrien">Syrien</option>
+                                                                                    <option
+                                                                                        value="Südgeorgien und die Südlichen Sandwichinseln">
+                                                                                        Südgeorgien und die Südlichen
+                                                                                        Sandwichinseln
+                                                                                    </option>
+                                                                                    <option value="Suriname">Suriname
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Svalbard und Jan Mayen">
+                                                                                        Svalbard und Jan Mayen
+                                                                                    </option>
+                                                                                    <option value="Swasiland">
+                                                                                        Swasiland
+                                                                                    </option>
+                                                                                    <option value="Syrien">Syrien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="T">
-                                                                                    <option value="Tadschikistan">Tadschikistan</option>
-                                                                                    <option value="Tansania">Tansania</option>
-                                                                                    <option value="Thailand">Thailand</option>
+                                                                                    <option value="Tadschikistan">
+                                                                                        Tadschikistan
+                                                                                    </option>
+                                                                                    <option value="Tansania">Tansania
+                                                                                    </option>
+                                                                                    <option value="Thailand">Thailand
+                                                                                    </option>
                                                                                     <option value="Togo">Togo</option>
-                                                                                    <option value="Tokelau">Tokelau</option>
+                                                                                    <option value="Tokelau">Tokelau
+                                                                                    </option>
                                                                                     <option value="Tonga">Tonga</option>
-                                                                                    <option value="Trinidad und Tobago">Trinidad und Tobago</option>
-                                                                                    <option value="Tristan da Cunha">Tristan da Cunha</option>
-                                                                                    <option value="Tschad">Tschad</option>
-                                                                                    <option value="Tschechische Republik">Tschechische Republik</option>
-                                                                                    <option value="Tunesien">Tunesien</option>
-                                                                                    <option value="Türkei">Türkei</option>
-                                                                                    <option value="Turkmenistan">Turkmenistan</option>
-                                                                                    <option value="Turks- und Caicosinseln">Turks- und Caicosinseln</option>
-                                                                                    <option value="Tuvalu">Tuvalu</option>
+                                                                                    <option value="Trinidad und Tobago">
+                                                                                        Trinidad und Tobago
+                                                                                    </option>
+                                                                                    <option value="Tristan da Cunha">
+                                                                                        Tristan da Cunha
+                                                                                    </option>
+                                                                                    <option value="Tschad">Tschad
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Tschechische Republik">
+                                                                                        Tschechische Republik
+                                                                                    </option>
+                                                                                    <option value="Tunesien">Tunesien
+                                                                                    </option>
+                                                                                    <option value="Türkei">Türkei
+                                                                                    </option>
+                                                                                    <option value="Turkmenistan">
+                                                                                        Turkmenistan
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Turks- und Caicosinseln">
+                                                                                        Turks- und Caicosinseln
+                                                                                    </option>
+                                                                                    <option value="Tuvalu">Tuvalu
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="U">
-                                                                                    <option value="Uganda">Uganda</option>
-                                                                                    <option value="Ukraine">Ukraine</option>
-                                                                                    <option value="Ungarn">Ungarn</option>
-                                                                                    <option value="Uruguay">Uruguay</option>
-                                                                                    <option value="Usbekistan">Usbekistan</option>
+                                                                                    <option value="Uganda">Uganda
+                                                                                    </option>
+                                                                                    <option value="Ukraine">Ukraine
+                                                                                    </option>
+                                                                                    <option value="Ungarn">Ungarn
+                                                                                    </option>
+                                                                                    <option value="Uruguay">Uruguay
+                                                                                    </option>
+                                                                                    <option value="Usbekistan">
+                                                                                        Usbekistan
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="V">
-                                                                                    <option value="Vanuatu">Vanuatu</option>
-                                                                                    <option value="Vatikanstadt">Vatikanstadt</option>
-                                                                                    <option value="Venezuela">Venezuela</option>
-                                                                                    <option value="Vereinigte Arabische Emirate">Vereinigte Arabische Emirate</option>
-                                                                                    <option value="Vereinigte Staaten von Amerika (USA)">Vereinigte Staaten von Amerika (USA)</option>
-                                                                                    <option value="Vereinigtes Königreich Großbritannien und Nordirland">Vereinigtes Königreich Großbritannien und Nordirland</option>
-                                                                                    <option value="Vietnam">Vietnam</option>
+                                                                                    <option value="Vanuatu">Vanuatu
+                                                                                    </option>
+                                                                                    <option value="Vatikanstadt">
+                                                                                        Vatikanstadt
+                                                                                    </option>
+                                                                                    <option value="Venezuela">
+                                                                                        Venezuela
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Vereinigte Arabische Emirate">
+                                                                                        Vereinigte Arabische Emirate
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Vereinigte Staaten von Amerika (USA)">
+                                                                                        Vereinigte Staaten von Amerika
+                                                                                        (USA)
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Vereinigtes Königreich Großbritannien und Nordirland">
+                                                                                        Vereinigtes Königreich
+                                                                                        Großbritannien und Nordirland
+                                                                                    </option>
+                                                                                    <option value="Vietnam">Vietnam
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="W">
-                                                                                    <option value="Wallis und Futuna">Wallis und Futuna</option>
-                                                                                    <option value="Weihnachtsinsel">Weihnachtsinsel</option>
-                                                                                    <option value="Westsahara">Westsahara</option>
+                                                                                    <option value="Wallis und Futuna">
+                                                                                        Wallis und Futuna
+                                                                                    </option>
+                                                                                    <option value="Weihnachtsinsel">
+                                                                                        Weihnachtsinsel
+                                                                                    </option>
+                                                                                    <option value="Westsahara">
+                                                                                        Westsahara
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="Z">
-                                                                                    <option value="Zentralafrikanische Republik">Zentralafrikanische Republik</option>
-                                                                                    <option value="Zypern">Zypern</option>
+                                                                                    <option
+                                                                                        value="Zentralafrikanische Republik">
+                                                                                        Zentralafrikanische Republik
+                                                                                    </option>
+                                                                                    <option value="Zypern">Zypern
+                                                                                    </option>
                                                                                 </optgroup>
                                                                             @else
                                                                                 <option selected></option>
                                                                                 <option value="Swiss">Swiss</option>
-                                                                                <option value="Deutschland">Deutschland</option>
+                                                                                <option value="Deutschland">
+                                                                                    Deutschland
+                                                                                </option>
                                                                                 <option value="Italien">Italien</option>
                                                                                 <option value="French">French</option>
                                                                                 <optgroup label="A">
-                                                                                    <option value="Afghanistan">Afghanistan</option>
-                                                                                    <option value="Ägypten">Ägypten</option>
+                                                                                    <option value="Afghanistan">
+                                                                                        Afghanistan
+                                                                                    </option>
+                                                                                    <option value="Ägypten">Ägypten
+                                                                                    </option>
                                                                                     <option value="Åland">Åland</option>
-                                                                                    <option value="Albanien">Albanien</option>
-                                                                                    <option value="Algerien">Algerien</option>
-                                                                                    <option value="Amerikanisch-Samoa">Amerikanisch-Samoa</option>
-                                                                                    <option value="Amerikanische Jungferninseln">Amerikanische Jungferninseln</option>
-                                                                                    <option value="Andorra">Andorra</option>
-                                                                                    <option value="Angola">Angola</option>
-                                                                                    <option value="Anguilla">Anguilla</option>
-                                                                                    <option value="Antarktis">Antarktis</option>
-                                                                                    <option value="Antigua und Barbuda">Antigua und Barbuda</option>
-                                                                                    <option value="Äquatorialguinea">Äquatorialguinea</option>
-                                                                                    <option value="Argentinien">Argentinien</option>
-                                                                                    <option value="Armenien">Armenien</option>
+                                                                                    <option value="Albanien">Albanien
+                                                                                    </option>
+                                                                                    <option value="Algerien">Algerien
+                                                                                    </option>
+                                                                                    <option value="Amerikanisch-Samoa">
+                                                                                        Amerikanisch-Samoa
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Amerikanische Jungferninseln">
+                                                                                        Amerikanische Jungferninseln
+                                                                                    </option>
+                                                                                    <option value="Andorra">Andorra
+                                                                                    </option>
+                                                                                    <option value="Angola">Angola
+                                                                                    </option>
+                                                                                    <option value="Anguilla">Anguilla
+                                                                                    </option>
+                                                                                    <option value="Antarktis">
+                                                                                        Antarktis
+                                                                                    </option>
+                                                                                    <option value="Antigua und Barbuda">
+                                                                                        Antigua und Barbuda
+                                                                                    </option>
+                                                                                    <option value="Äquatorialguinea">
+                                                                                        Äquatorialguinea
+                                                                                    </option>
+                                                                                    <option value="Argentinien">
+                                                                                        Argentinien
+                                                                                    </option>
+                                                                                    <option value="Armenien">Armenien
+                                                                                    </option>
                                                                                     <option value="Aruba">Aruba</option>
-                                                                                    <option value="Ascension">Ascension</option>
-                                                                                    <option value="Aserbaidschan">Aserbaidschan</option>
-                                                                                    <option value="Äthiopien">Äthiopien</option>
-                                                                                    <option value="Australien">Australien</option>
+                                                                                    <option value="Ascension">
+                                                                                        Ascension
+                                                                                    </option>
+                                                                                    <option value="Aserbaidschan">
+                                                                                        Aserbaidschan
+                                                                                    </option>
+                                                                                    <option value="Äthiopien">
+                                                                                        Äthiopien
+                                                                                    </option>
+                                                                                    <option value="Australien">
+                                                                                        Australien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="B">
-                                                                                    <option value="Bahamas">Bahamas</option>
-                                                                                    <option value="Bahrain">Bahrain</option>
-                                                                                    <option value="Bangladesch">Bangladesch</option>
-                                                                                    <option value="Barbados">Barbados</option>
-                                                                                    <option value="Belarus">Belarus</option>
-                                                                                    <option value="Belgien">Belgien</option>
-                                                                                    <option value="Belize">Belize</option>
+                                                                                    <option value="Bahamas">Bahamas
+                                                                                    </option>
+                                                                                    <option value="Bahrain">Bahrain
+                                                                                    </option>
+                                                                                    <option value="Bangladesch">
+                                                                                        Bangladesch
+                                                                                    </option>
+                                                                                    <option value="Barbados">Barbados
+                                                                                    </option>
+                                                                                    <option value="Belarus">Belarus
+                                                                                    </option>
+                                                                                    <option value="Belgien">Belgien
+                                                                                    </option>
+                                                                                    <option value="Belize">Belize
+                                                                                    </option>
                                                                                     <option value="Benin">Benin</option>
-                                                                                    <option value="Bermuda">Bermuda</option>
-                                                                                    <option value="Bhutan">Bhutan</option>
-                                                                                    <option value="Bolivien">Bolivien</option>
-                                                                                    <option value="Bosnien und Herzegowina">Bosnien und Herzegowina</option>
-                                                                                    <option value="Botswana">Botswana</option>
-                                                                                    <option value="Bouvetinsel">Bouvetinsel</option>
-                                                                                    <option value="Brasilien">Brasilien</option>
-                                                                                    <option value="Britische Jungferninseln">Britische Jungferninseln</option>
-                                                                                    <option value="Britisches Territorium im Indischen Ozean">Britisches Territorium im Indischen Ozean</option>
-                                                                                    <option value="Brunei Darussalam">Brunei Darussalam</option>
-                                                                                    <option value="Bulgarien">Bulgarien</option>
-                                                                                    <option value="Burkina Faso">Burkina Faso</option>
-                                                                                    <option value="Burundi">Burundi</option>
+                                                                                    <option value="Bermuda">Bermuda
+                                                                                    </option>
+                                                                                    <option value="Bhutan">Bhutan
+                                                                                    </option>
+                                                                                    <option value="Bolivien">Bolivien
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Bosnien und Herzegowina">
+                                                                                        Bosnien und Herzegowina
+                                                                                    </option>
+                                                                                    <option value="Botswana">Botswana
+                                                                                    </option>
+                                                                                    <option value="Bouvetinsel">
+                                                                                        Bouvetinsel
+                                                                                    </option>
+                                                                                    <option value="Brasilien">
+                                                                                        Brasilien
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Britische Jungferninseln">
+                                                                                        Britische Jungferninseln
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Britisches Territorium im Indischen Ozean">
+                                                                                        Britisches Territorium im
+                                                                                        Indischen Ozean
+                                                                                    </option>
+                                                                                    <option value="Brunei Darussalam">
+                                                                                        Brunei Darussalam
+                                                                                    </option>
+                                                                                    <option value="Bulgarien">
+                                                                                        Bulgarien
+                                                                                    </option>
+                                                                                    <option value="Burkina Faso">Burkina
+                                                                                        Faso
+                                                                                    </option>
+                                                                                    <option value="Burundi">Burundi
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="C">
-                                                                                    <option value="Ceuta, Melilla">Ceuta, Melilla</option>
+                                                                                    <option value="Ceuta, Melilla">
+                                                                                        Ceuta, Melilla
+                                                                                    </option>
                                                                                     <option value="Chile">Chile</option>
-                                                                                    <option value="Volksrepublik China">Volksrepublik China</option>
-                                                                                    <option value="Clipperton">Clipperton</option>
-                                                                                    <option value="Cookinseln">Cookinseln</option>
-                                                                                    <option value="Costa Rica">Costa Rica</option>
-                                                                                    <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                                                                                    <option value="Volksrepublik China">
+                                                                                        Volksrepublik China
+                                                                                    </option>
+                                                                                    <option value="Clipperton">
+                                                                                        Clipperton
+                                                                                    </option>
+                                                                                    <option value="Cookinseln">
+                                                                                        Cookinseln
+                                                                                    </option>
+                                                                                    <option value="Costa Rica">Costa
+                                                                                        Rica
+                                                                                    </option>
+                                                                                    <option value="Côte d'Ivoire">Côte
+                                                                                        d'Ivoire
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="D">
-                                                                                    <option value="Dänemark">Dänemark</option>
-                                                                                    <option value="Deutschland">Deutschland</option>
-                                                                                    <option value="Diego Garcia">Diego Garcia</option>
-                                                                                    <option value="Dominica">Dominica</option>
-                                                                                    <option value="Dominikanische Republik">Dominikanische Republik</option>
-                                                                                    <option value="Dschibuti">Dschibuti</option>
+                                                                                    <option value="Dänemark">Dänemark
+                                                                                    </option>
+                                                                                    <option value="Deutschland">
+                                                                                        Deutschland
+                                                                                    </option>
+                                                                                    <option value="Diego Garcia">Diego
+                                                                                        Garcia
+                                                                                    </option>
+                                                                                    <option value="Dominica">Dominica
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Dominikanische Republik">
+                                                                                        Dominikanische Republik
+                                                                                    </option>
+                                                                                    <option value="Dschibuti">
+                                                                                        Dschibuti
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="E">
-                                                                                    <option value="Ecuador">Ecuador</option>
-                                                                                    <option value="El Salvador">El Salvador</option>
-                                                                                    <option value="Eritrea">Eritrea</option>
-                                                                                    <option value="Estland">Estland</option>
+                                                                                    <option value="Ecuador">Ecuador
+                                                                                    </option>
+                                                                                    <option value="El Salvador">El
+                                                                                        Salvador
+                                                                                    </option>
+                                                                                    <option value="Eritrea">Eritrea
+                                                                                    </option>
+                                                                                    <option value="Estland">Estland
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="F">
-                                                                                    <option value="Falklandinseln">Falklandinseln</option>
-                                                                                    <option value="Färöer">Färöer</option>
-                                                                                    <option value="Fidschi">Fidschi</option>
-                                                                                    <option value="Finnland">Finnland</option>
-                                                                                    <option value="Frankreich">Frankreich</option>
-                                                                                    <option value="Französisch-Guayana">Französisch-Guayana</option>
-                                                                                    <option value="Französisch-Polynesien">Französisch-Polynesien</option>
+                                                                                    <option value="Falklandinseln">
+                                                                                        Falklandinseln
+                                                                                    </option>
+                                                                                    <option value="Färöer">Färöer
+                                                                                    </option>
+                                                                                    <option value="Fidschi">Fidschi
+                                                                                    </option>
+                                                                                    <option value="Finnland">Finnland
+                                                                                    </option>
+                                                                                    <option value="Frankreich">
+                                                                                        Frankreich
+                                                                                    </option>
+                                                                                    <option value="Französisch-Guayana">
+                                                                                        Französisch-Guayana
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Französisch-Polynesien">
+                                                                                        Französisch-Polynesien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="G">
                                                                                     <option value="Gabun">Gabun</option>
-                                                                                    <option value="Gambia">Gambia</option>
-                                                                                    <option value="Georgien">Georgien</option>
+                                                                                    <option value="Gambia">Gambia
+                                                                                    </option>
+                                                                                    <option value="Georgien">Georgien
+                                                                                    </option>
                                                                                     <option value="Ghana">Ghana</option>
-                                                                                    <option value="Gibraltar">Gibraltar</option>
-                                                                                    <option value="Grenada">Grenada</option>
-                                                                                    <option value="Griechenland">Griechenland</option>
-                                                                                    <option value="Grönland">Grönland</option>
-                                                                                    <option value="Großbritannien">Großbritannien</option>
-                                                                                    <option value="Guadeloupe">Guadeloupe</option>
+                                                                                    <option value="Gibraltar">
+                                                                                        Gibraltar
+                                                                                    </option>
+                                                                                    <option value="Grenada">Grenada
+                                                                                    </option>
+                                                                                    <option value="Griechenland">
+                                                                                        Griechenland
+                                                                                    </option>
+                                                                                    <option value="Grönland">Grönland
+                                                                                    </option>
+                                                                                    <option value="Großbritannien">
+                                                                                        Großbritannien
+                                                                                    </option>
+                                                                                    <option value="Guadeloupe">
+                                                                                        Guadeloupe
+                                                                                    </option>
                                                                                     <option value="Guam">Guam</option>
-                                                                                    <option value="Guatemala">Guatemala</option>
-                                                                                    <option value="Guernsey (Kanalinsel)">Guernsey (Kanalinsel)</option>
-                                                                                    <option value="Guinea">Guinea</option>
-                                                                                    <option value="Guinea-Bissau">Guinea-Bissau</option>
-                                                                                    <option value="Guyana">Guyana</option>
+                                                                                    <option value="Guatemala">
+                                                                                        Guatemala
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Guernsey (Kanalinsel)">
+                                                                                        Guernsey (Kanalinsel)
+                                                                                    </option>
+                                                                                    <option value="Guinea">Guinea
+                                                                                    </option>
+                                                                                    <option value="Guinea-Bissau">
+                                                                                        Guinea-Bissau
+                                                                                    </option>
+                                                                                    <option value="Guyana">Guyana
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="H">
                                                                                     <option value="Haiti">Haiti</option>
-                                                                                    <option value="Heard- und McDonald-Inseln">Heard- und McDonald-Inseln</option>
-                                                                                    <option value="Honduras">Honduras</option>
-                                                                                    <option value="Hongkong">Hongkong</option>
+                                                                                    <option
+                                                                                        value="Heard- und McDonald-Inseln">
+                                                                                        Heard- und McDonald-Inseln
+                                                                                    </option>
+                                                                                    <option value="Honduras">Honduras
+                                                                                    </option>
+                                                                                    <option value="Hongkong">Hongkong
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="I">
-                                                                                    <option value="Indien">Indien</option>
-                                                                                    <option value="Indonesien">Indonesien</option>
-                                                                                    <option value="Insel Man">Insel Man</option>
+                                                                                    <option value="Indien">Indien
+                                                                                    </option>
+                                                                                    <option value="Indonesien">
+                                                                                        Indonesien
+                                                                                    </option>
+                                                                                    <option value="Insel Man">Insel
+                                                                                        Man
+                                                                                    </option>
                                                                                     <option value="Irak">Irak</option>
                                                                                     <option value="Iran">Iran</option>
-                                                                                    <option value="Irland">Irland</option>
-                                                                                    <option value="Island">Island</option>
-                                                                                    <option value="Israel">Israel</option>
-                                                                                    <option value="Italien">Italien</option>
+                                                                                    <option value="Irland">Irland
+                                                                                    </option>
+                                                                                    <option value="Island">Island
+                                                                                    </option>
+                                                                                    <option value="Israel">Israel
+                                                                                    </option>
+                                                                                    <option value="Italien">Italien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="J">
-                                                                                    <option value="Jamaika">Jamaika</option>
+                                                                                    <option value="Jamaika">Jamaika
+                                                                                    </option>
                                                                                     <option value="Japan">Japan</option>
                                                                                     <option value="Jemen">Jemen</option>
-                                                                                    <option value="Jersey (Kanalinsel)">Jersey (Kanalinsel)</option>
-                                                                                    <option value="Jordanien">Jordanien</option>
+                                                                                    <option value="Jersey (Kanalinsel)">
+                                                                                        Jersey (Kanalinsel)
+                                                                                    </option>
+                                                                                    <option value="Jordanien">
+                                                                                        Jordanien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="K">
-                                                                                    <option value="Kaimaninseln">Kaimaninseln</option>
-                                                                                    <option value="Kambodscha">Kambodscha</option>
-                                                                                    <option value="Kamerun">Kamerun</option>
-                                                                                    <option value="Kanada">Kanada</option>
-                                                                                    <option value="Kanarische Inseln">Kanarische Inseln</option>
-                                                                                    <option value="Kap Verde">Kap Verde</option>
-                                                                                    <option value="Kasachstan">Kasachstan</option>
+                                                                                    <option value="Kaimaninseln">
+                                                                                        Kaimaninseln
+                                                                                    </option>
+                                                                                    <option value="Kambodscha">
+                                                                                        Kambodscha
+                                                                                    </option>
+                                                                                    <option value="Kamerun">Kamerun
+                                                                                    </option>
+                                                                                    <option value="Kanada">Kanada
+                                                                                    </option>
+                                                                                    <option value="Kanarische Inseln">
+                                                                                        Kanarische Inseln
+                                                                                    </option>
+                                                                                    <option value="Kap Verde">Kap
+                                                                                        Verde
+                                                                                    </option>
+                                                                                    <option value="Kasachstan">
+                                                                                        Kasachstan
+                                                                                    </option>
                                                                                     <option value="Katar">Katar</option>
                                                                                     <option value="Kenia">Kenia</option>
-                                                                                    <option value="Kirgisistan">Kirgisistan</option>
-                                                                                    <option value="Kiribati">Kiribati</option>
-                                                                                    <option value="Kokosinseln">Kokosinseln</option>
-                                                                                    <option value="Kolumbien">Kolumbien</option>
-                                                                                    <option value="Komoren">Komoren</option>
-                                                                                    <option value="Demokratische Republik Kongo">Demokratische Republik Kongo</option>
-                                                                                    <option value="Demokratische Volksrepublik Korea (Nordkorea)">Demokratische Volksrepublik Korea (Nordkorea)</option>
-                                                                                    <option value="Republik Korea (Südkorea)">Republik Korea (Südkorea)</option>
-                                                                                    <option value="Kosovo">Kosovo</option>
-                                                                                    <option value="Kroatien">Kroatien</option>
+                                                                                    <option value="Kirgisistan">
+                                                                                        Kirgisistan
+                                                                                    </option>
+                                                                                    <option value="Kiribati">Kiribati
+                                                                                    </option>
+                                                                                    <option value="Kokosinseln">
+                                                                                        Kokosinseln
+                                                                                    </option>
+                                                                                    <option value="Kolumbien">
+                                                                                        Kolumbien
+                                                                                    </option>
+                                                                                    <option value="Komoren">Komoren
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Demokratische Republik Kongo">
+                                                                                        Demokratische Republik Kongo
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Demokratische Volksrepublik Korea (Nordkorea)">
+                                                                                        Demokratische Volksrepublik
+                                                                                        Korea (Nordkorea)
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Republik Korea (Südkorea)">
+                                                                                        Republik Korea (Südkorea)
+                                                                                    </option>
+                                                                                    <option value="Kosovo">Kosovo
+                                                                                    </option>
+                                                                                    <option value="Kroatien">Kroatien
+                                                                                    </option>
                                                                                     <option value="Kuba">Kuba</option>
-                                                                                    <option value="Kuwait">Kuwait</option>
+                                                                                    <option value="Kuwait">Kuwait
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="L">
                                                                                     <option value="Laos">Laos</option>
-                                                                                    <option value="Lesotho">Lesotho</option>
-                                                                                    <option value="Lettland">Lettland</option>
-                                                                                    <option value="Libanon">Libanon</option>
-                                                                                    <option value="Liberia">Liberia</option>
-                                                                                    <option value="Libyen">Libyen</option>
-                                                                                    <option value="Liechtenstein">Liechtenstein</option>
-                                                                                    <option value="Litauen">Litauen</option>
-                                                                                    <option value="Luxemburg">Luxemburg</option>
+                                                                                    <option value="Lesotho">Lesotho
+                                                                                    </option>
+                                                                                    <option value="Lettland">Lettland
+                                                                                    </option>
+                                                                                    <option value="Libanon">Libanon
+                                                                                    </option>
+                                                                                    <option value="Liberia">Liberia
+                                                                                    </option>
+                                                                                    <option value="Libyen">Libyen
+                                                                                    </option>
+                                                                                    <option value="Liechtenstein">
+                                                                                        Liechtenstein
+                                                                                    </option>
+                                                                                    <option value="Litauen">Litauen
+                                                                                    </option>
+                                                                                    <option value="Luxemburg">
+                                                                                        Luxemburg
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="M">
                                                                                     <option value="Macao">Macao</option>
-                                                                                    <option value="Madagaskar">Madagaskar</option>
-                                                                                    <option value="Malawi">Malawi</option>
-                                                                                    <option value="Malaysia">Malaysia</option>
-                                                                                    <option value="Malediven">Malediven</option>
+                                                                                    <option value="Madagaskar">
+                                                                                        Madagaskar
+                                                                                    </option>
+                                                                                    <option value="Malawi">Malawi
+                                                                                    </option>
+                                                                                    <option value="Malaysia">Malaysia
+                                                                                    </option>
+                                                                                    <option value="Malediven">
+                                                                                        Malediven
+                                                                                    </option>
                                                                                     <option value="Mali">Mali</option>
                                                                                     <option value="Malta">Malta</option>
-                                                                                    <option value="Marokko">Marokko</option>
-                                                                                    <option value="Marshallinseln">Marshallinseln</option>
-                                                                                    <option value="Martinique">Martinique</option>
-                                                                                    <option value="Mauretanien">Mauretanien</option>
-                                                                                    <option value="Mauritius">Mauritius</option>
-                                                                                    <option value="Mayotte">Mayotte</option>
-                                                                                    <option value="Mazedonien">Mazedonien</option>
-                                                                                    <option value="Mexiko">Mexiko</option>
-                                                                                    <option value="Mikronesien">Mikronesien</option>
-                                                                                    <option value="Moldawien (Republik Moldau)">Moldawien (Republik Moldau)</option>
-                                                                                    <option value="Monaco">Monaco</option>
-                                                                                    <option value="Mongolei">Mongolei</option>
-                                                                                    <option value="Montenegro">Montenegro</option>
-                                                                                    <option value="Montserrat">Montserrat</option>
-                                                                                    <option value="Mosambik">Mosambik</option>
-                                                                                    <option value="Myanmar">Myanmar (Burma)</option>
+                                                                                    <option value="Marokko">Marokko
+                                                                                    </option>
+                                                                                    <option value="Marshallinseln">
+                                                                                        Marshallinseln
+                                                                                    </option>
+                                                                                    <option value="Martinique">
+                                                                                        Martinique
+                                                                                    </option>
+                                                                                    <option value="Mauretanien">
+                                                                                        Mauretanien
+                                                                                    </option>
+                                                                                    <option value="Mauritius">
+                                                                                        Mauritius
+                                                                                    </option>
+                                                                                    <option value="Mayotte">Mayotte
+                                                                                    </option>
+                                                                                    <option value="Mazedonien">
+                                                                                        Mazedonien
+                                                                                    </option>
+                                                                                    <option value="Mexiko">Mexiko
+                                                                                    </option>
+                                                                                    <option value="Mikronesien">
+                                                                                        Mikronesien
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Moldawien (Republik Moldau)">
+                                                                                        Moldawien (Republik Moldau)
+                                                                                    </option>
+                                                                                    <option value="Monaco">Monaco
+                                                                                    </option>
+                                                                                    <option value="Mongolei">Mongolei
+                                                                                    </option>
+                                                                                    <option value="Montenegro">
+                                                                                        Montenegro
+                                                                                    </option>
+                                                                                    <option value="Montserrat">
+                                                                                        Montserrat
+                                                                                    </option>
+                                                                                    <option value="Mosambik">Mosambik
+                                                                                    </option>
+                                                                                    <option value="Myanmar">Myanmar
+                                                                                        (Burma)
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="N">
-                                                                                    <option value="Namibia">Namibia</option>
+                                                                                    <option value="Namibia">Namibia
+                                                                                    </option>
                                                                                     <option value="Nauru">Nauru</option>
                                                                                     <option value="Nepal">Nepal</option>
-                                                                                    <option value="Neukaledonien">Neukaledonien</option>
-                                                                                    <option value="Neuseeland">Neuseeland</option>
-                                                                                    <option value="Nicaragua">Nicaragua</option>
-                                                                                    <option value="Niederlande">Niederlande</option>
-                                                                                    <option value="Niederländische Antillen">Niederländische Antillen</option>
+                                                                                    <option value="Neukaledonien">
+                                                                                        Neukaledonien
+                                                                                    </option>
+                                                                                    <option value="Neuseeland">
+                                                                                        Neuseeland
+                                                                                    </option>
+                                                                                    <option value="Nicaragua">
+                                                                                        Nicaragua
+                                                                                    </option>
+                                                                                    <option value="Niederlande">
+                                                                                        Niederlande
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Niederländische Antillen">
+                                                                                        Niederländische Antillen
+                                                                                    </option>
                                                                                     <option value="Niger">Niger</option>
-                                                                                    <option value="Nigeria">Nigeria</option>
+                                                                                    <option value="Nigeria">Nigeria
+                                                                                    </option>
                                                                                     <option value="Niue">Niue</option>
-                                                                                    <option value="Nördliche Marianen">Nördliche Marianen</option>
-                                                                                    <option value="Norfolkinsel">Norfolkinsel</option>
-                                                                                    <option value="Norwegen">Norwegen</option>
+                                                                                    <option value="Nördliche Marianen">
+                                                                                        Nördliche Marianen
+                                                                                    </option>
+                                                                                    <option value="Norfolkinsel">
+                                                                                        Norfolkinsel
+                                                                                    </option>
+                                                                                    <option value="Norwegen">Norwegen
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="O">
                                                                                     <option value="Oman">Oman</option>
                                                                                     <option value="Orbit">Orbit</option>
-                                                                                    <option value="Österreich">Österreich</option>
-                                                                                    <option value="Osttimor (Timor-Leste)">Osttimor (Timor-Leste)</option>
+                                                                                    <option value="Österreich">
+                                                                                        Österreich
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Osttimor (Timor-Leste)">
+                                                                                        Osttimor (Timor-Leste)
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="P">
-                                                                                    <option value="Pakistan">Pakistan</option>
-                                                                                    <option value="Palästinensische Autonomiegebiete">Palästinensische Autonomiegebiete</option>
+                                                                                    <option value="Pakistan">Pakistan
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Palästinensische Autonomiegebiete">
+                                                                                        Palästinensische
+                                                                                        Autonomiegebiete
+                                                                                    </option>
                                                                                     <option value="Palau">Palau</option>
-                                                                                    <option value="Panama">Panama</option>
-                                                                                    <option value="Papua-Neuguinea">Papua-Neuguinea</option>
-                                                                                    <option value="Paraguay">Paraguay</option>
+                                                                                    <option value="Panama">Panama
+                                                                                    </option>
+                                                                                    <option value="Papua-Neuguinea">
+                                                                                        Papua-Neuguinea
+                                                                                    </option>
+                                                                                    <option value="Paraguay">Paraguay
+                                                                                    </option>
                                                                                     <option value="Peru">Peru</option>
-                                                                                    <option value="Philippinen">Philippinen</option>
-                                                                                    <option value="Pitcairninseln">Pitcairninseln</option>
+                                                                                    <option value="Philippinen">
+                                                                                        Philippinen
+                                                                                    </option>
+                                                                                    <option value="Pitcairninseln">
+                                                                                        Pitcairninseln
+                                                                                    </option>
                                                                                     <option value="Polen">Polen</option>
-                                                                                    <option value="Portugal">Portugal</option>
-                                                                                    <option value="Puerto Rico">Puerto Rico</option>
+                                                                                    <option value="Portugal">Portugal
+                                                                                    </option>
+                                                                                    <option value="Puerto Rico">Puerto
+                                                                                        Rico
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="R">
-                                                                                    <option value="Republik China (Taiwan)">Republik China (Taiwan)</option>
-                                                                                    <option value="Republik Kongo">Republik Kongo</option>
-                                                                                    <option value="Réunion">Réunion</option>
-                                                                                    <option value="Ruanda">Ruanda</option>
-                                                                                    <option value="Rumänien">Rumänien</option>
-                                                                                    <option value="Russische Föderation">Russische Föderation</option>
+                                                                                    <option
+                                                                                        value="Republik China (Taiwan)">
+                                                                                        Republik China (Taiwan)
+                                                                                    </option>
+                                                                                    <option value="Republik Kongo">
+                                                                                        Republik Kongo
+                                                                                    </option>
+                                                                                    <option value="Réunion">Réunion
+                                                                                    </option>
+                                                                                    <option value="Ruanda">Ruanda
+                                                                                    </option>
+                                                                                    <option value="Rumänien">Rumänien
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Russische Föderation">
+                                                                                        Russische Föderation
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="S">
-                                                                                    <option value="Saint-Barthélemy">Saint-Barthélemy</option>
-                                                                                    <option value="Saint-Martin">Saint-Martin</option>
-                                                                                    <option value="Salomonen">Salomonen</option>
-                                                                                    <option value="Sambia">Sambia</option>
+                                                                                    <option value="Saint-Barthélemy">
+                                                                                        Saint-Barthélemy
+                                                                                    </option>
+                                                                                    <option value="Saint-Martin">
+                                                                                        Saint-Martin
+                                                                                    </option>
+                                                                                    <option value="Salomonen">
+                                                                                        Salomonen
+                                                                                    </option>
+                                                                                    <option value="Sambia">Sambia
+                                                                                    </option>
                                                                                     <option value="Samoa">Samoa</option>
-                                                                                    <option value="San Marino">San Marino</option>
-                                                                                    <option value="São Tomé und Príncipe">São Tomé und Príncipe</option>
-                                                                                    <option value="Saudi-Arabien">Saudi-Arabien</option>
-                                                                                    <option value="Schweden">Schweden</option>
-                                                                                    <option value="Schweiz">Schweiz</option>
-                                                                                    <option value="Senegal">Senegal</option>
-                                                                                    <option value="Serbien">Serbien</option>
-                                                                                    <option value="Seychellen">Seychellen</option>
-                                                                                    <option value="Sierra Leone">Sierra Leone</option>
-                                                                                    <option value="Simbabwe">Simbabwe</option>
-                                                                                    <option value="Singapur">Singapur</option>
-                                                                                    <option value="Slowakei">Slowakei</option>
-                                                                                    <option value="Slowenien">Slowenien</option>
-                                                                                    <option value="Somalia">Somalia</option>
-                                                                                    <option value="Spanien">Spanien</option>
-                                                                                    <option value="Sri Lanka">Sri Lanka</option>
-                                                                                    <option value="St. Helena">St. Helena</option>
-                                                                                    <option value="St. Kitts und Nevis">St. Kitts und Nevis</option>
-                                                                                    <option value="St. Lucia">St. Lucia</option>
-                                                                                    <option value="Saint-Pierre und Miquelon">Saint-Pierre und Miquelon</option>
-                                                                                    <option value="St. Vincent und die Grenadinen">St. Vincent und die Grenadinen</option>
-                                                                                    <option value="Südafrika">Südafrika</option>
+                                                                                    <option value="San Marino">San
+                                                                                        Marino
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="São Tomé und Príncipe">
+                                                                                        São Tomé und Príncipe
+                                                                                    </option>
+                                                                                    <option value="Saudi-Arabien">
+                                                                                        Saudi-Arabien
+                                                                                    </option>
+                                                                                    <option value="Schweden">Schweden
+                                                                                    </option>
+                                                                                    <option value="Schweiz">Schweiz
+                                                                                    </option>
+                                                                                    <option value="Senegal">Senegal
+                                                                                    </option>
+                                                                                    <option value="Serbien">Serbien
+                                                                                    </option>
+                                                                                    <option value="Seychellen">
+                                                                                        Seychellen
+                                                                                    </option>
+                                                                                    <option value="Sierra Leone">Sierra
+                                                                                        Leone
+                                                                                    </option>
+                                                                                    <option value="Simbabwe">Simbabwe
+                                                                                    </option>
+                                                                                    <option value="Singapur">Singapur
+                                                                                    </option>
+                                                                                    <option value="Slowakei">Slowakei
+                                                                                    </option>
+                                                                                    <option value="Slowenien">
+                                                                                        Slowenien
+                                                                                    </option>
+                                                                                    <option value="Somalia">Somalia
+                                                                                    </option>
+                                                                                    <option value="Spanien">Spanien
+                                                                                    </option>
+                                                                                    <option value="Sri Lanka">Sri
+                                                                                        Lanka
+                                                                                    </option>
+                                                                                    <option value="St. Helena">St.
+                                                                                        Helena
+                                                                                    </option>
+                                                                                    <option value="St. Kitts und Nevis">
+                                                                                        St. Kitts und Nevis
+                                                                                    </option>
+                                                                                    <option value="St. Lucia">St.
+                                                                                        Lucia
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Saint-Pierre und Miquelon">
+                                                                                        Saint-Pierre und Miquelon
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="St. Vincent und die Grenadinen">
+                                                                                        St. Vincent und die Grenadinen
+                                                                                    </option>
+                                                                                    <option value="Südafrika">
+                                                                                        Südafrika
+                                                                                    </option>
                                                                                     <option value="Sudan">Sudan</option>
-                                                                                    <option value="Südgeorgien und die Südlichen Sandwichinseln">Südgeorgien und die Südlichen Sandwichinseln</option>
-                                                                                    <option value="Suriname">Suriname</option>
-                                                                                    <option value="Svalbard und Jan Mayen">Svalbard und Jan Mayen</option>
-                                                                                    <option value="Swasiland">Swasiland</option>
-                                                                                    <option value="Syrien">Syrien</option>
+                                                                                    <option
+                                                                                        value="Südgeorgien und die Südlichen Sandwichinseln">
+                                                                                        Südgeorgien und die Südlichen
+                                                                                        Sandwichinseln
+                                                                                    </option>
+                                                                                    <option value="Suriname">Suriname
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Svalbard und Jan Mayen">
+                                                                                        Svalbard und Jan Mayen
+                                                                                    </option>
+                                                                                    <option value="Swasiland">
+                                                                                        Swasiland
+                                                                                    </option>
+                                                                                    <option value="Syrien">Syrien
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="T">
-                                                                                    <option value="Tadschikistan">Tadschikistan</option>
-                                                                                    <option value="Tansania">Tansania</option>
-                                                                                    <option value="Thailand">Thailand</option>
+                                                                                    <option value="Tadschikistan">
+                                                                                        Tadschikistan
+                                                                                    </option>
+                                                                                    <option value="Tansania">Tansania
+                                                                                    </option>
+                                                                                    <option value="Thailand">Thailand
+                                                                                    </option>
                                                                                     <option value="Togo">Togo</option>
-                                                                                    <option value="Tokelau">Tokelau</option>
+                                                                                    <option value="Tokelau">Tokelau
+                                                                                    </option>
                                                                                     <option value="Tonga">Tonga</option>
-                                                                                    <option value="Trinidad und Tobago">Trinidad und Tobago</option>
-                                                                                    <option value="Tristan da Cunha">Tristan da Cunha</option>
-                                                                                    <option value="Tschad">Tschad</option>
-                                                                                    <option value="Tschechische Republik">Tschechische Republik</option>
-                                                                                    <option value="Tunesien">Tunesien</option>
-                                                                                    <option value="Türkei">Türkei</option>
-                                                                                    <option value="Turkmenistan">Turkmenistan</option>
-                                                                                    <option value="Turks- und Caicosinseln">Turks- und Caicosinseln</option>
-                                                                                    <option value="Tuvalu">Tuvalu</option>
+                                                                                    <option value="Trinidad und Tobago">
+                                                                                        Trinidad und Tobago
+                                                                                    </option>
+                                                                                    <option value="Tristan da Cunha">
+                                                                                        Tristan da Cunha
+                                                                                    </option>
+                                                                                    <option value="Tschad">Tschad
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Tschechische Republik">
+                                                                                        Tschechische Republik
+                                                                                    </option>
+                                                                                    <option value="Tunesien">Tunesien
+                                                                                    </option>
+                                                                                    <option value="Türkei">Türkei
+                                                                                    </option>
+                                                                                    <option value="Turkmenistan">
+                                                                                        Turkmenistan
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Turks- und Caicosinseln">
+                                                                                        Turks- und Caicosinseln
+                                                                                    </option>
+                                                                                    <option value="Tuvalu">Tuvalu
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="U">
-                                                                                    <option value="Uganda">Uganda</option>
-                                                                                    <option value="Ukraine">Ukraine</option>
-                                                                                    <option value="Ungarn">Ungarn</option>
-                                                                                    <option value="Uruguay">Uruguay</option>
-                                                                                    <option value="Usbekistan">Usbekistan</option>
+                                                                                    <option value="Uganda">Uganda
+                                                                                    </option>
+                                                                                    <option value="Ukraine">Ukraine
+                                                                                    </option>
+                                                                                    <option value="Ungarn">Ungarn
+                                                                                    </option>
+                                                                                    <option value="Uruguay">Uruguay
+                                                                                    </option>
+                                                                                    <option value="Usbekistan">
+                                                                                        Usbekistan
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="V">
-                                                                                    <option value="Vanuatu">Vanuatu</option>
-                                                                                    <option value="Vatikanstadt">Vatikanstadt</option>
-                                                                                    <option value="Venezuela">Venezuela</option>
-                                                                                    <option value="Vereinigte Arabische Emirate">Vereinigte Arabische Emirate</option>
-                                                                                    <option value="Vereinigte Staaten von Amerika (USA)">Vereinigte Staaten von Amerika (USA)</option>
-                                                                                    <option value="Vereinigtes Königreich Großbritannien und Nordirland">Vereinigtes Königreich Großbritannien und Nordirland</option>
-                                                                                    <option value="Vietnam">Vietnam</option>
+                                                                                    <option value="Vanuatu">Vanuatu
+                                                                                    </option>
+                                                                                    <option value="Vatikanstadt">
+                                                                                        Vatikanstadt
+                                                                                    </option>
+                                                                                    <option value="Venezuela">
+                                                                                        Venezuela
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Vereinigte Arabische Emirate">
+                                                                                        Vereinigte Arabische Emirate
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Vereinigte Staaten von Amerika (USA)">
+                                                                                        Vereinigte Staaten von Amerika
+                                                                                        (USA)
+                                                                                    </option>
+                                                                                    <option
+                                                                                        value="Vereinigtes Königreich Großbritannien und Nordirland">
+                                                                                        Vereinigtes Königreich
+                                                                                        Großbritannien und Nordirland
+                                                                                    </option>
+                                                                                    <option value="Vietnam">Vietnam
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="W">
-                                                                                    <option value="Wallis und Futuna">Wallis und Futuna</option>
-                                                                                    <option value="Weihnachtsinsel">Weihnachtsinsel</option>
-                                                                                    <option value="Westsahara">Westsahara</option>
+                                                                                    <option value="Wallis und Futuna">
+                                                                                        Wallis und Futuna
+                                                                                    </option>
+                                                                                    <option value="Weihnachtsinsel">
+                                                                                        Weihnachtsinsel
+                                                                                    </option>
+                                                                                    <option value="Westsahara">
+                                                                                        Westsahara
+                                                                                    </option>
                                                                                 </optgroup>
                                                                                 <optgroup label="Z">
-                                                                                    <option value="Zentralafrikanische Republik">Zentralafrikanische Republik</option>
-                                                                                    <option value="Zypern">Zypern</option>
+                                                                                    <option
+                                                                                        value="Zentralafrikanische Republik">
+                                                                                        Zentralafrikanische Republik
+                                                                                    </option>
+                                                                                    <option value="Zypern">Zypern
+                                                                                    </option>
                                                                                 </optgroup>
                                                                             @endif
                                                                         </select>
@@ -3051,19 +3951,23 @@
                                                                                     </span>
                                                                                 </div>
                                                                                 <select name="year_of_purchase{{$ncnt}}"
-                                                                                        class="form-select w-75" aria-label="Default select example" id="">
+                                                                                        class="form-select w-75"
+                                                                                        aria-label="Default select example"
+                                                                                        id="">
                                                                                     @if(isset($nue->year_of_purchase))
                                                                                         <option
                                                                                             value="{{$nue->year_of_purchase}}"
                                                                                             selected>
-                                                                                            {{$nue->year_of_purchase}}
+                                                                                        {{$nue->year_of_purchase}}
                                                                                         @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)
-                                                                                            <option value="2021">{{$i}}</option>
+                                                                                            <option
+                                                                                                value="2021">{{$i}}</option>
                                                                                         @endfor
                                                                                     @else
                                                                                         <option selected></option>
                                                                                         @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)
-                                                                                            <option value="2021">{{$i}}</option>
+                                                                                            <option
+                                                                                                value="2021">{{$i}}</option>
                                                                                         @endfor
                                                                                     @endif
                                                                                 </select>
@@ -3836,7 +4740,8 @@
                                         <div class="row">
                                             <div class="col g-0 text-end my-auto">
                                                 <div class="">
-                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">
+                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2"
+                                                          style="color: #9F9F9F;cursor: pointer">
                                                         Uberspringen
                                                     </span>
                                                 </div>
@@ -3892,9 +4797,11 @@
                                                                     </span>
                                                             </div>
                                                             @php $data->things = \App\Models\LeadDataThings::where('person_id',$id)->latest()->first() @endphp
-                                                            <select onchange="hideNation()"  class="form-select w-75" name="nationality_sachen" id="schweiz">
-                                                            @if(isset($data->things->nationality))
-                                                                    <option value="{{$data->things->nationality}}" selected>{{$data->things->nationality}}</option>
+                                                            <select onchange="hideNation()" class="form-select w-75"
+                                                                    name="nationality_sachen" id="schweiz">
+                                                                @if(isset($data->things->nationality))
+                                                                    <option value="{{$data->things->nationality}}"
+                                                                            selected>{{$data->things->nationality}}</option>
                                                                     <option value="Swiss">Swiss</option>
                                                                     <option value="Deutschland">Deutschland</option>
                                                                     <option value="Italien">Italien</option>
@@ -3905,19 +4812,28 @@
                                                                         <option value="Åland">Åland</option>
                                                                         <option value="Albanien">Albanien</option>
                                                                         <option value="Algerien">Algerien</option>
-                                                                        <option value="Amerikanisch-Samoa">Amerikanisch-Samoa</option>
-                                                                        <option value="Amerikanische Jungferninseln">Amerikanische Jungferninseln</option>
+                                                                        <option value="Amerikanisch-Samoa">
+                                                                            Amerikanisch-Samoa
+                                                                        </option>
+                                                                        <option value="Amerikanische Jungferninseln">
+                                                                            Amerikanische Jungferninseln
+                                                                        </option>
                                                                         <option value="Andorra">Andorra</option>
                                                                         <option value="Angola">Angola</option>
                                                                         <option value="Anguilla">Anguilla</option>
                                                                         <option value="Antarktis">Antarktis</option>
-                                                                        <option value="Antigua und Barbuda">Antigua und Barbuda</option>
-                                                                        <option value="Äquatorialguinea">Äquatorialguinea</option>
+                                                                        <option value="Antigua und Barbuda">Antigua und
+                                                                            Barbuda
+                                                                        </option>
+                                                                        <option value="Äquatorialguinea">
+                                                                            Äquatorialguinea
+                                                                        </option>
                                                                         <option value="Argentinien">Argentinien</option>
                                                                         <option value="Armenien">Armenien</option>
                                                                         <option value="Aruba">Aruba</option>
                                                                         <option value="Ascension">Ascension</option>
-                                                                        <option value="Aserbaidschan">Aserbaidschan</option>
+                                                                        <option value="Aserbaidschan">Aserbaidschan
+                                                                        </option>
                                                                         <option value="Äthiopien">Äthiopien</option>
                                                                         <option value="Australien">Australien</option>
                                                                     </optgroup>
@@ -3933,32 +4849,49 @@
                                                                         <option value="Bermuda">Bermuda</option>
                                                                         <option value="Bhutan">Bhutan</option>
                                                                         <option value="Bolivien">Bolivien</option>
-                                                                        <option value="Bosnien und Herzegowina">Bosnien und Herzegowina</option>
+                                                                        <option value="Bosnien und Herzegowina">Bosnien
+                                                                            und Herzegowina
+                                                                        </option>
                                                                         <option value="Botswana">Botswana</option>
                                                                         <option value="Bouvetinsel">Bouvetinsel</option>
                                                                         <option value="Brasilien">Brasilien</option>
-                                                                        <option value="Britische Jungferninseln">Britische Jungferninseln</option>
-                                                                        <option value="Britisches Territorium im Indischen Ozean">Britisches Territorium im Indischen Ozean</option>
-                                                                        <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                                                        <option value="Britische Jungferninseln">
+                                                                            Britische Jungferninseln
+                                                                        </option>
+                                                                        <option
+                                                                            value="Britisches Territorium im Indischen Ozean">
+                                                                            Britisches Territorium im Indischen Ozean
+                                                                        </option>
+                                                                        <option value="Brunei Darussalam">Brunei
+                                                                            Darussalam
+                                                                        </option>
                                                                         <option value="Bulgarien">Bulgarien</option>
-                                                                        <option value="Burkina Faso">Burkina Faso</option>
+                                                                        <option value="Burkina Faso">Burkina Faso
+                                                                        </option>
                                                                         <option value="Burundi">Burundi</option>
                                                                     </optgroup>
                                                                     <optgroup label="C">
-                                                                        <option value="Ceuta, Melilla">Ceuta, Melilla</option>
+                                                                        <option value="Ceuta, Melilla">Ceuta, Melilla
+                                                                        </option>
                                                                         <option value="Chile">Chile</option>
-                                                                        <option value="Volksrepublik China">Volksrepublik China</option>
+                                                                        <option value="Volksrepublik China">
+                                                                            Volksrepublik China
+                                                                        </option>
                                                                         <option value="Clipperton">Clipperton</option>
                                                                         <option value="Cookinseln">Cookinseln</option>
                                                                         <option value="Costa Rica">Costa Rica</option>
-                                                                        <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                                                                        <option value="Côte d'Ivoire">Côte d'Ivoire
+                                                                        </option>
                                                                     </optgroup>
                                                                     <optgroup label="D">
                                                                         <option value="Dänemark">Dänemark</option>
                                                                         <option value="Deutschland">Deutschland</option>
-                                                                        <option value="Diego Garcia">Diego Garcia</option>
+                                                                        <option value="Diego Garcia">Diego Garcia
+                                                                        </option>
                                                                         <option value="Dominica">Dominica</option>
-                                                                        <option value="Dominikanische Republik">Dominikanische Republik</option>
+                                                                        <option value="Dominikanische Republik">
+                                                                            Dominikanische Republik
+                                                                        </option>
                                                                         <option value="Dschibuti">Dschibuti</option>
                                                                     </optgroup>
                                                                     <optgroup label="E">
@@ -3968,13 +4901,18 @@
                                                                         <option value="Estland">Estland</option>
                                                                     </optgroup>
                                                                     <optgroup label="F">
-                                                                        <option value="Falklandinseln">Falklandinseln</option>
+                                                                        <option value="Falklandinseln">Falklandinseln
+                                                                        </option>
                                                                         <option value="Färöer">Färöer</option>
                                                                         <option value="Fidschi">Fidschi</option>
                                                                         <option value="Finnland">Finnland</option>
                                                                         <option value="Frankreich">Frankreich</option>
-                                                                        <option value="Französisch-Guayana">Französisch-Guayana</option>
-                                                                        <option value="Französisch-Polynesien">Französisch-Polynesien</option>
+                                                                        <option value="Französisch-Guayana">
+                                                                            Französisch-Guayana
+                                                                        </option>
+                                                                        <option value="Französisch-Polynesien">
+                                                                            Französisch-Polynesien
+                                                                        </option>
                                                                     </optgroup>
                                                                     <optgroup label="G">
                                                                         <option value="Gabun">Gabun</option>
@@ -3983,20 +4921,27 @@
                                                                         <option value="Ghana">Ghana</option>
                                                                         <option value="Gibraltar">Gibraltar</option>
                                                                         <option value="Grenada">Grenada</option>
-                                                                        <option value="Griechenland">Griechenland</option>
+                                                                        <option value="Griechenland">Griechenland
+                                                                        </option>
                                                                         <option value="Grönland">Grönland</option>
-                                                                        <option value="Großbritannien">Großbritannien</option>
+                                                                        <option value="Großbritannien">Großbritannien
+                                                                        </option>
                                                                         <option value="Guadeloupe">Guadeloupe</option>
                                                                         <option value="Guam">Guam</option>
                                                                         <option value="Guatemala">Guatemala</option>
-                                                                        <option value="Guernsey (Kanalinsel)">Guernsey (Kanalinsel)</option>
+                                                                        <option value="Guernsey (Kanalinsel)">Guernsey
+                                                                            (Kanalinsel)
+                                                                        </option>
                                                                         <option value="Guinea">Guinea</option>
-                                                                        <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                                                        <option value="Guinea-Bissau">Guinea-Bissau
+                                                                        </option>
                                                                         <option value="Guyana">Guyana</option>
                                                                     </optgroup>
                                                                     <optgroup label="H">
                                                                         <option value="Haiti">Haiti</option>
-                                                                        <option value="Heard- und McDonald-Inseln">Heard- und McDonald-Inseln</option>
+                                                                        <option value="Heard- und McDonald-Inseln">
+                                                                            Heard- und McDonald-Inseln
+                                                                        </option>
                                                                         <option value="Honduras">Honduras</option>
                                                                         <option value="Hongkong">Hongkong</option>
                                                                     </optgroup>
@@ -4015,15 +4960,20 @@
                                                                         <option value="Jamaika">Jamaika</option>
                                                                         <option value="Japan">Japan</option>
                                                                         <option value="Jemen">Jemen</option>
-                                                                        <option value="Jersey (Kanalinsel)">Jersey (Kanalinsel)</option>
+                                                                        <option value="Jersey (Kanalinsel)">Jersey
+                                                                            (Kanalinsel)
+                                                                        </option>
                                                                         <option value="Jordanien">Jordanien</option>
                                                                     </optgroup>
                                                                     <optgroup label="K">
-                                                                        <option value="Kaimaninseln">Kaimaninseln</option>
+                                                                        <option value="Kaimaninseln">Kaimaninseln
+                                                                        </option>
                                                                         <option value="Kambodscha">Kambodscha</option>
                                                                         <option value="Kamerun">Kamerun</option>
                                                                         <option value="Kanada">Kanada</option>
-                                                                        <option value="Kanarische Inseln">Kanarische Inseln</option>
+                                                                        <option value="Kanarische Inseln">Kanarische
+                                                                            Inseln
+                                                                        </option>
                                                                         <option value="Kap Verde">Kap Verde</option>
                                                                         <option value="Kasachstan">Kasachstan</option>
                                                                         <option value="Katar">Katar</option>
@@ -4033,9 +4983,17 @@
                                                                         <option value="Kokosinseln">Kokosinseln</option>
                                                                         <option value="Kolumbien">Kolumbien</option>
                                                                         <option value="Komoren">Komoren</option>
-                                                                        <option value="Demokratische Republik Kongo">Demokratische Republik Kongo</option>
-                                                                        <option value="Demokratische Volksrepublik Korea (Nordkorea)">Demokratische Volksrepublik Korea (Nordkorea)</option>
-                                                                        <option value="Republik Korea (Südkorea)">Republik Korea (Südkorea)</option>
+                                                                        <option value="Demokratische Republik Kongo">
+                                                                            Demokratische Republik Kongo
+                                                                        </option>
+                                                                        <option
+                                                                            value="Demokratische Volksrepublik Korea (Nordkorea)">
+                                                                            Demokratische Volksrepublik Korea
+                                                                            (Nordkorea)
+                                                                        </option>
+                                                                        <option value="Republik Korea (Südkorea)">
+                                                                            Republik Korea (Südkorea)
+                                                                        </option>
                                                                         <option value="Kosovo">Kosovo</option>
                                                                         <option value="Kroatien">Kroatien</option>
                                                                         <option value="Kuba">Kuba</option>
@@ -4048,7 +5006,8 @@
                                                                         <option value="Libanon">Libanon</option>
                                                                         <option value="Liberia">Liberia</option>
                                                                         <option value="Libyen">Libyen</option>
-                                                                        <option value="Liechtenstein">Liechtenstein</option>
+                                                                        <option value="Liechtenstein">Liechtenstein
+                                                                        </option>
                                                                         <option value="Litauen">Litauen</option>
                                                                         <option value="Luxemburg">Luxemburg</option>
                                                                     </optgroup>
@@ -4061,7 +5020,8 @@
                                                                         <option value="Mali">Mali</option>
                                                                         <option value="Malta">Malta</option>
                                                                         <option value="Marokko">Marokko</option>
-                                                                        <option value="Marshallinseln">Marshallinseln</option>
+                                                                        <option value="Marshallinseln">Marshallinseln
+                                                                        </option>
                                                                         <option value="Martinique">Martinique</option>
                                                                         <option value="Mauretanien">Mauretanien</option>
                                                                         <option value="Mauritius">Mauritius</option>
@@ -4069,7 +5029,9 @@
                                                                         <option value="Mazedonien">Mazedonien</option>
                                                                         <option value="Mexiko">Mexiko</option>
                                                                         <option value="Mikronesien">Mikronesien</option>
-                                                                        <option value="Moldawien (Republik Moldau)">Moldawien (Republik Moldau)</option>
+                                                                        <option value="Moldawien (Republik Moldau)">
+                                                                            Moldawien (Republik Moldau)
+                                                                        </option>
                                                                         <option value="Monaco">Monaco</option>
                                                                         <option value="Mongolei">Mongolei</option>
                                                                         <option value="Montenegro">Montenegro</option>
@@ -4081,61 +5043,87 @@
                                                                         <option value="Namibia">Namibia</option>
                                                                         <option value="Nauru">Nauru</option>
                                                                         <option value="Nepal">Nepal</option>
-                                                                        <option value="Neukaledonien">Neukaledonien</option>
+                                                                        <option value="Neukaledonien">Neukaledonien
+                                                                        </option>
                                                                         <option value="Neuseeland">Neuseeland</option>
                                                                         <option value="Nicaragua">Nicaragua</option>
                                                                         <option value="Niederlande">Niederlande</option>
-                                                                        <option value="Niederländische Antillen">Niederländische Antillen</option>
+                                                                        <option value="Niederländische Antillen">
+                                                                            Niederländische Antillen
+                                                                        </option>
                                                                         <option value="Niger">Niger</option>
                                                                         <option value="Nigeria">Nigeria</option>
                                                                         <option value="Niue">Niue</option>
-                                                                        <option value="Nördliche Marianen">Nördliche Marianen</option>
-                                                                        <option value="Norfolkinsel">Norfolkinsel</option>
+                                                                        <option value="Nördliche Marianen">Nördliche
+                                                                            Marianen
+                                                                        </option>
+                                                                        <option value="Norfolkinsel">Norfolkinsel
+                                                                        </option>
                                                                         <option value="Norwegen">Norwegen</option>
                                                                     </optgroup>
                                                                     <optgroup label="O">
                                                                         <option value="Oman">Oman</option>
                                                                         <option value="Orbit">Orbit</option>
                                                                         <option value="Österreich">Österreich</option>
-                                                                        <option value="Osttimor (Timor-Leste)">Osttimor (Timor-Leste)</option>
+                                                                        <option value="Osttimor (Timor-Leste)">Osttimor
+                                                                            (Timor-Leste)
+                                                                        </option>
                                                                     </optgroup>
                                                                     <optgroup label="P">
                                                                         <option value="Pakistan">Pakistan</option>
-                                                                        <option value="Palästinensische Autonomiegebiete">Palästinensische Autonomiegebiete</option>
+                                                                        <option
+                                                                            value="Palästinensische Autonomiegebiete">
+                                                                            Palästinensische Autonomiegebiete
+                                                                        </option>
                                                                         <option value="Palau">Palau</option>
                                                                         <option value="Panama">Panama</option>
-                                                                        <option value="Papua-Neuguinea">Papua-Neuguinea</option>
+                                                                        <option value="Papua-Neuguinea">
+                                                                            Papua-Neuguinea
+                                                                        </option>
                                                                         <option value="Paraguay">Paraguay</option>
                                                                         <option value="Peru">Peru</option>
                                                                         <option value="Philippinen">Philippinen</option>
-                                                                        <option value="Pitcairninseln">Pitcairninseln</option>
+                                                                        <option value="Pitcairninseln">Pitcairninseln
+                                                                        </option>
                                                                         <option value="Polen">Polen</option>
                                                                         <option value="Portugal">Portugal</option>
                                                                         <option value="Puerto Rico">Puerto Rico</option>
                                                                     </optgroup>
                                                                     <optgroup label="R">
-                                                                        <option value="Republik China (Taiwan)">Republik China (Taiwan)</option>
-                                                                        <option value="Republik Kongo">Republik Kongo</option>
+                                                                        <option value="Republik China (Taiwan)">Republik
+                                                                            China (Taiwan)
+                                                                        </option>
+                                                                        <option value="Republik Kongo">Republik Kongo
+                                                                        </option>
                                                                         <option value="Réunion">Réunion</option>
                                                                         <option value="Ruanda">Ruanda</option>
                                                                         <option value="Rumänien">Rumänien</option>
-                                                                        <option value="Russische Föderation">Russische Föderation</option>
+                                                                        <option value="Russische Föderation">Russische
+                                                                            Föderation
+                                                                        </option>
                                                                     </optgroup>
                                                                     <optgroup label="S">
-                                                                        <option value="Saint-Barthélemy">Saint-Barthélemy</option>
-                                                                        <option value="Saint-Martin">Saint-Martin</option>
+                                                                        <option value="Saint-Barthélemy">
+                                                                            Saint-Barthélemy
+                                                                        </option>
+                                                                        <option value="Saint-Martin">Saint-Martin
+                                                                        </option>
                                                                         <option value="Salomonen">Salomonen</option>
                                                                         <option value="Sambia">Sambia</option>
                                                                         <option value="Samoa">Samoa</option>
                                                                         <option value="San Marino">San Marino</option>
-                                                                        <option value="São Tomé und Príncipe">São Tomé und Príncipe</option>
-                                                                        <option value="Saudi-Arabien">Saudi-Arabien</option>
+                                                                        <option value="São Tomé und Príncipe">São Tomé
+                                                                            und Príncipe
+                                                                        </option>
+                                                                        <option value="Saudi-Arabien">Saudi-Arabien
+                                                                        </option>
                                                                         <option value="Schweden">Schweden</option>
                                                                         <option value="Schweiz">Schweiz</option>
                                                                         <option value="Senegal">Senegal</option>
                                                                         <option value="Serbien">Serbien</option>
                                                                         <option value="Seychellen">Seychellen</option>
-                                                                        <option value="Sierra Leone">Sierra Leone</option>
+                                                                        <option value="Sierra Leone">Sierra Leone
+                                                                        </option>
                                                                         <option value="Simbabwe">Simbabwe</option>
                                                                         <option value="Singapur">Singapur</option>
                                                                         <option value="Slowakei">Slowakei</option>
@@ -4144,33 +5132,54 @@
                                                                         <option value="Spanien">Spanien</option>
                                                                         <option value="Sri Lanka">Sri Lanka</option>
                                                                         <option value="St. Helena">St. Helena</option>
-                                                                        <option value="St. Kitts und Nevis">St. Kitts und Nevis</option>
+                                                                        <option value="St. Kitts und Nevis">St. Kitts
+                                                                            und Nevis
+                                                                        </option>
                                                                         <option value="St. Lucia">St. Lucia</option>
-                                                                        <option value="Saint-Pierre und Miquelon">Saint-Pierre und Miquelon</option>
-                                                                        <option value="St. Vincent und die Grenadinen">St. Vincent und die Grenadinen</option>
+                                                                        <option value="Saint-Pierre und Miquelon">
+                                                                            Saint-Pierre und Miquelon
+                                                                        </option>
+                                                                        <option value="St. Vincent und die Grenadinen">
+                                                                            St. Vincent und die Grenadinen
+                                                                        </option>
                                                                         <option value="Südafrika">Südafrika</option>
                                                                         <option value="Sudan">Sudan</option>
-                                                                        <option value="Südgeorgien und die Südlichen Sandwichinseln">Südgeorgien und die Südlichen Sandwichinseln</option>
+                                                                        <option
+                                                                            value="Südgeorgien und die Südlichen Sandwichinseln">
+                                                                            Südgeorgien und die Südlichen Sandwichinseln
+                                                                        </option>
                                                                         <option value="Suriname">Suriname</option>
-                                                                        <option value="Svalbard und Jan Mayen">Svalbard und Jan Mayen</option>
+                                                                        <option value="Svalbard und Jan Mayen">Svalbard
+                                                                            und Jan Mayen
+                                                                        </option>
                                                                         <option value="Swasiland">Swasiland</option>
                                                                         <option value="Syrien">Syrien</option>
                                                                     </optgroup>
                                                                     <optgroup label="T">
-                                                                        <option value="Tadschikistan">Tadschikistan</option>
+                                                                        <option value="Tadschikistan">Tadschikistan
+                                                                        </option>
                                                                         <option value="Tansania">Tansania</option>
                                                                         <option value="Thailand">Thailand</option>
                                                                         <option value="Togo">Togo</option>
                                                                         <option value="Tokelau">Tokelau</option>
                                                                         <option value="Tonga">Tonga</option>
-                                                                        <option value="Trinidad und Tobago">Trinidad und Tobago</option>
-                                                                        <option value="Tristan da Cunha">Tristan da Cunha</option>
+                                                                        <option value="Trinidad und Tobago">Trinidad und
+                                                                            Tobago
+                                                                        </option>
+                                                                        <option value="Tristan da Cunha">Tristan da
+                                                                            Cunha
+                                                                        </option>
                                                                         <option value="Tschad">Tschad</option>
-                                                                        <option value="Tschechische Republik">Tschechische Republik</option>
+                                                                        <option value="Tschechische Republik">
+                                                                            Tschechische Republik
+                                                                        </option>
                                                                         <option value="Tunesien">Tunesien</option>
                                                                         <option value="Türkei">Türkei</option>
-                                                                        <option value="Turkmenistan">Turkmenistan</option>
-                                                                        <option value="Turks- und Caicosinseln">Turks- und Caicosinseln</option>
+                                                                        <option value="Turkmenistan">Turkmenistan
+                                                                        </option>
+                                                                        <option value="Turks- und Caicosinseln">Turks-
+                                                                            und Caicosinseln
+                                                                        </option>
                                                                         <option value="Tuvalu">Tuvalu</option>
                                                                     </optgroup>
                                                                     <optgroup label="U">
@@ -4182,24 +5191,40 @@
                                                                     </optgroup>
                                                                     <optgroup label="V">
                                                                         <option value="Vanuatu">Vanuatu</option>
-                                                                        <option value="Vatikanstadt">Vatikanstadt</option>
+                                                                        <option value="Vatikanstadt">Vatikanstadt
+                                                                        </option>
                                                                         <option value="Venezuela">Venezuela</option>
-                                                                        <option value="Vereinigte Arabische Emirate">Vereinigte Arabische Emirate</option>
-                                                                        <option value="Vereinigte Staaten von Amerika (USA)">Vereinigte Staaten von Amerika (USA)</option>
-                                                                        <option value="Vereinigtes Königreich Großbritannien und Nordirland">Vereinigtes Königreich Großbritannien und Nordirland</option>
+                                                                        <option value="Vereinigte Arabische Emirate">
+                                                                            Vereinigte Arabische Emirate
+                                                                        </option>
+                                                                        <option
+                                                                            value="Vereinigte Staaten von Amerika (USA)">
+                                                                            Vereinigte Staaten von Amerika (USA)
+                                                                        </option>
+                                                                        <option
+                                                                            value="Vereinigtes Königreich Großbritannien und Nordirland">
+                                                                            Vereinigtes Königreich Großbritannien und
+                                                                            Nordirland
+                                                                        </option>
                                                                         <option value="Vietnam">Vietnam</option>
                                                                     </optgroup>
                                                                     <optgroup label="W">
-                                                                        <option value="Wallis und Futuna">Wallis und Futuna</option>
-                                                                        <option value="Weihnachtsinsel">Weihnachtsinsel</option>
+                                                                        <option value="Wallis und Futuna">Wallis und
+                                                                            Futuna
+                                                                        </option>
+                                                                        <option value="Weihnachtsinsel">
+                                                                            Weihnachtsinsel
+                                                                        </option>
                                                                         <option value="Westsahara">Westsahara</option>
                                                                     </optgroup>
                                                                     <optgroup label="Z">
-                                                                        <option value="Zentralafrikanische Republik">Zentralafrikanische Republik</option>
+                                                                        <option value="Zentralafrikanische Republik">
+                                                                            Zentralafrikanische Republik
+                                                                        </option>
                                                                         <option value="Zypern">Zypern</option>
                                                                     </optgroup>
 
-                                                            @else
+                                                                @else
                                                                     <option selected></option>
                                                                     <option value="Swiss">Swiss</option>
                                                                     <option value="Deutschland">Deutschland</option>
@@ -4211,19 +5236,28 @@
                                                                         <option value="Åland">Åland</option>
                                                                         <option value="Albanien">Albanien</option>
                                                                         <option value="Algerien">Algerien</option>
-                                                                        <option value="Amerikanisch-Samoa">Amerikanisch-Samoa</option>
-                                                                        <option value="Amerikanische Jungferninseln">Amerikanische Jungferninseln</option>
+                                                                        <option value="Amerikanisch-Samoa">
+                                                                            Amerikanisch-Samoa
+                                                                        </option>
+                                                                        <option value="Amerikanische Jungferninseln">
+                                                                            Amerikanische Jungferninseln
+                                                                        </option>
                                                                         <option value="Andorra">Andorra</option>
                                                                         <option value="Angola">Angola</option>
                                                                         <option value="Anguilla">Anguilla</option>
                                                                         <option value="Antarktis">Antarktis</option>
-                                                                        <option value="Antigua und Barbuda">Antigua und Barbuda</option>
-                                                                        <option value="Äquatorialguinea">Äquatorialguinea</option>
+                                                                        <option value="Antigua und Barbuda">Antigua und
+                                                                            Barbuda
+                                                                        </option>
+                                                                        <option value="Äquatorialguinea">
+                                                                            Äquatorialguinea
+                                                                        </option>
                                                                         <option value="Argentinien">Argentinien</option>
                                                                         <option value="Armenien">Armenien</option>
                                                                         <option value="Aruba">Aruba</option>
                                                                         <option value="Ascension">Ascension</option>
-                                                                        <option value="Aserbaidschan">Aserbaidschan</option>
+                                                                        <option value="Aserbaidschan">Aserbaidschan
+                                                                        </option>
                                                                         <option value="Äthiopien">Äthiopien</option>
                                                                         <option value="Australien">Australien</option>
                                                                     </optgroup>
@@ -4239,32 +5273,49 @@
                                                                         <option value="Bermuda">Bermuda</option>
                                                                         <option value="Bhutan">Bhutan</option>
                                                                         <option value="Bolivien">Bolivien</option>
-                                                                        <option value="Bosnien und Herzegowina">Bosnien und Herzegowina</option>
+                                                                        <option value="Bosnien und Herzegowina">Bosnien
+                                                                            und Herzegowina
+                                                                        </option>
                                                                         <option value="Botswana">Botswana</option>
                                                                         <option value="Bouvetinsel">Bouvetinsel</option>
                                                                         <option value="Brasilien">Brasilien</option>
-                                                                        <option value="Britische Jungferninseln">Britische Jungferninseln</option>
-                                                                        <option value="Britisches Territorium im Indischen Ozean">Britisches Territorium im Indischen Ozean</option>
-                                                                        <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                                                        <option value="Britische Jungferninseln">
+                                                                            Britische Jungferninseln
+                                                                        </option>
+                                                                        <option
+                                                                            value="Britisches Territorium im Indischen Ozean">
+                                                                            Britisches Territorium im Indischen Ozean
+                                                                        </option>
+                                                                        <option value="Brunei Darussalam">Brunei
+                                                                            Darussalam
+                                                                        </option>
                                                                         <option value="Bulgarien">Bulgarien</option>
-                                                                        <option value="Burkina Faso">Burkina Faso</option>
+                                                                        <option value="Burkina Faso">Burkina Faso
+                                                                        </option>
                                                                         <option value="Burundi">Burundi</option>
                                                                     </optgroup>
                                                                     <optgroup label="C">
-                                                                        <option value="Ceuta, Melilla">Ceuta, Melilla</option>
+                                                                        <option value="Ceuta, Melilla">Ceuta, Melilla
+                                                                        </option>
                                                                         <option value="Chile">Chile</option>
-                                                                        <option value="Volksrepublik China">Volksrepublik China</option>
+                                                                        <option value="Volksrepublik China">
+                                                                            Volksrepublik China
+                                                                        </option>
                                                                         <option value="Clipperton">Clipperton</option>
                                                                         <option value="Cookinseln">Cookinseln</option>
                                                                         <option value="Costa Rica">Costa Rica</option>
-                                                                        <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+                                                                        <option value="Côte d'Ivoire">Côte d'Ivoire
+                                                                        </option>
                                                                     </optgroup>
                                                                     <optgroup label="D">
                                                                         <option value="Dänemark">Dänemark</option>
                                                                         <option value="Deutschland">Deutschland</option>
-                                                                        <option value="Diego Garcia">Diego Garcia</option>
+                                                                        <option value="Diego Garcia">Diego Garcia
+                                                                        </option>
                                                                         <option value="Dominica">Dominica</option>
-                                                                        <option value="Dominikanische Republik">Dominikanische Republik</option>
+                                                                        <option value="Dominikanische Republik">
+                                                                            Dominikanische Republik
+                                                                        </option>
                                                                         <option value="Dschibuti">Dschibuti</option>
                                                                     </optgroup>
                                                                     <optgroup label="E">
@@ -4274,13 +5325,18 @@
                                                                         <option value="Estland">Estland</option>
                                                                     </optgroup>
                                                                     <optgroup label="F">
-                                                                        <option value="Falklandinseln">Falklandinseln</option>
+                                                                        <option value="Falklandinseln">Falklandinseln
+                                                                        </option>
                                                                         <option value="Färöer">Färöer</option>
                                                                         <option value="Fidschi">Fidschi</option>
                                                                         <option value="Finnland">Finnland</option>
                                                                         <option value="Frankreich">Frankreich</option>
-                                                                        <option value="Französisch-Guayana">Französisch-Guayana</option>
-                                                                        <option value="Französisch-Polynesien">Französisch-Polynesien</option>
+                                                                        <option value="Französisch-Guayana">
+                                                                            Französisch-Guayana
+                                                                        </option>
+                                                                        <option value="Französisch-Polynesien">
+                                                                            Französisch-Polynesien
+                                                                        </option>
                                                                     </optgroup>
                                                                     <optgroup label="G">
                                                                         <option value="Gabun">Gabun</option>
@@ -4289,20 +5345,27 @@
                                                                         <option value="Ghana">Ghana</option>
                                                                         <option value="Gibraltar">Gibraltar</option>
                                                                         <option value="Grenada">Grenada</option>
-                                                                        <option value="Griechenland">Griechenland</option>
+                                                                        <option value="Griechenland">Griechenland
+                                                                        </option>
                                                                         <option value="Grönland">Grönland</option>
-                                                                        <option value="Großbritannien">Großbritannien</option>
+                                                                        <option value="Großbritannien">Großbritannien
+                                                                        </option>
                                                                         <option value="Guadeloupe">Guadeloupe</option>
                                                                         <option value="Guam">Guam</option>
                                                                         <option value="Guatemala">Guatemala</option>
-                                                                        <option value="Guernsey (Kanalinsel)">Guernsey (Kanalinsel)</option>
+                                                                        <option value="Guernsey (Kanalinsel)">Guernsey
+                                                                            (Kanalinsel)
+                                                                        </option>
                                                                         <option value="Guinea">Guinea</option>
-                                                                        <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                                                        <option value="Guinea-Bissau">Guinea-Bissau
+                                                                        </option>
                                                                         <option value="Guyana">Guyana</option>
                                                                     </optgroup>
                                                                     <optgroup label="H">
                                                                         <option value="Haiti">Haiti</option>
-                                                                        <option value="Heard- und McDonald-Inseln">Heard- und McDonald-Inseln</option>
+                                                                        <option value="Heard- und McDonald-Inseln">
+                                                                            Heard- und McDonald-Inseln
+                                                                        </option>
                                                                         <option value="Honduras">Honduras</option>
                                                                         <option value="Hongkong">Hongkong</option>
                                                                     </optgroup>
@@ -4321,15 +5384,20 @@
                                                                         <option value="Jamaika">Jamaika</option>
                                                                         <option value="Japan">Japan</option>
                                                                         <option value="Jemen">Jemen</option>
-                                                                        <option value="Jersey (Kanalinsel)">Jersey (Kanalinsel)</option>
+                                                                        <option value="Jersey (Kanalinsel)">Jersey
+                                                                            (Kanalinsel)
+                                                                        </option>
                                                                         <option value="Jordanien">Jordanien</option>
                                                                     </optgroup>
                                                                     <optgroup label="K">
-                                                                        <option value="Kaimaninseln">Kaimaninseln</option>
+                                                                        <option value="Kaimaninseln">Kaimaninseln
+                                                                        </option>
                                                                         <option value="Kambodscha">Kambodscha</option>
                                                                         <option value="Kamerun">Kamerun</option>
                                                                         <option value="Kanada">Kanada</option>
-                                                                        <option value="Kanarische Inseln">Kanarische Inseln</option>
+                                                                        <option value="Kanarische Inseln">Kanarische
+                                                                            Inseln
+                                                                        </option>
                                                                         <option value="Kap Verde">Kap Verde</option>
                                                                         <option value="Kasachstan">Kasachstan</option>
                                                                         <option value="Katar">Katar</option>
@@ -4339,9 +5407,17 @@
                                                                         <option value="Kokosinseln">Kokosinseln</option>
                                                                         <option value="Kolumbien">Kolumbien</option>
                                                                         <option value="Komoren">Komoren</option>
-                                                                        <option value="Demokratische Republik Kongo">Demokratische Republik Kongo</option>
-                                                                        <option value="Demokratische Volksrepublik Korea (Nordkorea)">Demokratische Volksrepublik Korea (Nordkorea)</option>
-                                                                        <option value="Republik Korea (Südkorea)">Republik Korea (Südkorea)</option>
+                                                                        <option value="Demokratische Republik Kongo">
+                                                                            Demokratische Republik Kongo
+                                                                        </option>
+                                                                        <option
+                                                                            value="Demokratische Volksrepublik Korea (Nordkorea)">
+                                                                            Demokratische Volksrepublik Korea
+                                                                            (Nordkorea)
+                                                                        </option>
+                                                                        <option value="Republik Korea (Südkorea)">
+                                                                            Republik Korea (Südkorea)
+                                                                        </option>
                                                                         <option value="Kosovo">Kosovo</option>
                                                                         <option value="Kroatien">Kroatien</option>
                                                                         <option value="Kuba">Kuba</option>
@@ -4354,7 +5430,8 @@
                                                                         <option value="Libanon">Libanon</option>
                                                                         <option value="Liberia">Liberia</option>
                                                                         <option value="Libyen">Libyen</option>
-                                                                        <option value="Liechtenstein">Liechtenstein</option>
+                                                                        <option value="Liechtenstein">Liechtenstein
+                                                                        </option>
                                                                         <option value="Litauen">Litauen</option>
                                                                         <option value="Luxemburg">Luxemburg</option>
                                                                     </optgroup>
@@ -4367,7 +5444,8 @@
                                                                         <option value="Mali">Mali</option>
                                                                         <option value="Malta">Malta</option>
                                                                         <option value="Marokko">Marokko</option>
-                                                                        <option value="Marshallinseln">Marshallinseln</option>
+                                                                        <option value="Marshallinseln">Marshallinseln
+                                                                        </option>
                                                                         <option value="Martinique">Martinique</option>
                                                                         <option value="Mauretanien">Mauretanien</option>
                                                                         <option value="Mauritius">Mauritius</option>
@@ -4375,7 +5453,9 @@
                                                                         <option value="Mazedonien">Mazedonien</option>
                                                                         <option value="Mexiko">Mexiko</option>
                                                                         <option value="Mikronesien">Mikronesien</option>
-                                                                        <option value="Moldawien (Republik Moldau)">Moldawien (Republik Moldau)</option>
+                                                                        <option value="Moldawien (Republik Moldau)">
+                                                                            Moldawien (Republik Moldau)
+                                                                        </option>
                                                                         <option value="Monaco">Monaco</option>
                                                                         <option value="Mongolei">Mongolei</option>
                                                                         <option value="Montenegro">Montenegro</option>
@@ -4387,61 +5467,87 @@
                                                                         <option value="Namibia">Namibia</option>
                                                                         <option value="Nauru">Nauru</option>
                                                                         <option value="Nepal">Nepal</option>
-                                                                        <option value="Neukaledonien">Neukaledonien</option>
+                                                                        <option value="Neukaledonien">Neukaledonien
+                                                                        </option>
                                                                         <option value="Neuseeland">Neuseeland</option>
                                                                         <option value="Nicaragua">Nicaragua</option>
                                                                         <option value="Niederlande">Niederlande</option>
-                                                                        <option value="Niederländische Antillen">Niederländische Antillen</option>
+                                                                        <option value="Niederländische Antillen">
+                                                                            Niederländische Antillen
+                                                                        </option>
                                                                         <option value="Niger">Niger</option>
                                                                         <option value="Nigeria">Nigeria</option>
                                                                         <option value="Niue">Niue</option>
-                                                                        <option value="Nördliche Marianen">Nördliche Marianen</option>
-                                                                        <option value="Norfolkinsel">Norfolkinsel</option>
+                                                                        <option value="Nördliche Marianen">Nördliche
+                                                                            Marianen
+                                                                        </option>
+                                                                        <option value="Norfolkinsel">Norfolkinsel
+                                                                        </option>
                                                                         <option value="Norwegen">Norwegen</option>
                                                                     </optgroup>
                                                                     <optgroup label="O">
                                                                         <option value="Oman">Oman</option>
                                                                         <option value="Orbit">Orbit</option>
                                                                         <option value="Österreich">Österreich</option>
-                                                                        <option value="Osttimor (Timor-Leste)">Osttimor (Timor-Leste)</option>
+                                                                        <option value="Osttimor (Timor-Leste)">Osttimor
+                                                                            (Timor-Leste)
+                                                                        </option>
                                                                     </optgroup>
                                                                     <optgroup label="P">
                                                                         <option value="Pakistan">Pakistan</option>
-                                                                        <option value="Palästinensische Autonomiegebiete">Palästinensische Autonomiegebiete</option>
+                                                                        <option
+                                                                            value="Palästinensische Autonomiegebiete">
+                                                                            Palästinensische Autonomiegebiete
+                                                                        </option>
                                                                         <option value="Palau">Palau</option>
                                                                         <option value="Panama">Panama</option>
-                                                                        <option value="Papua-Neuguinea">Papua-Neuguinea</option>
+                                                                        <option value="Papua-Neuguinea">
+                                                                            Papua-Neuguinea
+                                                                        </option>
                                                                         <option value="Paraguay">Paraguay</option>
                                                                         <option value="Peru">Peru</option>
                                                                         <option value="Philippinen">Philippinen</option>
-                                                                        <option value="Pitcairninseln">Pitcairninseln</option>
+                                                                        <option value="Pitcairninseln">Pitcairninseln
+                                                                        </option>
                                                                         <option value="Polen">Polen</option>
                                                                         <option value="Portugal">Portugal</option>
                                                                         <option value="Puerto Rico">Puerto Rico</option>
                                                                     </optgroup>
                                                                     <optgroup label="R">
-                                                                        <option value="Republik China (Taiwan)">Republik China (Taiwan)</option>
-                                                                        <option value="Republik Kongo">Republik Kongo</option>
+                                                                        <option value="Republik China (Taiwan)">Republik
+                                                                            China (Taiwan)
+                                                                        </option>
+                                                                        <option value="Republik Kongo">Republik Kongo
+                                                                        </option>
                                                                         <option value="Réunion">Réunion</option>
                                                                         <option value="Ruanda">Ruanda</option>
                                                                         <option value="Rumänien">Rumänien</option>
-                                                                        <option value="Russische Föderation">Russische Föderation</option>
+                                                                        <option value="Russische Föderation">Russische
+                                                                            Föderation
+                                                                        </option>
                                                                     </optgroup>
                                                                     <optgroup label="S">
-                                                                        <option value="Saint-Barthélemy">Saint-Barthélemy</option>
-                                                                        <option value="Saint-Martin">Saint-Martin</option>
+                                                                        <option value="Saint-Barthélemy">
+                                                                            Saint-Barthélemy
+                                                                        </option>
+                                                                        <option value="Saint-Martin">Saint-Martin
+                                                                        </option>
                                                                         <option value="Salomonen">Salomonen</option>
                                                                         <option value="Sambia">Sambia</option>
                                                                         <option value="Samoa">Samoa</option>
                                                                         <option value="San Marino">San Marino</option>
-                                                                        <option value="São Tomé und Príncipe">São Tomé und Príncipe</option>
-                                                                        <option value="Saudi-Arabien">Saudi-Arabien</option>
+                                                                        <option value="São Tomé und Príncipe">São Tomé
+                                                                            und Príncipe
+                                                                        </option>
+                                                                        <option value="Saudi-Arabien">Saudi-Arabien
+                                                                        </option>
                                                                         <option value="Schweden">Schweden</option>
                                                                         <option value="Schweiz">Schweiz</option>
                                                                         <option value="Senegal">Senegal</option>
                                                                         <option value="Serbien">Serbien</option>
                                                                         <option value="Seychellen">Seychellen</option>
-                                                                        <option value="Sierra Leone">Sierra Leone</option>
+                                                                        <option value="Sierra Leone">Sierra Leone
+                                                                        </option>
                                                                         <option value="Simbabwe">Simbabwe</option>
                                                                         <option value="Singapur">Singapur</option>
                                                                         <option value="Slowakei">Slowakei</option>
@@ -4450,33 +5556,54 @@
                                                                         <option value="Spanien">Spanien</option>
                                                                         <option value="Sri Lanka">Sri Lanka</option>
                                                                         <option value="St. Helena">St. Helena</option>
-                                                                        <option value="St. Kitts und Nevis">St. Kitts und Nevis</option>
+                                                                        <option value="St. Kitts und Nevis">St. Kitts
+                                                                            und Nevis
+                                                                        </option>
                                                                         <option value="St. Lucia">St. Lucia</option>
-                                                                        <option value="Saint-Pierre und Miquelon">Saint-Pierre und Miquelon</option>
-                                                                        <option value="St. Vincent und die Grenadinen">St. Vincent und die Grenadinen</option>
+                                                                        <option value="Saint-Pierre und Miquelon">
+                                                                            Saint-Pierre und Miquelon
+                                                                        </option>
+                                                                        <option value="St. Vincent und die Grenadinen">
+                                                                            St. Vincent und die Grenadinen
+                                                                        </option>
                                                                         <option value="Südafrika">Südafrika</option>
                                                                         <option value="Sudan">Sudan</option>
-                                                                        <option value="Südgeorgien und die Südlichen Sandwichinseln">Südgeorgien und die Südlichen Sandwichinseln</option>
+                                                                        <option
+                                                                            value="Südgeorgien und die Südlichen Sandwichinseln">
+                                                                            Südgeorgien und die Südlichen Sandwichinseln
+                                                                        </option>
                                                                         <option value="Suriname">Suriname</option>
-                                                                        <option value="Svalbard und Jan Mayen">Svalbard und Jan Mayen</option>
+                                                                        <option value="Svalbard und Jan Mayen">Svalbard
+                                                                            und Jan Mayen
+                                                                        </option>
                                                                         <option value="Swasiland">Swasiland</option>
                                                                         <option value="Syrien">Syrien</option>
                                                                     </optgroup>
                                                                     <optgroup label="T">
-                                                                        <option value="Tadschikistan">Tadschikistan</option>
+                                                                        <option value="Tadschikistan">Tadschikistan
+                                                                        </option>
                                                                         <option value="Tansania">Tansania</option>
                                                                         <option value="Thailand">Thailand</option>
                                                                         <option value="Togo">Togo</option>
                                                                         <option value="Tokelau">Tokelau</option>
                                                                         <option value="Tonga">Tonga</option>
-                                                                        <option value="Trinidad und Tobago">Trinidad und Tobago</option>
-                                                                        <option value="Tristan da Cunha">Tristan da Cunha</option>
+                                                                        <option value="Trinidad und Tobago">Trinidad und
+                                                                            Tobago
+                                                                        </option>
+                                                                        <option value="Tristan da Cunha">Tristan da
+                                                                            Cunha
+                                                                        </option>
                                                                         <option value="Tschad">Tschad</option>
-                                                                        <option value="Tschechische Republik">Tschechische Republik</option>
+                                                                        <option value="Tschechische Republik">
+                                                                            Tschechische Republik
+                                                                        </option>
                                                                         <option value="Tunesien">Tunesien</option>
                                                                         <option value="Türkei">Türkei</option>
-                                                                        <option value="Turkmenistan">Turkmenistan</option>
-                                                                        <option value="Turks- und Caicosinseln">Turks- und Caicosinseln</option>
+                                                                        <option value="Turkmenistan">Turkmenistan
+                                                                        </option>
+                                                                        <option value="Turks- und Caicosinseln">Turks-
+                                                                            und Caicosinseln
+                                                                        </option>
                                                                         <option value="Tuvalu">Tuvalu</option>
                                                                     </optgroup>
                                                                     <optgroup label="U">
@@ -4488,23 +5615,39 @@
                                                                     </optgroup>
                                                                     <optgroup label="V">
                                                                         <option value="Vanuatu">Vanuatu</option>
-                                                                        <option value="Vatikanstadt">Vatikanstadt</option>
+                                                                        <option value="Vatikanstadt">Vatikanstadt
+                                                                        </option>
                                                                         <option value="Venezuela">Venezuela</option>
-                                                                        <option value="Vereinigte Arabische Emirate">Vereinigte Arabische Emirate</option>
-                                                                        <option value="Vereinigte Staaten von Amerika (USA)">Vereinigte Staaten von Amerika (USA)</option>
-                                                                        <option value="Vereinigtes Königreich Großbritannien und Nordirland">Vereinigtes Königreich Großbritannien und Nordirland</option>
+                                                                        <option value="Vereinigte Arabische Emirate">
+                                                                            Vereinigte Arabische Emirate
+                                                                        </option>
+                                                                        <option
+                                                                            value="Vereinigte Staaten von Amerika (USA)">
+                                                                            Vereinigte Staaten von Amerika (USA)
+                                                                        </option>
+                                                                        <option
+                                                                            value="Vereinigtes Königreich Großbritannien und Nordirland">
+                                                                            Vereinigtes Königreich Großbritannien und
+                                                                            Nordirland
+                                                                        </option>
                                                                         <option value="Vietnam">Vietnam</option>
                                                                     </optgroup>
                                                                     <optgroup label="W">
-                                                                        <option value="Wallis und Futuna">Wallis und Futuna</option>
-                                                                        <option value="Weihnachtsinsel">Weihnachtsinsel</option>
+                                                                        <option value="Wallis und Futuna">Wallis und
+                                                                            Futuna
+                                                                        </option>
+                                                                        <option value="Weihnachtsinsel">
+                                                                            Weihnachtsinsel
+                                                                        </option>
                                                                         <option value="Westsahara">Westsahara</option>
                                                                     </optgroup>
                                                                     <optgroup label="Z">
-                                                                        <option value="Zentralafrikanische Republik">Zentralafrikanische Republik</option>
+                                                                        <option value="Zentralafrikanische Republik">
+                                                                            Zentralafrikanische Republik
+                                                                        </option>
                                                                         <option value="Zypern">Zypern</option>
                                                                     </optgroup>
-                                                            @endif
+                                                                @endif
                                                             </select>
                                                         </div>
                                                         <div class="input-select-div mb-2" id="admin">
@@ -4584,10 +5727,12 @@
                                                             <div class="input-group">
                                                                 @if(isset($data->things->telephone_nr))
                                                                     <input value="{{$data->things->telephone_nr}}"
-                                                                           name="telephone_nr" id="int-tel" type="number"
+                                                                           name="telephone_nr" id="int-tel"
+                                                                           type="number"
                                                                            class="form-control">
                                                                 @else
-                                                                    <input name="telephone_nr" id="int-tel" type="number"
+                                                                    <input name="telephone_nr" id="int-tel"
+                                                                           type="number"
                                                                            class="form-control">
                                                                 @endif
                                                             </div>
@@ -4602,7 +5747,8 @@
                                                                 <input value="{{$data->things->email}}" name="email"
                                                                        class="form-control" type="email" id="">
                                                             @else
-                                                                <input name="email" class="form-control" type="email" id="">
+                                                                <input name="email" class="form-control" type="email"
+                                                                       id="">
                                                             @endif
                                                         </div>
                                                         <div class="input-select-div mb-2">
@@ -4764,9 +5910,11 @@
                                                                         Vertragsbeginn ab:
                                                                     </span>
                                                             </div>
-                                                            <select name="start_of_contract" class="form-select w-75" aria-label="Default select example">
+                                                            <select name="start_of_contract" class="form-select w-75"
+                                                                    aria-label="Default select example">
                                                                 @if(isset($data->things->start_of_contract))
-                                                                    <option value="{{$data->things->start_of_contract}}">{{$data->things->start_of_contract}}</option>
+                                                                    <option
+                                                                        value="{{$data->things->start_of_contract}}">{{$data->things->start_of_contract}}</option>
                                                                     <option value="Januar">Januar</option>
                                                                     <option value="Februar">Februar</option>
                                                                     <option value="März">März</option>
@@ -5042,7 +6190,8 @@
                                         <div class="row">
                                             <div class="col g-0 text-end my-auto">
                                                 <div class="">
-                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">
+                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2"
+                                                          style="color: #9F9F9F;cursor: pointer">
                                                         Uberspringen
                                                     </span>
                                                 </div>
@@ -5085,7 +6234,7 @@
                                             </span>
                                     </div>
                                     <div class="accordion accordion-flush" id="accordionFlushExample3">
-                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
+                                        <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingThree">
                                                 <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
@@ -5160,13 +6309,13 @@
                                                                                value="{{$data->prevention->upload_police}}">
                                                                         <a style="text-decoration: none"
                                                                            href="{{route('showfile',$data->prevention->upload_police)}}">
-                                                                        <input type="text"
-                                                                               class="form-control text-center"
-                                                                               id="file-input-6c" disabled
-                                                                               style="background:transparent;border:none;"
-                                                                               value="{{$data->prevention->upload_police}}"
-                                                                               name="">
-</a>
+                                                                            <input type="text"
+                                                                                   class="form-control text-center"
+                                                                                   id="file-input-6c" disabled
+                                                                                   style="background:transparent;border:none;"
+                                                                                   value="{{$data->prevention->upload_police}}"
+                                                                                   name="">
+                                                                        </a>
                                                                     @else
                                                                         <input type="file" id="file-input-6"
                                                                                class="svg-div w-100 border-0  g-0"
@@ -5176,7 +6325,7 @@
                                                                                class="form-control text-center"
                                                                                id="file-input-6c" disabled
                                                                                style="background:transparent;border:none;"
-                                                                               >
+                                                                        >
                                                                     @endif
                                                                 </div>
                                                             </div>
@@ -5197,17 +6346,31 @@
                                                                                 class="fw-bold" id=""
                                                                                 style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                                             @if(isset($data->prevention->Hvergleichsart_select))
-                                                                                <option value="{{$data->prevention->Hvergleichsart_select}}" selected>
+                                                                                <option
+                                                                                    value="{{$data->prevention->Hvergleichsart_select}}"
+                                                                                    selected>
                                                                                     {{$data->prevention->Hvergleichsart_select}}
                                                                                 </option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Deckung">1:0
+                                                                                    Deckung
+                                                                                </option>
+                                                                                <option value="0:1 Deckung">0:1
+                                                                                    Deckung
+                                                                                </option>
+                                                                                <option value="1:1 Deckung">1:1
+                                                                                    Deckung
+                                                                                </option>
                                                                             @else
                                                                                 <option selected>Select</option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Deckung">1:0
+                                                                                    Deckung
+                                                                                </option>
+                                                                                <option value="0:1 Deckung">0:1
+                                                                                    Deckung
+                                                                                </option>
+                                                                                <option value="1:1 Deckung">1:1
+                                                                                    Deckung
+                                                                                </option>
                                                                             @endif
                                                                         </select>
                                                                     </div>
@@ -5245,7 +6408,7 @@
                                             </span>
                                     </div>
                                     <div class="accordion accordion-flush" id="accordionFlushExample4">
-                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
+                                        <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingFour">
                                                 <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
@@ -5281,17 +6444,17 @@
                                                                         </span>
                                                                 </div>
                                                             </div>
-{{--                                                            <div class="col g-0 d-flex justify-content-end">--}}
-{{--                                                                <div class="select-div text-end ">--}}
+                                                            {{--                                                            <div class="col g-0 d-flex justify-content-end">--}}
+                                                            {{--                                                                <div class="select-div text-end ">--}}
 
-{{--                                                                    <select name="noname" class="fw-bold" id=""--}}
-{{--                                                                            style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
-{{--                                                                        <option selected>Select</option>--}}
-{{--                                                                        <option value="1">Ja</option>--}}
-{{--                                                                        <option value="2">Nein</option>--}}
-{{--                                                                    </select>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
+                                                            {{--                                                                    <select name="noname" class="fw-bold" id=""--}}
+                                                            {{--                                                                            style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
+                                                            {{--                                                                        <option selected>Select</option>--}}
+                                                            {{--                                                                        <option value="1">Ja</option>--}}
+                                                            {{--                                                                        <option value="2">Nein</option>--}}
+                                                            {{--                                                                    </select>--}}
+                                                            {{--                                                                </div>--}}
+                                                            {{--                                                            </div>--}}
                                                         </div>
                                                         <div class="my-2">
                                                             <div class="input-select-div">
@@ -5490,7 +6653,7 @@
                                             </span>
                                     </div>
                                     <div class="accordion accordion-flush" id="accordionFlushExample5">
-                                        <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
+                                        <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingFive">
                                                 <button class="accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse" data-bs-target="#flush-collapseFive"
@@ -5526,16 +6689,16 @@
                                                                         </span>
                                                                 </div>
                                                             </div>
-{{--                                                            <div class="col g-0 d-flex justify-content-end">--}}
-{{--                                                                <div class="select-div text-end ">--}}
-{{--                                                                    <select name="noname" class="fw-bold" id=""--}}
-{{--                                                                            style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
-{{--                                                                        <option selected>Select</option>--}}
-{{--                                                                        <option value="1">Ja</option>--}}
-{{--                                                                        <option value="2">Nein</option>--}}
-{{--                                                                    </select>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
+                                                            {{--                                                            <div class="col g-0 d-flex justify-content-end">--}}
+                                                            {{--                                                                <div class="select-div text-end ">--}}
+                                                            {{--                                                                    <select name="noname" class="fw-bold" id=""--}}
+                                                            {{--                                                                            style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
+                                                            {{--                                                                        <option selected>Select</option>--}}
+                                                            {{--                                                                        <option value="1">Ja</option>--}}
+                                                            {{--                                                                        <option value="2">Nein</option>--}}
+                                                            {{--                                                                    </select>--}}
+                                                            {{--                                                                </div>--}}
+                                                            {{--                                                            </div>--}}
                                                         </div>
                                                         <div class="input-div1">
                                                             <div class="">
@@ -5624,39 +6787,39 @@
                                             <addtask url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                      :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
                                         @endif
-{{--                                        <div class="text-center mt-3 pb-3">--}}
-{{--                                            <div class="row">--}}
-{{--                                                <div class="col g-0 text-end my-auto">--}}
-{{--                                                    <div class="">--}}
-{{--                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">--}}
+                                        {{--                                        <div class="text-center mt-3 pb-3">--}}
+                                        {{--                                            <div class="row">--}}
+                                        {{--                                                <div class="col g-0 text-end my-auto">--}}
+                                        {{--                                                    <div class="">--}}
+                                        {{--                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">--}}
 
-{{--                                                    </span>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="col g-0 text-start">--}}
-{{--                                                    <div id="buton">--}}
-{{--                                                        <button class="px-5 py-2" type="button"--}}
-{{--                                                                style="border: none; border-radius: 9px; background-color:#285F52;"--}}
-{{--                                                                id="nextonee__" onclick="nextonee()">--}}
-{{--                                                            <svg xmlns="http://www.w3.org/2000/svg" width="58.155"--}}
-{{--                                                                 height="19.159" viewBox="0 0 58.155 19.159">--}}
-{{--                                                                <g id="Group_453" data-name="Group 453"--}}
-{{--                                                                   transform="translate(0.004)">--}}
-{{--                                                                    <line id="Line_16" data-name="Line 16" x2="51.954"--}}
-{{--                                                                          y2="0.2"--}}
-{{--                                                                          transform="translate(0 9.287)" fill="none"--}}
-{{--                                                                          stroke="#3fd599" stroke-width="2"/>--}}
-{{--                                                                    <path id="Polygon_2" data-name="Polygon 2"--}}
-{{--                                                                          d="M9.58,0l9.58,11.642H0Z"--}}
-{{--                                                                          transform="translate(58.151 0) rotate(90)"--}}
-{{--                                                                          fill="#3fd599"/>--}}
-{{--                                                                </g>--}}
-{{--                                                            </svg>--}}
-{{--                                                        </button>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                        {{--                                                    </span>--}}
+                                        {{--                                                    </div>--}}
+                                        {{--                                                </div>--}}
+                                        {{--                                                <div class="col g-0 text-start">--}}
+                                        {{--                                                    <div id="buton">--}}
+                                        {{--                                                        <button class="px-5 py-2" type="button"--}}
+                                        {{--                                                                style="border: none; border-radius: 9px; background-color:#285F52;"--}}
+                                        {{--                                                                id="nextonee__" onclick="nextonee()">--}}
+                                        {{--                                                            <svg xmlns="http://www.w3.org/2000/svg" width="58.155"--}}
+                                        {{--                                                                 height="19.159" viewBox="0 0 58.155 19.159">--}}
+                                        {{--                                                                <g id="Group_453" data-name="Group 453"--}}
+                                        {{--                                                                   transform="translate(0.004)">--}}
+                                        {{--                                                                    <line id="Line_16" data-name="Line 16" x2="51.954"--}}
+                                        {{--                                                                          y2="0.2"--}}
+                                        {{--                                                                          transform="translate(0 9.287)" fill="none"--}}
+                                        {{--                                                                          stroke="#3fd599" stroke-width="2"/>--}}
+                                        {{--                                                                    <path id="Polygon_2" data-name="Polygon 2"--}}
+                                        {{--                                                                          d="M9.58,0l9.58,11.642H0Z"--}}
+                                        {{--                                                                          transform="translate(58.151 0) rotate(90)"--}}
+                                        {{--                                                                          fill="#3fd599"/>--}}
+                                        {{--                                                                </g>--}}
+                                        {{--                                                            </svg>--}}
+                                        {{--                                                        </button>--}}
+                                        {{--                                                    </div>--}}
+                                        {{--                                                </div>--}}
+                                        {{--                                            </div>--}}
+                                        {{--                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -5670,46 +6833,54 @@
                                 style="border: none; border-radius: 9px; background-color:#285F52;" title="Edit"
                                 onclick="edit();">
                             @if(Auth::user()->hasRole('fs'))
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25"  fill="#fff" class="bi bi-upload" viewBox="0 0 16 16">
-                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#fff" class="bi bi-upload"
+                                     viewBox="0 0 16 16">
+                                    <path
+                                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path
+                                        d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
                                 </svg>
                             @else
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#fff" class="bi bi-pencil-square"
-                                 viewBox="0 0 16 16">
-                                <path
-                                    d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                <path fill-rule="evenodd"
-                                      d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                            </svg>
-                             @endif
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#fff"
+                                     class="bi bi-pencil-square"
+                                     viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd"
+                                          d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                </svg>
+                            @endif
                         </button>
                         @if(Auth::user()->hasRole('backoffice') || Auth::user()->hasRole('admin'))
-                        @if(\App\Models\Pendency::find(Session::get('pend_id'))->completed == 0 && \App\Models\Pendency::find(Session::get('pend_id'))->done == 1)
-                            <button class="px-5 py-2" id="submitt1" type="button"
-                                    style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
-                                    onclick="accept();">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
-                                     class="bi bi-check-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                    <path
-                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-                                </svg>
-                            </button>
+                            @if(\App\Models\Pendency::find(Session::get('pend_id'))->completed == 0 && \App\Models\Pendency::find(Session::get('pend_id'))->done == 1)
+                                <button class="px-5 py-2" id="submitt1" type="button"
+                                        style="border: none; border-radius: 9px; background-color:#285F52;"
+                                        title="Accept"
+                                        onclick="accept();">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
+                                         class="bi bi-check-circle" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path
+                                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                                    </svg>
+                                </button>
+                            @endif
+                            @if(\App\Models\Pendency::find(Session::get('pend_id'))->done == 1 && \App\Models\Pendency::find(Session::get('pend_id'))->completed == 0)
+                                <button class="px-5 py-2" id="submitt1" type="button"
+                                        style="border: none; border-radius: 9px; background-color:#285F52;"
+                                        title="Accept"
+                                        onclick="reject();">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
+                                         class="bi bi-x-circle" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path
+                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </button>
+                            @endif
                         @endif
-                        @if(\App\Models\Pendency::find(Session::get('pend_id'))->done == 1 && \App\Models\Pendency::find(Session::get('pend_id'))->completed == 0)
-                            <button class="px-5 py-2" id="submitt1" type="button"
-                                    style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
-                                    onclick="reject();">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
-                                     class="bi bi-x-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                    <path
-                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                </svg>
-                            </button>
-                        @endif
-                    @endif
                     </div>
                 </div>
             </div>
@@ -5872,59 +7043,59 @@
                 <hr>
             @endif
         </div>
-        <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-            Auth::guard('admins')->user()->hasRole('admin'))
-                <a href="#" class="m-nav text-decoration-none">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                        </svg>
-                    </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-cash-coin" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
-                            <path
-                                d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
-                            <path
-                                d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
-                            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
-                        </svg>
-                    </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        EINZAHLUNG
-                    </span>
-                </a>
-                <hr>
-            @endif
-        </div>
-        <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                <a href="#" class="m-nav text-decoration-none">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                        </svg>
-                    </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-x-square" viewBox="0 0 16 16">
-                            <path
-                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        STORNIERUNGEN
-                    </span>
-                </a>
-                <hr>
-            @endif
-        </div>
+        {{--        <div class="my-3 m-burger">--}}
+        {{--            @if(Auth::guard('admins')->user()->hasRole('backoffice') ||--}}
+        {{--            Auth::guard('admins')->user()->hasRole('admin'))--}}
+        {{--                <a href="#" class="m-nav text-decoration-none">--}}
+        {{--                    <span class="px-2 active-dot">--}}
+        {{--                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+        {{--                            <circle cx="2" cy="2" r="2" fill="#4DC591"/>--}}
+        {{--                        </svg>--}}
+        {{--                    </span>--}}
+        {{--                    <span class="px-3 ">--}}
+        {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"--}}
+        {{--                             class="bi bi-cash-coin" viewBox="0 0 16 16">--}}
+        {{--                            <path fill-rule="evenodd"--}}
+        {{--                                  d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>--}}
+        {{--                            <path--}}
+        {{--                                d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>--}}
+        {{--                            <path--}}
+        {{--                                d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>--}}
+        {{--                            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>--}}
+        {{--                        </svg>--}}
+        {{--                    </span>--}}
+        {{--                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">--}}
+        {{--                        EINZAHLUNG--}}
+        {{--                    </span>--}}
+        {{--                </a>--}}
+        {{--                <hr>--}}
+        {{--            @endif--}}
+        {{--        </div>--}}
+        {{--        <div class="my-3 m-burger">--}}
+        {{--            @if(Auth::guard('admins')->user()->hasRole('backoffice') ||--}}
+        {{--                Auth::guard('admins')->user()->hasRole('admin'))--}}
+        {{--                <a href="#" class="m-nav text-decoration-none">--}}
+        {{--                    <span class="px-2 active-dot">--}}
+        {{--                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+        {{--                            <circle cx="2" cy="2" r="2" fill="#4DC591"/>--}}
+        {{--                        </svg>--}}
+        {{--                    </span>--}}
+        {{--                    <span class="px-3 ">--}}
+        {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"--}}
+        {{--                             class="bi bi-x-square" viewBox="0 0 16 16">--}}
+        {{--                            <path--}}
+        {{--                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>--}}
+        {{--                            <path--}}
+        {{--                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>--}}
+        {{--                            </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">--}}
+        {{--                        STORNIERUNGEN--}}
+        {{--                    </span>--}}
+        {{--                </a>--}}
+        {{--                <hr>--}}
+        {{--            @endif--}}
+        {{--        </div>--}}
         <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('fs') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager') ||
@@ -5953,147 +7124,147 @@
                 <hr>
             @endif
         </div>
-        <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-people-fill" viewBox="0 0 16 16">
-                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                            <path fill-rule="evenodd"
-                                  d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
-                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        MITARBEITER
-                        </span>
-                </a>
-                <hr>
-            @endif
-        </div>
-        <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('finance') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d" class="bi bi-percent"
-                             viewBox="0 0 16 16">
-                            <path
-                                d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        PROVISIONEN
-                        </span>
-                </a>
-                <hr>
-            @endif
-        </div>
-        <div class="my-3 m-burger">
-            <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d" class="bi bi-grid"
-                             viewBox="0 0 16 16">
-                            <path
-                                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
-                        </svg>
-                        </span>
-                <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            FINANZEN
-                        </span>
-            </a>
-            <hr>
-        </div>
-        <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        PROV.SYSTEM
-                        </span>
-                </a>
-                <hr>
-            @endif
-        </div>
-        <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            STATISTIK
-                        </span>
-                </a>
-                <hr>
-            @endif
-        </div>
-        <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('finance')
-                ||Auth::guard('admins')->user()->hasRole('admin') )
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            TREUHAND
-                        </span>
-                </a>
-                <hr>
-            @endif
-        </div>
+        {{--        <div class="my-3 m-burger">--}}
+        {{--            @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
+        {{--                Auth::guard('admins')->user()->hasRole('menagment') ||--}}
+        {{--                Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+        {{--                <a href="#" class="m-nav text-decoration-none">--}}
+        {{--                        <span class="px-2 active-dot">--}}
+        {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+        {{--                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>--}}
+        {{--                            </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="px-3 ">--}}
+        {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"--}}
+        {{--                             class="bi bi-people-fill" viewBox="0 0 16 16">--}}
+        {{--                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>--}}
+        {{--                            <path fill-rule="evenodd"--}}
+        {{--                                  d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>--}}
+        {{--                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>--}}
+        {{--                        </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">--}}
+        {{--                        MITARBEITER--}}
+        {{--                        </span>--}}
+        {{--                </a>--}}
+        {{--                <hr>--}}
+        {{--            @endif--}}
+        {{--        </div>--}}
+        {{--        <div class="my-3 m-burger">--}}
+        {{--            @if(Auth::guard('admins')->user()->hasRole('finance') ||--}}
+        {{--                Auth::guard('admins')->user()->hasRole('admin'))--}}
+        {{--                <a href="#" class="m-nav text-decoration-none">--}}
+        {{--                        <span class="px-2 active-dot">--}}
+        {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+        {{--                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>--}}
+        {{--                            </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="px-3 ">--}}
+        {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d" class="bi bi-percent"--}}
+        {{--                             viewBox="0 0 16 16">--}}
+        {{--                            <path--}}
+        {{--                                d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>--}}
+        {{--                        </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">--}}
+        {{--                        PROVISIONEN--}}
+        {{--                        </span>--}}
+        {{--                </a>--}}
+        {{--                <hr>--}}
+        {{--            @endif--}}
+        {{--        </div>--}}
+        {{--        <div class="my-3 m-burger">--}}
+        {{--            <a href="#" class="m-nav text-decoration-none">--}}
+        {{--                        <span class="px-2 active-dot">--}}
+        {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+        {{--                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>--}}
+        {{--                            </svg>--}}
+        {{--                        </span>--}}
+        {{--                <span class="px-3 ">--}}
+        {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d" class="bi bi-grid"--}}
+        {{--                             viewBox="0 0 16 16">--}}
+        {{--                            <path--}}
+        {{--                                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>--}}
+        {{--                        </svg>--}}
+        {{--                        </span>--}}
+        {{--                <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">--}}
+        {{--                            FINANZEN--}}
+        {{--                        </span>--}}
+        {{--            </a>--}}
+        {{--            <hr>--}}
+        {{--        </div>--}}
+        {{--        <div class="my-3 m-burger">--}}
+        {{--            @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
+        {{--                Auth::guard('admins')->user()->hasRole('menagment') ||--}}
+        {{--                Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+        {{--                <a href="#" class="m-nav text-decoration-none">--}}
+        {{--                        <span class="px-2 active-dot">--}}
+        {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+        {{--                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>--}}
+        {{--                            </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="px-3 ">--}}
+        {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"--}}
+        {{--                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">--}}
+        {{--                            <path fill-rule="evenodd"--}}
+        {{--                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>--}}
+        {{--                        </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">--}}
+        {{--                        PROV.SYSTEM--}}
+        {{--                        </span>--}}
+        {{--                </a>--}}
+        {{--                <hr>--}}
+        {{--            @endif--}}
+        {{--        </div>--}}
+        {{--        <div class="my-3 m-burger">--}}
+        {{--            @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
+        {{--                Auth::guard('admins')->user()->hasRole('menagment') ||--}}
+        {{--                Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+        {{--                <a href="#" class="m-nav text-decoration-none">--}}
+        {{--                        <span class="px-2 active-dot">--}}
+        {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+        {{--                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>--}}
+        {{--                            </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="px-3 ">--}}
+        {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"--}}
+        {{--                             class="bi bi-bar-chart-fill" viewBox="0 0 16 16">--}}
+        {{--                            <path--}}
+        {{--                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>--}}
+        {{--                        </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">--}}
+        {{--                            STATISTIK--}}
+        {{--                        </span>--}}
+        {{--                </a>--}}
+        {{--                <hr>--}}
+        {{--            @endif--}}
+        {{--        </div>--}}
+        {{--        <div class="my-3 m-burger">--}}
+        {{--            @if(Auth::guard('admins')->user()->hasRole('menagment') ||--}}
+        {{--                Auth::guard('admins')->user()->hasRole('finance')--}}
+        {{--                ||Auth::guard('admins')->user()->hasRole('admin') )--}}
+        {{--                <a href="#" class="m-nav text-decoration-none">--}}
+        {{--                        <span class="px-2 active-dot">--}}
+        {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
+        {{--                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>--}}
+        {{--                            </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="px-3 ">--}}
+        {{--                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"--}}
+        {{--                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">--}}
+        {{--                            <path fill-rule="evenodd"--}}
+        {{--                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>--}}
+        {{--                        </svg>--}}
+        {{--                        </span>--}}
+        {{--                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">--}}
+        {{--                            TREUHAND--}}
+        {{--                        </span>--}}
+        {{--                </a>--}}
+        {{--                <hr>--}}
+        {{--            @endif--}}
+        {{--        </div>--}}
         <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('admin'))
                 <a href="{{route('addnewuser')}}"
@@ -6769,134 +7940,134 @@
         newgcnt++;
 
         document.getElementById('shtogegen').innerHTML += '<div id="g' + newgcnt + '">' +
-                ' <div class="text-end mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16" style="cursor:pointer;" onclick="deletethat2(' + newgcnt + ')">' +
-                '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>' +
-                '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg></div>' +
-                '   <hr style="height: 4px;"> <div class="">' +
-                '                                                        <div class="">' +
-                '                                                                <span class="" style="font-size: 13px;">' +
-                '                                                                    Police Hochladen:' +
-                '                                                                </span>' +
-                '                                                        </div>' +
-                '                                                        <div class="">' +
-                '                                                           <div class="upload-box mx-1 my-2">' +
-                '                                                               <div class="mx-1 my-2 p-4 text-center">' +
-                '                                                                    <label for="file-input-4' + newgcnt + '">' +
-                '                                                                        <svg xmlns="http://www.w3.org/2000/svg"' +
-                '                                                                             width="53" height="53"' +
-                '                                                                             viewBox="0 0 53 53">' +
-                '                                                                            <g id="Group_621" data-name="Group 621"' +
-                '                                                                               transform="translate(-78.283 -14.777)">' +
-                '                                                                                <circle id="Ellipse_31"' +
-                '                                                                                        data-name="Ellipse 31" cx="26.5"' +
-                '                                                                                        cy="26.5" r="26.5"' +
-                '                                                                                        transform="translate(78.283 14.777)"' +
-                '                                                                                        fill="#5f5f5f" />' +
-                '                                                                              <g id="Group_326"' +
-                '                                                                                   data-name="Group 326"' +
-                '                                                                                   transform="translate(95.656 31.893)">' +
-                '                                                                                   <path id="Path_234"' +
-                '                                                                                         data-name="Path 234"' +
-                '                                                                                         d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6"' +
-                '                                                                                          transform="translate(0 1.82)"' +
-                '                                                                                          fill="#fff" stroke="#fff"' +
-                '                                                                                          stroke-width="0.5" />' +
-                '                                                                                   <path id="Path_235"                                                                                          data-name="Path 235"' +
-                '                                                                                          d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z"' +
-                '                                                                                          transform="translate(0.92 0)"' +
-                '                                                                                          fill="#fff" stroke="#fff"' +
-                '                                                                                          stroke-width="0.5" />                                                                                </g>' +
-                '                                                                            </g>' +
-                '                                                                        </svg>' +
-                '                                                                    </label>' +
-                '                                                                    <input type="file" id="file-input-4' + newgcnt + '"' +
-                '                                                                           class="svg-div w-100 border-0  g-0"' +
-                '                                                                           onchange="upload(this);"' +
-                '                                                                           name="upload_policeFahrzeug' + newgcnt + '">' +
-                '                                                                    <input type="text"' +
-                '                                                                          class="form-control text-center"' +
-                '                                                                           id="file-input-4' + newgcnt + 'c" disabled' +
-                '                                                                           style="background:transparent; border:none;">' +
-                '                                                                </div>' +
-                '                                                            </div>' +
-                '                                                        </div>' +
-                '                                                        <div class="">' +
-                '                                                            <div class="row mx-2">' +
-                '                                                                <div class="col-5 d-flex g-0">' +
-                '                                                                    <div class="text-nowrap">' +
-                '                                                                            <span class="fw-bold"' +
-                '                                                                                  style=" font-size: 12px;">' +
-                '                                                                                Vergleichsart:' +
-                '                                                                            </span>' +
-                '                                                                    </div>' +
-                '                                                                </div>' +
-                '                                                                <div class="col g-0 d-flex justify-content-end">' +
-                '                                                                    <div class="select-div text-end ">' +
-                '                                                                        <select name="vergleichsart_select' + newgcnt + '"> ' +
-                '                                                                                class="fw-bold" id=""' +
-                '                                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">' +
-                '                                                                            <option selected>Select</option>' +
-                '                                                                            <option value="1:0 Deckung">1:0 Deckung</option>' +
-                '                                                                            <option value="0:1 Deckung">0:1 Deckung</option>' +
-                '                                                                            <option value="1:1 Deckung">1:1 Deckung</option>' +
-                '                                                                        </select>' +
-                '                                                                   </div>' +
-                '                                                                </div>' +
-                '                                                            </div>' +
-                '                                                        </div>' +
-                '                                                        <div class="">' +
-                '                                                            <div class="mb-3 mt-3">' +
-                '                                                               <label for="exampleFormControlTextarea1"' +
-                '                                                                      class="form-label"' +
-                '                                                                      style="font-size: 13px;">Kommentar</label>                                                                <textarea name="commentFahrenzug' + newgcnt + '" ' +
-                '                                                                         id="exampleFormControlTextarea1"' +
-                '                                                                          rows="3" class="form-control"></textarea>' +
-                '                                                            </div>' +
-                '                                                        </div>' +
-                '                                                   </div></div>' +
-                '<div class="row">'+ '@if(!Auth::user()->hasRole("fs"))'+
-'                                                            <div class="col-12" id="of' + newgcnt + '">Offer:'+
-'                                                                <div class="text-start">'+
-'                                                                    <div class="upload-box mx-1 my-2">'+
-'                                                                        <div class="mx-1 my-2 text-center p-3">'+
-'                                                                            <label for="file-input-' + newgcnt + 'w">' +
-'                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">'+
-'                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">'+
-'                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />'+
-'                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">'+
-'                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />'+
-'                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />'+
-'                                                                                        </g>'+
-'                                                                                    </g>'+
-'                                                                                </svg>'+
-'                                                                            </label>'+
-'                                                                            <input type="file" id="file-input-'+ newgcnt + 'w" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer' + newgcnt + '">'+
-'                                                                            <input type="text" class="form-control text-center" id="file-input-'+newgcnt + 'wc"' + 'disabled style="background:transparent; border:none;">'+
-'                                                                        </div>'+
-'                                                                    </div>'+
-'                                                                </div>'+
-'                                                            </div>'+
+            ' <div class="text-end mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16" style="cursor:pointer;" onclick="deletethat2(' + newgcnt + ')">' +
+            '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>' +
+            '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg></div>' +
+            '   <hr style="height: 4px;"> <div class="">' +
+            '                                                        <div class="">' +
+            '                                                                <span class="" style="font-size: 13px;">' +
+            '                                                                    Police Hochladen:' +
+            '                                                                </span>' +
+            '                                                        </div>' +
+            '                                                        <div class="">' +
+            '                                                           <div class="upload-box mx-1 my-2">' +
+            '                                                               <div class="mx-1 my-2 p-4 text-center">' +
+            '                                                                    <label for="file-input-4' + newgcnt + '">' +
+            '                                                                        <svg xmlns="http://www.w3.org/2000/svg"' +
+            '                                                                             width="53" height="53"' +
+            '                                                                             viewBox="0 0 53 53">' +
+            '                                                                            <g id="Group_621" data-name="Group 621"' +
+            '                                                                               transform="translate(-78.283 -14.777)">' +
+            '                                                                                <circle id="Ellipse_31"' +
+            '                                                                                        data-name="Ellipse 31" cx="26.5"' +
+            '                                                                                        cy="26.5" r="26.5"' +
+            '                                                                                        transform="translate(78.283 14.777)"' +
+            '                                                                                        fill="#5f5f5f" />' +
+            '                                                                              <g id="Group_326"' +
+            '                                                                                   data-name="Group 326"' +
+            '                                                                                   transform="translate(95.656 31.893)">' +
+            '                                                                                   <path id="Path_234"' +
+            '                                                                                         data-name="Path 234"' +
+            '                                                                                         d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6"' +
+            '                                                                                          transform="translate(0 1.82)"' +
+            '                                                                                          fill="#fff" stroke="#fff"' +
+            '                                                                                          stroke-width="0.5" />' +
+            '                                                                                   <path id="Path_235"                                                                                          data-name="Path 235"' +
+            '                                                                                          d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z"' +
+            '                                                                                          transform="translate(0.92 0)"' +
+            '                                                                                          fill="#fff" stroke="#fff"' +
+            '                                                                                          stroke-width="0.5" />                                                                                </g>' +
+            '                                                                            </g>' +
+            '                                                                        </svg>' +
+            '                                                                    </label>' +
+            '                                                                    <input type="file" id="file-input-4' + newgcnt + '"' +
+            '                                                                           class="svg-div w-100 border-0  g-0"' +
+            '                                                                           onchange="upload(this);"' +
+            '                                                                           name="upload_policeFahrzeug' + newgcnt + '">' +
+            '                                                                    <input type="text"' +
+            '                                                                          class="form-control text-center"' +
+            '                                                                           id="file-input-4' + newgcnt + 'c" disabled' +
+            '                                                                           style="background:transparent; border:none;">' +
+            '                                                                </div>' +
+            '                                                            </div>' +
+            '                                                        </div>' +
+            '                                                        <div class="">' +
+            '                                                            <div class="row mx-2">' +
+            '                                                                <div class="col-5 d-flex g-0">' +
+            '                                                                    <div class="text-nowrap">' +
+            '                                                                            <span class="fw-bold"' +
+            '                                                                                  style=" font-size: 12px;">' +
+            '                                                                                Vergleichsart:' +
+            '                                                                            </span>' +
+            '                                                                    </div>' +
+            '                                                                </div>' +
+            '                                                                <div class="col g-0 d-flex justify-content-end">' +
+            '                                                                    <div class="select-div text-end ">' +
+            '                                                                        <select name="vergleichsart_select' + newgcnt + '"> ' +
+            '                                                                                class="fw-bold" id=""' +
+            '                                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">' +
+            '                                                                            <option selected>Select</option>' +
+            '                                                                            <option value="1:0 Deckung">1:0 Deckung</option>' +
+            '                                                                            <option value="0:1 Deckung">0:1 Deckung</option>' +
+            '                                                                            <option value="1:1 Deckung">1:1 Deckung</option>' +
+            '                                                                        </select>' +
+            '                                                                   </div>' +
+            '                                                                </div>' +
+            '                                                            </div>' +
+            '                                                        </div>' +
+            '                                                        <div class="">' +
+            '                                                            <div class="mb-3 mt-3">' +
+            '                                                               <label for="exampleFormControlTextarea1"' +
+            '                                                                      class="form-label"' +
+            '                                                                      style="font-size: 13px;">Kommentar</label>                                                                <textarea name="commentFahrenzug' + newgcnt + '" ' +
+            '                                                                         id="exampleFormControlTextarea1"' +
+            '                                                                          rows="3" class="form-control"></textarea>' +
+            '                                                            </div>' +
+            '                                                        </div>' +
+            '                                                   </div></div>' +
+            '<div class="row">' + '@if(!Auth::user()->hasRole("fs"))' +
+            '                                                            <div class="col-12" id="of' + newgcnt + '">Offer:' +
+            '                                                                <div class="text-start">' +
+            '                                                                    <div class="upload-box mx-1 my-2">' +
+            '                                                                        <div class="mx-1 my-2 text-center p-3">' +
+            '                                                                            <label for="file-input-' + newgcnt + 'w">' +
+            '                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">' +
+            '                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">' +
+            '                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />' +
+            '                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">' +
+            '                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />' +
+            '                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />' +
+            '                                                                                        </g>' +
+            '                                                                                    </g>' +
+            '                                                                                </svg>' +
+            '                                                                            </label>' +
+            '                                                                            <input type="file" id="file-input-' + newgcnt + 'w" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer' + newgcnt + '">' +
+            '                                                                            <input type="text" class="form-control text-center" id="file-input-' + newgcnt + 'wc"' + 'disabled style="background:transparent; border:none;">' +
+            '                                                                        </div>' +
+            '                                                                    </div>' +
+            '                                                                </div>' +
+            '                                                            </div>' +
 
-'                              @endif                              <div class="col my-auto">'+
-'                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 43%;" id="add_g" onclick="addanother_item_g()">'+
-''+
-'                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="48.694"  viewBox="0 0 37.694 37.694" style="cursor:pointer;">'+
-'                                                                        <g id="Group_621" data-name="Group 621" transform="translate(-663.236 -976.679)">'+
-'                                                                            <g id="Group_550" data-name="Group 550" transform="translate(663.236 976.679)">'+
-'                                                                                <rect id="Rectangle_9" data-name="Rectangle 9" width="37.694" height="37.694" rx="18.847" fill="#C8C8C8" />'+
-'                                                                                <g id="Group_42" data-name="Group 42" transform="translate(12.724 12.724)">'+
-'                                                                                    <line id="Line_11" data-name="Line 11" y2="11.972" transform="translate(5.986 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />'+
-'                                                                                    <line id="Line_12" data-name="Line 12" x1="11.972" transform="translate(0 5.634)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />'+
-'                                                                                </g>'+
-'                                                                            </g>'+
-'                                                                        </g>'+
-'                                                                    </svg>'+
-''+
-'                                                                </div>'+
-'                                                            </div>'+
-'                                                        </div>';
+            '                              @endif                              <div class="col my-auto">' +
+            '                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 43%;" id="add_g" onclick="addanother_item_g()">' +
+            '' +
+            '                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="48.694"  viewBox="0 0 37.694 37.694" style="cursor:pointer;">' +
+            '                                                                        <g id="Group_621" data-name="Group 621" transform="translate(-663.236 -976.679)">' +
+            '                                                                            <g id="Group_550" data-name="Group 550" transform="translate(663.236 976.679)">' +
+            '                                                                                <rect id="Rectangle_9" data-name="Rectangle 9" width="37.694" height="37.694" rx="18.847" fill="#C8C8C8" />' +
+            '                                                                                <g id="Group_42" data-name="Group 42" transform="translate(12.724 12.724)">' +
+            '                                                                                    <line id="Line_11" data-name="Line 11" y2="11.972" transform="translate(5.986 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />' +
+            '                                                                                    <line id="Line_12" data-name="Line 12" x1="11.972" transform="translate(0 5.634)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />' +
+            '                                                                                </g>' +
+            '                                                                            </g>' +
+            '                                                                        </g>' +
+            '                                                                    </svg>' +
+            '' +
+            '                                                                </div>' +
+            '                                                            </div>' +
+            '                                                        </div>';
 
-document.getElementById('newgcount').value = newgcnt;
+        document.getElementById('newgcount').value = newgcnt;
 
     }
 
@@ -7034,7 +8205,7 @@ document.getElementById('newgcount').value = newgcnt;
             '                                                                                    class="form-select w-75" aria-label="Default select example" id=""' +
             '                                                                                    >' +
             '' +
-            '                                                                                       @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)<option value="2021">{{$i}}</option>@endfor'+
+            '                                                                                       @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)<option value="2021">{{$i}}</option>@endfor' +
             '' +
             '                                                                            </select>' +
             '                                                                        </div>' +
@@ -7137,24 +8308,24 @@ document.getElementById('newgcount').value = newgcnt;
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <select  class="form-select w-75" name="nationality' + newncnt + '">' +
-            '                                                                               <option value="Swiss" selected>Swiss</option> <option value="Deutschland">Deutschland</option> <option value="Italien">Italien</option> <option value="French">French</option>'+
-            '                                                                               <optgroup label="A"> <option value="Afghanistan">Afghanistan</option> <option value="Ägypten">Ägypten</option> <option value="Åland">Åland</option> <option value="Albanien">Albanien</option> <option value="Algerien">Algerien</option> <option value="Amerikanisch-Samoa">Amerikanisch-Samoa</option> <option value="Amerikanische Jungferninseln">Amerikanische Jungferninseln</option> <option value="Andorra">Andorra</option> <option value="Angola">Angola</option> <option value="Anguilla">Anguilla</option> <option value="Antarktis">Antarktis</option> <option value="Antigua und Barbuda">Antigua und Barbuda</option> <option value="Äquatorialguinea">Äquatorialguinea</option> <option value="Argentinien">Argentinien</option> <option value="Armenien">Armenien</option> <option value="Aruba">Aruba</option> <option value="Ascension">Ascension</option> <option value="Aserbaidschan">Aserbaidschan</option> <option value="Äthiopien">Äthiopien</option> <option value="Australien">Australien</option> </optgroup>'+
-            '                                                                               <optgroup label="B"> <option value="Bahamas">Bahamas</option> <option value="Bahrain">Bahrain</option> <option value="Bangladesch">Bangladesch</option> <option value="Barbados">Barbados</option> <option value="Belarus (Weißrussland)">Belarus (Weißrussland)</option> <option value="Belgien">Belgien</option> <option value="Belize">Belize</option> <option value="Benin">Benin</option> <option value="Bermuda">Bermuda</option> <option value="Bhutan">Bhutan</option> <option value="Bolivien">Bolivien</option> <option value="Bosnien und Herzegowina">Bosnien und Herzegowina</option> <option value="Botswana">Botswana</option> <option value="Bouvetinsel">Bouvetinsel</option> <option value="Brasilien">Brasilien</option> <option value="Britische Jungferninseln">Britische Jungferninseln</option> <option value="Britisches Territorium im Indischen Ozean">Britisches Territorium im Indischen Ozean</option> <option value="Brunei Darussalam">Brunei Darussalam</option> <option value="Bulgarien">Bulgarien</option> <option value="Burkina Faso">Burkina Faso</option> <option value="Burundi">Burundi</option> </optgroup>'+
+            '                                                                               <option value="Swiss" selected>Swiss</option> <option value="Deutschland">Deutschland</option> <option value="Italien">Italien</option> <option value="French">French</option>' +
+            '                                                                               <optgroup label="A"> <option value="Afghanistan">Afghanistan</option> <option value="Ägypten">Ägypten</option> <option value="Åland">Åland</option> <option value="Albanien">Albanien</option> <option value="Algerien">Algerien</option> <option value="Amerikanisch-Samoa">Amerikanisch-Samoa</option> <option value="Amerikanische Jungferninseln">Amerikanische Jungferninseln</option> <option value="Andorra">Andorra</option> <option value="Angola">Angola</option> <option value="Anguilla">Anguilla</option> <option value="Antarktis">Antarktis</option> <option value="Antigua und Barbuda">Antigua und Barbuda</option> <option value="Äquatorialguinea">Äquatorialguinea</option> <option value="Argentinien">Argentinien</option> <option value="Armenien">Armenien</option> <option value="Aruba">Aruba</option> <option value="Ascension">Ascension</option> <option value="Aserbaidschan">Aserbaidschan</option> <option value="Äthiopien">Äthiopien</option> <option value="Australien">Australien</option> </optgroup>' +
+            '                                                                               <optgroup label="B"> <option value="Bahamas">Bahamas</option> <option value="Bahrain">Bahrain</option> <option value="Bangladesch">Bangladesch</option> <option value="Barbados">Barbados</option> <option value="Belarus (Weißrussland)">Belarus (Weißrussland)</option> <option value="Belgien">Belgien</option> <option value="Belize">Belize</option> <option value="Benin">Benin</option> <option value="Bermuda">Bermuda</option> <option value="Bhutan">Bhutan</option> <option value="Bolivien">Bolivien</option> <option value="Bosnien und Herzegowina">Bosnien und Herzegowina</option> <option value="Botswana">Botswana</option> <option value="Bouvetinsel">Bouvetinsel</option> <option value="Brasilien">Brasilien</option> <option value="Britische Jungferninseln">Britische Jungferninseln</option> <option value="Britisches Territorium im Indischen Ozean">Britisches Territorium im Indischen Ozean</option> <option value="Brunei Darussalam">Brunei Darussalam</option> <option value="Bulgarien">Bulgarien</option> <option value="Burkina Faso">Burkina Faso</option> <option value="Burundi">Burundi</option> </optgroup>' +
             '                                                                               <optgroup label="C"> <option value="Ceuta, Melilla">Ceuta, Melilla</option> <option value="Chile">Chile</option> <option value="Volksrepublik China">Volksrepublik China</option> <option value="Clipperton">Clipperton</option> <option value="Cookinseln">Cookinseln</option> <option value="Costa Rica">Costa Rica</option> <option value="Côte dIvoire ">Côte dIvoire</option> </optgroup>' +
-            '                                                                               <optgroup label="D"> <option value="Dänemark">Dänemark</option> <option value="Deutschland">Deutschland</option> <option value="Diego Garcia">Diego Garcia</option> <option value="Dominica">Dominica</option> <option value="Dominikanische Republik">Dominikanische Republik</option> <option value="Dschibuti">Dschibuti</option> </optgroup>'+
-            '                                                                               <optgroup label="E"> <option value="Ecuador">Ecuador</option> <option value="El Salvador">El Salvador</option> <option value="Eritrea">Eritrea</option> <option value="Estland">Estland</option> </optgroup> <optgroup label="F"> <option value="Falklandinseln">Falklandinseln</option> <option value="Färöer">Färöer</option> <option value="Fidschi">Fidschi</option> <option value="Finnland">Finnland</option> <option value="Frankreich">Frankreich</option> <option value="Französisch-Guayana">Französisch-Guayana</option> <option value="Französisch-Polynesien">Französisch-Polynesien</option> </optgroup>'+
-            '                                                                               <optgroup label="G"> <option value="Gabun">Gabun</option> <option value="Gambia">Gambia</option> <option value="Georgien">Georgien</option> <option value="Ghana">Ghana</option> <option value="Gibraltar">Gibraltar</option> <option value="Grenada">Grenada</option> <option value="Griechenland">Griechenland</option> <option value="Grönland">Grönland</option> <option value="Großbritannien">Großbritannien</option> <option value="Guadeloupe">Guadeloupe</option> <option value="Guam">Guam</option> <option value="Guatemala">Guatemala</option> <option value="Guernsey (Kanalinsel)">Guernsey (Kanalinsel)</option> <option value="Guinea">Guinea</option> <option value="Guinea-Bissau">Guinea-Bissau</option> <option value="Guyana">Guyana</option> </optgroup>'+
-            '                                                                               <optgroup label="H"> <option value="Haiti">Haiti</option> <option value="Heard- und McDonald-Inseln">Heard- und McDonald-Inseln</option> <option value="Honduras">Honduras</option> <option value="Hongkong">Hongkong</option> </optgroup> <optgroup label="I"> <option value="Indien">Indien</option> <option value="Indonesien">Indonesien</option> <option value="Insel Man">Insel Man</option> <option value="Irak">Irak</option> <option value="Iran">Iran</option> <option value="Irland">Irland</option> <option value="Island">Island</option> <option value="Israel">Israel</option> <option value="Italien">Italien</option> </optgroup>'+
-            '                                                                               <optgroup label="J"> <option value="Jamaika">Jamaika</option> <option value="Japan">Japan</option> <option value="Jemen">Jemen</option> <option value="Jersey (Kanalinsel">Jersey (Kanalinsel)</option> <option value="Jordanien">Jordanien</option> </optgroup> <optgroup label="K"> <option value="Kaimaninseln">Kaimaninseln</option> <option value="Kambodscha">Kambodscha</option> <option value="Kamerun">Kamerun</option> <option value="Kanada">Kanada</option> <option value="Kanarische Inseln">Kanarische Inseln</option> <option value="Kap Verde">Kap Verde</option> <option value="Kasachstan">Kasachstan</option> <option value="Katar">Katar</option> <option value="Kenia">Kenia</option> <option value="Kirgisistan">Kirgisistan</option> <option value="Kiribati">Kiribati</option> <option value="Kokosinseln">Kokosinseln</option> <option value="Kolumbien">Kolumbien</option> <option value="Komoren">Komoren</option> <option value="Demokratische Republik Kongo">Demokratische Republik Kongo</option> <option value="Demokratische Volksrepublik Korea (Nordkorea)">Demokratische Volksrepublik Korea (Nordkorea)</option> <option value="Republik Korea (Südkorea)">Republik Korea (Südkorea)</option> <option value="Kosovo">Kosovo</option> <option value="Kroatien">Kroatien</option> <option value="Kuba">Kuba</option> <option value="Kuwait">Kuwait</option> </optgroup>'+
-            '                                                                               <optgroup label="L"> <option value="Laos">Laos</option> <option value="Lesotho">Lesotho</option> <option value="Lettland">Lettland</option> <option value="Libanon">Libanon</option> <option value="Liberia">Liberia</option> <option value="Libyen">Libyen</option> <option value="Liechtenstein">Liechtenstein</option> <option value="Litauen">Litauen</option> <option value="Luxemburg">Luxemburg</option> </optgroup>'+
-            '                                                                               <optgroup label="M"> <option value="Macao">Macao</option> <option value="Madagaskar">Madagaskar</option> <option value="Malawi">Malawi</option> <option value="Malaysia">Malaysia</option> <option value="Malediven">Malediven</option> <option value="Mali">Mali</option> <option value="Malta">Malta</option> <option value="Marokko">Marokko</option> <option value="Marshallinseln">Marshallinseln</option> <option value="Martinique">Martinique</option> <option value="Mauretanien">Mauretanien</option> <option value="Mauritius">Mauritius</option> <option value="Mayotte">Mayotte</option> <option value="Mazedonien">Mazedonien</option> <option value="Mexiko">Mexiko</option> <option value="Mikronesien">Mikronesien</option> <option value="Moldawien (Republik Moldau)">Moldawien (Republik Moldau)</option> <option value="Monaco">Monaco</option> <option value="Mongolei">Mongolei</option> <option value="Montenegro">Montenegro</option> <option value="Montserrat">Montserrat</option> <option value="Mosambik">Mosambik</option> <option value="Myanmar (Burma)">Myanmar (Burma)</option> </optgroup>'+
-            '                                                                               <optgroup label="N"> <option value="Namibia">Namibia</option> <option value="Nauru">Nauru</option> <option value="Nepal">Nepal</option> <option value="Neukaledonien">Neukaledonien</option> <option value="Neuseeland">Neuseeland</option> <option value="Nicaragua">Nicaragua</option> <option value="Niederlande">Niederlande</option> <option value="Niederländische Antillen">Niederländische Antillen</option> <option value="Niger">Niger</option> <option value="Nigeria">Nigeria</option> <option value="Niue">Niue</option> <option value="Nördliche Marianen">Nördliche Marianen</option> <option value="Norfolkinsel">Norfolkinsel</option> <option value="Norwegen">Norwegen</option> </optgroup>'+
-            '                                                                                <optgroup label="O"> <option value="Oman">Oman</option> <option value="Orbit">Orbit</option> <option value="Österreich">Österreich</option> <option value="Osttimor (Timor-Leste)">Osttimor (Timor-Leste)</option> </optgroup> <optgroup label="P"> <option value="Pakistan">Pakistan</option> <option value="Palästinensische Autonomiegebiete">Palästinensische Autonomiegebiete</option> <option value="Palau">Palau</option> <option value="Panama">Panama</option> <option value="Papua-Neuguinea">Papua-Neuguinea</option> <option value="Paraguay">Paraguay</option> <option value="Peru">Peru</option> <option value="Philippinen">Philippinen</option> <option value="Pitcairninseln">Pitcairninseln</option> <option value="Polen">Polen</option> <option value="Portugal">Portugal</option> <option value="Puerto Rico">Puerto Rico</option> </optgroup>'+
-            '                                                                               <optgroup label="Q"> </optgroup> <optgroup label="R"> <option value="Republik China (Taiwan)">Republik China (Taiwan)</option> <option value="Republik Kongo">Republik Kongo</option> <option value="Réunion">Réunion</option> <option value="Ruanda">Ruanda</option> <option value="Rumänien">Rumänien</option> <option value="Russische Föderation">Russische Föderation</option> </optgroup>'+
-            '                                                                               <optgroup label="S"> <option value="Saint-Barthélemy">Saint-Barthélemy</option> <option value="Saint-Martin">Saint-Martin</option> <option value="Salomonen">Salomonen</option> <option value="Sambia">Sambia</option> <option value="Samoa">Samoa</option> <option value="San Marino">San Marino</option> <option value="São Tomé und Príncipe">São Tomé und Príncipe</option> <option value="Saudi-Arabien">Saudi-Arabien</option> <option value="Schweden">Schweden</option> <option value="Schweiz">Schweiz</option> <option value="Senegal">Senegal</option> <option value="Serbien">Serbien</option> <option value="Seychellen">Seychellen</option> <option value="Sierra Leone">Sierra Leone</option> <option value="Simbabwe">Simbabwe</option> <option value="Singapur">Singapur</option> <option value="Slowakei">Slowakei</option> <option value="Slowenien">Slowenien</option> <option value="Somalia">Somalia</option> <option value="Spanien">Spanien</option> <option value="Sri Lanka">Sri Lanka</option> <option value="St. Helena">St. Helena</option> <option value="St. Kitts und Nevis">St. Kitts und Nevis</option> <option value="St. Lucia">St. Lucia</option> <option value="Saint-Pierre und Miquelon">Saint-Pierre und Miquelon</option> <option value="St. Vincent und die Grenadinen">St. Vincent und die Grenadinen</option> <option value="Südafrika">Südafrika</option> <option value="Sudan">Sudan</option> <option value="Südgeorgien und die Südlichen Sandwichinseln">Südgeorgien und die Südlichen Sandwichinseln</option> <option value="Suriname">Suriname</option> <option value="Svalbard und Jan Mayen">Svalbard und Jan Mayen</option> <option value="Swasiland">Swasiland</option> <option value="Syrien">Syrien</option> </optgroup>'+
-            '                                                                               <optgroup label="T"> <option value="Tadschikistan">Tadschikistan</option> <option value="Tansania">Tansania</option> <option value="Thailand">Thailand</option> <option value="Togo">Togo</option> <option value="Tokelau">Tokelau</option> <option value="Tonga">Tonga</option> <option value="Trinidad und Tobago">Trinidad und Tobago</option> <option value="Tristan da Cunha">Tristan da Cunha</option> <option value="Tschad">Tschad</option> <option value="Tschechische Republik">Tschechische Republik</option> <option value="Tunesien">Tunesien</option> <option value="Türkei">Türkei</option> <option value="Turkmenistan">Turkmenistan</option> <option value="Turks- und Caicosinseln">Turks- und Caicosinseln</option> <option value="Tuvalu">Tuvalu</option> </optgroup> <optgroup label="U"> <option value="Uganda">Uganda</option> <option value="Ukraine">Ukraine</option> <option value="Ungarn">Ungarn</option> <option value="Uruguay">Uruguay</option> <option value="Usbekistan">Usbekistan</option> </optgroup>'+
-            '                                                                               <optgroup label="V"> <option value="Vanuatu">Vanuatu</option> <option value="Vatikanstadt">Vatikanstadt</option> <option value="Venezuela">Venezuela</option> <option value="Vereinigte Arabische Emirate">Vereinigte Arabische Emirate</option> <option value="Vereinigte Staaten von Amerika (USA)">Vereinigte Staaten von Amerika (USA)</option> <option value="Vereinigtes Königreich Großbritannien und Nordirland">Vereinigtes Königreich Großbritannien und Nordirland</option> <option value="Vietnam">Vietnam</option> </optgroup> <optgroup label="W"> <option value="Wallis und Futuna">Wallis und Futuna</option> <option value="Weihnachtsinsel">Weihnachtsinsel</option> <option value="Westsahara">Westsahara</option> </optgroup> <optgroup label="Z"> <option value="Zentralafrikanische Republik">Zentralafrikanische Republik</option> <option value="Zypern">Zypern</option> </optgroup>'+
-            '                                                                               </select>'+
+            '                                                                               <optgroup label="D"> <option value="Dänemark">Dänemark</option> <option value="Deutschland">Deutschland</option> <option value="Diego Garcia">Diego Garcia</option> <option value="Dominica">Dominica</option> <option value="Dominikanische Republik">Dominikanische Republik</option> <option value="Dschibuti">Dschibuti</option> </optgroup>' +
+            '                                                                               <optgroup label="E"> <option value="Ecuador">Ecuador</option> <option value="El Salvador">El Salvador</option> <option value="Eritrea">Eritrea</option> <option value="Estland">Estland</option> </optgroup> <optgroup label="F"> <option value="Falklandinseln">Falklandinseln</option> <option value="Färöer">Färöer</option> <option value="Fidschi">Fidschi</option> <option value="Finnland">Finnland</option> <option value="Frankreich">Frankreich</option> <option value="Französisch-Guayana">Französisch-Guayana</option> <option value="Französisch-Polynesien">Französisch-Polynesien</option> </optgroup>' +
+            '                                                                               <optgroup label="G"> <option value="Gabun">Gabun</option> <option value="Gambia">Gambia</option> <option value="Georgien">Georgien</option> <option value="Ghana">Ghana</option> <option value="Gibraltar">Gibraltar</option> <option value="Grenada">Grenada</option> <option value="Griechenland">Griechenland</option> <option value="Grönland">Grönland</option> <option value="Großbritannien">Großbritannien</option> <option value="Guadeloupe">Guadeloupe</option> <option value="Guam">Guam</option> <option value="Guatemala">Guatemala</option> <option value="Guernsey (Kanalinsel)">Guernsey (Kanalinsel)</option> <option value="Guinea">Guinea</option> <option value="Guinea-Bissau">Guinea-Bissau</option> <option value="Guyana">Guyana</option> </optgroup>' +
+            '                                                                               <optgroup label="H"> <option value="Haiti">Haiti</option> <option value="Heard- und McDonald-Inseln">Heard- und McDonald-Inseln</option> <option value="Honduras">Honduras</option> <option value="Hongkong">Hongkong</option> </optgroup> <optgroup label="I"> <option value="Indien">Indien</option> <option value="Indonesien">Indonesien</option> <option value="Insel Man">Insel Man</option> <option value="Irak">Irak</option> <option value="Iran">Iran</option> <option value="Irland">Irland</option> <option value="Island">Island</option> <option value="Israel">Israel</option> <option value="Italien">Italien</option> </optgroup>' +
+            '                                                                               <optgroup label="J"> <option value="Jamaika">Jamaika</option> <option value="Japan">Japan</option> <option value="Jemen">Jemen</option> <option value="Jersey (Kanalinsel">Jersey (Kanalinsel)</option> <option value="Jordanien">Jordanien</option> </optgroup> <optgroup label="K"> <option value="Kaimaninseln">Kaimaninseln</option> <option value="Kambodscha">Kambodscha</option> <option value="Kamerun">Kamerun</option> <option value="Kanada">Kanada</option> <option value="Kanarische Inseln">Kanarische Inseln</option> <option value="Kap Verde">Kap Verde</option> <option value="Kasachstan">Kasachstan</option> <option value="Katar">Katar</option> <option value="Kenia">Kenia</option> <option value="Kirgisistan">Kirgisistan</option> <option value="Kiribati">Kiribati</option> <option value="Kokosinseln">Kokosinseln</option> <option value="Kolumbien">Kolumbien</option> <option value="Komoren">Komoren</option> <option value="Demokratische Republik Kongo">Demokratische Republik Kongo</option> <option value="Demokratische Volksrepublik Korea (Nordkorea)">Demokratische Volksrepublik Korea (Nordkorea)</option> <option value="Republik Korea (Südkorea)">Republik Korea (Südkorea)</option> <option value="Kosovo">Kosovo</option> <option value="Kroatien">Kroatien</option> <option value="Kuba">Kuba</option> <option value="Kuwait">Kuwait</option> </optgroup>' +
+            '                                                                               <optgroup label="L"> <option value="Laos">Laos</option> <option value="Lesotho">Lesotho</option> <option value="Lettland">Lettland</option> <option value="Libanon">Libanon</option> <option value="Liberia">Liberia</option> <option value="Libyen">Libyen</option> <option value="Liechtenstein">Liechtenstein</option> <option value="Litauen">Litauen</option> <option value="Luxemburg">Luxemburg</option> </optgroup>' +
+            '                                                                               <optgroup label="M"> <option value="Macao">Macao</option> <option value="Madagaskar">Madagaskar</option> <option value="Malawi">Malawi</option> <option value="Malaysia">Malaysia</option> <option value="Malediven">Malediven</option> <option value="Mali">Mali</option> <option value="Malta">Malta</option> <option value="Marokko">Marokko</option> <option value="Marshallinseln">Marshallinseln</option> <option value="Martinique">Martinique</option> <option value="Mauretanien">Mauretanien</option> <option value="Mauritius">Mauritius</option> <option value="Mayotte">Mayotte</option> <option value="Mazedonien">Mazedonien</option> <option value="Mexiko">Mexiko</option> <option value="Mikronesien">Mikronesien</option> <option value="Moldawien (Republik Moldau)">Moldawien (Republik Moldau)</option> <option value="Monaco">Monaco</option> <option value="Mongolei">Mongolei</option> <option value="Montenegro">Montenegro</option> <option value="Montserrat">Montserrat</option> <option value="Mosambik">Mosambik</option> <option value="Myanmar (Burma)">Myanmar (Burma)</option> </optgroup>' +
+            '                                                                               <optgroup label="N"> <option value="Namibia">Namibia</option> <option value="Nauru">Nauru</option> <option value="Nepal">Nepal</option> <option value="Neukaledonien">Neukaledonien</option> <option value="Neuseeland">Neuseeland</option> <option value="Nicaragua">Nicaragua</option> <option value="Niederlande">Niederlande</option> <option value="Niederländische Antillen">Niederländische Antillen</option> <option value="Niger">Niger</option> <option value="Nigeria">Nigeria</option> <option value="Niue">Niue</option> <option value="Nördliche Marianen">Nördliche Marianen</option> <option value="Norfolkinsel">Norfolkinsel</option> <option value="Norwegen">Norwegen</option> </optgroup>' +
+            '                                                                                <optgroup label="O"> <option value="Oman">Oman</option> <option value="Orbit">Orbit</option> <option value="Österreich">Österreich</option> <option value="Osttimor (Timor-Leste)">Osttimor (Timor-Leste)</option> </optgroup> <optgroup label="P"> <option value="Pakistan">Pakistan</option> <option value="Palästinensische Autonomiegebiete">Palästinensische Autonomiegebiete</option> <option value="Palau">Palau</option> <option value="Panama">Panama</option> <option value="Papua-Neuguinea">Papua-Neuguinea</option> <option value="Paraguay">Paraguay</option> <option value="Peru">Peru</option> <option value="Philippinen">Philippinen</option> <option value="Pitcairninseln">Pitcairninseln</option> <option value="Polen">Polen</option> <option value="Portugal">Portugal</option> <option value="Puerto Rico">Puerto Rico</option> </optgroup>' +
+            '                                                                               <optgroup label="Q"> </optgroup> <optgroup label="R"> <option value="Republik China (Taiwan)">Republik China (Taiwan)</option> <option value="Republik Kongo">Republik Kongo</option> <option value="Réunion">Réunion</option> <option value="Ruanda">Ruanda</option> <option value="Rumänien">Rumänien</option> <option value="Russische Föderation">Russische Föderation</option> </optgroup>' +
+            '                                                                               <optgroup label="S"> <option value="Saint-Barthélemy">Saint-Barthélemy</option> <option value="Saint-Martin">Saint-Martin</option> <option value="Salomonen">Salomonen</option> <option value="Sambia">Sambia</option> <option value="Samoa">Samoa</option> <option value="San Marino">San Marino</option> <option value="São Tomé und Príncipe">São Tomé und Príncipe</option> <option value="Saudi-Arabien">Saudi-Arabien</option> <option value="Schweden">Schweden</option> <option value="Schweiz">Schweiz</option> <option value="Senegal">Senegal</option> <option value="Serbien">Serbien</option> <option value="Seychellen">Seychellen</option> <option value="Sierra Leone">Sierra Leone</option> <option value="Simbabwe">Simbabwe</option> <option value="Singapur">Singapur</option> <option value="Slowakei">Slowakei</option> <option value="Slowenien">Slowenien</option> <option value="Somalia">Somalia</option> <option value="Spanien">Spanien</option> <option value="Sri Lanka">Sri Lanka</option> <option value="St. Helena">St. Helena</option> <option value="St. Kitts und Nevis">St. Kitts und Nevis</option> <option value="St. Lucia">St. Lucia</option> <option value="Saint-Pierre und Miquelon">Saint-Pierre und Miquelon</option> <option value="St. Vincent und die Grenadinen">St. Vincent und die Grenadinen</option> <option value="Südafrika">Südafrika</option> <option value="Sudan">Sudan</option> <option value="Südgeorgien und die Südlichen Sandwichinseln">Südgeorgien und die Südlichen Sandwichinseln</option> <option value="Suriname">Suriname</option> <option value="Svalbard und Jan Mayen">Svalbard und Jan Mayen</option> <option value="Swasiland">Swasiland</option> <option value="Syrien">Syrien</option> </optgroup>' +
+            '                                                                               <optgroup label="T"> <option value="Tadschikistan">Tadschikistan</option> <option value="Tansania">Tansania</option> <option value="Thailand">Thailand</option> <option value="Togo">Togo</option> <option value="Tokelau">Tokelau</option> <option value="Tonga">Tonga</option> <option value="Trinidad und Tobago">Trinidad und Tobago</option> <option value="Tristan da Cunha">Tristan da Cunha</option> <option value="Tschad">Tschad</option> <option value="Tschechische Republik">Tschechische Republik</option> <option value="Tunesien">Tunesien</option> <option value="Türkei">Türkei</option> <option value="Turkmenistan">Turkmenistan</option> <option value="Turks- und Caicosinseln">Turks- und Caicosinseln</option> <option value="Tuvalu">Tuvalu</option> </optgroup> <optgroup label="U"> <option value="Uganda">Uganda</option> <option value="Ukraine">Ukraine</option> <option value="Ungarn">Ungarn</option> <option value="Uruguay">Uruguay</option> <option value="Usbekistan">Usbekistan</option> </optgroup>' +
+            '                                                                               <optgroup label="V"> <option value="Vanuatu">Vanuatu</option> <option value="Vatikanstadt">Vatikanstadt</option> <option value="Venezuela">Venezuela</option> <option value="Vereinigte Arabische Emirate">Vereinigte Arabische Emirate</option> <option value="Vereinigte Staaten von Amerika (USA)">Vereinigte Staaten von Amerika (USA)</option> <option value="Vereinigtes Königreich Großbritannien und Nordirland">Vereinigtes Königreich Großbritannien und Nordirland</option> <option value="Vietnam">Vietnam</option> </optgroup> <optgroup label="W"> <option value="Wallis und Futuna">Wallis und Futuna</option> <option value="Weihnachtsinsel">Weihnachtsinsel</option> <option value="Westsahara">Westsahara</option> </optgroup> <optgroup label="Z"> <option value="Zentralafrikanische Republik">Zentralafrikanische Republik</option> <option value="Zypern">Zypern</option> </optgroup>' +
+            '                                                                               </select>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +
@@ -7436,10 +8607,10 @@ document.getElementById('newgcount').value = newgcnt;
         $('#g' + x).remove();
 
         $('#of' + x).remove();
-newgcnt--;
-document.getElementById('newgcount').value = newgcnt;
-gofert.push(y);
-document.getElementById('gofert').value = gofert.toString();
+        newgcnt--;
+        document.getElementById('newgcount').value = newgcnt;
+        gofert.push(y);
+        document.getElementById('gofert').value = gofert.toString();
 
     }
 
@@ -7579,4 +8750,4 @@ document.getElementById('gofert').value = gofert.toString();
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
