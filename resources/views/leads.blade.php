@@ -102,7 +102,7 @@
     }
 
     .overflow-div::-webkit-scrollbar {
-        width: 7px;
+        width: 0px;
     }
 
     /* Track */
@@ -207,7 +207,7 @@
     }
 
     .overflow-div1::-webkit-scrollbar {
-        width: 7px;
+        width: 0px;
     }
 
     /* Track */
@@ -362,21 +362,40 @@
         height: 29px;
         width: 29px;
     }
-    .mobile-leads {
-        display: none;
-    }
-    .desktop-leads {
-        display: block;
-    }
+    /*.mobile-leads {*/
+    /*    display: none;*/
+    /*}*/
+    /*.desktop-leads {*/
+    /*    display: block;*/
+    /*}*/
     @media (max-width: 575.98px) {
-        .hhh {
-            width: 100%;
+        .namme span {
+            font-size: 1.25rem !important;
         }
-        /*.mobile-leads {*/
-        /*    display: block;*/
-        /*}*/
-        /*.desktop-leads {*/
-        /*    display: none;*/
-        /*}*/
+        body {
+            background-color: #EFEFEF !important;
+        }
+        .assigned-items {
+            background-color: #fff !important;
+        }
+        .assigned-items .button-div button {
+            width: 100%;
+            background-color: #0C71C3;
+            color: #fff;
+            border-bottom-left-radius: 15px !important;
+            border-bottom-right-radius: 15px !important;
+            border-top-left-radius: 0px !important;
+            border-top-right-radius: 0px !important;
+        }
+        .modal-content {
+            border-radius: 0 !important;
+        }
+        .assigned-items .button-div button {
+            font-size:  1.25rem !important;
+        }
+        .assigned-leads1 .content .overflow-div1 {
+            overflow-x: hidden !important;
+        }
+
     }
 </style>
