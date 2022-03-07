@@ -7,7 +7,7 @@
         <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
     </head>
 
-    
+
     {{--    mobile tasks--}}
 
     </style>
@@ -202,7 +202,7 @@
                                                             style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
                                                             data-bs-dismiss="modal"><b>Close</b></button>
 
-                                                    <a href="{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}">
+                                                    <a onclick="window.location.href='{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}'" >
                                                         <button type="button" class="btn px-3"
                                                                 style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
                                                                 data-bs-dismiss="modal"><b>Offen</b></button>
@@ -425,7 +425,7 @@
                                             @php
                                                 $leadss = $task->id * 1244;
                                                 $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                               
+
                                             @endphp
                                             <tr class="table-content1" style="cursor: pointer">
                                                 <td scope="row"
@@ -863,8 +863,10 @@
                                                     $pend_id = $task->pid;
                                                     $leadss = $task->admin_id * 1244;
                                                     $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+
                                                     
                                                     $authUserId = \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
+
                                     @endphp
                                     <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
                                         <a data-bs-toggle="collapse" id="demo23{{$taskId}}"

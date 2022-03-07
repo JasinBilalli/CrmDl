@@ -7,7 +7,7 @@
             <form method="post" action="{{route('search')}}">
                 @csrf
                 <div class="input-group">
-                    <div class="suchen-style1 py-2 ps-4">
+                    <div class="suchen-style1 py-2 ps-2">
                         <svg id="Group_978" data-name="Group 978" xmlns="http://www.w3.org/2000/svg" width="28"
                              viewBox="0 0 32.504 28.358">
                             <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(0)" fill="none" stroke="#000"
@@ -20,9 +20,9 @@
                                   stroke-width="2"/>
                         </svg>
                     </div>
-                    <div class="suchen-style2 py-2 pe-4">
-                        <input type="text" class="ms-3 bg-transparent border-0 input-suchen" name="searchname"
-                               placeholder="Suche (Kundenname, Vert )">
+                    <div class="suchen-style2 py-2 pe-4 ">
+                        <input type="text" class="ms-3 bg-transparent border-0 input-suchen form-control" name="searchname"
+                               placeholder="Suche (Kundenname, Vert)">
 
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                             <button class="dropdown-toggle border-0 bg-transparent" type="button"
                                     id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                   
+
 
                             </button>
                             <form method="post" action="{{route('search')}}" class="dropdown-menu px-2"
@@ -444,7 +444,7 @@
 
                 </div>
                 <div class="d-flex justify-content-end pt-3 pb-5" style="background-color: #fff;">
-   
+
                 </div>
             </div>
         </div>
@@ -878,9 +878,9 @@
     </div>
 
 
-    
 
- 
+
+
 
     </body>
 @endsection
