@@ -491,43 +491,46 @@ $title = $req->title ? $req->title : "";
     $start = microtime(true);
     $cnt = 0;
     $cnt1 = 0;
+    $leadsss = Crypt::encrypt(Auth::user()->id * 1244);
     if (Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin')) {
         if (isset($req->searchpend)) {
-            $pend = DB::table('family_person')
+            $pend = family::with('adminpend')
                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
                 ->select('family_person.first_name','pendencies.admin_id', 'pendencies.family_id','pendencies.*','family_person.id', 'family_person.last_name','pendencies.id as pid')
                 ->where('pendencies.done', '=', 1)
                 ->where('pendencies.completed',0)
                 ->where('family_person.first_name', 'like', '%' . $req->searchpend . '%')
                 ->orderBy('family_person.first_name', 'asc')
-                ->get();
+                ->paginate(200);
 
         }else {
-            $pend = DB::table('family_person')
+            $pend = family::with('adminpend')
                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
                 ->where('pendencies.done', '=', 1)
                 ->where('pendencies.completed',0)
                 ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id','pendencies.*','family_person.id', 'family_person.last_name','pendencies.id as pid')
                 ->orderBy('family_person.first_name', 'asc')
                 ->paginate(200);
+               
         }
         if (isset($req->searchopen)) {
-            $open = DB::table('family_person')
+            $open = family::with('adminpend')
                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
                 ->where('pendencies.done',0)
                 ->where('pendencies.completed',0)
                 ->where('family_person.first_name', 'like', '%' . $req->searchopen . '%')
                 ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id', 'family_person.id', 'family_person.last_name','pendencies.*','pendencies.id as pid')
                 ->orderBy('family_person.first_name', 'asc')
-                ->get();
+                ->paginate(200);
         } else {
-            $open = DB::table('family_person')
+            $open = family::with('adminpend')
                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
                 ->where('pendencies.done',0)
                 ->where('pendencies.completed',0)
                 ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id', 'family_person.id', 'family_person.last_name','pendencies.*','pendencies.id as pid')
                 ->orderBy('family_person.first_name', 'asc')
                 ->paginate(200);
+        
         }
 
         $answered = [];
@@ -540,8 +543,8 @@ $title = $req->title ? $req->title : "";
     }
     if (Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin')) {
 if(Auth::guard('admins')->user()->hasRole('admin')){
-      $tasks = DB::table('family_person')
-      ->join('leads','family_person.leads_id','=','leads.id')
+      $tasks = family::
+      join('leads','family_person.leads_id','=','leads.id')
       ->whereIn('family_person.status',['Open'])
       ->select('family_person.*')
       ->orderBy('family_person.created_at','desc')
@@ -558,7 +561,7 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
 
           $opencnt = $tasks->count();
 
-      $pending = DB::table('family_person')
+      $pending = family::with('adminpend')
       ->join('pendencies','family_person.id','=','pendencies.family_id')
       ->where('pendencies.completed','=',0)
       ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
@@ -567,7 +570,7 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
 
     }
     else{
-      $tasks = DB::table('family_person')
+      $tasks = family::with('adminpend')
       ->join('leads','family_person.leads_id','=','leads.id')
       ->where('status','Open')
       ->where('leads.assign_to_id',Auth::guard('admins')->user()->id)
@@ -587,12 +590,13 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
 
        $opencnt = $tasks->count();
 
-      $pending = DB::table('family_person')
+      $pending = family::with('adminpend')
       ->join('pendencies','family_person.id','=','pendencies.family_id')
       ->where('pendencies.completed','=',0)
       ->where('pendencies.admin_id','=',Auth::guard('admins')->user()->id)
       ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
       ->paginate(200);
+      
 
 
 
@@ -619,9 +623,9 @@ if(Auth::guard('admins')->user()->hasRole('admin')){
 
   $personalApp = DB::table('personalappointment')->where('AppOrCon',1)->where('user_id',Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
  
-if(Auth::guard('admins')->user()->hasRole('backoffice')) return view('tasks',compact('answered','pend','opened'));
-if(Auth::guard('admins')->user()->hasRole('fs')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks'));
-if(Auth::guard('admins')->user()->hasRole('admin')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','answered','pend','opened'));
+if(Auth::guard('admins')->user()->hasRole('backoffice')) return view('tasks',compact('answered','pend','opened','leadsss'));
+if(Auth::guard('admins')->user()->hasRole('fs')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','leadsss'));
+if(Auth::guard('admins')->user()->hasRole('admin')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','answered','pend','opened','leadsss'));
 
   }
 
