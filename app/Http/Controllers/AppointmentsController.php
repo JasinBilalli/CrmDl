@@ -90,12 +90,12 @@ class AppointmentsController extends Controller
               ->update(['assigned' => 1,'assign_to_id' => $input['id_user'],'rejected' => 0]);
 		if($appointment){return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
 	}
-	elseif(lead::find($id_lead)->wantsonline == 1 && Admins::find($input['id_user'])->getRoleNames()[0] == 'digital'){
+	else if(lead::find($id_lead)->wantsonline == 1 && Admins::find($input['id_user'])->getRoleNames()[0] == 'digital'){
 	$appointment = lead::where('id', $pieces['0'])
               ->update(['assigned' => 1,'assign_to_id' => $input['id_user'],'rejected' => 0]);
 		if($appointment){return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
 	}
-	elseif(strtotime(lead::find($id_lead)->time) > strtotime("19:30") || strtotime(lead::find($id_lead)->time) < strtotime("07:59")){
+	else if(strtotime(lead::find($id_lead)->time) > strtotime("19:30") || strtotime(lead::find($id_lead)->time) < strtotime("07:59")){
 		return "";
 	}
 	else{
