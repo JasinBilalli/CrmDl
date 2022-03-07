@@ -1253,6 +1253,7 @@
                                                                 </div>
                                                                 @php $gcnt++ @endphp
                                                                 @endif
+
                                                             </div>
                                                                 @endforeach
                                                     <div class="text-center mt-3" style="margin-top: -30px" id="add_g"
