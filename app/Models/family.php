@@ -30,6 +30,9 @@ return $this->belongsTo(Pendency::class,'id','family_id');
     {
         return $this->hasMany(datacounter::class, 'person_id');
     }
+    public function adminpend(){
+        return $this->belongsTo(Admins::class,'admin_id');
+    }
     public function datak()
     {
         return $this->hasMany(datak::class, 'person_id');
