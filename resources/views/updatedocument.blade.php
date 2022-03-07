@@ -107,14 +107,14 @@
     <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
         <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
             <div class="d-flex align-middle" style="height: 16vh;">
-            <div class="my-auto">
-                        <div class="img-normal text-center mx-3">
-                            <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo2.png" class="img-fluid p-1" alt=""></a>
-                        </div>
-                        <div class="img-collapsed text-center ">
-                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo1.png" class="img-fluid p-2" alt=""></a>
-                        </div>
+                <div class="my-auto">
+                    <div class="img-normal text-center mx-3">
+                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo2.png" class="img-fluid p-1" alt=""></a>
                     </div>
+                    <div class="img-collapsed text-center ">
+                        <a href="{{route('dashboard')}}"><img src="{{env('APP_URL')}}/imgs/logo1.png" class="img-fluid p-2" alt=""></a>
+                    </div>
+                </div>
             </div>
             <div class="column-v">
 
@@ -417,20 +417,20 @@
                                                 </div>
                                                 <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end">
-                                                      <select class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vorversicherer_select">
-                                                      @php $data->datakk = \App\Models\LeadDataKK::where('person_id',$id)->latest()->first() @endphp
-                                                          @if(isset($data->datakk->vorversicherer_select))
-                                                            <option value="{{$data->datakk->vorversicherer_select}}" selected>{{$data->datakk->vorversicherer_select}}</option>
-                                                            <option value="Ja">Ja</option>
-                                                            <option value="Nein">Nein</option>
-                                                          @else
-                                                              <option selected>Auswählen</option>
-                                                              <option value="Ja">Ja</option>
-                                                              <option value="Nein">Nein</option>
-                                                          @endif
-                                                      </select>
+                                                        <select class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vorversicherer_select">
+                                                            @php $data->datakk = \App\Models\LeadDataKK::where('person_id',$id)->latest()->first() @endphp
+                                                            @if(isset($data->datakk->vorversicherer_select))
+                                                                <option value="{{$data->datakk->vorversicherer_select}}" selected>{{$data->datakk->vorversicherer_select}}</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @else
+                                                                <option selected>Auswählen</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
-                                                  </div>
+                                                </div>
                                             </div>
                                             <div class="upload-box mx-1 my-2">
                                                 <div class="mx-1 my-2 p-4 text-center">
@@ -495,19 +495,19 @@
                                                 </div>
                                                 <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end">
-                                                      <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="id_notwending_select">
-                                                          @if(isset($data->datakk->id_notwending_select))
-                                                            <option value="{{$data->datakk->id_notwending_select}}" selected>{{$data->datakk->id_notwending_select}}</option>
-                                                            <option value="Ja">Ja</option>
-                                                            <option value="Nein">Nein</option>
-                                                          @else
-                                                              <option selected>Auswählen</option>
-                                                              <option value="Ja">Ja</option>
-                                                              <option value="Nein">Nein</option>
-                                                          @endif
-                                                      </select>
+                                                        <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="id_notwending_select">
+                                                            @if(isset($data->datakk->id_notwending_select))
+                                                                <option value="{{$data->datakk->id_notwending_select}}" selected>{{$data->datakk->id_notwending_select}}</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @else
+                                                                <option selected>Auswählen</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
-                                                  </div>
+                                                </div>
                                             </div>
                                             <div class="upload-box mx-1 my-2">
                                                 <div class="mx-1 my-2 p-4 text-center">
@@ -574,19 +574,19 @@
                                                 </div>
                                                 <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end">
-                                                      <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="kundingung_durch_select">
-                                                          @if(isset($data->datakk->kundingung_durch_select))
-                                                            <option value="{{$data->datakk->kundingung_durch_select}}" selected>{{$data->datakk->kundingung_durch_select}}</option>
-                                                            <option value="DLF">DLF</option>
-                                                            <option value="Kunden">Kunden</option>
-                                                          @else
-                                                              <option selected>Auswählen</option>
-                                                              <option value="DLF">DLF</option>
-                                                              <option value="Kunden">Kunden</option>
-                                                          @endif
-                                                      </select>
+                                                        <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="kundingung_durch_select">
+                                                            @if(isset($data->datakk->kundingung_durch_select))
+                                                                <option value="{{$data->datakk->kundingung_durch_select}}" selected>{{$data->datakk->kundingung_durch_select}}</option>
+                                                                <option value="DLF">DLF</option>
+                                                                <option value="Kunden">Kunden</option>
+                                                            @else
+                                                                <option selected>Auswählen</option>
+                                                                <option value="DLF">DLF</option>
+                                                                <option value="Kunden">Kunden</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
-                                                  </div>
+                                                </div>
                                             </div>
                                             <div class="upload-box mx-1 my-2">
                                                 <div class="mx-1 my-2 p-4 text-center">
@@ -649,21 +649,21 @@
                                                             </span>
                                                     </div>
                                                 </div>
-                                                 <div class="col g-0 d-flex justify-content-end">
+                                                <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end ">
-                                                      <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vollmacht_select">
-                                                          @if(isset($data->datakk->vollmacht_select))
-                                                              <option value="{{$data->datakk->vollmacht_select}}" selected>{{$data->datakk->vollmacht_select}}</option>
-                                                              <option value="Ja">Ja</option>
-                                                              <option value="Nein">Nein</option>
-                                                          @else
-                                                              <option selected>Auswählen</option>
-                                                              <option value="Ja">Ja</option>
-                                                              <option value="Nein">Nein</option>
-                                                          @endif
-                                                      </select>
+                                                        <select class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vollmacht_select">
+                                                            @if(isset($data->datakk->vollmacht_select))
+                                                                <option value="{{$data->datakk->vollmacht_select}}" selected>{{$data->datakk->vollmacht_select}}</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @else
+                                                                <option selected>Auswählen</option>
+                                                                <option value="Ja">Ja</option>
+                                                                <option value="Nein">Nein</option>
+                                                            @endif
+                                                        </select>
                                                     </div>
-                                                  </div>
+                                                </div>
                                             </div>
                                             <div class="upload-box mx-1 my-2">
                                                 <div class="mx-1 my-2 p-4 text-center">
@@ -729,13 +729,13 @@
                                                         </div>
                                                     </div>
                                                     <div class="col g-0 d-flex justify-content-end">
-                                                      <div class="select-div text-end">
-                                                        <select onchange="msheleqeta();"  class="fw-bold" id="manval"  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
-                                                          <option selected>Auswählen</option>
-                                                          <option value="Yes">Ja</option>
-                                                          <option value="No">Nein</option>
-                                                        </select>
-                                                      </div>
+                                                        <div class="select-div text-end">
+                                                            <select onchange="msheleqeta();"  class="fw-bold" id="manval"  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                                <option selected>Auswählen</option>
+                                                                <option value="Yes">Ja</option>
+                                                                <option value="No">Nein</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="upload-box mx-1 my-2">
@@ -1043,7 +1043,7 @@
                                                             </div>
                                                         </div>
                                                         @if(!Auth::user()->hasRole('fs'))
-                                                    <div class="col-12">Offer:
+                                                            <div class="col-12">Offer:
                                                                 <div class="text-start">
                                                                     <div class="upload-box mx-1 my-2">
                                                                         <div class="mx-1 my-2 text-center p-3">
@@ -1058,21 +1058,21 @@
                                                                                     </g>
                                                                                 </svg>
                                                                             </label>
-                                                                                 @if(isset($data->fahrzeug->offer))
+                                                                            @if(isset($data->fahrzeug->offer))
 
-                                                                            <a target="_blank" href="{{route('showfile',$data->fahrzeug->offer)}}"><input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
-                                                                            <input type="text" value="{{$data->fahrzeug->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
-                                                                            </a>
+                                                                                <a target="_blank" href="{{route('showfile',$data->fahrzeug->offer)}}"><input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
+                                                                                    <input type="text" value="{{$data->fahrzeug->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
+                                                                                </a>
                                                                             @else
-                                                                            <input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
-                                                                            <input type="text" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
+                                                                                <input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
+                                                                                <input type="text" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
                                                                             @endif
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
-                                                    @endif
+                                                        @endif
 
                                                     </div>
                                                     @php $gcnt = 1; @endphp
@@ -1212,9 +1212,9 @@
                                                                     @endif
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
+
+
                                                         @if(!Auth::user()->hasRole('fs'))
                                                             <div class="col-12" id="of{{$gcnt}}">Offer:
                                                                 <div class="text-start">
@@ -1253,39 +1253,37 @@
                                                                 </div>
                                                                 @php $gcnt++ @endphp
                                                                 @endif
+                                                            @endforeach
+                                                            <div class="text-center mt-3" style="margin-top: -30px" id="add_g"
+                                                                 onclick="addanother_item_g()">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="37.694"
+                                                                     height="37.694"
+                                                                     viewBox="0 0 37.694 37.694" style="cursor:pointer;">
+                                                                    <g id="Group_621" data-name="Group 621"
+                                                                       transform="translate(-663.236 -976.679)">
+                                                                        <g id="Group_550" data-name="Group 550"
+                                                                           transform="translate(663.236 976.679)">
+                                                                            <rect id="Rectangle_9" data-name="Rectangle 9"
+                                                                                  width="37.694" height="37.694" rx="18.847"
+                                                                                  fill="#C8C8C8"/>
+                                                                            <g id="Group_42" data-name="Group 42"
+                                                                               transform="translate(12.724 12.724)">
+                                                                                <line id="Line_11" data-name="Line 11"
+                                                                                      y2="11.972"
+                                                                                      transform="translate(5.986 0)" fill="none"
+                                                                                      stroke="#fff" stroke-linecap="round"
+                                                                                      stroke-width="2"/>
+                                                                                <line id="Line_12" data-name="Line 12"
+                                                                                      x1="11.972"
+                                                                                      transform="translate(0 5.634)" fill="none"
+                                                                                      stroke="#fff" stroke-linecap="round"
+                                                                                      stroke-width="2"/>
+                                                                            </g>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
 
                                                             </div>
-                                                                @endforeach
-                                                    <div class="text-center mt-3" style="margin-top: -30px" id="add_g"
-                                                         onclick="addanother_item_g()">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="37.694"
-                                                             height="37.694"
-                                                             viewBox="0 0 37.694 37.694" style="cursor:pointer;">
-                                                            <g id="Group_621" data-name="Group 621"
-                                                               transform="translate(-663.236 -976.679)">
-                                                                <g id="Group_550" data-name="Group 550"
-                                                                   transform="translate(663.236 976.679)">
-                                                                    <rect id="Rectangle_9" data-name="Rectangle 9"
-                                                                          width="37.694" height="37.694" rx="18.847"
-                                                                          fill="#C8C8C8"/>
-                                                                    <g id="Group_42" data-name="Group 42"
-                                                                       transform="translate(12.724 12.724)">
-                                                                        <line id="Line_11" data-name="Line 11"
-                                                                              y2="11.972"
-                                                                              transform="translate(5.986 0)" fill="none"
-                                                                              stroke="#fff" stroke-linecap="round"
-                                                                              stroke-width="2"/>
-                                                                        <line id="Line_12" data-name="Line 12"
-                                                                              x1="11.972"
-                                                                              transform="translate(0 5.634)" fill="none"
-                                                                              stroke="#fff" stroke-linecap="round"
-                                                                              stroke-width="2"/>
-                                                                    </g>
-                                                                </g>
-                                                            </g>
-                                                        </svg>
-
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -3055,7 +3053,7 @@
                                                                                         <option
                                                                                             value="{{$nue->year_of_purchase}}"
                                                                                             selected>
-                                                                                            {{$nue->year_of_purchase}}
+                                                                                        {{$nue->year_of_purchase}}
                                                                                         @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)
                                                                                             <option value="2021">{{$i}}</option>
                                                                                         @endfor
@@ -3892,7 +3890,7 @@
                                                             </div>
                                                             @php $data->things = \App\Models\LeadDataThings::where('person_id',$id)->latest()->first() @endphp
                                                             <select onchange="hideNation()"  class="form-select w-75" name="nationality_sachen" id="schweiz">
-                                                            @if(isset($data->things->nationality))
+                                                                @if(isset($data->things->nationality))
                                                                     <option value="{{$data->things->nationality}}" selected>{{$data->things->nationality}}</option>
                                                                     <option value="Swiss">Swiss</option>
                                                                     <option value="Deutschland">Deutschland</option>
@@ -4198,7 +4196,7 @@
                                                                         <option value="Zypern">Zypern</option>
                                                                     </optgroup>
 
-                                                            @else
+                                                                @else
                                                                     <option selected></option>
                                                                     <option value="Swiss">Swiss</option>
                                                                     <option value="Deutschland">Deutschland</option>
@@ -4503,7 +4501,7 @@
                                                                         <option value="Zentralafrikanische Republik">Zentralafrikanische Republik</option>
                                                                         <option value="Zypern">Zypern</option>
                                                                     </optgroup>
-                                                            @endif
+                                                                @endif
                                                             </select>
                                                         </div>
                                                         <div class="input-select-div mb-2" id="admin">
@@ -5159,13 +5157,13 @@
                                                                                value="{{$data->prevention->upload_police}}">
                                                                         <a style="text-decoration: none"
                                                                            href="{{route('showfile',$data->prevention->upload_police)}}">
-                                                                        <input type="text"
-                                                                               class="form-control text-center"
-                                                                               id="file-input-6c" disabled
-                                                                               style="background:transparent;border:none;"
-                                                                               value="{{$data->prevention->upload_police}}"
-                                                                               name="">
-</a>
+                                                                            <input type="text"
+                                                                                   class="form-control text-center"
+                                                                                   id="file-input-6c" disabled
+                                                                                   style="background:transparent;border:none;"
+                                                                                   value="{{$data->prevention->upload_police}}"
+                                                                                   name="">
+                                                                        </a>
                                                                     @else
                                                                         <input type="file" id="file-input-6"
                                                                                class="svg-div w-100 border-0  g-0"
@@ -5175,7 +5173,7 @@
                                                                                class="form-control text-center"
                                                                                id="file-input-6c" disabled
                                                                                style="background:transparent;border:none;"
-                                                                               >
+                                                                        >
                                                                     @endif
                                                                 </div>
                                                             </div>
@@ -5280,17 +5278,17 @@
                                                                         </span>
                                                                 </div>
                                                             </div>
-{{--                                                            <div class="col g-0 d-flex justify-content-end">--}}
-{{--                                                                <div class="select-div text-end ">--}}
+                                                            {{--                                                            <div class="col g-0 d-flex justify-content-end">--}}
+                                                            {{--                                                                <div class="select-div text-end ">--}}
 
-{{--                                                                    <select name="noname" class="fw-bold" id=""--}}
-{{--                                                                            style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
-{{--                                                                        <option selected>Select</option>--}}
-{{--                                                                        <option value="1">Ja</option>--}}
-{{--                                                                        <option value="2">Nein</option>--}}
-{{--                                                                    </select>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
+                                                            {{--                                                                    <select name="noname" class="fw-bold" id=""--}}
+                                                            {{--                                                                            style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
+                                                            {{--                                                                        <option selected>Select</option>--}}
+                                                            {{--                                                                        <option value="1">Ja</option>--}}
+                                                            {{--                                                                        <option value="2">Nein</option>--}}
+                                                            {{--                                                                    </select>--}}
+                                                            {{--                                                                </div>--}}
+                                                            {{--                                                            </div>--}}
                                                         </div>
                                                         <div class="my-2">
                                                             <div class="input-select-div">
@@ -5525,16 +5523,16 @@
                                                                         </span>
                                                                 </div>
                                                             </div>
-{{--                                                            <div class="col g-0 d-flex justify-content-end">--}}
-{{--                                                                <div class="select-div text-end ">--}}
-{{--                                                                    <select name="noname" class="fw-bold" id=""--}}
-{{--                                                                            style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
-{{--                                                                        <option selected>Select</option>--}}
-{{--                                                                        <option value="1">Ja</option>--}}
-{{--                                                                        <option value="2">Nein</option>--}}
-{{--                                                                    </select>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
+                                                            {{--                                                            <div class="col g-0 d-flex justify-content-end">--}}
+                                                            {{--                                                                <div class="select-div text-end ">--}}
+                                                            {{--                                                                    <select name="noname" class="fw-bold" id=""--}}
+                                                            {{--                                                                            style="background-color: #EFEFEF; font-size: 15px;color:#9F9F9F;">--}}
+                                                            {{--                                                                        <option selected>Select</option>--}}
+                                                            {{--                                                                        <option value="1">Ja</option>--}}
+                                                            {{--                                                                        <option value="2">Nein</option>--}}
+                                                            {{--                                                                    </select>--}}
+                                                            {{--                                                                </div>--}}
+                                                            {{--                                                            </div>--}}
                                                         </div>
                                                         <div class="input-div1">
                                                             <div class="">
@@ -5677,31 +5675,31 @@
                             </svg>
                         </button>
                         @if(Auth::user()->hasRole('backoffice') || Auth::user()->hasRole('admin'))
-                        @if(\App\Models\Pendency::find(Session::get('pend_id'))->completed == 0 && \App\Models\Pendency::find(Session::get('pend_id'))->done == 1)
-                            <button class="px-5 py-2" id="submitt1" type="button"
-                                    style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
-                                    onclick="accept();">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
-                                     class="bi bi-check-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                    <path
-                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-                                </svg>
-                            </button>
+                            @if(\App\Models\Pendency::find(Session::get('pend_id'))->completed == 0 && \App\Models\Pendency::find(Session::get('pend_id'))->done == 1)
+                                <button class="px-5 py-2" id="submitt1" type="button"
+                                        style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
+                                        onclick="accept();">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
+                                         class="bi bi-check-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path
+                                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                                    </svg>
+                                </button>
+                            @endif
+                            @if(\App\Models\Pendency::find(Session::get('pend_id'))->done == 1 && \App\Models\Pendency::find(Session::get('pend_id'))->completed == 0)
+                                <button class="px-5 py-2" id="submitt1" type="button"
+                                        style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
+                                        onclick="reject();">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
+                                         class="bi bi-x-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path
+                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </button>
+                            @endif
                         @endif
-                        @if(\App\Models\Pendency::find(Session::get('pend_id'))->done == 1 && \App\Models\Pendency::find(Session::get('pend_id'))->completed == 0)
-                            <button class="px-5 py-2" id="submitt1" type="button"
-                                    style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
-                                    onclick="reject();">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff"
-                                     class="bi bi-x-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                    <path
-                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                </svg>
-                            </button>
-                        @endif
-                    @endif
                     </div>
                 </div>
             </div>
@@ -6763,134 +6761,134 @@
         newgcnt++;
 
         document.getElementById('shtogegen').innerHTML +=  '<div id="g' + newgcnt + '">' +
-                ' <div class="text-end mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16" style="cursor:pointer;" onclick="deletethat2(' + newgcnt + ')">' +
-                '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>' +
-                '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg></div>' +
-                '   <hr style="height: 4px;"> <div class="">' +
-                '                                                        <div class="">' +
-                '                                                                <span class="" style="font-size: 13px;">' +
-                '                                                                    Police Hochladen:' +
-                '                                                                </span>' +
-                '                                                        </div>' +
-                '                                                        <div class="">' +
-                '                                                           <div class="upload-box mx-1 my-2">' +
-                '                                                               <div class="mx-1 my-2 p-4 text-center">' +
-                '                                                                    <label for="file-input-4' + newgcnt + '">' +
-                '                                                                        <svg xmlns="http://www.w3.org/2000/svg"' +
-                '                                                                             width="53" height="53"' +
-                '                                                                             viewBox="0 0 53 53">' +
-                '                                                                            <g id="Group_621" data-name="Group 621"' +
-                '                                                                               transform="translate(-78.283 -14.777)">' +
-                '                                                                                <circle id="Ellipse_31"' +
-                '                                                                                        data-name="Ellipse 31" cx="26.5"' +
-                '                                                                                        cy="26.5" r="26.5"' +
-                '                                                                                        transform="translate(78.283 14.777)"' +
-                '                                                                                        fill="#5f5f5f" />' +
-                '                                                                              <g id="Group_326"' +
-                '                                                                                   data-name="Group 326"' +
-                '                                                                                   transform="translate(95.656 31.893)">' +
-                '                                                                                   <path id="Path_234"' +
-                '                                                                                         data-name="Path 234"' +
-                '                                                                                         d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6"' +
-                '                                                                                          transform="translate(0 1.82)"' +
-                '                                                                                          fill="#fff" stroke="#fff"' +
-                '                                                                                          stroke-width="0.5" />' +
-                '                                                                                   <path id="Path_235"                                                                                          data-name="Path 235"' +
-                '                                                                                          d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z"' +
-                '                                                                                          transform="translate(0.92 0)"' +
-                '                                                                                          fill="#fff" stroke="#fff"' +
-                '                                                                                          stroke-width="0.5" />                                                                                </g>' +
-                '                                                                            </g>' +
-                '                                                                        </svg>' +
-                '                                                                    </label>' +
-                '                                                                    <input type="file" id="file-input-4' + newgcnt + '"' +
-                '                                                                           class="svg-div w-100 border-0  g-0"' +
-                '                                                                           onchange="upload(this);"' +
-                '                                                                           name="upload_policeFahrzeug' + newgcnt + '">' +
-                '                                                                    <input type="text"' +
-                '                                                                          class="form-control text-center"' +
-                '                                                                           id="file-input-4' + newgcnt + 'c" disabled' +
-                '                                                                           style="background:transparent; border:none;">' +
-                '                                                                </div>' +
-                '                                                            </div>' +
-                '                                                        </div>' +
-                '                                                        <div class="">' +
-                '                                                            <div class="row mx-2">' +
-                '                                                                <div class="col-5 d-flex g-0">' +
-                '                                                                    <div class="text-nowrap">' +
-                '                                                                            <span class="fw-bold"' +
-                '                                                                                  style=" font-size: 12px;">' +
-                '                                                                                Vergleichsart:' +
-                '                                                                            </span>' +
-                '                                                                    </div>' +
-                '                                                                </div>' +
-                '                                                                <div class="col g-0 d-flex justify-content-end">' +
-                '                                                                    <div class="select-div text-end ">' +
-                '                                                                        <select name="vergleichsart_select' + newgcnt + '"> ' +
-                '                                                                                class="fw-bold" id=""' +
-                '                                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">' +
-                '                                                                            <option selected>Select</option>' +
-                '                                                                            <option value="1:0 Deckung">1:0 Deckung</option>' +
-                '                                                                            <option value="0:1 Deckung">0:1 Deckung</option>' +
-                '                                                                            <option value="1:1 Deckung">1:1 Deckung</option>'+
-                '                                                                        </select>' +
-                '                                                                   </div>' +
-                '                                                                </div>' +
-                '                                                            </div>' +
-                '                                                        </div>' +
-                '                                                        <div class="">' +
-                '                                                            <div class="mb-3 mt-3">' +
-                '                                                               <label for="exampleFormControlTextarea1"' +
-                '                                                                      class="form-label"' +
-                '                                                                      style="font-size: 13px;">Kommentar</label>                                                                <textarea name="commentFahrenzug' + newgcnt + '" ' +
-                '                                                                         id="exampleFormControlTextarea1"' +
-                '                                                                          rows="3" class="form-control"></textarea>' +
-                '                                                            </div>' +
-                '                                                        </div>' +
-                '                                                   </div></div>' +
-                '<div class="row">'+ '@if(!Auth::user()->hasRole("fs"))'+
-'                                                            <div class="col-12" id="of' + newgcnt + '">Offer:'+
-'                                                                <div class="text-start">'+
-'                                                                    <div class="upload-box mx-1 my-2">'+
-'                                                                        <div class="mx-1 my-2 text-center p-3">'+
-'                                                                            <label for="file-input-' + newgcnt + 'w">' +
-'                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">'+
-'                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">'+
-'                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />'+
-'                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">'+
-'                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />'+
-'                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />'+
-'                                                                                        </g>'+
-'                                                                                    </g>'+
-'                                                                                </svg>'+
-'                                                                            </label>'+
-'                                                                            <input type="file" id="file-input-'+ newgcnt + 'w" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer' + newgcnt + '">'+
-'                                                                            <input type="text" class="form-control text-center" id="file-input-'+newgcnt + 'wc"' + 'disabled style="background:transparent; border:none;">'+
-'                                                                        </div>'+
-'                                                                    </div>'+
-'                                                                </div>'+
-'                                                            </div>'+
+            ' <div class="text-end mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16" style="cursor:pointer;" onclick="deletethat2(' + newgcnt + ')">' +
+            '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>' +
+            '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg></div>' +
+            '   <hr style="height: 4px;"> <div class="">' +
+            '                                                        <div class="">' +
+            '                                                                <span class="" style="font-size: 13px;">' +
+            '                                                                    Police Hochladen:' +
+            '                                                                </span>' +
+            '                                                        </div>' +
+            '                                                        <div class="">' +
+            '                                                           <div class="upload-box mx-1 my-2">' +
+            '                                                               <div class="mx-1 my-2 p-4 text-center">' +
+            '                                                                    <label for="file-input-4' + newgcnt + '">' +
+            '                                                                        <svg xmlns="http://www.w3.org/2000/svg"' +
+            '                                                                             width="53" height="53"' +
+            '                                                                             viewBox="0 0 53 53">' +
+            '                                                                            <g id="Group_621" data-name="Group 621"' +
+            '                                                                               transform="translate(-78.283 -14.777)">' +
+            '                                                                                <circle id="Ellipse_31"' +
+            '                                                                                        data-name="Ellipse 31" cx="26.5"' +
+            '                                                                                        cy="26.5" r="26.5"' +
+            '                                                                                        transform="translate(78.283 14.777)"' +
+            '                                                                                        fill="#5f5f5f" />' +
+            '                                                                              <g id="Group_326"' +
+            '                                                                                   data-name="Group 326"' +
+            '                                                                                   transform="translate(95.656 31.893)">' +
+            '                                                                                   <path id="Path_234"' +
+            '                                                                                         data-name="Path 234"' +
+            '                                                                                         d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6"' +
+            '                                                                                          transform="translate(0 1.82)"' +
+            '                                                                                          fill="#fff" stroke="#fff"' +
+            '                                                                                          stroke-width="0.5" />' +
+            '                                                                                   <path id="Path_235"                                                                                          data-name="Path 235"' +
+            '                                                                                          d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z"' +
+            '                                                                                          transform="translate(0.92 0)"' +
+            '                                                                                          fill="#fff" stroke="#fff"' +
+            '                                                                                          stroke-width="0.5" />                                                                                </g>' +
+            '                                                                            </g>' +
+            '                                                                        </svg>' +
+            '                                                                    </label>' +
+            '                                                                    <input type="file" id="file-input-4' + newgcnt + '"' +
+            '                                                                           class="svg-div w-100 border-0  g-0"' +
+            '                                                                           onchange="upload(this);"' +
+            '                                                                           name="upload_policeFahrzeug' + newgcnt + '">' +
+            '                                                                    <input type="text"' +
+            '                                                                          class="form-control text-center"' +
+            '                                                                           id="file-input-4' + newgcnt + 'c" disabled' +
+            '                                                                           style="background:transparent; border:none;">' +
+            '                                                                </div>' +
+            '                                                            </div>' +
+            '                                                        </div>' +
+            '                                                        <div class="">' +
+            '                                                            <div class="row mx-2">' +
+            '                                                                <div class="col-5 d-flex g-0">' +
+            '                                                                    <div class="text-nowrap">' +
+            '                                                                            <span class="fw-bold"' +
+            '                                                                                  style=" font-size: 12px;">' +
+            '                                                                                Vergleichsart:' +
+            '                                                                            </span>' +
+            '                                                                    </div>' +
+            '                                                                </div>' +
+            '                                                                <div class="col g-0 d-flex justify-content-end">' +
+            '                                                                    <div class="select-div text-end ">' +
+            '                                                                        <select name="vergleichsart_select' + newgcnt + '"> ' +
+            '                                                                                class="fw-bold" id=""' +
+            '                                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">' +
+            '                                                                            <option selected>Select</option>' +
+            '                                                                            <option value="1:0 Deckung">1:0 Deckung</option>' +
+            '                                                                            <option value="0:1 Deckung">0:1 Deckung</option>' +
+            '                                                                            <option value="1:1 Deckung">1:1 Deckung</option>'+
+            '                                                                        </select>' +
+            '                                                                   </div>' +
+            '                                                                </div>' +
+            '                                                            </div>' +
+            '                                                        </div>' +
+            '                                                        <div class="">' +
+            '                                                            <div class="mb-3 mt-3">' +
+            '                                                               <label for="exampleFormControlTextarea1"' +
+            '                                                                      class="form-label"' +
+            '                                                                      style="font-size: 13px;">Kommentar</label>                                                                <textarea name="commentFahrenzug' + newgcnt + '" ' +
+            '                                                                         id="exampleFormControlTextarea1"' +
+            '                                                                          rows="3" class="form-control"></textarea>' +
+            '                                                            </div>' +
+            '                                                        </div>' +
+            '                                                   </div></div>' +
+            '<div class="row">'+ '@if(!Auth::user()->hasRole("fs"))'+
+            '                                                            <div class="col-12" id="of' + newgcnt + '">Offer:'+
+            '                                                                <div class="text-start">'+
+            '                                                                    <div class="upload-box mx-1 my-2">'+
+            '                                                                        <div class="mx-1 my-2 text-center p-3">'+
+            '                                                                            <label for="file-input-' + newgcnt + 'w">' +
+            '                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">'+
+            '                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">'+
+            '                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />'+
+            '                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">'+
+            '                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />'+
+            '                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />'+
+            '                                                                                        </g>'+
+            '                                                                                    </g>'+
+            '                                                                                </svg>'+
+            '                                                                            </label>'+
+            '                                                                            <input type="file" id="file-input-'+ newgcnt + 'w" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer' + newgcnt + '">'+
+            '                                                                            <input type="text" class="form-control text-center" id="file-input-'+newgcnt + 'wc"' + 'disabled style="background:transparent; border:none;">'+
+            '                                                                        </div>'+
+            '                                                                    </div>'+
+            '                                                                </div>'+
+            '                                                            </div>'+
 
-'                              @endif                              <div class="col my-auto">'+
-'                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 43%;" id="add_g" onclick="addanother_item_g()">'+
-''+
-'                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="48.694"  viewBox="0 0 37.694 37.694" style="cursor:pointer;">'+
-'                                                                        <g id="Group_621" data-name="Group 621" transform="translate(-663.236 -976.679)">'+
-'                                                                            <g id="Group_550" data-name="Group 550" transform="translate(663.236 976.679)">'+
-'                                                                                <rect id="Rectangle_9" data-name="Rectangle 9" width="37.694" height="37.694" rx="18.847" fill="#C8C8C8" />'+
-'                                                                                <g id="Group_42" data-name="Group 42" transform="translate(12.724 12.724)">'+
-'                                                                                    <line id="Line_11" data-name="Line 11" y2="11.972" transform="translate(5.986 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />'+
-'                                                                                    <line id="Line_12" data-name="Line 12" x1="11.972" transform="translate(0 5.634)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />'+
-'                                                                                </g>'+
-'                                                                            </g>'+
-'                                                                        </g>'+
-'                                                                    </svg>'+
-''+
-'                                                                </div>'+
-'                                                            </div>'+
-'                                                        </div>';
+            '                              @endif                              <div class="col my-auto">'+
+            '                                                                <div class="d-inline text-center mt-3" style="margin-top: -30px; margin-left: 43%;" id="add_g" onclick="addanother_item_g()">'+
+            ''+
+            '                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="48.694"  viewBox="0 0 37.694 37.694" style="cursor:pointer;">'+
+            '                                                                        <g id="Group_621" data-name="Group 621" transform="translate(-663.236 -976.679)">'+
+            '                                                                            <g id="Group_550" data-name="Group 550" transform="translate(663.236 976.679)">'+
+            '                                                                                <rect id="Rectangle_9" data-name="Rectangle 9" width="37.694" height="37.694" rx="18.847" fill="#C8C8C8" />'+
+            '                                                                                <g id="Group_42" data-name="Group 42" transform="translate(12.724 12.724)">'+
+            '                                                                                    <line id="Line_11" data-name="Line 11" y2="11.972" transform="translate(5.986 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />'+
+            '                                                                                    <line id="Line_12" data-name="Line 12" x1="11.972" transform="translate(0 5.634)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2" />'+
+            '                                                                                </g>'+
+            '                                                                            </g>'+
+            '                                                                        </g>'+
+            '                                                                    </svg>'+
+            ''+
+            '                                                                </div>'+
+            '                                                            </div>'+
+            '                                                        </div>';
 
-document.getElementById('newgcount').value = newgcnt;
+        document.getElementById('newgcount').value = newgcnt;
 
     }
 
@@ -7430,10 +7428,10 @@ document.getElementById('newgcount').value = newgcnt;
         $('#g' + x).remove();
 
         $('#of' + x).remove();
-newgcnt--;
-document.getElementById('newgcount').value = newgcnt;
-gofert.push(y);
-document.getElementById('gofert').value = gofert.toString();
+        newgcnt--;
+        document.getElementById('newgcount').value = newgcnt;
+        gofert.push(y);
+        document.getElementById('gofert').value = gofert.toString();
 
     }
 
