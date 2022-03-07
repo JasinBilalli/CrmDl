@@ -1789,7 +1789,7 @@
                                     <div class="col g-0 text-end my-auto">
                                         <div class="">
                                         <span class="pe-2" style="color: #9F9F9F;">
-                                            Submit
+                                            Einreichen
                                         </span>
                                         </div>
                                     </div>
