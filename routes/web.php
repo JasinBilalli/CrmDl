@@ -158,6 +158,7 @@ $leadinfo = lead_info::where('lead_id',$leads['leads'][$i]->id)->first();
 
    route::any('tasks',[TasksController::class,'tasks'])->name('tasks')->middleware('role:admin|fs|backoffice');
    route::get('searchword',[TasksController::class,'searchword'])->name('searchword')->middleware('role:admin|fs|backoffice|salesmanager');
+    route::get('costumer/{costumerId}',[TodoController::class,'getDataForTaskByCostumerId'])->name('getDataForTaskByCostumerId');
    route::any('costumers',[TasksController::class,'costumers'])->name('costumers')->middleware('role:admin|fs|backoffice|salesmanager');
    route::get('costumer_form/{id}',[\App\Http\Controllers\CostumerFormController::class,'costumer_form'])->name('costumer_form');
    route::post('save_costumer_form/{id}',[\App\Http\Controllers\CostumerFormController::class,'save_costumer_form'])->name('save_costumer_form');
