@@ -37091,9 +37091,9 @@ var render = function () {
       [
         _c("div", { staticClass: "txt-notif fs-6" }, [
           _vm._v(
-            "\n                You have " +
+            "\n            You have " +
               _vm._s(_vm.notcnt) +
-              " new notifications\n            "
+              " new notifications\n        "
           ),
         ]),
       ]
