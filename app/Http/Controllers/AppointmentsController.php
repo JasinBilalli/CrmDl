@@ -36,20 +36,19 @@ class AppointmentsController extends Controller
 		if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager'))
 		{
 			$users= admins::select('*','admins.id as id')->join('model_has_roles', 'model_has_roles.model_id', '=', 'admins.id')
-			->where('model_has_roles.role_id',7)
+			->whereIn('model_has_roles.role_id',[6,7])
 			->get();
 
 			$regions = lead::select('city')->whereNull('assign_to_id')->distinct()->orderBy('city', 'asc')->where('appointment_date',Carbon::now()->format('Y-m-d'))->get();
 			$langues = lead::select('sprache')->whereNull('assign_to_id')->distinct()->orderBy('sprache', 'asc')->whereNotNull('sprache')->where('appointment_date',Carbon::now()->format('Y-m-d'))->get();
 
-			$appointments_events = lead::select('*')->whereNull('assign_to_id')->where('appointment_date',$date_in)->orderBy('time', $trie)->where($regionQ,$regionI)->where($rejectedQ,$rejectedI)->where($spracheQ,$spracheI)->where('completed',0)->get();
+			$appointments_events = lead::select('*')->whereNull('assign_to_id')->where('appointment_date',$date_in)->orderBy('time', $trie)->where($regionQ,$regionI)->where($rejectedQ,$rejectedI)->where($spracheQ,$spracheI)->where('completed',0)->paginate(30,['*'],'events_page');
 
 
 			$appointments = lead::select('*','leads.id as id')->join('model_has_roles', 'model_has_roles.model_id', '=', 'leads.assign_to_id')
-			->where('model_has_roles.role_id',7)->whereNotNull('leads.assign_to_id')->where('leads.assigned',1)->where('leads.completed',0)->whereNotNull('leads.appointment_date')->where('leads.wantsonline',0)->where('leads.rejected',0)->get();
+				->whereIn('model_has_roles.role_id',[6,7])->whereNotNull('leads.assign_to_id')->where('leads.assigned',1)->where('leads.completed',0)->whereNotNull('leads.appointment_date')->where('leads.rejected',0)->get();
 
-
-			$maps = DB::table('leads')->where('appointment_date',Carbon::now()->format('Y-m-d'))->select('leads.first_name','leads.last_name','leads.latitude','leads.longitude')->get();
+			$maps = DB::table('leads')->where('appointment_date',Carbon::now()->format('Y-m-d'))->select('leads.first_name','leads.last_name')->get();
 
 			return view('appointment')->with('users',$users)->with('appointments_events',$appointments_events)->with('appointments',$appointments)->with('regions',$regions)->with('langues',$langues)->with('regionO',$regionO)->with('rejectedO',$rejectedO)->with('spracheO',$spracheO)->with('trie',$trie)->with('maps',$maps)->with('date_in',$date_in);
 		}else{
@@ -95,11 +94,13 @@ class AppointmentsController extends Controller
               ->update(['assigned' => 1,'assign_to_id' => $input['id_user'],'rejected' => 0]);
 		if($appointment){return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
 	}
-	else if(strtotime(lead::find($id_lead)->time) > strtotime("19:30") || strtotime(lead::find($id_lead)->time) < strtotime("07:59")){
-		return "";
+
+	elseif(strtotime(lead::find($id_lead)->time) > strtotime("22:00") || strtotime(lead::find($id_lead)->time) < strtotime("07:59")){
+		return "Die Terminzeit ist nicht korrekt, sie sollte zwischen 8:00 und 19:30 Uhr liegen";
+
 	}
 	else{
-		return "Appointment should not be assigned to that consultant (maybe to digital or field service) !";
+		return "Termin sollte nicht diesem Berater zugewiesen werden (vielleicht an Digital oder Außendienst) !";
 	}
 }
 

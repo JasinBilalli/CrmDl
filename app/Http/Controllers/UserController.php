@@ -666,7 +666,7 @@ class UserController extends Controller
                              ->orderBy('family_person.first_name', 'asc')
                              ->where('done', 1)
                              ->orderBy('pendencies.created_at')
-                             ->get() as $task) {
+                             ->paginate(200) as $task) {
                     if ($task->completed == 0) {
                         $pendencies[$pcnt] = $task;
                         $pcnt++;
