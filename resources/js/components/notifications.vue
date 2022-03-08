@@ -95,9 +95,9 @@
 export default {
     mounted() {
         this.getnotifications();
-        setInterval(() => {
-            this.getnotifications()
-        }, 350);
+        // setInterval(() => {
+        //     this.getnotifications()
+        // }, 350);
     },
     data() {
         return {

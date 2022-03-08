@@ -17,16 +17,17 @@ class confirmedcode
      */
     public function handle(Request $request, Closure $next)
     {
-        // if (Auth::guard('admins')->check()) {
-            // if (Auth::guard('admins')->user()->firsttime == 1) {
+        $user = auth();
+        if ($user->check()) {
+            // if ($user->user()->firsttime == 1) {
             //     return redirect()->route('smsconfirm');
-            // } else if (Auth::guard('admins')->user()->confirmed == 0) {
+            // } else if ($user->user()->confirmed == 0) {
             //     return redirect()->route('smsconfirmation');
             // } else {
             //     return $next($request);
             // }
             return $next($request);
-        // }
-        // return redirect()->route('rnlogin');
+        }
+        return redirect()->route('rnlogin');
     }
 }

@@ -52,6 +52,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\URL;
 use function Clue\StreamFilter\fun;
 use App\Models\TestClass;
+use FontLib\TrueType\Collection;
 use Monolog\Test\TestCase;
 use Vonage\Voice\Endpoint\App;
 
@@ -68,18 +69,16 @@ route::prefix('')->middleware('confirmcode')->group(function(){
    })->name('importleads')->middleware('role:admin|salesmanager');
    route::get('getleads',function(){
       if (Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager') || Auth::guard('admins')->user()->hasRole('backoffice')) {
-         $leads['leads'] = DB::table('leads')->where('completed', '0')->where('assigned', 0)->where('assign_to_id', null)->where('wantsonline',0)->where('rejected',0)->orderBy('updated_at','asc')->select('leads.*','leads.campaign_id as campaign')->paginate(100);
-         $asigned = lead::where('completed', '0')->where('assigned', 0)->whereNotNull('assign_to_id')->where('rejected',0)->paginate(200);
+         $leads['leads'] = lead::with('campaign')->with('info')->where('completed', '0')->where('assigned', 0)->where('assign_to_id', null)->where('wantsonline',0)->where('rejected',0)->orderBy('updated_at','asc')->select('leads.*')->paginate(100);
      } elseif (Auth::guard('admins')->user()->hasRole('fs')) {
-      $leads['leads'] = DB::table('leads')->where('completed', '0')->where('assigned', 0)->orderBy('updated_at','asc')->where('leads.assign_to_id',Auth::user()->id)->where('wantsonline',0)->where('rejected',0)->select('leads.*','leads.campaign_id as campaign')->paginate(100);
+      $leads['leads'] = lead::with('campaign')->with('info')->where('completed', '0')->where('assigned', 0)->orderBy('updated_at','asc')->where('leads.assign_to_id',Auth::user()->id)->where('wantsonline',0)->where('rejected',0)->select('leads.*')->paginate(100);
    }
 $instagram = 0;
 $sanascout = 0;
 $facebook = 0;
    for($i = 0; $i < count($leads['leads']); $i++){
-$leadinfo = lead_info::where('lead_id',$leads['leads'][$i]->id)->first();
+$leadinfo = $leads['leads'][$i]->info;
 
-     $leads['leads'][$i]->campaign = lead::find($leads['leads'][$i]->id)->campaign->name;
      $leads['leads'][$i]->grund = $leadinfo ? $leadinfo->grund : null;
      $leads['leads'][$i]->krankenkasse = $leadinfo ? $leadinfo->krankenkasse : null;
      $leads['leads'][$i]->bewertung = $leadinfo ? $leadinfo->bewerung : null;
@@ -89,8 +88,10 @@ $leadinfo = lead_info::where('lead_id',$leads['leads'][$i]->id)->first();
      if($leads['leads'][$i]->campaign_id == 1) $instagram++;
      elseif($leads['leads'][$i]->campaign_id == 2) $facebook++;
      else $sanascout++;
+     
    }
-     $leads['admins'] = Admins::role(['fs','digital'])->get();
+ 
+     $leads['admins'] = Admins::role(['fs'])->get();
      $leads['admin'] = Auth::user()->getRoleNames();
      $leads['sanascout'] = $sanascout;
      $leads['instagram'] = $instagram;
@@ -225,14 +226,17 @@ route::get('fsadmins',[TodoController::class,'fsadmins'])->middleware('role:admi
 route::post('rejectupdate',[LeadDataController::class,'rejectupdate'])->name('rejectupdate')->middleware('role:admin|backoffice');
 route::get('getnotifications',function(){
    $cnt = 0;
-   foreach(Auth::user()->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at')->paginate(60) as $not){
+
+
+   $user = auth()->user();
+   foreach($user->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at')->paginate(60) as $not){
       $data['notifications'][$cnt] = $not;
       $obj = Carbon::parse($not->created_at);
       $data['notifications'][$cnt]['read_at'] = $not->read_at;
       $data['notifications'][$cnt]['data'] = $data['notifications'][$cnt]['data'] . ' <div style="font-weight:600">   ' . $obj->format('d/m/y | H:i'). '</div>';
       $cnt++;
    }
- $data['cnt'] = Auth::user()->notifications()->whereNull('read_at')->count();
+   $data['cnt']  = $user->notifications()->whereNull('read_at')->count();
  return $data;
 });
 route::get('readnotifications',function(){

@@ -19,6 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 </head>
+@php $user = auth(); @endphp
 <style>
     div,
     button,
@@ -874,8 +875,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         </svg>
                         <span class="ps-2 txt-dn">Startseite</span>
                     </a>
-                    @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                    Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin'))
+                    @if($user->user()->hasRole('backoffice') ||
+                    $user->user()->hasRole('fs') || $user->user()->hasRole('admin'))
 
                         <a href="{{route('tasks')}}"
                            class="nav-link {{ (request()->is('tasks')) ? 'activeClassNav__' : '' }}">
@@ -889,10 +890,10 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             <span class="ps-2 txt-dn">Aufgaben</span>
                         </a>
                     @endif
-                    @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                    Auth::guard('admins')->user()->hasRole('fs') ||
-                    Auth::guard('admins')->user()->hasRole('salesmanager')
-                    ||Auth::guard('admins')->user()->hasRole('menagment'))
+                    @if($user->user()->hasRole('admin') ||
+                    $user->user()->hasRole('fs') ||
+                    $user->user()->hasRole('salesmanager')
+                    ||$user->user()->hasRole('menagment'))
                         <a href="{{route('leads')}}"
                            class="nav-link {{ (request()->is('leads')) ? 'activeClassNav__' : '' }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
@@ -905,10 +906,10 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             <span class="ps-2 txt-dn">Leads</span>
                         </a>
                     @endif
-                    @if(Auth::guard('admins')->user()->hasRole('fs') ||
-                                       Auth::guard('admins')->user()->hasRole('salesmanager') ||
-                                       Auth::guard('admins')->user()->hasRole('menagment') ||
-                                       Auth::guard('admins')->user()->hasRole('admin'))
+                    @if($user->user()->hasRole('fs') ||
+                    $user->user()->hasRole('salesmanager') ||
+                    $user->user()->hasRole('menagment') ||
+                    $user->user()->hasRole('admin'))
                         <a href="{{route('Appointments')}}"
                            class="nav-link  {{ (request()->is('Appointments')) ? 'activeClassNav__' : '' }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
@@ -925,8 +926,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             @endif
                         </a>
                     @endif
-                    @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                    Auth::guard('admins')->user()->hasRole('admin'))
+                    @if($user->user()->hasRole('backoffice') ||
+                    $user->user()->hasRole('admin'))
 
                         <a href="{{route('status')}}"
                            class="nav-link {{ (request()->is('status')) ? 'activeClassNav__' : '' }}">
@@ -942,7 +943,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             <span class="ps-2 txt-dn">Status</span>
                         </a>
                     @endif
-                    @if(Auth::guard('admins')->check())
+                    @if($user->check())
                         <a href="{{route('costumers')}}"
                            class="nav-link {{ (request()->is('costumers')) ? 'activeClassNav__' : '' }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
@@ -954,8 +955,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             <span class="ps-2 txt-dn">Kunden</span>
                         </a>
                     @endif
-{{--                    @if(Auth::guard('admins')->user()->hasRole('backoffice') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('admin'))--}}
+{{--                    @if($user->user()->hasRole('backoffice') ||--}}
+{{--                    $user->user()->hasRole('admin'))--}}
 {{--                        <a onclick="workingOnIt()" href="#" class="nav-link ">--}}
 {{--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
 {{--                                 class="bi bi-cash-coin" viewBox="0 0 16 16">--}}
@@ -970,8 +971,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                            <span class="ps-2 txt-dn">Einzahlung</span>--}}
 {{--                        </a>--}}
 {{--                    @endif--}}
-{{--                    @if(Auth::guard('admins')->user()->hasRole('backoffice') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('admin'))--}}
+{{--                    @if($user->user()->hasRole('backoffice') ||--}}
+{{--                    $user->user()->hasRole('admin'))--}}
 {{--                        <a onclick="workingOnIt()" href="#" class="nav-link">--}}
 {{--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
 {{--                                 class="bi bi-x-square" viewBox="0 0 16 16">--}}
@@ -991,9 +992,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                        </svg>--}}
 {{--                        <span class="ps-2 txt-dn">Finanzen</span>--}}
 {{--                    </a>--}}
-{{--                    @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('menagment') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+{{--                    @if($user->user()->hasRole('admin') ||--}}
+{{--                    $user->user()->hasRole('menagment') ||--}}
+{{--                    $user->user()->hasRole('salesmanager'))--}}
 {{--                        <a onclick="workingOnIt()" href="#" class="nav-link">--}}
 {{--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
 {{--                                 class="bi bi-people-fill" viewBox="0 0 16 16">--}}
@@ -1005,8 +1006,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                            <span class="ps-2 txt-dn">Mitarbeiter</span>--}}
 {{--                        </a>--}}
 {{--                    @endif--}}
-{{--                    @if(Auth::guard('admins')->user()->hasRole('finance') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('admin'))--}}
+{{--                    @if($user->user()->hasRole('finance') ||--}}
+{{--                    $user->user()->hasRole('admin'))--}}
 {{--                        <a onclick="workingOnIt()" href="#" class="nav-link ">--}}
 {{--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
 {{--                                 class="bi bi-percent" viewBox="0 0 16 16">--}}
@@ -1016,9 +1017,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                            <span class="ps-2 txt-dn">Provisionen</span>--}}
 {{--                        </a>--}}
 {{--                    @endif--}}
-{{--                    @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('menagment') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+{{--                    @if($user->user()->hasRole('admin') ||--}}
+{{--                    $user->user()->hasRole('menagment') ||--}}
+{{--                    $user->user()->hasRole('salesmanager'))--}}
 {{--                        <a onclick="workingOnIt()" href="#" class="nav-link">--}}
 {{--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
 {{--                                 class="bi bi-diagram-2-fill" viewBox="0 0 16 16">--}}
@@ -1028,9 +1029,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                            <span class="ps-2 txt-dn">Prov.system</span>--}}
 {{--                        </a>--}}
 {{--                    @endif--}}
-{{--                    @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('menagment') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+{{--                    @if($user->user()->hasRole('admin') ||--}}
+{{--                    $user->user()->hasRole('menagment') ||--}}
+{{--                    $user->user()->hasRole('salesmanager'))--}}
 {{--                        <a onclick="workingOnIt()" href="#" class="nav-link">--}}
 {{--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
 {{--                                 class="bi bi-bar-chart-fill" viewBox="0 0 16 16">--}}
@@ -1040,9 +1041,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                            <span class="ps-2 txt-dn">Statistik</span>--}}
 {{--                        </a>--}}
 {{--                    @endif--}}
-{{--                    @if(Auth::guard('admins')->user()->hasRole('menagment') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('finance')--}}
-{{--                    ||Auth::guard('admins')->user()->hasRole('admin') )--}}
+{{--                    @if($user->user()->hasRole('menagment') ||--}}
+{{--                    $user->user()->hasRole('finance')--}}
+{{--                    ||$user->user()->hasRole('admin') )--}}
 {{--                        <a onclick="workingOnIt()" href="#" class="nav-link">--}}
 {{--                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"--}}
 {{--                                 class="bi bi-diagram-2-fill" viewBox="0 0 16 16">--}}
@@ -1052,7 +1053,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                            <span class="ps-2 txt-dn">Treuhand</span>--}}
 {{--                        </a>--}}
 {{--                    @endif--}}
-                    @if(Auth::guard('admins')->user()->hasRole('admin'))
+                    @if($user->user()->hasRole('admin'))
                         <a class="nav-link" href="{{route('addnewuser')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -1130,8 +1131,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 </span>
             </div>
         </a>
-        @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-        Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin'))
+        @if($user->user()->hasRole('backoffice') ||
+        $user->user()->hasRole('fs') || $user->user()->hasRole('admin'))
             <a href="{{route('tasks')}}" class="m-nav {{ (request()->is('tasks')) ? 'activeClassNavMob__' : '' }}">
             <span>
                 <svg width="26" viewBox="0 0 19 20" fill="#88889D" xmlns="http://www.w3.org/2000/svg">
@@ -1149,7 +1150,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 </div>
             </a>
         @endif
-        @if(Auth::guard('admins')->check())
+        @if($user->check())
             <a href="{{route('costumers')}}"
                class="m-nav {{ (request()->is('costumers')) ? 'activeClassNavMob__' : '' }}">
             <span>
@@ -1168,10 +1169,10 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 </div>
             </a>
         @endif
-        @if(Auth::guard('admins')->user()->hasRole('admin') ||
-        Auth::guard('admins')->user()->hasRole('fs') ||
-        Auth::guard('admins')->user()->hasRole('salesmanager')
-        ||Auth::guard('admins')->user()->hasRole('menagment'))
+        @if($user->user()->hasRole('admin') ||
+        $user->user()->hasRole('fs') ||
+        $user->user()->hasRole('salesmanager')
+        ||$user->user()->hasRole('menagment'))
             <a href="{{route('leads')}}" class="m-nav {{ (request()->is('leads')) ? 'activeClassNavMob__' : '' }}">
             <span>
             <svg xmlns="http://www.w3.org/2000/svg" width="27"  fill="#88889D" class="bi bi-hdd-stack-fill" viewBox="0 0 16 16">
@@ -1238,8 +1239,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         </div>
         <div class="content-of-burger col-9 mx-auto ">
             <div class="my-3 m-burger">
-                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                    Auth::guard('admins')->user()->hasRole('admin'))
+                @if($user->user()->hasRole('backoffice') ||
+                $user->user()->hasRole('admin'))
                     <a href="{{route('status')}}"
                        class="m-nav text-decoration-none {{ (request()->is('status')) ? 'activeClassNavMob__' : '' }}">
                     <span class="px-2 active-dot">
@@ -1266,8 +1267,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 @endif
             </div>
 {{--            <div class="my-3 m-burger">--}}
-{{--                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||--}}
-{{--                Auth::guard('admins')->user()->hasRole('admin'))--}}
+{{--                @if($user->user()->hasRole('backoffice') ||--}}
+{{--                $user->user()->hasRole('admin'))--}}
 {{--                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">--}}
 {{--                    <span class="px-2 active-dot">--}}
 {{--                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
@@ -1294,8 +1295,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                @endif--}}
 {{--            </div>--}}
 {{--            <div class="my-3 m-burger">--}}
-{{--                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('admin'))--}}
+{{--                @if($user->user()->hasRole('backoffice') ||--}}
+{{--                    $user->user()->hasRole('admin'))--}}
 {{--                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">--}}
 {{--                    <span class="px-2 active-dot">--}}
 {{--                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
@@ -1319,10 +1320,10 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                @endif--}}
 {{--            </div>--}}
             <div class="my-3 m-burger">
-                @if(Auth::guard('admins')->user()->hasRole('fs') ||
-                    Auth::guard('admins')->user()->hasRole('salesmanager') ||
-                    Auth::guard('admins')->user()->hasRole('menagment') ||
-                    Auth::guard('admins')->user()->hasRole('admin'))
+                @if($user->user()->hasRole('fs') ||
+                $user->user()->hasRole('salesmanager') ||
+                $user->user()->hasRole('menagment') ||
+                $user->user()->hasRole('admin'))
                         <a href="{{route('Appointments')}}"
                            class="m-nav text-decoration-none {{ (request()->is('Appointments')) ? 'activeClassNavMob__' : '' }}">
                         <span class="px-2 active-dot">
@@ -1351,9 +1352,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 @endif
             </div>
 {{--            <div class="my-3 m-burger">--}}
-{{--                @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('menagment') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+{{--                @if($user->user()->hasRole('admin') ||--}}
+{{--                    $user->user()->hasRole('menagment') ||--}}
+{{--                   $user->user()->hasRole('salesmanager'))--}}
 {{--                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">--}}
 {{--                        <span class="px-2 active-dot">--}}
 {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
@@ -1377,8 +1378,8 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                @endif--}}
 {{--            </div>--}}
 {{--            <div class="my-3 m-burger">--}}
-{{--                @if(Auth::guard('admins')->user()->hasRole('finance') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('admin'))--}}
+{{--                @if($user->user()->hasRole('finance') ||--}}
+{{--                    $user->user()->hasRole('admin'))--}}
 {{--                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">--}}
 {{--                        <span class="px-2 active-dot">--}}
 {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
@@ -1420,9 +1421,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                <hr>--}}
 {{--            </div>--}}
 {{--            <div class="my-3 m-burger">--}}
-{{--                @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('menagment') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+{{--                @if($user->user()->hasRole('admin') ||--}}
+{{--                    $user->user()->hasRole('menagment') ||--}}
+{{--                    $user->user()->hasRole('salesmanager'))--}}
 {{--                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">--}}
 {{--                        <span class="px-2 active-dot">--}}
 {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
@@ -1444,9 +1445,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                @endif--}}
 {{--            </div>--}}
 {{--            <div class="my-3 m-burger">--}}
-{{--                @if(Auth::guard('admins')->user()->hasRole('admin') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('menagment') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('salesmanager'))--}}
+{{--                @if($user->user()->hasRole('admin') ||--}}
+{{--                    $user->user()->hasRole('menagment') ||--}}
+{{--                    $user->user()->hasRole('salesmanager'))--}}
 {{--                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">--}}
 {{--                        <span class="px-2 active-dot">--}}
 {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
@@ -1468,9 +1469,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                @endif--}}
 {{--            </div>--}}
 {{--            <div class="my-3 m-burger">--}}
-{{--                @if(Auth::guard('admins')->user()->hasRole('menagment') ||--}}
-{{--                    Auth::guard('admins')->user()->hasRole('finance')--}}
-{{--                    ||Auth::guard('admins')->user()->hasRole('admin') )--}}
+{{--                @if($user->user()->hasRole('menagment') ||--}}
+{{--                    $user->user()->hasRole('finance')--}}
+{{--                    ||$user->user()->hasRole('admin') )--}}
 {{--                    <a onclick="workingOnIt()" href="#" class="m-nav text-decoration-none">--}}
 {{--                        <span class="px-2 active-dot">--}}
 {{--                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">--}}
@@ -1492,7 +1493,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 {{--                @endif--}}
 {{--            </div>--}}
             <div class="my-3 m-burger">
-                @if(Auth::guard('admins')->user()->hasRole('admin'))
+                @if($user->user()->hasRole('admin'))
                     <a href="{{route('addnewuser')}}"
                        class="m-nav text-decoration-none {{ (request()->is('addnewuser')) ? 'activeClassNavMob__' : '' }}">
                         <span class="px-2 active-dot">

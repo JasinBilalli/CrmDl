@@ -1,7 +1,8 @@
 @extends('template.navbar')
 @section('content')
     <leads></leads>
-    @if(Auth::user()->hasRole('admin') || Auth::user()->hasRole('salesmanager'))
+    @php $user = auth(); @endphp
+    @if($user->user()->hasRole('admin') || $user->user()->hasRole('salesmanager'))
         <div class="container-fluid p-0">
             <div class="col-12 g-0">
                 <div class="import-leads-div  px-3">
