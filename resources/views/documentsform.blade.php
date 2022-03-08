@@ -592,7 +592,7 @@
 
                             <div class="tab-pane fade auto-content" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                 <div class="row mx-2 mx-sm-4">
-                                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 my-4 ">
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mb-2 mt-4 mb-sm-4 mt-sm-4 ">
                                         <div class="accordion accordion-flush" id="accordionFlushExample1">
                                             <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
                                                 <h2 class="accordion-header" id="flush-headingOne">
@@ -720,7 +720,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 my-4">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 mb-2 mt-2 mb-sm-4 mt-sm-4">
                                         <div class="accordion accordion-flush" id="accordionFlushExample2">
                                             <div class="accordion-item" style="background-color: #EFEFEF; border-radius: 10px">
                                                 <h2 class="accordion-header" id="flush-headingTwo">
@@ -2004,7 +2004,7 @@
 
                             <div class="tab-pane fade  vorsorge-content" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">
                                 <div class="row mx-2 mx-sm-4">
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3 ">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-3 mb-2 mb-sm-3 ">
                                         <div class="mb-2">
                                             <span class="fw-bold fs-6">
                                                 Hausrat- & Privathaftpflicht
@@ -2112,9 +2112,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3 ">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-1 mt-2 mb-sm-3 mt-sm-3 ">
                                         <div class="mb-2">
-                                            <span class="fw-bold fs-6 text-white">
+                                            <span class="fw-bold fs-6 text-white be-gone">
                                                 Hausrat- & Privathaftpflicht
                                             </span>
                                         </div>
@@ -2255,7 +2255,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-1 mt-1 mb-sm-3 mt-sm-3">
                                         <div class="mb-2">
                                             <span class="fw-bold fs-6">
                                                 Rechtsschutzversicherung
@@ -2873,6 +2873,9 @@
 
             body {
                 padding-bottom: 65px;
+            }
+            .be-gone {
+                display: none;
             }
         }
 

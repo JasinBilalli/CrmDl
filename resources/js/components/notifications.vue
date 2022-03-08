@@ -2,7 +2,7 @@
     <div class="notification-divvv22" >
         <div class="hover-visible-div" id="hoverVisibleDiv">
             <div class="txt-notif fs-6">
-                You have {{ notcnt }} new notifications
+                Du hast {{ notcnt }} neue Benachrichtigungen
             </div>
         </div>
         <div class="btn-group dropup">
@@ -15,7 +15,7 @@
                 </svg>
             </button>
             <ul class="dropdown-menu px-2" aria-labelledby="dropdownFunct">
-                <div class="fw-bold fs-5 py-2">Recent Notifications</div>
+                <div class="fw-bold fs-5 py-2">Aktuelle Benachrichtigungen</div>
                 <hr class="my-1 g-0 p-0">
                 <div class="overflow-div2212" >
                     <div class="nottif-item p-2 m-1 " v-for="notification in notifications" v-html="notification.data">
