@@ -21,7 +21,7 @@ class TableCostumerProduktGrundversicherung extends Migration
             $table->string('product_PG')->nullable();
             $table->string('status_PG')->nullable();
             $table->date('last_adjustment_PG')->nullable();
-            $table->string('total_commisions_PG')->nullable();
+            $table->string('total_commisions_PG')->nullable()->default(0);
             $table->integer('selected')->default(0);
             $table->timestamps();
         });
