@@ -918,7 +918,11 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                 <path
                                     d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                             </svg>
-                            <span class="ps-2 txt-dn">Kalender</span>
+                            @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
+                                <span class="ps-2 txt-dn">Terminen</span>
+                            @else
+                                <span class="ps-2 txt-dn">Kalender</span>
+                            @endif
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
@@ -1336,7 +1340,11 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                             </svg>
                         </span>
                             <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            KALENDER
+                                @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
+                                    TERMINEN
+                                @else
+                                    KALENDER
+                                @endif
                         </span>
                         </a>
                     <hr>
@@ -2125,7 +2133,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     }
     .notification-divvv22 .bluefont{
             background-color: #eaf5ff;
-           
+
         }
         .notification-divvv22 .bluefont a{
             color: #0c71c3;
@@ -2144,7 +2152,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             bottom: 80px;
             right: 10px;
         }
-        
+
 
         .rounded-notid-icon svg {
             width: 25px;
@@ -2166,7 +2174,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         .rounded-notid-icon:hover {
             background-color: #0C71C3;
         }
-       
+
     }
 </style>
 

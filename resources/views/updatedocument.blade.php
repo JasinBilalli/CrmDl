@@ -242,7 +242,11 @@
                             <path
                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                         </svg>
-                        <span class="ps-2 txt-dn">Kalender</span>
+                        @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
+                            <span class="ps-2 txt-dn">Terminen</span>
+                        @else
+                            <span class="ps-2 txt-dn">Kalender</span>
+                        @endif
                     </a>
                 @endif
                 <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
@@ -1009,14 +1013,14 @@
                                                                                 <option value="{{$data->fahrzeug->vergleichsart_select}}" selected>
                                                                                     {{$data->fahrzeug->vergleichsart_select}}
                                                                                 </option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
+                                                                                <option value="0:1 Downgraden">0:1 Downgraden</option>
+                                                                                <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                             @else
                                                                                 <option selected>Auswählen</option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
+                                                                                <option value="0:1 Downgraden">0:1 Downgraden</option>
+                                                                                <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                             @endif
                                                                         </select>
                                                                     </div>
@@ -1180,14 +1184,14 @@
                                                                                     <option value="{{$data->vergleichsart_select}}" selected>
                                                                                         {{$data->vergleichsart_select}}
                                                                                     </option>
-                                                                                    <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                    <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                    <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                    <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
+                                                                                    <option value="0:1 Downgraden">0:1 Downgraden</option>
+                                                                                    <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                                 @else
                                                                                     <option selected>Auswählen</option>
-                                                                                    <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                    <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                    <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                    <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
+                                                                                    <option value="0:1 Downgraden">0:1 Downgraden</option>
+                                                                                    <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                                 @endif
                                                                             </select>
                                                                         </div>
@@ -5197,14 +5201,14 @@
                                                                                 <option value="{{$data->prevention->Hvergleichsart_select}}" selected>
                                                                                     {{$data->prevention->Hvergleichsart_select}}
                                                                                 </option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
+                                                                                <option value="0:1 Downgraden">0:1 Downgraden</option>
+                                                                                <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                             @else
                                                                                 <option selected>Select</option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
+                                                                                <option value="0:1 Downgraden">0:1 Downgraden</option>
+                                                                                <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                             @endif
                                                                         </select>
                                                                     </div>
@@ -5937,7 +5941,12 @@
                             </svg>
                         </span>
                     <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
+                        @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
+                            TERMINEN
+                        @else
                             KALENDER
+                        @endif
+
                         </span>
                 </a>
                 <hr>
@@ -6824,13 +6833,13 @@
             '                                                                </div>' +
             '                                                                <div class="col g-0 d-flex justify-content-end">' +
             '                                                                    <div class="select-div text-end ">' +
-            '                                                                        <select name="vergleichsart_select' + newgcnt + '"> ' +
+            '                                                                        <select name="vergleichsart_select' + newgcnt + '" ' +
             '                                                                                class="fw-bold" id=""' +
             '                                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">' +
-            '                                                                            <option selected>Select</option>' +
-            '                                                                            <option value="1:0 Deckung">1:0 Deckung</option>' +
-            '                                                                            <option value="0:1 Deckung">0:1 Deckung</option>' +
-            '                                                                            <option value="1:1 Deckung">1:1 Deckung</option>'+
+            '                                                                            <option selected>Auswählen</option>' +
+            '                                                                            <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>' +
+            '                                                                            <option value="0:1 Downgraden">0:1 Downgraden</option>' +
+            '                                                                            <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>'+
             '                                                                        </select>' +
             '                                                                   </div>' +
             '                                                                </div>' +

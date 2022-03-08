@@ -289,7 +289,7 @@ class UserController extends Controller
         if (Auth::guard('admins')->user()->hasRole('fs')) {
             $admins = Auth::guard('admins')->user();
         } else {
-            $admins = Admins::all();
+            $admins = Admins::role(['fs','digital']);
         }
         return view('insterappointment', compact('admins'));
     }
@@ -417,7 +417,7 @@ class UserController extends Controller
 
 
         } else {
-            return redirect()->route('rnlogin');
+            return redirect()->route('rnlogin')->with('message','Anmeldeinformationen falsch');
         }
     }
 
@@ -685,7 +685,7 @@ class UserController extends Controller
                     ->where('pendencies.done', '<>', 1)
                     ->orderBy('family_person.first_name', 'asc')
                     ->count();
-                 
+
 
             }
             if (Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager') || Auth::user()->hasRole('digital')) {
@@ -697,7 +697,7 @@ class UserController extends Controller
                         ->where('pendencies.done', '<>', 1)
                         ->where('pendencies.admin_id', Auth::user()->id)
                         ->count();
-                        
+
 
                     $tasks = DB::table('leads')
                         ->where('completed', '=', '0')
@@ -765,7 +765,7 @@ class UserController extends Controller
                     ->where('leads.assign_to_id',Auth::user()->id)
                     ->whereIn('family_person.status',['Open'])
                     ->count();
-                 
+
                     $leadscount = $leadscount = DB::table('leads')->where('completed', '0')->where('assigned', 0)->orderBy('updated_at', 'asc')->where('leads.assign_to_id', Auth::user()->id)->where('wantsonline', 0)->where('rejected', 0)->count();
                 } else {
                     $offen = DB::table('family_person')
