@@ -4,25 +4,25 @@
     @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('digital'))
         <section>
             <div class="col-12 col-md-12">
-                <div class="py-3 mx-3">
-                    <div class="text-start">
-                            <span class="fw-bolder" style="font-family: 'Montserrat'">
-                                ÜBERSICHT
-                            </span>
-                    </div>
+{{--                <div class="py-3 mx-3">--}}
+{{--                    <div class="text-start">--}}
+{{--                            <span class="fw-bolder" style="font-family: 'Montserrat'">--}}
+{{--                                ÜBERSICHT--}}
+{{--                            </span>--}}
+{{--                    </div>--}}
 
-                    <div class="text-muted">
-                            <span class="" style="color: #B9B9B9;font-family: 'Montserrat'">
-                                Zeitraum 01.09.2021 - 31.09.2021
-                                <svg xmlns="http://www.w3.org/2000/svg" class="ms-2" width="18.401" height="7.671"
-                                     viewBox="0 0 18.401 7.671">
-                                    <path id="Path_273" data-name="Path 273" d="M216.715,2188l8.153,5.874,8.153-5.874"
-                                          transform="translate(-215.668 -2186.953)" fill="none" stroke="#b9b9b9"
-                                          stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-                                </svg>
-                            </span>
-                    </div>
-                </div>
+{{--                    <div class="text-muted">--}}
+{{--                            <span class="" style="color: #B9B9B9;font-family: 'Montserrat'">--}}
+{{--                                Zeitraum 01.09.2021 - 31.09.2021--}}
+{{--                                <svg xmlns="http://www.w3.org/2000/svg" class="ms-2" width="18.401" height="7.671"--}}
+{{--                                     viewBox="0 0 18.401 7.671">--}}
+{{--                                    <path id="Path_273" data-name="Path 273" d="M216.715,2188l8.153,5.874,8.153-5.874"--}}
+{{--                                          transform="translate(-215.668 -2186.953)" fill="none" stroke="#b9b9b9"--}}
+{{--                                          stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>--}}
+{{--                                </svg>--}}
+{{--                            </span>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div class="py-3 mx-3">
                     <div class="row">
                         <div class="col-md-3 col-6 g-0 px-3 mb-3 "
