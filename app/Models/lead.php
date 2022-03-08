@@ -38,7 +38,7 @@ class lead extends Model
         ];
 
     public function campaign(){
-        return $this->belongsTo(campaigns::class);
+        return $this->belongsTo(campaigns::class,'campaign_id');
     }
 
     public function family(){

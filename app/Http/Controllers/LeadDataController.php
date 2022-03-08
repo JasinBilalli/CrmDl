@@ -234,7 +234,7 @@ newnue::create([
 
             $bo = Admins::role(['backoffice','admin'])->get();
 foreach($bo as $b){
-    $url =  '<a href="' . route("costumer_form",[Crypt::encrypt($personId * 1244)]) . '"> Die Dokumentation für: ' . family::find($personId)->first_name . ' has been submitted</a>';
+    $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Dokumentation für :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
     $b->notify(new SendNotificationn($url));
 }
             return redirect()->route('dashboard')->with('success', 'Erfolgreich eingereicht und wartet auf das Backoffice!');

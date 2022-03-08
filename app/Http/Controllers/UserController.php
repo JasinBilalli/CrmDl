@@ -129,8 +129,8 @@ class UserController extends Controller
     {
 
         if (!Auth::guard('admins')->check()) {
-            $roles = Role::all();
-            return view('login', compact('roles'));
+        
+            return view('login');
         } else {
             return redirect()->route('dashboard');
         }
@@ -299,23 +299,10 @@ class UserController extends Controller
     {
 
 
-        $asigned = [];
-        if (Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager')) {
-            $leads = lead::where('completed', '0')->where('assigned', 0)->where('assign_to_id', null)->paginate(200);
-            $asigned = lead::where('completed', '0')->where('assigned', 0)->whereNotNull('assign_to_id')->paginate(200);
-        } elseif (Auth::guard('admins')->user()->hasRole('fs')) {
-            $leads = lead::where('assign_to_id', Auth::guard('admins')->user()->id)->where('assigned', 0)->paginate(25);
-        }
+     
 
 
-        $insta = DB::table('leads')->where('completed', '0')->where('assigned', 0)->where('assign_to_id', null)->where('campaign_id', 1)->count();
-        $facebook = DB::table('leads')->where('completed', '0')->where('assigned', 0)->where('assign_to_id', null)->where('campaign_id', 2)->count();
-        $sana = DB::table('leads')->where('completed', '0')->where('assigned', 0)->where('assign_to_id', null)->where('campaign_id', 3)->count();
-
-        $total = array('instagram' => $insta, 'facebook' => $facebook, 'sana' => $sana);
-        $admins = Admins::role('fs')->get();
-
-        return view('leads', compact('leads', 'total', 'asigned', 'admins'));
+        return view('leads');
 
 
     }
@@ -394,16 +381,12 @@ class UserController extends Controller
 
         $remember = $req->input('remember') == 'on' ? true : false;
         if (Auth::guard('admins')->attempt(['email' => $email, 'password' => $password], $remember)) {
-            $req->session()->regenerate();
+            session()->regenerate();
             $pin = random_int(1000, 9999);
             $user = Auth::guard('admins')->user();
             $user->confirmed = 0;
             $user->pin = $pin;
-
-
-            // if($rolee[0] != null){
-            // $user->removeRole($rolee[0]);
-            //$user->assignRole($role);}
+   
 
             //  Nexmo::message()->send([
             //  'to' => '38345917726',
@@ -600,8 +583,8 @@ class UserController extends Controller
 
     public function dashboard(Request $req)
     {
-
-        $getmonth = isset($req->getmonth) ? $req->getmonth : "";
+$user = auth();
+$getmonth = isset($req->getmonth) ? $req->getmonth : "";
 
         $taskcnt = 0;
 
@@ -647,7 +630,7 @@ class UserController extends Controller
         //perfundion
 
 
-        if (Auth::guard('admins')->check()) {
+        if ($user->check()) {
             $pendingcnt = 0;
             $opencnt = 0;
             $done = 0;
@@ -657,7 +640,7 @@ class UserController extends Controller
             $taskcnt = 0;
             $tasks = null;
 
-            if (Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin') || Auth::user()->hasRole('salesmanager')) {
+            if ($user->user()->hasRole('backoffice') || $user->user()->hasRole('admin') || Auth::user()->hasRole('salesmanager')) {
                 $pcnt = 0;
                 $mcnt = 0;
                 foreach (DB::table('family_person')
@@ -688,9 +671,9 @@ class UserController extends Controller
                  
 
             }
-            if (Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager') || Auth::user()->hasRole('digital')) {
+            if ($user->user()->hasRole('fs') || $user->user()->hasRole('admin') || $user->user()->hasRole('salesmanager') || Auth::user()->hasRole('digital')) {
 
-                if (Auth::guard('admins')->user()->hasRole('fs')) {
+                if ($user->user()->hasRole('fs')) {
 
                     $pendingcnt = DB::table('family_person')
                         ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
@@ -704,12 +687,12 @@ class UserController extends Controller
                         ->where('status_contract', '!=', 'Done')
                         ->orWhereNull('status_contract')
                         ->where('status_task', '!=', 'Done')
-                        ->where('assign_to_id', Auth::guard('admins')->user()->id)
+                        ->where('assign_to_id', $user->user()->id)
                         ->count();
                     $done = DB::table('leads')
                         ->where('completed', 1)
                         ->where('status_contract', 'Done')
-                        ->where('assign_to_id', Auth::guard('admins')->user()->id)
+                        ->where('assign_to_id', $user->user()->id)
                         ->where('status_task', 'Done')
                         ->count();
 
@@ -744,12 +727,12 @@ class UserController extends Controller
                         ->where('status_contract', '!=', 'Done')
                         ->orWhereNull('status_contract')
                         ->where('status_task', '!=', 'Done')
-                        ->where('assign_to_id', Auth::guard('admins')->user()->id)
+                        ->where('assign_to_id', $user->user()->id)
                         ->count();
                     $done = DB::table('leads')
                         ->where('completed', 1)
                         ->where('status_contract', 'Done')
-                        ->where('assign_to_id', Auth::guard('admins')->user()->id)
+                        ->where('assign_to_id', $user->user()->id)
                         ->where('status_task', 'Done')
                         ->count();
                 }
@@ -771,7 +754,7 @@ class UserController extends Controller
                     $offen = DB::table('family_person')
                         ->join('leads', 'family_person.leads_id', '=', 'leads.id')
                         ->whereIn('family_person.status',['Open'])
-                        ->where('leads.assign_to_id', Auth::guard('admins')->user()->id)
+                        ->where('leads.assign_to_id', $user->user()->id)
                         ->count();
 
                     $leadscount = DB::table('leads')
@@ -782,11 +765,11 @@ class UserController extends Controller
                         ->count();
                 }
             }
-            if (Auth::guard('admins')->user()->hasRole('fs') || Auth::user()->hasRole('digital')) {
-                if (Auth::guard('admins')->user()->hasRole('fs')) {
-                    $todayAppointCount = lead::where('assign_to_id', Auth::guard('admins')->user()->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 0)->where('assigned', 1)->get()->count();
+            if ($user->user()->hasRole('fs') || Auth::user()->hasRole('digital')) {
+                if ($user->user()->hasRole('fs')) {
+                    $todayAppointCount = lead::where('assign_to_id', $user->user()->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 0)->where('assigned', 1)->get()->count();
                 } else {
-                    $todayAppointCount = lead::where('assign_to_id', Auth::guard('admins')->user()->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 1)->where('assigned', 1)->get()->count();
+                    $todayAppointCount = lead::where('assign_to_id', $user->user()->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 1)->where('assigned', 1)->get()->count();
                 }
 
                 $grundprov = 0;
@@ -913,9 +896,9 @@ class UserController extends Controller
                     'familyCount' => $fmcount
                 ];
                 return view('dashboard', compact('done', 'tasks', 'pendingcnt', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'counterat', 'offen'));
-            } elseif (Auth::guard('admins')->user()->hasRole('backoffice')) {
+            } elseif ($user->user()->hasRole('backoffice')) {
                 return view('dashboard', compact('pendencies', 'morethan30'));
-            } elseif (Auth::guard('admins')->user()->hasRole('salesmanager')) {
+            } elseif ($user->user()->hasRole('salesmanager')) {
 
 
                 $consultation = PersonalAppointment::where('user_id', Auth::user()->id)->where('AppOrCon', 2)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
@@ -939,7 +922,7 @@ class UserController extends Controller
 
                 return view('dashboard', compact('personalApp', 'consultation', 'done', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'countconsultation', 'provisionertCount', 'offenCount', 'aufgenomenCount', 'zuruckCount', 'abgCount', 'offen'));
 
-            } elseif (Auth::guard('admins')->user()->hasRole('admin')) {
+            } elseif ($user->user()->hasRole('admin')) {
                 $personalApp = PersonalAppointment::where('AppOrCon', 1)->where('assignfrom', Auth::user()->id)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
                 $countpersonalApp = $personalApp->count();
                 $admins = Admins::all();
@@ -973,6 +956,7 @@ class UserController extends Controller
             }
 
         }
+        
     }
 
     public function addnewuser()

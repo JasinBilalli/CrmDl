@@ -227,7 +227,7 @@
                                                                             <span
                                                                                 style="color: #000; font-weight: 500;"><b>Platform:</b> <span
                                                                                 style="color: #88889D;"> {{
-                                                                                    lead.campaign
+                                                                                    lead.campaign.name
                                                                                 }}</span></span><br>
                                                                         </div>
                                                                         <div class="py-1">
@@ -597,7 +597,7 @@
                                                                             <span
                                                                                 style="color: #000; font-weight: 500;"><b>Platform:</b> <span
                                                                                 style="color: #88889D;"> {{
-                                                                                    lead.campaign
+                                                                                    lead.campaign.name
                                                                                 }}</span></span><br>
                                                                         </div>
                                                                         <div class="py-1">

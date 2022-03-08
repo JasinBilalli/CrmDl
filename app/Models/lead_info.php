@@ -17,4 +17,5 @@ class lead_info extends Model
          'bewertung',
          'wichtig',
     ];
+
 }

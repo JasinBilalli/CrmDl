@@ -1,87 +1,88 @@
 @extends('template.navbar')
 @section('content')
-    <style>
-        body {
-            margin-top: 40px;
-            font-size: 14px;
-            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+<style>
+
+  body {
+    margin-top: 40px;
+    font-size: 14px;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  }
+
+
+
+  #external-events {
+    
+  }
+  
+
+  #external-events h4 {
+    font-size: 16px;
+    margin-top: 0;
+    padding-top: 1em;
+  }
+
+  #external-events .fc-event {
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  #external-events p {
+    margin: 1.5em 0;
+    font-size: 11px;
+    color: #666;
+  }
+
+  #external-events p input {
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  #calendar {
+    float: left;
+    width: 90%;
+	text-color : black ;
+  }
+  
+
+</style>
+  
+
+
+
+<link href='lib_cal/main.css' rel='stylesheet' />
+<script src='lib_cal/main.js'></script>
+<script src='lib_cal/moment.min.js'></script>
+<script src='lib_cal/moment.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+@if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager'))
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    /* initialize the external events
+    -----------------------------------------------------------------*/
+
+    var containerEl = document.getElementById('external-events');
+    new FullCalendar.Draggable(containerEl, {
+      itemSelector: '.fc-event',
+      eventData: function(eventEl) {
+        return {
+          title: eventEl.innerText.trim(),
+		  
         }
+      }
+    });
 
+    /* initialize the calendar
+    -----------------------------------------------------------------*/
 
-        #external-events {
-
-        }
-
-
-        #external-events h4 {
-            font-size: 16px;
-            margin-top: 0;
-            padding-top: 1em;
-        }
-
-        #external-events .fc-event {
-            margin: 10px 0;
-            cursor: pointer;
-        }
-
-        #external-events p {
-            margin: 1.5em 0;
-            font-size: 11px;
-            color: #666;
-        }
-
-        #external-events p input {
-            margin: 0;
-            vertical-align: middle;
-        }
-
-        #calendar {
-            float: left;
-            width: 90%;
-            text-color: black;
-        }
-
-
-    </style>
-
-
-
-
-    <link href='lib_cal/main.css' rel='stylesheet'/>
-    <script src='lib_cal/main.js'></script>
-    <script src='lib_cal/moment.min.js'></script>
-    <script src='lib_cal/moment.js'></script>
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-    @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager'))
-
-        <script>
-
-            document.addEventListener('DOMContentLoaded', function () {
-
-                /* initialize the external events
-                -----------------------------------------------------------------*/
-
-                var containerEl = document.getElementById('external-events');
-                new FullCalendar.Draggable(containerEl, {
-                    itemSelector: '.fc-event',
-                    eventData: function (eventEl) {
-                        return {
-                            title: eventEl.innerText.trim(),
-                        }
-                    }
-                });
-
-                /* initialize the calendar
-                -----------------------------------------------------------------*/
-
-                var calendarEl = document.getElementById('calendar');
-                var calendar = new FullCalendar.Calendar(calendarEl, {
-
-                    now: "{!! $date_in->format('Y-m-d') !!}",
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+		
+        now: "{!! $date_in->format('Y-m-d') !!}",
                     editable: false, // enable draggable events
                     droppable: true, // this allows things to be dropped onto the calendar
                     aspectRatio: 1.8,
@@ -106,260 +107,248 @@
                     height: 600,
                     initialView: 'resourceTimeGridDay',
                     slotMinTime: "08:00:00",
-                    slotMaxTime: "22:30:00",
+                    slotMaxTime: "20:30:00",
                     slotDuration: '00:30:00',
                     slotLabelInterval: 30,
                     allDaySlot: false,
                     eventMaxStack: 3,
                     dayMaxEvents: 3,
+	  
 
+      resources: [
+	  @foreach($users as $user)
+        { id: '{!! $user->id !!}', title: '{!! $user->name !!}', eventColor: 'rgb(12, 113, 195)' },
+	  @endforeach
+        
+        
+      ],
+      events: [
+	  @foreach ( $appointments as $appointmentAGG )
+        { 		
+		id: '{!! $appointmentAGG["id"] !!}', 
+		resourceId: '{!! $appointmentAGG["assign_to_id"] !!}', 
+		title: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}', 
+		start: new Date('{!! date("d/M/Y H:i:s", strtotime($appointmentAGG["appointment_date"]." ".$appointmentAGG["time"])) !!}') , 		
+		telephone: '{{ $appointmentAGG["telephone"] }}' , 
+		birthdate: '{{ $appointmentAGG["birthdate"] }}' , 
+		number_of_persons: '{{ $appointmentAGG["number_of_persons"] }}' , 
+		nationality: '{{ $appointmentAGG["nationality"] }}' , 
+		status_task: '{{ $appointmentAGG["status_task"] }}' , 
+        eventColor: 'rgb(12, 113, 195)',
+		name: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}', 
+		user_to :'{{ $appointmentAGG["assign_to_id"] }}',
+		
+		 
+		
+		},
+        
+	  @endforeach
+	  
+      ],
+      drop: function(arg) {
+        console.log('drop date: ' + arg.dateStr)
 
-                    resources: [
-                            @foreach($users as $user)
-                        {
-                            id: '{!! $user->id !!}', title: '{!! $user->name !!}', eventColor: 'rgb(12, 113, 195)'
-                        },
-                        @endforeach
+        if (arg.resource) {
+          //console.log('drop resource: ' + arg.resource.id);
+		  
+		  //console.log('eventReceive',arg.draggedEl.innerText.trim());
+		  
+		 
+		  if (confirm('Are you sure you want to assign appointment of ('+arg.draggedEl.innerText.trim()+') to <'+arg.resource.title+'>')) {
+		  // Save it!
+		  // console.log('Thing was saved to the database.');
+		  
+		 $.ajax({
+                     url: "{{URL::route('Dropajax')}}"+"?nom_lead="+arg.draggedEl.innerText.trim()+"&id_user="+arg.resource.id+"&time="+moment(arg.dateStr).format('HH:mm') ,					 
+                     type: "GET",
+                     data: {"data" : arg.draggedEl.innerText.trim()},
+                     success: function(data) {
+                          alert(data);
+						  window.location.reload();
+                                   }
+                              }); 
+		 
+		  
+		  
+		  
+		  arg.draggedEl.parentNode.removeChild(arg.draggedEl);
+		} else {
+		  // Do nothing!
+		  // console.log('Thing was not saved to the database.');
+		  // alert('KO');
+		  
+		  // remove from calendar
+		  arg.remove()
+		}
+        }
 
+         
+      },
+      eventReceive: function(arg) { // called when a proper external event is dropped
+        //console.log('eventReceive', arg.event);
+		
+		
+      },
+      eventDrop: function(arg) { // called when an event (already on the calendar) is moved
+        //console.log('eventDrop', arg.event);
+      },
+	  eventClick: function(calEvent) {
+		 
+		 document.getElementById("start").innerHTML = moment(calEvent.event.start).format('Y-MM-DD HH:mm');
+		 document.getElementById("name").innerHTML = calEvent.event.title;
+		 document.getElementById("telephone").innerHTML = calEvent.event.extendedProps.telephone;
+		 document.getElementById("birthdate").innerHTML = calEvent.event.extendedProps.birthdate;
+		 //document.getElementById("address").innerHTML = calEvent.event.extendedProps.address;
+		 document.getElementById("number_of_persons").innerHTML = calEvent.event.extendedProps.number_of_persons;
+		 document.getElementById("nationality").innerHTML = calEvent.event.extendedProps.nationality;
+		 document.getElementById("status_task").innerHTML = calEvent.event.extendedProps.status_task;
+		 document.getElementById("id").innerHTML = calEvent.event.id;
+		 document.getElementById("id_lead_input").value = calEvent.event.id;
+		 document.getElementById("id_lead_input2").value = calEvent.event.id;
+		 document.getElementById("date_new").value = moment(calEvent.event.start).format('Y-MM-DD');
+		 document.getElementById("date_new2").value = moment(calEvent.event.start).format('Y-MM-DD');
+		 document.getElementById("time_new").value = moment(calEvent.event.start).format('HH:mm');
+		 document.getElementById("time_new2").value = moment(calEvent.event.start).format('HH:mm');
+		 document.getElementById("OP-"+calEvent.event.extendedProps.user_to).selected = true ;
+		 
+		 $(exampleModal).modal('show'); 
+				
+	 },
+    });
+    calendar.render();
+	
 
-                    ],
-                    events: [
-                            @foreach ( $appointments as $appointmentAGG )
-                        {
-                            id: '{!! $appointmentAGG["id"] !!}',
-                            resourceId: '{!! $appointmentAGG["assign_to_id"] !!}',
-                            title: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}',
-                            start: new Date('{!! date("d/M/Y H:i", strtotime($appointmentAGG["appointment_date"]." ".$appointmentAGG["time"])) !!}'),
-                            telephone: '{{ $appointmentAGG["telephone"] }}',
-                            birthdate: '{{ $appointmentAGG["birthdate"] }}',
-                            number_of_persons: '{{ $appointmentAGG["number_of_persons"] }}',
-                            nationality: '{{ $appointmentAGG["nationality"] }}',
-                            status_task: '{{ $appointmentAGG["status_task"] }}',
-                            eventColor: 'rgb(12, 113, 195)',
-                            name: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}',
-                            user_to: '{{ $appointmentAGG["assign_to_id"] }}',
+  });
 
+</script>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog " role="document " style="max-width: 700px">
+    <div class="modal-content">
+      <div class="modal-header">
+	  <div class="col-md-4" style="text-align : left">
+	  <h5 class="modal-title" id="exampleModalLabel">Appointement detail</h5>
+	  </div>
+	  <div class="col-md-6" style="text-align : center">
+	  <h4 style="text-align : center; "><B><span id='start' style=" color : #e57e2d"></span></B> (<span id='number_of_persons'></span>persons)</h4>
+	  </div>
+	  <div class="col-md-2" style="text-align : right">
+	  <h5 class="modal-title"><B>ID :</B><span id='id'></span></h5>
+	  </div>
+             
+      </div>
+      <div class="modal-body">
+	  
+	    
+		
+	    
+	    <p style="line-height :8px"><B>Name :</B><span id='name'></span></p>
+	    <p style="line-height :8px"><B>Telephone :</B><span id='telephone'></span></p>
+	    <p style="line-height :8px"><B>Birthdate :</B><span id='birthdate'></span></p>
+	    <p style="line-height :8px"><B>Nationality :</B><span id='nationality'></span></p>
+	    <p style="line-height :8px"><B>Status of task :</B><span id='status_task'></span></p>
+		<hr>
+		<!--<p><B>address :</B><span id='address'></span></p> -->
+		<div class="row" >
+			<div class="col-md-6" style="text-align : left; ">
+			<a href="#" onclick='document.getElementById("change_fs").style.display = "block" ;' class="btn btn-info btn-sm"><i class="far fa-edit"></i> Edit</a>
+			</div>
+			<div class="col-md-6" style="text-align : right ;">
+			{{ Form::open(array('url' => 'changeTS' , 'method' => 'get')) }} 
+			<input type="hidden"  id="id_lead_input2" name="id_lead_input"> 
+			<input type="hidden"  id="ts_id2" name="ts_id" value="0">
+			<input type="hidden"  id="time_new2" name="time_new">
+			<input type="hidden"  id="date_new2" name="date_new">{!! Form::button('<i class="fas fa-retweet"></i> Replace in appointement list', ['type' => 'submit', 'class' => 'btn btn-warning btn-sm']) !!}
+			{{ Form::close() }}
+			</div>
+			<hr>
+		</div>
+		<div style="display : none" id="change_fs">
+		{{ Form::open(array('url' => 'changeTS' , 'method' => 'get')) }}
+		    <input type="hidden" value="" id="id_lead_input" name="id_lead_input">
+			<div class="row">
+				<div class="form-group col-sm-3">
+					{!! Form::label('ts_id', 'FS:') !!}
+					<select name="ts_id" id="" class="form-control form-select form-select-sm" required>
+						<option value="" id="">*******</option>
+						@foreach($users as $user)
+						<option value="{!! $user->id !!}" id="OP-{!! $user->id !!}">{!! $user->name !!}</option>
+						@endforeach
+					</select>
+				</div>
+				<div class="form-group col-sm-4">
+					{!! Form::label('ts_id', 'Date:') !!}
+					<input type="date"  id="date_new" name="date_new" class="form-control form-control-sm" value="" disabled>
+				</div>
+				<div class="form-group col-sm-2">
+					{!! Form::label('ts_id', 'Time:') !!}
+					<input type="time"  id="time_new" name="time_new" class="form-control form-control-sm" value="" min="08:00" max="20:00" disabled>
+				</div>
+				<div class="form-group col-sm-3" style="text-align : rignt">
+					<br>
+					{!! Form::submit('Save', ['class' => 'btn btn-primary btn-sm btn-block']) !!}
+					<a class="btn btn-danger btn-sm" href="#" onclick="$(exampleModal).modal('hide'); ">Cancel</a>
+				</div>
+			</div>
+		{{ Form::close() }}
+		</div>
+      </div>
+     
+    </div>
+  </div>
+</div>
 
-                        },
-
-                        @endforeach
-
-                    ],
-                    drop: function (arg) {
-                        console.log('drop date: ' + arg.dateStr)
-
-                        if (arg.resource) {
-                            //console.log('drop resource: ' + arg.resource.id);
-
-                            //console.log('eventReceive',arg.draggedEl.innerText.trim());
-
-
-                            if (confirm('Sind Sie sicher, dass Sie einen Termin zuweisen möchten? (' + arg.draggedEl.innerText.trim() + ') to <' + arg.resource.title + '>')) {
-                                // Save it!
-                                // console.log('Thing was saved to the database.');
-
-                                $.ajax({
-                                    url: "{{URL::route('Dropajax')}}" + "?nom_lead=" + arg.draggedEl.innerText.trim() + "&id_user=" + arg.resource.id + "&time=" + arg.draggedEl.now + "&ctime=" + calendar.getDate(),
-                                    type: "GET",
-                                    data: {"data": arg.draggedEl.innerText.trim()},
-                                    success: function (data) {
-                                        alert(data);
-                                        window.location.reload();
-                                    }
-                                });
-
-
-                                arg.draggedEl.parentNode.removeChild(arg.draggedEl);
-                            } else {
-                                // Do nothing!
-                                // console.log('Thing was not saved to the database.');
-                                // alert('KO');
-
-                                // remove from calendar
-                                arg.remove()
-                            }
-                        }
-
-
-                    },
-                    eventReceive: function (arg) { // called when a proper external event is dropped
-                        //console.log('eventReceive', arg.event);
-
-
-                    },
-                    eventDrop: function (arg) { // called when an event (already on the calendar) is moved
-                        //console.log('eventDrop', arg.event);
-                    },
-                    eventClick: function (calEvent) {
-
-                        document.getElementById("start").innerHTML = moment(calEvent.event.start).format('Y-MM-DD HH:mm');
-                        document.getElementById("name").innerHTML = calEvent.event.title;
-                        document.getElementById("telephone").innerHTML = calEvent.event.extendedProps.telephone;
-                        document.getElementById("birthdate").innerHTML = calEvent.event.extendedProps.birthdate;
-                        document.getElementById("address").innerHTML = calEvent.event.extendedProps.address;
-                        document.getElementById("number_of_persons").innerHTML = calEvent.event.extendedProps.number_of_persons;
-                        document.getElementById("nationality").innerHTML = calEvent.event.extendedProps.nationality;
-                        document.getElementById("status_task").innerHTML = calEvent.event.extendedProps.status_task;
-                        document.getElementById("id").innerHTML = calEvent.event.id;
-                        document.getElementById("id_lead_input").value = calEvent.event.id;
-                        document.getElementById("id_lead_input2").value = calEvent.event.id;
-
-                        document.getElementById("date_new").value = moment(calEvent.event.start).format('Y-MM-DD');
-                        document.getElementById("date_new2").value = moment(calEvent.event.start).format('Y-MM-DD');
-                        document.getElementById("time_new").value = moment(calEvent.event.start).format('HH:mm');
-                        document.getElementById("time_new2").value = moment(calEvent.event.start).format('HH:mm');
-                        document.getElementById("OP-" + calEvent.event.extendedProps.user_to).selected = true;
-
-                        $(exampleModal).modal('show');
-                    }
-                });
-                calendar.render();
-
-
-            });
-
-        </script>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog " role="document " style="max-width: 700px">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="col-md-4" style="text-align : left">
-                            <h5 class="modal-title" id="exampleModalLabel">Appointement detail</h5>
-                        </div>
-                        <div class="col-md-6" style="text-align : center">
-                            <h4 style="text-align : center; "><B><span id='start' style=" color : #e57e2d"></span></B> (<span
-                                    id='number_of_persons'></span>persons)</h4>
-                        </div>
-                        <div class="col-md-2" style="text-align : right">
-                            <h5 class="modal-title"><B>ID :</B><span id='id'></span></h5>
-                        </div>
-
-                    </div>
-                    <div class="modal-body">
-
-
-                        <p style="line-height :8px"><B>Vorname :</B><span id='name'></span></p>
-                        <p style="line-height :8px"><B>Telefonnummer :</B><span id='telephone'></span></p>
-                        <p style="line-height :8px"><B>Geburtstag :</B><span id='birthdate'></span></p>
-                        <p style="line-height :8px"><B>Nationalität :</B><span id='nationality'></span></p>
-                        <p style="line-height :8px"><B>Status der Aufgaben :</B><span id='status_task'></span></p>
-                        <hr>
-                        <!--<p><B>address :</B><span id='address'></span></p> -->
-                        <div class="row">
-                            <div class="col-md-6" style="text-align : left; ">
-                                <a href="#" onclick='document.getElementById("change_fs").style.display = "block" ;'
-                                   class="btn btn-info btn-sm"><i class="far fa-edit"></i> Edit</a>
-                            </div>
-                            <div class="col-md-6" style="text-align : right ;">
-                                {{ Form::open(array('url' => 'changeTS' , 'method' => 'get')) }}
-                                <input type="hidden" id="id_lead_input2" name="id_lead_input">
-                                <input type="hidden" id="ts_id2" name="ts_id" value="0">
-                                <input type="hidden" id="time_new2" name="time_new">
-                                <input type="hidden" id="date_new2"
-                                       name="date_new">{!! Form::button('<i class="fas fa-retweet"></i> Replace in appointement list', ['type' => 'submit', 'class' => 'btn btn-warning btn-sm']) !!}
-                                {{ Form::close() }}
-                            </div>
-                            <hr>
-                        </div>
-                        <div style="display : none" id="change_fs">
-                            {{ Form::open(array('url' => 'changeTS' , 'method' => 'get')) }}
-                            <input type="hidden" value="" id="id_lead_input" name="id_lead_input">
-                            <div class="row">
-                                <div class="form-group col-sm-3">
-                                    {!! Form::label('ts_id', 'FS:') !!}
-                                    <select name="ts_id" id="" class="form-control form-select form-select-sm" required>
-                                        <option value="" id="">*******</option>
-                                        @foreach($users as $user)
-                                            <option value="{!! $user->id !!}"
-                                                    id="OP-{!! $user->id !!}">{!! $user->name !!}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group col-sm-4">
-                                    {!! Form::label('ts_id', 'Date:') !!}
-                                    <input type="date" id="date_new" name="date_new"
-                                           class="form-control form-control-sm" value="" disabled>
-                                </div>
-                                <div class="form-group col-sm-2">
-                                    {!! Form::label('ts_id', 'Time:') !!}
-                                    <input type="time" id="time_new" name="time_new"
-                                           class="form-control form-control-sm" value="" min="08:00" max="20:00"
-                                           disabled>
-                                </div>
-                                <div class="form-group col-sm-3" style="text-align : rignt">
-                                    <br>
-                                    {!! Form::submit('Save', ['class' => 'btn btn-primary btn-sm btn-block']) !!}
-                                    <a class="btn btn-danger btn-sm" href="#" onclick="$(exampleModal).modal('hide'); ">Cancel</a>
-                                </div>
-                            </div>
-                            {{ Form::close() }}
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-12 col-md-12  g-0">
-            <div class="fs-5 fw-bold mx-2 mb-2"> Termine</div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-12  g-0">
-            {{ Form::open(array('url' => 'Appointments' , 'method' => 'get')) }}
-            <div class="row px-2 py-3 justify-content-evenly mx-2" style="border: 1px solid #ccc;background: #eee; border-radius: 8px; ">
-                <div class="col-lg-auto"><br>
-                    <input type="radio" id="html" name="trie" value="desc" @if($trie == "desc" )checked @endif>
-                    <label for="html" class="fw-bold"><i class="fas fa-sort-amount-down"></i> Zeit absteigend</label>
-                </div>
-                <div class="col-lg-auto mb-3"><br>
-                    <input type="radio" id="css" name="trie" value="asc" @if($trie == "asc" )checked @endif>
-                    <label for="css" class="fw-bold"><i class="fas fa-sort-amount-up-alt"></i> Zeit aufsteigend</label>
-                </div>
-                <div class="col-lg-auto">
-                    <label class="fw-bold">Date</label>
-                    <input type="date" class="form-control form-control-sm" name="date_in"
-                           value="{!! $date_in->format('Y-m-d') !!}">
-                </div>
-                <div class="col-lg-auto">
-                    <label class="fw-bold">Region</label>
-                    <select name="region" class="form-control form-select form-select-sm">
-                        <option value="all" @if($regionO == "all") selected @endif>Alle Region</option>
-                        @foreach ( $regions as $region)
-                            <option value="{!! $region->city !!}"
-                                    @if($regionO == $region->city) selected @endif >{!! $region->city !!}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-lg-auto">
-                    <label class="fw-bold">Status</label>
-                    <select name="rejected" class="form-control form-select form-select-sm">
-                        <option value="all" @if($rejectedO == "all") selected @endif>Alle</option>
-                        <option value="1" @if($rejectedO == "1") selected @endif>Abgelehnt</option>
-                        <option value="0" @if($rejectedO == "0") selected @endif>Akzeptiert</option>
-                    </select>
-                </div>
-                <div class="col-lg-auto">
-                    <label class="fw-bold">Language</label>
-                    <select name="sprache" class="form-control form-select form-select-sm">
-                        <option value="all" @if($spracheO == "all") selected @endif>Alle Sprache</option>
-                        @foreach ( $langues as $langue)
-                            <option value="{!! $langue->sprache !!}"
-                                    @if($spracheO == $langue->sprache) selected @endif >{!! $langue->sprache !!}</option>
-                        @endforeach
-                    </select><br>
-                </div>
-                <div class="col-lg-auto my-auto">
-                   <div class="my-2">
-                       {!! Form::button('<i class="fas fa-filter my-auto"></i><span class="ps-2">Filter</span>', ['type' => 'submit', 'class' => 'btn buttoni-filter px-5 d-flex']) !!}
-                   </div>
-                </div>
-
-            </div>{{ Form::close() }}
-
-        </div>
-
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 g-0"><br>
+<div class="col-12 col-sm-12 col-md-12  g-0">
+           <h3> Termine </h3>
+</div>
+<div class="col-12 col-sm-12 col-md-12  g-0">
+{{ Form::open(array('url' => 'Appointments' , 'method' => 'get')) }} 
+<div class="row" style=" padding: 0 10px;border: 1px solid #ccc;width : 98.8%;    background: #eee;  ">
+	<div class="col-lg-2"><br>
+		<input type="radio" id="html" name="trie" value="desc" @if($trie == "desc" )checked @endif>
+		<label for="html"><i class="fas fa-sort-amount-down"></i> Time Desc</label>
+	</div>
+	<div class="col-lg-2"><br>
+		<input type="radio" id="css" name="trie" value="asc" @if($trie == "asc" )checked @endif>
+		<label for="css"><i class="fas fa-sort-amount-up-alt"></i> Time Asc</label>
+	</div>
+	<div class="col-lg-2">
+	<label >Date</label>
+	<input type="date" class="form-control form-control-sm" name="date_in" value="{!! $date_in->format('Y-m-d') !!}">
+	</div>
+			<div class="col-lg-2">
+				<label >Region</label>
+				<select name="region" class="form-control form-select form-select-sm">
+					<option value="all" @if($regionO == "all") selected @endif>All region</option>
+					@foreach ( $regions as $region)
+						<option value="{!! $region->city !!}" @if($regionO == $region->city) selected @endif >{!! $region->city !!}</option>
+					@endforeach
+				</select>
+			</div>
+			<div class="col-lg-1">
+				<label >Status</label>
+				<select name="rejected" class="form-control form-select form-select-sm">
+					<option value="all" @if($rejectedO == "all") selected @endif>All</option>
+					<option value="1" @if($rejectedO == "1") selected @endif>Rejected </option>
+					<option value="0" @if($rejectedO == "0") selected @endif>Accepted</option>
+				</select>
+			</div>
+			<div class="col-lg-2">
+				<label >language</label>
+				<select name="sprache" class="form-control form-select form-select-sm">
+					<option value="all"  @if($spracheO == "all") selected @endif>All language</option>
+					@foreach ( $langues as $langue)
+						<option value="{!! $langue->sprache !!}" @if($spracheO == $langue->sprache) selected @endif >{!! $langue->sprache !!}</option>
+					@endforeach
+				</select><br>
+			</div>
+			<div class="col-lg-1"><br>
+            {!! Form::button('<i class="fas fa-filter my-auto"></i><span>Filter</span>', ['type' => 'submit', 'class' => 'btn buttoni-filter ps-3 d-flex']) !!}	</div>
+	
+</div>{{ Form::close() }}
+		   
+</div>
+<div class="col-12 col-sm-12 col-md-12 col-lg-12 g-0"><br>
             <div class="row g-0">
                 <div class="col-lg-9 col-12" style="font-size: 12px; text-align : center ;">
                     @if(session('msg')) <h5
@@ -371,8 +360,8 @@
                     <div style='clear:both'></div>
                 </div>
                 <div class="col-lg-3 col-12 box follow-scroll">
-                    <div id='external-events' class="ms-2 ms-sm-2 ms-md-0 ms-lg-0 ms-xl-0 ms-xxl-0 me-2">
-                        <div id='wrap'
+                    <div id='external-events'>
+                        <div id='wrap' class="me-2"
                              style="overflow-y: scroll;border: 1px solid #ccc;background: #eee;text-align: left;height: 600px ;text-align:center;border-radius: 12px;">
                             <div class="fs-6 fw-bold my-3">Terminliste ({!! count($appointments_events) !!}) </div>
                             <hr class="mx-2" style="height: 2px">
@@ -384,8 +373,7 @@
                                             style="color:#fff">{!! date("d/M/Y H:i", strtotime($appointment["appointment_date"]." ".$appointment["time"])) !!}
                                             ({!! $appointment["number_of_persons"] !!}
                                             persons)</B><br>@if($appointment["assigned"] == '0')<a
-                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff; border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Nicht zugeordnet</a>
-                                            @endif @if($appointment["wantsonline"] == '1')(Online)@endif</div>
+                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff; border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Nicht zugeordnet</a>@endif</div>
                                 @else
                                     <div class='fc-event  p-2 m-2'
                                          style="margin: 10px 0; cursor: pointer; text-align: left; color:#fff;border-radius: 10px; font-size: 14px;  background:#c40000;">{!! $appointment["id"] !!}
@@ -393,8 +381,7 @@
                                             style="color: #fff;">{!! date("d/M/Y H:i", strtotime($appointment["appointment_date"]." ".$appointment["time"])) !!}
                                             ({!! $appointment["number_of_persons"] !!}
                                             persons)</B><br>@if($appointment["assigned"] == '0')<a
-                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff;border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Abgelehnt </a>
-                                            @endif @if($appointment["wantsonline"] == '1')(Online)@endif 
+                                            href='acceptappointment/{!! $appointment["id"] !!}' style="color:#fff;border:1px solid #fff;border-radius: 4px;padding-left: 2px;padding-right: 2px;">Abgelehnt </a>@endif
                                     </div>
                                 @endif
                             @endforeach
@@ -402,49 +389,39 @@
 
                         </div>
                     </div>
-                    @if($appointments_events->count() > 1)
-    <div class="d-flex justify-content-center mt-2">
-    <div class="d-flex justify-content-center"><nav role="navigation" aria-label="Pagination Navigation" class="flex items-center justify-between">
-        @if($appointments_events->currentPage() > 1)
-        <span> <a href="{{route('Appointments',['events_page' => $appointments_events->currentPage() -1])}}" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"></span>
-            @endif
-                    « Previous
-                </span> <a href="{{route('Appointments',['events_page' => $appointments_events->currentPage() +1])}}" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-gray-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-                    Next »
-                </a></div> <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"><div><p class="text-sm text-gray-700 leading-5">
-                
-                </p></div> <div></div></div></nav></div>
-                @endif
-                
                 </div>
-            </div>
-        </div>
-
-        <div class="row g-0">
+	  
+	  <div class="row">
             <div class="col-md-12">
-
+                
                 <div class="text-center" style="margin-top: 30px">
                     <a href="{{route('insertappointment')}}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="#0C71C3"
-                             class="bi bi-plus-square-fill mb-1" viewBox="0 0 16 16">
-                            <path
-                                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="37.694" height="37.694" viewBox="0 0 37.694 37.694">
+                            <g id="Group_621" data-name="Group 621" transform="translate(-663.236 -976.679)">
+                                <g id="Group_550" data-name="Group 550" transform="translate(663.236 976.679)">
+                                    <rect id="Rectangle_9" data-name="Rectangle 9" width="37.694" height="37.694" rx="18.847" fill="#4ec590"/>
+                                        <g id="Group_42" data-name="Group 42" transform="translate(12.724 12.724)">
+                                            <line id="Line_11" data-name="Line 11" y2="11.972" transform="translate(5.986 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                                            <line id="Line_12" data-name="Line 12" x1="11.972" transform="translate(0 5.634)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                                        </g>
+                                </g>
+                            </g>
                         </svg>
+                         
                     </a>
                     <br>
-                    Neues hinzufügen
+                    Add new one
                 </div>
             </div>
             <div class="col-md-12">
                 <section>
                     <div class="container">
-                        <div class="form-div my-4 py-4 mx-2" style="background-color: #EFEFEF; border-radius: 20px;">
+                        <div class="form-div my-4 py-4 mx-auto" style="background-color: #EFEFEF; border-radius: 20px;">
                             <div class="mb-4 mx-5">
-                                <span class="fs-5 fw-600">Oder per Datei einfügen</span>
+                                <span class="fs-5 fw-600">Or Insert By File</span>
                             </div>
                             <form method="post" action="{{route('addappointmentfile')}}" enctype="multipart/form-data">
                                 <div class="row mx-4">
-                                    @csrf
                                     <div class="col">
                                         <div class="mx-2">
                                             <div class="input-group">
@@ -452,16 +429,14 @@
                                             </div>
                                             <div class="my-4">
                                                 <button type="submit" class="py-2 px-5 border-0 fw-bold"
-                                                        style="background-color: #0C71C3; color: #fff; border-radius: 8px;">
-                                                    Annehmen
-                                                </button>
+                                                        style="background-color: #63D4A4; color: #fff; border-radius: 8px;">Accept</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                             <div onclick="openExamplePic()">
-                                <span class="btn fw-600 mx-5" style="border: 1px solid #434343;border-radius: 5px">Beispiel</span>
+                                <span class="btn fw-600 mx-5" style="border: 1px solid #434343;border-radius: 5px">Example</span>
                             </div>
                             <br>
                             <div style="display: none" class="w-100" id="picture">
@@ -482,192 +457,148 @@
                 }
             }
         </script>
+		
+		
+		
+       
+
+@elseif(Auth::guard('admins')->user()->hasRole('fs'))
 
 
+<script>
+
+    /* initialize the calendar
+    -----------------------------------------------------------------*/
+
+  document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
 
 
+      editable: false, // enable draggable events
+      droppable: true, // this allows things to be dropped onto the calendar
+      aspectRatio: 1.8,
+      scrollTime: '00:00', // undo default 6am scrollTime
+	  
+	  
+		headerToolbar: {
+		  left: 'prev,next today',
+		  center: 'title',
+		  right: 'timeGridWeek,timeGridDay,dayGridMonth'
+		},
+		views: {
+			 dayGridMonth: {
+			   eventMaxStack: 3
+			 }
+		 },
+		initialView: 'timeGridWeek',
+		
+		
+		eventMaxStack : 3,
+		dayMaxEvents : 3,
+		height: 600,
+		  slotMinTime: "08:00:00",
+		  slotMaxTime : "20:00:00",
+		  slotDuration: '00:30:00',
+		  slotLabelInterval: 30,
+		  allDaySlot : false,
+    events: [
+	  @foreach ( $appointments as $appointmentAGG )
+        { 
+		id: '{!! $appointmentAGG["id"] !!}', 
+		start: new Date('{!! date("d/M/Y h:i:s", strtotime($appointmentAGG["appointment_date"]." ".$appointmentAGG["time"])) !!}') , 		
+		telephone: '{{ $appointmentAGG["telephone"] }}' , 
+		birthdate: '{{ $appointmentAGG["birthdate"] }}' , 
+		number_of_persons: '{{ $appointmentAGG["number_of_persons"] }}' , 
+		nationality: '{{ $appointmentAGG["nationality"] }}' , 
+		status_task: '{{ $appointmentAGG["status_task"] }}' , 
+		eventColor: 'green',
+		name: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}', 
+		title: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}', 
+		address: '', 
+		},
+        
+	  @endforeach
+	  
+      ],
+	  
+	 eventClick: function(calEvent) {
+		 
+		 document.getElementById("start").innerHTML = moment(calEvent.event.start).format('Y-m-d HH:mm');
+		 document.getElementById("name").innerHTML = calEvent.event.title;
+		 document.getElementById("telephone").innerHTML = calEvent.event.extendedProps.telephone;
+		 document.getElementById("birthdate").innerHTML = calEvent.event.extendedProps.birthdate;
+		 document.getElementById("address").innerHTML = calEvent.event.extendedProps.address;
+		 document.getElementById("number_of_persons").innerHTML = calEvent.event.extendedProps.number_of_persons;
+		 document.getElementById("nationality").innerHTML = calEvent.event.extendedProps.nationality;
+		 document.getElementById("status_task").innerHTML = calEvent.event.extendedProps.status_task;
+		 document.getElementById("id").innerHTML = calEvent.event.id;
+		 
+		 $(exampleModal).modal('show'); 
+				
+	 },
+	   
+  });
 
-    @elseif(Auth::guard('admins')->user()->hasRole('fs'))
-
-
-        <script>
-
-            /* initialize the calendar
-            -----------------------------------------------------------------*/
-
-            document.addEventListener('DOMContentLoaded', function () {
-                var calendarEl = document.getElementById('calendar');
-
-                var calendar = new FullCalendar.Calendar(calendarEl, {
-
-
-                    editable: false, // enable draggable events
-                    droppable: true, // this allows things to be dropped onto the calendar
-                    aspectRatio: 1.8,
-                    scrollTime: '00:00', // undo default 6am scrollTime
-
-
-                    headerToolbar: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'timeGridWeek,timeGridDay,dayGridMonth'
-                    },
-                    views: {
-                        dayGridMonth: {
-                            eventMaxStack: 3
-                        }
-                    },
-                    initialView: 'timeGridWeek',
-
-
-                    eventMaxStack: 3,
-                    dayMaxEvents: 3,
-                    height: 600,
-                    slotMinTime: "08:00:00",
-                    slotMaxTime: "22:30:00",
-                    slotDuration: '00:30:00',
-                    slotLabelInterval: 30,
-                    allDaySlot: false,
-                    events: [
-                            @foreach ( $appointments as $appointmentAGG )
-                        {
-                            id: '{!! $appointmentAGG["id"] !!}',
-                            start: new Date('{!! date("d/M/Y H:i", strtotime($appointmentAGG["appointment_date"]." ".$appointmentAGG["time"])) !!}'),
-                            telephone: '{{ $appointmentAGG["telephone"] }}',
-                            birthdate: '{{ $appointmentAGG["birthdate"] }}',
-                            number_of_persons: '{{ $appointmentAGG["number_of_persons"] }}',
-                            nationality: '{{ $appointmentAGG["nationality"] }}',
-                            status_task: '{{ $appointmentAGG["status_task"] }}',
-                            eventColor: 'green',
-                            name: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}',
-                            title: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}',
-                            address: '',
-                        },
-
-                        @endforeach
-
-                    ],
-
-                    eventClick: function (calEvent) {
-
-                        document.getElementById("start").innerHTML = moment(calEvent.event.start).format('Y-m-d HH:mm');
-                        document.getElementById("name").innerHTML = calEvent.event.title;
-                        document.getElementById("telephone").innerHTML = calEvent.event.extendedProps.telephone;
-                        document.getElementById("birthdate").innerHTML = calEvent.event.extendedProps.birthdate;
-                        document.getElementById("address").innerHTML = calEvent.event.extendedProps.address;
-                        document.getElementById("number_of_persons").innerHTML = calEvent.event.extendedProps.number_of_persons;
-                        document.getElementById("nationality").innerHTML = calEvent.event.extendedProps.nationality;
-                        document.getElementById("status_task").innerHTML = calEvent.event.extendedProps.status_task;
-                        document.getElementById("id").innerHTML = calEvent.event.id;
-
-                        $(exampleModal).modal('show');
-
-                    },
-
-                });
-
-                calendar.render();
-            });
+  calendar.render();
+});
 
 </script>
+<!-- Button trigger modal
+{{trim(preg_replace("/\s\s+/", " ", $appointmentAGG["address"])) }} {{trim(preg_replace("/\s\s+/", " ", $appointmentAGG["city"])) }}, {{ $appointmentAGG["postal_code"] }}
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Appointement detail</h5>
-                    </div>
-                    <div class="modal-body">
 
-                        <h5 style="text-align : center; "><B><span id='start' style=" color : #e57e2d"></span></B>
-                            (<span id='number_of_persons'></span> persons )</h5>
-
-                        <p><B>ID :</B><span id='id'></span></p>
-                        <p><B>Vorname :</B><span id='name'></span></p>
-                        <p><B>Telefonnummer :</B><span id='telephone'></span></p>
-                        <p><B>Geburtstag :</B><span id='birthdate'></span></p>
-                        <p><B>Nationalität :</B><span id='nationality'></span></p>
-                        <p><B>Status der Aufgaben :</B><span id='status_task'></span></p>
-                        <hr>
-                        <p><B>Adresse :</B><span id='address'></span></p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+ -->
 
 
 
-
-        <div class="col-12">
-            <h3> Termine</h3>
-        </div>
-
-        <div class="col-12" width="90%" style="font-size: 12px;">
-            <div class="mx-2" id='calendar'></div>
-        </div>
-        <div class="col-md-5 col-lg-5">
-{{--            <script src="https://maps.google.com/maps/api/js?key=AIzaSyD_grqAdVA3qsZw5JLlURyeu8UI0E_dlY8"--}}
-{{--                    type="text/javascript"></script>--}}
-            <div class="gmap_canvas d-flex justify-content-center">
-
-                <div id="map" style="z-index: 0 !important;width: 100% !important; height:70vh !important; border-radius: 15px !important;"></div>
-
-            </div>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Appointement detail</h5>     
+      </div>
+      <div class="modal-body">
+	  
+	    <h5 style="text-align : center; "><B><span id='start' style=" color : #e57e2d"></span></B> (<span id='number_of_persons'></span> persons  )</h5>
+		
+	    <p><B>ID :</B><span id='id'></span></p>
+	    <p><B>Name :</B><span id='name'></span></p>
+	    <p><B>Telephone :</B><span id='telephone'></span></p>
+	    <p><B>Birthdate :</B><span id='birthdate'></span></p>
+	    <p><B>Nationality :</B><span id='nationality'></span></p>
+	    <p><B>Status of task :</B><span id='status_task'></span></p>
+		<hr>
+		<p><B>address :</B><span id='address'></span></p>
+      </div>
+     
+    </div>
+  </div>
+</div>
 
 
 
 
+<div class="col-12 ">
+           <h3> Appointments</h1><hr>
+</div>
+  <div class="row">
+<div class="col-12" width="90%" style="font-size: 12px;">
+    <div id='calendar'></div>
+
+    
+</div>
+</div>
+</div>
+@else
+	
+You don't have permission // {!! Auth::guard('admins')->user()->hasRole('admin') !!} ---  {!! Auth::guard('admins')->user()->getRoleNames() !!}
+
+@endif
 
 
-
-
-        <script type="text/javascript">
-            var locations = [
-                ['Bondi Beach', -33.890542, 151.274856, 4],
-                ['Coogee Beach', -33.923036, 151.259052, 5],
-                ['Cronulla Beach', -34.028249, 151.157507, 3],
-                ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-                ['Maroubra Beach', -33.950198, 151.259302, 1]
-            ];
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: new google.maps.LatLng(-33.92, 151.25),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-
-            var infowindow = new google.maps.InfoWindow();
-
-            var marker, i;
-
-            for (i = 0; i < locations.length; i++) {
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                    map: map
-                });
-
-                google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                    return function () {
-                        infowindow.setContent(locations[i][0]);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, i));
-            }
-        </script>
-
-
-
-
-    @else
-
-        Sie haben keine Berechtigung // {!! Auth::guard('admins')->user()->hasRole('admin') !!} ---  {!! Auth::guard('admins')->user()->getRoleNames() !!}
-
-
-    @endif
 @endsection
 
 <style>

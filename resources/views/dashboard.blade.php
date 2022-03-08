@@ -64,7 +64,7 @@
                                 </g>
                                 <text id="_74_" data-name="74%" transform="translate(31.871 94.343)" fill="#fff"
                                       font-size="49" font-family="Montserrat-Bold, Montserrat" font-weight="700">
-                                    <tspan x="0" y="0">{{$counterat['provisionertCount']}}</tspan>
+                                    <tspan x="0" y="0">{{ $counterat['provisionertCount']}}</tspan>
                                 </text>
                                 <text id="Abschlussquote" transform="translate(31.871 144.225)" fill="#fff"
                                       font-size="23" font-family="Montserrat-SemiBold, Montserrat" font-weight="600">
@@ -511,7 +511,7 @@
                     <div class="personal-appointments">
                         <div class="header px-3 px-sm-3 justify-content-between">
                             <div class="">
-                                <span>Persönliche Termine</span>
+                                <span>Private Termine</span>
                             </div>
                             <div class="">
                                 <span>{{$countpersonalApp}}</span>
@@ -1031,7 +1031,7 @@
                                             <div class="p-3">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <h5><b>Persönliche Termine</b></h5>
+                                                        <h5><b>Private Termine</b></h5>
                                                     </div>
                                                     <div style="color: #0a53be" class="col-3 text-end">
                                                         <h5><b>{{$countpersonalApp}}</b></h5>
@@ -1128,7 +1128,7 @@
                                                          style="border-radius: 43px !important;">
                                                         <div class="modal-header" style="border-bottom: 0 !important;">
                                                             <h5 class="modal-title mx-2" id="exampleModalLabel"
-                                                                style="font-family: 'Montserrat';"><b>Persönlichen
+                                                                style="font-family: 'Montserrat';"><b>Private
                                                                     Termin Hinzufügen</b></h5>
                                                             <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal"

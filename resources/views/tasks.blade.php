@@ -203,7 +203,7 @@
                                                             data-bs-dismiss="modal"><b>Close</b></button>
 
                                                     <a onclick="window.location.href='{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}'" >
-                                                        <button type="button" class="btn px-3"
+                                                        <button class="btn px-3"
                                                                 style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
                                                                 data-bs-dismiss="modal"><b>Offen</b></button>
                                                     </a>
@@ -803,12 +803,12 @@
                                                         <div class="modal-footer text-center"
                                                              style="border-top: none !important; display: block;">
 
-                                                            <button type="button" class="btn px-3"
+                                                            <button class="btn px-3"
                                                                     style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
                                                                     data-bs-dismiss="modal"><b>Close</b></button>
 
-                                                            <a href="{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}">
-                                                                <button type="button" class="btn px-3"
+                                                            <a onclick="window.location.href='{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}'">
+                                                                <button class="btn px-3"
                                                                         style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
                                                                         data-bs-dismiss="modal"><b>Offen</b></button>
                                                             </a>
