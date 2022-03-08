@@ -155,7 +155,11 @@
                                 <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
                                 <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
                             </svg>
-                            <span class="ps-2 txt-dn">Kalender</span>
+                            @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
+                                <span class="ps-2 txt-dn">Terminen</span>
+                            @else
+                                <span class="ps-2 txt-dn">Kalender</span>
+                            @endif
                         </a>
                     @endif
                     @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
@@ -648,9 +652,9 @@
                                                                         <div class="select-div text-end ">
                                                                             <select name="vergleichsart_select" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                                                 <option selected>Auswählen</option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
+                                                                                <option value="0:1 Downgraden">0:1 Downgraden</option>
+                                                                                <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -2066,9 +2070,9 @@
                                                                         <div class="select-div text-end">
                                                                             <select name="Hvergleichsart_select" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                                                 <option selected>Select</option>
-                                                                                <option value="1:0 Deckung">1:0 Deckung</option>
-                                                                                <option value="0:1 Deckung">0:1 Deckung</option>
-                                                                                <option value="1:1 Deckung">1:1 Deckung</option>
+                                                                                <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
+                                                                                <option value="0:1 Downgraden">0:1 Downgraden</option>
+                                                                                <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                             </select>
                                                                         </div>
                                                                     </div>
@@ -2582,7 +2586,11 @@
                         </svg>
                     </span>
                     <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        KALENDER
+                        @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
+                            TERMINEN
+                        @else
+                            KALENDER
+                        @endif
                     </span>
                 </a>
                 <hr>
@@ -3423,13 +3431,11 @@
                 '                                                                </div>' +
                 '                                                                <div class="col g-0 d-flex justify-content-end">' +
                 '                                                                    <div class="select-div text-end ">' +
-                '                                                                        <select name="vergleichsart_select' + newgcnt + '"> ' +
-                '                                                                                class="fw-bold" id=""' +
-                '                                                                                style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">' +
-                '                                                                            <option selected>Select</option>' +
-                '                                                                            <option value="1:0 Deckung">1:0 Deckung</option>' +
-                '                                                                            <option value="0:1 Deckung">0:1 Deckung</option>' +
-                '                                                                            <option value="1:1 Deckung">1:1 Deckung</option>' +
+                '                                                                        <select name="vergleichsart_select' + newgcnt + '" class="fw-bold" id="" style="background-color: #EFEFEF !important; font-size: 12px;color:#9F9F9F;">' +
+                '                                                                            <option selected>Auswählen</option>' +
+                '                                                                            <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>' +
+                '                                                                            <option value="0:1 Downgraden">0:1 Downgraden</option>' +
+                '                                                                            <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>' +
                 '                                                                        </select>' +
                 '                                                                   </div>' +
                 '                                                                </div>' +
@@ -3439,13 +3445,13 @@
                 '                                                            <div class="mb-3 mt-3">' +
                 '                                                               <label for="exampleFormControlTextarea1"' +
                 '                                                                      class="form-label"' +
-                '                                                                      style="font-size: 13px;">Kommentar</label>                                                                <textarea name="commentFahrenzug' + newgcnt + '" ' +
+                '                                                                      style="font-size: 13px;">Kommentar</label>  <textarea name="commentFahrenzug' + newgcnt + '" ' +
                 '                                                                         id="exampleFormControlTextarea1"' +
                 '                                                                          rows="3" class="form-control"></textarea>' +
                 '                                                            </div>' +
                 '                                                        </div>' +
                 '                                                   </div></div>' +
-                '<div class="row">'+ '@if(!Auth::user()->hasRole("fs"))'+
+                '                                           <div class="row">'+ '@if(!Auth::user()->hasRole("fs"))'+
 '                                                            <div class="col-12" id="of' + newgcnt + '">Offer:'+
 '                                                                <div class="text-start">'+
 '                                                                    <div class="upload-box mx-1 my-2">'+

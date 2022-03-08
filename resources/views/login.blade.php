@@ -16,7 +16,24 @@
   <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
 </head>
 
+
+
 <body>
+<div class="container-fluid col-12 col-sm-10 g-0" id="app">
+    @if(Illuminate\Support\Facades\Session::has('msg'))
+        <div class="alert alert-success alert-dismissible fade show m-3" role="alert">
+            <strong>{!! Illuminate\Support\Facades\Session::get('msg') !!}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if(Illuminate\Support\Facades\Session::has('fail'))
+        <div class="alert alert-danger alert-dismissible fade show m-3" role="alert">
+            <strong>{!! Illuminate\Support\Facades\Session::get('fail') !!}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+</div>
   <section class="section_">
     <div class="my-auto p-5 div_">
       <div class="">
@@ -24,15 +41,19 @@
           @csrf
           <div class="text-start my-3">
             <div class="">
+
               <span class="fw-bold fs-4 lh-1" id="span_hello_" style="font-family: 'Montserrat' !important;">
                 Hallo!
               </span>
+
             </div>
             <div class="">
               <span class="fs-5 fw-light lh-1" id="span_meldedich_" style="font-family: 'Montserrat' !important;">
                 Melde dich an
               </span>
+
             </div>
+
           </div>
           <div class="input-group mb-3">
             <i class="">
@@ -78,6 +99,11 @@
               <i onclick="showpw();return false;" class="far fa-eye mt-3 mx-1" style="cursor:pointer;" id="show"></i>
             </span>
           </div>
+            @if(Illuminate\Support\Facades\Session::has('message'))
+                <div class="text-center">
+                    <span  style="color: red; font-size: 14px;">**{!! Illuminate\Support\Facades\Session::get('message') !!}!</span>
+                </div>
+            @endif
           <div class="mb-2 mt-2 form-check">
             <input type="checkbox" class="form-check-input" style="border: 1px solid rgba(0,0,0,.25) !important;" id="remember" name="remember">
             <label class="form-check-label" for="remember" style="font-family: 'Montserrat' !important;">Angemeldet bleiben</label>
@@ -94,9 +120,10 @@
                 </svg>
               </span>
             </button>
+
           </div>
           <div class="text-center mt-2">
-            <span class="forgot__" style="font-family: 'Montserrat' !important; font-weight: 500">
+            <span onclick="window.location.href='{{route('forgot_password_blade')}}'" class="forgot__" style="font-family: 'Montserrat' !important; font-weight: 500;cursor: pointer">
               Passwort vergessen?
             </span>
           </div>
