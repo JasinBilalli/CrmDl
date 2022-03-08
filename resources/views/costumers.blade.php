@@ -97,12 +97,22 @@
                                             class="fw-bold">{{$data[$i]->first_name}}</td>
                                         <td data-bs-toggle="modal" data-bs-target="#rejectmodal"
                                             class="fw-bold">{{$data[$i]->last_name}}</td>
+                                        @if($mandatiert[$i]['mandatiert'])
+                                            <td data-bs-toggle="modal" data-bs-target="#rejectmodal"><span class="fw-bold">Ja</span></td>
+                                        @else
+                                            <td data-bs-toggle="modal" data-bs-target="#rejectmodal"><span class="fw-bold">Nein</span></td>
+                                        @endif
                                     @else
                                         <tr onclick="window.location.href='{{route('costumer_form', $datId)}}'">
                                             <th scope="row" class="fw-bold"
                                                 style="font-weight: 400 !important;">{{$data[$i]->id}}</th>
                                             <td class="fw-bold">{{$data[$i]->first_name}}</td>
                                             <td class="fw-bold">{{$data[$i]->last_name}}</td>
+                                            @if($mandatiert[$i]['mandatiert'])
+                                                <td><span class="fw-bold">Ja</span></td>
+                                            @else
+                                                <td><span class="fw-bold">Nein</span></td>
+                                    @endif
                                     @endif
                                 @else
                                     @if($family_person[$i]->kundportfolio == 0)
@@ -111,20 +121,25 @@
                                                 style="font-weight: 400 !important;">{{$data[$i]->id}}</th>
                                             <td class="fw-bold">{{$data[$i]->first_name}}</td>
                                             <td class="fw-bold">{{$data[$i]->last_name}}</td>
+                                            @if($mandatiert[$i]['mandatiert'])
+                                                <td><span class="fw-bold">Ja</span></td>
+                                            @else
+                                                <td><span class="fw-bold">Nein</span></td>
+                                            @endif
                                     @else
                                         <tr onclick="window.location.href='{{route('costumer_form', $datId)}}'">
                                             <th scope="row" class="fw-bold"
                                                 style="font-weight: 400 !important;">{{$data[$i]->id}}</th>
                                             <td class="fw-bold">{{$data[$i]->first_name}}</td>
                                             <td class="fw-bold">{{$data[$i]->last_name}}</td>
-                                            @endif
-                                            @endif
                                             @if($mandatiert[$i]['mandatiert'])
                                                 <td><span class="fw-bold">Ja</span></td>
-
                                             @else
                                                 <td><span class="fw-bold">Nein</span></td>
                                             @endif
+                                    @endif
+                                    @endif
+
 
 
                                             @if(!empty($grundversicherungP[$i]))
@@ -422,7 +437,7 @@
                                                     <div class="modal-body p-3">
                                                         <div class="row">
                                                     <span style="font-size: 19px;" class="text-center">
-                                                        You cant enter right now!
+                                                        Du kannst gerade nicht eintreten!
                                                     </span>
                                                         </div>
                                                     </div>
@@ -430,7 +445,7 @@
                                                          style="border-top: none !important; display: block;">
                                                         <button type="button" class="btn px-3"
                                                                 style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                data-bs-dismiss="modal"><b>Close</b></button>
+                                                                data-bs-dismiss="modal"><b>Schliessen</b></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -569,19 +584,17 @@
                             <div class="top">
                                 @if(Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('salesmanager'))
                                     @if($family_person[$i]->kundportfolio == 0)
-                                        <div class="name-div">
+                                        <div class="name-div" data-bs-toggle="modal" data-bs-target="#rejectmodali">
                                             <span class="fs-6">{{$data[$i]->first_name}} {{$data[$i]->last_name}} ({{$data[$i]->birthdate}})</span>
                                         </div>
                                     @else
-                                        <div class="name-div"
-                                             onclick="window.location.href='{{route('costumer_form', $datId)}}'">
+                                        <div class="name-div" onclick="window.location.href='{{route('costumer_form', $datId)}}'">
                                             <span class="fs-6">{{$data[$i]->first_name}} {{$data[$i]->last_name}} ({{$data[$i]->birthdate}})</span>
                                         </div>
                                     @endif
                                 @else
                                     @if($family_person[$i]->kundportfolio == 0)
-                                        <div class="name-div"
-                                             onclick="window.location.href='{{route('costumer_form', $datId)}}'">
+                                        <div class="name-div" onclick="window.location.href='{{route('costumer_form', $datId)}}'">
                                             <span class="fs-6">{{$data[$i]->first_name}} {{$data[$i]->last_name}} ({{$data[$i]->birthdate}})</span>
                                         </div>
                                     @else
@@ -596,8 +609,8 @@
                                         <span class="fw-bold">Mandatiert</span>
                                     </div>
                                 @else
-
                                 @endif
+
                             </div>
                             <div class="info-divider">
                                 @if(!empty($grundversicherungP[$i]))
@@ -868,6 +881,27 @@
                                         </div>
                                     @endif
                                 @endif
+                            </div>
+                        </div>
+                        <div class="modal fade" id="rejectmodali" tabindex="-1"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content"
+                                     style="background: #f8f8f8; border-radius: 43px">
+                                    <div class="modal-body p-3">
+                                        <div class="row">
+                                                    <span style="font-size: 19px;" class="text-center">
+                                                        Du kannst gerade nicht eintreten!
+                                                    </span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer text-center"
+                                         style="border-top: none !important; display: block;">
+                                        <button type="button" class="btn px-3"
+                                                style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
+                                                data-bs-dismiss="modal"><b>Schliessen</b></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     @endfor

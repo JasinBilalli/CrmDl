@@ -245,6 +245,12 @@ Auth::user()->unreadNotifications->markAsRead();
 route::get('getrole',function(){
  return Auth::user()->getRoleNames()[0];
 });
+route::get('forgot_password',function (){
+    return view('forgot_password');
+})->name('forgot_password_blade');
+route::post('forgotpassword',[\App\Http\Controllers\ForgotPassController::class,'forgot_password'])->name('forgot_password');
+route::get('changepasswrd/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'changepasswrd'])->name('changepasswrd');
+route::post('update_password/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'update_password'])->name('update_password');
 
 
 

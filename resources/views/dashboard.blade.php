@@ -370,40 +370,40 @@
 {{--                                        </div>--}}
 {{--                                    </div>--}}
 
-                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
-                                         style="font-family: 'Montserrat';">
-                                        <div class="text-center box-1 "
-                                             style="margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
-                                            <div class="py-4 ">
-                                                <div class="py-2">
-                                                    <svg id="Group_549" data-name="Group 549"
-                                                         xmlns="http://www.w3.org/2000/svg" width="29.713"
-                                                         height="29.713" viewBox="0 0 29.713 29.713">
-                                                        <rect id="Rectangle_9" data-name="Rectangle 9"
-                                                              width="29.713" height="29.713" rx="14.857"
-                                                              transform="translate(0)" fill="#4ec590"/>
-                                                        <g id="Group_42" data-name="Group 42"
-                                                           transform="translate(10.03 10.03)">
-                                                            <line id="Line_11" data-name="Line 11" y2="9.437"
-                                                                  transform="translate(4.719 0)" fill="none"
-                                                                  stroke="#fff" stroke-linecap="round"
-                                                                  stroke-width="2"/>
-                                                            <line id="Line_12" data-name="Line 12" x1="9.437"
-                                                                  transform="translate(0 4.441)" fill="none"
-                                                                  stroke="#fff" stroke-linecap="round"
-                                                                  stroke-width="2"/>
-                                                        </g>
-                                                    </svg>
+{{--                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"--}}
+{{--                                         style="font-family: 'Montserrat';">--}}
+{{--                                        <div class="text-center box-1 "--}}
+{{--                                             style="margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">--}}
+{{--                                            <div class="py-4 ">--}}
+{{--                                                <div class="py-2">--}}
+{{--                                                    <svg id="Group_549" data-name="Group 549"--}}
+{{--                                                         xmlns="http://www.w3.org/2000/svg" width="29.713"--}}
+{{--                                                         height="29.713" viewBox="0 0 29.713 29.713">--}}
+{{--                                                        <rect id="Rectangle_9" data-name="Rectangle 9"--}}
+{{--                                                              width="29.713" height="29.713" rx="14.857"--}}
+{{--                                                              transform="translate(0)" fill="#4ec590"/>--}}
+{{--                                                        <g id="Group_42" data-name="Group 42"--}}
+{{--                                                           transform="translate(10.03 10.03)">--}}
+{{--                                                            <line id="Line_11" data-name="Line 11" y2="9.437"--}}
+{{--                                                                  transform="translate(4.719 0)" fill="none"--}}
+{{--                                                                  stroke="#fff" stroke-linecap="round"--}}
+{{--                                                                  stroke-width="2"/>--}}
+{{--                                                            <line id="Line_12" data-name="Line 12" x1="9.437"--}}
+{{--                                                                  transform="translate(0 4.441)" fill="none"--}}
+{{--                                                                  stroke="#fff" stroke-linecap="round"--}}
+{{--                                                                  stroke-width="2"/>--}}
+{{--                                                        </g>--}}
+{{--                                                    </svg>--}}
 
-                                                </div>
-                                                <div class="py-1">
-                                                        <span class="text-muted">
-                                                            Neues hinzufügen
-                                                        </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+{{--                                                </div>--}}
+{{--                                                <div class="py-1">--}}
+{{--                                                        <span class="text-muted">--}}
+{{--                                                            Neues hinzufügen--}}
+{{--                                                        </span>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>
@@ -1325,39 +1325,39 @@
 {{--                                    </div>--}}
 {{--                                </div>--}}
 
-                                <div class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center box-1 "
-                                         style="margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
-                                        <div class="py-4 ">
-                                            <div class="py-2">
-                                                <svg id="Group_549" data-name="Group 549"
-                                                     xmlns="http://www.w3.org/2000/svg"
-                                                     width="29.713" height="29.713" viewBox="0 0 29.713 29.713">
-                                                    <rect id="Rectangle_9" data-name="Rectangle 9" width="29.713"
-                                                          height="29.713"
-                                                          rx="14.857" transform="translate(0)" fill="#4ec590"/>
-                                                    <g id="Group_42" data-name="Group 42"
-                                                       transform="translate(10.03 10.03)">
-                                                        <line id="Line_11" data-name="Line 11" y2="9.437"
-                                                              transform="translate(4.719 0)"
-                                                              fill="none" stroke="#fff" stroke-linecap="round"
-                                                              stroke-width="2"/>
-                                                        <line id="Line_12" data-name="Line 12" x1="9.437"
-                                                              transform="translate(0 4.441)"
-                                                              fill="none" stroke="#fff" stroke-linecap="round"
-                                                              stroke-width="2"/>
-                                                    </g>
-                                                </svg>
+{{--                                <div class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">--}}
+{{--                                    <div class="text-center box-1 "--}}
+{{--                                         style="margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">--}}
+{{--                                        <div class="py-4 ">--}}
+{{--                                            <div class="py-2">--}}
+{{--                                                <svg id="Group_549" data-name="Group 549"--}}
+{{--                                                     xmlns="http://www.w3.org/2000/svg"--}}
+{{--                                                     width="29.713" height="29.713" viewBox="0 0 29.713 29.713">--}}
+{{--                                                    <rect id="Rectangle_9" data-name="Rectangle 9" width="29.713"--}}
+{{--                                                          height="29.713"--}}
+{{--                                                          rx="14.857" transform="translate(0)" fill="#4ec590"/>--}}
+{{--                                                    <g id="Group_42" data-name="Group 42"--}}
+{{--                                                       transform="translate(10.03 10.03)">--}}
+{{--                                                        <line id="Line_11" data-name="Line 11" y2="9.437"--}}
+{{--                                                              transform="translate(4.719 0)"--}}
+{{--                                                              fill="none" stroke="#fff" stroke-linecap="round"--}}
+{{--                                                              stroke-width="2"/>--}}
+{{--                                                        <line id="Line_12" data-name="Line 12" x1="9.437"--}}
+{{--                                                              transform="translate(0 4.441)"--}}
+{{--                                                              fill="none" stroke="#fff" stroke-linecap="round"--}}
+{{--                                                              stroke-width="2"/>--}}
+{{--                                                    </g>--}}
+{{--                                                </svg>--}}
 
-                                            </div>
-                                            <div class="py-1">
-                                <span class="text-muted" style="font-family: 'Montserrat' !important;">
-                                    Neues hinzufügen
-                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+{{--                                            </div>--}}
+{{--                                            <div class="py-1">--}}
+{{--                                <span class="text-muted" style="font-family: 'Montserrat' !important;">--}}
+{{--                                    Neues hinzufügen--}}
+{{--                                </span>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                             </div>
                         </div>
 
