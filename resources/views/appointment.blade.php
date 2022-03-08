@@ -128,7 +128,7 @@
 		id: '{!! $appointmentAGG["id"] !!}',
 		resourceId: '{!! $appointmentAGG["assign_to_id"] !!}',
 		title: '{{ $appointmentAGG["first_name"] }} {{ $appointmentAGG["last_name"] }}',
-		start: new Date('{!! date("d/M/Y H:i:s", strtotime($appointmentAGG["appointment_date"]." ".$appointmentAGG["time"])) !!}') ,
+		start: new Date('{!! date("d/M/Y H:i", strtotime($appointmentAGG["appointment_date"]." ".$appointmentAGG["time"])) !!}') ,
 		telephone: '{{ $appointmentAGG["telephone"] }}' ,
 		birthdate: '{{ $appointmentAGG["birthdate"] }}' ,
 		number_of_persons: '{{ $appointmentAGG["number_of_persons"] }}' ,
@@ -158,15 +158,15 @@
 		  // Save it!
 		  // console.log('Thing was saved to the database.');
 
-		 $.ajax({
-                     url: "{{URL::route('Dropajax')}}"+"?nom_lead="+arg.draggedEl.innerText.trim()+"&id_user="+arg.resource.id+"&time="+moment(arg.dateStr).format('HH:mm') ,
-                     type: "GET",
-                     data: {"data" : arg.draggedEl.innerText.trim()},
-                     success: function(data) {
-                          alert(data);
-						  window.location.reload();
-                                   }
-                              });
+	    $.ajax({
+                                    url: "{{URL::route('Dropajax')}}" + "?nom_lead=" + arg.draggedEl.innerText.trim() + "&id_user=" + arg.resource.id + "&time=" + arg.draggedEl.now + "&ctime=" + calendar.getDate(),
+                                    type: "GET",
+                                    data: {"data": arg.draggedEl.innerText.trim()},
+                                    success: function (data) {
+                                        alert(data);
+                                        window.location.reload();
+                                    }
+                                });
 
 
 
@@ -410,7 +410,7 @@
 
                     </a>
                     <br>
-                    Neues hinzufügen
+                    Neues hinzuf端gen
                 </div>
             </div>
             <div class="col-md-12">
@@ -418,7 +418,7 @@
                     <div class="container">
                         <div class="form-div my-4 py-4 mx-auto" style="background-color: #EFEFEF; border-radius: 20px;">
                             <div class="mb-4 mx-5">
-                                <span class="fs-5 fw-600">Oder Nach Datei einfügen</span>
+                                <span class="fs-5 fw-600">Oder Nach Datei einf端gen</span>
                             </div>
                             <form method="post" action="{{route('addappointmentfile')}}" enctype="multipart/form-data">
                                 <div class="row mx-4">
@@ -476,7 +476,7 @@
   var calendar = new FullCalendar.Calendar(calendarEl, {
 
 
-      editable: false, // enable draggable events
+    editable: false, // enable draggable events
       droppable: true, // this allows things to be dropped onto the calendar
       aspectRatio: 1.8,
       scrollTime: '00:00', // undo default 6am scrollTime
@@ -492,6 +492,7 @@
 			   eventMaxStack: 3
 			 }
 		 },
+         slotLabelFormat: {hour: 'numeric', minute: '2-digit', hour12: false},
 		initialView: 'timeGridWeek',
 
 
@@ -499,7 +500,7 @@
 		dayMaxEvents : 3,
 		height: 600,
 		  slotMinTime: "08:00:00",
-		  slotMaxTime : "20:00:00",
+		  slotMaxTime : "22:30:00",
 		  slotDuration: '00:30:00',
 		  slotLabelInterval: 30,
 		  allDaySlot : false,
@@ -507,7 +508,7 @@
 	  @foreach ( $appointments as $appointmentAGG )
         {
 		id: '{!! $appointmentAGG["id"] !!}',
-		start: new Date('{!! date("d/M/Y h:i:s", strtotime($appointmentAGG["appointment_date"]." ".$appointmentAGG["time"])) !!}') ,
+		start: new Date('{!! date("d/M/Y H:i", strtotime($appointmentAGG["appointment_date"]." ".$appointmentAGG["time"])) !!}') ,
 		telephone: '{{ $appointmentAGG["telephone"] }}' ,
 		birthdate: '{{ $appointmentAGG["birthdate"] }}' ,
 		number_of_persons: '{{ $appointmentAGG["number_of_persons"] }}' ,
@@ -545,11 +546,7 @@
 });
 
 </script>
-<!-- Button trigger modal
-{{trim(preg_replace("/\s\s+/", " ", $appointmentAGG["address"])) }} {{trim(preg_replace("/\s\s+/", " ", $appointmentAGG["city"])) }}, {{ $appointmentAGG["postal_code"] }}
 
-
- -->
 
 
 
