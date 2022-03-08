@@ -102,7 +102,8 @@
 </style>
 
 <body>
-
+@php $data->datakk = \App\Models\LeadDataKK::where('person_id',$id)->latest()->first() @endphp
+@php $data->fahrzeug = \App\Models\LeadDataFahrzeug::where('person_id',$id)->latest()->first() @endphp
 <div class="row" id="app">
     <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
         <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
@@ -422,7 +423,6 @@
                                                 <div class="col g-0 d-flex justify-content-end">
                                                     <div class="select-div text-end">
                                                         <select class="fw-bold" id=""  style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;" name="vorversicherer_select">
-                                                            @php $data->datakk = \App\Models\LeadDataKK::where('person_id',$id)->latest()->first() @endphp
                                                             @if(isset($data->datakk->vorversicherer_select))
                                                                 <option value="{{$data->datakk->vorversicherer_select}}" selected>{{$data->datakk->vorversicherer_select}}</option>
                                                                 <option value="Ja">Ja</option>
@@ -1293,7 +1293,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @php $data->fahrzeug = \App\Models\LeadDataFahrzeug::where('person_id',$id)->latest()->first() @endphp
+                               
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 my-4">
                                     <div class="accordion accordion-flush" id="accordionFlushExample2">
                                         <div class="accordion-item">
@@ -1420,8 +1420,8 @@
                                                                             <div class="btn-group w-100"
                                                                                  role="group"
                                                                                  aria-label="Basic radio toggle button group">
-                                                                                @if(isset($data->fahrzeug->comparison_type))
-                                                                                    @if($data->fahrzeug->comparison_type
+                                                                                @if(isset($data->fahrzeug->leasing))
+                                                                                    @if($data->fahrzeug->leasing
                                                                                     == 'Ja')
                                                                                         <input type="radio"
                                                                                                class="btn-check"
@@ -1438,12 +1438,12 @@
                                                                                                class="btn-check"
                                                                                                value="Nein"
                                                                                                name="leasing"
-                                                                                               id="btnradio1"
+                                                                                               id="btnradio2"
                                                                                                autocomplete="off">
                                                                                         <label
                                                                                             class="btn btn-outline-secondary w-100 g-0"
                                                                                             value="Nein"
-                                                                                            for="btnradio1">Nein</label>
+                                                                                            for="btnradio2">Nein</label>
                                                                                     @else
                                                                                         <input type="radio"
                                                                                                class="btn-check"
@@ -1459,13 +1459,13 @@
                                                                                                class="btn-check"
                                                                                                value="Nein"
                                                                                                name="leasing"
-                                                                                               id="btnradio1"
+                                                                                               id="btnradio2"
                                                                                                autocomplete="off"
                                                                                                checked>
                                                                                         <label
                                                                                             class="btn btn-outline-secondary w-100 g-0"
                                                                                             value="Nein"
-                                                                                            for="btnradio1">Nein</label>
+                                                                                            for="btnradio2">Nein</label>
                                                                                     @endif
                                                                                 @else
                                                                                     <input type="radio"
