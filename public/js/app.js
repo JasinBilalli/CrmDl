@@ -37092,9 +37092,9 @@ var render = function () {
       [
         _c("div", { staticClass: "txt-notif fs-6" }, [
           _vm._v(
-            "\n                You have " +
+            "\n                Du hast " +
               _vm._s(_vm.notcnt) +
-              " new notifications\n            "
+              " neue Benachrichtigungen\n            "
           ),
         ]),
       ]
@@ -37143,7 +37143,7 @@ var render = function () {
         },
         [
           _c("div", { staticClass: "fw-bold fs-5 py-2" }, [
-            _vm._v("Recent Notifications"),
+            _vm._v("Aktuelle Benachrichtigungen"),
           ]),
           _vm._v(" "),
           _c("hr", { staticClass: "my-1 g-0 p-0" }),

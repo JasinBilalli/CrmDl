@@ -2044,14 +2044,15 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     }
 
     .overflow-div2212 {
-        height: 40vh;
+        height: 53vh;
         overflow: auto;
     }
 
     .notification-divvv22 .dropdown-menu {
-        max-width: 30rem;
+        max-width: 50rem;
+        height: 30rem;
         z-index: 999;
-        width: 22rem;
+        width: 50rem;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         border-radius: 10px;
     }
@@ -2141,8 +2142,13 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         }
 
     @media (max-width: 575.98px) {
+        .overflow-div2212 {
+            height: 47vh;
+            overflow: auto;
+        }
         .notification-divvv22 .dropdown-menu {
             width: 99vw;
+
             border-radius: 10px;
             box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         }
