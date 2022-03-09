@@ -4,13 +4,16 @@
             <div class="container-fluid">
                 <div class="row g-0">
                     <div class="col-12 col-md-12 col-lg-9 g-0 ">
-                        <div class="assigned-leads">
-                            <div class="header px-3 px-sm-5">
+                        <div class="assigned-leads py-1 mx-1">
+                            <div class="header ps-3 ps-sm-3 d-flex justify-content-between">
                                 <div class="fs-5">
-                                    <span>Zugewiesen Leads</span>
+                                    <span>Zugewiesene Leads</span>
+                                </div>
+                                <div class="count px-4 mt-3 h-100">
+                                    <span class="fs-5">5</span>
                                 </div>
                             </div>
-                            <div class="content p-0 p-sm-3">
+                            <div class="content p-2">
                                 <div class="overflow-div row mx-2 mx-sm-3 me-2">
                                     <div class="col-12 col-sm-12 col-md-6 g-0" v-for="lead in leads">
                                         <!--                                    Rejecti Posht-->
@@ -108,7 +111,7 @@
                                                                 <textarea type="text" id="inputTxt5" name="reason"
                                                                           class="form-control"
                                                                           aria-describedby="passwordHelpInline"></textarea>
-                                                     </div>
+                                                                </div>
                                                                 <div class="modal-footer m-0"
                                                                      style="border-top: none !important; display: block;margin:0 !important;">
                                                                     <button type="submit" class="btn w-100 m-0 my-3"
@@ -400,15 +403,16 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-3 g-0">
-                        <div class="lead-statistics">
+                        <div class="lead-statistics py-1">
                             <div class="header px-3 px-sm-3">
                                 <div class="fs-5">
                                     <span>Statistik der Leads</span>
                                 </div>
                             </div>
-                            <div class="content">
-                                <div class="py-2">
-                                    <div class="instagram-div my-2 mx-3">
+                            <div class="content-wrapper1 mx-1">
+                                <div class="content">
+                                    <div class="py-2">
+                                        <div class="instagram-div my-2 mx-3">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink" width="33" viewBox="0 0 39 39">
@@ -443,12 +447,12 @@
                                             </g>
                                         </svg>
                                     </span>
-                                        <span class="fs-5 fw-500 ps-2">
+                                            <span class="fs-5 fw-500 ps-2">
                                         Instagram: {{ instagram }}
                                     </span>
-                                    </div>
+                                        </div>
 
-                                    <div class="facebook-div my-2 mx-3">
+                                        <div class="facebook-div my-2 mx-3">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="33" viewBox="0 0 39 39">
                                             <g id="Group_976" data-name="Group 976" transform="translate(-1519 -273)">
@@ -464,12 +468,12 @@
                                             </g>
                                         </svg>
                                     </span>
-                                        <span class="fs-5 fw-500 ps-2">
+                                            <span class="fs-5 fw-500 ps-2">
                                         Facebook: {{ facebook }}
                                     </span>
-                                    </div>
+                                        </div>
 
-                                    <div class="sana-div my-2 mx-3">
+                                        <div class="sana-div my-2 mx-3">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="33" viewBox="0 0 39 39">
                                             <g id="Group_977" data-name="Group 977" transform="translate(-1519 -331)">
@@ -485,13 +489,13 @@
                                             </g>
                                         </svg>
                                     </span>
-                                        <span class="fs-5 fw-500 ps-2">
+                                            <span class="fs-5 fw-500 ps-2">
                                          Sanascout: {{ sanascout }}
                                     </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="py-2">
-                                    <div class="history-div my-2 mx-3">
+                                    <div class="py-2">
+                                        <div class="history-div my-2 mx-3">
                                     <span>
                                         <svg id="Group_1118" data-name="Group 1118" xmlns="http://www.w3.org/2000/svg"
                                              width="33" viewBox="0 0 39 39.002">
@@ -508,17 +512,17 @@
 
                                     </span>
 
-                                        <a href="leadhistory" style="text-decoration: none;">
+                                            <a href="leadhistory" style="text-decoration: none;">
                                         <span class="fs-5 fw-500 ps-2 text-decoration-underline"
                                               style="color: #0c71c3;">
                                             Historie der Leads
                                         </span>
-                                        </a>
+                                            </a>
 
-                                    </div>
+                                        </div>
 
 
-                                    <div class="reject-div my-2 mx-3">
+                                        <div class="reject-div my-2 mx-3">
                                     <span>
                                         <svg id="Group_1119" data-name="Group 1119" xmlns="http://www.w3.org/2000/svg"
                                              width="33" viewBox="0 0 39 39">
@@ -531,13 +535,14 @@
                                         </svg>
 
                                     </span>
-                                        <a href="rleads" style="text-decoration: none; color: black;">
+                                            <a href="rleads" style="text-decoration: none; color: black;">
                                     <span class="fs-5 fw-500 ps-2  text-decoration-underline" style="color: #b70000;">
                                         Abgelehnte Leads
                                     </span>
-                                        </a>
-                                    </div>
+                                            </a>
+                                        </div>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -551,13 +556,16 @@
             <div class="container-fluid p-0">
                 <div class="row g-0">
                     <div class="col-12 col-md-12 col-lg-9 g-0">
-                        <div class="assigned-leads1">
-                            <div class="header px-3 px-sm-5">
+                        <div class="assigned-leads1 mx-1 py-1 ">
+                            <div class="header ps-3 ps-sm-3 d-flex justify-content-between">
                                 <div class="fs-5">
                                     <span>Zugewiesene Leads</span>
                                 </div>
+                                <div class="count px-4 mt-3 h-100">
+                                    <span class="fs-5">5</span>
+                                </div>
                             </div>
-                            <div class="content ">
+                            <div class="content p-2">
                                 <div class="overflow-div1 p-0 row ms-1 ms-sm-3 me-2">
                                     <div class="col-12 col-sm-12 col-md-6 g-0" v-for="lead in leads">
                                         <div class="modal fade" :id="lead.slug" tabindex="-1"
@@ -809,15 +817,16 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-3 g-0">
-                        <div class="lead-statistics1">
+                        <div class="lead-statistics1 py-1">
                             <div class="header px-3 px-sm-3">
                                 <div class="fs-5">
                                     <span>Statistik der Leads</span>
                                 </div>
                             </div>
-                            <div class="content">
-                                <div class="py-2">
-                                    <div class="instagram-div my-2 mx-3">
+                            <div class="content-wrapper mx-1">
+                                <div class="content">
+                                    <div class="py-2">
+                                        <div class="instagram-div my-2 mx-3">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink" width="33" viewBox="0 0 39 39">
@@ -852,12 +861,12 @@
                                             </g>
                                         </svg>
                                     </span>
-                                        <span class="fs-5 fw-500 ps-2">
+                                            <span class="fs-5 fw-500 ps-2">
                                         Instagram: {{ instagram }}
                                     </span>
-                                    </div>
+                                        </div>
 
-                                    <div class="facebook-div my-2 mx-3">
+                                        <div class="facebook-div my-2 mx-3">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="33" viewBox="0 0 39 39">
                                             <g id="Group_976" data-name="Group 976" transform="translate(-1519 -273)">
@@ -873,12 +882,12 @@
                                             </g>
                                         </svg>
                                     </span>
-                                        <span class="fs-5 fw-500 ps-2">
+                                            <span class="fs-5 fw-500 ps-2">
                                         Facebook: {{ facebook }}
                                     </span>
-                                    </div>
+                                        </div>
 
-                                    <div class="sana-div my-2 mx-3">
+                                        <div class="sana-div my-2 mx-3">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="33" viewBox="0 0 39 39">
                                             <g id="Group_977" data-name="Group 977" transform="translate(-1519 -331)">
@@ -894,13 +903,13 @@
                                             </g>
                                         </svg>
                                     </span>
-                                        <span class="fs-5 fw-500 ps-2">
+                                            <span class="fs-5 fw-500 ps-2">
                                         Sanascout: {{ sanascout }}
                                     </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="py-2">
-                                    <div class="history-div my-2 mx-3">
+                                    <div class="py-2">
+                                        <div class="history-div my-2 mx-3">
                                     <span>
                                         <svg id="Group_1118" data-name="Group 1118" xmlns="http://www.w3.org/2000/svg"
                                              width="33" viewBox="0 0 39 39.002">
@@ -916,15 +925,15 @@
                                         </svg>
 
                                     </span>
-                                        <a href="leadhistory" style="text-decoration: none; color: black;">
+                                            <a href="leadhistory" style="text-decoration: none; color: black;">
                                             <span class="fs-5 fw-500 ps-2 text-decoration-underline"
                                                   style="color: #0c71c3;">
                                             Historie der Leads
                                             </span>
-                                        </a>
-                                    </div>
+                                            </a>
+                                        </div>
 
-                                    <div class="reject-div my-2 mx-3">
+                                        <div class="reject-div my-2 mx-3">
                                     <span>
                                         <svg id="Group_1119" data-name="Group 1119" xmlns="http://www.w3.org/2000/svg"
                                              width="33" viewBox="0 0 39 39">
@@ -937,12 +946,13 @@
                                         </svg>
 
                                     </span>
-                                        <a href="rleads" style="text-decoration: none; color: black;">
+                                            <a href="rleads" style="text-decoration: none; color: black;">
                                             <span class="fs-5 fw-500 ps-2  text-decoration-underline"
                                                   style="color: #b70000;">
                                             Abgelehnte Leads
                                             </span>
-                                        </a>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -25,5 +25,6 @@ class LeadDataPrevention extends Model
         'society',
         'n_of_p_legal_protection',
         'Hvergleichsart_select',
+        'newoffer',
     ];
 }

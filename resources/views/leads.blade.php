@@ -5,8 +5,8 @@
     @if($user->user()->hasRole('admin') || $user->user()->hasRole('salesmanager'))
         <div class="container-fluid p-0">
             <div class="col-12 g-0">
-                <div class="import-leads-div  px-3">
-                    <form action="{{route('importleads')}}" enctype="multipart/form-data" method="post">
+                <div class="import-leads-div px-3 m-1">
+                    <form action="{{route('importleads')}}" class="mb-2" enctype="multipart/form-data" method="post">
                         @csrf
                         <div class="head py-3">
                             <span class="fs-5 fw-bold">Leads Importieren</span>
@@ -98,7 +98,7 @@
     /* overflow-scroll divvvvvvvvv */
     .overflow-div {
         padding-right: 15px;
-        height: 80vh !important;
+        height: 600px !important;
         overflow: auto;
     }
 
@@ -130,36 +130,41 @@
     }
 
     .assigned-leads .header {
-        border-bottom: 1px solid #70707050;
-        border-top: 1px solid #70707050;
-        border-left: 1px solid #70707050;
+        /* border-bottom: 1px solid #70707050; */
+        /* border-top: 1px solid #70707050; */
+        /* border-left: 1px solid #70707050; */
         display: flex;
         align-items: center;
         font-weight: bold;
         height: 60px;
-        background-color: #EFEFEF;
+        background-color: #fff;
     }
 
     .assigned-leads .content {
+        background-color: #EFEFEF;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
     }
 
 
     .lead-statistics {
-        height: 90vh;
-        background-color: #EFEFEF;
-        border-left: 1px solid #70707050;
+        /* height: 90vh; */
+        background-color: #fff;
+        /* border-left: 1px solid #70707050; */
     }
 
     .lead-statistics .header {
-        border-bottom: 1px solid #70707050;
-        border-top: 1px solid #70707050;
+        /* border-bottom: 1px solid #70707050; */
+        /* border-top: 1px solid #70707050; */
         /* border-right: 1px solid #70707050; */
         /* border-left: 1px solid #70707050; */
         display: flex;
         align-items: center;
         font-weight: bold;
         height: 60px;
-        background-color: #EFEFEF;
+        background-color: #fff;
     }
 
     .lead-statistics .content {
@@ -169,6 +174,7 @@
         .overflow-div {
             padding-right: 5px;
         }
+
     }
 </style>
 
@@ -180,6 +186,16 @@
     body {
         font-family: 'Montserrat', sans-serif;
     }
+    .count {
+        background-color: #EFEFEF;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+    }
 
     .grayyy1 {
         color: #88889D;
@@ -190,7 +206,7 @@
     }
 
     .assigned-items {
-        background-color: #EFEFEF;
+        background-color: #fff;
         border-radius: 15px;
     }
 
@@ -203,7 +219,7 @@
     /* overflow-scroll divvvvvvvvv */
     .overflow-div1 {
         padding-right: 15px;
-        height: 75vh !important;
+        height: 550px !important;
         overflow: auto;
     }
 
@@ -237,27 +253,36 @@
 
 
     .import-leads-div {
-        border-top: 1px solid #70707050;
+        /* border-top: 1px solid #70707050; */
         background-color: #EFEFEF;
-        height: 25vh;
+        border-radius: 10px;
+        /* height: 25vh; */
+    }
+    .form-remove-mb {
+        margin-block-end: 0rem !important;
     }
 
     .assigned-leads1 {
-        height: 100vh;
+        height: auto;
     }
 
     .assigned-leads1 .header {
-        border-bottom: 1px solid #70707050;
-        border-top: 1px solid #70707050;
-        border-left: 1px solid #70707050;
+        /* border-bottom: 1px solid #70707050; */
+        /* border-top: 1px solid #70707050; */
+        /* border-left: 1px solid #70707050; */
         display: flex;
         align-items: center;
         font-weight: bold;
         height: 60px;
-        background-color: #EFEFEF;
+        background-color: #fff;
     }
 
     .assigned-leads1 .content {
+        background-color: #EFEFEF;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
     }
 
     .assigned-leads1 .button-div button {
@@ -269,29 +294,55 @@
     }
 
     .lead-statistics1 {
-        height: 100vh;
-        background-color: #EFEFEF;
-        border-left: 1px solid #70707050;
+        height: max-content;
+        background-color: #fff;
+        border-bottom-right-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+        /* border-left: 1px solid #70707050; */
     }
 
     .lead-statistics1 .header {
-        border-bottom: 1px solid #70707050;
-        border-top: 1px solid #70707050;
+        /* border-bottom: 1px solid #70707050; */
+        /* border-top: 1px solid #70707050; */
         /* border-right: 1px solid #70707050; */
         /* border-left: 1px solid #70707050; */
         display: flex;
         align-items: center;
         font-weight: bold;
         height: 60px;
-        background-color: #EFEFEF;
+        background-color: #fff;
+    }
+    .content-wrapper {
+        background-color: #EFEFEF !important;
+        height: 676px;
+        border-radius: 10px;
+    }
+    .content-wrapper1 {
+        background-color: #EFEFEF !important;
+        height: 614px;
+        border-radius: 10px;
     }
 
     .lead-statistics1 .content {
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
     }
 
     @media (max-width: 575.98px) {
         .overflow-div {
             padding-right: 5px;
+        }
+        .content-wrapper {
+            height: auto;
+        }
+        .content-wrapper1 {
+            height: auto;
+        }
+        .lead-statistics {
+            height: auto;
+        }
+        .lead-statistics1 {
+            height: auto;
         }
     }
 </style>
