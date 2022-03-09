@@ -1046,7 +1046,7 @@
                                                             </div>
                                                         </div>
                                                         @if(!Auth::user()->hasRole('fs'))
-                                                            <div class="col-12">Offer:
+                                                            <div class="col-12">Neue Offer:
                                                                 <div class="text-start">
                                                                     <div class="upload-box mx-1 my-2">
                                                                         <div class="mx-1 my-2 text-center p-3">
@@ -1074,7 +1074,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
                                                         @endif
 
                                                     </div>
@@ -1293,7 +1292,7 @@
                                         </div>
                                     </div>
                                 </div>
-                               
+
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 my-4">
                                     <div class="accordion accordion-flush" id="accordionFlushExample2">
                                         <div class="accordion-item">
@@ -1423,6 +1422,7 @@
                                                                                 @if(isset($data->fahrzeug->leasing))
                                                                                     @if($data->fahrzeug->leasing
                                                                                     == 'Ja')
+
                                                                                         <input type="radio"
                                                                                                class="btn-check"
                                                                                                value="Ja"
@@ -2383,15 +2383,23 @@
                                                                                     Versischerung:
                                                                                 </span>
                                                                         </div>
-
-                                                                        @if(isset($data->fahrzeug->insurance))
-                                                                            <input name="insurance" type="text"
-                                                                                   class="py-1 border-0"
-                                                                                   value="{{$data->fahrzeug->insurance}}">
-                                                                        @else
-                                                                            <input name="insurance" type="text"
-                                                                                   class="py-1 border-0">
-                                                                        @endif
+                                                                        <select name="insurance"
+                                                                                class="form-select w-75"
+                                                                                aria-label="Default select example">
+                                                                            @if(isset($data->fahrzeug->insurance))
+                                                                                <option value="{{$data->fahrzeug->insurance}}" selected>
+                                                                                    {{$data->fahrzeug->insurance}}
+                                                                                </option>
+                                                                                <option value="Haftpflicht">Haftpflicht </option>
+                                                                                <option value="Teilkasko">Teilkasko</option>
+                                                                                <option value="Vollkasko">Vollkasko</option>
+                                                                            @else
+                                                                                <option selected></option>
+                                                                                <option value="Haftpflicht">Haftpflicht </option>
+                                                                                <option value="Teilkasko">Teilkasko</option>
+                                                                                <option value="Vollkasko">Vollkasko</option>
+                                                                            @endif
+                                                                        </select>
                                                                     </div>
                                                                     <div class="input-select-div mb-2">
                                                                         <div class="">
@@ -3350,16 +3358,23 @@
                                                                                     Versischerung:
                                                                                 </span>
                                                                             </div>
-
-                                                                            @if(isset($nue->insurance))
-                                                                                <input name="insurance{{$ncnt}}"
-                                                                                       type="text" class="py-1 border-0"
-                                                                                       value="{{$nue->insurance}}">
-                                                                            @else
-                                                                                <input name="insurance{{$ncnt}}"
-                                                                                       type="text"
-                                                                                       class="py-1 border-0">
-                                                                            @endif
+                                                                            <select name="insurance{{$ncnt}}"
+                                                                                    class="form-select w-75"
+                                                                                    aria-label="Default select example">
+                                                                                @if(isset($nue->insurance))
+                                                                                    <option value="{{$nue->insurance}}" selected>
+                                                                                        {{$nue->insurance}}
+                                                                                    </option>
+                                                                                    <option value="Haftpflicht">Haftpflicht </option>
+                                                                                    <option value="Teilkasko">Teilkasko</option>
+                                                                                    <option value="Vollkasko">Vollkasko</option>
+                                                                                @else
+                                                                                    <option selected></option>
+                                                                                    <option value="Haftpflicht">Haftpflicht </option>
+                                                                                    <option value="Teilkasko">Teilkasko</option>
+                                                                                    <option value="Vollkasko">Vollkasko</option>
+                                                                                @endif
+                                                                            </select>
                                                                         </div>
                                                                         <div class="input-select-div mb-2">
                                                                             <div class="">
@@ -3915,6 +3930,7 @@
                                                                         Nationalitat:
                                                                     </span>
                                                             </div>
+
                                                             <select onchange="hideNation()"  class="form-select w-75" name="nationality_sachen" id="schweiz">
                                                                 @if(isset($data->things->nationality))
                                                                     <option value="{{$data->things->nationality}}" selected>{{$data->things->nationality}}</option>
@@ -5253,12 +5269,46 @@
                                                                 @endif
                                                             </div>
                                                         </div>
-
                                                     </div>
+{{--                                                    @if(!Auth::user()->hasRole('fs'))--}}
+{{--                                                        <div class="col-12">Offer:--}}
+{{--                                                            <div class="text-start">--}}
+{{--                                                                <div class="upload-box mx-1 my-2">--}}
+{{--                                                                    <div class="mx-1 my-2 text-center p-3">--}}
+{{--                                                                        <label for="file-input-212121ww">--}}
+{{--                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">--}}
+{{--                                                                                <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">--}}
+{{--                                                                                    <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />--}}
+{{--                                                                                    <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">--}}
+{{--                                                                                        <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />--}}
+{{--                                                                                        <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />--}}
+{{--                                                                                    </g>--}}
+{{--                                                                                </g>--}}
+{{--                                                                            </svg>--}}
+{{--                                                                        </label>--}}
+{{--                                                                        @if(isset($data->fahrzeug->offer))--}}
+
+{{--                                                                            <a target="_blank" href="{{route('showfile',$data->fahrzeug->offer)}}"><input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">--}}
+{{--                                                                                <input type="text" value="{{$data->fahrzeug->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">--}}
+{{--                                                                            </a>--}}
+{{--                                                                        @else--}}
+{{--                                                                            <input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">--}}
+{{--                                                                            <input type="text" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">--}}
+{{--                                                                        @endif--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+
+{{--                                                    @endif--}}
                                                 </div>
+
                                             </div>
+
                                         </div>
+
                                     </div>
+
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3 ">
                                     <div class="mb-2">
@@ -7209,8 +7259,7 @@
             '                                                                                    Versischerung:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
-            '' +
-            '                                                                        <input name="insurance' + newncnt + '" type="text" class="py-1 border-0">' +
+            '                                                                       <select name="insurance' + newncnt + '" class="form-select w-75" aria-label="Default select example"> <option selected></option> <option value="Haftpflicht">Haftpflicht</option> <option value="Teilkasko">Teilkasko</option> <option value="Vollkasko">Vollkasko</option> </select>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +

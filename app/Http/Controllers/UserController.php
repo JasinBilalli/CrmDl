@@ -129,7 +129,7 @@ class UserController extends Controller
     {
 
         if (!Auth::guard('admins')->check()) {
-        
+
             return view('login');
         } else {
             return redirect()->route('dashboard');
@@ -290,6 +290,7 @@ class UserController extends Controller
             $admins = Auth::guard('admins')->user();
         } else {
             $admins = Admins::role(['fs'])->get();
+            $admins = Admins::role(['fs'])->get();
         }
         return view('insterappointment', compact('admins'));
     }
@@ -299,7 +300,7 @@ class UserController extends Controller
     {
 
 
-     
+
 
 
         return view('leads');
@@ -386,7 +387,7 @@ class UserController extends Controller
             $user = Auth::guard('admins')->user();
             $user->confirmed = 0;
             $user->pin = $pin;
-   
+
 
             //  Nexmo::message()->send([
             //  'to' => '38345917726',
@@ -643,9 +644,9 @@ $getmonth = isset($req->getmonth) ? $req->getmonth : "";
             if ($user->user()->hasRole('backoffice') || $user->user()->hasRole('admin') || Auth::user()->hasRole('salesmanager')) {
                 $pcnt = 0;
                 $mcnt = 0;
-                foreach (DB::table('family_person')
+                foreach (family::with('adminpend')
                              ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
-                             ->select('family_person.first_name', 'pendencies.family_id', 'family_person.id', 'family_person.last_name', 'pendencies.created_at', 'pendencies.done', 'pendencies.completed', 'pendencies.admin_id', 'pendencies.id as pid')
+                             ->select('family_person.first_name', 'pendencies.family_id', 'family_person.id', 'family_person.last_name', 'pendencies.created_at', 'pendencies.done', 'pendencies.completed', 'pendencies.admin_id', 'pendencies.id as pid', 'pendencies.description')
                              ->orderBy('family_person.first_name', 'asc')
                              ->where('done', 1)
                              ->orderBy('pendencies.created_at')
@@ -956,7 +957,7 @@ $getmonth = isset($req->getmonth) ? $req->getmonth : "";
             }
 
         }
-        
+
     }
 
     public function addnewuser()
