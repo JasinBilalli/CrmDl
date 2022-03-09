@@ -37,6 +37,7 @@ class LeadDataController extends Controller
                 $data = new data();
                 $lead = family::find($id);
                 $data->getdata($id);
+       
                 if(LeadDataFahrzeug::where('person_id',$id)->first()){
                                $mandatiert = LeadDataFahrzeug::where('person_id',$id)->first()->mandatiert != null ? true : false;
 
@@ -47,7 +48,7 @@ class LeadDataController extends Controller
                $mandatiert ? $mandatierturl = LeadDataFahrzeug::where('person_id',$id)->first()->mandatiert : $mandatierturl = "";
 
 
-                return view('updatedocument', compact('data', 'lead','admin_id','mandatiert','mandatierturl','id'));
+                return view('updatedocument')->with('data',$data)->with('lead',$lead)->with('admin_id',$admin_id)->with('mandatiert',$mandatiert)->with('mandatierturl',$mandatierturl)->with('id',$id);
 
 
             } else {

@@ -65,6 +65,10 @@ route::prefix('')->middleware('confirmcode')->group(function(){
       $file = $req->file('file');
       \Maatwebsite\Excel\Facades\Excel::import(new newlead, $file);
       \Maatwebsite\Excel\Facades\Excel::import(new leadinfo, $file);
+      $admins = Admins::role(['salesmanager','admin'])->get();
+      foreach($admins as $admin){
+         $admin->notify(new SendNotificationn('<a href="' . route('leads') . '">Bestimmte Leads wurden gerade importiert</a>'));
+      }
       return redirect()->back();
    })->name('importleads')->middleware('role:admin|salesmanager');
    route::get('getleads',function(){
