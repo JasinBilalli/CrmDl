@@ -1256,8 +1256,13 @@
                                                                                     Versischerung:
                                                                                 </span>
                                                                             </div>
+                                                                            <select name="insurance" class="form-select w-75" aria-label="Default select example">
+                                                                                <option selected></option>
+                                                                                <option value="Haftpflicht">Haftpflicht </option>
+                                                                                <option value="Teilkasko">Teilkasko</option>
+                                                                                <option value="Vollkasko">Vollkasko</option>
+                                                                            </select>
 
-                                                                            <input name="insurance" type="text" class="py-1 border-0">
                                                                         </div>
                                                                         <div class="input-select-div mb-2">
                                                                             <div class="">
@@ -3789,8 +3794,7 @@
                 '                                                                                    Versischerung:' +
                 '                                                                                </span>' +
                 '                                                                        </div>' +
-                '' +
-                '                                                                        <input name="insurance' + newncnt + '" type="text" class="py-1 border-0">' +
+                '                                                                       <select name="insurance' + newncnt + '" class="form-select w-75" aria-label="Default select example"> <option selected></option> <option value="Haftpflicht">Haftpflicht</option> <option value="Teilkasko">Teilkasko</option> <option value="Vollkasko">Vollkasko</option> </select>' +
                 '                                                                    </div>' +
                 '                                                                    <div class="input-select-div mb-2">' +
                 '                                                                        <div class="">' +

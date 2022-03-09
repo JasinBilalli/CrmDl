@@ -17,16 +17,17 @@ use Illuminate\Support\Facades\Auth;
 class TodoController extends Controller
 {
     public function numbers(){
-        return todo::where('number',1)->where('admin_id',Auth::guard('admins')->user()->id)->get();
+        return todo::where('admin_id',Auth::guard('admins')->user()->id)->get();
     }
 
     public function addnumber(Request $req){
         if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
         {
         $todo = new todo();
+        $todo->costumer = filter_var($req->name, FILTER_SANITIZE_STRING);
+        $todo->comment = filter_var($req->position, FILTER_SANITIZE_STRING);
         $todo->text = filter_var($req->number,FILTER_SANITIZE_STRING);
         $todo->admin_id = Auth::guard('admins')->user()->id;
-        $todo->number = 1;
         $todo->save();
       }
     }
