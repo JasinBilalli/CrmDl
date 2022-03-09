@@ -37,6 +37,7 @@ class LeadDataController extends Controller
                 $data = new data();
                 $lead = family::find($id);
                 $data->getdata($id);
+         
        
                 if(LeadDataFahrzeug::where('person_id',$id)->first()){
                                $mandatiert = LeadDataFahrzeug::where('person_id',$id)->first()->mandatiert != null ? true : false;
@@ -78,14 +79,15 @@ return redirect()->route('tasks');
 
     public function createLeadDataKK($leadIdd, $personIdd, Request $request, $pendency = false)
     {
+        $offer = 0;
         $leadId = Crypt::decrypt($leadIdd);
         $leadId /= 1244;
         $personId = Crypt::decrypt($personIdd);
         $personId /= 1244;
         $newgcount = (int) $request->input('newgcount');
         $newncount = (int) $request->input('newncount');
-
-
+        $request->hasFile('offer') ? $offer++ : $offer += 0;
+       
         $person = family::find($personId);
         if ($person->lead->assign_to_id == Auth::guard('admins')->user()->id || Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('salesmanager') || Pendency::where('family_id', $personId)->first()->admin_id == Auth::user()->id) {
             LeadDataKK::create([
@@ -108,6 +110,7 @@ return redirect()->route('tasks');
                 'comment' => $request->comment
             ]);
             LeadDataFahrzeug::create([
+                'nuekommentar' => $request->nuekommentar,
                 'mandatiert' => $request->mandatiert ? $this->storeFile($request->file('mandatiert'), FolderPaths::KK_FILES) : null,
                 'leads_id' => $leadId,
                 'person_id' => $personId,
@@ -181,6 +184,7 @@ return redirect()->route('tasks');
 
 for($i = 1; $i <= $newgcount; $i++){
     $file = $request->file('upload_policeFahrzeug' . $i);
+    $request->hasFile('offer' . $i) ? $offer++ : $offer += 0;
 newgegen::create([
     'comparison_type' => $request->input('comparison_type' . $i) ? $request->input('comparison_type' . $i) : null,
     'upload_policeFahrzeug' => $request->hasFile('upload_policeFahrzeug' . $i) ? $this->storeFile($file, FolderPaths::KK_FILES) : null,
@@ -192,6 +196,7 @@ newgegen::create([
 }
 for($i = 1; $i <= $newncount; $i++){
 newnue::create([
+    'nuekommentar' => $request->input('nuekommentar' . $i),
     'person_id' => $personId,
     'first_intro' => $request->input('first_intro'. $i),
     'vehicle_id' => $request->hasFile('vehicle_id' . $i) ? $this->storeFile($request->file('vehicle_id' . $i),FolderPaths::KK_FILES) : null,
@@ -238,6 +243,16 @@ foreach($bo as $b){
     $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Dokumentation für :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
     $b->notify(new SendNotificationn($url));
 }
+if($offer > 0){
+    $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Das erhaltene Angebot für den Kunden :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
+Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
+$pend1 = new Pendency();
+$pend1->admin_id = $pend->admin_id;
+$pend1->family_id = $pend->family_id;
+$pend1->description = 'Offer';
+$pend1->type = 'Offer';
+$pend1->save();
+  }
             return redirect()->route('dashboard')->with('success', 'Erfolgreich eingereicht und wartet auf das Backoffice!');
         } else {
             return redirect()->back();
@@ -280,7 +295,7 @@ foreach($bo as $b){
     $gegen = newgegen::where('person_id',$personId)->get();
     for($i = 0; $i< $count; $i++){
         $curr = $i+1;
-        $request->file('offer' . $curr) ? $offer++ : $offer += 0;
+        
         if(isset($gegen[$i])){
                    $file = $request->file('upload_policeFahrzeug'. $curr);
                    $gegen[$i]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i]->upload_policeFahrzeug;
@@ -300,6 +315,7 @@ foreach($bo as $b){
                        $gegen->offer = $request->file('offer' . $curr) ? $this->storeFile($request->file('offer'. $curr),FolderPaths::KK_FILES) : null;
                        $gegen->vergleichsart_select = $request->input('vergleichsart_select' . $curr);
                        $gegen->save();
+                       $request->hasFile('offer' . $curr) ? $offer++ : $offer += 0;
                    }
                 }
 
@@ -321,7 +337,9 @@ foreach($bo as $b){
         for($i = 1; $i <= $count; $i++){
             if(!empty($gegen[$i-1])){
             $file = $request->file('vehicle_id'. $i);
-           $gegen[$i-1]->vehicle_id = $request->hasFile('vehicle_id'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i-1]->vehicle_id;
+            $gegen[$i-1]->nationality = $request->input('nationality' . $i) ? $request->input('nationality' . $i) : $gegen[$i-1]->nationality;
+            $gegen[$i-1]->nuekommentar = $request->input('nuekommentar' . $i) ? $request->input('nuekommentar' . $i) : $gegen[$i-1]->nuekommentar;
+            $gegen[$i-1]->vehicle_id = $request->hasFile('vehicle_id'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i-1]->vehicle_id;
            $gegen[$i-1]->leasing = $request->input('leasing' . $i) ? $request->input('leasing' . $i) : $gegen[$i-1]->leasing;
            $gegen[$i-1]->leasing_name = $request->input('leasing_name' . $i) ? $request->input('leasing_name' . $i) : $gegen[$i-1]->leasing_name;
            $gegen[$i-1]->year_of_purchase = $request->input('year_of_purchase' . $i) ? $request->input('year_of_purchase' . $i) : $gegen[$i-1]->year_of_purchase;
@@ -345,6 +363,7 @@ foreach($bo as $b){
            else{
                $gegen = new newnue();
                $file = $request->file('vehicle_id'. $i);
+               $gegen->nuekommentar = $request->input('nuekommentar' . $i) ? $request->input('nuekommentar' . $i) : $gegen->nuekommentar;
                $gegen->first_intro = $request->input('first_intro' . $i) ? $request->input('first_intro' . $i) : $gegen->first_intro;
                $gegen->vehicle_id = $request->hasFile('vehicle_id'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : null;
                $gegen->leasing = $request->input('leasing' . $i) ? $request->input('leasing' . $i) : $gegen->leasing;
@@ -388,7 +407,7 @@ foreach($bo as $b){
         }
 
         $existingLeadDataFahrzeug = LeadDataFahrzeug::where('person_id', $personId)->latest()->first();
-        $request->file('offer') ? $offer++ : $offer += 0;
+        $request->hasFile('offer') ? $offer++ : $offer += 0;
         $leadDataFahrzeug = [
             'mandatiert' => $request->hasFile('mandatiert') ? $this->storeFile($request->mandatiert, FolderPaths::KK_FILES) : null,
             'leads_id' => $leadId,
@@ -419,6 +438,7 @@ foreach($bo as $b){
             'hour_breakdown_assistance' => $request->hour_breakdown_assistance,
             'comment' => $request->commentFahrenzug,
             'offer' => $request->hasFile('offer') ?  $this->storeFile($request->file('offer'),FolderPaths::KK_FILES) : $existingLeadDataFahrzeug->offer,
+            'nuekommentar' => $request->input('nuekommentar') ? $request->input('nuekommentar') : $existingLeadDataFahrzeug->nuekommentar,
             'vergleichsart_select' => $request->vergleichsart_select
         ];
 
@@ -486,7 +506,7 @@ foreach($bo as $b){
             $b->notify(new SendNotificationn($url));
         }
           if($offer > 0){
-            $url =  '<a href="'  . route("costumer_form",Crypt::encrypt($personId * 1244)) . '">Das erhaltene Angebot für den Kunden :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
+            $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Das erhaltene Angebot für den Kunden :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
         Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
         $pend1 = new Pendency();
         $pend1->admin_id = $pend->admin_id;

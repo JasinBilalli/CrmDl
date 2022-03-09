@@ -1396,6 +1396,12 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <div>
+                                                                        Kommentar:
+                                                                        <div class="col-6">
+                                                                        <textarea class="form-control" name="nuekommentar"></textarea>
+    </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3979,6 +3985,12 @@
                 '                                                            </div>' +
                 '                                                                    </div>' +
                 '                                                                </div>' +
+                '                  <div>'+
+'                                                                        Kommentar:'+
+'                                                                        <div class="col-6">'+
+'                                                                        <textarea class="form-control" name="nuekommentar' + newncnt + '"></textarea>'+
+'    </div>'+
+'                                                                    </div>'+
                 '                                                            </div>' +
                 '                                                        </div>' +
                 '                                                    </div>' +
