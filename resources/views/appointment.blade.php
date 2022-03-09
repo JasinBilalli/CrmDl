@@ -1,5 +1,6 @@
 @extends('template.navbar')
 @section('content')
+@php $admini = Auth::user(); @endphp
 <style>
 
   body {
@@ -56,7 +57,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-@if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager'))
+@if($admini->hasRole('admin') || $admini->hasRole('salesmanager'))
 
 <script>
 
@@ -462,7 +463,7 @@
 
 
 
-@elseif(Auth::guard('admins')->user()->hasRole('fs'))
+@elseif($admini->hasRole('fs'))
 
 
 <script>
@@ -591,7 +592,7 @@
 </div>
 @else
 
-You don't have permission // {!! Auth::guard('admins')->user()->hasRole('admin') !!} ---  {!! Auth::guard('admins')->user()->getRoleNames() !!}
+You don't have permission // {!! $admini->hasRole('admin') !!} ---  {!! $admini->getRoleNames() !!}
 
 @endif
 

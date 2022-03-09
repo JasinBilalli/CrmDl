@@ -233,14 +233,15 @@ route::get('getnotifications',function(){
 
 
    $user = auth()->user();
-   foreach($user->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at')->paginate(60) as $not){
+   foreach($user->notifications()->orderBy('created_at','desc')->select('notifications.data','notifications.created_at','notifications.read_at')->paginate(60) as $not){
       $data['notifications'][$cnt] = $not;
       $obj = Carbon::parse($not->created_at);
       $data['notifications'][$cnt]['read_at'] = $not->read_at;
       $data['notifications'][$cnt]['data'] = $data['notifications'][$cnt]['data'] . ' <div style="font-weight:600">   ' . $obj->format('d/m/y | H:i'). '</div>';
       $cnt++;
+      if($not->read_at == null) $data['cnt']++;
    }
-   $data['cnt']  = $user->notifications()->whereNull('read_at')->count();
+   
  return $data;
 });
 route::get('readnotifications',function(){
