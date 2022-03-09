@@ -2044,7 +2044,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     }
 
     .overflow-div2212 {
-        height: 53vh;
+        height: 43vh;
         overflow: auto;
     }
 
