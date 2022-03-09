@@ -5883,6 +5883,7 @@ __webpack_require__.r(__webpack_exports__);
     axios.get('todayappointments?page=' + this.apage).then(function (response) {
       _this.today = response.data;
     });
+    this.newload();
   },
   data: function data() {
     return {
@@ -5898,7 +5899,8 @@ __webpack_require__.r(__webpack_exports__);
       lista: null,
       cnt: 1,
       lpage: 4,
-      apage: 1
+      apage: 1,
+      newappcnt: 0
     };
   },
   methods: {
@@ -5941,6 +5943,14 @@ __webpack_require__.r(__webpack_exports__);
         for (var i = 0; i < response.data.length; i++) {
           _this5.today.push(response.data[i]);
         }
+      });
+    },
+    newload: function newload() {
+      var _this6 = this;
+
+      this.apage++;
+      axios.get('todayappointments?page=' + this.apage).then(function (response) {
+        _this6.newappcnt = response.data.length;
       });
     }
   }
@@ -32298,27 +32308,29 @@ var render = function () {
                   )
                 }),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "mt-2 text-center p-1",
-                    staticStyle: {
-                      background: "#DDDADA",
-                      "border-radius": "20px",
-                      cursor: "pointer",
-                      "font-family": "'Montserrat'",
-                    },
-                    on: {
-                      click: function ($event) {
-                        return _vm.loadmore()
+                _vm.newappcnt > 0
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "mt-2 text-center p-1",
+                        staticStyle: {
+                          background: "#DDDADA",
+                          "border-radius": "20px",
+                          cursor: "pointer",
+                          "font-family": "'Montserrat'",
+                        },
+                        on: {
+                          click: function ($event) {
+                            return _vm.loadmore()
+                          },
+                        },
                       },
-                    },
-                  },
-                  [
-                    _vm._v("\n                Mehr laden "),
-                    _c("i", { staticClass: "fas fa-caret-down" }),
-                  ]
-                ),
+                      [
+                        _vm._v("\n                Mehr laden "),
+                        _c("i", { staticClass: "fas fa-caret-down" }),
+                      ]
+                    )
+                  : _vm._e(),
               ],
               2
             ),

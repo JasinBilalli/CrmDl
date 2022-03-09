@@ -289,7 +289,7 @@ class UserController extends Controller
         if (Auth::guard('admins')->user()->hasRole('fs')) {
             $admins = Auth::guard('admins')->user();
         } else {
-            $admins = Admins::role(['fs','digital']);
+            $admins = Admins::role(['fs'])->get();
         }
         return view('insterappointment', compact('admins'));
     }

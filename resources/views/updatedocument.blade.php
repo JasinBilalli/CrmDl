@@ -102,8 +102,7 @@
 </style>
 
 <body>
-@php $data->datakk = \App\Models\LeadDataKK::where('person_id',$id)->latest()->first() @endphp
-@php $data->fahrzeug = \App\Models\LeadDataFahrzeug::where('person_id',$id)->latest()->first() @endphp
+
 <div class="row" id="app">
     <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
         <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
@@ -1420,9 +1419,10 @@
                                                                             <div class="btn-group w-100"
                                                                                  role="group"
                                                                                  aria-label="Basic radio toggle button group">
-                                                                                @if(isset($data->fahrzeug->leasing))
-                                                                                    @if($data->fahrzeug->leasing
+                                                                                @if(isset($data->fahrzeug['leasing']))
+                                                                                    @if($data->fahrzeug['leasing']
                                                                                     == 'Ja')
+                                                                                 
                                                                                         <input type="radio"
                                                                                                class="btn-check"
                                                                                                value="Ja"
@@ -3892,7 +3892,7 @@
                                                                         Nationalitat:
                                                                     </span>
                                                             </div>
-                                                            @php $data->things = \App\Models\LeadDataThings::where('person_id',$id)->latest()->first() @endphp
+                                                           
                                                             <select onchange="hideNation()"  class="form-select w-75" name="nationality_sachen" id="schweiz">
                                                                 @if(isset($data->things->nationality))
                                                                     <option value="{{$data->things->nationality}}" selected>{{$data->things->nationality}}</option>
@@ -5152,7 +5152,6 @@
                                                                             </g>
                                                                         </svg>
                                                                     </label>
-                                                                    @php $data->prevention = \App\Models\LeadDataPrevention::where('person_id',$id)->latest()->first() @endphp
                                                                     @if(isset($data->prevention->upload_police))
                                                                         <input type="file" id="file-input-6"
                                                                                class="svg-div w-100 border-0  g-0"

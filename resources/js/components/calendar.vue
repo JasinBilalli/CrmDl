@@ -114,7 +114,7 @@
                             </div>
                         </div>
                     </a>
-                    <div class="mt-2 text-center p-1" style="background: #DDDADA; border-radius: 20px; cursor: pointer; font-family: 'Montserrat';" @click="loadmore()">
+                    <div v-if="newappcnt > 0" class="mt-2 text-center p-1" style="background: #DDDADA; border-radius: 20px; cursor: pointer; font-family: 'Montserrat';" @click="loadmore()">
                         Mehr laden <i class="fas fa-caret-down"></i>
                     </div>
                 </div>
@@ -138,6 +138,7 @@
             axios.get('todayappointments?page=' + this.apage).then(
                 (response) => { this.today = response.data;}
             );
+            this.newload();
         },
 
         data(){
@@ -155,6 +156,7 @@
                 cnt: 1,
                 lpage: 4,
                 apage:1,
+                newappcnt: 0
 
             }
         },
@@ -195,6 +197,14 @@
             axios.get('todayappointments?page=' + this.apage).then(
             (response) => {
                 for (let i = 0; i < response.data.length; i++) {this.today.push(response.data[i]);}
+                    }
+                );
+            },
+            newload:function(){
+            this.apage++;
+            axios.get('todayappointments?page=' + this.apage).then(
+            (response) => {
+              this.newappcnt = response.data.length;
                     }
                 );
             }
