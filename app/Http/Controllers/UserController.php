@@ -290,7 +290,6 @@ class UserController extends Controller
             $admins = Auth::guard('admins')->user();
         } else {
             $admins = Admins::role(['fs'])->get();
-            $admins = Admins::role(['fs'])->get();
         }
         return view('insterappointment', compact('admins'));
     }
@@ -299,13 +298,7 @@ class UserController extends Controller
     public function leads(Request $req)
     {
 
-
-
-
-
         return view('leads');
-
-
     }
 
     public function asignlead(Request $req, $id)

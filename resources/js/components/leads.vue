@@ -10,7 +10,7 @@
                                     <span>Zugewiesene Leads</span>
                                 </div>
                                 <div class="count px-4 mt-3 h-100">
-                                    <span class="fs-5">5</span>
+                                    <span class="fs-5">{{cnt}}</span>
                                 </div>
                             </div>
                             <div class="content p-2">
@@ -562,7 +562,7 @@
                                     <span>Zugewiesene Leads</span>
                                 </div>
                                 <div class="count px-4 mt-3 h-100">
-                                    <span class="fs-5">5</span>
+                                    <span class="fs-5"> {{cnt}} </span>
                                 </div>
                             </div>
                             <div class="content p-2">
@@ -976,7 +976,8 @@ export default {
             instagram: null,
             facebook: null,
             sanascout: null,
-            gati: false
+            gati: false,
+            cnt: 0
         };
     },
     mounted() {
@@ -1006,6 +1007,7 @@ export default {
                     this.facebook = response.data.facebook;
                     this.sanascout = response.data.sanascout;
                     this.gati = true;
+                    this.cnt = response.data.leads.data.length;
                 }
             });
         },

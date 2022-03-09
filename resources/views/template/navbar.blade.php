@@ -1,9 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-          integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
@@ -929,7 +927,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                     @if($user->user()->hasRole('backoffice') ||
                     $user->user()->hasRole('admin'))
 
-                        <a href="{{route('status')}}"
+                        <!-- <a href="{{route('status')}}"
                            class="nav-link {{ (request()->is('status')) ? 'activeClassNav__' : '' }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                                  class="bi bi-clipboard-data" viewBox="0 0 16 16">
@@ -941,7 +939,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                                     d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
                             </svg>
                             <span class="ps-2 txt-dn">Status</span>
-                        </a>
+                        </a> -->
                     @endif
                     @if($user->check())
                         <a href="{{route('costumers')}}"
@@ -1241,7 +1239,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             <div class="my-3 m-burger">
                 @if($user->user()->hasRole('backoffice') ||
                 $user->user()->hasRole('admin'))
-                    <a href="{{route('status')}}"
+                    <!-- <a href="{{route('status')}}"
                        class="m-nav text-decoration-none {{ (request()->is('status')) ? 'activeClassNavMob__' : '' }}">
                     <span class="px-2 active-dot">
                         <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1262,7 +1260,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                         <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
                         STATUS
                     </span>
-                    </a>
+                    </a> -->
                     <hr>
                 @endif
             </div>

@@ -7426,7 +7426,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       instagram: null,
       facebook: null,
       sanascout: null,
-      gati: false
+      gati: false,
+      cnt: 0
     };
   },
   mounted: function mounted() {
@@ -7456,6 +7457,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           _this.facebook = response.data.facebook;
           _this.sanascout = response.data.sanascout;
           _this.gati = true;
+          _this.cnt = response.data.leads.data.length;
         }
       });
     },
@@ -33708,7 +33710,22 @@ var render = function () {
                 _c("div", { staticClass: "row g-0" }, [
                   _c("div", { staticClass: "col-12 col-md-12 col-lg-9 g-0 " }, [
                     _c("div", { staticClass: "assigned-leads py-1 mx-1" }, [
-                      _vm._m(0),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "header ps-3 ps-sm-3 d-flex justify-content-between",
+                        },
+                        [
+                          _vm._m(0),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
+                            _c("span", { staticClass: "fs-5" }, [
+                              _vm._v(_vm._s(_vm.cnt)),
+                            ]),
+                          ]),
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("div", { staticClass: "content p-2" }, [
                         _c(
@@ -35617,7 +35634,22 @@ var render = function () {
                 _c("div", { staticClass: "row g-0" }, [
                   _c("div", { staticClass: "col-12 col-md-12 col-lg-9 g-0" }, [
                     _c("div", { staticClass: "assigned-leads1 mx-1 py-1 " }, [
-                      _vm._m(20),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "header ps-3 ps-sm-3 d-flex justify-content-between",
+                        },
+                        [
+                          _vm._m(20),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
+                            _c("span", { staticClass: "fs-5" }, [
+                              _vm._v(" " + _vm._s(_vm.cnt) + " "),
+                            ]),
+                          ]),
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("div", { staticClass: "content p-2" }, [
                         _c(
@@ -37226,19 +37258,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "header ps-3 ps-sm-3 d-flex justify-content-between" },
-      [
-        _c("div", { staticClass: "fs-5" }, [
-          _c("span", [_vm._v("Zugewiesene Leads")]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
-          _c("span", { staticClass: "fs-5" }, [_vm._v("5")]),
-        ]),
-      ]
-    )
+    return _c("div", { staticClass: "fs-5" }, [
+      _c("span", [_vm._v("Zugewiesene Leads")]),
+    ])
   },
   function () {
     var _vm = this
@@ -37656,19 +37678,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "header ps-3 ps-sm-3 d-flex justify-content-between" },
-      [
-        _c("div", { staticClass: "fs-5" }, [
-          _c("span", [_vm._v("Zugewiesene Leads")]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
-          _c("span", { staticClass: "fs-5" }, [_vm._v("5")]),
-        ]),
-      ]
-    )
+    return _c("div", { staticClass: "fs-5" }, [
+      _c("span", [_vm._v("Zugewiesene Leads")]),
+    ])
   },
   function () {
     var _vm = this
