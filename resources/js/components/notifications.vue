@@ -1,7 +1,10 @@
 <template>
-    <div class="notification-divvv22" >
+    <div class="notification-divvv22">
         <div class="hover-visible-div" id="hoverVisibleDiv">
-            <div class="txt-notif fs-6">
+            <div v-if="notcnt < 1" class="txt-notif fs-6">
+                Sie haben keine neue Benachrichtigung
+            </div>
+            <div v-else class="txt-notif fs-6" @click="readall();">
                 Du hast {{ notcnt }} neue Benachrichtigungen
             </div>
         </div>
