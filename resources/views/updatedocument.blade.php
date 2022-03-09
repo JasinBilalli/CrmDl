@@ -1217,7 +1217,7 @@
                                                         </div>
 
 
-                                                        @if(!Auth::user()->hasRole('fs'))
+                                                        @if(!Auth::user()->hasRole('fs') || isset($data->offer))
                                                             <div class="col-12" id="of{{$gcnt}}">Offer:
                                                                 <div class="text-start">
                                                                     <div class="upload-box mx-1 my-2">
@@ -1254,6 +1254,7 @@
                                                                     </div>
                                                                 </div>
                                                                 @php $gcnt++ @endphp
+</div>
                                                                 @endif
                                                             @endforeach
                                                             <div class="text-center mt-3" style="margin-top: -30px" id="add_g"
@@ -1418,8 +1419,8 @@
                                                                             <div class="btn-group w-100"
                                                                                  role="group"
                                                                                  aria-label="Basic radio toggle button group">
-                                                                                @if(isset($data->fahrzeug['leasing']))
-                                                                                    @if($data->fahrzeug['leasing']
+                                                                                @if(isset($data->fahrzeug->leasing))
+                                                                                    @if($data->fahrzeug->leasing
                                                                                     == 'Ja')
 
                                                                                         <input type="radio"
@@ -2836,7 +2837,24 @@
                                                                         @endif
                                                                     </div>
                                                                 </div>
+                                                                
+
                                                             </div>
+                                                            @if(isset($data->fahrzeug->nuekommentar))
+                                                                <div>
+                                                                        Kommentar:
+                                                                        <div class="col-6">
+                                                                        <textarea class="form-control" name="nuekommentar">{{ $data->fahrzeug->nuekommentar }}</textarea>
+    </div>
+                                                                    </div>
+                                                                    @else
+                                                                    <div>
+                                                                        Kommentar:
+                                                                        <div class="col-6">
+                                                                        <textarea class="form-control" name="nuekommentar">aaa</textarea>
+    </div>
+                                                                    </div>
+                                                                    @endif
                                                         </div>
                                                     </div>
                                                     @php $ncnt = 1; @endphp
@@ -3798,6 +3816,12 @@
                                                                                 </div>
                                                                             @endif
                                                                         </div>
+                                                                    </div>
+                                                                    <div>
+                                                                        Kommentar:
+                                                                        <div class="col-6">
+                                                                        <textarea class="form-control" name="nuekommentar{{$ncnt}}">{{$nue->nuekommentar}}</textarea>
+    </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -7430,6 +7454,12 @@
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                </div>' +
+            '                  <div>'+
+'                                                                        Kommentar:'+
+'                                                                        <div class="col-6">'+
+'                                                                        <textarea class="form-control" name="nuekommentar' + newncnt + '"></textarea>'+
+'    </div>'+
+'                                                                    </div>'+
             '                                                            </div>' +
             '                                                        </div>' +
             '                                                    </div>' +

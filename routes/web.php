@@ -205,9 +205,9 @@ route::get('file/{file?}',function($file = null,Request $request){
            return $response;
         }
         else{
-           return redirect(URL::previous());
+           return abort(404);
         }
-})->middleware('role:admin|backoffice|salesmanager|management,admins')->name('showfile');
+})->middleware('role:admin|backoffice|salesmanager|management|fs')->name('showfile');
 });
 Route::get('Appointments', 'App\Http\Controllers\AppointmentsController@index')->name('Appointments')->middleware('role:admin|fs|salesmanager');
 Route::get('Dropajax', 'App\Http\Controllers\AppointmentsController@Dropajax')->name('Dropajax')->middleware('role:admin|fs|salesmanager');
