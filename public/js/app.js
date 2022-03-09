@@ -7419,9 +7419,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
-    this.getnotifications(); // setInterval(() => {
-    //     this.getnotifications()
-    // }, 350);
+    var _this = this;
+
+    this.getnotifications();
+    setInterval(function () {
+      _this.getnotifications();
+    }, 2000);
   },
   data: function data() {
     return {
@@ -7435,12 +7438,12 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(this.url + 'readnotifications');
     },
     getnotifications: function getnotifications() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get(this.url + 'getnotifications').then(function (response) {
-        _this.notifications = [];
-        _this.notifications = response.data.notifications;
-        _this.notcnt = response.data.cnt;
+        _this2.notifications = [];
+        _this2.notifications = response.data.notifications;
+        _this2.notcnt = response.data.cnt;
       });
     },
     openNotifyFunct: function openNotifyFunct() {
@@ -37100,7 +37103,15 @@ var render = function () {
   return _c("div", { staticClass: "notification-divvv22" }, [
     _c(
       "div",
-      { staticClass: "hover-visible-div", attrs: { id: "hoverVisibleDiv" } },
+      {
+        staticClass: "hover-visible-div",
+        attrs: { id: "hoverVisibleDiv" },
+        on: {
+          click: function ($event) {
+            return _vm.readall()
+          },
+        },
+      },
       [
         _c("div", { staticClass: "txt-notif fs-6" }, [
           _vm._v(

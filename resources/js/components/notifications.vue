@@ -1,6 +1,6 @@
 <template>
     <div class="notification-divvv22" >
-        <div class="hover-visible-div" id="hoverVisibleDiv">
+        <div class="hover-visible-div" @click="readall();" id="hoverVisibleDiv">
             <div class="txt-notif fs-6">
                 Du hast {{ notcnt }} neue Benachrichtigungen
             </div>
@@ -95,9 +95,9 @@
 export default {
     mounted() {
         this.getnotifications();
-        // setInterval(() => {
-        //     this.getnotifications()
-        // }, 350);
+        setInterval(() => {
+            this.getnotifications()
+        }, 2000);
     },
     data() {
         return {
