@@ -37,8 +37,8 @@ class LeadDataController extends Controller
                 $data = new data();
                 $lead = family::find($id);
                 $data->getdata($id);
-         
-       
+
+
                 if(LeadDataFahrzeug::where('person_id',$id)->first()){
                                $mandatiert = LeadDataFahrzeug::where('person_id',$id)->first()->mandatiert != null ? true : false;
 
@@ -87,7 +87,7 @@ return redirect()->route('tasks');
         $newgcount = (int) $request->input('newgcount');
         $newncount = (int) $request->input('newncount');
         $request->hasFile('offer') ? $offer++ : $offer += 0;
-       
+
         $person = family::find($personId);
         if ($person->lead->assign_to_id == Auth::guard('admins')->user()->id || Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('salesmanager') || Pendency::where('family_id', $personId)->first()->admin_id == Auth::user()->id) {
             LeadDataKK::create([
@@ -262,6 +262,11 @@ $pend1->save();
 
     public function updateLeadDataKK($leadId, $personId, Request $request)
     {
+        $pend = Pendency::find(Session::get('pend_id'));
+        $pend->done = 1;
+        $pend->type = "";
+        $pend->save();
+
         $leadId = Crypt::decrypt($leadId) / 1244;
         $personId = Crypt::decrypt($personId) / 1244;
         $offer = 0;
@@ -295,7 +300,7 @@ $pend1->save();
     $gegen = newgegen::where('person_id',$personId)->get();
     for($i = 0; $i< $count; $i++){
         $curr = $i+1;
-        
+
         if(isset($gegen[$i])){
                    $file = $request->file('upload_policeFahrzeug'. $curr);
                    $gegen[$i]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i]->upload_policeFahrzeug;
@@ -474,6 +479,11 @@ $pend1->save();
         }
 
         $existingLeadDataPrevention = LeadDataPrevention::where('person_id', $personId)->latest()->first();
+        $countoffer = 0;
+        if ($request->hasFile('newoffer') && !isset($existingLeadDataPrevention->newoffer)){
+            $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Das erhaltene Angebot für den Sachen für Kunden:' . family::find($personId)->first_name . ' wurde eingereicht </a>';
+            Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
+        }
         $leadDataPrevention = [
             'leads_id' => $leadId,
             'person_id' => $personId,
@@ -488,6 +498,7 @@ $pend1->save();
             'society' => $request->society,
             'n_of_p_legal_protection' => $request->n_of_p_legal_protection,
             'Hvergleichsart_select' => $request->Hvergleichsart_select,
+            'newoffer' => $request->hasFile('newoffer') ? $this->storeFile($request->file('newoffer'), FolderPaths::KK_FILES) : $existingLeadDataPrevention->newoffer,
         ];
 
 
@@ -495,10 +506,7 @@ $pend1->save();
             $existingLeadDataPrevention->update($leadDataPrevention);
         }
 
-        $pend = Pendency::find(Session::get('pend_id'));
-        $pend->done = 1;
-        $pend->type = "";
-        $pend->save();
+
 
         $bo = Admins::role(['backoffice','admin'])->get();
         foreach($bo as $b){
@@ -518,6 +526,8 @@ $pend1->save();
           $person = family::find($pend->family_id);
           $person->status = "Done";
           $person->save();
+
+
 
 
         return redirect()->route('tasks')->with('success', 'Aufgabe erfolgreich übermittelt');
