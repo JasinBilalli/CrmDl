@@ -1839,21 +1839,21 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             border-radius: 10px;
         }
 
-        .lead-statistics-header {
-            background-color: #F7F7F7;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 30px !important;
-            border-top-right-radius: 30px !important;
-        }
+        /*.lead-statistics-header {*/
+        /*    background-color: #F7F7F7;*/
+        /*    border-bottom-left-radius: 0px !important;*/
+        /*    border-bottom-right-radius: 0px !important;*/
+        /*    border-top-left-radius: 30px !important;*/
+        /*    border-top-right-radius: 30px !important;*/
+        /*}*/
 
-        .lead-statistics {
-            background-color: #F7F7F7;
-            border-bottom-left-radius: 30px !important;
-            border-bottom-right-radius: 30px !important;
-            border-top-left-radius: 0px !important;
-            border-top-right-radius: 0px !important;
-        }
+        /*.lead-statistics {*/
+        /*    background-color: #F7F7F7;*/
+        /*    border-bottom-left-radius: 30px !important;*/
+        /*    border-bottom-right-radius: 30px !important;*/
+        /*    border-top-left-radius: 0px !important;*/
+        /*    border-top-right-radius: 0px !important;*/
+        /*}*/
 
         .openLeadsSpanText {
             font-size: 17px;

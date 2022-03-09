@@ -897,7 +897,7 @@
                         <div class="tab-pane fade auto-content" id="nav-profile" role="tabpanel"
                              aria-labelledby="nav-profile-tab">
                             <div class="row mx-2 mx-sm-4">
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 my-4 ">
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 mt-4 mb-0 my-sm-4 ">
                                     <div class="accordion accordion-flush" id="accordionFlushExample1">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingOne">
@@ -1292,7 +1292,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 my-4">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 mb-0 mt-4 my-sm-4">
                                     <div class="accordion accordion-flush" id="accordionFlushExample2">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="flush-headingTwo">
@@ -5116,7 +5116,7 @@
                         <div class="tab-pane fade  vorsorge-content" id="nav-fourth" role="tabpanel"
                              aria-labelledby="nav-fourth-tab">
                             <div class="row mx-2 mx-sm-4">
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3 ">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-1 my-sm-3 ">
                                     <div class="mb-2">
                                             <span class="fw-bold fs-6">
                                                 Hausrat- & Privathaftpflicht
@@ -5304,7 +5304,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3 ">
-                                    <div class="mb-2">
+                                    <div class="mb-0 mb-sm-2 be-gone">
                                             <span class="fw-bold fs-6" style="color: transparent;">
                                                 Hausrat- & Privathaftpflicht
                                             </span>
@@ -5548,7 +5548,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-1 my-sm-3">
                                     <div class="mb-2">
                                             <span class="fw-bold fs-6">
                                                 Rechtsschutzversicherung
@@ -6322,6 +6322,9 @@
 
         body {
             padding-bottom: 65px;
+        }
+        .be-gone {
+            display:none;
         }
     }
 </style>
