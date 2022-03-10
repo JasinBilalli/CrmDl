@@ -7412,9 +7412,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -35714,18 +35711,20 @@ var render = function () {
                                                         },
                                                         [
                                                           _vm._v(
-                                                            "\n                                                  " +
+                                                            "\n                                                              " +
                                                               _vm._s(
                                                                 lead.first_name
                                                               ) +
-                                                              "\n                                                "
+                                                              " " +
+                                                              _vm._s(
+                                                                lead.last_name
+                                                              ) +
+                                                              "\n                                                            "
                                                           ),
                                                         ]
                                                       ),
                                                     ]
                                                   ),
-                                                  _vm._v(" "),
-                                                  _vm._m(22, true),
                                                 ]
                                               ),
                                               _vm._v(" "),
@@ -35762,7 +35761,7 @@ var render = function () {
                                                               },
                                                             },
                                                             [
-                                                              _vm._m(23, true),
+                                                              _vm._m(22, true),
                                                               _vm._v(" "),
                                                               _c(
                                                                 "div",
@@ -35994,7 +35993,7 @@ var render = function () {
                                                               },
                                                             },
                                                             [
-                                                              _vm._m(24, true),
+                                                              _vm._m(23, true),
                                                               _vm._v(" "),
                                                               _c(
                                                                 "div",
@@ -36523,7 +36522,7 @@ var render = function () {
                                                 "adresse row px-2 px-sm-0",
                                             },
                                             [
-                                              _vm._m(25, true),
+                                              _vm._m(24, true),
                                               _vm._v(" "),
                                               _c(
                                                 "div",
@@ -36553,7 +36552,7 @@ var render = function () {
                                                 "haushalt row  px-2 px-sm-0",
                                             },
                                             [
-                                              _vm._m(26, true),
+                                              _vm._m(25, true),
                                               _vm._v(" "),
                                               _c(
                                                 "div",
@@ -36585,7 +36584,7 @@ var render = function () {
                                                 "grund  row  px-2 px-sm-0",
                                             },
                                             [
-                                              _vm._m(27, true),
+                                              _vm._m(26, true),
                                               _vm._v(" "),
                                               _c(
                                                 "div",
@@ -36611,7 +36610,7 @@ var render = function () {
                                                 "kampagne row  px-2 px-sm-0",
                                             },
                                             [
-                                              _vm._m(28, true),
+                                              _vm._m(27, true),
                                               _vm._v(" "),
                                               _c(
                                                 "div",
@@ -36670,7 +36669,7 @@ var render = function () {
                         _vm._v(" "),
                         _vm.role != "fs"
                           ? _c("div", { staticClass: " py-2" }, [
-                              _vm._m(29),
+                              _vm._m(28),
                               _vm._v(" "),
                               _c(
                                 "div",
@@ -36694,7 +36693,7 @@ var render = function () {
                                         },
                                       },
                                       [
-                                        _vm._m(30),
+                                        _vm._m(29),
                                         _vm._v(" "),
                                         _c(
                                           "div",
@@ -36815,7 +36814,7 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 col-md-12 col-lg-3 g-0" }, [
                     _c("div", { staticClass: "lead-statistics1 py-1" }, [
-                      _vm._m(31),
+                      _vm._m(30),
                       _vm._v(" "),
                       _c("div", { staticClass: "content-wrapper mx-1" }, [
                         _c("div", { staticClass: "content" }, [
@@ -37199,7 +37198,7 @@ var render = function () {
                                   ),
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(32),
+                                _vm._m(31),
                               ]
                             ),
                             _vm._v(" "),
@@ -37240,7 +37239,7 @@ var render = function () {
                                 ),
                               ]),
                               _vm._v(" "),
-                              _vm._m(33),
+                              _vm._m(32),
                             ]),
                           ]),
                         ]),
@@ -37704,22 +37703,6 @@ var staticRenderFns = [
         }),
       ]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row g-0" }, [
-      _c("hr", {
-        staticClass: "text-black mx-3",
-        staticStyle: {
-          color: "#707070 !important",
-          height: "2px",
-          margin: "0 !important",
-          opacity: "0.8",
-        },
-      }),
-    ])
   },
   function () {
     var _vm = this

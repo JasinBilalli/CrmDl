@@ -669,7 +669,7 @@
                                                         </div>
                                                         <div class="row">
                                                             @if(!Auth::user()->hasRole('fs'))
-                                                            <div class="col-12">
+                                                            <div class="col-12">Neue Offer:
                                                                 <div class="text-start">
                                                                     <div class="upload-box mx-1 my-2 p-3">
                                                                         <div class="mx-1 my-2 text-center">
@@ -709,13 +709,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-
-
-
-
                                                     </div>
-
-
                                                 </div>
                                             </div>
                                         </div>
@@ -2080,7 +2074,7 @@
                                                                     <div class="col g-0 d-flex justify-content-end">
                                                                         <div class="select-div text-end">
                                                                             <select name="Hvergleichsart_select" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
-                                                                                <option selected>Select</option>
+                                                                                <option selected>Auswählen</option>
                                                                                 <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
                                                                                 <option value="0:1 Downgraden">0:1 Downgraden</option>
                                                                                 <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
@@ -2097,7 +2091,7 @@
                                                             </div>
                                                             @if(!Auth::user()->hasRole('fs'))
                                                             <div class="text-start">
-                                                                Offer
+                                                                Neue Offer
                                                                     <div class="upload-box mx-1 my-2 p-3">
                                                                         <div class="mx-1 my-2 text-center">
                                                                             <label for="file-input-6ww">
@@ -3466,7 +3460,7 @@
                 '                                                        </div>' +
                 '                                                   </div></div>' +
                 '                                           <div class="row">'+ '@if(!Auth::user()->hasRole("fs"))'+
-'                                                            <div class="col-12" id="of' + newgcnt + '">Offer:'+
+'                                                            <div class="col-12" id="of' + newgcnt + '">Neue Offer:'+
 '                                                                <div class="text-start">'+
 '                                                                    <div class="upload-box mx-1 my-2">'+
 '                                                                        <div class="mx-1 my-2 text-center p-3">'+

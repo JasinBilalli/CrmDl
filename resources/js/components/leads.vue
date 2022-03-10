@@ -582,14 +582,11 @@
                                                     <div class="modal-body p-3">
                                                         <div class="row mx-3 my-auto">
                                                             <div class="col-12 col-md-4 my-auto">
-                                                    <span class="fs-4 fw-bold text-dark">
-                                                      {{ lead.first_name }}
-                                                    </span>
+                                                                <span class="fs-4 fw-bold text-dark">
+                                                                  {{ lead.first_name }} {{ lead.last_name }}
+                                                                </span>
                                                             </div>
-                                                            <div class="row g-0">
-                                                                <hr class="text-black mx-3"
-                                                                    style="color: #707070 !important; height: 2px; margin: 0 !important; opacity: 0.8;">
-                                                            </div>
+
                                                         </div>
                                                         <br>
                                                         <div class="mt-sm-3 mt-1">
