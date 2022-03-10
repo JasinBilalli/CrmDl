@@ -5931,6 +5931,14 @@ __webpack_require__.r(__webpack_exports__);
     searchapp: function searchapp(vall) {
       var _this4 = this;
 
+      var idForStyle = document.getElementById(vall).id;
+      var ele = document.getElementsByClassName('dateee');
+
+      for (var i = 0; i < ele.length; i++) {
+        ele[i].style = "background-color: #fff; color: #000; cursor: pointer;";
+      }
+
+      document.getElementById(idForStyle).style = 'background-color: #0C71C3; color: white;  cursor: pointer;';
       axios.get('todayappointments?date=' + vall + '?page=' + this.apage).then(function (response) {
         _this4.today = response.data;
       });
@@ -32137,6 +32145,7 @@ var render = function () {
           {
             staticClass: "dayy this-month dateee p-2 mx-2 ",
             staticStyle: { cursor: "pointer" },
+            attrs: { id: _vm.lista[0].date },
             on: {
               click: function ($event) {
                 return _vm.searchapp(_vm.lista[0].date)
@@ -32191,6 +32200,7 @@ var render = function () {
           {
             staticClass: "dayy this-month dateee p-2 mx-2",
             staticStyle: { cursor: "pointer" },
+            attrs: { id: _vm.lista[1].date },
             on: {
               click: function ($event) {
                 return _vm.searchapp(_vm.lista[1].date)
@@ -32245,6 +32255,7 @@ var render = function () {
           {
             staticClass: "dayy this-month dateee p-2 mx-2",
             staticStyle: { cursor: "pointer" },
+            attrs: { id: _vm.lista[2].date },
             on: {
               click: function ($event) {
                 return _vm.searchapp(_vm.lista[2].date)
@@ -32299,6 +32310,7 @@ var render = function () {
           {
             staticClass: "dayy this-month dateee p-2 mx-2",
             staticStyle: { cursor: "pointer" },
+            attrs: { id: _vm.lista[3].date },
             on: {
               click: function ($event) {
                 return _vm.searchapp(_vm.lista[3].date)

@@ -251,10 +251,10 @@
                                     <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff; border: 2px solid #8a8bf9; border-radius: 18px;  margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
+                                             style="background-color: #fff; border: 2px solid #000; border-radius: 18px;  margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
-                                                     fill="#8a8bf9" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                                     fill="#000" class="bi bi-people-fill" viewBox="0 0 16 16">
                                                     <path
                                                         d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                                                     <path fill-rule="evenodd"
@@ -263,11 +263,11 @@
                                                 </svg>
                                             </div>
                                             <div class="py-2">
-                                                    <span class="fw-bold fs-5" style="color: #8a8bf9;">
+                                                    <span class="fw-bold fs-5" style="color: #000;">
                                                         {{$leadscount}}
                                                     </span>
                                                 <br>
-                                                <span class="fw-bold fs-5" style="color: #8a8bf9;">
+                                                <span class="fw-bold fs-5" style="color: #000;">
                                                         Neue Leads
                                                     </span>
                                             </div>
@@ -276,20 +276,20 @@
                                     <div onclick="window.location.href='{{route('tasks')}}'" style="cursor: pointer"  class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff;border:2px solid  #F88DC4; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
+                                             style="background-color: #fff;border:2px solid  #000; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
-                                                     fill="#F88DC4" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                                                     fill="#000" class="bi bi-bell-fill" viewBox="0 0 16 16">
                                                     <path
                                                         d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
                                                 </svg>
                                             </div>
                                             <div class="py-2">
-                                                    <span class="fw-bold fs-5 " style=" color:#F88DC4">
+                                                    <span class="fw-bold fs-5 " style=" color:#000">
                                                         {{$offen}}
                                                     </span>
                                                 <br>
-                                                <span class="fw-bold fs-5" style="color: #F88DC4;">
+                                                <span class="fw-bold fs-5" style="color: #000;">
                                                         Offene Aufgaben
                                                     </span>
                                             </div>
@@ -298,10 +298,10 @@
                                     <div onclick="window.location.href='{{route('tasks')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff;border:2px solid #4EC590; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
+                                             style="background-color: #fff;border:2px solid #000; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
-                                                     fill="#4EC590" class="bi bi-exclamation-octagon-fill"
+                                                     fill="#000" class="bi bi-exclamation-octagon-fill"
                                                      viewBox="0 0 16 16">
                                                     <path
                                                         d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
@@ -313,12 +313,12 @@
                                                         {{$pendingcnt}}
                                                     </span>
                                                 @else
-                                                    <span class="fw-bold fs-5 " style="color: #4EC590">
+                                                    <span class="fw-bold fs-5 " style="color: #000">
                                                         {{$pendingcnt}}
                                                     </span>
                                                 @endif
                                                 <br>
-                                                <span class="fw-bold fs-5" style="color:#4EC590">
+                                                <span class="fw-bold fs-5" style="color:#000">
                                                         Steht Aus
                                                     </span>
                                             </div>
@@ -327,21 +327,21 @@
                                     <div onclick="window.location.href='{{route('Appointments')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff;border:2px solid #4e5ec5; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
+                                             style="background-color: #fff;border:2px solid #000; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
-                                                     fill="#4e5ec5" class="bi bi-exclamation-octagon-fill"
+                                                     fill="#000" class="bi bi-exclamation-octagon-fill"
                                                      viewBox="0 0 16 16">
                                                     <path
                                                         d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                                 </svg>
                                             </div>
                                             <div class="py-2">
-                                                    <span class="fw-bold fs-5 " style="color:#4e5ec5">
+                                                    <span class="fw-bold fs-5 " style="color:#000">
                                                         {{$todayAppointCount}}
                                                     </span>
                                                 <br>
-                                                <span class="fw-bold fs-5" style="color: #4e5ec5;">
+                                                <span class="fw-bold fs-5" style="color: #000;">
                                                         Heute Termin
                                                     </span>
                                             </div>
