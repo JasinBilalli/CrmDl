@@ -286,9 +286,9 @@
                         <div class="tab-pane show active fade status-content mb-3" id="nav-home" role="tabpanel"
                              aria-labelledby="nav-home-tab">
                             <div class="row mx-2 mx-sm-4">
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-0 my-sm-3">
 
-                                    <div class="py-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0001">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px; border: none !important;">
@@ -410,7 +410,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="py-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0004">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px;">
@@ -533,9 +533,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-0 my-sm-3">
 
-                                    <div class="py-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0002">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px; border: none !important;">
@@ -658,7 +658,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="py-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0005">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px;">
@@ -780,8 +780,8 @@
                                     </div>
 
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
-                                    <div class="py-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-0 my-sm-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0003">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px;">
@@ -945,7 +945,7 @@
                         <div class="tab-pane fade auto-content" id="nav-profile" role="tabpanel"
                              aria-labelledby="nav-profile-tab">
                             <div class="row mx-2 mx-sm-4">
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3 my-sm-3">
                                     <div class="angaben-content p-3 mb-3">
                                         <div class="my-1">
                                             <label for="">Ursprung:</label>
@@ -967,7 +967,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-0 my-sm-3">
 
                                     <div class="angaben-content p-3 mb-3">
                                         <div class="my-1">
@@ -998,7 +998,7 @@
 
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-0 my-sm-3">
                                     <div class="angaben-content p-3 ">
                                         <div class="my-1">
                                             <span class="fw-bold">Anhänge</span>
@@ -1125,9 +1125,9 @@
                         <div class="tab-pane fade  sachen-content" id="nav-contact" role="tabpanel"
                              aria-labelledby="nav-contact-tab">
                             <div class="row mx-2 mx-sm-4">
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-0 my-sm-3">
 
-                                    <div class="py-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0006">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px;border: none !important;">
@@ -1265,7 +1265,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="py-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0044">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px;">
@@ -1386,8 +1386,8 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
-                                    <div class="py-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-0 my-sm-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0007">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px;border: none !important;">
@@ -1550,7 +1550,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="py-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0010">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px;">
@@ -1672,9 +1672,9 @@
 
                                 </div>
 
-                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-3">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 my-0 my-sm-3">
 
-                                    <div class="py-3">
+                                    <div class="pt-3 pb-1 py-sm-3">
                                         <div class="accordion accordion-flush" id="accordionFlushExample0008">
                                             <div class="accordion-item"
                                                  style="background-color: #EFEFEF !important;border-radius: 15px;">
