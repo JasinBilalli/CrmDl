@@ -376,7 +376,7 @@
                                                         </label>
                                                         <input type="file" name="pre_insurer" id="file-input-0" class="svg-div w-100 border-0  g-0" onchange="upload(this)">
 
-                                                        <input type="text" class="form-control text-center" id="file-input-0c" disabled style="background:none; border:none;">
+                                                        <input type="text" class="form-control text-center  showpdf" id="file-input-0c" disabled style="background:none; border:none;">
 
                                                     </div>
                                                 </div>
@@ -3361,6 +3361,8 @@
 
 
         function upload(x) {
+            var inputs = document.getElementsByClassName('showpdf');
+        
             var fullPath = x.value;
             if (fullPath) {
                 var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));

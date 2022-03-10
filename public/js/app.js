@@ -7614,13 +7614,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    var _this = this;
-
-    this.getnotifications();
-    setInterval(function () {
-      _this.getnotifications();
-    }, 2000);
+  mounted: function mounted() {// this.getnotifications();
+    // setInterval(() => {
+    //     this.getnotifications()
+    // }, 2000);
   },
   data: function data() {
     return {
@@ -7634,12 +7631,12 @@ __webpack_require__.r(__webpack_exports__);
       axios.get(this.url + 'readnotifications').then(this.getnotifications());
     },
     getnotifications: function getnotifications() {
-      var _this2 = this;
+      var _this = this;
 
       axios.get(this.url + 'getnotifications').then(function (response) {
-        _this2.notifications = [];
-        _this2.notifications = response.data.notifications;
-        _this2.notcnt = response.data.cnt;
+        _this.notifications = [];
+        _this.notifications = response.data.notifications;
+        _this.notcnt = response.data.cnt;
       });
     },
     openNotifyFunct: function openNotifyFunct() {
