@@ -17,6 +17,7 @@ class AppointmentsController extends Controller
 
     public function index(Request $request)
     {
+		$user = Auth::guard('admins')->user();
 		$input = $request->all();
 		if(array_key_exists('trie', $input) && ( $input['trie'] == "asc" || $input['trie']== "desc" )){$trie = $input['trie'];}else{$trie = "asc" ;};
 
@@ -33,7 +34,7 @@ class AppointmentsController extends Controller
 
 
 
-		if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager'))
+		if($user->hasRole('admin') || $user->hasRole('salesmanager'))
 		{
 			$users= admins::select('*','admins.id as id')->join('model_has_roles', 'model_has_roles.model_id', '=', 'admins.id')
 			->whereIn('model_has_roles.role_id',[6,7])
@@ -55,10 +56,10 @@ class AppointmentsController extends Controller
 			$users="";$appointments_events = "";
 			$regions ="";
 			$langues = "";
-			$appointments = lead::select('*')->where('assign_to_id',auth::guard('admins')->user()->id)->whereNotNull('appointment_date')->where('completed',0)->where('wantsonline',0)->where('rejected',0)->get();
+			$appointments = lead::select('*')->where('assign_to_id',$user->id)->whereNotNull('appointment_date')->where('completed',0)->where('wantsonline',0)->where('rejected',0)->get();
             $personalApp = PersonalAppointment::where('AppOrCon',1)->where('user_id', \Illuminate\Support\Facades\Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
 
-            $maps = DB::table('leads')->where('appointment_date',Carbon::now()->format('Y-m-d'))->where('assign_to_id', \Illuminate\Support\Facades\Auth::guard('admins')->user()->id)->select('leads.first_name','leads.last_name','leads.latitude','leads.longitude')->get();
+            $maps = DB::table('leads')->where('appointment_date',Carbon::now()->format('Y-m-d'))->where('assign_to_id',$user->id)->select('leads.first_name','leads.last_name','leads.latitude','leads.longitude')->get();
 
 			return view('appointment')
                 ->with('users',$users)

@@ -97,10 +97,10 @@
 <script>
 export default {
     mounted() {
-        this.getnotifications();
-        setInterval(() => {
-            this.getnotifications()
-        }, 2000);
+        // this.getnotifications();
+        // setInterval(() => {
+        //     this.getnotifications()
+        // }, 2000);
     },
     data() {
         return {

@@ -147,8 +147,6 @@
                         <span class="ps-2 txt-dn">Aufgaben</span>
                     </a>
                 @endif
-                @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('fs') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager')
                 ||Auth::guard('admins')->user()->hasRole('menagment'))
                     <a href="{{route('leads')}}"

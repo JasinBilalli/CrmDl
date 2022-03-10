@@ -55,7 +55,9 @@
 <script src='lib_cal/moment.min.js'></script>
 <script src='lib_cal/moment.js'></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 @if($admini->hasRole('admin') || $admini->hasRole('salesmanager'))
 
@@ -409,15 +411,15 @@
 
                     </a>
                     <br>
-                    Neues hinzuf端gen
-                </div>
+                    Neues hinzufügen
+                                  </div>
             </div>
             <div class="col">
                 <section>
                     <div class="container-fluid g-0">
                         <div class="form-div my-4 py-4 mx-auto" style="background-color: #EFEFEF; border-radius: 20px;">
                             <div class="mb-4 mx-5">
-                                <span class="fs-5 fw-600">Oder Nach Datei einf端gen</span>
+                                <span class="fs-5 fw-600">Oder Nach Datei einfügen</span>
                             </div>
                             <form method="post" action="{{route('addappointmentfile')}}" enctype="multipart/form-data">
                                 <div class="row mx-4">
