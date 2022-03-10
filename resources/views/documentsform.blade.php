@@ -569,9 +569,9 @@
                                     <div class="row">
                                         <div class="col g-0 text-end my-auto">
                                             <div class="">
-                                                <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F; cursor: pointer">
+                                                <button type="button" id="nextonee__" onclick="nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
                                                     Uberspringen
-                                                </span>
+                                                </button>
                                             </div>
                                         </div>
                                         <div class="col g-0 text-start">
@@ -1428,9 +1428,9 @@
                                         <div class="row">
                                             <div class="col g-0 text-end my-auto">
                                                 <div class="">
-                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F; cursor: pointer">
+                                                    <button type="button" id="nextonee__" onclick="nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
                                                         Uberspringen
-                                                    </span>
+                                                    </button>
                                                 </div>
                                             </div>
                                             <div class="col g-0 text-start">
@@ -1986,9 +1986,9 @@
                                     <div class="row">
                                         <div class="col g-0 text-end my-auto">
                                             <div class="">
-                                                <span onclick="nextonee()" class="pe-2" style="color: #9F9F9F; cursor: pointer">
+                                                <button type="button" id="nextonee__" onclick="nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
                                                     Uberspringen
-                                                </span>
+                                                </button>
                                             </div>
                                         </div>
                                         <div class="col g-0 text-start">
