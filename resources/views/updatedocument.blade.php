@@ -861,9 +861,9 @@
                                         <div class="row">
                                             <div class="col g-0 text-end my-auto">
                                                 <div class="">
-                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F; cursor: pointer">
+                                                    <button type="button" id="nextonee__" onclick="nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
                                                         Uberspringen
-                                                    </span>
+                                                    </button>
                                                 </div>
                                             </div>
                                             <div class="col g-0 text-start">
@@ -1076,7 +1076,7 @@
                                                                 </div>
                                                             </div>
                                                         @endif
-
+<hr>
                                                     </div>
                                                     @php $gcnt = 1; @endphp
                                                     @foreach(\App\Models\newgegen::where('person_id',$id)->get() as $newg)
@@ -1219,10 +1219,11 @@
 
 
                                                             @if(!Auth::user()->hasRole('fs') || isset($newg->offer))
-                                                                <div class="col-12" id="of{{$gcnt}}">Offer:
+                                                                <div class="col-12" id="of{{$gcnt}}">Neue Offer:
                                                                     <div class="text-start">
                                                                         <div class="upload-box mx-1 my-2">
                                                                             <div class="mx-1 my-2 text-center p-3">
+                                                                                @if(!Auth::user()->hasRole('fs'))
                                                                                 <label for="file-input-{{$gcnt}}ww">
                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
                                                                                         <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
@@ -1234,6 +1235,7 @@
                                                                                         </g>
                                                                                     </svg>
                                                                                 </label>
+                                                                                @endif
                                                                                 @if(isset($newg->offer))
 
                                                                                     <a target="_blank" href="{{route('showfile',$newg->offer)}}"><input type="file" id="file-input-{{$gcnt}}ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer{{$gcnt}}">
@@ -1259,6 +1261,7 @@
 
                                                             @endif
                                                         </div>
+<hr>
                                                     @endforeach
 
                                                     <div class="text-center mt-3" style="margin-top: -30px" id="add_g"
@@ -2861,6 +2864,7 @@
                                                             @endif
                                                         </div>
                                                     </div>
+                                                    <hr>
                                                     @php $ncnt = 1; @endphp
                                                     @foreach(\App\Models\newnue::where('person_id',$id)->get() as $nue)
                                                         <div class="" id="n{{$ncnt}}">
@@ -3831,6 +3835,7 @@
                                                             </div>
                                                         </div>
                                                         @php $ncnt++; @endphp
+                                                        <hr>
                                                     @endforeach
                                                     <div class="text-center mt-3" style="margin-top: -30px" id="add_n"
                                                          onclick="addanother_item_n()">
@@ -3879,9 +3884,9 @@
                                         <div class="row">
                                             <div class="col g-0 text-end my-auto">
                                                 <div class="">
-                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">
+                                                    <button type="button" id="nextonee__" onclick="nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
                                                         Uberspringen
-                                                    </span>
+                                                    </button>
                                                 </div>
                                             </div>
                                             <div class="col g-0 text-start">
@@ -5085,9 +5090,9 @@
                                         <div class="row">
                                             <div class="col g-0 text-end my-auto">
                                                 <div class="">
-                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">
+                                                    <button type="button" id="nextonee__" onclick="nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
                                                         Uberspringen
-                                                    </span>
+                                                    </button>
                                                 </div>
                                             </div>
                                             <div class="col g-0 text-start">
@@ -5274,11 +5279,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @if(!Auth::user()->hasRole('fs'))
+                                                    @if(!Auth::user()->hasRole('fs') || isset($data->prevention->newoffer))
                                                         <div class="col-12">Neue Offer:
                                                             <div class="text-start">
                                                                 <div class="upload-box mx-1 my-2">
                                                                     <div class="mx-1 my-2 text-center p-3">
+                                                                        @if(!Auth::user()->hasRole('fs'))
                                                                         <label for="file-input-1212121www">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
                                                                                 <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
@@ -5290,6 +5296,7 @@
                                                                                 </g>
                                                                             </svg>
                                                                         </label>
+                                                                        @endif
                                                                         @if(isset($data->prevention->newoffer))
                                                                             <a target="_blank" href="{{route('showfile',$data->prevention->newoffer)}}"><input type="file" id="file-input-1212121www" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="newoffer">
                                                                                 <input type="text" value="{{$data->prevention->newoffer}}" class="form-control text-center" id="file-input-1212121wwwc" disabled style="background:transparent; border:none;">
@@ -5694,39 +5701,39 @@
                                             <addtask url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                      :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
                                         @endif
-                                        <div class="text-center mt-3 pb-3">
-                                            <div class="row">
-                                                <div class="col g-0 text-end my-auto">
-                                                    <div class="">
-                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">
+{{--                                        <div class="text-center mt-3 pb-3">--}}
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col g-0 text-end my-auto">--}}
+{{--                                                    <div class="">--}}
+{{--                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">--}}
 
-                                                    </span>
-                                                    </div>
-                                                </div>
-                                                <div class="col g-0 text-start">
-                                                    <div id="buton">
-                                                        <button class="px-5 py-2" type="button"
-                                                                style="border: none; border-radius: 9px; background-color:#285F52;"
-                                                                id="nextonee__" onclick="nextonee()">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="58.155"
-                                                                 height="19.159" viewBox="0 0 58.155 19.159">
-                                                                <g id="Group_453" data-name="Group 453"
-                                                                   transform="translate(0.004)">
-                                                                    <line id="Line_16" data-name="Line 16" x2="51.954"
-                                                                          y2="0.2"
-                                                                          transform="translate(0 9.287)" fill="none"
-                                                                          stroke="#3fd599" stroke-width="2"/>
-                                                                    <path id="Polygon_2" data-name="Polygon 2"
-                                                                          d="M9.58,0l9.58,11.642H0Z"
-                                                                          transform="translate(58.151 0) rotate(90)"
-                                                                          fill="#3fd599"/>
-                                                                </g>
-                                                            </svg>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+{{--                                                    </span>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col g-0 text-start">--}}
+{{--                                                    <div id="buton">--}}
+{{--                                                        <button class="px-5 py-2" type="button"--}}
+{{--                                                                style="border: none; border-radius: 9px; background-color:#285F52;"--}}
+{{--                                                                id="nextonee__" onclick="nextonee()">--}}
+{{--                                                            <svg xmlns="http://www.w3.org/2000/svg" width="58.155"--}}
+{{--                                                                 height="19.159" viewBox="0 0 58.155 19.159">--}}
+{{--                                                                <g id="Group_453" data-name="Group 453"--}}
+{{--                                                                   transform="translate(0.004)">--}}
+{{--                                                                    <line id="Line_16" data-name="Line 16" x2="51.954"--}}
+{{--                                                                          y2="0.2"--}}
+{{--                                                                          transform="translate(0 9.287)" fill="none"--}}
+{{--                                                                          stroke="#3fd599" stroke-width="2"/>--}}
+{{--                                                                    <path id="Polygon_2" data-name="Polygon 2"--}}
+{{--                                                                          d="M9.58,0l9.58,11.642H0Z"--}}
+{{--                                                                          transform="translate(58.151 0) rotate(90)"--}}
+{{--                                                                          fill="#3fd599"/>--}}
+{{--                                                                </g>--}}
+{{--                                                            </svg>--}}
+{{--                                                        </button>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -6928,7 +6935,7 @@
             '                                                        </div>' +
             '                                                   </div></div>' +
             '<div class="row">'+ '@if(!Auth::user()->hasRole("fs"))'+
-            '                                                            <div class="col-12" id="of' + newgcnt + '">Offer:'+
+            '                                                            <div class="col-12" id="of' + newgcnt + '">Neue Offer:'+
             '                                                                <div class="text-start">'+
             '                                                                    <div class="upload-box mx-1 my-2">'+
             '                                                                        <div class="mx-1 my-2 text-center p-3">'+
