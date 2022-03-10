@@ -451,7 +451,7 @@
                             </div>
                             <div class="mx-3">
                                 <button type="submit" class="w-100 sub-btn bg-white py-2 border-0 ">
-                                    <span class="fw-bold fs-6">Einreichen</span>
+                                    <span class="fw-bold fs-6 text-black">Einreichen</span>
                                 </button>
                             </div>
                         </form>

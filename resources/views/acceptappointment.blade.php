@@ -155,12 +155,12 @@
                             @endphp
                             <div class="button-div d-flex justify-content-center">
                                 <a style="text-decoration: none" href="{{route('dealnotclosed',Crypt::decrypt($leadId) / 1244)}}">
-                                <button class="close-btn py-2 mx-2">
+                                <button class="close-btn py-2 px-2 mx-2">
                                     Schliessen
                                 </button>
                                 </a>
                                 <a style="text-decoration: none" href="{{route('dealclosed',$leadId)}}">
-                                <button class="go-btn py-2 mx-2">
+                                <button class="go-btn py-2 px-2 mx-2">
                                     Weiter
                                 </button>
                                 </a>
