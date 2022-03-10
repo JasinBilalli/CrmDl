@@ -300,11 +300,11 @@
 </div>
 
 <div class="col-12 col-sm-12 col-md-12  g-0">
-           <h3> Termine </h3>
+           <h3 class="ps-2"> Termine </h3>
 </div>
 <div class="col-12 col-sm-12 col-md-12  g-0">
 {{ Form::open(array('url' => 'Appointments' , 'method' => 'get')) }}
-<div class="row" style=" padding: 0 10px;border: 1px solid #ccc;width : 98.8%;    background: #eee;  ">
+<div class="row g-0 mx-3 p-2" style="border: 1px solid #ccc; border-radius:10px;background: #eee;">
 	<div class="col-lg-2"><br>
 		<input type="radio" id="html" name="trie" value="desc" @if($trie == "desc" )checked @endif>
 		<label for="html"><i class="fas fa-sort-amount-down"></i> Zeit absteigend</label>
@@ -343,8 +343,8 @@
 					@endforeach
 				</select><br>
 			</div>
-			<div class="col-lg-1"><br>
-            {!! Form::button('<i class="fas fa-filter my-auto"></i><span>Filter</span>', ['type' => 'submit', 'class' => 'btn buttoni-filter ps-3 d-flex']) !!}	</div>
+			<div class="col-lg-auto mx-1"><br>
+            {!! Form::button('<i class="bi bi-funnel my-auto"></i><span>Filter</span>', ['type' => 'submit', 'class' => 'btn buttoni-filter ps-3 d-flex']) !!}	</div>
 
 </div>{{ Form::close() }}
 
@@ -362,9 +362,15 @@
                 </div>
                 <div class="col-lg-3 col-12 box follow-scroll">
                     <div id='external-events'>
+                    <div class="fs-6 fw-bold mt-4  mx-2 d-flex justify-content-between">
+                               <div class="pt-2">Terminliste</div>
+                               <div class="px-3 py-2 h-100" style="background-color: #EFEFEF;border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;">
+                               {!! count($appointments_events) !!}
+                            </div>
+                             </div>
                         <div id='wrap' class="me-2"
-                             style="overflow-y: scroll;border: 1px solid #ccc;background: #eee;text-align: left;height: 600px ;text-align:center;border-radius: 12px;">
-                            <div class="fs-6 fw-bold my-3">Terminliste ({!! count($appointments_events) !!}) </div>
+                             style="overflow-y: scroll;background: #eee;text-align: left;height: 540px ;text-align:center;border-top-left-radius: 12px;border-top-right-radius: 0px;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
+
                             <hr class="mx-2" style="height: 2px">
                             @foreach ( $appointments_events as $appointment )
                                 @if($appointment["rejected"] == 0)
@@ -392,31 +398,23 @@
                     </div>
                 </div>
 
-	  <div class="row">
+	  <div class="row g-0 px-2">
             <div class="col-md-12">
 
-                <div class="text-center" style="margin-top: 30px">
+                <div class="text-center">
                     <a href="{{route('insertappointment')}}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="37.694" height="37.694" viewBox="0 0 37.694 37.694">
-                            <g id="Group_621" data-name="Group 621" transform="translate(-663.236 -976.679)">
-                                <g id="Group_550" data-name="Group 550" transform="translate(663.236 976.679)">
-                                    <rect id="Rectangle_9" data-name="Rectangle 9" width="37.694" height="37.694" rx="18.847" fill="#4ec590"/>
-                                        <g id="Group_42" data-name="Group 42" transform="translate(12.724 12.724)">
-                                            <line id="Line_11" data-name="Line 11" y2="11.972" transform="translate(5.986 0)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
-                                            <line id="Line_12" data-name="Line 12" x1="11.972" transform="translate(0 5.634)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
-                                        </g>
-                                </g>
-                            </g>
-                        </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="37"  fill="#0c71c3" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+                    </svg>
 
                     </a>
                     <br>
                     Neues hinzuf端gen
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col">
                 <section>
-                    <div class="container">
+                    <div class="container-fluid g-0">
                         <div class="form-div my-4 py-4 mx-auto" style="background-color: #EFEFEF; border-radius: 20px;">
                             <div class="mb-4 mx-5">
                                 <span class="fs-5 fw-600">Oder Nach Datei einf端gen</span>
@@ -430,7 +428,7 @@
                                             </div>
                                             <div class="my-4">
                                                 <button type="submit" class="py-2 px-5 border-0 fw-bold"
-                                                        style="background-color: #63D4A4; color: #fff; border-radius: 8px;">Annehmen</button>
+                                                        style="background-color: #0c71c3; color: #fff; border-radius: 8px;">Annehmen</button>
                                             </div>
                                         </div>
                                     </div>
