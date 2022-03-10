@@ -302,7 +302,7 @@ $pend1->save();
         $curr = $i+1;
 
         if(isset($gegen[$i])){
-                   
+
                    $file = $request->file('upload_policeFahrzeug'. $curr);
                    $gegen[$i]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i]->upload_policeFahrzeug;
                    $gegen[$i]->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : $gegen[$i]->comparison_type;
@@ -415,7 +415,7 @@ $pend1->save();
         $existingLeadDataFahrzeug = LeadDataFahrzeug::where('person_id', $personId)->latest()->first();
         $request->hasFile('offer') && !isset($existingLeadDataFahrzeug->offer) ? $offer++ : $offer += 0;
         $leadDataFahrzeug = [
-            'mandatiert' => $request->hasFile('mandatiert') ? $this->storeFile($request->mandatiert, FolderPaths::KK_FILES) : null,
+            'mandatiert' => $request->hasFile('mandatiert') ? $this->storeFile($request->mandatiert, FolderPaths::KK_FILES) : $existingLeadDataFahrzeug->mandatiert,
             'leads_id' => $leadId,
             'person_id' => $personId,
             'upload_police' => $request->hasFile('upload_policeFahrzeug') ? $this->storeFile($request->upload_policeFahrzeug, FolderPaths::KK_FILES) : $existingLeadDataFahrzeug->upload_police,

@@ -1074,7 +1074,21 @@
                                                                 </div>
                                                             </div>
                                                         @endif
-
+                                                        @if(Auth::user()->hasRole('fs'))
+                                                            @if(isset($data->fahrzeug->offer))
+                                                                <div class="col-12">Neue Offer:
+                                                                    <div class="text-start">
+                                                                        <div class="upload-box mx-1 my-2">
+                                                                            <div class="mx-1 my-2 text-center p-3">
+                                                                                    <a style="cursor:pointer;" target="_blank" href="{{route('showfile',$data->fahrzeug->offer)}}">
+                                                                                        <input type="text" value="{{$data->fahrzeug->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
+                                                                                    </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endif
+                                                        @endif
                                                     </div>
                                                     @php $gcnt = 1; @endphp
                                                     @foreach(\App\Models\newgegen::where('person_id',$id)->get() as $data)
@@ -1215,9 +1229,21 @@
                                                             </div>
                                                         </div>
 
-
                                                         @if(!Auth::user()->hasRole('fs') || isset($data->offer))
-                                                            <div class="col-12" id="of{{$gcnt}}">Offer:
+                                                                <div class="col-12">Neue Offer:
+                                                                    <div class="text-start">
+                                                                        <div class="upload-box mx-1 my-2">
+                                                                            <div class="mx-1 my-2 text-center p-3">
+                                                                                <a style="cursor:pointer;" target="_blank" href="{{route('showfile',$data->offer)}}">
+                                                                                    <input type="text" value="{{$data->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                        @endif
+                                                        @if(!Auth::user()->hasRole('fs'))
+                                                            <div class="col-12" id="of{{$gcnt}}">Neue Offer:
                                                                 <div class="text-start">
                                                                     <div class="upload-box mx-1 my-2">
                                                                         <div class="mx-1 my-2 text-center p-3">
@@ -5241,7 +5267,7 @@
                                                                                 <option value="0:1 Downgraden">0:1 Downgraden</option>
                                                                                 <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                             @else
-                                                                                <option selected>Select</option>
+                                                                                <option selected>Auswählen</option>
                                                                                 <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
                                                                                 <option value="0:1 Downgraden">0:1 Downgraden</option>
                                                                                 <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
@@ -5269,6 +5295,21 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @if(Auth::user()->hasRole('fs'))
+                                                        @if(isset($data->prevention->newoffer))
+                                                            <div class="col-12">Neue Offer:
+                                                                <div class="text-start">
+                                                                    <div class="upload-box mx-1 my-2">
+                                                                        <div class="mx-1 my-2 text-center p-3">
+                                                                            <a style="cursor:pointer;" target="_blank" href="{{route('showfile',$data->prevention->newoffer)}}">
+                                                                                <input type="text" value="{{$data->prevention->newoffer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endif
+                                                    @endif
                                                     @if(!Auth::user()->hasRole('fs'))
                                                         <div class="col-12">Neue Offer:
                                                             <div class="text-start">
