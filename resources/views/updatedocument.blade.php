@@ -163,7 +163,7 @@
                         <span class="ps-2 txt-dn">Leads</span>
                     </a>
                 @endif
-                <!-- <a href="#" class="nav-link ">
+            <!-- <a href="#" class="nav-link ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-grid"
                          viewBox="0 0 16 16">
                         <path
@@ -174,7 +174,7 @@
                 @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
 
-                    <!-- <a href="{{route('status')}}"
+                <!-- <a href="{{route('status')}}"
                        class="nav-link {{ (request()->is('status')) ? 'activeClassNav__' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                              class="bi bi-clipboard-data" viewBox="0 0 16 16">
@@ -200,35 +200,35 @@
                         <span class="ps-2 txt-dn">Kunden</span>
                     </a>
                 @endif
-                <!-- @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
+            <!-- @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="nav-link ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-cash-coin" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
-                            <path
-                                d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
-                            <path
-                                d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
-                            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Einzahlung</span>
-                    </a>
-                @endif -->
-                <!-- @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
+                <a href="#" class="nav-link ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                         class="bi bi-cash-coin" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                        <path
+                            d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                        <path
+                            d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                        <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                    </svg>
+                    <span class="ps-2 txt-dn">Einzahlung</span>
+                </a>
+@endif -->
+            <!-- @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-x-square" viewBox="0 0 16 16">
-                            <path
-                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Stornierungen</span>
-                    </a>
-                @endif -->
+                <a href="#" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                         class="bi bi-x-square" viewBox="0 0 16 16">
+                        <path
+                            d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                    <span class="ps-2 txt-dn">Stornierungen</span>
+                </a>
+@endif -->
                 @if(Auth::guard('admins')->user()->hasRole('fs') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
@@ -249,67 +249,67 @@
                         @endif
                     </a>
                 @endif
-                <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
+            <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-people-fill" viewBox="0 0 16 16">
-                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                            <path fill-rule="evenodd"
-                                  d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
-                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Mitarbeiter</span>
-                    </a>
-                @endif -->
-                <!-- @if(Auth::guard('admins')->user()->hasRole('finance') ||
+                <a href="#" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                         class="bi bi-people-fill" viewBox="0 0 16 16">
+                        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd"
+                              d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                    </svg>
+                    <span class="ps-2 txt-dn">Mitarbeiter</span>
+                </a>
+@endif -->
+            <!-- @if(Auth::guard('admins')->user()->hasRole('finance') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                    <a href="#" class="nav-link ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-percent"
-                             viewBox="0 0 16 16">
-                            <path
-                                d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Provisionen</span>
-                    </a>
-                @endif -->
-                <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
+                <a href="#" class="nav-link ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-percent"
+                         viewBox="0 0 16 16">
+                        <path
+                            d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                    </svg>
+                    <span class="ps-2 txt-dn">Provisionen</span>
+                </a>
+@endif -->
+            <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Prov.system</span>
-                    </a>
-                @endif -->
-                <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
+                <a href="#" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                         class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
+                    </svg>
+                    <span class="ps-2 txt-dn">Prov.system</span>
+                </a>
+@endif -->
+            <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Statistik</span>
-                    </a>
-                @endif -->
-                <!-- @if(Auth::guard('admins')->user()->hasRole('menagment') ||
+                <a href="#" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                         class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
+                    </svg>
+                    <span class="ps-2 txt-dn">Statistik</span>
+                </a>
+@endif -->
+            <!-- @if(Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('finance')
                 ||Auth::guard('admins')->user()->hasRole('admin') )
-                    <a href="#" class="nav-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
-                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
-                        </svg>
-                        <span class="ps-2 txt-dn">Treuhand</span>
-                    </a>
-                @endif -->
+                <a href="#" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
+                         class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
+                    </svg>
+                    <span class="ps-2 txt-dn">Treuhand</span>
+                </a>
+@endif -->
                 @if(Auth::guard('admins')->user()->hasRole('admin'))
                     <a class="nav-link" href="{{route('addnewuser')}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -367,7 +367,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                {{$lead->first_name}}
+                                {{$lead->first_name}} {{$id}} {{$data->fahrzeug->leasing_name}}
                             </span<br>
                         <span class="fs-6 text-muted">
                                 {{$lead->address}}
@@ -1045,22 +1045,24 @@
 
                                                             </div>
                                                         </div>
-                                                        @if(!Auth::user()->hasRole('fs'))
+                                                        @if(!Auth::user()->hasRole('fs') || isset($data->fahrzeug->offer))
                                                             <div class="col-12">Neue Offer:
                                                                 <div class="text-start">
                                                                     <div class="upload-box mx-1 my-2">
                                                                         <div class="mx-1 my-2 text-center p-3">
-                                                                            <label for="file-input-212121ww">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
-                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
-                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
-                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
-                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
-                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                            @if(!Auth::user()->hasRole('fs'))
+                                                                                <label for="file-input-212121ww">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
+                                                                                        <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
+                                                                                            <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
+                                                                                            <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
+                                                                                                <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                                <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                            </g>
                                                                                         </g>
-                                                                                    </g>
-                                                                                </svg>
-                                                                            </label>
+                                                                                    </svg>
+                                                                                </label>
+                                                                            @endif
                                                                             @if(isset($data->fahrzeug->offer))
                                                                                 <a target="_blank" href="{{route('showfile',$data->fahrzeug->offer)}}"><input type="file" id="file-input-212121ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
                                                                                     <input type="text" value="{{$data->fahrzeug->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
@@ -1074,31 +1076,17 @@
                                                                 </div>
                                                             </div>
                                                         @endif
-                                                        @if(Auth::user()->hasRole('fs'))
-                                                            @if(isset($data->fahrzeug->offer))
-                                                                <div class="col-12">Neue Offer:
-                                                                    <div class="text-start">
-                                                                        <div class="upload-box mx-1 my-2">
-                                                                            <div class="mx-1 my-2 text-center p-3">
-                                                                                    <a style="cursor:pointer;" target="_blank" href="{{route('showfile',$data->fahrzeug->offer)}}">
-                                                                                        <input type="text" value="{{$data->fahrzeug->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
-                                                                                    </a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            @endif
-                                                        @endif
+
                                                     </div>
                                                     @php $gcnt = 1; @endphp
-                                                    @foreach(\App\Models\newgegen::where('person_id',$id)->get() as $data)
+                                                    @foreach(\App\Models\newgegen::where('person_id',$id)->get() as $newg)
                                                         <div id="g{{$gcnt}}">
                                                             <div class="text-end mb-2">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                                      height="24" fill="currentColor"
                                                                      class="bi bi-x-circle" viewBox="0 0 16 16"
                                                                      style="cursor:pointer;"
-                                                                     onclick="deletethat2('{{$gcnt}}','{{$data->id}}')">
+                                                                     onclick="deletethat2('{{$gcnt}}','{{$newg->id}}')">
                                                                     <path
                                                                         d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                                                     <path
@@ -1144,22 +1132,22 @@
                                                                                 </g>
                                                                             </svg>
                                                                         </label>
-                                                                        @if(isset($data->upload_policeFahrzeug))
+                                                                        @if(isset($newg->upload_policeFahrzeug))
                                                                             <input type="file"
                                                                                    id="file-input-4{{$gcnt}}"
                                                                                    name="upload_policeFahrzeug{{$gcnt}}"
                                                                                    class="svg-div w-100 border-0  g-0"
                                                                                    onchange="upload(this);"
-                                                                                   value="{{$data->upload_policeFahrzeug}}"
+                                                                                   value="{{$newg->upload_policeFahrzeug}}"
                                                                             >
                                                                             <a style="text-decoration: none"
-                                                                               href="{{route('showfile',$data->upload_policeFahrzeug)}}">
+                                                                               href="{{route('showfile',$newg->upload_policeFahrzeug)}}">
                                                                                 <input type="text"
                                                                                        class="form-control text-center"
                                                                                        id="file-input-4{{$gcnt}}c"
                                                                                        disabled
                                                                                        style="background:transparent; border:none;"
-                                                                                       value="{{$data->upload_policeFahrzeug}}"
+                                                                                       value="{{$newg->upload_policeFahrzeug}}"
                                                                                 >
                                                                             </a>
                                                                         @else
@@ -1191,9 +1179,9 @@
                                                                             <select name="vergleichsart_select{{$gcnt}}"
                                                                                     class="fw-bold" id=""
                                                                                     style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
-                                                                                @if(isset($data->vergleichsart_select))
+                                                                                @if(isset($newg->vergleichsart_select))
                                                                                     <option value="{{$data->vergleichsart_select}}" selected>
-                                                                                        {{$data->vergleichsart_select}}
+                                                                                        {{$newg->vergleichsart_select}}
                                                                                     </option>
                                                                                     <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
                                                                                     <option value="0:1 Downgraden">0:1 Downgraden</option>
@@ -1214,11 +1202,11 @@
                                                                     <label for="exampleFormControlTextarea1"
                                                                            class="form-label"
                                                                            style="font-size: 13px;">Kommentar</label>
-                                                                    @if(isset($data->commentFahrenzug))
+                                                                    @if(isset($newg->commentFahrenzug))
                                                                         <textarea name="commentFahrenzug{{$gcnt}}"
                                                                                   class="form-control"
                                                                                   id="exampleFormControlTextarea1"
-                                                                                  rows="3">{{$data->commentFahrenzug}}</textarea>
+                                                                                  rows="3">{{$newg->commentFahrenzug}}</textarea>
                                                                     @else
                                                                         <textarea name="commentFahrenzug{{$gcnt}}"
                                                                                   class="form-control"
@@ -1227,91 +1215,82 @@
                                                                     @endif
                                                                 </div>
                                                             </div>
-                                                        </div>
 
-                                                        @if(!Auth::user()->hasRole('fs') || isset($data->offer))
-                                                                <div class="col-12">Neue Offer:
+
+
+                                                            @if(!Auth::user()->hasRole('fs') || isset($newg->offer))
+                                                                <div class="col-12" id="of{{$gcnt}}">Offer:
                                                                     <div class="text-start">
                                                                         <div class="upload-box mx-1 my-2">
                                                                             <div class="mx-1 my-2 text-center p-3">
-                                                                                <a style="cursor:pointer;" target="_blank" href="{{route('showfile',$data->offer)}}">
-                                                                                    <input type="text" value="{{$data->offer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
-                                                                                </a>
+                                                                                <label for="file-input-{{$gcnt}}ww">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
+                                                                                        <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
+                                                                                            <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
+                                                                                            <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
+                                                                                                <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                                <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </svg>
+                                                                                </label>
+                                                                                @if(isset($newg->offer))
+
+                                                                                    <a target="_blank" href="{{route('showfile',$newg->offer)}}"><input type="file" id="file-input-{{$gcnt}}ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer{{$gcnt}}">
+                                                                                        <input type="text" value="{{$newg->offer}}" class="form-control text-center" id="file-input-{{$gcnt}}wwc" disabled style="background:transparent; border:none;">
+
+                                                                                    </a>
+                                                                                @else
+                                                                                    <input type="file"
+                                                                                           id="file-input-{{$gcnt}}ww"
+                                                                                           class="svg-div w-100 border-0  g-0"
+                                                                                           onchange="upload(this);"
+                                                                                           name="offer{{$gcnt}}">
+                                                                                    <input type="text"
+                                                                                           class="form-control text-center"
+                                                                                           id="file-input-{{$gcnt}}wwc" disabled
+                                                                                           style="background:transparent; border:none;">
+                                                                                @endif
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    @php $gcnt++ @endphp
                                                                 </div>
-                                                        @endif
-                                                        @if(!Auth::user()->hasRole('fs'))
-                                                            <div class="col-12" id="of{{$gcnt}}">Neue Offer:
-                                                                <div class="text-start">
-                                                                    <div class="upload-box mx-1 my-2">
-                                                                        <div class="mx-1 my-2 text-center p-3">
-                                                                            <label for="file-input-{{$gcnt}}ww">
-                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
-                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
-                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
-                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
-                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
-                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
-                                                                                        </g>
-                                                                                    </g>
-                                                                                </svg>
-                                                                            </label>
-                                                                            @if(isset($data->offer))
 
-                                                                                <a target="_blank" href="{{route('showfile',$data->offer)}}"><input type="file" id="file-input-{{$gcnt}}ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer{{$gcnt}}">
-                                                                                    <input type="text" value="{{$data->offer}}" class="form-control text-center" id="file-input-{{$gcnt}}wwc" disabled style="background:transparent; border:none;">
+                                                            @endif
+                                                        </div>
+                                                    @endforeach
 
-                                                                                </a>
-                                                                            @else
-                                                                                <input type="file"
-                                                                                       id="file-input-{{$gcnt}}ww"
-                                                                                       class="svg-div w-100 border-0  g-0"
-                                                                                       onchange="upload(this);"
-                                                                                       name="offer{{$gcnt}}">
-                                                                                <input type="text"
-                                                                                       class="form-control text-center"
-                                                                                       id="file-input-{{$gcnt}}wwc" disabled
-                                                                                       style="background:transparent; border:none;">
-                                                                            @endif
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                @php $gcnt++ @endphp
-</div>
-                                                                @endif
-                                                            @endforeach
-                                                            <div class="text-center mt-3" style="margin-top: -30px" id="add_g"
-                                                                 onclick="addanother_item_g()">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="37.694"
-                                                                     height="37.694"
-                                                                     viewBox="0 0 37.694 37.694" style="cursor:pointer;">
-                                                                    <g id="Group_621" data-name="Group 621"
-                                                                       transform="translate(-663.236 -976.679)">
-                                                                        <g id="Group_550" data-name="Group 550"
-                                                                           transform="translate(663.236 976.679)">
-                                                                            <rect id="Rectangle_9" data-name="Rectangle 9"
-                                                                                  width="37.694" height="37.694" rx="18.847"
-                                                                                  fill="#C8C8C8"/>
-                                                                            <g id="Group_42" data-name="Group 42"
-                                                                               transform="translate(12.724 12.724)">
-                                                                                <line id="Line_11" data-name="Line 11"
-                                                                                      y2="11.972"
-                                                                                      transform="translate(5.986 0)" fill="none"
-                                                                                      stroke="#fff" stroke-linecap="round"
-                                                                                      stroke-width="2"/>
-                                                                                <line id="Line_12" data-name="Line 12"
-                                                                                      x1="11.972"
-                                                                                      transform="translate(0 5.634)" fill="none"
-                                                                                      stroke="#fff" stroke-linecap="round"
-                                                                                      stroke-width="2"/>
-                                                                            </g>
-                                                                        </g>
+                                                    <div class="text-center mt-3" style="margin-top: -30px" id="add_g"
+                                                         onclick="addanother_item_g()">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="37.694"
+                                                             height="37.694"
+                                                             viewBox="0 0 37.694 37.694" style="cursor:pointer;">
+                                                            <g id="Group_621" data-name="Group 621"
+                                                               transform="translate(-663.236 -976.679)">
+                                                                <g id="Group_550" data-name="Group 550"
+                                                                   transform="translate(663.236 976.679)">
+                                                                    <rect id="Rectangle_9" data-name="Rectangle 9"
+                                                                          width="37.694" height="37.694" rx="18.847"
+                                                                          fill="#C8C8C8"/>
+                                                                    <g id="Group_42" data-name="Group 42"
+                                                                       transform="translate(12.724 12.724)">
+                                                                        <line id="Line_11" data-name="Line 11"
+                                                                              y2="11.972"
+                                                                              transform="translate(5.986 0)" fill="none"
+                                                                              stroke="#fff" stroke-linecap="round"
+                                                                              stroke-width="2"/>
+                                                                        <line id="Line_12" data-name="Line 12"
+                                                                              x1="11.972"
+                                                                              transform="translate(0 5.634)" fill="none"
+                                                                              stroke="#fff" stroke-linecap="round"
+                                                                              stroke-width="2"/>
                                                                     </g>
-                                                                </svg>
+                                                                </g>
+                                                            </g>
+                                                        </svg>
 
-                                                            </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -2867,19 +2846,19 @@
                                                             </div>
                                                             @if(isset($data->fahrzeug->nuekommentar))
                                                                 <div>
-                                                                        Kommentar:
-                                                                        <div class="col-6">
+                                                                    Kommentar:
+                                                                    <div class="col-6">
                                                                         <textarea class="form-control" name="nuekommentar">{{ $data->fahrzeug->nuekommentar }}</textarea>
-    </div>
                                                                     </div>
-                                                                    @else
-                                                                    <div>
-                                                                        Kommentar:
-                                                                        <div class="col-6">
+                                                                </div>
+                                                            @else
+                                                                <div>
+                                                                    Kommentar:
+                                                                    <div class="col-6">
                                                                         <textarea class="form-control" name="nuekommentar">aaa</textarea>
-    </div>
                                                                     </div>
-                                                                    @endif
+                                                                </div>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                     @php $ncnt = 1; @endphp
@@ -3845,8 +3824,8 @@
                                                                     <div>
                                                                         Kommentar:
                                                                         <div class="col-6">
-                                                                        <textarea class="form-control" name="nuekommentar{{$ncnt}}">{{$nue->nuekommentar}}</textarea>
-    </div>
+                                                                            <textarea class="form-control" name="nuekommentar{{$ncnt}}">{{$nue->nuekommentar}}</textarea>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -5267,7 +5246,7 @@
                                                                                 <option value="0:1 Downgraden">0:1 Downgraden</option>
                                                                                 <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
                                                                             @else
-                                                                                <option selected>Auswählen</option>
+                                                                                <option selected>Select</option>
                                                                                 <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
                                                                                 <option value="0:1 Downgraden">0:1 Downgraden</option>
                                                                                 <option value="1:1 Das Gleiche">1:1 Das Gleiche</option>
@@ -5295,21 +5274,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @if(Auth::user()->hasRole('fs'))
-                                                        @if(isset($data->prevention->newoffer))
-                                                            <div class="col-12">Neue Offer:
-                                                                <div class="text-start">
-                                                                    <div class="upload-box mx-1 my-2">
-                                                                        <div class="mx-1 my-2 text-center p-3">
-                                                                            <a style="cursor:pointer;" target="_blank" href="{{route('showfile',$data->prevention->newoffer)}}">
-                                                                                <input type="text" value="{{$data->prevention->newoffer}}" class="form-control text-center" id="file-input-212121wwc" disabled style="background:transparent; border:none;">
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        @endif
-                                                    @endif
                                                     @if(!Auth::user()->hasRole('fs'))
                                                         <div class="col-12">Neue Offer:
                                                             <div class="text-start">
@@ -5944,9 +5908,9 @@
     </div>
     <div class="content-of-burger col-9 mx-auto ">
         <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
-                <!-- <a href="{{route('status')}}"
+        @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
+            Auth::guard('admins')->user()->hasRole('admin'))
+            <!-- <a href="{{route('status')}}"
                    class="m-nav text-decoration-none {{ (request()->is('status')) ? 'activeClassNavMob__' : '' }}">
                     <span class="px-2 active-dot">
                         <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -5971,58 +5935,58 @@
                 <hr>
             @endif
         </div>
-        <!-- <div class="my-3 m-burger">
+    <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
             Auth::guard('admins')->user()->hasRole('admin'))
-                <a href="#" class="m-nav text-decoration-none">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                        </svg>
-                    </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-cash-coin" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
-                            <path
-                                d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
-                            <path
-                                d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
-                            <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
-                        </svg>
-                    </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        EINZAHLUNG
-                    </span>
-                </a>
-                <hr>
-            @endif
+        <a href="#" class="m-nav text-decoration-none">
+            <span class="px-2 active-dot">
+                <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2" cy="2" r="2" fill="#4DC591"/>
+                </svg>
+            </span>
+            <span class="px-3 ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
+                     class="bi bi-cash-coin" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                    <path
+                        d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                    <path
+                        d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                    <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                </svg>
+            </span>
+            <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
+                EINZAHLUNG
+            </span>
+        </a>
+        <hr>
+@endif
         </div> -->
-        <!-- <div class="my-3 m-burger">
+    <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                <a href="#" class="m-nav text-decoration-none">
-                    <span class="px-2 active-dot">
-                        <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                        </svg>
-                    </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-x-square" viewBox="0 0 16 16">
-                            <path
-                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                            <path
-                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        STORNIERUNGEN
-                    </span>
-                </a>
-                <hr>
-            @endif
+        <a href="#" class="m-nav text-decoration-none">
+            <span class="px-2 active-dot">
+                <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="2" cy="2" r="2" fill="#4DC591"/>
+                </svg>
+            </span>
+            <span class="px-3 ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
+                     class="bi bi-x-square" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </span>
+            <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
+                STORNIERUNGEN
+            </span>
+        </a>
+        <hr>
+@endif
         </div> -->
         <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('fs') ||
@@ -6057,54 +6021,54 @@
                 <hr>
             @endif
         </div>
-        <!-- <div class="my-3 m-burger">
+    <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-people-fill" viewBox="0 0 16 16">
-                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                            <path fill-rule="evenodd"
-                                  d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
-                            <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        MITARBEITER
-                        </span>
-                </a>
-                <hr>
-            @endif
+        <a href="#" class="m-nav text-decoration-none">
+                <span class="px-2 active-dot">
+                    <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="2" cy="2" r="2" fill="#4DC591"/>
+                    </svg>
+                </span>
+            <span class="px-3 ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
+                     class="bi bi-people-fill" viewBox="0 0 16 16">
+                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    <path fill-rule="evenodd"
+                          d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                    <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                </svg>
+                </span>
+            <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
+                MITARBEITER
+                </span>
+        </a>
+        <hr>
+@endif
         </div> -->
-        <!-- <div class="my-3 m-burger">
+    <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('finance') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d" class="bi bi-percent"
-                             viewBox="0 0 16 16">
-                            <path
-                                d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        PROVISIONEN
-                        </span>
-                </a>
-                <hr>
-            @endif
+        <a href="#" class="m-nav text-decoration-none">
+                <span class="px-2 active-dot">
+                    <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="2" cy="2" r="2" fill="#4DC591"/>
+                    </svg>
+                </span>
+            <span class="px-3 ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d" class="bi bi-percent"
+                     viewBox="0 0 16 16">
+                    <path
+                        d="M13.442 2.558a.625.625 0 0 1 0 .884l-10 10a.625.625 0 1 1-.884-.884l10-10a.625.625 0 0 1 .884 0zM4.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm7 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm0 1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                </svg>
+                </span>
+            <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
+                PROVISIONEN
+                </span>
+        </a>
+        <hr>
+@endif
         </div> -->
         <!-- <div class="my-3 m-burger">
             <a href="#" class="m-nav text-decoration-none">
@@ -6126,77 +6090,77 @@
             </a>
             <hr>
         </div> -->
-        <!-- <div class="my-3 m-burger">
+    <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        PROV.SYSTEM
-                        </span>
-                </a>
-                <hr>
-            @endif
+        <a href="#" class="m-nav text-decoration-none">
+                <span class="px-2 active-dot">
+                    <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="2" cy="2" r="2" fill="#4DC591"/>
+                    </svg>
+                </span>
+            <span class="px-3 ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
+                     class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
+                </svg>
+                </span>
+            <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
+                PROV.SYSTEM
+                </span>
+        </a>
+        <hr>
+@endif
         </div> -->
-        <!-- <div class="my-3 m-burger">
+    <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('admin') ||
                 Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('salesmanager'))
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
-                            <path
-                                d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            STATISTIK
-                        </span>
-                </a>
-                <hr>
-            @endif
+        <a href="#" class="m-nav text-decoration-none">
+                <span class="px-2 active-dot">
+                    <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="2" cy="2" r="2" fill="#4DC591"/>
+                    </svg>
+                </span>
+            <span class="px-3 ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
+                     class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2z"/>
+                </svg>
+                </span>
+            <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
+                    STATISTIK
+                </span>
+        </a>
+        <hr>
+@endif
         </div> -->
-        <!-- <div class="my-3 m-burger">
+    <!-- <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('menagment') ||
                 Auth::guard('admins')->user()->hasRole('finance')
                 ||Auth::guard('admins')->user()->hasRole('admin') )
-                <a href="#" class="m-nav text-decoration-none">
-                        <span class="px-2 active-dot">
-                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
-                            </svg>
-                        </span>
-                    <span class="px-3 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
-                             class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
-                        </svg>
-                        </span>
-                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                            TREUHAND
-                        </span>
-                </a>
-                <hr>
-            @endif
+        <a href="#" class="m-nav text-decoration-none">
+                <span class="px-2 active-dot">
+                    <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="2" cy="2" r="2" fill="#4DC591"/>
+                    </svg>
+                </span>
+            <span class="px-3 ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#88889d"
+                     class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-3 8A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1z"/>
+                </svg>
+                </span>
+            <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
+                    TREUHAND
+                </span>
+        </a>
+        <hr>
+@endif
         </div> -->
         <div class="my-3 m-burger">
             @if(Auth::guard('admins')->user()->hasRole('admin'))
@@ -7492,11 +7456,11 @@
             '                                                                    </div>' +
             '                                                                </div>' +
             '                  <div>'+
-'                                                                        Kommentar:'+
-'                                                                        <div class="col-6">'+
-'                                                                        <textarea class="form-control" name="nuekommentar' + newncnt + '"></textarea>'+
-'    </div>'+
-'                                                                    </div>'+
+            '                                                                        Kommentar:'+
+            '                                                                        <div class="col-6">'+
+            '                                                                        <textarea class="form-control" name="nuekommentar' + newncnt + '"></textarea>'+
+            '    </div>'+
+            '                                                                    </div>'+
             '                                                            </div>' +
             '                                                        </div>' +
             '                                                    </div>' +
