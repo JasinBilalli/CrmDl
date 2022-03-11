@@ -6371,6 +6371,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.fetchnumbers();
@@ -6383,7 +6390,8 @@ __webpack_require__.r(__webpack_exports__);
       numbers: null,
       admin: null,
       costumer: null,
-      readed: false
+      readed: false,
+      cnt: 0
     };
   },
   methods: {
@@ -6397,7 +6405,8 @@ __webpack_require__.r(__webpack_exports__);
       var valName = document.getElementById('name');
       var valPosition = document.getElementById('position');
       var valNumber = document.getElementById('number');
-      axios.get('addnumber?number=' + valNumber.value + '&name=' + valName.value + '&position=' + valPosition.value).then(location.reload());
+      var valCompanyName = document.getElementById('company_name');
+      axios.get('addnumber?number=' + valNumber.value + '&name=' + valName.value + '&position=' + valPosition.value + '&company_name=' + valCompanyName.value).then(location.reload());
       valNumber.value = "";
       valName.value = "";
       valPosition.value = "";
@@ -6415,6 +6424,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('numbers').then(function (response) {
         _this.numbers = response.data;
+        _this.cnt = response.data.length;
       });
     },
     deletenumber: function deletenumber(val) {
@@ -33318,31 +33328,37 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "informational-nr-div mx-2 mt-3 mt-sm-0" }, [
-    _c("div", { staticClass: "informational-nr-header d-flex" }, [
-      _c("div", { staticClass: "col-auto my-2" }, [
-        _c(
-          "svg",
-          {
-            staticClass: "bi bi-telephone",
-            attrs: {
-              xmlns: "http://www.w3.org/2000/svg",
-              width: "30",
-              fill: "currentColor",
-              viewBox: "0 0 16 16",
-            },
-          },
-          [
-            _c("path", {
+    _c("div", { staticClass: "d-flex justify-content-between" }, [
+      _c("div", { staticClass: "informational-nr-header d-flex" }, [
+        _c("div", { staticClass: "col-auto my-2" }, [
+          _c(
+            "svg",
+            {
+              staticClass: "bi bi-telephone",
               attrs: {
-                d: "M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z",
+                xmlns: "http://www.w3.org/2000/svg",
+                width: "30",
+                fill: "currentColor",
+                viewBox: "0 0 16 16",
               },
-            }),
-          ]
-        ),
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d: "M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z",
+                },
+              }),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "txt-01 my-auto ps-2" }, [
+          _vm._v("\n                Informative Anzahl\n            "),
+        ]),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "txt-01 my-auto ps-2" }, [
-        _vm._v("\n            Informative Anzahl\n        "),
+      _c("div", { staticClass: "fs-5 count px-4 fw-bold" }, [
+        _vm._v(_vm._s(_vm.cnt)),
       ]),
     ]),
     _vm._v(" "),
@@ -33351,12 +33367,12 @@ var render = function () {
         _c(
           "div",
           { staticClass: "info-nr-overflow-div px-2" },
-          _vm._l(_vm.numbers, function (number) {
+          _vm._l(_vm.numbers, function (numberi) {
             return _c(
               "div",
               {
                 staticClass:
-                  "info-nr-item my-2 p-2 bg-white d-flex justify-content-evenly",
+                  "info-nr-item my-2 p-2 bg-white d-flex justify-content-between",
               },
               [
                 _c("div", { staticClass: "col-auto my-auto" }, [
@@ -33386,96 +33402,98 @@ var render = function () {
                   ),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "ps-2 " }, [
+                _c("div", { staticClass: "ps-2 col" }, [
                   _c("div", { staticClass: "fw-bold" }, [
-                    _vm._v(_vm._s(number.costumer)),
+                    _vm._v(_vm._s(numberi.costumer)),
                   ]),
                   _vm._v(" "),
-                  _c("div", {}, [_c("i", [_vm._v(_vm._s(number.comment))])]),
-                  _vm._v(" "),
-                  _c("div", {}, [_vm._v(_vm._s(number.text))]),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: " d-flex justify-content-end my-auto" },
-                  [
-                    _c("div", { staticClass: " " }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "btn ",
-                          on: {
-                            click: function ($event) {
-                              return _vm.deletenumber(number.id)
-                            },
-                          },
-                        },
-                        [
-                          _c(
-                            "svg",
-                            {
-                              attrs: {
-                                xmlns: "http://www.w3.org/2000/svg",
-                                "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                                width: "16.741",
-                                height: "22.71",
-                                viewBox: "0 0 16.741 22.71",
-                              },
-                            },
-                            [
-                              _c("defs", [
-                                _c("clipPath", { attrs: { id: "clip-path" } }, [
-                                  _c("rect", {
-                                    attrs: {
-                                      id: "Rectangle_693",
-                                      "data-name": "Rectangle 693",
-                                      width: "16.741",
-                                      height: "22.71",
-                                      fill: "#0c71c3",
-                                    },
-                                  }),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "g",
-                                {
-                                  attrs: {
-                                    id: "Group_767",
-                                    "data-name": "Group 767",
-                                    "clip-path": "url(#clip-path)",
-                                  },
-                                },
-                                [
-                                  _c("path", {
-                                    attrs: {
-                                      id: "Path_345",
-                                      "data-name": "Path 345",
-                                      d: "M34.214,169.833H48.56c.005.1.013.2.013.289q0,7.809,0,15.617a1.527,1.527,0,0,1-.036.412.687.687,0,0,1-.748.478q-1.783.005-3.565,0H35.142c-.706,0-.928-.223-.928-.934q0-7.757,0-15.513v-.35M45.7,178.215q0-2.876,0-5.751c0-.334-.064-.4-.391-.4q-.455-.007-.911,0c-.345,0-.409.07-.41.412q0,2.082,0,4.164,0,3.682,0,7.365c0,.337.059.4.389.4.286,0,.572,0,.859,0,.423,0,.464-.04.464-.459q0-2.863,0-5.725m-8.6,0q0,2.914,0,5.828c0,.3.056.353.346.356.338,0,.676,0,1.014,0,.223,0,.333-.083.333-.323q-.005-5.841,0-11.682c0-.237-.105-.334-.325-.336-.321,0-.642,0-.962,0-.352,0-.407.059-.407.406q0,2.875,0,5.75m3.443,0q0,2.914,0,5.828c0,.291.06.353.349.356.338,0,.676,0,1.015,0,.224,0,.333-.085.333-.323q0-5.841,0-11.683c0-.237-.1-.335-.324-.336-.321,0-.642,0-.963,0-.349,0-.411.065-.411.406q0,2.875,0,5.75",
-                                      transform: "translate(-33.023 -163.922)",
-                                      fill: "#0c71c3",
-                                    },
-                                  }),
-                                  _vm._v(" "),
-                                  _c("path", {
-                                    attrs: {
-                                      id: "Path_346",
-                                      "data-name": "Path 346",
-                                      d: "M16.741,4.576H.017a13.711,13.711,0,0,1,.01-1.494A1.318,1.318,0,0,1,1.435,1.895c1.275-.006,2.55,0,3.826,0h.346c0-.284,0-.541,0-.8A1.008,1.008,0,0,1,6.691,0Q8.369,0,10.048,0a1.026,1.026,0,0,1,1.1,1.08c.008.258,0,.516,0,.809h4.053a1.377,1.377,0,0,1,1.534,1.521c0,.387,0,.773,0,1.161",
-                                      transform: "translate(-0.001 0)",
-                                      fill: "#0c71c3",
-                                    },
-                                  }),
-                                ]
-                              ),
-                            ]
-                          ),
-                        ]
+                  _c("div", {}, [
+                    _c("i", [
+                      _vm._v(
+                        _vm._s(numberi.comment) + "-" + _vm._s(numberi.number)
                       ),
                     ]),
-                  ]
-                ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", {}, [_vm._v(_vm._s(numberi.text))]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto my-auto" }, [
+                  _c("div", { staticClass: " " }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "btn ",
+                        on: {
+                          click: function ($event) {
+                            return _vm.deletenumber(numberi.id)
+                          },
+                        },
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                              width: "16.741",
+                              height: "22.71",
+                              viewBox: "0 0 16.741 22.71",
+                            },
+                          },
+                          [
+                            _c("defs", [
+                              _c("clipPath", { attrs: { id: "clip-path" } }, [
+                                _c("rect", {
+                                  attrs: {
+                                    id: "Rectangle_693",
+                                    "data-name": "Rectangle 693",
+                                    width: "16.741",
+                                    height: "22.71",
+                                    fill: "#0c71c3",
+                                  },
+                                }),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              {
+                                attrs: {
+                                  id: "Group_767",
+                                  "data-name": "Group 767",
+                                  "clip-path": "url(#clip-path)",
+                                },
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    id: "Path_345",
+                                    "data-name": "Path 345",
+                                    d: "M34.214,169.833H48.56c.005.1.013.2.013.289q0,7.809,0,15.617a1.527,1.527,0,0,1-.036.412.687.687,0,0,1-.748.478q-1.783.005-3.565,0H35.142c-.706,0-.928-.223-.928-.934q0-7.757,0-15.513v-.35M45.7,178.215q0-2.876,0-5.751c0-.334-.064-.4-.391-.4q-.455-.007-.911,0c-.345,0-.409.07-.41.412q0,2.082,0,4.164,0,3.682,0,7.365c0,.337.059.4.389.4.286,0,.572,0,.859,0,.423,0,.464-.04.464-.459q0-2.863,0-5.725m-8.6,0q0,2.914,0,5.828c0,.3.056.353.346.356.338,0,.676,0,1.014,0,.223,0,.333-.083.333-.323q-.005-5.841,0-11.682c0-.237-.105-.334-.325-.336-.321,0-.642,0-.962,0-.352,0-.407.059-.407.406q0,2.875,0,5.75m3.443,0q0,2.914,0,5.828c0,.291.06.353.349.356.338,0,.676,0,1.015,0,.224,0,.333-.085.333-.323q0-5.841,0-11.683c0-.237-.1-.335-.324-.336-.321,0-.642,0-.963,0-.349,0-.411.065-.411.406q0,2.875,0,5.75",
+                                    transform: "translate(-33.023 -163.922)",
+                                    fill: "#0c71c3",
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c("path", {
+                                  attrs: {
+                                    id: "Path_346",
+                                    "data-name": "Path 346",
+                                    d: "M16.741,4.576H.017a13.711,13.711,0,0,1,.01-1.494A1.318,1.318,0,0,1,1.435,1.895c1.275-.006,2.55,0,3.826,0h.346c0-.284,0-.541,0-.8A1.008,1.008,0,0,1,6.691,0Q8.369,0,10.048,0a1.026,1.026,0,0,1,1.1,1.08c.008.258,0,.516,0,.809h4.053a1.377,1.377,0,0,1,1.534,1.521c0,.387,0,.773,0,1.161",
+                                    transform: "translate(-0.001 0)",
+                                    fill: "#0c71c3",
+                                  },
+                                }),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]),
               ]
             )
           }),
@@ -33519,6 +33537,8 @@ var render = function () {
                   _vm._m(3),
                   _vm._v(" "),
                   _vm._m(4),
+                  _vm._v(" "),
+                  _vm._m(5),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12" }, [
                     _c(
@@ -33670,6 +33690,23 @@ var staticRenderFns = [
       _c("input", {
         staticClass: "form-control",
         attrs: { type: "text", name: "position", id: "position" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c(
+        "label",
+        { staticClass: "col-form-label", attrs: { for: "company_name" } },
+        [_vm._v("Name der Firma:: ")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "text", name: "position", id: "company_name" },
       }),
     ])
   },
@@ -38061,7 +38098,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "ps-2 my-auto txt-01" }, [
-          _vm._v("\n                    Fügen Aufgabe\n                "),
+          _vm._v("\n                    Pendenz Hinzufügen\n                "),
         ]),
       ]),
       _vm._v(" "),
@@ -38244,7 +38281,7 @@ var render = function () {
                   ),
                 ]),
                 _vm._v(" "),
-                _c("span", { staticClass: "ps-1" }, [_vm._v("Berater")]),
+                _c("span", { staticClass: "ps-1 fw-600" }, [_vm._v("Berater")]),
               ]
             ),
             _vm._v(" "),
@@ -38359,7 +38396,7 @@ var render = function () {
                   ),
                 ]),
                 _vm._v(" "),
-                _c("span", { staticClass: "ps-1" }, [_vm._v("Kunde")]),
+                _c("span", { staticClass: "ps-1 fw-600" }, [_vm._v("Kunde")]),
               ]
             ),
             _vm._v(" "),
@@ -38418,7 +38455,7 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c("span", { staticClass: "ps-1" }, [
+              _c("span", { staticClass: "ps-1 fw-600" }, [
                 _vm._v("Beschreibung (erforderlich)"),
               ]),
             ]),
@@ -38443,7 +38480,7 @@ var render = function () {
               staticClass: "py-2 px-2 px-sm-3 assign-pdnc text-white btn",
               on: { click: _vm.assignpendency },
             },
-            [_c("span", [_vm._v("Assign Pendency")])]
+            [_c("span", [_vm._v("Pendenz Zuordnen")])]
           ),
         ]),
       ]),

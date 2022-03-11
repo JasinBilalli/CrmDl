@@ -14,7 +14,7 @@
                     </svg>
                 </div>
                 <div class="ps-2 my-auto txt-01">
-                    Fügen Aufgabe
+                    Pendenz Hinzufügen
                 </div>
             </div>
             <div id="alrt">
@@ -78,7 +78,7 @@
                                                 </g>
                                             </svg>
                                         </span>
-                            <span class="ps-1">Berater</span>
+                            <span class="ps-1 fw-600">Berater</span>
                         </label>
                         <select id="admin-input" name="admin" class="form-control" @change="onChangeSelect($event)">
                             <option v-for="admin in todos.admins" :value="admin.id">{{ admin.name }}</option>
@@ -112,7 +112,7 @@
                                             </svg>
 
                                         </span>
-                            <span class="ps-1">Kunde</span>
+                            <span class="ps-1 fw-600">Kunde</span>
                         </label>
                         <select id="costumer-input" name="costumer" class="form-control" @change="onChangeCostumer($event)">
                             <option v-for="costumer in todos.costumers" :value="costumer.id">{{costumer.first_name}}
@@ -131,14 +131,14 @@
                                                     d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
                                             </svg>
                                         </span>
-                            <span class="ps-1">Beschreibung (erforderlich)</span>
+                            <span class="ps-1 fw-600">Beschreibung (erforderlich)</span>
                         </label>
                         <textarea type="text" id="desc" placeholder="Description" class="form-control" rows="3" required></textarea>
                     </div>
                 </div>
                 <div class="button-div mx-3 pt-1 pb-3">
                     <button @click="assignpendency" class="py-2 px-2 px-sm-3 assign-pdnc text-white btn">
-                        <span>Assign Pendency</span>
+                        <span>Pendenz Zuordnen</span>
                     </button>
                 </div>
             </div>

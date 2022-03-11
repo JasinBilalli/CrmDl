@@ -26,6 +26,7 @@ class TodoController extends Controller
         $todo = new todo();
         $todo->costumer = filter_var($req->name, FILTER_SANITIZE_STRING);
         $todo->comment = filter_var($req->position, FILTER_SANITIZE_STRING);
+        $todo->number = filter_var($req->company_name, FILTER_SANITIZE_STRING);
         $todo->text = filter_var($req->number,FILTER_SANITIZE_STRING);
         $todo->admin_id = Auth::guard('admins')->user()->id;
         $todo->save();

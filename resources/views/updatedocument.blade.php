@@ -147,7 +147,7 @@
                         <span class="ps-2 txt-dn">Aufgaben</span>
                     </a>
                 @endif
-                Auth::guard('admins')->user()->hasRole('salesmanager')
+                @if(Auth::guard('admins')->user()->hasRole('salesmanager')
                 ||Auth::guard('admins')->user()->hasRole('menagment'))
                     <a href="{{route('leads')}}"
                        class="nav-link {{ (request()->is('leads')) ? 'activeClassNav__' : '' }}">
