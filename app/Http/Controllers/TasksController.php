@@ -498,11 +498,12 @@ else{
   public function tasks(Request $req,$az = false)
   {
     $user = auth();
+$urole = $user->user()->getRoleNames();
     $start = microtime(true);
        $cnt = 0;
        $cnt1 = 0;
        $leadsss = Crypt::encrypt(Auth::user()->id * 1244);
-       if ($user->user()->hasRole('backoffice') || $user->user()->hasRole('admin')) {
+       if ($urole->contains('backoffice') || $urole->contains('admin')) {
            if (isset($req->searchpend)) {
                $pend = family::with('adminpend')
                    ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
@@ -551,8 +552,8 @@ else{
    
                $opened = $open;
        }
-       if ($user->user()->hasRole('fs') || $user->user()->hasRole('admin')) {
-   if($user->user()->hasRole('admin')){
+       if ($urole->contains('fs') || $urole->contains('admin')) {
+   if($urole->contains('admin')){
          $tasks = family::
          join('leads','family_person.leads_id','=','leads.id')
          ->whereIn('family_person.status',['Open'])
@@ -571,11 +572,13 @@ else{
    
              $opencnt = $tasks->count();
    
-         $pending = family::with('adminpend')
-         ->join('pendencies','family_person.id','=','pendencies.family_id')
-         ->where('pendencies.completed','=',0)
-         ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
+         $pending = Pendency::with('family')
+         ->where('completed','<>',1)
+         ->select('pendencies.*','pendencies.id as pid','pendencies.type')
          ->paginate(200);
+
+
+
       
    
    
@@ -601,12 +604,13 @@ else{
    
           $opencnt = $tasks->count();
    
-         $pending = family::with('adminpend')
-         ->join('pendencies','family_person.id','=','pendencies.family_id')
-         ->where('pendencies.completed','=',0)
-         ->where('pendencies.admin_id','=',$user->user()->id)
-         ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
+         $pending = Pendency::with('family')
+         ->where('completed','<>',1)
+         ->select('pendencies.*','pendencies.id as pid','pendencies.type')
+         ->whereIn('admin_id',[$user->user()->id])
          ->paginate(200);
+         
+         
         
    
    
@@ -634,9 +638,9 @@ else{
    
      $personalApp = DB::table('personalappointment')->where('AppOrCon',1)->where('user_id',Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
     
-   if($user->user()->hasRole('backoffice')) return view('tasks',compact('answered','pend','opened','leadsss'));
-   if($user->user()->hasRole('fs')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','leadsss'));
-   if($user->user()->hasRole('admin')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','answered','pend','opened','leadsss'));
+   if($urole->contains('backoffice')) return view('tasks',compact('answered','pend','opened','leadsss'));
+   if($urole->contains('fs')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','leadsss'));
+   if($urole->contains('admin')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','answered','pend','opened','leadsss'));
    
 
   }
