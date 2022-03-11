@@ -36,7 +36,9 @@ class CostumerFormController extends Controller
         if(Auth::guard('admins')->user()->hasRole('backoffice') ||Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager') ||Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('management')){
             $family = family::where('id',$id)->first();
             if ($family->kundportfolio == 0 && (Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))) {
-                $costumer = family::findOrFail($id);
+                $costumer = family::with('lead')->findOrFail($id);
+
+
 
                 $dataKK = LeadDataKK::where('person_id', $id)->first();
                 $dataFahrzeug = LeadDataFahrzeug::where('person_id',$id)->first();

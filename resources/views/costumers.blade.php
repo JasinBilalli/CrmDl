@@ -461,6 +461,24 @@
                 <div class="d-flex justify-content-end pt-3 pb-5" style="background-color: #fff;">
 
                 </div>
+
+            </div>
+            <div class="container-fluid p-0">
+                <div class="col-12 g-0">
+                    <div class="import-leads-div px-3 m-1">
+                        <form action="{{route('importcostumer')}}" class="mb-2" enctype="multipart/form-data" method="post">
+                            @csrf
+                            <div class="head py-3">
+                                <span class="fs-5 fw-bold">Kunden Importieren</span>
+                            </div>
+                            <div class="content py-3">
+                                <input type="file" class="form-control" name="costumerfile" id="file">
+                                <input type="submit" class="mt-2 btn py-2" value="Senden"
+                                       style="background-color: #0C71C3; color: #ffffff; font-weight: bold; border: none; border-radius: 12px;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

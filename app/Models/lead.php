@@ -9,33 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class lead extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'assigned',
-        'first_name',
-            'last_name',
-            'telephone',
-            'birthdate',
-            'city',
-            'address',
-            'postal_code',
-            'latitude',
-            'longitude',
-            'number_of_persons',
-            'nationality',
-            'appointment_date',
-            'campaign_id',
-            'assign_to_id',
-            'time',
-            'wantsonline',
-            'slug',
-            'sprache',
-            'city',
-            'created_at',
-            'updated_at',
-            'berater',
-            'bemerkung',
-            'agent'
-        ];
+    protected $guarded = [];
 
     public function campaign(){
         return $this->belongsTo(campaigns::class,'campaign_id');
