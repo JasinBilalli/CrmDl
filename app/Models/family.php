@@ -11,13 +11,7 @@ class family extends Model
     public $datas;
     use HasFactory;
 
-    protected $fillable = [
-        'first_name',
-        'last_name',
-        'birthdate',
-        'leads_id',
-        'status'
-    ];
+    protected $guarded = [];
     public function pendency(){
 return $this->belongsTo(Pendency::class,'id','family_id');
     }
