@@ -411,7 +411,8 @@
                             </div>
                             <div class="content px-3">
                                 <div class="overflow-div py-3">
-                                    <div class="p-2 birthday-itemm bg-white d-flex">
+                                    <!-- <div class="p-2 birthday-itemm bg-white d-flex">
+                                   @foreach($birthdays as $birth)
                                             <div class="my-auto px-2">
                                                 <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
@@ -420,10 +421,13 @@
                                                 </span>                                               
                                             </div>
                                             <div class="">
-                                                <div class="fs-5 fw-600">Markus Jurgen</div>
-                                                <div class="">04.10.2021 (50yahre)</div>
+                                                <div class="fs-5 fw-600">{{$birth['name']}}</div>
+                                                <div class="">{{$birth['birthday']}} ({{$birth['age']}} yahre)</div>
                                             </div>
-                                    </div>
+                                    @endforeach
+                                    </div> -->
+
+
                                     <!-- <table class="table table-borderless  table-2">
                                         <thead>
                                         <tr class="sticky-class">
