@@ -1,22 +1,25 @@
 <template>
 
     <div class="informational-nr-div mx-2 mt-3 mt-sm-0">
-        <div class="informational-nr-header d-flex">
-            <div class="col-auto my-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
-                     class="bi bi-telephone" viewBox="0 0 16 16">
-                    <path
-                        d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                </svg>
+        <div class="d-flex justify-content-between">
+            <div class="informational-nr-header d-flex">
+                <div class="col-auto my-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                         class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path
+                            d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                </div>
+                <div class="txt-01 my-auto ps-2">
+                    Informative Anzahl
+                </div>
             </div>
-            <div class="txt-01 my-auto ps-2">
-                Informative Anzahl
-            </div>
+            <div class="fs-5 count px-4 fw-bold">{{cnt}}</div>
         </div>
         <div class="informational-nr-content">
             <div class="wrapper p-2">
                 <div class="info-nr-overflow-div px-2" >
-                    <div class="info-nr-item my-2 p-2 bg-white d-flex justify-content-evenly" v-for="number in numbers">
+                    <div class="info-nr-item my-2 p-2 bg-white d-flex justify-content-between" v-for="numberi in numbers">
                         <div class="col-auto my-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
                                  class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -25,14 +28,14 @@
                                       d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                             </svg>
                         </div>
-                        <div class="ps-2 ">
-                            <div class="fw-bold">{{ number.costumer }}</div>
-                            <div class=""><i>{{number.comment}}</i></div>
-                            <div class="">{{ number.text }}</div>
+                        <div class="ps-2 col">
+                            <div class="fw-bold">{{ numberi.costumer }}</div>
+                            <div class=""><i>{{numberi.comment}}-{{ numberi.number }}</i></div>
+                            <div class="">{{ numberi.text }}</div>
                         </div>
-                        <div class=" d-flex justify-content-end my-auto">
+                        <div class="col-auto my-auto">
                             <div class=" ">
-                                <div class="btn " @click="deletenumber(number.id)">
+                                <div class="btn " @click="deletenumber(numberi.id)">
                                     <svg xmlns="http://www.w3.org/2000/svg"
                                          xmlns:xlink="http://www.w3.org/1999/xlink" width="16.741" height="22.71"
                                          viewBox="0 0 16.741 22.71">
@@ -92,6 +95,10 @@
                                 <input type="text" name="position" id="position" class="form-control" >
                             </div>
                             <div class="col-12">
+                                <label for="company_name" class="col-form-label">Name der Firma:: </label>
+                                <input type="text" name="position" id="company_name" class="form-control" >
+                            </div>
+                            <div class="col-12">
                                 <label for="number" class="col-form-label">Anzahl: </label>
                                 <input type="number" name="todo" id="number" class="form-control" v-on:keyup.enter="addnumber">
                             </div>
@@ -123,7 +130,8 @@ export default {
             numbers: null,
             admin: null,
             costumer: null,
-            readed: false
+            readed: false,
+            cnt:0
         }
     },
     methods: {
@@ -138,9 +146,10 @@ export default {
             var valName = document.getElementById('name')
             var valPosition = document.getElementById('position')
             var valNumber = document.getElementById('number')
+            var valCompanyName = document.getElementById('company_name')
 
 
-            axios.get('addnumber?number=' + valNumber.value + '&name=' + valName.value + '&position=' + valPosition.value ).then(location.reload());
+            axios.get('addnumber?number=' + valNumber.value + '&name=' + valName.value + '&position=' + valPosition.value + '&company_name=' + valCompanyName.value ).then(location.reload());
 
             valNumber.value = "";
             valName.value = "";
@@ -157,6 +166,7 @@ export default {
         fetchnumbers() {
             axios.get('numbers').then((response) => {
                 this.numbers = response.data;
+                this.cnt = response.data.length;
             });
         },
         deletenumber: function (val) {
