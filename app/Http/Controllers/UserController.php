@@ -929,8 +929,9 @@ class UserController extends Controller
                         $aufgenomenCount = $grundversicherungAuf + $retchsschutzAuf + $vorsorgeAuf + $zusatzversicherungAuf + $autoversicherungAuf + $hausratAuf;
                         $zuruckCount = $grundversicherungZ + $retchsschutzZ + $vorsorgeZ + $zusatzversicherungZ + $autoversicherungZ + $hausratZ;
                         $abgCount = $grundversicherungA + $retchsschutzA + $vorsorgeA + $zusatzversicherungA + $autoversicherungA + $hausratA;
-                        if (family::count() > 0) {
-                            $fmcount = (100 / family::count()) * $provisionertCount;
+                       $fcount = family::count();
+                        if ($fcount > 0) {
+                            $fmcount = (100 / $fcount) * $provisionertCount;
                         } else {
                             $fmcount = 0;
                         }
