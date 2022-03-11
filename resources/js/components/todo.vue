@@ -121,6 +121,20 @@
                         </select>
                     </div>
                     <div class="mb-2">
+                                    <label for="admin-input" class="form-label mb-1">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="#707070" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"></path>
+                                                <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="ps-1">
+                                            Task
+                                        </span>
+                                    </label>
+                                    <input class="form-control" id="task" type="text">
+                                </div>
+                    <div class="mb-2">
                         <label for="desc" class="form-label">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="#707070"
@@ -133,7 +147,7 @@
                                         </span>
                             <span class="ps-1">Beschreibung (erforderlich)</span>
                         </label>
-                        <textarea type="text" id="desc" placeholder="Description" class="form-control" rows="3" required></textarea>
+                        <textarea type="text" id="desc" class="form-control" rows="3" required></textarea>
                     </div>
                 </div>
                 <div class="button-div mx-3 pt-1 pb-3">
@@ -225,7 +239,7 @@ export default {
             this.costumer = this.todos.costumers[0].id;
         },
         assignpendency: function () {
-            axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value);
+            axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&task=' + document.getElementById('task').value);
             document.getElementById('alrt').innerHTML = "";
             document.getElementById('alrt').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' +
                 '                    <strong>Pendency was assigned successfully</strong>\n' +

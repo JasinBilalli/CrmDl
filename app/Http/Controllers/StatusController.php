@@ -5,12 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\family;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Webklex\PHPIMAP\ClientManager;
 
 class StatusController extends Controller
 {
     public function status(){
         $clientss = family::paginate(40);
-        $client = \Webklex\IMAP\Facades\Client::account('outlook');
+        $cm = new ClientManager($options = []);
+        $client = $cm->make([
+            'host'          => 'imap-mail.outlook.com',
+            'port'          => 993,
+            'encryption'    => 'ssl',
+            'validate_cert' => true,
+            'username'      => 'bulzart@outlook.com',
+            'password'      => 'paswordi123.',
+            'protocol'      => 'imap'
+        ]);
         $client->connect();
         $folders = $client->getFolders();
 
