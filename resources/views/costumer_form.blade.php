@@ -275,7 +275,7 @@
                                         aria-controls="nav-contact"
                                         aria-selected="false" onclick="changecnt(2)"><span class="desk-t">Produkte</span><span class="mobile-t">P</span><div><span class="mobile-t" style="font-size: 10px;">Produkte</span></div>
                                 </button>
-                                <button onclick="window.location.href='{{route('leadfamilyperson',[Crypt::encrypt($costumer->id * 1244),'admin_id' => \Illuminate\Support\Facades\Crypt::encrypt(\App\Models\Pendency::where('family_id',$costumer->id)->first()->admin_id * 1244),'pend_id' => \App\Models\Pendency::where('family_id',$costumer->id)->first()->id])}}'" class="nav-link col vorsorge-btn" id="nav-fourth-tab" data-bs-toggle="tab"
+                                <button onclick="window.location.href='{{route('leadfamilyperson',[Crypt::encrypt($costumer->id * 1244),'admin_id' => \Illuminate\Support\Facades\Crypt::encrypt($costumer->lead->assign_to_id * 1244)])}}'" class="nav-link col vorsorge-btn" id="nav-fourth-tab" data-bs-toggle="tab"
                                         data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth"
                                         aria-selected="false"><span class="desk-t">Vorsorge</span><span class="mobile-t">V</span><div><span class="mobile-t" style="font-size: 10px;">Vorsorge</span></div>
                                 </button>

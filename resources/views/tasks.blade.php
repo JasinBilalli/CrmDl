@@ -473,9 +473,28 @@
                                     {{count($birthdays) + count($personalApp)}}
                                 </div>
                             </div>
-                            <div class="content  ps-3">
-                                <div class="overflow-div">
-                                    <table class="table table-borderless table-striped table-2">
+
+                            <div class="content px-3">
+                                <div class="overflow-div py-3">
+                                    <!-- <div class="p-2 birthday-itemm bg-white d-flex">
+                                   @foreach($birthdays as $birth)
+                                            <div class="my-auto px-2">
+                                                <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                                </svg>
+                                                </span>                                               
+                                            </div>
+                                            <div class="">
+                                                <div class="fs-5 fw-600">{{$birth['name']}}</div>
+                                                <div class="">{{$birth['birthday']}} ({{$birth['age']}} yahre)</div>
+                                            </div>
+                                    @endforeach
+                                    </div> -->
+
+
+                                    <!-- <table class="table table-borderless  table-2">
+
                                         <thead>
                                         <tr class="sticky-class">
                                             <th scope="col">Datum</th>

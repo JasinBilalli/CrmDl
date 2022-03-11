@@ -38,7 +38,7 @@ class FamilyPersonsController extends Controller
                     try {
 
                         $data = LeadDataKK::where('person_id', '=', $idd)->firstOrFail();
-
+                        Session::put('pend_id', );
                         return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
                     }
                     catch (Exception $e) {
