@@ -14,7 +14,7 @@ class AddRejectedField extends Migration
     public function up()
     {
         Schema::table('leads', function (Blueprint $table) {
-            $table->boolean('rejected')->default(0);
+            $table->boolean('rejected')->default(0)->index();
             $table->string('zufriedenheit')->nullable();
             $table->string('gesundheit')->nullable();
             $table->string('bemerkung')->nullable();

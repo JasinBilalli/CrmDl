@@ -13,8 +13,7 @@ class Pendency extends Model
     {
         return $this->belongsTo(family::class,'family_id');
     }
-    protected $fillable = [
-        'admin_id'
+    protected $guarded = [
     ];
    
 }

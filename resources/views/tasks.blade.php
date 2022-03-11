@@ -112,7 +112,7 @@
                                                         <span class="submited-btn1 py-1 px-3">
                                                 {{ucfirst($task->type)}}
                                                 </span>
-                                                    @else
+                                                
                                                         <span class="submited-btn py-1 px-3">Eingereicht</span>
                                                     @endif
                                                 </div>
@@ -134,6 +134,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @if($task->type != 'Order')
                                     <div class="modal fade" id="statss{{$task->pid}}" tabindex="-1"
                                          aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog">
@@ -212,6 +213,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                 @endforeach
                             </div>
                         </div>
@@ -712,8 +714,10 @@
                                                         <span class="submited-btn1 py-2 px-4">
                                                         {{ucfirst($task->type)}}
                                                         </span>
+                                                    @elseif($task->type == 'Order')
+                                                        <span class="submited-btn py-2 px-4">Offer</span>
                                                     @else
-                                                        <span class="submited-btn py-2 px-4">Eingereicht</span>
+                                                    <span class="submited-btn py-2 px-4">Offer</span>
                                                     @endif
                                                 </td>
                                                 <td class="text-center" data-bs-target="#stats{{$task->pid}}"
