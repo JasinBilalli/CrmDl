@@ -6379,6 +6379,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.fetchnumbers();
@@ -6391,7 +6398,8 @@ __webpack_require__.r(__webpack_exports__);
       numbers: null,
       admin: null,
       costumer: null,
-      readed: false
+      readed: false,
+      cnt: 0
     };
   },
   methods: {
@@ -6405,7 +6413,8 @@ __webpack_require__.r(__webpack_exports__);
       var valName = document.getElementById('name');
       var valPosition = document.getElementById('position');
       var valNumber = document.getElementById('number');
-      axios.get('addnumber?number=' + valNumber.value + '&name=' + valName.value + '&position=' + valPosition.value).then(location.reload());
+      var valCompanyName = document.getElementById('company_name');
+      axios.get('addnumber?number=' + valNumber.value + '&name=' + valName.value + '&position=' + valPosition.value + '&company_name=' + valCompanyName.value).then(location.reload());
       valNumber.value = "";
       valName.value = "";
       valPosition.value = "";
@@ -6423,6 +6432,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('numbers').then(function (response) {
         _this.numbers = response.data;
+        _this.cnt = response.data.length;
       });
     },
     deletenumber: function deletenumber(val) {
@@ -33344,31 +33354,37 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "informational-nr-div mx-2 mt-3 mt-sm-0" }, [
-    _c("div", { staticClass: "informational-nr-header d-flex" }, [
-      _c("div", { staticClass: "col-auto my-2" }, [
-        _c(
-          "svg",
-          {
-            staticClass: "bi bi-telephone",
-            attrs: {
-              xmlns: "http://www.w3.org/2000/svg",
-              width: "30",
-              fill: "currentColor",
-              viewBox: "0 0 16 16",
-            },
-          },
-          [
-            _c("path", {
+    _c("div", { staticClass: "d-flex justify-content-between" }, [
+      _c("div", { staticClass: "informational-nr-header d-flex" }, [
+        _c("div", { staticClass: "col-auto my-2" }, [
+          _c(
+            "svg",
+            {
+              staticClass: "bi bi-telephone",
               attrs: {
-                d: "M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z",
+                xmlns: "http://www.w3.org/2000/svg",
+                width: "30",
+                fill: "currentColor",
+                viewBox: "0 0 16 16",
               },
-            }),
-          ]
-        ),
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d: "M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z",
+                },
+              }),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "txt-01 my-auto ps-2" }, [
+          _vm._v("\n                Informative Anzahl\n            "),
+        ]),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "txt-01 my-auto ps-2" }, [
-        _vm._v("\n            Informative Anzahl\n        "),
+      _c("div", { staticClass: "fs-5 count px-4 fw-bold" }, [
+        _vm._v(_vm._s(_vm.cnt)),
       ]),
     ]),
     _vm._v(" "),
@@ -33377,12 +33393,12 @@ var render = function () {
         _c(
           "div",
           { staticClass: "info-nr-overflow-div px-2" },
-          _vm._l(_vm.numbers, function (number) {
+          _vm._l(_vm.numbers, function (numberi) {
             return _c(
               "div",
               {
                 staticClass:
-                  "info-nr-item my-2 p-2 bg-white d-flex justify-content-evenly",
+                  "info-nr-item my-2 p-2 bg-white d-flex justify-content-between",
               },
               [
                 _c("div", { staticClass: "col-auto my-auto" }, [
@@ -33412,96 +33428,98 @@ var render = function () {
                   ),
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "ps-2 " }, [
+                _c("div", { staticClass: "ps-2 col" }, [
                   _c("div", { staticClass: "fw-bold" }, [
-                    _vm._v(_vm._s(number.costumer)),
+                    _vm._v(_vm._s(numberi.costumer)),
                   ]),
                   _vm._v(" "),
-                  _c("div", {}, [_c("i", [_vm._v(_vm._s(number.comment))])]),
-                  _vm._v(" "),
-                  _c("div", {}, [_vm._v(_vm._s(number.text))]),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: " d-flex justify-content-end my-auto" },
-                  [
-                    _c("div", { staticClass: " " }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "btn ",
-                          on: {
-                            click: function ($event) {
-                              return _vm.deletenumber(number.id)
-                            },
-                          },
-                        },
-                        [
-                          _c(
-                            "svg",
-                            {
-                              attrs: {
-                                xmlns: "http://www.w3.org/2000/svg",
-                                "xmlns:xlink": "http://www.w3.org/1999/xlink",
-                                width: "16.741",
-                                height: "22.71",
-                                viewBox: "0 0 16.741 22.71",
-                              },
-                            },
-                            [
-                              _c("defs", [
-                                _c("clipPath", { attrs: { id: "clip-path" } }, [
-                                  _c("rect", {
-                                    attrs: {
-                                      id: "Rectangle_693",
-                                      "data-name": "Rectangle 693",
-                                      width: "16.741",
-                                      height: "22.71",
-                                      fill: "#0c71c3",
-                                    },
-                                  }),
-                                ]),
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "g",
-                                {
-                                  attrs: {
-                                    id: "Group_767",
-                                    "data-name": "Group 767",
-                                    "clip-path": "url(#clip-path)",
-                                  },
-                                },
-                                [
-                                  _c("path", {
-                                    attrs: {
-                                      id: "Path_345",
-                                      "data-name": "Path 345",
-                                      d: "M34.214,169.833H48.56c.005.1.013.2.013.289q0,7.809,0,15.617a1.527,1.527,0,0,1-.036.412.687.687,0,0,1-.748.478q-1.783.005-3.565,0H35.142c-.706,0-.928-.223-.928-.934q0-7.757,0-15.513v-.35M45.7,178.215q0-2.876,0-5.751c0-.334-.064-.4-.391-.4q-.455-.007-.911,0c-.345,0-.409.07-.41.412q0,2.082,0,4.164,0,3.682,0,7.365c0,.337.059.4.389.4.286,0,.572,0,.859,0,.423,0,.464-.04.464-.459q0-2.863,0-5.725m-8.6,0q0,2.914,0,5.828c0,.3.056.353.346.356.338,0,.676,0,1.014,0,.223,0,.333-.083.333-.323q-.005-5.841,0-11.682c0-.237-.105-.334-.325-.336-.321,0-.642,0-.962,0-.352,0-.407.059-.407.406q0,2.875,0,5.75m3.443,0q0,2.914,0,5.828c0,.291.06.353.349.356.338,0,.676,0,1.015,0,.224,0,.333-.085.333-.323q0-5.841,0-11.683c0-.237-.1-.335-.324-.336-.321,0-.642,0-.963,0-.349,0-.411.065-.411.406q0,2.875,0,5.75",
-                                      transform: "translate(-33.023 -163.922)",
-                                      fill: "#0c71c3",
-                                    },
-                                  }),
-                                  _vm._v(" "),
-                                  _c("path", {
-                                    attrs: {
-                                      id: "Path_346",
-                                      "data-name": "Path 346",
-                                      d: "M16.741,4.576H.017a13.711,13.711,0,0,1,.01-1.494A1.318,1.318,0,0,1,1.435,1.895c1.275-.006,2.55,0,3.826,0h.346c0-.284,0-.541,0-.8A1.008,1.008,0,0,1,6.691,0Q8.369,0,10.048,0a1.026,1.026,0,0,1,1.1,1.08c.008.258,0,.516,0,.809h4.053a1.377,1.377,0,0,1,1.534,1.521c0,.387,0,.773,0,1.161",
-                                      transform: "translate(-0.001 0)",
-                                      fill: "#0c71c3",
-                                    },
-                                  }),
-                                ]
-                              ),
-                            ]
-                          ),
-                        ]
+                  _c("div", {}, [
+                    _c("i", [
+                      _vm._v(
+                        _vm._s(numberi.comment) + "-" + _vm._s(numberi.number)
                       ),
                     ]),
-                  ]
-                ),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", {}, [_vm._v(_vm._s(numberi.text))]),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-auto my-auto" }, [
+                  _c("div", { staticClass: " " }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "btn ",
+                        on: {
+                          click: function ($event) {
+                            return _vm.deletenumber(numberi.id)
+                          },
+                        },
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                              width: "16.741",
+                              height: "22.71",
+                              viewBox: "0 0 16.741 22.71",
+                            },
+                          },
+                          [
+                            _c("defs", [
+                              _c("clipPath", { attrs: { id: "clip-path" } }, [
+                                _c("rect", {
+                                  attrs: {
+                                    id: "Rectangle_693",
+                                    "data-name": "Rectangle 693",
+                                    width: "16.741",
+                                    height: "22.71",
+                                    fill: "#0c71c3",
+                                  },
+                                }),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              {
+                                attrs: {
+                                  id: "Group_767",
+                                  "data-name": "Group 767",
+                                  "clip-path": "url(#clip-path)",
+                                },
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    id: "Path_345",
+                                    "data-name": "Path 345",
+                                    d: "M34.214,169.833H48.56c.005.1.013.2.013.289q0,7.809,0,15.617a1.527,1.527,0,0,1-.036.412.687.687,0,0,1-.748.478q-1.783.005-3.565,0H35.142c-.706,0-.928-.223-.928-.934q0-7.757,0-15.513v-.35M45.7,178.215q0-2.876,0-5.751c0-.334-.064-.4-.391-.4q-.455-.007-.911,0c-.345,0-.409.07-.41.412q0,2.082,0,4.164,0,3.682,0,7.365c0,.337.059.4.389.4.286,0,.572,0,.859,0,.423,0,.464-.04.464-.459q0-2.863,0-5.725m-8.6,0q0,2.914,0,5.828c0,.3.056.353.346.356.338,0,.676,0,1.014,0,.223,0,.333-.083.333-.323q-.005-5.841,0-11.682c0-.237-.105-.334-.325-.336-.321,0-.642,0-.962,0-.352,0-.407.059-.407.406q0,2.875,0,5.75m3.443,0q0,2.914,0,5.828c0,.291.06.353.349.356.338,0,.676,0,1.015,0,.224,0,.333-.085.333-.323q0-5.841,0-11.683c0-.237-.1-.335-.324-.336-.321,0-.642,0-.963,0-.349,0-.411.065-.411.406q0,2.875,0,5.75",
+                                    transform: "translate(-33.023 -163.922)",
+                                    fill: "#0c71c3",
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c("path", {
+                                  attrs: {
+                                    id: "Path_346",
+                                    "data-name": "Path 346",
+                                    d: "M16.741,4.576H.017a13.711,13.711,0,0,1,.01-1.494A1.318,1.318,0,0,1,1.435,1.895c1.275-.006,2.55,0,3.826,0h.346c0-.284,0-.541,0-.8A1.008,1.008,0,0,1,6.691,0Q8.369,0,10.048,0a1.026,1.026,0,0,1,1.1,1.08c.008.258,0,.516,0,.809h4.053a1.377,1.377,0,0,1,1.534,1.521c0,.387,0,.773,0,1.161",
+                                    transform: "translate(-0.001 0)",
+                                    fill: "#0c71c3",
+                                  },
+                                }),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]),
               ]
             )
           }),
@@ -33545,6 +33563,8 @@ var render = function () {
                   _vm._m(3),
                   _vm._v(" "),
                   _vm._m(4),
+                  _vm._v(" "),
+                  _vm._m(5),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12" }, [
                     _c(
@@ -33699,6 +33719,23 @@ var staticRenderFns = [
       }),
     ])
   },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12" }, [
+      _c(
+        "label",
+        { staticClass: "col-form-label", attrs: { for: "company_name" } },
+        [_vm._v("Name der Firma:: ")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { type: "text", name: "position", id: "company_name" },
+      }),
+    ])
+  },
 ]
 render._withStripped = true
 
@@ -33728,1189 +33765,1265 @@ var render = function () {
           ? _c("section", [
               _c("div", { staticClass: "container-fluid" }, [
                 _c("div", { staticClass: "row g-0" }, [
-                  _c("div", { staticClass: "col-12 col-md-12 col-lg-9 g-0 " }, [
-                    _c("div", { staticClass: "assigned-leads py-1 mx-1" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "header ps-3 ps-sm-3 d-flex justify-content-between",
-                        },
-                        [
-                          _vm._m(0),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
-                            _c("span", { staticClass: "fs-5" }, [
-                              _vm._v(_vm._s(_vm.cnt)),
-                            ]),
-                          ]),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "content p-2" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-12 col-md-12 col-lg-9 g-0",
+                      staticStyle: { height: "100px" },
+                    },
+                    [
+                      _c("div", { staticClass: "assigned-leads py-1 mx-1" }, [
                         _c(
                           "div",
-                          { staticClass: "overflow-div row mx-2 mx-sm-3 me-2" },
-                          _vm._l(_vm.leads, function (lead) {
-                            return _c(
+                          {
+                            staticClass:
+                              "header ps-3 ps-sm-3 d-flex justify-content-between",
+                          },
+                          [
+                            _vm._m(0),
+                            _vm._v(" "),
+                            _c(
                               "div",
-                              { staticClass: "col-12 col-sm-12 col-md-6 g-0" },
+                              { staticClass: "count px-4 mt-3 h-100" },
                               [
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "modal fade",
-                                    attrs: {
-                                      id: lead.slug + "r",
-                                      "data-bs-backdrop": "static",
-                                      "data-bs-keyboard": "false",
-                                      tabindex: "-1",
-                                      "aria-labelledby": "staticBackdropLabel",
-                                      "aria-hidden": "true",
-                                    },
-                                  },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "modal-dialog modaldialogg",
+                                _c("span", { staticClass: "fs-5" }, [
+                                  _vm._v(_vm._s(_vm.cnt)),
+                                ]),
+                              ]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "content p-2" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "overflow-div row mx-2 mx-sm-3 me-2",
+                            },
+                            _vm._l(_vm.leads, function (lead) {
+                              return _c(
+                                "div",
+                                {
+                                  staticClass: "col-12 col-sm-12 col-md-6 g-0",
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "modal fade",
+                                      attrs: {
+                                        id: lead.slug + "r",
+                                        "data-bs-backdrop": "static",
+                                        "data-bs-keyboard": "false",
+                                        tabindex: "-1",
+                                        "aria-labelledby":
+                                          "staticBackdropLabel",
+                                        "aria-hidden": "true",
                                       },
-                                      [
-                                        _c(
-                                          "form",
-                                          {
-                                            attrs: {
-                                              action: "rejectedleads",
-                                              method: "post",
-                                            },
-                                          },
-                                          [
-                                            _c("input", {
-                                              attrs: {
-                                                type: "hidden",
-                                                name: "_token",
-                                              },
-                                              domProps: { value: _vm.csrf },
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass: "modal-content",
-                                                staticStyle: {
-                                                  "border-radius":
-                                                    "24px !important",
-                                                },
-                                              },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "modal-header mx-4 pt-4",
-                                                    staticStyle: {
-                                                      "border-bottom":
-                                                        "none !important",
-                                                    },
-                                                  },
-                                                  [
-                                                    _c("button", {
-                                                      staticClass: "btn-close",
-                                                      staticStyle: {
-                                                        opacity: "1 !important",
-                                                      },
-                                                      attrs: {
-                                                        type: "button",
-                                                        id: lead.slug + "r.123",
-                                                        "data-bs-dismiss":
-                                                          "modal",
-                                                        "aria-label": "Close",
-                                                      },
-                                                      on: {
-                                                        click: function (
-                                                          $event
-                                                        ) {
-                                                          _vm.closeFunc(this)
-                                                          _vm.reloadthis()
-                                                        },
-                                                      },
-                                                    }),
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "modal-body mx-5",
-                                                  },
-                                                  [
-                                                    _vm._m(1, true),
-                                                    _vm._v(" "),
-                                                    _c(
-                                                      "div",
-                                                      { staticClass: "row" },
-                                                      [
-                                                        _c(
-                                                          "div",
-                                                          {
-                                                            staticClass:
-                                                              "col-md-12 col-12",
-                                                          },
-                                                          [
-                                                            _c("input", {
-                                                              attrs: {
-                                                                type: "hidden",
-                                                                name: "leadsid",
-                                                              },
-                                                              domProps: {
-                                                                value: lead.id,
-                                                              },
-                                                            }),
-                                                            _vm._v(" "),
-                                                            _vm._m(2, true),
-                                                          ]
-                                                        ),
-                                                        _vm._v(" "),
-                                                        _vm._m(3, true),
-                                                      ]
-                                                    ),
-                                                  ]
-                                                ),
-                                              ]
-                                            ),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "modal fade",
-                                    attrs: {
-                                      id: lead.slug + "rc",
-                                      "data-bs-backdrop": "static",
-                                      "data-bs-keyboard": "false",
-                                      tabindex: "-1",
-                                      "aria-labelledby": "staticBackdropLabel",
-                                      "aria-hidden": "true",
                                     },
-                                  },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "modal-dialog modaldialogg",
-                                      },
-                                      [
-                                        _c(
-                                          "form",
-                                          {
-                                            attrs: {
-                                              action: "pending_rejectedlead",
-                                              method: "post",
-                                            },
-                                          },
-                                          [
-                                            _c("input", {
-                                              attrs: {
-                                                type: "hidden",
-                                                name: "_token",
-                                              },
-                                              domProps: { value: _vm.csrf },
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass: "modal-content",
-                                                staticStyle: {
-                                                  "border-radius":
-                                                    "24px !important",
-                                                },
-                                              },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "modal-header mx-4 pt-4",
-                                                    staticStyle: {
-                                                      "border-bottom":
-                                                        "none !important",
-                                                    },
-                                                  },
-                                                  [
-                                                    _c("button", {
-                                                      staticClass: "btn-close",
-                                                      staticStyle: {
-                                                        opacity: "1 !important",
-                                                      },
-                                                      attrs: {
-                                                        type: "button",
-                                                        id: lead.slug + "r.123",
-                                                        "data-bs-dismiss":
-                                                          "modal",
-                                                        "aria-label": "Close",
-                                                      },
-                                                      on: {
-                                                        click: function (
-                                                          $event
-                                                        ) {
-                                                          _vm.closeFunc(this)
-                                                          _vm.reloadthis()
-                                                        },
-                                                      },
-                                                    }),
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "modal-body mx-5",
-                                                  },
-                                                  [
-                                                    _c("input", {
-                                                      attrs: {
-                                                        type: "hidden",
-                                                        name: "leadsid",
-                                                      },
-                                                      domProps: {
-                                                        value: lead.id,
-                                                      },
-                                                    }),
-                                                    _vm._v(" "),
-                                                    _vm._m(4, true),
-                                                    _vm._v(" "),
-                                                    _vm._m(5, true),
-                                                  ]
-                                                ),
-                                              ]
-                                            ),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "modal fade",
-                                    attrs: {
-                                      id: lead.slug + "rp",
-                                      "data-bs-backdrop": "static",
-                                      "data-bs-keyboard": "false",
-                                      tabindex: "-1",
-                                      "aria-labelledby": "staticBackdropLabel",
-                                      "aria-hidden": "true",
-                                    },
-                                  },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "modal-dialog modaldialogg",
-                                      },
-                                      [
-                                        _c(
-                                          "form",
-                                          {
-                                            attrs: {
-                                              action: "pending_rejectedlead",
-                                              method: "post",
-                                            },
-                                          },
-                                          [
-                                            _c("input", {
-                                              attrs: {
-                                                type: "hidden",
-                                                name: "_token",
-                                              },
-                                              domProps: { value: _vm.csrf },
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "div",
-                                              {
-                                                staticClass: "modal-content",
-                                                staticStyle: {
-                                                  "border-radius":
-                                                    "24px !important",
-                                                },
-                                              },
-                                              [
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "modal-header mx-4 pt-4",
-                                                    staticStyle: {
-                                                      "border-bottom":
-                                                        "none !important",
-                                                    },
-                                                  },
-                                                  [
-                                                    _c("button", {
-                                                      staticClass: "btn-close",
-                                                      staticStyle: {
-                                                        opacity: "1 !important",
-                                                      },
-                                                      attrs: {
-                                                        type: "button",
-                                                        id: lead.slug + "r.123",
-                                                        "data-bs-dismiss":
-                                                          "modal",
-                                                        "aria-label": "Close",
-                                                      },
-                                                      on: {
-                                                        click: function (
-                                                          $event
-                                                        ) {
-                                                          _vm.closeFunc(this)
-                                                          _vm.reloadthis()
-                                                        },
-                                                      },
-                                                    }),
-                                                  ]
-                                                ),
-                                                _vm._v(" "),
-                                                _c(
-                                                  "div",
-                                                  {
-                                                    staticClass:
-                                                      "modal-body mx-5",
-                                                  },
-                                                  [
-                                                    _c("input", {
-                                                      attrs: {
-                                                        type: "hidden",
-                                                        name: "leadsid",
-                                                      },
-                                                      domProps: {
-                                                        value: lead.id,
-                                                      },
-                                                    }),
-                                                    _vm._v(" "),
-                                                    _c("input", {
-                                                      attrs: {
-                                                        type: "hidden",
-                                                        name: "pending",
-                                                      },
-                                                      domProps: { value: 1 },
-                                                    }),
-                                                    _vm._v(" "),
-                                                    _vm._m(6, true),
-                                                    _vm._v(" "),
-                                                    _vm._m(7, true),
-                                                  ]
-                                                ),
-                                              ]
-                                            ),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "modal fade",
-                                    attrs: {
-                                      id: lead.slug,
-                                      tabindex: "-1",
-                                      "aria-labelledby": "exampleModalLabel",
-                                      "aria-hidden": "true",
-                                    },
-                                  },
-                                  [
-                                    _c("div", { staticClass: "modal-dialog" }, [
+                                    [
                                       _c(
                                         "div",
                                         {
-                                          staticClass: "modal-content",
-                                          staticStyle: {
-                                            background: "#f8f8f8",
-                                            "border-radius": "43px",
-                                          },
+                                          staticClass:
+                                            "modal-dialog modaldialogg",
                                         },
                                         [
-                                          _vm._m(8, true),
-                                          _vm._v(" "),
                                           _c(
-                                            "div",
+                                            "form",
                                             {
-                                              staticClass:
-                                                "modal-body p-2 p-sm-3",
+                                              attrs: {
+                                                action: "rejectedleads",
+                                                method: "post",
+                                              },
                                             },
                                             [
-                                              _vm.role == "fs"
-                                                ? _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "row mx-3 my-auto",
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "col-12 col-md-4 my-auto",
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "span",
-                                                            {
-                                                              staticClass:
-                                                                "fs-4 fw-bold text-dark",
-                                                            },
-                                                            [
-                                                              _vm._v(
-                                                                "\n                                                              " +
-                                                                  _vm._s(
-                                                                    lead.first_name
-                                                                  ) +
-                                                                  "\n                                                            "
-                                                              ),
-                                                            ]
-                                                          ),
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "col-6 col-md-4 py-3 my-auto",
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "d-flex justify-content-center",
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "a",
-                                                                {
-                                                                  staticClass:
-                                                                    "btn fw-bold fs-5 py-2 w-100",
-                                                                  staticStyle: {
-                                                                    "background-color":
-                                                                      "#4EC590",
-                                                                    color:
-                                                                      "#fff",
-                                                                    "border-radius":
-                                                                      "8px",
-                                                                  },
-                                                                  attrs: {
-                                                                    href:
-                                                                      "tel:" +
-                                                                      lead.telephone,
-                                                                  },
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    "\n                                                                    Anrufen\n                                                                "
-                                                                  ),
-                                                                ]
-                                                              ),
-                                                            ]
-                                                          ),
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "col-6 col-md-4 py-3 my-auto",
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "d-flex justify-content-start",
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "button",
-                                                                {
-                                                                  staticClass:
-                                                                    "btn fw-bold fs-5 py-2 w-100",
-                                                                  staticStyle: {
-                                                                    "background-color":
-                                                                      "#E50A10",
-                                                                    color:
-                                                                      "#fff",
-                                                                    "border-radius":
-                                                                      "8px",
-                                                                  },
-                                                                  attrs: {
-                                                                    "data-bs-dismiss":
-                                                                      "modal",
-                                                                    "data-bs-toggle":
-                                                                      "modal",
-                                                                    "data-bs-target":
-                                                                      "#" +
-                                                                      lead.slug +
-                                                                      "rc",
-                                                                  },
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    "\n                                                                    Abgelehnt\n                                                                "
-                                                                  ),
-                                                                ]
-                                                              ),
-                                                            ]
-                                                          ),
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _vm._m(9, true),
-                                                    ]
-                                                  )
-                                                : _vm._e(),
+                                              _c("input", {
+                                                attrs: {
+                                                  type: "hidden",
+                                                  name: "_token",
+                                                },
+                                                domProps: { value: _vm.csrf },
+                                              }),
                                               _vm._v(" "),
                                               _c(
                                                 "div",
-                                                { staticClass: "mt-3" },
+                                                {
+                                                  staticClass: "modal-content",
+                                                  staticStyle: {
+                                                    "border-radius":
+                                                      "24px !important",
+                                                  },
+                                                },
                                                 [
                                                   _c(
                                                     "div",
-                                                    { staticClass: "mx-3 row" },
+                                                    {
+                                                      staticClass:
+                                                        "modal-header mx-4 pt-4",
+                                                      staticStyle: {
+                                                        "border-bottom":
+                                                          "none !important",
+                                                      },
+                                                    },
+                                                    [
+                                                      _c("button", {
+                                                        staticClass:
+                                                          "btn-close",
+                                                        staticStyle: {
+                                                          opacity:
+                                                            "1 !important",
+                                                        },
+                                                        attrs: {
+                                                          type: "button",
+                                                          id:
+                                                            lead.slug + "r.123",
+                                                          "data-bs-dismiss":
+                                                            "modal",
+                                                          "aria-label": "Close",
+                                                        },
+                                                        on: {
+                                                          click: function (
+                                                            $event
+                                                          ) {
+                                                            _vm.closeFunc(this)
+                                                            _vm.reloadthis()
+                                                          },
+                                                        },
+                                                      }),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "modal-body mx-5",
+                                                    },
+                                                    [
+                                                      _vm._m(1, true),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "div",
+                                                        { staticClass: "row" },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "col-md-12 col-12",
+                                                            },
+                                                            [
+                                                              _c("input", {
+                                                                attrs: {
+                                                                  type: "hidden",
+                                                                  name: "leadsid",
+                                                                },
+                                                                domProps: {
+                                                                  value:
+                                                                    lead.id,
+                                                                },
+                                                              }),
+                                                              _vm._v(" "),
+                                                              _vm._m(2, true),
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _vm._m(3, true),
+                                                        ]
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "modal fade",
+                                      attrs: {
+                                        id: lead.slug + "rc",
+                                        "data-bs-backdrop": "static",
+                                        "data-bs-keyboard": "false",
+                                        tabindex: "-1",
+                                        "aria-labelledby":
+                                          "staticBackdropLabel",
+                                        "aria-hidden": "true",
+                                      },
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "modal-dialog modaldialogg",
+                                        },
+                                        [
+                                          _c(
+                                            "form",
+                                            {
+                                              attrs: {
+                                                action: "pending_rejectedlead",
+                                                method: "post",
+                                              },
+                                            },
+                                            [
+                                              _c("input", {
+                                                attrs: {
+                                                  type: "hidden",
+                                                  name: "_token",
+                                                },
+                                                domProps: { value: _vm.csrf },
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass: "modal-content",
+                                                  staticStyle: {
+                                                    "border-radius":
+                                                      "24px !important",
+                                                  },
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "modal-header mx-4 pt-4",
+                                                      staticStyle: {
+                                                        "border-bottom":
+                                                          "none !important",
+                                                      },
+                                                    },
+                                                    [
+                                                      _c("button", {
+                                                        staticClass:
+                                                          "btn-close",
+                                                        staticStyle: {
+                                                          opacity:
+                                                            "1 !important",
+                                                        },
+                                                        attrs: {
+                                                          type: "button",
+                                                          id:
+                                                            lead.slug + "r.123",
+                                                          "data-bs-dismiss":
+                                                            "modal",
+                                                          "aria-label": "Close",
+                                                        },
+                                                        on: {
+                                                          click: function (
+                                                            $event
+                                                          ) {
+                                                            _vm.closeFunc(this)
+                                                            _vm.reloadthis()
+                                                          },
+                                                        },
+                                                      }),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "modal-body mx-5",
+                                                    },
+                                                    [
+                                                      _c("input", {
+                                                        attrs: {
+                                                          type: "hidden",
+                                                          name: "leadsid",
+                                                        },
+                                                        domProps: {
+                                                          value: lead.id,
+                                                        },
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _vm._m(4, true),
+                                                      _vm._v(" "),
+                                                      _vm._m(5, true),
+                                                    ]
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "modal fade",
+                                      attrs: {
+                                        id: lead.slug + "rp",
+                                        "data-bs-backdrop": "static",
+                                        "data-bs-keyboard": "false",
+                                        tabindex: "-1",
+                                        "aria-labelledby":
+                                          "staticBackdropLabel",
+                                        "aria-hidden": "true",
+                                      },
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "modal-dialog modaldialogg",
+                                        },
+                                        [
+                                          _c(
+                                            "form",
+                                            {
+                                              attrs: {
+                                                action: "pending_rejectedlead",
+                                                method: "post",
+                                              },
+                                            },
+                                            [
+                                              _c("input", {
+                                                attrs: {
+                                                  type: "hidden",
+                                                  name: "_token",
+                                                },
+                                                domProps: { value: _vm.csrf },
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass: "modal-content",
+                                                  staticStyle: {
+                                                    "border-radius":
+                                                      "24px !important",
+                                                  },
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "modal-header mx-4 pt-4",
+                                                      staticStyle: {
+                                                        "border-bottom":
+                                                          "none !important",
+                                                      },
+                                                    },
+                                                    [
+                                                      _c("button", {
+                                                        staticClass:
+                                                          "btn-close",
+                                                        staticStyle: {
+                                                          opacity:
+                                                            "1 !important",
+                                                        },
+                                                        attrs: {
+                                                          type: "button",
+                                                          id:
+                                                            lead.slug + "r.123",
+                                                          "data-bs-dismiss":
+                                                            "modal",
+                                                          "aria-label": "Close",
+                                                        },
+                                                        on: {
+                                                          click: function (
+                                                            $event
+                                                          ) {
+                                                            _vm.closeFunc(this)
+                                                            _vm.reloadthis()
+                                                          },
+                                                        },
+                                                      }),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "modal-body mx-5",
+                                                    },
+                                                    [
+                                                      _c("input", {
+                                                        attrs: {
+                                                          type: "hidden",
+                                                          name: "leadsid",
+                                                        },
+                                                        domProps: {
+                                                          value: lead.id,
+                                                        },
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c("input", {
+                                                        attrs: {
+                                                          type: "hidden",
+                                                          name: "pending",
+                                                        },
+                                                        domProps: { value: 1 },
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _vm._m(6, true),
+                                                      _vm._v(" "),
+                                                      _vm._m(7, true),
+                                                    ]
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "modal fade",
+                                      attrs: {
+                                        id: lead.slug,
+                                        tabindex: "-1",
+                                        "aria-labelledby": "exampleModalLabel",
+                                        "aria-hidden": "true",
+                                      },
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "modal-dialog" },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass: "modal-content",
+                                              staticStyle: {
+                                                background: "#f8f8f8",
+                                                "border-radius": "43px",
+                                              },
+                                            },
+                                            [
+                                              _vm._m(8, true),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "modal-body p-2 p-sm-3",
+                                                },
+                                                [
+                                                  _vm.role == "fs"
+                                                    ? _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "row mx-3 my-auto",
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "col-12 col-md-4 my-auto",
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "span",
+                                                                {
+                                                                  staticClass:
+                                                                    "fs-4 fw-bold text-dark",
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    "\n                                                              " +
+                                                                      _vm._s(
+                                                                        lead.first_name
+                                                                      ) +
+                                                                      "\n                                                            "
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "col-6 col-md-4 py-3 my-auto",
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "d-flex justify-content-center",
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "a",
+                                                                    {
+                                                                      staticClass:
+                                                                        "btn fw-bold fs-5 py-2 w-100",
+                                                                      staticStyle:
+                                                                        {
+                                                                          "background-color":
+                                                                            "#4EC590",
+                                                                          color:
+                                                                            "#fff",
+                                                                          "border-radius":
+                                                                            "8px",
+                                                                        },
+                                                                      attrs: {
+                                                                        href:
+                                                                          "tel:" +
+                                                                          lead.telephone,
+                                                                      },
+                                                                    },
+                                                                    [
+                                                                      _vm._v(
+                                                                        "\n                                                                    Anrufen\n                                                                "
+                                                                      ),
+                                                                    ]
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "col-6 col-md-4 py-3 my-auto",
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "d-flex justify-content-start",
+                                                                },
+                                                                [
+                                                                  _c(
+                                                                    "button",
+                                                                    {
+                                                                      staticClass:
+                                                                        "btn fw-bold fs-5 py-2 w-100",
+                                                                      staticStyle:
+                                                                        {
+                                                                          "background-color":
+                                                                            "#E50A10",
+                                                                          color:
+                                                                            "#fff",
+                                                                          "border-radius":
+                                                                            "8px",
+                                                                        },
+                                                                      attrs: {
+                                                                        "data-bs-dismiss":
+                                                                          "modal",
+                                                                        "data-bs-toggle":
+                                                                          "modal",
+                                                                        "data-bs-target":
+                                                                          "#" +
+                                                                          lead.slug +
+                                                                          "rc",
+                                                                      },
+                                                                    },
+                                                                    [
+                                                                      _vm._v(
+                                                                        "\n                                                                    Abgelehnt\n                                                                "
+                                                                      ),
+                                                                    ]
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _vm._m(9, true),
+                                                        ]
+                                                      )
+                                                    : _vm._e(),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "div",
+                                                    { staticClass: "mt-3" },
                                                     [
                                                       _c(
                                                         "div",
                                                         {
                                                           staticClass:
-                                                            "col-md-6 col-12 my-2",
+                                                            "mx-3 row",
                                                         },
                                                         [
                                                           _c(
                                                             "div",
                                                             {
                                                               staticClass:
-                                                                "text-dark text-left p-3 h-100",
-                                                              staticStyle: {
-                                                                "border-radius":
-                                                                  "15px",
-                                                                background:
-                                                                  "white",
-                                                              },
+                                                                "col-md-6 col-12 my-2",
                                                             },
                                                             [
-                                                              _vm._m(10, true),
-                                                              _vm._v(" "),
                                                               _c(
                                                                 "div",
                                                                 {
                                                                   staticClass:
-                                                                    "py-1",
+                                                                    "text-dark text-left p-3 h-100",
+                                                                  staticStyle: {
+                                                                    "border-radius":
+                                                                      "15px",
+                                                                    background:
+                                                                      "white",
+                                                                  },
                                                                 },
                                                                 [
+                                                                  _vm._m(
+                                                                    10,
+                                                                    true
+                                                                  ),
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Platform:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Platform:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead
-                                                                                  .campaign
-                                                                                  .name
-                                                                              )
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead
+                                                                                      .campaign
+                                                                                      .name
+                                                                                  )
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Kampagne:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Kampagne:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.kampagne
-                                                                              )
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.kampagne
+                                                                                  )
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Grund:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Grund:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.grund
-                                                                              )
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.grund
+                                                                                  )
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Teilnahme:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Teilnahme:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.teilnahme
-                                                                              )
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.teilnahme
+                                                                                  )
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
                                                                 ]
                                                               ),
                                                             ]
                                                           ),
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "col-md-6 col-12 my-2",
-                                                        },
-                                                        [
+                                                          _vm._v(" "),
                                                           _c(
                                                             "div",
                                                             {
                                                               staticClass:
-                                                                "text-dark text-left p-3",
-                                                              staticStyle: {
-                                                                "border-radius":
-                                                                  "15px",
-                                                                background:
-                                                                  "white",
-                                                              },
+                                                                "col-md-6 col-12 my-2",
                                                             },
                                                             [
-                                                              _vm._m(11, true),
-                                                              _vm._v(" "),
                                                               _c(
                                                                 "div",
                                                                 {
                                                                   staticClass:
-                                                                    "py-1",
+                                                                    "text-dark text-left p-3",
+                                                                  staticStyle: {
+                                                                    "border-radius":
+                                                                      "15px",
+                                                                    background:
+                                                                      "white",
+                                                                  },
                                                                 },
                                                                 [
+                                                                  _vm._m(
+                                                                    11,
+                                                                    true
+                                                                  ),
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Gerburstdatum:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Gerburstdatum:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.birthdate
-                                                                              )
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.birthdate
+                                                                                  )
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Haushalt:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Haushalt:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.number_of_persons
-                                                                              )
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.number_of_persons
+                                                                                  )
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Telefon:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Telefon:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.telephone
-                                                                              )
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.telephone
+                                                                                  )
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "PLZ, Ort:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "PLZ, Ort:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.postal_code
-                                                                              ) +
-                                                                              ", " +
-                                                                              _vm._s(
-                                                                                lead.city
-                                                                              ) +
-                                                                              " "
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.postal_code
+                                                                                  ) +
+                                                                                  ", " +
+                                                                                  _vm._s(
+                                                                                    lead.city
+                                                                                  ) +
+                                                                                  " "
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Krankenkasse:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Krankenkasse:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.krankenkasse
-                                                                              ) +
-                                                                              " "
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.krankenkasse
+                                                                                  ) +
+                                                                                  " "
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Bewertung KK:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Bewertung KK:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.bewertung
-                                                                              ) +
-                                                                              " "
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.bewertung
+                                                                                  ) +
+                                                                                  " "
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
+                                                                  _vm._v(" "),
                                                                   _c(
-                                                                    "span",
+                                                                    "div",
                                                                     {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
+                                                                      staticClass:
+                                                                        "py-1",
                                                                     },
                                                                     [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Wichtig:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
                                                                       _c(
                                                                         "span",
                                                                         {
                                                                           staticStyle:
                                                                             {
                                                                               color:
-                                                                                "#88889D",
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
                                                                             },
                                                                         },
                                                                         [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Wichtig:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
                                                                           _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.wichtig
-                                                                              ) +
-                                                                              " "
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.wichtig
+                                                                                  ) +
+                                                                                  " "
+                                                                              ),
+                                                                            ]
                                                                           ),
                                                                         ]
                                                                       ),
+                                                                      _c("br"),
                                                                     ]
                                                                   ),
-                                                                  _c("br"),
                                                                 ]
                                                               ),
                                                             ]
@@ -34921,296 +35034,326 @@ var render = function () {
                                                   ),
                                                 ]
                                               ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass: "modal-footer",
-                                              staticStyle: {
-                                                "border-top": "none !important",
-                                                display: "block",
-                                              },
-                                            },
-                                            [
-                                              _vm.role == "fs"
-                                                ? _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "row mx-4 pb-4",
-                                                    },
-                                                    [
-                                                      _vm._m(12, true),
-                                                      _vm._v(" "),
-                                                      _c(
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass: "modal-footer",
+                                                  staticStyle: {
+                                                    "border-top":
+                                                      "none !important",
+                                                    display: "block",
+                                                  },
+                                                },
+                                                [
+                                                  _vm.role == "fs"
+                                                    ? _c(
                                                         "div",
                                                         {
                                                           staticClass:
-                                                            "col-6 col-sm-3 ",
+                                                            "row mx-4 pb-4",
                                                         },
                                                         [
+                                                          _vm._m(12, true),
+                                                          _vm._v(" "),
                                                           _c(
-                                                            "button",
+                                                            "div",
                                                             {
                                                               staticClass:
-                                                                "btn fw-bold  m-1 fs-6 py-2 w-100",
-                                                              staticStyle: {
-                                                                "background-color":
-                                                                  "#FF860D !important",
-                                                                color:
-                                                                  "#fff !important",
-                                                                "border-radius":
-                                                                  "8px !important",
-                                                              },
-                                                              attrs: {
-                                                                "data-bs-dismiss":
-                                                                  "modal",
-                                                                "data-bs-toggle":
-                                                                  "modal",
-                                                                "data-bs-target":
-                                                                  "#" +
-                                                                  lead.slug +
-                                                                  "rp",
-                                                              },
+                                                                "col-6 col-sm-3 ",
                                                             },
                                                             [
-                                                              _vm._v(
-                                                                "\n                                                                Steht aus\n                                                            "
+                                                              _c(
+                                                                "button",
+                                                                {
+                                                                  staticClass:
+                                                                    "btn fw-bold  m-1 fs-6 py-2 w-100",
+                                                                  staticStyle: {
+                                                                    "background-color":
+                                                                      "#FF860D !important",
+                                                                    color:
+                                                                      "#fff !important",
+                                                                    "border-radius":
+                                                                      "8px !important",
+                                                                  },
+                                                                  attrs: {
+                                                                    "data-bs-dismiss":
+                                                                      "modal",
+                                                                    "data-bs-toggle":
+                                                                      "modal",
+                                                                    "data-bs-target":
+                                                                      "#" +
+                                                                      lead.slug +
+                                                                      "rp",
+                                                                  },
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    "\n                                                                Steht aus\n                                                            "
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "col-6 col-sm-3",
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "button",
+                                                                {
+                                                                  staticClass:
+                                                                    "btn fw-bold m-1 fs-6 w-100",
+                                                                  staticStyle: {
+                                                                    "background-color":
+                                                                      "#E50A10 !important",
+                                                                    color:
+                                                                      "#fff !important",
+                                                                    "border-radius":
+                                                                      "8px !important",
+                                                                  },
+                                                                  attrs: {
+                                                                    "data-bs-dismiss":
+                                                                      "modal",
+                                                                    "data-bs-toggle":
+                                                                      "modal",
+                                                                    "data-bs-target":
+                                                                      "#" +
+                                                                      lead.slug +
+                                                                      "r",
+                                                                  },
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    "\n                                                                Abgelehnt\n                                                            "
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "col-6 col-sm-3",
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "a",
+                                                                {
+                                                                  staticClass:
+                                                                    "btn fw-bold fs-6  w-100  m-1",
+                                                                  staticStyle: {
+                                                                    "background-color":
+                                                                      "#4EC590 !important",
+                                                                    color:
+                                                                      "#fff !important",
+                                                                    "border-radius":
+                                                                      "8px !important",
+                                                                  },
+                                                                  attrs: {
+                                                                    href:
+                                                                      "alead/" +
+                                                                      lead.id,
+                                                                  },
+                                                                },
+                                                                [
+                                                                  _vm._v(
+                                                                    "\n                                                                Weiter\n                                                            "
+                                                                  ),
+                                                                ]
                                                               ),
                                                             ]
                                                           ),
                                                         ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "col-6 col-sm-3",
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "button",
-                                                            {
-                                                              staticClass:
-                                                                "btn fw-bold m-1 fs-6 w-100",
-                                                              staticStyle: {
-                                                                "background-color":
-                                                                  "#E50A10 !important",
-                                                                color:
-                                                                  "#fff !important",
-                                                                "border-radius":
-                                                                  "8px !important",
-                                                              },
-                                                              attrs: {
-                                                                "data-bs-dismiss":
-                                                                  "modal",
-                                                                "data-bs-toggle":
-                                                                  "modal",
-                                                                "data-bs-target":
-                                                                  "#" +
-                                                                  lead.slug +
-                                                                  "r",
-                                                              },
-                                                            },
-                                                            [
-                                                              _vm._v(
-                                                                "\n                                                                Abgelehnt\n                                                            "
-                                                              ),
-                                                            ]
-                                                          ),
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "col-6 col-sm-3",
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "a",
-                                                            {
-                                                              staticClass:
-                                                                "btn fw-bold fs-6  w-100  m-1",
-                                                              staticStyle: {
-                                                                "background-color":
-                                                                  "#4EC590 !important",
-                                                                color:
-                                                                  "#fff !important",
-                                                                "border-radius":
-                                                                  "8px !important",
-                                                              },
-                                                              attrs: {
-                                                                href:
-                                                                  "alead/" +
-                                                                  lead.id,
-                                                              },
-                                                            },
-                                                            [
-                                                              _vm._v(
-                                                                "\n                                                                Weiter\n                                                            "
-                                                              ),
-                                                            ]
-                                                          ),
-                                                        ]
-                                                      ),
-                                                    ]
-                                                  )
-                                                : _vm._e(),
+                                                      )
+                                                    : _vm._e(),
+                                                ]
+                                              ),
                                             ]
                                           ),
                                         ]
                                       ),
-                                    ]),
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass:
-                                      "assigned-items p-0 p-sm-2 p-sm-3 m-2",
-                                    attrs: {
-                                      "data-bs-toggle": "modal",
-                                      "data-bs-target": "#" + lead.slug,
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "assigned-items p-0 p-sm-2 p-sm-3 m-2",
+                                      attrs: {
+                                        "data-bs-toggle": "modal",
+                                        "data-bs-target": "#" + lead.slug,
+                                      },
                                     },
-                                  },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "namme mb-2 pt-2 pt-sm-0 px-2 px-sm-0",
-                                      },
-                                      [
-                                        _c(
-                                          "span",
-                                          { staticClass: "fs-4 fw-bold" },
-                                          [
-                                            _vm._v(
-                                              _vm._s(lead.first_name) +
-                                                " " +
-                                                _vm._s(lead.last_name)
-                                            ),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "adresse row px-2 px-sm-0",
-                                      },
-                                      [
-                                        _vm._m(13, true),
-                                        _vm._v(" "),
-                                        _c("div", { staticClass: "col-auto" }, [
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "namme mb-2 pt-2 pt-sm-0 px-2 px-sm-0",
+                                        },
+                                        [
                                           _c(
                                             "span",
-                                            { staticClass: "grayyy1 fw-500 " },
-                                            [_vm._v(_vm._s(lead.address))]
-                                          ),
-                                        ]),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "haushalt row  px-2 px-sm-0",
-                                      },
-                                      [
-                                        _vm._m(14, true),
-                                        _vm._v(" "),
-                                        _c("div", { staticClass: "col-auto" }, [
-                                          _c(
-                                            "span",
-                                            { staticClass: "grayyy1 fw-500" },
+                                            { staticClass: "fs-4 fw-bold" },
                                             [
                                               _vm._v(
-                                                _vm._s(lead.number_of_persons)
+                                                _vm._s(lead.first_name) +
+                                                  " " +
+                                                  _vm._s(lead.last_name)
                                               ),
                                             ]
                                           ),
-                                        ]),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "grund row  px-2 px-sm-0",
-                                      },
-                                      [
-                                        _vm._m(15, true),
-                                        _vm._v(" "),
-                                        _c("div", { staticClass: "col-auto" }, [
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "adresse row px-2 px-sm-0",
+                                        },
+                                        [
+                                          _vm._m(13, true),
+                                          _vm._v(" "),
                                           _c(
-                                            "span",
-                                            { staticClass: "grayyy1 fw-500" },
-                                            [_vm._v(_vm._s(lead.grund))]
+                                            "div",
+                                            { staticClass: "col-auto" },
+                                            [
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass:
+                                                    "grayyy1 fw-500 ",
+                                                },
+                                                [_vm._v(_vm._s(lead.address))]
+                                              ),
+                                            ]
                                           ),
-                                        ]),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "kampagne row  px-2 px-sm-0",
-                                      },
-                                      [
-                                        _vm._m(16, true),
-                                        _vm._v(" "),
-                                        _c("div", { staticClass: "col-auto" }, [
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "haushalt row  px-2 px-sm-0",
+                                        },
+                                        [
+                                          _vm._m(14, true),
+                                          _vm._v(" "),
                                           _c(
-                                            "span",
-                                            { staticClass: "grayyy1 fw-500" },
-                                            [_vm._v(_vm._s(lead.kampagne))]
+                                            "div",
+                                            { staticClass: "col-auto" },
+                                            [
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass: "grayyy1 fw-500",
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      lead.number_of_persons
+                                                    )
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
                                           ),
-                                        ]),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "button-div my-2" },
-                                      [
-                                        _c(
-                                          "button",
-                                          {
-                                            staticClass:
-                                              "btn px-0 px-sm-5 py-2 py-sm-1 fw-bold hhh",
-                                            attrs: {
-                                              "data-toggle": "modal",
-                                              "data-target": "#" + lead.slug,
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "grund row  px-2 px-sm-0",
+                                        },
+                                        [
+                                          _vm._m(15, true),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "col-auto" },
+                                            [
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass: "grayyy1 fw-500",
+                                                },
+                                                [_vm._v(_vm._s(lead.grund))]
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "kampagne row  px-2 px-sm-0",
+                                        },
+                                        [
+                                          _vm._m(16, true),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "col-auto" },
+                                            [
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass: "grayyy1 fw-500",
+                                                },
+                                                [_vm._v(_vm._s(lead.kampagne))]
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "button-div my-2" },
+                                        [
+                                          _c(
+                                            "button",
+                                            {
+                                              staticClass:
+                                                "btn px-0 px-sm-5 py-2 py-sm-1 fw-bold hhh",
+                                              attrs: {
+                                                "data-toggle": "modal",
+                                                "data-target": "#" + lead.slug,
+                                              },
                                             },
-                                          },
-                                          [
-                                            _vm._v(
-                                              "\n                                                Lead öffnen\n                                            "
-                                            ),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]
-                                ),
-                              ]
-                            )
-                          }),
-                          0
-                        ),
+                                            [
+                                              _vm._v(
+                                                "\n                                                Lead öffnen\n                                            "
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                ]
+                              )
+                            }),
+                            0
+                          ),
+                        ]),
                       ]),
-                    ]),
-                  ]),
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 col-md-12 col-lg-3 g-0" }, [
                     _c("div", { staticClass: "lead-statistics py-1" }, [
@@ -35652,43 +35795,1131 @@ var render = function () {
           : _c("section", [
               _c("div", { staticClass: "container-fluid p-0" }, [
                 _c("div", { staticClass: "row g-0" }, [
-                  _c("div", { staticClass: "col-12 col-md-12 col-lg-9 g-0" }, [
-                    _c("div", { staticClass: "assigned-leads1 mx-1 py-1 " }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "header ps-3 ps-sm-3 d-flex justify-content-between",
-                        },
-                        [
-                          _vm._m(20),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
-                            _c("span", { staticClass: "fs-5" }, [
-                              _vm._v(" " + _vm._s(_vm.cnt) + " "),
-                            ]),
-                          ]),
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "content p-2" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "col-12 col-md-12 col-lg-9 g-0",
+                      staticStyle: { height: "100px" },
+                    },
+                    [
+                      _c("div", { staticClass: "assigned-leads1 mx-1 py-1 " }, [
                         _c(
                           "div",
                           {
                             staticClass:
-                              "overflow-div1 p-0 row ms-1 ms-sm-3 me-2",
+                              "header ps-3 ps-sm-3 d-flex justify-content-between",
                           },
-                          _vm._l(_vm.leads, function (lead) {
-                            return _c(
+                          [
+                            _vm._m(20),
+                            _vm._v(" "),
+                            _c(
                               "div",
-                              { staticClass: "col-12 col-sm-12 col-md-6 g-0" },
+                              { staticClass: "count px-4 mt-3 h-100" },
                               [
+                                _c("span", { staticClass: "fs-5" }, [
+                                  _vm._v(" " + _vm._s(_vm.cnt) + " "),
+                                ]),
+                              ]
+                            ),
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "content p-2" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "overflow-div1 p-0 row ms-1 ms-sm-3 me-2",
+                            },
+                            _vm._l(_vm.leads, function (lead) {
+                              return _c(
+                                "div",
+                                {
+                                  staticClass: "col-12 col-sm-12 col-md-6 g-0",
+                                },
+                                [
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "modal fade",
+                                      attrs: {
+                                        id: lead.slug,
+                                        tabindex: "-1",
+                                        "aria-labelledby": "exampleModalLabel",
+                                        "aria-hidden": "true",
+                                      },
+                                    },
+                                    [
+                                      _c(
+                                        "div",
+                                        { staticClass: "modal-dialog" },
+                                        [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass: "modal-content",
+                                              staticStyle: {
+                                                background: "#f8f8f8",
+                                                "border-radius": "43px",
+                                              },
+                                            },
+                                            [
+                                              _vm._m(21, true),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass: "modal-body p-3",
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "row mx-3 my-auto",
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "col-12 col-md-4 my-auto",
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "span",
+                                                            {
+                                                              staticClass:
+                                                                "fs-4 fw-bold text-dark",
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                "\n                                                              " +
+                                                                  _vm._s(
+                                                                    lead.first_name
+                                                                  ) +
+                                                                  " " +
+                                                                  _vm._s(
+                                                                    lead.last_name
+                                                                  ) +
+                                                                  "\n                                                            "
+                                                              ),
+                                                            ]
+                                                          ),
+                                                        ]
+                                                      ),
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c("br"),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "mt-sm-3 mt-1",
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "mx-3 pb-3 row",
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "col-md-6 col-12 my-2",
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "text-dark text-left p-3 m-2 h-100",
+                                                                  staticStyle: {
+                                                                    "border-radius":
+                                                                      "15px",
+                                                                    background:
+                                                                      "white",
+                                                                  },
+                                                                },
+                                                                [
+                                                                  _vm._m(
+                                                                    22,
+                                                                    true
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Platform:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead
+                                                                                      .campaign
+                                                                                      .name
+                                                                                  )
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Kampagne:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.kampagne
+                                                                                  )
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Grund:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.grund
+                                                                                  )
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Teilnahme:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.teilnahme
+                                                                                  )
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "div",
+                                                            {
+                                                              staticClass:
+                                                                "col-md-6 col-12  my-2",
+                                                            },
+                                                            [
+                                                              _c(
+                                                                "div",
+                                                                {
+                                                                  staticClass:
+                                                                    "text-dark text-left p-3 m-2",
+                                                                  staticStyle: {
+                                                                    "border-radius":
+                                                                      "15px",
+                                                                    background:
+                                                                      "white",
+                                                                  },
+                                                                },
+                                                                [
+                                                                  _vm._m(
+                                                                    23,
+                                                                    true
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Gerburstdatum:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.birthdate
+                                                                                  )
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Haushalt:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.number_of_persons
+                                                                                  )
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Telefon:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.telephone
+                                                                                  )
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "PLZ, Ort:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.postal_code
+                                                                                  ) +
+                                                                                  ", " +
+                                                                                  _vm._s(
+                                                                                    lead.city
+                                                                                  ) +
+                                                                                  " "
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Krankenkasse:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.krankenkasse
+                                                                                  ) +
+                                                                                  " "
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Bewertung KK:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.bewertung
+                                                                                  ) +
+                                                                                  " "
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                  _vm._v(" "),
+                                                                  _c(
+                                                                    "div",
+                                                                    {
+                                                                      staticClass:
+                                                                        "py-1",
+                                                                    },
+                                                                    [
+                                                                      _c(
+                                                                        "span",
+                                                                        {
+                                                                          staticStyle:
+                                                                            {
+                                                                              color:
+                                                                                "#000",
+                                                                              "font-weight":
+                                                                                "500",
+                                                                            },
+                                                                        },
+                                                                        [
+                                                                          _c(
+                                                                            "b",
+                                                                            [
+                                                                              _vm._v(
+                                                                                "Wichtig:"
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                          _vm._v(
+                                                                            " "
+                                                                          ),
+                                                                          _c(
+                                                                            "span",
+                                                                            {
+                                                                              staticStyle:
+                                                                                {
+                                                                                  color:
+                                                                                    "#88889D",
+                                                                                },
+                                                                            },
+                                                                            [
+                                                                              _vm._v(
+                                                                                " " +
+                                                                                  _vm._s(
+                                                                                    lead.wichtig
+                                                                                  ) +
+                                                                                  " "
+                                                                              ),
+                                                                            ]
+                                                                          ),
+                                                                        ]
+                                                                      ),
+                                                                      _c("br"),
+                                                                    ]
+                                                                  ),
+                                                                ]
+                                                              ),
+                                                            ]
+                                                          ),
+                                                        ]
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass: "modal-footer",
+                                                  staticStyle: {
+                                                    "border-top":
+                                                      "none !important",
+                                                    display: "block",
+                                                  },
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "text-center",
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "button",
+                                                        {
+                                                          staticClass:
+                                                            "py-2 px-5 fw-bold border-0 ",
+                                                          staticStyle: {
+                                                            "background-color":
+                                                              "#0C71C3",
+                                                            color: "#fff",
+                                                            "border-radius":
+                                                              "13px",
+                                                          },
+                                                          attrs: {
+                                                            type: "button",
+                                                            "data-bs-toggle":
+                                                              "modal",
+                                                            "data-bs-target":
+                                                              "#asign",
+                                                          },
+                                                          on: {
+                                                            click: function (
+                                                              $event
+                                                            ) {
+                                                              return _vm.getit2(
+                                                                lead.id
+                                                              )
+                                                            },
+                                                          },
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "\n                                                            Zuweisen\n                                                        "
+                                                          ),
+                                                        ]
+                                                      ),
+                                                    ]
+                                                  ),
+                                                ]
+                                              ),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row g-0" }, [
+                                    _c(
+                                      "div",
+                                      { staticClass: "col-auto mx-1" },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "form-check mt-3" },
+                                          [
+                                            _c("input", {
+                                              staticClass: "form-check-input",
+                                              attrs: {
+                                                type: "checkbox",
+                                                name: "jep",
+                                                id: "flexCheckDefault",
+                                              },
+                                              domProps: { value: lead.id },
+                                              on: {
+                                                change: function ($event) {
+                                                  return _vm.getit($event)
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "col ps-0",
+                                        attrs: {
+                                          "data-bs-toggle": "modal",
+                                          "data-bs-target": "#" + lead.slug,
+                                        },
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "assigned-items  p-0 p-sm-2 p-sm-3 m-2",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "namme mb-2 pt-2 pt-sm-0 px-2 px-sm-0",
+                                              },
+                                              [
+                                                lead.wantsonline == 1
+                                                  ? _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "fs-4 fw-bold",
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            lead.first_name
+                                                          ) +
+                                                            " " +
+                                                            _vm._s(
+                                                              lead.last_name
+                                                            ) +
+                                                            " (Online)"
+                                                        ),
+                                                      ]
+                                                    )
+                                                  : _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "fs-4 fw-bold",
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            lead.first_name
+                                                          ) +
+                                                            " " +
+                                                            _vm._s(
+                                                              lead.last_name
+                                                            )
+                                                        ),
+                                                      ]
+                                                    ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "adresse row px-2 px-sm-0",
+                                              },
+                                              [
+                                                _vm._m(24, true),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "col-auto" },
+                                                  [
+                                                    _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "grayyy1 fw-500 ",
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(lead.address)
+                                                        ),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "haushalt row  px-2 px-sm-0",
+                                              },
+                                              [
+                                                _vm._m(25, true),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "col-auto" },
+                                                  [
+                                                    _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "grayyy1 fw-500",
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            lead.number_of_persons
+                                                          ) + " Personen"
+                                                        ),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "grund  row  px-2 px-sm-0",
+                                              },
+                                              [
+                                                _vm._m(26, true),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "col-auto" },
+                                                  [
+                                                    _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "grayyy1 fw-500",
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(lead.grund)
+                                                        ),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "kampagne row  px-2 px-sm-0",
+                                              },
+                                              [
+                                                _vm._m(27, true),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "col-auto" },
+                                                  [
+                                                    _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "grayyy1 fw-500",
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(lead.kampagne)
+                                                        ),
+                                                      ]
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass: "button-div my-2",
+                                              },
+                                              [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "btn px-0 px-sm-5 py-2 py-sm-1 fw-bold",
+                                                    attrs: {
+                                                      "data-bs-toggle": "modal",
+                                                      "data-bs-target":
+                                                        "#" + lead.slug,
+                                                    },
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                                        Lead öffnen\n                                                    "
+                                                    ),
+                                                  ]
+                                                ),
+                                              ]
+                                            ),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]),
+                                ]
+                              )
+                            }),
+                            0
+                          ),
+                          _vm._v(" "),
+                          _vm.role != "fs"
+                            ? _c("div", { staticClass: " py-2" }, [
+                                _vm._m(28),
+                                _vm._v(" "),
                                 _c(
                                   "div",
                                   {
                                     staticClass: "modal fade",
                                     attrs: {
-                                      id: lead.slug,
+                                      id: "asign",
                                       tabindex: "-1",
                                       "aria-labelledby": "exampleModalLabel",
                                       "aria-hidden": "true",
@@ -35699,696 +36930,66 @@ var render = function () {
                                       _c(
                                         "div",
                                         {
-                                          staticClass: "modal-content",
+                                          staticClass: "modal-content p-3",
                                           staticStyle: {
-                                            background: "#f8f8f8",
-                                            "border-radius": "43px",
+                                            "border-radius": "23px !important",
                                           },
                                         },
                                         [
-                                          _vm._m(21, true),
+                                          _vm._m(29),
                                           _vm._v(" "),
                                           _c(
                                             "div",
-                                            { staticClass: "modal-body p-3" },
+                                            { staticClass: "modal-body" },
                                             [
                                               _c(
-                                                "div",
+                                                "label",
                                                 {
-                                                  staticClass:
-                                                    "row mx-3 my-auto",
+                                                  staticStyle: {
+                                                    "font-weight":
+                                                      "500 !important",
+                                                  },
                                                 },
-                                                [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "col-12 col-md-4 my-auto",
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "span",
-                                                        {
-                                                          staticClass:
-                                                            "fs-4 fw-bold text-dark",
-                                                        },
-                                                        [
-                                                          _vm._v(
-                                                            "\n                                                              " +
-                                                              _vm._s(
-                                                                lead.first_name
-                                                              ) +
-                                                              " " +
-                                                              _vm._s(
-                                                                lead.last_name
-                                                              ) +
-                                                              "\n                                                            "
-                                                          ),
-                                                        ]
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
+                                                [_vm._v("Field service")]
                                               ),
                                               _vm._v(" "),
-                                              _c("br"),
-                                              _vm._v(" "),
                                               _c(
-                                                "div",
-                                                { staticClass: "mt-sm-3 mt-1" },
-                                                [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "mx-3 pb-3 row",
+                                                "select",
+                                                {
+                                                  staticClass: "form-select",
+                                                  staticStyle: {
+                                                    border: "none !important",
+                                                    "background-color":
+                                                      "#EFEFEF",
+                                                  },
+                                                  on: {
+                                                    change: function ($event) {
+                                                      return _vm.changeadmin(
+                                                        $event
+                                                      )
                                                     },
-                                                    [
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "col-md-6 col-12 my-2",
+                                                  },
+                                                },
+                                                _vm._l(
+                                                  _vm.admins,
+                                                  function (admin) {
+                                                    return _c(
+                                                      "option",
+                                                      {
+                                                        domProps: {
+                                                          value: admin.id,
                                                         },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "text-dark text-left p-3 m-2 h-100",
-                                                              staticStyle: {
-                                                                "border-radius":
-                                                                  "15px",
-                                                                background:
-                                                                  "white",
-                                                              },
-                                                            },
-                                                            [
-                                                              _vm._m(22, true),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Platform:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead
-                                                                                  .campaign
-                                                                                  .name
-                                                                              )
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Kampagne:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.kampagne
-                                                                              )
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Grund:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.grund
-                                                                              )
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Teilnahme:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.teilnahme
-                                                                              )
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                            ]
-                                                          ),
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "div",
-                                                        {
-                                                          staticClass:
-                                                            "col-md-6 col-12  my-2",
-                                                        },
-                                                        [
-                                                          _c(
-                                                            "div",
-                                                            {
-                                                              staticClass:
-                                                                "text-dark text-left p-3 m-2",
-                                                              staticStyle: {
-                                                                "border-radius":
-                                                                  "15px",
-                                                                background:
-                                                                  "white",
-                                                              },
-                                                            },
-                                                            [
-                                                              _vm._m(23, true),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Gerburstdatum:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.birthdate
-                                                                              )
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Haushalt:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.number_of_persons
-                                                                              )
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Telefon:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.telephone
-                                                                              )
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "PLZ, Ort:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.postal_code
-                                                                              ) +
-                                                                              ", " +
-                                                                              _vm._s(
-                                                                                lead.city
-                                                                              ) +
-                                                                              " "
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Krankenkasse:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.krankenkasse
-                                                                              ) +
-                                                                              " "
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Bewertung KK:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.bewertung
-                                                                              ) +
-                                                                              " "
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "div",
-                                                                {
-                                                                  staticClass:
-                                                                    "py-1",
-                                                                },
-                                                                [
-                                                                  _c(
-                                                                    "span",
-                                                                    {
-                                                                      staticStyle:
-                                                                        {
-                                                                          color:
-                                                                            "#000",
-                                                                          "font-weight":
-                                                                            "500",
-                                                                        },
-                                                                    },
-                                                                    [
-                                                                      _c("b", [
-                                                                        _vm._v(
-                                                                          "Wichtig:"
-                                                                        ),
-                                                                      ]),
-                                                                      _vm._v(
-                                                                        " "
-                                                                      ),
-                                                                      _c(
-                                                                        "span",
-                                                                        {
-                                                                          staticStyle:
-                                                                            {
-                                                                              color:
-                                                                                "#88889D",
-                                                                            },
-                                                                        },
-                                                                        [
-                                                                          _vm._v(
-                                                                            " " +
-                                                                              _vm._s(
-                                                                                lead.wichtig
-                                                                              ) +
-                                                                              " "
-                                                                          ),
-                                                                        ]
-                                                                      ),
-                                                                    ]
-                                                                  ),
-                                                                  _c("br"),
-                                                                ]
-                                                              ),
-                                                            ]
-                                                          ),
-                                                        ]
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
+                                                      },
+                                                      [
+                                                        _vm._v(
+                                                          _vm._s(admin.name) +
+                                                            "\n                                                    "
+                                                        ),
+                                                      ]
+                                                    )
+                                                  }
+                                                ),
+                                                0
                                               ),
                                             ]
                                           ),
@@ -36398,50 +36999,49 @@ var render = function () {
                                             {
                                               staticClass: "modal-footer",
                                               staticStyle: {
+                                                display: "block !important",
                                                 "border-top": "none !important",
-                                                display: "block",
                                               },
                                             },
                                             [
                                               _c(
-                                                "div",
-                                                { staticClass: "text-center" },
-                                                [
-                                                  _c(
-                                                    "button",
-                                                    {
-                                                      staticClass:
-                                                        "py-2 px-5 fw-bold border-0 ",
-                                                      staticStyle: {
-                                                        "background-color":
-                                                          "#0C71C3",
-                                                        color: "#fff",
-                                                        "border-radius": "13px",
-                                                      },
-                                                      attrs: {
-                                                        type: "button",
-                                                        "data-bs-toggle":
-                                                          "modal",
-                                                        "data-bs-target":
-                                                          "#asign",
-                                                      },
-                                                      on: {
-                                                        click: function (
-                                                          $event
-                                                        ) {
-                                                          return _vm.getit2(
-                                                            lead.id
-                                                          )
-                                                        },
-                                                      },
+                                                "button",
+                                                {
+                                                  staticClass: "btn",
+                                                  staticStyle: {
+                                                    "background-color":
+                                                      "#4EC590 !important",
+                                                    color: "#fff !important",
+                                                    "border-radius":
+                                                      "8px !important",
+                                                  },
+                                                  on: { click: _vm.assign },
+                                                },
+                                                [_c("b", [_vm._v("Assign")])]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "button",
+                                                {
+                                                  staticClass: "btn",
+                                                  staticStyle: {
+                                                    "background-color":
+                                                      "#6C757D !important",
+                                                    color: "#fff !important",
+                                                    "border-radius":
+                                                      "8px !important",
+                                                  },
+                                                  attrs: {
+                                                    type: "button",
+                                                    "data-bs-dismiss": "modal",
+                                                  },
+                                                  on: {
+                                                    click: function ($event) {
+                                                      return _vm.reloadthis()
                                                     },
-                                                    [
-                                                      _vm._v(
-                                                        "\n                                                            Zuweisen\n                                                        "
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
+                                                  },
+                                                },
+                                                [_c("b", [_vm._v("Close")])]
                                               ),
                                             ]
                                           ),
@@ -36450,390 +37050,12 @@ var render = function () {
                                     ]),
                                   ]
                                 ),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "row g-0" }, [
-                                  _c("div", { staticClass: "col-auto mx-1" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "form-check mt-3" },
-                                      [
-                                        _c("input", {
-                                          staticClass: "form-check-input",
-                                          attrs: {
-                                            type: "checkbox",
-                                            name: "jep",
-                                            id: "flexCheckDefault",
-                                          },
-                                          domProps: { value: lead.id },
-                                          on: {
-                                            change: function ($event) {
-                                              return _vm.getit($event)
-                                            },
-                                          },
-                                        }),
-                                      ]
-                                    ),
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "col ps-0",
-                                      attrs: {
-                                        "data-bs-toggle": "modal",
-                                        "data-bs-target": "#" + lead.slug,
-                                      },
-                                    },
-                                    [
-                                      _c(
-                                        "div",
-                                        {
-                                          staticClass:
-                                            "assigned-items  p-0 p-sm-2 p-sm-3 m-2",
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "namme mb-2 pt-2 pt-sm-0 px-2 px-sm-0",
-                                            },
-                                            [
-                                              lead.wantsonline == 1
-                                                ? _c(
-                                                    "span",
-                                                    {
-                                                      staticClass:
-                                                        "fs-4 fw-bold",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        _vm._s(
-                                                          lead.first_name
-                                                        ) +
-                                                          " " +
-                                                          _vm._s(
-                                                            lead.last_name
-                                                          ) +
-                                                          " (Online)"
-                                                      ),
-                                                    ]
-                                                  )
-                                                : _c(
-                                                    "span",
-                                                    {
-                                                      staticClass:
-                                                        "fs-4 fw-bold",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        _vm._s(
-                                                          lead.first_name
-                                                        ) +
-                                                          " " +
-                                                          _vm._s(lead.last_name)
-                                                      ),
-                                                    ]
-                                                  ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "adresse row px-2 px-sm-0",
-                                            },
-                                            [
-                                              _vm._m(24, true),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                { staticClass: "col-auto" },
-                                                [
-                                                  _c(
-                                                    "span",
-                                                    {
-                                                      staticClass:
-                                                        "grayyy1 fw-500 ",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        _vm._s(lead.address)
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "haushalt row  px-2 px-sm-0",
-                                            },
-                                            [
-                                              _vm._m(25, true),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                { staticClass: "col-auto" },
-                                                [
-                                                  _c(
-                                                    "span",
-                                                    {
-                                                      staticClass:
-                                                        "grayyy1 fw-500",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        _vm._s(
-                                                          lead.number_of_persons
-                                                        ) + " Personen"
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "grund  row  px-2 px-sm-0",
-                                            },
-                                            [
-                                              _vm._m(26, true),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                { staticClass: "col-auto" },
-                                                [
-                                                  _c(
-                                                    "span",
-                                                    {
-                                                      staticClass:
-                                                        "grayyy1 fw-500",
-                                                    },
-                                                    [_vm._v(_vm._s(lead.grund))]
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "kampagne row  px-2 px-sm-0",
-                                            },
-                                            [
-                                              _vm._m(27, true),
-                                              _vm._v(" "),
-                                              _c(
-                                                "div",
-                                                { staticClass: "col-auto" },
-                                                [
-                                                  _c(
-                                                    "span",
-                                                    {
-                                                      staticClass:
-                                                        "grayyy1 fw-500",
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        _vm._s(lead.kampagne)
-                                                      ),
-                                                    ]
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "button-div my-2" },
-                                            [
-                                              _c(
-                                                "button",
-                                                {
-                                                  staticClass:
-                                                    "btn px-0 px-sm-5 py-2 py-sm-1 fw-bold",
-                                                  attrs: {
-                                                    "data-bs-toggle": "modal",
-                                                    "data-bs-target":
-                                                      "#" + lead.slug,
-                                                  },
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "\n                                                        Lead öffnen\n                                                    "
-                                                  ),
-                                                ]
-                                              ),
-                                            ]
-                                          ),
-                                        ]
-                                      ),
-                                    ]
-                                  ),
-                                ]),
-                              ]
-                            )
-                          }),
-                          0
-                        ),
-                        _vm._v(" "),
-                        _vm.role != "fs"
-                          ? _c("div", { staticClass: " py-2" }, [
-                              _vm._m(28),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "modal fade",
-                                  attrs: {
-                                    id: "asign",
-                                    tabindex: "-1",
-                                    "aria-labelledby": "exampleModalLabel",
-                                    "aria-hidden": "true",
-                                  },
-                                },
-                                [
-                                  _c("div", { staticClass: "modal-dialog" }, [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "modal-content p-3",
-                                        staticStyle: {
-                                          "border-radius": "23px !important",
-                                        },
-                                      },
-                                      [
-                                        _vm._m(29),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "modal-body" },
-                                          [
-                                            _c(
-                                              "label",
-                                              {
-                                                staticStyle: {
-                                                  "font-weight":
-                                                    "500 !important",
-                                                },
-                                              },
-                                              [_vm._v("Field service")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "select",
-                                              {
-                                                staticClass: "form-select",
-                                                staticStyle: {
-                                                  border: "none !important",
-                                                  "background-color": "#EFEFEF",
-                                                },
-                                                on: {
-                                                  change: function ($event) {
-                                                    return _vm.changeadmin(
-                                                      $event
-                                                    )
-                                                  },
-                                                },
-                                              },
-                                              _vm._l(
-                                                _vm.admins,
-                                                function (admin) {
-                                                  return _c(
-                                                    "option",
-                                                    {
-                                                      domProps: {
-                                                        value: admin.id,
-                                                      },
-                                                    },
-                                                    [
-                                                      _vm._v(
-                                                        _vm._s(admin.name) +
-                                                          "\n                                                    "
-                                                      ),
-                                                    ]
-                                                  )
-                                                }
-                                              ),
-                                              0
-                                            ),
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          {
-                                            staticClass: "modal-footer",
-                                            staticStyle: {
-                                              display: "block !important",
-                                              "border-top": "none !important",
-                                            },
-                                          },
-                                          [
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass: "btn",
-                                                staticStyle: {
-                                                  "background-color":
-                                                    "#4EC590 !important",
-                                                  color: "#fff !important",
-                                                  "border-radius":
-                                                    "8px !important",
-                                                },
-                                                on: { click: _vm.assign },
-                                              },
-                                              [_c("b", [_vm._v("Assign")])]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass: "btn",
-                                                staticStyle: {
-                                                  "background-color":
-                                                    "#6C757D !important",
-                                                  color: "#fff !important",
-                                                  "border-radius":
-                                                    "8px !important",
-                                                },
-                                                attrs: {
-                                                  type: "button",
-                                                  "data-bs-dismiss": "modal",
-                                                },
-                                                on: {
-                                                  click: function ($event) {
-                                                    return _vm.reloadthis()
-                                                  },
-                                                },
-                                              },
-                                              [_c("b", [_vm._v("Close")])]
-                                            ),
-                                          ]
-                                        ),
-                                      ]
-                                    ),
-                                  ]),
-                                ]
-                              ),
-                            ])
-                          : _vm._e(),
+                              ])
+                            : _vm._e(),
+                        ]),
                       ]),
-                    ]),
-                  ]),
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 col-md-12 col-lg-3 g-0" }, [
                     _c("div", { staticClass: "lead-statistics1 py-1" }, [
@@ -38087,7 +38309,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "ps-2 my-auto txt-01" }, [
-          _vm._v("\n                    Fügen Aufgabe\n                "),
+          _vm._v("\n                    Pendenz Hinzufügen\n                "),
         ]),
       ]),
       _vm._v(" "),
@@ -38270,7 +38492,7 @@ var render = function () {
                   ),
                 ]),
                 _vm._v(" "),
-                _c("span", { staticClass: "ps-1" }, [_vm._v("Berater")]),
+                _c("span", { staticClass: "ps-1 fw-600" }, [_vm._v("Berater")]),
               ]
             ),
             _vm._v(" "),
@@ -38385,7 +38607,7 @@ var render = function () {
                   ),
                 ]),
                 _vm._v(" "),
-                _c("span", { staticClass: "ps-1" }, [_vm._v("Kunde")]),
+                _c("span", { staticClass: "ps-1 fw-600" }, [_vm._v("Kunde")]),
               ]
             ),
             _vm._v(" "),
@@ -38491,7 +38713,7 @@ var render = function () {
                 ),
               ]),
               _vm._v(" "),
-              _c("span", { staticClass: "ps-1" }, [
+              _c("span", { staticClass: "ps-1 fw-600" }, [
                 _vm._v("Beschreibung (erforderlich)"),
               ]),
             ]),
@@ -38510,7 +38732,7 @@ var render = function () {
               staticClass: "py-2 px-2 px-sm-3 assign-pdnc text-white btn",
               on: { click: _vm.assignpendency },
             },
-            [_c("span", [_vm._v("Assign Pendency")])]
+            [_c("span", [_vm._v("Pendenz Zuordnen")])]
           ),
         ]),
       ]),
