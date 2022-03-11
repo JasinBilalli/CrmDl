@@ -96,7 +96,7 @@ class UserController extends Controller
         $leadi->bewertung = filter_var($req->bewertung,FILTER_SANITIZE_STRING);
         $leadi->teilnahme = filter_var($req->teilnahme,FILTER_SANITIZE_STRING);
         $leadi->save();
-        $lead->slug = 'qwesssewssew-' . uniqid();
+        $lead->slug = 'qwessse12wssew-' . uniqid();
         if ($lead->save()) {
             return redirect()->route('leads')->with('success', 'Lead wurde erfolgreich eingefügt');
         } else {
@@ -128,7 +128,7 @@ class UserController extends Controller
     public function rnlogin()
     {
 
-        if (!Auth::guard('admins')->check()) {
+        if (!auth()->check()) {
 
             return view('login');
         } else {
@@ -138,9 +138,7 @@ class UserController extends Controller
 
     public function notifications()
     {
-        $not = notification::where('receiver_id', Auth::guard('admins')->user()->id)->where('done', 0)->get();
-        $not['cnt'] = notification::where('receiver_id', Auth::guard('admins')->user()->id)->where('done', 0)->get()->count();
-        return $not;
+
     }
 
     public function getlead($campaign)
@@ -280,6 +278,9 @@ class UserController extends Controller
         if (\Maatwebsite\Excel\Facades\Excel::import(new LeadImport, $file)) {
             return redirect()->back();
         }
+        else{
+            return redirect()->back();
+        }
 
     }
 
@@ -312,24 +313,24 @@ class UserController extends Controller
 
 
         $lead = lead::find($id);
-        $lead->berater = $req->berater ? $req->berater : $lead->berater;
-        $lead->address = $req->address ? $req->nr . $req->address : $lead->address;
+        $lead->berater =  $req->berater ?  filter_var($req->berater,FILTER_SANITIZE_STRING) : $lead->berater;
+        $lead->address =  $req->address ?  filter_var($req->nr . $req->address,FILTER_SANITIZE_STRING) : $lead->address;
         $lead->assign_to_id = Auth::user()->id;
-        $lead->nationality = $req->nationality ? $req->nationality : $lead->nationality;
-        $lead->telephone = $req->telephone ? $req->telephone : $lead->telephone;
+        $lead->nationality = $req->nationality ?  filter_var($req->nationality,FILTER_SANITIZE_STRING) : $lead->nationality;
+        $lead->telephone = $req->telephone ?  filter_var($req->telephone,FILTER_SANITIZE_STRING) : $lead->telephone;
         $lead->time = $req->apptime ? filter_var($req->input('apptime'), FILTER_SANITIZE_STRING) : null;
-        $lead->postal_code = $req->zip ? $req->zip : $lead->postal_code;
-        $lead->first_name = $req->name ? $req->name : $lead->first_name;
-        $lead->last_name = $req->lname ? $req->lname : $lead->last_name;
-        $lead->number_of_persons = $req->personen ? $req->personen : $lead->number_of_persons;
-        $lead->city = $req->ort ? $req->ort : $lead->city;
+        $lead->postal_code = $req->zip ?  filter_var($req->zip,FILTER_SANITIZE_STRING) : $lead->postal_code;
+        $lead->first_name = $req->name ?  filter_var($req->name,FILTER_SANITIZE_STRING) : $lead->first_name;
+        $lead->last_name = $req->lname ?  filter_var($req->lname,FILTER_SANITIZE_STRING) : $lead->last_name;
+        $lead->number_of_persons = $req->personen ?  filter_var($req->personen,FILTER_SANITIZE_STRING) : $lead->number_of_persons;
+        $lead->city = $req->ort ?  filter_var($req->ort,FILTER_SANITIZE_STRING) : $lead->city;
         $lead->appointment_date = $req->appointmentdate ? filter_var($req->input('appointmentdate'), FILTER_SANITIZE_STRING) : null;
         $lead->assigned = 1;
-        $lead->gesundheit = $req->gesundheit ? $req->gesundheit : $lead->gesundheit;
-        $lead->zufriedenheit = $req->zufriedenheit ? $req->zufriedenheit : $lead->zufriedenheit;
-        $lead->bemerkung = $req->bemerkung ? $req->bemerkung : $lead->bemerkung;
-        $lead->sprache = $req->sprache ? $req->sprache : $lead->sprache;
-        $lead->agent = $req->agent ? $req->agent : $lead->agent;
+        $lead->gesundheit = $req->gesundheit ?  filter_var($req->gesundheit,FILTER_SANITIZE_STRING) : $lead->gesundheit;
+        $lead->zufriedenheit = $req->zufriedenheit ?  filter_var($req->zufriedenheit,FILTER_SANITIZE_STRING) : $lead->zufriedenheit;
+        $lead->bemerkung = $req->bemerkung ?  filter_var($req->bemerkung,FILTER_SANITIZE_STRING) : $lead->bemerkung;
+        $lead->sprache = $req->sprache ?  filter_var($req->sprache,FILTER_SANITIZE_STRING) : $lead->sprache;
+        $lead->agent = $req->agent ?  filter_var($req->agent,FILTER_SANITIZE_STRING) : $lead->agent;
 
 
         if ($lead->save()) {
@@ -442,9 +443,9 @@ class UserController extends Controller
         for ($i = 1; $i <= $cnt; $i++) {
             if ($req->input('fname' . $i) != null && $req->input('birthday' . $i) != null && $req->input('lname' . $i) != null) {
                 $family = new family();
-                $family->first_name = filter_var($req->input('fname' . $i));
-                $family->birthdate = filter_var($req->input('birthday' . $i));
-                $family->last_name = filter_var($req->input('lname' . $i));
+                $family->first_name = filter_var($req->input('fname' . $i),FILTER_SANITIZE_STRING);
+                $family->birthdate = filter_var($req->input('birthday' . $i),FILTER_SANITIZE_STRING);
+                $family->last_name = filter_var($req->input('lname' . $i),FILTER_SANITIZE_STRING);
                 $family->leads_id = (int)$idd;
                 $family->status = "Open";
                 $family->save();
@@ -509,7 +510,7 @@ class UserController extends Controller
         if ($request->pending == 1) {
             $pending_rejcted = new PendingRejectedLead();
             $pending_rejcted->lead_id = $leads_id;
-            $pending_rejcted->begrundung = $request->reason;
+            $pending_rejcted->begrundung =  filter_var($request->reason,FILTER_SANITIZE_STRING);
             $pending_rejcted->pending_or_reject = 1;
 
             if ($pending_rejcted->save()) {
@@ -521,7 +522,7 @@ class UserController extends Controller
         } else {
             $pending_rejcted = new PendingRejectedLead();
             $pending_rejcted->lead_id = $leads_id;
-            $pending_rejcted->begrundung = $request->reason;
+            $pending_rejcted->begrundung =  filter_var($request->reason,FILTER_SANITIZE_STRING);
             $pending_rejcted->pending_or_reject = 0;
 
             if ($pending_rejcted->save()) {
@@ -543,7 +544,7 @@ class UserController extends Controller
         $rejectedlead = new lead_history();
 
         $rejectedlead->leads_id = $leads_id;
-        $rejectedlead->status = $request->reason;
+        $rejectedlead->status =  filter_var($request->reason,FILTER_SANITIZE_STRING);
         $rejectedlead->image = $image;
         $rejectedlead->admin_id = Auth::user()->id;
 
@@ -563,7 +564,7 @@ class UserController extends Controller
         $rejectlead = new rejectedlead();
 
         $rejectlead->leads_id = $id;
-        $rejectlead->reason = $request->reason;
+        $rejectlead->reason = filter_var($request->reason,FILTER_SANITIZE_URL);
         $file = $request->file('image');
         $rejectlead->image = $this->storeFile($file, 'img');
 
@@ -578,6 +579,8 @@ class UserController extends Controller
     public function dashboard(Request $req)
     {
         $user = auth();
+        $urole = $user->user()->getRoleNames();
+
         $getmonth = isset($req->getmonth) ? $req->getmonth : "";
         
                 $taskcnt = 0;
@@ -634,7 +637,7 @@ class UserController extends Controller
                     $taskcnt = 0;
                     $tasks = null;
         
-                    if ($user->user()->hasRole('backoffice') || $user->user()->hasRole('admin') || $user->user()->hasRole('salesmanager')) {
+                    if ($urole->contains('backoffice') || $urole->contains('admin') || $urole->contains('salesmanager')) {
                         $pcnt = 0;
                         $mcnt = 0;
                         foreach (family::with('adminpend')
@@ -665,9 +668,9 @@ class UserController extends Controller
         
         
                     }
-                    if ($user->user()->hasRole('fs') || $user->user()->hasRole('admin') || $user->user()->hasRole('salesmanager') || $user->user()->hasRole('digital')) {
+                    if ($urole->contains('fs') || $urole->contains('admin') || $urole->contains('salesmanager') || $urole->contains('digital')) {
         
-                        if ($user->user()->hasRole('fs')) {
+                        if ($urole->contains('fs')) {
         
                             $pendingcnt = DB::table('family_person')
                                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
@@ -691,7 +694,7 @@ class UserController extends Controller
                                 ->count();
         
         
-                        } elseif ($user->user()->hasRole('admin')) {
+                        } elseif ($urole->contains('admin')) {
         
                             $pending = DB::table('family_person')
                                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
@@ -736,7 +739,7 @@ class UserController extends Controller
                             $percnt = (100 / $tasks) * $done;
                         }
         
-                        if ($user->user()->hasRole('fs')) {
+                        if ($urole->contains('fs')) {
                             $offen = DB::table('leads')
                             ->join('family_person','leads.id','family_person.leads_id')
                             ->where('leads.assign_to_id',$user->user()->id)
@@ -759,8 +762,8 @@ class UserController extends Controller
                                 ->count();
                         }
                     }
-                    if ($user->user()->hasRole('fs') || $user->user()->hasRole('digital')) {
-                        if ($user->user()->hasRole('fs')) {
+                    if ($urole->contains('fs') || $urole->contains('digital')) {
+                        if ($urole->contains('fs')) {
                             $todayAppointCount = lead::where('assign_to_id', $user->user()->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 0)->where('assigned', 1)->get()->count();
                         } else {
                             $todayAppointCount = lead::where('assign_to_id', $user->user()->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 1)->where('assigned', 1)->get()->count();
@@ -890,9 +893,9 @@ class UserController extends Controller
                             'familyCount' => $fmcount
                         ];
                         return view('dashboard', compact('done', 'tasks', 'pendingcnt', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'counterat', 'offen'));
-                    } elseif ($user->user()->hasRole('backoffice')) {
+                    } elseif ($urole->contains('backoffice')) {
                         return view('dashboard', compact('pendencies', 'morethan30'));
-                    } elseif ($user->user()->hasRole('salesmanager')) {
+                    } elseif ($urole->contains('salesmanager')) {
         
         
                         $consultation = PersonalAppointment::where('user_id', $user->user()->id)->where('AppOrCon', 2)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
@@ -915,7 +918,7 @@ class UserController extends Controller
         
                         return view('dashboard', compact('personalApp', 'consultation', 'done', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'countconsultation', 'provisionertCount', 'offenCount', 'aufgenomenCount', 'zuruckCount', 'abgCount', 'offen'));
         
-                    } elseif ($user->user()->hasRole('admin')) {
+                    } elseif ($urole->contains('admin')) {
                         $personalApp = PersonalAppointment::where('AppOrCon', 1)->where('assignfrom', $user->user()->id)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
                         $countpersonalApp = $personalApp->count();
                         $admins = Admins::all();

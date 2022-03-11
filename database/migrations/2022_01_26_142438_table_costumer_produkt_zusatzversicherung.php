@@ -23,7 +23,7 @@ class TableCostumerProduktZusatzversicherung extends Migration
             $table->date('duration_from_PZ')->nullable();
             $table->date('duration_to_PZ')->nullable();
             $table->string('status_PZ')->nullable();
-            $table->date('last_adjustment_PZ')->nullable()->default(0);
+            $table->date('last_adjustment_PZ')->nullable()->useCurrent();
             $table->string('provision_PZ')->nullable();
 
             $table->string('produkt_PZ2')->nullable();

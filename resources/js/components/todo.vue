@@ -115,6 +115,7 @@
                             <span class="ps-1 fw-600">Kunde</span>
                         </label>
                         <select id="costumer-input" name="costumer" class="form-control" @change="onChangeCostumer($event)">
+                            <option></option>
                             <option v-for="costumer in todos.costumers" :value="costumer.id">{{costumer.first_name}}
                                 {{ costumer.last_name }}
                             </option>
@@ -210,7 +211,7 @@ export default {
     mounted() {
         this.fetchnumbers();
         this.fetchtasks();
-        this.defaultvalue();
+
     },
     data() {
         return {
@@ -235,9 +236,7 @@ export default {
             );
             val.value = "";
         },
-        defaultvalue: function () {
-            this.costumer = this.todos.costumers[0].id;
-        },
+ 
         assignpendency: function () {
             axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&task=' + document.getElementById('task').value);
             document.getElementById('alrt').innerHTML = "";
@@ -259,8 +258,8 @@ export default {
         fetchtasks: function () {
             axios.get('todos').then((response) => {
                 this.todos = response.data,
-                this.admin = response.data.admins[0].id,
-                this.costumer = response.data.costumers[0].id
+                this.admin = response.data.admins[0].id
+                
             });
         }
     },

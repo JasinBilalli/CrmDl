@@ -51,20 +51,20 @@ else{
  public function sendmessage($u1,$u2,Request $req){
   $u1 = Crypt::decrypt($u1) / 1244;
   $u2 = Crypt::decrypt($u2) / 1244;
-
+$user = auth()->user();
    $type = "";
    if($req->hasFile('file')) { $type = "file"; $text = $this->storeFile($req->file('file'),'img');}
    else{
      $type = 'text'; $text = filter_var($req->text,FILTER_SANITIZE_STRING);
    }
   $conversation = Chat::conversations()->between(Admins::find($u1),Admins::find($u2));
-  if($u1 == Auth::user()->id || $u2 == Auth::user()->id){
+  if($u1 == $user->id || $u2 == $user->id){
   if($conversation){
     $participants = $conversation->getParticipants();
-if($participants->contains('id',Auth::user()->id)){
+if($participants->contains('id',$user->id)){
     $message = Chat::message($text)
 		->type($type)
-		->from(Auth::user())
+		->from($user)
 		->to($conversation)
 		->send();
   }
@@ -76,7 +76,7 @@ if($participants->contains('id',Auth::user()->id)){
     $conversation = Chat::createConversation([Admins::find($u1),Admins::find($u2)])->makeDirect();
     $message = Chat::message(filter_var($req->text,FILTER_SANITIZE_STRING))
 		->type('file')
-		->from(Auth::user())
+		->from($user)
 		->to($conversation)
 		->send();
   }

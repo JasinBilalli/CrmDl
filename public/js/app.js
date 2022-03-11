@@ -7888,11 +7888,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.fetchnumbers();
     this.fetchtasks();
-    this.defaultvalue();
   },
   data: function data() {
     return {
@@ -7915,9 +7915,6 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('addnumber?number=' + val.value).then(this.fetchnumbers);
       val.value = "";
     },
-    defaultvalue: function defaultvalue() {
-      this.costumer = this.todos.costumers[0].id;
-    },
     assignpendency: function assignpendency() {
       axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&task=' + document.getElementById('task').value);
       document.getElementById('alrt').innerHTML = "";
@@ -7937,7 +7934,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.get('todos').then(function (response) {
-        _this2.todos = response.data, _this2.admin = response.data.admins[0].id, _this2.costumer = response.data.costumers[0].id;
+        _this2.todos = response.data, _this2.admin = response.data.admins[0].id;
       });
     }
   }
@@ -38622,17 +38619,21 @@ var render = function () {
                   },
                 },
               },
-              _vm._l(_vm.todos.costumers, function (costumer) {
-                return _c("option", { domProps: { value: costumer.id } }, [
-                  _vm._v(
-                    _vm._s(costumer.first_name) +
-                      "\n                                " +
-                      _vm._s(costumer.last_name) +
-                      "\n                            "
-                  ),
-                ])
-              }),
-              0
+              [
+                _c("option"),
+                _vm._v(" "),
+                _vm._l(_vm.todos.costumers, function (costumer) {
+                  return _c("option", { domProps: { value: costumer.id } }, [
+                    _vm._v(
+                      _vm._s(costumer.first_name) +
+                        "\n                                " +
+                        _vm._s(costumer.last_name) +
+                        "\n                            "
+                    ),
+                  ])
+                }),
+              ],
+              2
             ),
           ]),
           _vm._v(" "),

@@ -38,14 +38,20 @@ $title = $req->title ? $req->title : "";
 
     $pendency = new Pendency();
     $pendency->title = $title;
-
+    $fid = (int) $req->id;
   $pendency->admin_id = (int) $req->admin;
-  $pendency->family_id = (int) $req->id;
+  $pendency->family_id = $fid;
   $pendency->description = filter_var($req->desc,FILTER_SANITIZE_STRING);
-  $pendency->type = "task";
+  if($fid == 0){
+  $pendency->type = "Order";
+}
+else{
+  $pendency->type = "Task";
+}
   $pendency->title = filter_var($req->task,FILTER_SANITIZE_STRING);
   $pendency->save();
-  $url =  '<a href="'. route("leadfamilyperson",[Crypt::encrypt((int) $req->id * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pendency->id)->admin_id * 1244),"pend_id" => Pendency::find((int) $pendency->id)->id]) . '"> Ihnen wurde ein Anhängsel zugeteilt für:' . family::find((int) $req->id)->first_name . '</a>';
+  
+  $url =  '<a href="'. route("leadfamilyperson",[Crypt::encrypt((int) $req->id * 1244),"admin_id" => Crypt::encrypt($pendency->admin_id * 1244),"pend_id" => $pendency->id]) . '"> Ihnen wurde ein Anhängsel zugeteilt für:' . family::find((int) $req->id)->first_name . '</a>';
   Admins::find((int) $req->admin)->notify(new SendNotificationn($url));
   $family = DB::table('family_person')->where('id','=',$id)->update(['status' => 'Submited']);
 }
@@ -570,6 +576,7 @@ $title = $req->title ? $req->title : "";
          ->where('pendencies.completed','=',0)
          ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
          ->paginate(200);
+      
    
    
        }
@@ -600,7 +607,7 @@ $title = $req->title ? $req->title : "";
          ->where('pendencies.admin_id','=',$user->user()->id)
          ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
          ->paginate(200);
-         
+        
    
    
    

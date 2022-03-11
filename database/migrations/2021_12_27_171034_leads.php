@@ -17,8 +17,8 @@ class Leads extends Migration
         Schema::drop('leads');
         Schema::create('leads',function(Blueprint $table){
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('first_name')->index();
+            $table->string('last_name')->index();
             $table->string('telephone');
             $table->date('birthdate')->nullable();
             $table->string('city')->nullable();
@@ -31,10 +31,10 @@ class Leads extends Migration
             $table->string('slug')->nullable();
             $table->string('status_task')->nullable();
             $table->string('status_contract')->nullable();
-            $table->boolean('completed')->default(0);
-            $table->date('appointment_date')->nullable();
+            $table->boolean('completed')->default(0)->index();
+            $table->date('appointment_date')->nullable()->index();
             $table->integer('campaign_id'); //Foreign Key
-            $table->integer('assign_to_id')->nullable(); //Foreign Key
+            $table->integer('assign_to_id')->nullable()->index(); //Foreign Key
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });
