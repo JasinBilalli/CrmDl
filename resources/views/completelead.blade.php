@@ -218,7 +218,7 @@
                 @endif
             </section>
         </div>
-        <div class="d-flex justify-content-end">
+        <div class="">
             <div class="wrapper-div px-4 py-0 py-sm-4 mx-0 mx-sm-3">
                 <div class="row g-0">
                     <div class="row">

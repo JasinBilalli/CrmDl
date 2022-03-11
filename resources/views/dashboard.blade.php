@@ -869,12 +869,20 @@
         </div>
             @if(!Auth::guard('admins')->user()->hasRole('backoffice'))
                 <div class="col-12 col-md-12 col-lg-12 g-0">
-                    <div class="personal-appointments">
-                        <div class="header px-3 px-sm-3 justify-content-between">
+                    <div class="personal-appointments m-2">
+                        <div class="header  justify-content-between">
+                            <div class="d-flex">
                             <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-file-earmark-lock" viewBox="0 0 16 16">
+                                    <path d="M10 7v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V9.3c0-.627.46-1.058 1-1.224V7a2 2 0 1 1 4 0zM7 7v1h2V7a1 1 0 0 0-2 0zM6 9.3v2.4c0 .042.02.107.105.175A.637.637 0 0 0 6.5 12h3a.64.64 0 0 0 .395-.125c.085-.068.105-.133.105-.175V9.3c0-.042-.02-.107-.105-.175A.637.637 0 0 0 9.5 9h-3a.637.637 0 0 0-.395.125C6.02 9.193 6 9.258 6 9.3z"/>
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="my-auto ps-2">
                                 <span>Private Termine</span>
                             </div>
-                            <div class="">
+                            </div>
+                            <div class="count h-100 px-4 mt-2">
                                 <span>{{$countpersonalApp}}</span>
                             </div>
                         </div>
@@ -1741,7 +1749,9 @@
                         vertical-align: middle;
                         display: flex;
                         align-items: center;
+
                     }
+
                     .dateee {
                         border-radius: 15px;
                         border: #4CC590 1px solid;
@@ -2176,23 +2186,24 @@
                     }
 
                     .personal-appointments .header {
-                        border-bottom: 1px solid #70707050;
-                        border-top: 1px solid #70707050;
-                        border-right: 1px solid #70707050;
-                        border-left: 1px solid #70707050;
+                        /* border-bottom: 1px solid #70707050; */
+                        /* border-top: 1px solid #70707050; */
+                        /* border-right: 1px solid #70707050; */
+                        /* border-left: 1px solid #70707050; */
                         display: flex;
                         align-items: center;
                         font-weight: bold;
                         height: 60px;
-                        background-color: #EFEFEF;
+                        background-color: #fff;
                     }
 
                     .personal-appointments .content {
-                        height: 45vh;
+                        height: 450px;
+                        background-color: #EEEFEF;
                     }
 
                     .personal-appointments .content .overflow-div {
-                        height: 27vh;
+                        height: 300px;
                         overflow: auto;
 
                     }
