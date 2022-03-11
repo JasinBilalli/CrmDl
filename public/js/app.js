@@ -7864,6 +7864,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.fetchnumbers();
@@ -7895,7 +7909,7 @@ __webpack_require__.r(__webpack_exports__);
       this.costumer = this.todos.costumers[0].id;
     },
     assignpendency: function assignpendency() {
-      axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value);
+      axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&task=' + document.getElementById('task').value);
       document.getElementById('alrt').innerHTML = "";
       document.getElementById('alrt').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                    <strong>Pendency was assigned successfully</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div>';
     },
@@ -38401,6 +38415,53 @@ var render = function () {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "mb-2" }, [
+            _c(
+              "label",
+              { staticClass: "form-label mb-1", attrs: { for: "admin-input" } },
+              [
+                _c("span", [
+                  _c(
+                    "svg",
+                    {
+                      staticClass: "bi bi-card-checklist",
+                      attrs: {
+                        xmlns: "http://www.w3.org/2000/svg",
+                        width: "30",
+                        fill: "#707070",
+                        viewBox: "0 0 16 16",
+                      },
+                    },
+                    [
+                      _c("path", {
+                        attrs: {
+                          d: "M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("path", {
+                        attrs: {
+                          d: "M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z",
+                        },
+                      }),
+                    ]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "ps-1" }, [
+                  _vm._v(
+                    "\n                                            Task\n                                        "
+                  ),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { id: "task", type: "text" },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-2" }, [
             _c("label", { staticClass: "form-label", attrs: { for: "desc" } }, [
               _c("span", [
                 _c(
@@ -38437,13 +38498,7 @@ var render = function () {
             _vm._v(" "),
             _c("textarea", {
               staticClass: "form-control",
-              attrs: {
-                type: "text",
-                id: "desc",
-                placeholder: "Description",
-                rows: "3",
-                required: "",
-              },
+              attrs: { type: "text", id: "desc", rows: "3", required: "" },
             }),
           ]),
         ]),

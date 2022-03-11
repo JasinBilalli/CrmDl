@@ -47,10 +47,10 @@ return [
     'accounts' => [
 
         'outlook' => [// account identifier
-            'host'  =>  'outlook.office365.com',
+            'host'  =>  'imap-mail.outlook.com',
             'port'  =>  993,
             'protocol'  => 'imap', //might also use imap, [pop3 or nntp (untested)]
-            'encryption'    => 'ssl', // Supported: false, 'ssl', 'tls', 'notls', 'starttls'
+            'encryption'    => 'false', // Supported: false, 'ssl', 'tls', 'notls', 'starttls'
             'validate_cert' =>  true,
             'username' => 'bulzart@outlook.com',
             'password' => 'paswordi123.',

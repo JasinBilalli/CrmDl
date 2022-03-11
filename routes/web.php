@@ -72,9 +72,14 @@ route::prefix('')->middleware('confirmcode')->group(function(){
       return redirect()->back();
    })->name('importleads')->middleware('role:admin|salesmanager');
    route::get('getleads',function(){
-      if (Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('salesmanager') || Auth::guard('admins')->user()->hasRole('backoffice')) {
+      $user = auth()->user();
+      $urole = $user->getRoleNames();
+  
+   
+    
+      if ($urole->contains('admin') || $urole->contains('salesmanager') || $urole->contains('backoffice')) {
          $leads['leads'] = lead::with('campaign')->with('info')->where('completed', '0')->where('assigned', 0)->where('assign_to_id', null)->where('wantsonline',0)->where('rejected',0)->orderBy('updated_at','asc')->select('leads.*')->paginate(100);
-     } elseif (Auth::guard('admins')->user()->hasRole('fs')) {
+     } elseif ($urole->contains('fs')) {
       $leads['leads'] = lead::with('campaign')->with('info')->where('completed', '0')->where('assigned', 0)->orderBy('updated_at','asc')->where('leads.assign_to_id',Auth::user()->id)->where('wantsonline',0)->where('rejected',0)->select('leads.*')->paginate(100);
    }
 $instagram = 0;
@@ -101,7 +106,7 @@ $leadinfo = $leads['leads'][$i]->info;
      $leads['instagram'] = $instagram;
      $leads['facebook'] = $facebook;
 
-     return $leads;
+     return response()->json($leads);
    })->middleware('role:admin|fs|salesmanager');
    route::post('addslead',[UserController::class,'addslead'])->name('addslead')->middleware('role:admin|fs|salesmanager');
    route::get('assigntofs/{admin}',function($admin = null,Request $req){
@@ -216,7 +221,9 @@ route::any('sendmessage/{u1}/{u2}',[ChatController::class,'sendmessage']);
 route::get('getadmin',function (){
    return Auth::guard('admins')->user()->id;
 });
+route::post('editclientform/{id}',[StatusController::class,'editclientform'])->name('editclientform');
 
+route::get('editclientdata/{id}',[StatusController::class,'editclientdata'])->name('editclientdata');
 route::get('rleads',[UserController::class,'rleads'])->name('rleads');
 route::get('leadhistory',function(Request $request){
    if(!Auth::user()->hasRole('fs')){

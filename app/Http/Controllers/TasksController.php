@@ -43,11 +43,11 @@ $title = $req->title ? $req->title : "";
   $pendency->family_id = (int) $req->id;
   $pendency->description = filter_var($req->desc,FILTER_SANITIZE_STRING);
   $pendency->type = "task";
+  $pendency->title = filter_var($req->task,FILTER_SANITIZE_STRING);
   $pendency->save();
   $url =  '<a href="'. route("leadfamilyperson",[Crypt::encrypt((int) $req->id * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pendency->id)->admin_id * 1244),"pend_id" => Pendency::find((int) $pendency->id)->id]) . '"> Ihnen wurde ein Anhängsel zugeteilt für:' . family::find((int) $req->id)->first_name . '</a>';
   Admins::find((int) $req->admin)->notify(new SendNotificationn($url));
   $family = DB::table('family_person')->where('id','=',$id)->update(['status' => 'Submited']);
-
 }
   public function accepttask($id)
   {
@@ -59,6 +59,9 @@ $title = $req->title ? $req->title : "";
   }
   public function today(Request $req)
   {
+    $user = auth()->user();
+    $urole = auth()->user()->getRoleNames();
+   
     $some_date = Carbon::now()->format('H:i');
     $now = (int) str_replace(':', '', $some_date);
 
@@ -67,7 +70,7 @@ $title = $req->title ? $req->title : "";
     $data = null;
     $cnt = 0;
     if ($req->date != null) {
-      if ($admin->hasRole('admin') || Auth::user()->hasRole('salesmanager')) {
+      if ($urole->contains('admin') || $urole->contains('salesmanager')) {
         foreach (DB::table('leads')
         ->where('wantsonline', 0)
         ->where('appointment_date', $req->date)
@@ -82,14 +85,14 @@ $title = $req->title ? $req->title : "";
             $cnt++;
 
         }
-      } elseif ($admin->hasRole('fs')) {
+      } elseif ($urole->contains('fs')) {
           foreach (DB::table('leads')
                        ->where('wantsonline', 0)
                        ->where('appointment_date', $req->date)
                        ->whereNotNull('assign_to_id')
                        ->orderBy('time','desc')
                        ->where('completed',0)
-              ->where('leads.assign_to_id',Auth::guard('admins')->user()->id)
+              ->where('leads.assign_to_id',$user->id)
                        ->select('leads.first_name','leads.last_name','leads.address','leads.id')
                        ->paginate(15) as $d){
               $data[$cnt] = $d;
@@ -101,7 +104,7 @@ $title = $req->title ? $req->title : "";
 
 
       }
-      elseif(Auth::user()->hasRole('digital')) {
+      elseif($urole->contains('digital')) {
         foreach (DB::table('leads')
                        ->where('wantsonline', 1)
                        ->where('appointment_date', $req->date)
@@ -117,7 +120,7 @@ $title = $req->title ? $req->title : "";
           }
       }
     } else {
-      if ($admin->hasRole('admin') || Auth::user()->hasRole('salesmanager')) {
+      if ($urole->contains('admin') || $urole->contains('salesmanager')) {
         if ($now > 2300) {
             foreach (DB::table('leads')
                          ->where('wantsonline', 0)
@@ -151,7 +154,7 @@ $title = $req->title ? $req->title : "";
             }
         }
       }
-      if ($admin->hasRole('fs')) {
+      if ($urole->contains('fs')) {
         if ($now > 2300) {
             foreach (DB::table('leads')
                          ->where('wantsonline', 0)
@@ -160,7 +163,7 @@ $title = $req->title ? $req->title : "";
                          ->where('completed',0)
                          ->select('leads.first_name','leads.last_name','leads.address','leads.id')
                          ->where('appointment_date', Carbon::now()->addDays()->toDateString())
-                         ->where('leads.assign_to_id',Auth::guard('admins')->user()->id)
+                         ->where('leads.assign_to_id',$user->id)
                          ->paginate(15) as $d){
                 $data[$cnt] = $d;
                 $val = (int) $d->id;
@@ -176,7 +179,7 @@ $title = $req->title ? $req->title : "";
                          ->where('completed',0)
                          ->where('appointment_date',Carbon::now()->format('Y-m-d'))
                          ->select('leads.first_name','leads.last_name','leads.address','leads.id')
-                         ->where('leads.assign_to_id',Auth::guard('admins')->user()->id)
+                         ->where('leads.assign_to_id',$user->id)
                          ->paginate(15) as $d){
                 $data[$cnt] = $d;
                 $val = (int) $d->id;
@@ -186,7 +189,7 @@ $title = $req->title ? $req->title : "";
             }
         }
       }
-      elseif(Auth::user()->hasRole('digital')){
+      elseif($urole->contains('digital')){
         if ($now > 2300) {
           foreach (DB::table('leads')
                        ->where('wantsonline', 1)
