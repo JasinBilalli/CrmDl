@@ -529,6 +529,7 @@
                     </div>
                 </div>
 
+
             <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
                 <infonumbers></infonumbers>
             </div>
@@ -2200,7 +2201,7 @@
                     .personal-appointments .content {
                         height: 450px;
                         background-color: #EEEFEF;
-                          border-top-left-radius: 10px;
+                        border-top-left-radius: 10px;
                         border-top-right-radius: 0px;
                         border-bottom-left-radius: 10px;
                         border-bottom-right-radius: 10px;
@@ -2214,6 +2215,68 @@
                     .fw-500 {
                         font-weight: 500;
                     }
+                    .tablee-123 tr td:first-child {
+                border-top-left-radius: 10px;
+            }
+
+            .tablee-123 tr td:last-child {
+                border-top-right-radius: 10px;
+            }
+
+            .tablee-123 tr td:first-child {
+                border-bottom-left-radius: 10px;
+            }
+
+            .tablee-123 tr td:last-child {
+                border-bottom-right-radius: 10px;
+            }
+            .answw-task .header {
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                height: 60px;
+                background-color: #fff;
+            }
+
+            .answw-task .content {
+                height: 450px;
+                background-color: #EFEFEF;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 0px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .answw-task .content .overflow-div {
+                overflow: auto;
+                height: 440px;
+                background-color: #EFEFEF;
+                padding: 0 !important;
+            }
+
+            .answw-task tr {
+                background-color: #fff;
+                border-bottom: 5px #EFEFEF solid;
+            }
+
+            .sticky-class1 {
+                font-weight: 500 !important;
+                color: #767676 !important;
+                position: sticky !important;
+                top: 0;
+                background-color: #EFEFEF !important;
+            }
+
+            .count {
+                background-color: #EFEFEF;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                vertical-align: middle;
+                display: flex;
+                align-items: center;
+            }
 
                 </style>
 
