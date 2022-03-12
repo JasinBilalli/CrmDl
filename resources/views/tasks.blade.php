@@ -476,7 +476,7 @@
 
                             <div class="content px-3">
                                 <div class="overflow-div py-3">
-                                    <!-- <div class="p-2 birthday-itemm bg-white d-flex">
+                                     <!-- <div class="p-2 birthday-itemm bg-white d-flex">
                                    @foreach($birthdays as $birth)
                                             <div class="my-auto px-2">
                                                 <span>
@@ -493,7 +493,7 @@
                                     </div> -->
 
 
-                                    <!-- <table class="table table-borderless  table-2">
+                                     <!-- <table class="table table-borderless  table-2">
 
                                         <thead>
                                         <tr class="sticky-class">
@@ -641,7 +641,7 @@
                                             </div>
                                         @endforeach
                                         </tbody>
-                                    </table>
+                                    </table> -->
                                 </div>
                             </div>
                         </div>
