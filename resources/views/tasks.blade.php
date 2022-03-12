@@ -8,7 +8,7 @@
     </head>
 
 
-    {{--    mobile tasks--}}
+    {{--    mobile tasksdssa--}}
 
     </style>
     @if(Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin'))
@@ -112,7 +112,7 @@
                                                         <span class="submited-btn1 py-1 px-3">
                                                 {{ucfirst($task->type)}}
                                                 </span>
-                                                
+
                                                         <span class="submited-btn py-1 px-3">Eingereicht</span>
                                                     @endif
                                                 </div>
@@ -357,68 +357,25 @@
         {{--        Desktop--}}
         <section class="desktop-tasks">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-md-12 col-lg-6 g-0">
-                        <div class="open-tasks">
-                            <div class="header px-3 px-sm-3 justify-content-between">
+                <div class="row g-0">
+                    <div class="col-12 col-md-12 col-lg-6 g-0 px-2">
+                        <div class="open-tasks m-2">
+                            <div class="header  justify-content-between">
                                 <div class="">
                                     <span>Offene Aufgaben</span>
                                 </div>
-                                <div class="col-auto ">
+                                <div class="h-100 count px-4">
                                     {{count($tasks)}}
                                 </div>
                             </div>
-                            <div class="content ps-3">
+                            <div class="content px-3">
                                 <div class="overflow-div">
-                                    <table class="table table-borderless table-striped table-1">
+                                    <table class="table table-borderless table-1">
                                         <thead>
                                         <tr class="sticky-class">
                                             <th scope="col">Datum</th>
                                             <th scope="col">Beschreibung</th>
                                             <th scope="col">Kundename</th>
-                                            <th scope="col" class="text-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22"
-                                                     viewBox="0 0 28.391 27.587">
-                                                    <g id="Group_17" data-name="Group 17" transform="translate(1.25)">
-                                                        <line id="Line_5" data-name="Line 5" x2="25.891"
-                                                              transform="translate(0 24.217)" fill="none"
-                                                              stroke="#8e8e8e"
-                                                              stroke-linecap="round" stroke-width="2.5"/>
-                                                        <line id="Line_6" data-name="Line 6" x2="25.891"
-                                                              transform="translate(0 13.488)" fill="none"
-                                                              stroke="#8e8e8e"
-                                                              stroke-linecap="round" stroke-width="2.5"/>
-                                                        <line id="Line_7" data-name="Line 7" x2="25.891"
-                                                              transform="translate(0 2.76)" fill="none" stroke="#8e8e8e"
-                                                              stroke-linecap="round" stroke-width="2.5"/>
-                                                        <g id="Ellipse_4" data-name="Ellipse 4"
-                                                           transform="translate(4.926 21.457)" fill="#8e8e8e"
-                                                           stroke="#8e8e8e" stroke-width="1">
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065"
-                                                                     stroke="none"/>
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565"
-                                                                     fill="none"/>
-                                                        </g>
-                                                        <g id="Ellipse_5" data-name="Ellipse 5"
-                                                           transform="translate(16.186 10.728)" fill="#8e8e8e"
-                                                           stroke="#8e8e8e" stroke-width="1">
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065"
-                                                                     stroke="none"/>
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565"
-                                                                     fill="none"/>
-                                                        </g>
-                                                        <g id="Ellipse_6" data-name="Ellipse 6"
-                                                           transform="translate(4.926)" fill="#8e8e8e" stroke="#8e8e8e"
-                                                           stroke-width="1">
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065"
-                                                                     stroke="none"/>
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565"
-                                                                     fill="none"/>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-
-                                            </th>
                                         </tr>
                                         </thead>
                                         <tbody id="body-table-edit">
@@ -434,27 +391,6 @@
                                                     onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($task->created_at)->format('Y-m-d') }}</td>
                                                 <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->first_name)}}</td>
                                                 <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->last_name)}}</td>
-                                                <td class="text-center"
-                                                    onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="4.838"
-                                                         height="21.425"
-                                                         viewBox="0 0 4.838 21.425">
-                                                        <g id="Group_1088" data-name="Group 1088"
-                                                           transform="translate(0.082)">
-                                                            <circle id="Ellipse_57" data-name="Ellipse 57" cx="2.419"
-                                                                    cy="2.419" r="2.419" transform="translate(-0.082)"
-                                                                    fill="#ccc"/>
-                                                            <circle id="Ellipse_58" data-name="Ellipse 58" cx="2.419"
-                                                                    cy="2.419" r="2.419"
-                                                                    transform="translate(-0.082 8.294)"
-                                                                    fill="#ccc"/>
-                                                            <circle id="Ellipse_59" data-name="Ellipse 59" cx="2.419"
-                                                                    cy="2.419" r="2.419"
-                                                                    transform="translate(-0.082 16.587)"
-                                                                    fill="#ccc"/>
-                                                        </g>
-                                                    </svg>
-                                                </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -463,69 +399,42 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-6 g-0">
-                        <div class="birthday-div">
-                            <div class="header px-3 px-sm-3 justify-content-between">
+                    <div class="col-12 col-md-12 col-lg-6 g-0 px-2">
+                        <div class="birthday-div m-2">
+                            <div class="header  justify-content-between">
                                 <div class="">
                                     <span>Geburstage/Jubiläen</span>
                                 </div>
-                                <div class="col-auto">
+                                <div class="count h-100 px-4">
                                     {{count($birthdays) + count($personalApp)}}
                                 </div>
                             </div>
+                            <div class="content px-3">
+                                <div class="overflow-div py-3">
+                                    <!-- <div class="p-2 birthday-itemm bg-white d-flex">
+                                   @foreach($birthdays as $birth)
+                                            <div class="my-auto px-2">
+                                                <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                                </svg>
+                                                </span>
+                                            </div>
+                                            <div class="">
+                                                <div class="fs-5 fw-600">{{$birth['name']}}</div>
+                                                <div class="">{{$birth['birthday']}} ({{$birth['age']}} yahre)</div>
+                                            </div>
+                                    @endforeach
+                                    </div> -->
 
-                            <div class="content  ps-3">
-                                <div class="overflow-div">
-                                    <table class="table table-borderless table-striped table-2">
 
+                                    <!-- <table class="table table-borderless  table-2">
                                         <thead>
                                         <tr class="sticky-class">
                                             <th scope="col">Datum</th>
                                             <th scope="col">Wann</th>
                                             <th scope="col">Kundename</th>
-                                            <th scope="col" class="text-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22"
-                                                     viewBox="0 0 28.391 27.587">
-                                                    <g id="Group_17" data-name="Group 17" transform="translate(1.25)">
-                                                        <line id="Line_5" data-name="Line 5" x2="25.891"
-                                                              transform="translate(0 24.217)" fill="none"
-                                                              stroke="#8e8e8e"
-                                                              stroke-linecap="round" stroke-width="2.5"/>
-                                                        <line id="Line_6" data-name="Line 6" x2="25.891"
-                                                              transform="translate(0 13.488)" fill="none"
-                                                              stroke="#8e8e8e"
-                                                              stroke-linecap="round" stroke-width="2.5"/>
-                                                        <line id="Line_7" data-name="Line 7" x2="25.891"
-                                                              transform="translate(0 2.76)" fill="none" stroke="#8e8e8e"
-                                                              stroke-linecap="round" stroke-width="2.5"/>
-                                                        <g id="Ellipse_4" data-name="Ellipse 4"
-                                                           transform="translate(4.926 21.457)" fill="#8e8e8e"
-                                                           stroke="#8e8e8e" stroke-width="1">
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065"
-                                                                     stroke="none"/>
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565"
-                                                                     fill="none"/>
-                                                        </g>
-                                                        <g id="Ellipse_5" data-name="Ellipse 5"
-                                                           transform="translate(16.186 10.728)" fill="#8e8e8e"
-                                                           stroke="#8e8e8e" stroke-width="1">
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065"
-                                                                     stroke="none"/>
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565"
-                                                                     fill="none"/>
-                                                        </g>
-                                                        <g id="Ellipse_6" data-name="Ellipse 6"
-                                                           transform="translate(4.926)" fill="#8e8e8e" stroke="#8e8e8e"
-                                                           stroke-width="1">
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065"
-                                                                     stroke="none"/>
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565"
-                                                                     fill="none"/>
-                                                        </g>
-                                                    </g>
-                                                </svg>
 
-                                            </th>
                                         </tr>
                                         </thead>
                                         <tbody id="body-table-edit">
@@ -534,13 +443,7 @@
                                                 <td scope="row">{{$birth['birthday']}} </td>
                                                 <td>({{$birth['age']}})</td>
                                                 <td>{{$birth['name']}}</td>
-                                                <td class="text-center">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
-                                                         class="bi bi-balloon" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd"
-                                                              d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z" />
-                                                    </svg>
-                                                </td>
+
                                             </tr>
                                         @endforeach
                                         @foreach($personalApp as $perApp)
@@ -551,28 +454,6 @@
                                                     data-bs-target="#exampleModal{{$perApp->id}}">{{$perApp->title}}</td>
                                                 <td data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal{{$perApp->id}}"></td>
-                                                <td class="text-center" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{$perApp->id}}">
-
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="4.838"
-                                                         height="21.425"
-                                                         viewBox="0 0 4.838 21.425">
-                                                        <g id="Group_1088" data-name="Group 1088"
-                                                           transform="translate(0.082)">
-                                                            <circle id="Ellipse_57" data-name="Ellipse 57" cx="2.419"
-                                                                    cy="2.419" r="2.419" transform="translate(-0.082)"
-                                                                    fill="#ccc"/>
-                                                            <circle id="Ellipse_58" data-name="Ellipse 58" cx="2.419"
-                                                                    cy="2.419" r="2.419"
-                                                                    transform="translate(-0.082 8.294)"
-                                                                    fill="#ccc"/>
-                                                            <circle id="Ellipse_59" data-name="Ellipse 59" cx="2.419"
-                                                                    cy="2.419" r="2.419"
-                                                                    transform="translate(-0.082 16.587)"
-                                                                    fill="#ccc"/>
-                                                        </g>
-                                                    </svg>
-                                                </td>
                                             </tr>
                                             <div class="modal fade" id="exampleModal{{$perApp->id}}" tabindex="-1"
                                                  aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -629,19 +510,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-12 g-0">
-                        <div class="pending-divv">
-                            <div class="header px-3 px-sm-3 justify-content-between">
+                    <div class="col-12 col-md-12 col-lg-12 g-0 px-2">
+                        <div class="pending-divv my-2">
+                            <div class="header justify-content-between">
                                 <div class="">
                                     <span>Pendenze / Zur Nachbearbeitung </span>
                                 </div>
-                                <div class="col-auto">
+                                <div class="h-100 px-4 count">
                                     {{count($pending)}}
                                 </div>
                             </div>
-                            <div class="content ps-3">
-                                <div class="overflow-div mt-3">
-                                    <table class="table table-borderless">
+                            <div class="content px-3">
+                                <div class="overflow-div">
+                                    <table class="table table-22 table-borderless">
                                         <thead>
                                         <tr class="sticky-class" style="border-bottom: 1px solid #70707050 !important;">
                                             <th scope="col">Datum</th>
@@ -1026,24 +907,24 @@
         </section>
         <section class="desktop-tasks">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-md-12 col-lg-6 g-0">
+                <div class="row g-0">
+                    <div class="col-12 col-md-12 col-lg-6 g-0 px-2">
                         <div class="answered-div">
-                            <div class="header px-3 px-sm-3 justify-content-between">
-                                <div class="">
+                            <div class="header justify-content-between">
+                                <div class="ps-3">
                                     <span>Beantwortete Aufgaben</span>
                                 </div>
-                                <div class="col-auto">
+                                <div class="my-auto count h-100 px-4">
                                     {{count($answered)}}
                                 </div>
                             </div>
                             <div class="content">
                                 <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
                                     <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
-                                        <form action="{{route('tasks')}}" style="width: 100%;" method="post">
+                                        <form action="{{route('tasks')}}" class="mb-0" style="width: 100%;" method="post">
                                             @csrf
                                             <div class="input-group">
-                                                <div class=" btn search-icon ps-3 pe-2">
+                                                <div class=" btn search-icon ps-3 pe-2 bg-white">
                                                 <span class="">
                                                     <svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg"
                                                          width="22.03" viewBox="0 0 28.03 24.48">
@@ -1145,23 +1026,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-6 g-0">
+                    <div class="col-12 col-md-12 col-lg-6 g-0 px-2">
                         <div class="open-tasks-bo">
-                            <div class="header px-3 px-sm-3 justify-content-between">
+                            <div class="header justify-content-between">
                                 <div class="">
                                     <span>Aufgaben öffnen</span>
                                 </div>
-                                <div class="col-auto">
+                                <div class="px-4 count h-100">
                                     {{count($opened)}}
                                 </div>
                             </div>
                             <div class="content">
                                 <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
                                     <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
-                                        <form action="{{route('tasks')}}" style="width: 100%;" method="post">
+                                        <form action="{{route('tasks')}}" class="mb-0" style="width: 100%;" method="post">
                                             @csrf
                                             <div class="input-group">
-                                                <div class=" btn search-icon ps-3 pe-2">
+                                                <div class="bg-white btn search-icon ps-3 pe-2">
                                             <span class="">
                                                 <svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg"
                                                      width="22.03" viewBox="0 0 28.03 24.48">
@@ -1278,6 +1159,19 @@
         body {
             overflow-x: hidden;
         }
+
+        .count {
+        background-color: #EFEFEF;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+    }
+
+
         .overflow-divvv::-webkit-scrollbar {
             width: 1px !important;
         }
@@ -1700,15 +1594,31 @@
     .table-2 tr:last-child td:last-child {
         border-bottom-right-radius: 10px;
     }
+    .table-22 tr:first-child td:first-child {
+        border-top-left-radius: 10px;
+    }
+    .table-22 tr:first-child td:last-child {
+        border-top-right-radius: 10px;
+    }
+    .table-22 tr:last-child td:first-child {
+        border-bottom-left-radius: 10px;
+    }
+    .table-22 tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+    }
+    .table-22 tr{
+        background-color: #fff;
+    }
     .sticky-class {
         font-weight: 500 !important;
         color: #76767690 !important;
         position: sticky !important;
         top: 0;
-        background-color: #fff !important;
+        background-color: #EFEFEF !important;
     }
     .table-content {
-        border-bottom: 0.5px solid #70707050 !important;
+        /* border-bottom: 0.5px solid #70707050 !important; */
+        border-bottom: 5px solid #EFEFEF;
         font-weight: 600 !important;
         color: #434343;
         border-radius: 5px !important;
@@ -1759,26 +1669,31 @@
         border-radius: 10px;
     }
     .answered-items {
-        background-color: #EFEFEF;
+        background-color: #fff;
         border-radius: 8px;
     }
     /* .answered-div {} */
     .answered-div .header {
-        border-bottom: 1px solid #70707050;
-        border-top: 1px solid #70707050;
-        border-left: 1px solid #70707050;
+        /* border-bottom: 1px solid #70707050; */
+        /* border-top: 1px solid #70707050; */
+        /* border-left: 1px solid #70707050; */
         display: flex;
         align-items: center;
         font-weight: bold;
         height: 60px;
-        background-color: #D1EBFF;
+        background-color: #fff;
     }
     .answered-div .content {
-        height: 60vh;
+        background-color: #EFEFEF;
+        height: 500px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
     .answered-div .content .overflow-div {
         overflow: auto;
-        height: 50vh;
+        height: 400px;
     }
     .answered-div .content .button-div button {
         background-color: #0C71C3;
@@ -1799,22 +1714,27 @@
     }
     /* .open-tasks-bo {} */
     .open-tasks-bo .header {
-        border-bottom: 1px solid #70707050;
-        border-top: 1px solid #70707050;
-        border-right: 1px solid #70707050;
-        border-left: 1px solid #70707050;
+        /* border-bottom: 1px solid #70707050; */
+        /* border-top: 1px solid #70707050; */
+        /* border-right: 1px solid #70707050; */
+        /* border-left: 1px solid #70707050; */
         display: flex;
         align-items: center;
         font-weight: bold;
         height: 60px;
-        background-color: #D1EBFF;
+        background-color: #fff;
     }
     .open-tasks-bo .content {
-        height: 60vh;
-        border-left: 1px solid #70707050;
+        height: 500px;
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        /* border-left: 1px solid #70707050; */
     }
     .open-tasks-bo .content .overflow-div {
-        height: 50vh;
+        height: 400px;
         overflow: auto;
     }
     /* .open-tasks-bo .content .overflow-div span {
@@ -1822,22 +1742,33 @@
     } */
     /* .open-tasks {} */
     .open-tasks .header {
-        border-bottom: 1px solid #70707050;
-        border-top: 1px solid #70707050;
+        /* border-bottom: 1px solid #70707050; */
+        /* border-top: 1px solid #70707050; */
         /* border-right: 1px solid #70707050; */
-        border-left: 1px solid #70707050;
+        /* border-left: 1px solid #70707050; */
         display: flex;
         align-items: center;
         font-weight: bold;
         height: 60px;
-        background-color: #EFEFEF;
+        background-color: #fff;
     }
     .open-tasks .content {
-        height: 60vh;
+        height: 450px;
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
     .open-tasks .content .overflow-div {
         overflow: auto;
-        height: 59vh;
+        height: 440px;
+        background-color: #EFEFEF;
+        padding: 0 !important;
+    }
+    .open-tasks tr{
+        background-color: #fff;
+        border-bottom: 5px #EFEFEF solid ;
     }
     .open-tasks-bo .content input {
         border-color: #707070 !important;
@@ -1847,41 +1778,59 @@
     }
     /* .birthday-div {} */
     .birthday-div .header {
-        border-bottom: 1px solid #70707050;
-        border-top: 1px solid #70707050;
-        border-right: 1px solid #70707050;
-        border-left: 1px solid #70707050;
+        /* border-bottom: 1px solid #70707050; */
+        /* border-top: 1px solid #70707050; */
+        /* border-right: 1px solid #70707050; */
+        /* border-left: 1px solid #70707050; */
         display: flex;
         align-items: center;
         font-weight: bold;
         height: 60px;
-        background-color: #EFEFEF;
+        background-color: #fff;
+    }
+    .birthday-itemm {
+        border-radius: 10px;
     }
     .birthday-div .content {
-        height: 60vh;
-        border-left: 1px solid #70707050;
+        height: 450px;
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        /* border-left: 1px solid #70707050; */
     }
     .birthday-div .content .overflow-div {
         overflow: auto;
-        height: 59vh;
+        height: 420px;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+        padding-right: 0 !important;
     }
     /* .pending-divv {} */
     .pending-divv .header {
-        border-bottom: 1px solid #70707050;
-        border-top: 1px solid #70707050;
-        border-right: 1px solid #70707050;
-        border-left: 1px solid #70707050;
+        /* border-bottom: 1px solid #70707050; */
+        /* border-top: 1px solid #70707050; */
+        /* border-right: 1px solid #70707050; */
+        /* border-left: 1px solid #70707050; */
         display: flex;
         align-items: center;
         font-weight: bold;
         height: 60px;
-        background-color: #EFEFEF;
+        background-color: #fff;
     }
     .pending-divv .content {
-        height: 60vh;
+        height: 500px;
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
     .pending-divv .content .overflow-div {
-        height: 55vh;
+        height: 430px;
         overflow: auto;
+        background-color: #EFEFEF;
+        padding: 0 !important;
     }
 </style>
