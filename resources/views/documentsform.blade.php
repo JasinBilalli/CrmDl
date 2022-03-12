@@ -784,7 +784,7 @@
                                                                         <div class="col">
                                                                             <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
                                                                                 <input type="radio" class="btn-check showpdf" value="Ja" name="leasing" id="btnradio1" autocomplete="off">
-                                                                                <label class="btn btn-outline-secondary w-100 g-0" value="Ja" for="btnradio1">Ja</label>
+                                                                                <label class="btn btn-outline-secondary w-100 g-0" value="Ja" for="btnradio1" onclick="showel(this)">Ja</label>
                                                                                 <input type="radio" class="btn-check" name="leasing" value="Nein" id="btnradio2" autocomplete="off">
                                                                                 <label class="btn btn-outline-secondary w-100 g-0 " for="btnradio2">Nein</label>
                                                                             </div>
@@ -1960,7 +1960,7 @@
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                                 <input type="radio" class="btn-check showpdf" name="eu_pension" value="Ja" id="btnradio5" autocomplete="off" checked>
-                                                                <label class="btn btn-outline-secondary" for="btnradio5">Ja</label>
+                                                                <label class="btn btn-outline-secondary" for="btnradio5" onclick="showel(this)">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="eu_pension" value="Nein" id="btnradio6" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio6">Nein</label>
@@ -3718,19 +3718,19 @@
             '' +
             '                                                                                <input type="radio"' +
             '                                                                                       class="btn-check autopdf" value="Ja"' +
-            '                                                                                       name="leasing' + newncnt + '" id="btnradio1' + newncnt + '"' +
+            '                                                                                       name="leasing' + newncnt + '" id="btnradio1' + newncnt + '1"' +
             '                                                                                       autocomplete="off">' +
             '                                                                                <label' +
             '                                                                                    class="btn btn-outline-secondary w-100 g-0"' +
             '                                                                                    value="Ja"' +
-            '                                                                                    for="btnradio1' + newncnt + '">Ja</label>' +
+            '                                                                                    for="btnradio1' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '                                                                                <input type="radio"' +
             '                                                                                       class="btn-check " name="leasing' + newncnt + '"' +
-            '                                                                                       value="Nein" id="btnradio2' + newncnt + '"' +
+            '                                                                                       value="Nein" id="btnradio2' + newncnt + '2"' +
             '                                                                                       autocomplete="off">' +
             '                                                                                <label' +
             '                                                                                    class="btn btn-outline-secondary w-100 g-0 "' +
-            '                                                                                    for="btnradio2' + newncnt + '">Nein</label>' +
+            '                                                                                    for="btnradio2' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                                            </div>' +
             '                                                                            <div class="">' +
             '                                                                                <select name="leasing_name' + newncnt + '"' +
@@ -3963,18 +3963,18 @@
             '                                                                             aria-label="Basic radio toggle button group">' +
             '' +
             '                                                                            <input type="radio" class="btn-check autopdf"' +
-            '                                                                                   name="repair_shop' + newncnt + '" id="btnradio1_' + newncnt + '_"' +
+            '                                                                                   name="repair_shop' + newncnt + '" id="btnradio1' + newncnt + '1"' +
             '                                                                                   value="Specific garage" checked>' +
             '                                                                            <label' +
             '                                                                                class="btn btn-outline-secondary w-100 g-0"' +
-            '                                                                                for="btnradio1_' + newncnt + '_">Specific' +
+            '                                                                                for="btnradio1' + newncnt + '1" onclick="showel(this)">Specific' +
             '                                                                                garage</label>' +
             '                                                                            <input type="radio" class="btn-check"' +
             '                                                                                   name="repair_shop' + newncnt + '"' +
-            '                                                                                   value="Freie Wahl" id="btnradio2_'+newncnt+'_">' +
+            '                                                                                   value="Freie Wahl" id="btnradio2'+newncnt+'2">' +
             '                                                                            <label' +
             '                                                                                class="btn btn-outline-secondary w-100 g-0 "' +
-            '                                                                                for="btnradio2_' + newncnt + '_">Freie Wahl</label>' +
+            '                                                                                for="btnradio2' + newncnt + '2" onclick="showel(this)">Freie Wahl</label>' +
             '' +
             '                                                                        </div>' +
             '                                                                    </div>' +
@@ -3988,15 +3988,15 @@
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="accident_coverage' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3abcdef' + newncnt + '" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3abcde' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio3abcdef' + newncnt + '">Ja</label>' +
+            '                                                                       for="btnradio3abcdef' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="accident_coverage' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4abcdef' + newncnt + '" autocomplete="off">' +
+            '                                                                       id="btnradio4abcdef' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4abcdef' + newncnt + '">Nein</label>' +
+            '                                                                       for="btnradio4abcdef' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                </div>' +
@@ -4011,15 +4011,15 @@
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="traffic_legal_protection' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3a' + newncnt + '" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3a' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio3a' + newncnt + '">Ja</label>' +
+            '                                                                       for="btnradio3a' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="traffic_legal_protection' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4a' + newncnt + '" autocomplete="off">' +
+            '                                                                       id="btnradio4a' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4a' + newncnt + '">Nein</label>' +
+            '                                                                       for="btnradio4a' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
@@ -4032,15 +4032,15 @@
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="grossly' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3ab' + newncnt + '" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3ab' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio3ab' + newncnt + '">Ja</label>' +
+            '                                                                       for="btnradio3ab' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="grossly' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4ab' + newncnt + '" autocomplete="off">' +
+            '                                                                       id="btnradio4ab' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4ab' + newncnt + '">Nein</label>' +
+            '                                                                       for="btnradio4ab' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
@@ -4053,15 +4053,15 @@
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="glass_protection' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3abc' + newncnt + '" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3abc' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio3abc' + newncnt + '">Ja</label>' +
+            '                                                                       for="btnradio3abc' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="glass_protection' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4abc' + newncnt + '" autocomplete="off">' +
+            '                                                                       id="btnradio4abc' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4abc' + newncnt + '">Nein</label>' +
+            '                                                                       for="btnradio4abc' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
@@ -4075,15 +4075,15 @@
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="parking_damage' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3abcd' + newncnt + '" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3abcd' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio3abcd' + newncnt + '">Ja</label>' +
+            '                                                                       for="btnradio3abcd' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="parking_damage' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4abcd' + newncnt + '" autocomplete="off">' +
+            '                                                                       id="btnradio4abcd' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4abcd' + newncnt + '">Nein</label>' +
+            '                                                                       for="btnradio4abcd' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
@@ -4096,15 +4096,15 @@
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="hour_breakdown_assistance' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3abcde' + newncnt + '" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3abcde' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio3abcde' + newncnt + '">Ja</label>' +
+            '                                                                       for="btnradio3abcde' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="hour_breakdown_assistance' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4abcde' + newncnt + '" autocomplete="off">' +
+            '                                                                       id="btnradio4abcde' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4abcde' + newncnt + '">Nein</label>' +
+            '                                                                       for="btnradio4abcde' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                </div>' +
@@ -4608,6 +4608,15 @@
 
 function qoe(){
         document.getElementById('formaa').submit();
+}
+function showel(x){
+    var val = parseInt(x.getAttribute('for').charAt(x.getAttribute('for').length -1));
+    var val2 = x.getAttribute('for').substring(0,x.getAttribute('for').length -1);
+    console.log(val2);
+    $('#btnradio3').addClass('showpdf');
+    $('#btnradio4 ').removeClass('showpdf');
+  
+
 }
 
 </script>

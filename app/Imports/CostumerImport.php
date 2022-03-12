@@ -27,12 +27,10 @@ class CostumerImport implements ToModel
     /**
     * @param Collection $collection
     */
-    public function collection(Collection $collection)
-    {
-
-    }
+  
 
     public function model(array $row){
+
 
         $lead = new lead();
         $lead->assign_to_id = Auth::user()->id;
@@ -56,6 +54,7 @@ class CostumerImport implements ToModel
             'leads_id' => $lead->id,
             'status' => 'done'
         ]);
+
 
         $dataKK = new LeadDataKK();
         $dataKK->person_id = $family->id;
