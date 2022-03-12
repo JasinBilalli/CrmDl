@@ -53,9 +53,16 @@ class FamilyPersonsController extends Controller
             }
 
             else {
+                $data = LeadDataKK::where('person_id', '=', $idd)->firstOrFail();
+            
                 try {
-                    $data = LeadDataKK::where('person_id', '=', $idd)->firstOrFail();
+                   
+                    if($data->imported == 0){
                     return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
+                    }
+                    else{
+                        return view('documentsform', compact('lead'));
+                    }
                 }
                 catch (Exception $e) {
                     return view('documentsform', compact('lead'));
