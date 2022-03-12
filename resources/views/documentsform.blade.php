@@ -302,7 +302,7 @@
             $person = $lead->id * 1244;
             $personId = \Illuminate\Support\Facades\Crypt::encrypt($person);
         @endphp
-        <form action="{{route('createLeadDataKK',['leadIdd'=> $leadleadid ,'personIdd' => $personId])}}" method="post" enctype="multipart/form-data">
+        <form id="formaa" action="{{route('createLeadDataKK',['leadIdd'=> $leadleadid ,'personIdd' => $personId])}}" method="post" enctype="multipart/form-data">
             @csrf
 
             <input type="hidden" name="newgcount" id="newgcount" value="0">
@@ -2435,16 +2435,14 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal" id="exampleModal" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
-
                         <div class="modal-body text-center">
                             <h4>Ihr Formular wurde an das Backoffice weitergeleitet!</h4>
-                            <br />
+
                             <button class="btn" type="submit" style="background: #3CD598;">OK</button>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -4568,7 +4566,7 @@
             '              </div>'+
             '            </div>'+
             '            <div class="d-flex justify-content-center py-2">'+
-            '              <button class="py-2 px-5 submit-btnnnn">'+
+            '              <button type="button" onclick="qoe()" class="py-2 px-5 submit-btnnnn">'+
             '                Bestätigen'+
             '              </button>'+
             '            </div>'+
@@ -4608,7 +4606,9 @@
     }
 
 
-
+function qoe(){
+        document.getElementById('formaa').submit();
+}
 
 </script>
 
@@ -4633,5 +4633,6 @@
         color: #fff;
         font-weight: bold;
     }
+
 </style>
 
