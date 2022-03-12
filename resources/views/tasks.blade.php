@@ -473,9 +473,11 @@
                                     {{count($birthdays) + count($personalApp)}}
                                 </div>
                             </div>
+
                             <div class="content  ps-3">
                                 <div class="overflow-div">
                                     <table class="table table-borderless table-striped table-2">
+
                                         <thead>
                                         <tr class="sticky-class">
                                             <th scope="col">Datum</th>
@@ -622,7 +624,7 @@
                                             </div>
                                         @endforeach
                                         </tbody>
-                                    </table>
+                                    </table> -->
                                 </div>
                             </div>
                         </div>
