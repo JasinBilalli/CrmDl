@@ -1900,8 +1900,6 @@
                                                                     Lauftzeit:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " type="text" name=""
-                                                                       id="">
                                                                 <label for="from2">From</label>
                                                                 <input class="py-1 form-control " type="date"
                                                                        name="duration_from_PV" id="from2"
