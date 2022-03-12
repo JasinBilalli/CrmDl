@@ -89,6 +89,10 @@ return redirect()->route('tasks');
         $request->hasFile('offer') ? $offer++ : $offer += 0;
 
         $person = family::find($personId);
+        $del = LeadDataKK::where('person_id',$personId)->first();
+        if($del){
+            $del->delete();
+        }
         if ($person->lead->assign_to_id == Auth::guard('admins')->user()->id || Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('salesmanager') || Pendency::where('family_id', $personId)->first()->admin_id == Auth::user()->id) {
             LeadDataKK::create([
                 'leads_id' => $leadId,
@@ -102,6 +106,10 @@ return redirect()->route('tasks');
                 'kundingung_durch_select' => filter_var($request->kundingung_durch_select,FILTER_SANITIZE_STRING),
                 'vollmacht_select' => filter_var($request->vollmacht_select,FILTER_SANITIZE_STRING)
             ]);
+            $del = LeadDataCounteroffered::where('person_id',$personId)->first();
+            if($del){
+                $del->delete();
+            }
             LeadDataCounteroffered::create([
                 'leads_id' => $leadId,
                 'person_id' => $personId,
@@ -109,6 +117,10 @@ return redirect()->route('tasks');
                 'comparison_type' => filter_var($request->comparison_type,FILTER_SANITIZE_STRING),
                 'comment' => filter_var($request->commentFILTER_SANITIZE_STRING)
             ]);
+            $del = LeadDataFahrzeug::where('person_id',$personId)->first();
+            if($del){
+                $del->delete();
+            }
             LeadDataFahrzeug::create([
                 'nuekommentar' => filter_var($request->nuekommentar,FILTER_SANITIZE_STRING),
                 'mandatiert' => $request->mandatiert ? $this->storeFile($request->file('mandatiert'), FolderPaths::KK_FILES) : null,
@@ -120,7 +132,7 @@ return redirect()->route('tasks');
                 'leasing_name' => filter_var($request->leasing_name,FILTER_SANITIZE_STRING),
                 'year_of_purchase' => filter_var($request->year_of_purchase,FILTER_SANITIZE_STRING),
                 'placing_on_the_market' => filter_var($request->placing_on_the_market,FILTER_SANITIZE_STRING),
-                'insurance_date' => filter_var($request->insurance_date,FILTER_SANITIZE_STRING),
+                'insurance_date' => $request->insurance_date,
                 'redeemed' => filter_var($request->redeemed,FILTER_SANITIZE_STRING),
                 'km_stood' => filter_var($request->km_stood,FILTER_SANITIZE_STRING),
                 'issue_date' => filter_var($request->issue_date,FILTER_SANITIZE_STRING),
@@ -139,8 +151,12 @@ return redirect()->route('tasks');
                 'comment' => filter_var($request->commentFahrenzug,FILTER_SANITIZE_STRING),
                 'first_intro' => filter_var($request->first_intro,FILTER_SANITIZE_STRING),
                 'offer' => $request->hasFile('offer') ? $this->storeFile($request->file('offer'),FolderPaths::KK_FILES) : null,
-                'vergleichsart_select' => filter_var($request->vergleichsart_select,FILTER_SANITIZE_STRING)
+                'vergleichsart_select' => $request->vergleichsart_select
             ]);
+            $del = LeadDataThings::where('person_id',$personId)->first();
+            if($del){
+                $del->delete();
+            }
             LeadDataThings::create([
                 'leads_id' => $leadId,
                 'person_id' => $personId,
@@ -161,6 +177,10 @@ return redirect()->route('tasks');
                 'smoker' => filter_var($request->smoker,FILTER_SANITIZE_STRING),
                 'desired' => filter_var($request->desired,FILTER_SANITIZE_STRING),
             ]);
+            $del = LeadDataPrevention::where('person_id',$personId)->first();
+            if($del){
+                $del->delete();
+            }
             LeadDataPrevention::create([
                 'leads_id' => $leadId,
                 'person_id' => $personId,
@@ -168,8 +188,8 @@ return redirect()->route('tasks');
                 'comparison_type' => filter_var($request->comparison_type,FILTER_SANITIZE_STRING),
                 'comment' => filter_var($request->comment__,FILTER_SANITIZE_STRING),
                 'offer' => $request->offersach ? $this->storeFile($request->file('offersach'), FolderPaths::KK_FILES) : null,
-                'number_of_people' => filter_var($request->number_of_people,FILTER_SANITIZE_STRING),
-                'number_of_rooms' => filter_var($request->number_of_rooms,FILTER_SANITIZE_STRING),
+                'number_of_people' => $request->number_of_people,
+                'number_of_rooms' => $request->number_of_rooms,
                 'sum_insured' => filter_var($request->sum_insured,FILTER_SANITIZE_STRING),
                 'desired_additional_coverage' => filter_var($request->desired_additional_coverage,FILTER_SANITIZE_STRING),
                 'personal_liability' => filter_var($request->personal_liability,FILTER_SANITIZE_STRING),
@@ -205,7 +225,7 @@ newnue::create([
     'year_of_purchase' => filter_var($request->input('year_of_purchase' . $i),FILTER_SANITIZE_STRING),
     'placing_on_the_market' => filter_var($request->input('placing_on_the_market' . $i),FILTER_SANITIZE_STRING),
     'nationality' => filter_var($request->input('nationality' . $i),FILTER_SANITIZE_STRING),
-    'insurance_date' => filter_var($request->input('insurance_date' . $i),FILTER_SANITIZE_STRING),
+    'insurance_date' => $request->input('insurance_date' . $i),
     'most_common' => filter_var($request->input('most_common' . $i),FILTER_SANITIZE_STRING),
     'redeemed' => filter_var($request->input('redeemed' . $i),FILTER_SANITIZE_STRING),
     'km_stood' => filter_var($request->input('nationality' . $i),FILTER_SANITIZE_STRING),

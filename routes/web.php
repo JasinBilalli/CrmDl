@@ -1,7 +1,6 @@
 <?php
 
 use App\Events\SendNotification;
-use App\Imports\CostumerImport;
 use App\Models\CostumerProduktGrundversicherung;
 use App\Models\CostumerProduktRechtsschutz;
 use App\Models\CostumerProduktVorsorge;
@@ -41,6 +40,7 @@ use App\Models\data;
 use App\Models\lead;
 use App\Models\lead_info;
 use App\Models\LeadDataPlus;
+use App\Imports\CostumerImport;
 use App\Models\notification;
 use App\Notifications\SendNotification as NotificationsSendNotification;
 use App\Notifications\SendNotificationn;
@@ -77,23 +77,13 @@ route::prefix('')->middleware('confirmcode')->group(function(){
       }
       return redirect()->back();
    })->name('importleads')->middleware('role:admin|salesmanager');
-
-   route::post('importcostumer',function (Request $req){
-           $file = $req->file('costumerfile');
-           \Maatwebsite\Excel\Facades\Excel::import(new CostumerImport, $file);
-
-           return back();
-
-
-   })->name('importcostumer');
-
-
    route::get('getleads',function(){
       $user = auth()->user();
+      
       $urole = $user->getRoleNames();
-
-
-
+  
+   
+    
       if ($urole->contains('admin') || $urole->contains('salesmanager') || $urole->contains('backoffice')) {
          $leads['leads'] = lead::with('campaign')->with('info')->where('completed', '0')->where('assigned', 0)->where('assign_to_id', null)->where('wantsonline',0)->where('rejected',0)->orderBy('updated_at','asc')->select('leads.*')->paginate(100);
      } elseif ($urole->contains('fs')) {
@@ -114,16 +104,16 @@ $leadinfo = $leads['leads'][$i]->info;
      if($leads['leads'][$i]->campaign_id == 1) $instagram++;
      elseif($leads['leads'][$i]->campaign_id == 2) $facebook++;
      else $sanascout++;
-
+     
    }
-
+ 
      $leads['admins'] = Admins::role(['fs'])->get();
      $leads['admin'] = Auth::user()->getRoleNames();
      $leads['sanascout'] = $sanascout;
      $leads['instagram'] = $instagram;
      $leads['facebook'] = $facebook;
 
-     return response()->json($leads);
+     return $leads;
    })->middleware('role:admin|fs|salesmanager');
    route::post('addslead',[UserController::class,'addslead'])->name('addslead')->middleware('role:admin|fs|salesmanager');
    route::get('assigntofs/{admin}',function($admin = null,Request $req){
@@ -141,6 +131,14 @@ $leadinfo = $leads['leads'][$i]->info;
       }
       Admins::find($admin)->notify(new SendNotificationn('<a href="' . route('leads') . '">Ihnen wurden ' . count($array) . ' Leads zugewiesen!</a>'));
    })->name('assigntofs')->middleware('role:admin|salesmanager');
+   route::post('importcostumer',function (Request $req){
+      $file = $req->file('costumerfile');
+      \Maatwebsite\Excel\Facades\Excel::import(new CostumerImport, $file);
+
+      return back();
+
+
+})->name('importcostumer');
    route::get('assignpendency',[TasksController::class,'assignpendency'])->middleware('role:backoffice|admin');
     route::get('acceptapp/{id}',[UserController::class,'acceptapp']);
     route::get('closenots',[UserController::class,'closenots']);
@@ -266,7 +264,7 @@ route::get('getnotifications',function(){
       $cnt++;
       if($not->read_at == null) $data['cnt']++;
    }
-
+   
  return $data;
 });
 route::get('readnotifications',function(){

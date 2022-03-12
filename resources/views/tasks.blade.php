@@ -474,26 +474,9 @@
                                 </div>
                             </div>
 
-                            <div class="content px-3">
-                                <div class="overflow-div py-3">
-                                     <!-- <div class="p-2 birthday-itemm bg-white d-flex">
-                                   @foreach($birthdays as $birth)
-                                            <div class="my-auto px-2">
-                                                <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
-                                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                                                </svg>
-                                                </span>                                               
-                                            </div>
-                                            <div class="">
-                                                <div class="fs-5 fw-600">{{$birth['name']}}</div>
-                                                <div class="">{{$birth['birthday']}} ({{$birth['age']}} yahre)</div>
-                                            </div>
-                                    @endforeach
-                                    </div> -->
-
-
-                                     <!-- <table class="table table-borderless  table-2">
+                            <div class="content  ps-3">
+                                <div class="overflow-div">
+                                    <table class="table table-borderless table-striped table-2">
 
                                         <thead>
                                         <tr class="sticky-class">
@@ -714,7 +697,7 @@
                                         <tbody id="body-table-edit">
                                         @foreach($pending as $task)
                                             @php
-                                                $leadss = $task->family->id * 1244;
+                                                $leadss = $task->id * 1244;
                                                 $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                                 $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
                                                 $pend_id = $task->pid;
@@ -723,7 +706,7 @@
                                                 <td scope="row" data-bs-target="#stats{{$task->pid}}"
                                                     data-bs-toggle="modal">{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$task->created_at)->format('Y-m-d')}}</td>
                                                 <td data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal">{{ucfirst($task->family->first_name)}}  {{ucfirst($task->family->last_name)}}</td>
+                                                    data-bs-toggle="modal">{{ucfirst($task->first_name)}}  {{ucfirst($task->last_name)}}</td>
                                                 <td data-bs-target="#stats{{$task->pid}}"
                                                     data-bs-toggle="modal">{{$task->title}}</td>
                                                 <td data-bs-target="#stats{{$task->pid}}"
