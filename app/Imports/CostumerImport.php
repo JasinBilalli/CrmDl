@@ -45,16 +45,11 @@ $family = family::create([
     'birthdate' => $row[2],
     'leads_id' => $lead->id,
     'status' => 'done'
-
 ]);
-$pendency = new Pendency();
-$pendency->done = 1;
-$pendency->completed = 1;
-$pendency->admin_id = Auth::user()->id;
-$pendency->family_id = $family->id;
-$pendency->save();
+
         $dataKK = new LeadDataKK();
         $dataKK->person_id = $family->id;
+        $dataKK->imported = 1;
         $dataKK->leads_id = $lead->id;
 
         $dataFahrzeug = new LeadDataFahrzeug();
@@ -68,7 +63,11 @@ $pendency->save();
         $dataPrevention->save();
         $dataFahrzeug->save();
         $dataKK->save();
-
+       $pendency = new Pendency();
+       $pendency->done = 1;
+       $pendency->completed = 1;
+       $pendency->family_id = $family->id;
+       $pendency->save();
         return $family;
 
 
