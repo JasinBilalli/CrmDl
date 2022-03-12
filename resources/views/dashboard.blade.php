@@ -2200,6 +2200,10 @@
                     .personal-appointments .content {
                         height: 450px;
                         background-color: #EEEFEF;
+                          border-top-left-radius: 10px;
+                        border-top-right-radius: 0px;
+                        border-bottom-left-radius: 10px;
+                        border-bottom-right-radius: 10px;
                     }
 
                     .personal-appointments .content .overflow-div {

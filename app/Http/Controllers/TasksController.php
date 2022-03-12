@@ -576,7 +576,6 @@ else{
          ->where('pendencies.completed','=',0)
          ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
          ->paginate(200);
-      
    
    
        }
@@ -607,7 +606,7 @@ else{
          ->where('pendencies.admin_id','=',$user->user()->id)
          ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
          ->paginate(200);
-        
+         
    
    
    

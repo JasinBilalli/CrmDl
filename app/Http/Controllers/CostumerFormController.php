@@ -201,7 +201,7 @@ class CostumerFormController extends Controller
             $retchsschutzP->society_PR = filter_var($request->society_PR,FILTER_SANITIZE_STRING);
             $retchsschutzP->produkt_PR = filter_var($request->produkt_PR,FILTER_SANITIZE_STRING);
             $retchsschutzP->status_PR = filter_var($request->status_PR,FILTER_SANITIZE_STRING);
-            $retchsschutzP->last_adjustment_PR = filter_var($request->last_adjustment_PR,FILTER_SANITIZE_STRING);
+            $retchsschutzP->last_adjustment_PR = $request->last_adjustment_PR;
             $retchsschutzP->total_commisions_PR = filter_var($request->total_commisions_PR,FILTER_SANITIZE_STRING);
 
             if($request->status_PR == 'Provisionert'){
@@ -211,13 +211,13 @@ class CostumerFormController extends Controller
             }
 
             $vorsorgeP->person_id_PV = filter_var($id,FILTER_SANITIZE_STRING);
-            $vorsorgeP->graduation_date_PV = filter_var($request->graduation_date_PV,FILTER_SANITIZE_STRING);
-            $vorsorgeP->begin_PV = filter_var($request->begin_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->graduation_date_PV = $request->graduation_date_PV;
+            $vorsorgeP->begin_PV = $request->begin_PV;
             $vorsorgeP->society_PV = filter_var($request->society_PV,FILTER_SANITIZE_STRING);
             $vorsorgeP->pramie_PV = filter_var($request->pramie_PV,FILTER_SANITIZE_STRING);
             $vorsorgeP->payment_rythm_PV = filter_var($request->payment_rythm_PV,FILTER_SANITIZE_STRING);
-            $vorsorgeP->duration_from_PV = filter_var($request->duration_from_PV,FILTER_SANITIZE_STRING);
-            $vorsorgeP->duration_to_PV = filter_var($request->duration_to_PV,FILTER_SANITIZE_STRING);
+            $vorsorgeP->duration_from_PV = $request->duration_from_PV;
+            $vorsorgeP->duration_to_PV = $request->duration_to_PV;
             $vorsorgeP->production_PV = filter_var($request->production_PV,FILTER_SANITIZE_STRING);
             $vorsorgeP->status_PV = filter_var($request->status_PV,FILTER_SANITIZE_STRING);
             $vorsorgeP->last_adjustment_PV = $request->last_adjustment_PV;
@@ -234,7 +234,7 @@ class CostumerFormController extends Controller
             $autoversicherungP->beginning_insurance_PA = $request->beginning_insurance_PA;
             $autoversicherungP->insurance_PA = filter_var($request->insurance_PA,FILTER_SANITIZE_STRING);
             $autoversicherungP->status_PA = filter_var($request->status_PA,FILTER_SANITIZE_STRING);
-            $autoversicherungP->last_adjustment_PA = filter_var($request->last_adjustment_PA,FILTER_SANITIZE_STRING);
+            $autoversicherungP->last_adjustment_PA = $request->last_adjustment_PA;
             $autoversicherungP->total_commisions_PA = filter_var($request->total_commisions_PA,FILTER_SANITIZE_STRING);
 
             if($request->status_PA == 'Provisionert'){
@@ -247,7 +247,7 @@ class CostumerFormController extends Controller
             $hausratP->beginning_insurance_PH = $request->beginning_insurance_PH;
             $hausratP->insurance_PH = filter_var($request->insurance_PH,FILTER_SANITIZE_STRING);
             $hausratP->status_PH = filter_var($request->status_PH,FILTER_SANITIZE_STRING);
-            $hausratP->last_adjustment_PH = filter_var($request->last_adjustment_PH,FILTER_SANITIZE_STRING);
+            $hausratP->last_adjustment_PH = $request->last_adjustment_PH;
             $hausratP->total_commisions_PH = filter_var($request->total_commisions_PH,FILTER_SANITIZE_STRING);
 
             if($request->status_PH == 'Provisionert'){
@@ -366,7 +366,7 @@ class CostumerFormController extends Controller
             'society_PR' => filter_var($request->society_PR,FILTER_SANITIZE_STRING),
             'produkt_PR'=> filter_var($request->produkt_PR,FILTER_SANITIZE_STRING),
             'status_PR'=> filter_var($request->status_PR,FILTER_SANITIZE_STRING),
-            'last_adjustment_PR'=> filter_var($request->last_adjustment_PR,FILTER_SANITIZE_STRING),
+            'last_adjustment_PR'=> $request->last_adjustment_PR,
             'total_commisions_PR'=> filter_var($request->total_commisions_PR,FILTER_SANITIZE_STRING)
         ]);
         if($request->status_PR == 'Provisionert'){
@@ -375,13 +375,13 @@ class CostumerFormController extends Controller
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
         $vorsorgeP = CostumerProduktVorsorge::where('person_id_PV',$id)->update([
-            'graduation_date_PV'=> filter_var($request->graduation_date_PV,FILTER_SANITIZE_STRING),
-            'begin_PV' => filter_var($request->begin_PV,FILTER_SANITIZE_STRING),
+            'graduation_date_PV'=> $request->graduation_date_PV,
+            'begin_PV' => $request->begin_PV,
             'society_PV'=> filter_var($request->society_PV,FILTER_SANITIZE_STRING),
             'pramie_PV'=> filter_var($request->pramie_PV,FILTER_SANITIZE_STRING),
             'payment_rythm_PV'=> filter_var($request->payment_rythm_PV,FILTER_SANITIZE_STRING),
-            'duration_from_PV'=> filter_var($request->duration_from_PV,FILTER_SANITIZE_STRING),
-            'duration_to_PV'=> filter_var($request->duration_to_PV,FILTER_SANITIZE_STRING),
+            'duration_from_PV'=>  $request->duration_from_PV,
+            'duration_to_PV'=> $request->duration_to_PV,
             'production_PV'=> filter_var($request->production_PV,FILTER_SANITIZE_STRING),
             'status_PV'=> filter_var($request->status_PV,FILTER_SANITIZE_STRING),
             'last_adjustment_PV'=> filter_var($request->last_adjustment_PV,FILTER_SANITIZE_STRING),
@@ -399,7 +399,7 @@ class CostumerFormController extends Controller
             'beginning_insurance_PA' => filter_var($request->beginning_insurance_PA,FILTER_SANITIZE_STRING),
             'insurance_PA'=> filter_var($request->insurance_PA,FILTER_SANITIZE_STRING),
             'status_PA'=> filter_var($request->status_PA,FILTER_SANITIZE_STRING),
-            'last_adjustment_PA'=> filter_var($request->last_adjustment_PA,FILTER_SANITIZE_STRING),
+            'last_adjustment_PA'=> $request->last_adjustment_PA,
             'total_commisions_PA'=> filter_var($request->total_commisions_PA,FILTER_SANITIZE_STRING),
         ]);
         if($request->status_PA == 'Provisionert'){
@@ -413,7 +413,7 @@ class CostumerFormController extends Controller
             'beginning_insurance_PH' => filter_var($request->beginning_insurance_PH,FILTER_SANITIZE_STRING),
             'insurance_PH'=> filter_var($request->insurance_PH,FILTER_SANITIZE_STRING),
             'status_PH'=> filter_var($request->status_PH,FILTER_SANITIZE_STRING),
-            'last_adjustment_PH'=> filter_var($request->last_adjustment_PH,FILTER_SANITIZE_STRING),
+            'last_adjustment_PH'=> $request->last_adjustment_PH,
             'total_commisions_PH'=> filter_var($request->total_commisions_PH,FILTER_SANITIZE_STRING),
         ]);
         if($request->status_PH == 'Provisionert'){
