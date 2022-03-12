@@ -292,7 +292,10 @@
             </div>
         </div>
     </div>
-    <div class="col">
+    <div style="display: none" class="col" id="pdf">
+
+    </div>
+    <div class="col" id="old-content">
         @php
             $leadid = $lead->lead->id * 1244;
             $leadleadid = \Illuminate\Support\Facades\Crypt::encrypt($leadid);
@@ -307,7 +310,7 @@
 
 
             <div class="my-1 my-sm-5 mx-2 mx-sm-4">
-                <div class="" style="background-color: #EFEFEF;border-radius: 22px;">
+                <div class="" style="background-color: #EFEFEF;border-radius: 22px;" >
                     <div class="py-4 px-3">
                             <span class="fs-4 input-group">
                                 <div class="pe-3">
@@ -324,6 +327,7 @@
                             </span>
                     </div>
                     <div class="row mx-2 mx-sm-4">
+
                         <nav class="g-0 nav-form-links">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <button class="nav-link active col krankenkasse-btn" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="changecnt(0)"><span class="desk-t">Krankenkasse</span><span class="mobile-t">KK</span><div><span class="mobile-t" style="font-size: 10px;">KK</span></div>
@@ -337,16 +341,17 @@
                             </div>
                         </nav>
                     </div>
-                    <div class="tab-content  mx-2 mx-sm-4 pb-2" id="nav-tabContent">
-                        <div class="tab-pane fade show active krankenkasse-content mb-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                            <div class="row  mx-2 mx-sm-4">
+
+                    <div class="tab-content  mx-2 mx-sm-4 pb-2" id="nav-tabContent" >
+                        <div class="tab-pane fade show active krankenkasse-content mb-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" >
+                            <div class="row  mx-2 mx-sm-4" >
                                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mt-4">
                                     <div class="" style="background-color: #EFEFEF; border-radius: 13px;">
                                         <div class="py-2 px-2">
                                             <div class="row justify-content-between mx-2">
                                                 <div class="col-7 d-flex g-0">
                                                     <div class="">
-                                                            <span class="fw-bold" style=" font-size: 12px;">
+                                                            <span class="fw-bold showname" style=" font-size: 12px;">
                                                                 Vorversicherer
                                                             </span>
                                                     </div>
@@ -389,7 +394,7 @@
                                             <div class="row justify-content-between mx-2">
                                                 <div class="col-7 d-flex g-0">
                                                     <div class="">
-                                                            <span class="fw-bold" style="font-size: 12px;">
+                                                            <span class="fw-bold showname" style="font-size: 12px;">
                                                                 ID Notwending
                                                             </span>
                                                     </div>
@@ -418,8 +423,8 @@
                                                             </g>
                                                         </svg>
                                                     </label>
-                                                    <input type="file" id="file-input-1" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="id_required">
-                                                    <input type="text" class="form-control text-center" id="file-input-1c" disabled style="background:none; border:none;"></span>
+                                                    <input type="file" id="file-input-1" class="svg-div w-100 border-0  g-0 " onchange="upload(this);" name="id_required">
+                                                    <input type="text" class="form-control text-center showpdf" id="file-input-1c" disabled style="background:none; border:none;">
                                                 </div>
                                             </div>
                                         </div>
@@ -431,7 +436,7 @@
                                             <div class="row justify-content-between mx-2">
                                                 <div class="col g-0 d-flex">
                                                     <div class="text-nowrap">
-                                                            <span class="fw-bold" style=" font-size: 12px;">
+                                                            <span class="fw-bold showname" style=" font-size: 12px;">
                                                                 Kundingung durch
                                                             </span>
                                                     </div>
@@ -461,7 +466,7 @@
                                                         </svg>
                                                     </label>
                                                     <input type="file" id="file-input-2" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="notice_by">
-                                                    <input type="text" class="form-control text-center" id="file-input-2c" disabled style="background:transparent; border:none;">
+                                                    <input type="text" class="form-control text-center showpdf" id="file-input-2c" disabled style="background:transparent; border:none;">
                                                 </div>
                                             </div>
                                         </div>
@@ -473,7 +478,7 @@
                                             <div class="row justify-content-between mx-2">
                                                 <div class="col-7 d-flex g-0">
                                                     <div class="">
-                                                            <span class="fw-bold" style=" font-size: 12px;">
+                                                            <span class="fw-bold showname" style=" font-size: 12px;">
                                                                 Vollmacht
                                                             </span>
                                                     </div>
@@ -502,8 +507,8 @@
                                                             </g>
                                                         </svg>
                                                     </label>
-                                                    <input type="file" id="file-input-3" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="power_of_attorney">
-                                                    <input type="text" class="form-control text-center" id="file-input-3c" disabled style="background:transparent; border:none;">
+                                                    <input type="file" id="file-input-3" class="svg-div w-100 border-0  g-0 " onchange="upload(this);" name="power_of_attorney">
+                                                    <input type="text" class="form-control text-center showpdf" id="file-input-3c" disabled style="background:transparent; border:none;">
                                                 </div>
                                             </div>
                                         </div>
@@ -516,7 +521,7 @@
                                             <div class="row mx-2">
                                                 <div class="col-7 d-flex g-0">
                                                     <div class="">
-                                                            <span class="fw-bold" style=" font-size: 12px;">
+                                                            <span class="fw-bold showname" style=" font-size: 12px;">
                                                                 Mandatiert
                                                             </span>
                                                     </div>
@@ -556,7 +561,7 @@
                                                         </svg>
                                                     </label>
                                                     <input type="file" name="mandatiert" id="file-input-9" class="svg-div w-100 border-0  g-0" onchange="upload(this)">
-                                                    <input type="text" class="form-control text-center" id="file-input-9c" disabled style="background:none; border:none;">
+                                                    <input type="text" class="form-control text-center showpdf" id="file-input-9c" disabled style="background:none; border:none;">
 
                                                 </div>
                                             </div>
@@ -616,7 +621,7 @@
                                                 <div class="accordion-body" id="shtogegen" style="background-color: #EFEFEF !important; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
                                                     <div class="">
                                                         <div class="">
-                                                                <span class="" style="font-size: 13px;">
+                                                                <span class="showname" style="font-size: 13px;">
                                                                     Police Hochladen:
                                                                 </span>
                                                         </div>
@@ -635,7 +640,7 @@
                                                                         </svg>
                                                                     </label>
                                                                     <input type="file" id="file-input-4" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="upload_policeFahrzeug">
-                                                                    <input type="text" class="form-control text-center" id="file-input-4c" disabled style="background:transparent; border:none;">
+                                                                    <input type="text" class="form-control text-center showpdf" id="file-input-4c" disabled style="background:transparent; border:none;">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -650,7 +655,7 @@
                                                                 </div>
                                                                 <div class="col g-0 d-flex justify-content-end">
                                                                     <div class="select-div text-end ">
-                                                                        <select name="vergleichsart_select" class="fw-bold" id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
+                                                                        <select name="vergleichsart_select" class="fw-bold " id="" style="background-color: #EFEFEF; font-size: 12px;color:#9F9F9F;">
                                                                             <option selected>Auswählen</option>
                                                                             <option value="1:0 Aktualisierung">1:0 Aktualisierung</option>
                                                                             <option value="0:1 Downgraden">0:1 Downgraden</option>
@@ -662,8 +667,8 @@
                                                         </div>
                                                         <div class="">
                                                             <div class="mb-3 mt-3">
-                                                                <label for="exampleFormControlTextarea1" class="form-label" style="font-size: 13px;">Kommentar</label>
-                                                                <textarea name="commentFahrenzug" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                                <label for="exampleFormControlTextarea1" class="form-label showname" style="font-size: 13px;">Kommentar</label>
+                                                                <textarea name="commentFahrenzug" class="form-control showpdf" id="exampleFormControlTextarea1" rows="3"></textarea>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -685,7 +690,7 @@
                                                                                 </svg>
                                                                             </label>
                                                                             <input type="file" id="file-input-4ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
-                                                                            <input type="text" class="form-control text-center" id="file-input-4wwc" disabled style="background:transparent; border:none;">
+                                                                            <input type="text" class="form-control text-center showpdf" id="file-input-4wwc" disabled style="background:transparent; border:none;">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -742,7 +747,7 @@
                                                                 <div class="my-3">
                                                                     <div class="">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     Fahrzeugausweis hochladen
                                                                                 </span>
                                                                         </div>
@@ -760,7 +765,7 @@
                                                                                     </svg>
                                                                                 </label>
                                                                                 <input type="file" id="file-input-5" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="vehicle_id">
-                                                                                <input type="text" class="form-control text-center" id="file-input-5c" disabled style="background:transparent; border:none;" name="vehicle_id">
+                                                                                <input type="text" class="form-control text-center showpdf" id="file-input-5c" disabled style="background:transparent; border:none;" name="vehicle_id">
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -771,20 +776,19 @@
                                                                     <div class="row">
                                                                         <div class="col">
                                                                             <div class="">
-                                                                                    <span>
+                                                                                    <span class="showname">
                                                                                         Leasing:
                                                                                     </span>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col">
                                                                             <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
-
-                                                                                <input type="radio" class="btn-check" value="Ja" name="leasing" id="btnradio1" autocomplete="off">
+                                                                                <input type="radio" class="btn-check showpdf" value="Ja" name="leasing" id="btnradio1" autocomplete="off">
                                                                                 <label class="btn btn-outline-secondary w-100 g-0" value="Ja" for="btnradio1">Ja</label>
                                                                                 <input type="radio" class="btn-check" name="leasing" value="Nein" id="btnradio2" autocomplete="off">
                                                                                 <label class="btn btn-outline-secondary w-100 g-0 " for="btnradio2">Nein</label>
-
                                                                             </div>
+
                                                                             <div class="">
                                                                                 <select name="leasing_name" class="w-100 slct1" id="">
 
@@ -810,11 +814,12 @@
                                                                         </div>
                                                                         <div class="input-select-div mb-2">
                                                                             <div class="text-nowrap">
-                                                                                    <span class="fw-normal">
+                                                                                    <span class="fw-normal showname">
                                                                                         Kaufjahr
                                                                                     </span>
                                                                             </div>
-                                                                            <select name="year_of_purchase"  class="form-select w-75" aria-label="Default select example" id="">
+                                                                            <select name="year_of_purchase"  class="form-select w-75 showpdf" aria-label="Default select example" id="">
+                                                                                <option selected></option>
                                                                                 @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)
                                                                                     <option value="{{$i}}">{{$i}}</option>
                                                                                 @endfor
@@ -823,31 +828,31 @@
                                                                     </div>
                                                                     <div class="date-input-div mb-2">
                                                                         <div class="">
-                                                                                <span>
+                                                                                <span class="showname">
                                                                                     Este inverkehrssetzung:
                                                                                 </span>
                                                                         </div>
 
-                                                                        <input name="first_intro" type="date" class="py-1 border-0">
+                                                                        <input name="first_intro" type="date" class="py-1 border-0 showpdf">
 
                                                                     </div>
                                                                     <div class="date-input-div mb-2">
                                                                         <div class="">
-                                                                                <span>
+                                                                                <span class="showname">
                                                                                     Beginn Versicherung:
                                                                                 </span>
                                                                         </div>
 
-                                                                        <input name="insurance_date" type="date" class="py-1 border-0">
+                                                                        <input name="insurance_date" type="date" class="py-1 border-0 showpdf">
 
                                                                     </div>
                                                                     <div class="input-select-div mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     Eingelöster Kanton:
                                                                                 </span>
                                                                         </div>
-                                                                        <select name="redeemed" class="form-select w-75" aria-label="Default select example">
+                                                                        <select name="redeemed" class="form-select w-75 showpdf" aria-label="Default select example">
                                                                             <option selected></option>
                                                                             <option value="Zürich">Zürich</option>
                                                                             <option value="Bern">Bern</option>
@@ -879,12 +884,12 @@
                                                                     </div>
                                                                     <div class="input-div1 mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     KM - Stand:
                                                                                 </span>
                                                                         </div>
 
-                                                                        <input name="km_stood" class="py-1" type="number" id="">
+                                                                        <input name="km_stood" class="py-1 showpdf" type="number" id="">
 
                                                                     </div>
                                                                 </div>
@@ -898,21 +903,21 @@
                                                                     </div>
                                                                     <div class="date-input-div mb-2">
                                                                         <div class="">
-                                                                                <span>
+                                                                                <span class="showname">
                                                                                     Ausstelldatum Fuhrerausweis:
                                                                                 </span>
                                                                         </div>
 
-                                                                        <input name="placing_on_the_market" type="date" class="py-1 border-0">
+                                                                        <input name="placing_on_the_market" type="date" class="py-1 border-0 showpdf">
 
                                                                     </div>
                                                                     <div class="input-select-div mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     Nationalität:
                                                                                 </span>
                                                                         </div>
-                                                                        <select  class="form-select w-75" name="nationality">
+                                                                        <select  class="form-select w-75 showpdf" name="nationality">
                                                                             <option value="Swiss">Swiss</option>
                                                                             <option value="Deutschland">Deutschland</option>
                                                                             <option value="Italien">Italien</option>
@@ -1220,12 +1225,12 @@
                                                                     </div>
                                                                     <div class="input-select-div mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     Häufigster Lenker?
                                                                                 </span>
                                                                         </div>
                                                                         <select name="most_common"
-                                                                                class="form-select w-75"
+                                                                                class="form-select w-75 showpdf"
                                                                                 aria-label="Default select example">
                                                                             <option selected></option>
                                                                             <option value="Ja">Ja</option>
@@ -1246,11 +1251,11 @@
                                                                     </div>
                                                                     <div class="input-select-div mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     Versischerung:
                                                                                 </span>
                                                                         </div>
-                                                                        <select name="insurance" class="form-select w-75" aria-label="Default select example">
+                                                                        <select name="insurance" class="form-select w-75 showpdf" aria-label="Default select example">
                                                                             <option selected></option>
                                                                             <option value="Haftpflicht">Haftpflicht </option>
                                                                             <option value="Teilkasko">Teilkasko</option>
@@ -1260,11 +1265,11 @@
                                                                     </div>
                                                                     <div class="input-select-div mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     Selbstbehalt Teilkasko:
                                                                                 </span>
                                                                         </div>
-                                                                        <select name="deductible" class="form-select w-75" aria-label="Default select example">
+                                                                        <select name="deductible" class="form-select w-75 showpdf" aria-label="Default select example">
 
                                                                             <option selected></option>
                                                                             <option value="500">500</option>
@@ -1275,11 +1280,11 @@
                                                                     </div>
                                                                     <div class="input-select-div mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     Mitgeführte Sachen:
                                                                                 </span>
                                                                         </div>
-                                                                        <select name="carried" class="form-select w-75" aria-label="Default select example">
+                                                                        <select name="carried" class="form-select w-75 showpdf" aria-label="Default select example">
 
                                                                             <option selected></option>
                                                                             @for($i=1000;$i<=20000;$i+=1000) <option value="{{$i}}">{{$i}}</option>
@@ -1288,7 +1293,7 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="">
-                                                                            <span>
+                                                                            <span class="showname">
                                                                                 Reparaturwerkstatt:
                                                                             </span>
                                                                         <!-- <div class="input-group mb-2">
@@ -1299,25 +1304,26 @@
                                                                     </div> -->
                                                                         <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
 
-                                                                            <input type="radio" class="btn-check " name="repair_shop" id="btnradio1_" value="Specific garage" checked>
+                                                                            <input type="radio" class="btn-check showpdf " name="repair_shop" id="btnradio1_" value="Specific garage" checked>
                                                                             <label class="btn btn-outline-secondary w-100 g-0" for="btnradio1_">Specific
                                                                                 garage</label>
-                                                                            <input type="radio" class="btn-check" name="repair_shop" value="Freie Wahl" id="btnradio2_">
+                                                                            <input type="radio" class="btn-check " name="repair_shop" value="Freie Wahl" id="btnradio2_">
                                                                             <label class="btn btn-outline-secondary w-100 g-0 " for="btnradio2_">Freie Wahl</label>
 
                                                                         </div>
                                                                     </div>
+
                                                                     <div class="input-div1 mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     + Unfalldeckung:
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check" name="accident_coverage" value="Ja" id="btnradio3abcdef" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="accident_coverage" value="Ja" id="btnradio3abcdef" autocomplete="off" checked>
                                                                             <label class="btn btn-outline-secondary" for="btnradio3abcdef">Ja</label>
 
-                                                                            <input type="radio" class="btn-check" name="accident_coverage" value="Nein" id="btnradio4abcdef" autocomplete="off">
+                                                                            <input type="radio" class="btn-check " name="accident_coverage" value="Nein" id="btnradio4abcdef" autocomplete="off">
                                                                             <label class="btn btn-outline-secondary" for="btnradio4abcdef">Nein</label>
                                                                         </div>
                                                                     </div>
@@ -1325,12 +1331,12 @@
                                                                 <div class="col">
                                                                     <div class="input-div1 mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     + Verkehrsrechtsschutz:
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check" name="traffic_legal_protection" value="Ja" id="btnradio3a" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="traffic_legal_protection" value="Ja" id="btnradio3a" autocomplete="off" checked>
                                                                             <label class="btn btn-outline-secondary" for="btnradio3a">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="traffic_legal_protection" value="Nein" id="btnradio4a" autocomplete="off">
@@ -1339,12 +1345,12 @@
                                                                     </div>
                                                                     <div class="input-div1 mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     + Grobfahrlässigkeitschutz:
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check" name="grossly" value="Ja" id="btnradio3ab" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="grossly" value="Ja" id="btnradio3ab" autocomplete="off" checked>
                                                                             <label class="btn btn-outline-secondary" for="btnradio3ab">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="grossly" value="Nein" id="btnradio4ab" autocomplete="off">
@@ -1353,12 +1359,12 @@
                                                                     </div>
                                                                     <div class="input-div1 mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     + Glasschutz:
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check" name="glass_protection" value="Ja" id="btnradio3abc" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="glass_protection" value="Ja" id="btnradio3abc" autocomplete="off" checked>
                                                                             <label class="btn btn-outline-secondary" for="btnradio3abc">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="glass_protection" value="Nein" id="btnradio4abc" autocomplete="off">
@@ -1367,38 +1373,45 @@
                                                                     </div>
                                                                     <div class="input-div1 mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     + Parkschaden:
                                                                                 </span>
                                                                         </div>
 
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check" name="parking_damage" value="Ja" id="btnradio3abcd" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="parking_damage" value="Ja" id="btnradio3abcd" autocomplete="off" checked>
                                                                             <label class="btn btn-outline-secondary" for="btnradio3abcd">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="parking_damage" value="Nein" id="btnradio4abcd" autocomplete="off">
                                                                             <label class="btn btn-outline-secondary" for="btnradio4abcd">Nein</label>
                                                                         </div>
+
                                                                     </div>
                                                                     <div class="input-div1 mb-2">
                                                                         <div class="">
-                                                                                <span class="">
+                                                                                <span class="showname">
                                                                                     + 24h Pannenhilfe:
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check" name="hour_breakdown_assistance" value="Ja" id="btnradio3abcde" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="hour_breakdown_assistance" value="Ja" id="btnradio3abcde" autocomplete="off" checked>
                                                                             <label class="btn btn-outline-secondary" for="btnradio3abcde">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="hour_breakdown_assistance" value="Nein" id="btnradio4abcde" autocomplete="off">
                                                                             <label class="btn btn-outline-secondary" for="btnradio4abcde">Nein</label>
                                                                         </div>
+
                                                                     </div>
                                                                 </div>
                                                                 <div>
-                                                                    Kommentar:
+                                                                    <div class="">
+                                                                                <span class="showname">
+                                                                                   Kommentar:
+                                                                                </span>
+                                                                    </div>
+
                                                                     <div class="col-12 col-6">
-                                                                        <textarea class="form-control" name="nuekommentar"></textarea>
+                                                                        <textarea class="form-control showpdf" name="nuekommentar"></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1466,11 +1479,11 @@
                                                     <div class="">
                                                         <div class="input-div1 mb-2">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Nationalitat:
                                                                     </span>
                                                             </div>
-                                                            <select onchange="hideNation()"  class="form-select w-75" name="nationality_sachen" id="schweiz">
+                                                            <select onchange="hideNation()"  class="form-select w-75 showpdf" name="nationality_sachen" id="schweiz">
                                                                 <option value="Swiss">Swiss</option>
                                                                 <option value="Deutschland">Deutschland</option>
                                                                 <option value="Italien">Italien</option>
@@ -1778,11 +1791,11 @@
                                                         </div>
                                                         <div class="input-select-div mb-2" id="admin">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Aufenthaltsgenehmigung
                                                                     </span>
                                                             </div>
-                                                            <select name="residence_permit" class="form-select w-75" aria-label="Default select example">
+                                                            <select name="residence_permit" class="form-select w-75 showpdf" aria-label="Default select example">
                                                                 <option selected></option>
                                                                 <option value="Aufenthaltsbewilligung (Ausweis B)">Aufenthaltsbewilligung (Ausweis B)</option>
                                                                 <option value="Niederlassungsausweis (Ausweis C)">Niederlassungsausweis (Ausweis C)</option>
@@ -1795,26 +1808,26 @@
                                                             </select>
                                                         </div>
                                                         <div class=" mb-2">
-                                                            <label for="telephone_nr">Telefonnumer </label> <br>
+                                                            <label for="telephone_nr" class="showname">Telefonnumer </label> <br>
                                                             <div class="input-group">
-                                                                <input name="telephone_nr" id="int-tel" type="number" class="form-control">
+                                                                <input name="telephone_nr" id="int-tel" type="number" class="form-control showpdf">
                                                             </div>
                                                         </div>
                                                         <div class="input-div1 mb-2">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Email
                                                                     </span>
                                                             </div>
-                                                            <input name="email" class="form-control" type="email" id="">
+                                                            <input name="email" class="form-control showpdf" type="email" id="">
                                                         </div>
                                                         <div class="input-select-div mb-2">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Zivilstand
                                                                     </span>
                                                             </div>
-                                                            <select name="zivilstand" class="form-select w-75" aria-label="Default select example">
+                                                            <select name="zivilstand" class="form-select w-75 showpdf" aria-label="Default select example">
                                                                 <option selected></option>
                                                                 <option value="ledig">Ledig</option>
                                                                 <option value="Verheiratet">Verheiratet</option>
@@ -1826,11 +1839,11 @@
                                                         </div>
                                                         <div class="input-select-div mb-2">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Arbeitsverhältnis
                                                                     </span>
                                                             </div>
-                                                            <select name="employment_relationship" class="form-select w-75" aria-label="Default select example">
+                                                            <select name="employment_relationship" class="form-select w-75 showpdf" aria-label="Default select example">
                                                                 <option selected></option>
                                                                 <option value="Angestellt">Angestellt</option>
                                                                 <option value="Selbstständig ">Selbstständig</option>
@@ -1842,19 +1855,19 @@
                                                     <div class="">
                                                         <div class="input-div1 mb-2">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Beruf:
                                                                     </span>
                                                             </div>
-                                                            <input name="job" class="py-1" type="text" id="">
+                                                            <input name="job" class="py-1 showpdf" type="text" id="">
                                                         </div>
                                                         <div class="input-select-div mb-2">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Zahlungsrythmus:
                                                                     </span>
                                                             </div>
-                                                            <select name="payment_frequency" class="form-select w-75" aria-label="Default select example">
+                                                            <select name="payment_frequency" class="form-select w-75 showpdf" aria-label="Default select example">
                                                                 <option selected></option>
                                                                 <option value="Monatlich">Monatlich</option>
                                                                 <option value="Quartalsweise">Quartalsweise</option>
@@ -1864,19 +1877,19 @@
                                                         <!-- input groupd here asap -->
                                                         <div class="input-div1 mb-2">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Betrag pro Monat:
                                                                     </span>
                                                             </div>
-                                                            <input name="amount_per_month" class="py-1" type="text" id="">
+                                                            <input name="amount_per_month" class="py-1 showpdf" type="text" id="">
                                                         </div>
                                                         <div class="input-select-div mb-2">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Anteli Garantie/Fond:
                                                                     </span>
                                                             </div>
-                                                            <select name="share_guarantee" class="form-select w-75" aria-label="Default select example">
+                                                            <select name="share_guarantee" class="form-select w-75 showpdf" aria-label="Default select example">
                                                                 <option selected></option>
                                                                 <option value="10/90">10/90</option>
                                                                 <option value="20/80">20/80</option>
@@ -1891,11 +1904,11 @@
                                                         </div>
                                                         <div class="date-input-div mb-2">
                                                             <div class="">
-                                                                    <span style="font-size: 15px;">
+                                                                    <span style="font-size: 15px;" class="showname">
                                                                         Vertragsbeginn ab:
                                                                     </span>
                                                             </div>
-                                                            <select name="start_of_contract" class="form-select w-75" aria-label="Default select example">
+                                                            <select name="start_of_contract" class="form-select w-75 showpdf" aria-label="Default select example">
                                                                 <option value="Januar">Januar</option>
                                                                 <option value="Februar">Februar</option>
                                                                 <option value="März">März</option>
@@ -1912,17 +1925,28 @@
                                                         </div>
                                                         <div class="group-button-div mb-2">
                                                             <div class="">
-                                                                    <span style="font-size: 15px;">
+                                                                    <span style="font-size: 15px;" class="showname">
                                                                         Pramienbefreiung:
                                                                     </span>
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                <input type="radio" class="btn-check" name="premium_exemption" value="Ja" id="btnradio3" autocomplete="off" checked>
+                                                                <input type="radio" class="btn-check showpdf" name="premium_exemption" value="Ja" id="btnradio3" autocomplete="off" checked>
                                                                 <label class="btn btn-outline-secondary" for="btnradio3">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="premium_exemption" value="Nein" id="btnradio4" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio4">Nein</label>
                                                             </div>
+                                                            <script>
+                                                                $('input[type=radio][name=premium_exemption]').change(function() {
+                                                                    if (this.value == 'Ja') {
+                                                                        $('#btnradio3').addClass('showpdf');
+                                                                        $('#btnradio4 ').removeClass('showpdf');
+                                                                    }else{
+                                                                        $('#btnradio4').addClass('showpdf');
+                                                                        $('#btnradio3').removeClass('showpdf');
+                                                                    }
+                                                                });
+                                                            </script>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1930,50 +1954,83 @@
                                                     <div class="">
                                                         <div class="group-button-div mb-2">
                                                             <div class="">
-                                                                    <span style="font-size: 15px;">
+                                                                    <span style="font-size: 15px;" class="showname">
                                                                         EU - Rente:
                                                                     </span>
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                <input type="radio" class="btn-check" name="eu_pension" value="Ja" id="btnradio5" autocomplete="off" checked>
+                                                                <input type="radio" class="btn-check showpdf" name="eu_pension" value="Ja" id="btnradio5" autocomplete="off" checked>
                                                                 <label class="btn btn-outline-secondary" for="btnradio5">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="eu_pension" value="Nein" id="btnradio6" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio6">Nein</label>
                                                             </div>
+                                                            <script>
+                                                                $('input[type=radio][name=eu_pension]').change(function() {
+                                                                    if (this.value == 'Ja') {
+                                                                        $('#btnradio5').addClass('showpdf');
+                                                                        $('#btnradio6 ').removeClass('showpdf');
+                                                                    }else{
+                                                                        $('#btnradio6').addClass('showpdf');
+                                                                        $('#btnradio5').removeClass('showpdf');
+                                                                    }
+                                                                });
+                                                            </script>
                                                         </div>
                                                         <div class="group-button-div mb-2">
                                                             <div class="">
-                                                                    <span style="font-size: 15px;">
+                                                                    <span style="font-size: 15px;" class="showname">
                                                                         Todesfalkapital:
                                                                     </span>
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                <input type="radio" class="btn-check" name="death_benefit" value="Ja" id="btnradio7" autocomplete="off" checked>
+                                                                <input type="radio" class="btn-check showpdf" name="death_benefit" value="Ja" id="btnradio7" autocomplete="off" checked>
                                                                 <label class="btn btn-outline-secondary" for="btnradio7">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="death_benefit" value="Nein" id="btnradio8" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio8">Nein</label>
                                                             </div>
+                                                            <script>
+                                                                $('input[type=radio][name=death_benefit]').change(function() {
+                                                                    if (this.value == 'Ja') {
+                                                                        $('#btnradio7').addClass('showpdf');
+                                                                        $('#btnradio8 ').removeClass('showpdf');
+                                                                    }else{
+                                                                        $('#btnradio8').addClass('showpdf');
+                                                                        $('#btnradio7').removeClass('showpdf');
+                                                                    }
+                                                                });
+                                                            </script>
                                                         </div>
                                                         <div class="group-button-div mb-2">
                                                             <div class="">
-                                                                    <span style="font-size: 15px;">
+                                                                    <span style="font-size: 15px;" class="showname">
                                                                         Raucher:
                                                                     </span>
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                <input type="radio" class="btn-check" name="smoker" value="Ja" id="btnradio9" autocomplete="off" checked>
+                                                                <input type="radio" class="btn-check showpdf" name="smoker" value="Ja" id="btnradio9" autocomplete="off" checked>
                                                                 <label class="btn btn-outline-secondary" for="btnradio9">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="smoker" value="Nein" id="btnradio10" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio10">Nein</label>
                                                             </div>
+                                                            <script>
+                                                                $('input[type=radio][name=smoker]').change(function() {
+                                                                    if (this.value == 'Ja') {
+                                                                        $('#btnradio9').addClass('showpdf');
+                                                                        $('#btnradio10 ').removeClass('showpdf');
+                                                                    }else{
+                                                                        $('#btnradio10').addClass('showpdf');
+                                                                        $('#btnradio9').removeClass('showpdf');
+                                                                    }
+                                                                });
+                                                            </script>
                                                         </div>
                                                         <div class="mb-2">
-                                                            <label for="exampleFormControlTextarea2" class="form-label">Gewünschte
+                                                            <label for="exampleFormControlTextarea2" class="form-label showname">Gewünschte
                                                                 Gesellschaften:</label>
-                                                            <textarea name="desired" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                                                            <textarea name="desired" class="form-control showpdf" id="exampleFormControlTextarea2" rows="3"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2038,7 +2095,7 @@
                                                 <div class="accordion-body" style="background-color: #EFEFEF !important; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
                                                     <div class="">
                                                         <div class="">
-                                                                <span class="" style="font-size: 13px;">
+                                                                <span class="showname" style="font-size: 13px;">
                                                                     Police Hochladen:
                                                                 </span>
                                                         </div>
@@ -2057,7 +2114,7 @@
                                                                         </svg>
                                                                     </label>
                                                                     <input type="file" id="file-input-6" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="upload_police__">
-                                                                    <input type="text" class="form-control text-center" id="file-input-6c" disabled style="background:transparent;border:none;" name="upload_police__">
+                                                                    <input type="text" class="form-control text-center showpdf" id="file-input-6c" disabled style="background:transparent;border:none;" name="upload_police__">
                                                                 </div>
                                                             </div>
 
@@ -2085,8 +2142,8 @@
                                                         </div>
                                                         <div class="">
                                                             <div class="mb-3 mt-3">
-                                                                <label for="exampleFormControlTextarea2" class="form-label" style="font-size: 13px;">Kommentar</label>
-                                                                <textarea name="comment__" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                                                                <label for="exampleFormControlTextarea2" class="form-label showname" style="font-size: 13px;">Kommentar</label>
+                                                                <textarea name="comment__" class="form-control showpdf" id="exampleFormControlTextarea2" rows="3"></textarea>
                                                             </div>
                                                         </div>
                                                         @if(!Auth::user()->hasRole('fs'))
@@ -2106,7 +2163,7 @@
                                                                             </svg>
                                                                         </label>
                                                                         <input type="file" id="file-input-6ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offersach">
-                                                                        <input type="text" class="form-control text-center" id="file-input-6wwc" disabled style="background:transparent; border:none;">
+                                                                        <input type="text" class="form-control text-center showpdf" id="file-input-6wwc" disabled style="background:transparent; border:none;">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -2166,11 +2223,11 @@
                                                         <div class="my-2">
                                                             <div class="input-select-div">
                                                                 <div class="">
-                                                                        <span class="" style="font-size: 15px;">
+                                                                        <span class="showname" style="font-size: 15px;">
                                                                             Anzahl Personen
                                                                         </span>
                                                                 </div>
-                                                                <select name="number_of_people" class="form-select w-50" aria-label="Default select example">
+                                                                <select name="number_of_people" class="form-select w-50 showpdf" aria-label="Default select example">
                                                                     <option selected></option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -2197,11 +2254,11 @@
                                                             </div>
                                                             <div class="input-select-div">
                                                                 <div class="">
-                                                                        <span class="" style="font-size: 15px;">
+                                                                        <span class="showname" style="font-size: 15px;">
                                                                             Anzahl Zimmer
                                                                         </span>
                                                                 </div>
-                                                                <select name="number_of_rooms" class="form-select w-50" aria-label="Default select example">
+                                                                <select name="number_of_rooms" class="form-select w-50 showpdf" aria-label="Default select example">
                                                                     <option selected></option>
                                                                     <option value="1">1</option>
                                                                     <option value="2">2</option>
@@ -2226,27 +2283,27 @@
                                                                 </select>
                                                             </div>
                                                             <div class="input-div1">
-                                                                <div class="">
+                                                                <div class="showname">
                                                                         <span class="" style="font-size: 15px;">
                                                                             Versicherungsumme
                                                                         </span>
                                                                 </div>
-                                                                <input name="sum_insured" class="py-1" type="text" id="">
+                                                                <input name="sum_insured" class="py-1 showpdf" type="text" id="">
                                                             </div>
                                                             <div class="mb-3">
-                                                                <label for="exampleFormControlTextarea4" class="form-label" style="font-size: 15px;">
+                                                                <label for="exampleFormControlTextarea4" class="form-label showname" style="font-size: 15px;">
                                                                     Gewünschte Zusatzdeckung:</label>
-                                                                <textarea name="desired_additional_coverage" class="form-control" id="exampleFormControlTextarea4" rows="3">
+                                                                <textarea name="desired_additional_coverage" class="form-control showpdf" id="exampleFormControlTextarea4" rows="3">
 
                                                                 </textarea>
                                                             </div>
                                                             <div class="input-select-div">
                                                                 <div class="">
-                                                                        <span class="" style="font-size: 15px;">
+                                                                        <span class="showname" style="font-size: 15px;">
                                                                             Pricathaftpflicht?
                                                                         </span>
                                                                 </div>
-                                                                <select name="personal_liability" class="form-select w-50" aria-label="Default select example">
+                                                                <select name="personal_liability" class="form-select w-50 showpdf" aria-label="Default select example">
                                                                     <option selected></option>
                                                                     <option value="Ja">Ja</option>
                                                                     <option value="Nein">Nein</option>
@@ -2308,19 +2365,19 @@
                                                         </div>
                                                         <div class="input-div1">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Gesellschaft
                                                                     </span>
                                                             </div>
-                                                            <input name="society" class="py-1" type="text" id="">
+                                                            <input name="society" class="py-1 showpdf" type="text" id="">
                                                         </div>
                                                         <div class="input-select-div">
                                                             <div class="">
-                                                                    <span class="" style="font-size: 15px;">
+                                                                    <span class="showname" style="font-size: 15px;">
                                                                         Anzahl Personen
                                                                     </span>
                                                             </div>
-                                                            <select name="n_of_p_legal_protection" class="form-select w-50" aria-label="Default select example">
+                                                            <select name="n_of_p_legal_protection" class="form-select w-50 showpdf" aria-label="Default select example">
                                                                 <option selected></option>
                                                                 <option value="1">1</option>
                                                                 <option value="2">2</option>
@@ -2361,7 +2418,9 @@
                                         </div>
                                         <div class="col g-0 text-start">
                                             <div class="">
-                                                <button class="px-5 py-2" id="submitt" type="button" style="border: none; border-radius: 9px; background-color:#285F52;">
+                                                <button type="button" class="px-5 py-2"
+                                                        {{--                                                            id="submitt" --}}
+                                                        onclick="showpdf()" style="border: none; border-radius: 9px; background-color:#285F52;">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#fff" class="bi bi-check-circle" viewBox="0 0 16 16">
                                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                                                         <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
@@ -3354,6 +3413,78 @@
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
+    $('input[type=radio][name=leasing]').change(function() {
+        if (this.value == 'Ja') {
+            $('#btnradio1').addClass('showpdf');
+            $('#btnradio2 ').removeClass('showpdf');
+        }else{
+            $('#btnradio2').addClass('showpdf');
+            $('#btnradio1').removeClass('showpdf');
+        }
+    });
+    $('input[type=radio][name=repair_shop]').change(function() {
+        if (this.value == 'Specific garage') {
+            $('#btnradio1_').addClass('showpdf');
+            $('#btnradio2_ ').removeClass('showpdf');
+        }else{
+            $('#btnradio2_').addClass('showpdf');
+            $('#btnradio1_').removeClass('showpdf');
+        }
+    });
+    $('input[type=radio][name=accident_coverage]').change(function() {
+        if (this.value == 'Ja') {
+            $('#btnradio3abcdef').addClass('showpdf');
+            $('#btnradio4abcdef').removeClass('showpdf');
+        }else{
+            $('#btnradio4abcdef').addClass('showpdf');
+            $('#btnradio3abcdef').removeClass('showpdf');
+        }
+    });
+    $('input[type=radio][name=traffic_legal_protection]').change(function() {
+        if (this.value == 'Ja') {
+            $('#btnradio3a').addClass('showpdf');
+            $('#btnradio4a ').removeClass('showpdf');
+        }else{
+            $('#btnradio4a').addClass('showpdf');
+            $('#btnradio3a').removeClass('showpdf');
+        }
+    });
+    $('input[type=radio][name=grossly]').change(function() {
+        if (this.value == 'Ja') {
+            $('#btnradio3ab').addClass('showpdf');
+            $('#btnradio4ab ').removeClass('showpdf');
+        }else{
+            $('#btnradio4ab').addClass('showpdf');
+            $('#btnradio3ab').removeClass('showpdf');
+        }
+    });
+    $('input[type=radio][name=glass_protection]').change(function() {
+        if (this.value == 'Ja') {
+            $('#btnradio3abc').addClass('showpdf');
+            $('#btnradio4abc ').removeClass('showpdf');
+        }else{
+            $('#btnradio4abc').addClass('showpdf');
+            $('#btnradio3abc').removeClass('showpdf');
+        }
+    });
+    $('input[type=radio][name=parking_damage]').change(function() {
+        if (this.value == 'Ja') {
+            $('#btnradio3abcd').addClass('showpdf');
+            $('#btnradio4abcd ').removeClass('showpdf');
+        }else{
+            $('#btnradio4abcd').addClass('showpdf');
+            $('#btnradio3abcd').removeClass('showpdf');
+        }
+    });
+    $('input[type=radio][name=hour_breakdown_assistance]').change(function() {
+        if (this.value == 'Ja') {
+            $('#btnradio3abcde').addClass('showpdf');
+            $('#btnradio4abcde ').removeClass('showpdf');
+        }else{
+            $('#btnradio4abcde').addClass('showpdf');
+            $('#btnradio3abcde').removeClass('showpdf');
+        }
+    });
     var newgcnt = 0;
     var newncnt = 0;
     var cntt = 0;
@@ -3383,7 +3514,7 @@
             '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg></div>' +
             '   <hr style="height: 4px;"> <div class="">' +
             '                                                        <div class="">' +
-            '                                                                <span class="" style="font-size: 13px;">' +
+            '                                                                <span class="gegenName" style="font-size: 13px;">' +
             '                                                                    Police Hochladen:' +
             '                                                                </span>' +
             '                                                        </div>' +
@@ -3419,11 +3550,11 @@
             '                                                                        </svg>' +
             '                                                                    </label>' +
             '                                                                    <input type="file" id="file-input-4' + newgcnt + '"' +
-            '                                                                           class="svg-div w-100 border-0  g-0"' +
+            '                                                                           class="svg-div w-100 border-0  g-0 "' +
             '                                                                           onchange="upload(this);"' +
             '                                                                           name="upload_policeFahrzeug' + newgcnt + '">' +
             '                                                                    <input type="text"' +
-            '                                                                          class="form-control text-center"' +
+            '                                                                          class="form-control text-center gegenpdf"' +
             '                                                                           id="file-input-4' + newgcnt + 'c" disabled' +
             '                                                                           style="background:transparent; border:none;">' +
             '                                                                </div>' +
@@ -3454,10 +3585,10 @@
             '                                                        <div class="">' +
             '                                                            <div class="mb-3 mt-3">' +
             '                                                               <label for="exampleFormControlTextarea1"' +
-            '                                                                      class="form-label"' +
+            '                                                                      class="form-label gegenName"' +
             '                                                                      style="font-size: 13px;">Kommentar</label>  <textarea name="commentFahrenzug' + newgcnt + '" ' +
             '                                                                         id="exampleFormControlTextarea1"' +
-            '                                                                          rows="3" class="form-control"></textarea>' +
+            '                                                                          rows="3" class="form-control gegenpdf"></textarea>' +
             '                                                            </div>' +
             '                                                        </div>' +
             '                                                   </div></div>' +
@@ -3478,7 +3609,7 @@
             '                                                                                </svg>'+
             '                                                                            </label>'+
             '                                                                            <input type="file" id="file-input-'+ newgcnt + 'w" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer' + newgcnt + '">'+
-            '                                                                            <input type="text" class="form-control text-center" id="file-input-'+newgcnt + 'wc"' + 'disabled style="background:transparent; border:none;">'+
+            '                                                                            <input type="text" class="form-control text-center gegenpdf" id="file-input-'+newgcnt + 'wc"' + 'disabled style="background:transparent; border:none;">'+
             '                                                                        </div>'+
             '                                                                    </div>'+
             '                                                                </div>'+
@@ -3518,7 +3649,7 @@
             '                                                                <div class="my-3">' +
             '                                                                    <div class="">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Fahrzeugausweis hochladen' +
             '                                                                                </span>' +
             '                                                                        </div>' +
@@ -3559,11 +3690,11 @@
             '                                                                                    </svg>' +
             '                                                                                </label>' +
             '                                                                                <input type="file" id="file-input-53' + newncnt + '"' +
-            '                                                                                       class="svg-div w-100 border-0  g-0"' +
+            '                                                                                       class="svg-div w-100 border-0  g-0 "' +
             '                                                                                       onchange="upload(this);"' +
             '                                                                                       name="vehicle_id' + newncnt + '">' +
             '                                                                                <input type="text"' +
-            '                                                                                       class="form-control text-center"' +
+            '                                                                                       class="form-control text-center autopdf"' +
             '                                                                                       id="file-input-53' + newncnt + 'c" disabled' +
             '                                                                                       style="background:transparent; border:none;"' +
             '                                                                                       name="vehicle_id' + newncnt + '">' +
@@ -3577,7 +3708,7 @@
             '                                                                    <div class="row">' +
             '                                                                        <div class="col">' +
             '                                                                            <div class="">' +
-            '                                                                                    <span>' +
+            '                                                                                    <span class="autoName">' +
             '                                                                                        Leasing:' +
             '                                                                                    </span>' +
             '                                                                            </div>' +
@@ -3588,7 +3719,7 @@
             '                                                                                 aria-label="Basic radio toggle button group">' +
             '' +
             '                                                                                <input type="radio"' +
-            '                                                                                       class="btn-check" value="Ja"' +
+            '                                                                                       class="btn-check autopdf" value="Ja"' +
             '                                                                                       name="leasing' + newncnt + '" id="btnradio1' + newncnt + '"' +
             '                                                                                       autocomplete="off">' +
             '                                                                                <label' +
@@ -3596,13 +3727,12 @@
             '                                                                                    value="Ja"' +
             '                                                                                    for="btnradio1' + newncnt + '">Ja</label>' +
             '                                                                                <input type="radio"' +
-            '                                                                                       class="btn-check" name="leasing' + newncnt + '"' +
+            '                                                                                       class="btn-check " name="leasing' + newncnt + '"' +
             '                                                                                       value="Nein" id="btnradio2' + newncnt + '"' +
             '                                                                                       autocomplete="off">' +
             '                                                                                <label' +
             '                                                                                    class="btn btn-outline-secondary w-100 g-0 "' +
             '                                                                                    for="btnradio2' + newncnt + '">Nein</label>' +
-            '' +
             '                                                                            </div>' +
             '                                                                            <div class="">' +
             '                                                                                <select name="leasing_name' + newncnt + '"' +
@@ -3631,47 +3761,47 @@
             '                                                                        <div' +
             '                                                                            class="input-select-div mb-2">' +
             '                                                                            <div class="text-nowrap">' +
-            '                                                                                    <span class="fw-normal">' +
+            '                                                                                    <span class="fw-normal autoName">' +
             '                                                                                        Kaufjahr' +
             '                                                                                    </span>' +
             '                                                                            </div>' +
             '                                                                            <select name="year_of_purchase' + newncnt + '"' +
             '                                                                                    id=""' +
-            '                                                                                    class="form-select w-75" aria-label="Default select example">' +
-            '                                                                                   @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)<option value="{{$i}}">{{$i}}</option>@endfor'+
+            '                                                                                    class="form-select w-75 autopdf" aria-label="Default select example">' +
+            '                                                                                  <option selected></option> @for($i = \Carbon\Carbon::now()->format('Y'); $i >= 1950 ;$i--)<option value="{{$i}}">{{$i}}</option>@endfor'+
             '                                                                            </select>' +
             '                                                                        </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="date-input-div mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span>' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Este inverkehrssetzung:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '' +
             '                                                                        <input name="first_intro' + newncnt + '"' +
-            '                                                                               type="date" class="py-1 border-0">' +
+            '                                                                               type="date" class="py-1 border-0 autopdf">' +
             '' +
             '                                                                    </div>' +
             '                                                                    <div class="date-input-div mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span>' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Beginn Versicherung:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '' +
             '                                                                        <input name="insurance_date' + newncnt + '" type="date"' +
-            '                                                                               class="py-1 border-0">' +
+            '                                                                               class="py-1 border-0 autopdf">' +
             '' +
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Eingelöster Kanton:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <select name="redeemed' + newncnt + '"' +
-            '                                                                                class="form-select w-75"' +
+            '                                                                                class="form-select w-75 autopdf"' +
             '                                                                                aria-label="Default select example">' +
             '                                                                            <option selected></option>' +
             '                                                                            <option value="Zürich">Zürich</option>' +
@@ -3704,12 +3834,12 @@
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    KM - Stand:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '' +
-            '                                                                        <input name="km_stood' + newncnt + '" class="py-1"' +
+            '                                                                        <input name="km_stood' + newncnt + '" class="py-1 autopdf"' +
             '                                                                               type="number" id="">' +
             '' +
             '                                                                    </div>' +
@@ -3724,22 +3854,22 @@
             '                                                                    </div>' +
             '                                                                    <div class="date-input-div mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span>' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Ausstelldatum Fuhrerausweis:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '' +
             '                                                                        <input name="placing_on_the_market' + newncnt + '"' +
-            '                                                                               type="date" class="py-1 border-0">' +
+            '                                                                               type="date" class="py-1 border-0 autopdf">' +
             '' +
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Nationalitat:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
-            '                                                                        <select  class="form-select w-75" name="nationality'+ newncnt +'">'+
+            '                                                                        <select  class="form-select w-75 autopdf" name="nationality'+ newncnt +'">'+
             '                                                                               <option value="Swiss" selected>Swiss</option> <option value="Deutschland">Deutschland</option> <option value="Italien">Italien</option> <option value="French">French</option>'+
             '                                                                               <optgroup label="A"> <option value="Afghanistan">Afghanistan</option> <option value="Ägypten">Ägypten</option> <option value="Åland">Åland</option> <option value="Albanien">Albanien</option> <option value="Algerien">Algerien</option> <option value="Amerikanisch-Samoa">Amerikanisch-Samoa</option> <option value="Amerikanische Jungferninseln">Amerikanische Jungferninseln</option> <option value="Andorra">Andorra</option> <option value="Angola">Angola</option> <option value="Anguilla">Anguilla</option> <option value="Antarktis">Antarktis</option> <option value="Antigua und Barbuda">Antigua und Barbuda</option> <option value="Äquatorialguinea">Äquatorialguinea</option> <option value="Argentinien">Argentinien</option> <option value="Armenien">Armenien</option> <option value="Aruba">Aruba</option> <option value="Ascension">Ascension</option> <option value="Aserbaidschan">Aserbaidschan</option> <option value="Äthiopien">Äthiopien</option> <option value="Australien">Australien</option> </optgroup>'+
             '                                                                               <optgroup label="B"> <option value="Bahamas">Bahamas</option> <option value="Bahrain">Bahrain</option> <option value="Bangladesch">Bangladesch</option> <option value="Barbados">Barbados</option> <option value="Belarus (Weißrussland)">Belarus (Weißrussland)</option> <option value="Belgien">Belgien</option> <option value="Belize">Belize</option> <option value="Benin">Benin</option> <option value="Bermuda">Bermuda</option> <option value="Bhutan">Bhutan</option> <option value="Bolivien">Bolivien</option> <option value="Bosnien und Herzegowina">Bosnien und Herzegowina</option> <option value="Botswana">Botswana</option> <option value="Bouvetinsel">Bouvetinsel</option> <option value="Brasilien">Brasilien</option> <option value="Britische Jungferninseln">Britische Jungferninseln</option> <option value="Britisches Territorium im Indischen Ozean">Britisches Territorium im Indischen Ozean</option> <option value="Brunei Darussalam">Brunei Darussalam</option> <option value="Bulgarien">Bulgarien</option> <option value="Burkina Faso">Burkina Faso</option> <option value="Burundi">Burundi</option> </optgroup>'+
@@ -3761,12 +3891,12 @@
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Häufigster Lenker?' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <select name="most_common' + newncnt + '"' +
-            '                                                                                class="form-select w-75"' +
+            '                                                                                class="form-select w-75 autopdf"' +
             '                                                                                aria-label="Default select example">' +
             '                                                                            <option selected></option>' +
             '                                                                            <option value="Ja">Ja</option>' +
@@ -3786,20 +3916,20 @@
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Versischerung:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
-            '                                                                       <select name="insurance' + newncnt + '" class="form-select w-75" aria-label="Default select example"> <option selected></option> <option value="Haftpflicht">Haftpflicht</option> <option value="Teilkasko">Teilkasko</option> <option value="Vollkasko">Vollkasko</option> </select>' +
+            '                                                                       <select name="insurance' + newncnt + '" class="form-select w-75 autopdf" aria-label="Default select example"> <option selected></option> <option value="Haftpflicht">Haftpflicht</option> <option value="Teilkasko">Teilkasko</option> <option value="Vollkasko">Vollkasko</option> </select>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Selbstbehalt Teilkasko:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <select name="deductible' + newncnt + '"' +
-            '                                                                                class="form-select w-75"' +
+            '                                                                                class="form-select w-75 autopdf"' +
             '                                                                                aria-label="Default select example">' +
             '' +
             '                                                                            <option selected></option>' +
@@ -3811,12 +3941,12 @@
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    Mitgeführte Sachen:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <select name="carried' + newncnt + '"' +
-            '                                                                                class="form-select w-75"' +
+            '                                                                                class="form-select w-75 autopdf"' +
             '                                                                                aria-label="Default select example">' +
             '' +
             '                                                                            <option selected></option>' +
@@ -3827,43 +3957,38 @@
             '                                                                        </select>' +
             '                                                                    </div>' +
             '                                                                    <div class="">' +
-            '                                                                            <span>' +
+            '                                                                            <span class="autoName">' +
             '                                                                                Reparaturwerkstatt:' +
             '                                                                            </span>' +
-            '                                                                        <!-- <div class="input-group mb-2">' +
-            '                                                                      <input name="noname" type="text" placeholder="Partnergarage" class="form-control" aria-label=""' +
-            '                                                                        aria-describedby="basic-addon1">' +
-            '                                                                      <input name="noname" type="text" placeholder="Freie Wahl" class="form-control" aria-label=""' +
-            '                                                                        aria-describedby="basic-addon1">' +
-            '                                                                    </div> -->' +
+
             '                                                                        <div class="btn-group w-100" role="group"' +
             '                                                                             aria-label="Basic radio toggle button group">' +
             '' +
-            '                                                                            <input type="radio" class="btn-check "' +
-            '                                                                                   name="repair_shop' + newncnt + '" id="btnradio1' + newncnt + '_' +
-            '                                                                                   value="Specific garage">' +
+            '                                                                            <input type="radio" class="btn-check autopdf"' +
+            '                                                                                   name="repair_shop' + newncnt + '" id="btnradio1_' + newncnt + '_"' +
+            '                                                                                   value="Specific garage" checked>' +
             '                                                                            <label' +
             '                                                                                class="btn btn-outline-secondary w-100 g-0"' +
-            '                                                                                for="btnradio1' + newncnt + '_">Specific' +
+            '                                                                                for="btnradio1_' + newncnt + '_">Specific' +
             '                                                                                garage</label>' +
             '                                                                            <input type="radio" class="btn-check"' +
             '                                                                                   name="repair_shop' + newncnt + '"' +
-            '                                                                                   value="Freie Wahl" id="btnradio2_">' +
+            '                                                                                   value="Freie Wahl" id="btnradio2_'+newncnt+'_">' +
             '                                                                            <label' +
             '                                                                                class="btn btn-outline-secondary w-100 g-0 "' +
-            '                                                                                for="btnradio2' + newncnt + '_">Freie Wahl</label>' +
+            '                                                                                for="btnradio2_' + newncnt + '_">Freie Wahl</label>' +
             '' +
             '                                                                        </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    + Unfalldeckung:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <div class="btn-group" role="group"' +
             '                                                                 aria-label="Basic radio toggle button group">' +
-            '                                                                <input type="radio" class="btn-check"' +
+            '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="accident_coverage' + newncnt + '" value="Ja"' +
             '                                                                       id="btnradio3abcdef' + newncnt + '" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
@@ -3880,13 +4005,13 @@
             '                                                                <div class="col">' +
             '                                                                    <div class="input-div1 mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    + Verkehrsrechtsschutz:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <div class="btn-group" role="group"' +
             '                                                                 aria-label="Basic radio toggle button group">' +
-            '                                                                <input type="radio" class="btn-check"' +
+            '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="traffic_legal_protection' + newncnt + '" value="Ja"' +
             '                                                                       id="btnradio3a' + newncnt + '" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
@@ -3901,13 +4026,13 @@
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    + Grobfahrlässigkeitschutz:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <div class="btn-group" role="group"' +
             '                                                                 aria-label="Basic radio toggle button group">' +
-            '                                                                <input type="radio" class="btn-check"' +
+            '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="grossly' + newncnt + '" value="Ja"' +
             '                                                                       id="btnradio3ab' + newncnt + '" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
@@ -3922,13 +4047,13 @@
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    + Glasschutz:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <div class="btn-group" role="group"' +
             '                                                                 aria-label="Basic radio toggle button group">' +
-            '                                                                <input type="radio" class="btn-check"' +
+            '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="glass_protection' + newncnt + '" value="Ja"' +
             '                                                                       id="btnradio3abc' + newncnt + '" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
@@ -3943,14 +4068,14 @@
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    + Parkschaden:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '' +
             '                                                                        <div class="btn-group" role="group"' +
             '                                                                 aria-label="Basic radio toggle button group">' +
-            '                                                                <input type="radio" class="btn-check"' +
+            '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="parking_damage' + newncnt + '" value="Ja"' +
             '                                                                       id="btnradio3abcd' + newncnt + '" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
@@ -3965,13 +4090,13 @@
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
             '                                                                        <div class="">' +
-            '                                                                                <span class="">' +
+            '                                                                                <span class="autoName">' +
             '                                                                                    + 24h Pannenhilfe:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
             '                                                                        <div class="btn-group" role="group"' +
             '                                                                 aria-label="Basic radio toggle button group">' +
-            '                                                                <input type="radio" class="btn-check"' +
+            '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="hour_breakdown_assistance' + newncnt + '" value="Ja"' +
             '                                                                       id="btnradio3abcde' + newncnt + '" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
@@ -3985,10 +4110,14 @@
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                </div>' +
-            '                  <div>'+
-            '                                                                        Kommentar:'+
+            '                                                           <div>'+
+            '                                                                        <div class="">' +
+            '                                                                                <span class="autoName">' +
+            '                                                                                    Kommentar:' +
+            '                                                                                </span>' +
+            '                                                                        </div>' +
             '                                                                        <div class="col-6">'+
-            '                                                                        <textarea class="form-control" name="nuekommentar' + newncnt + '"></textarea>'+
+            '                                                                        <textarea class="form-control autopdf" name="nuekommentar' + newncnt + '"></textarea>'+
             '    </div>'+
             '                                                                    </div>'+
             '                                                            </div>' +
@@ -4021,7 +4150,9 @@
             '</svg>' +
             '' +
             '</div>';
+
         document.getElementById('newncount').value = newncnt;
+
     }
 
     function changecnt(x) {
@@ -4119,6 +4250,366 @@
     function workingOnIt(){
         alert('Kommt Bald...');
     }
+
+    function showpdf(){
+        var inputs = document.getElementsByClassName('showpdf');
+        var showname = document.getElementsByClassName('showname');
+        document.getElementById('old-content').style.display = 'none';
+        document.getElementById('pdf').style.display = 'block';
+
+        document.getElementById('pdf').innerHTML += '<div class="col">'+
+            '    <div class="my-5 mx-4">'+
+            '      <div class="" style="background-color: #EFEFEF;border-radius: 22px;">'+
+            '        <div class="py-4 px-3">'+
+            '          <span class="fs-4">'+
+            '            Markus Jurgen'+
+            '          </span> <br>'+
+            '          <span class="fs-6 text-muted">'+
+            '            Raumweg 23, 3700 Thun'+
+            '          </span>'+
+            '        </div>'+
+            '        <div class="row mx-4">'+
+            '          <nav class="g-0">'+
+            '            <div class="nav nav-tabs" id="nav-tab" role="tablist">'+
+            '              <button class="border-0 col py-2 fw-bold text-secondary" id=""'+
+            '                type="button"'+
+            '                aria-selected="true">Krankenkasse</button>'+
+            '              <button class="border-0  col py-2 fw-bold text-secondary"'+
+            '                 type="button"'+
+            '                aria-selected="false">Auto</button>'+
+            '              <button class="border-0  col py-2 fw-bold text-secondary"'+
+            '                type="button"'+
+            '                aria-selected="false">Vorsorge</button>'+
+            '              <button class="border-0  col py-2 fw-bold text-secondary"'+
+            '                 type="button"'+
+            '                aria-selected="false">Sachen</button>'+
+            '            </div>'+
+            '          </nav>'+
+            '        </div>'+
+            '        <div class="tab-content mx-4 pb-3" id="nav-tabContent">'+
+            '          <div class="tab-pane fade  krankenkasse-content mb-3" id="nav-home" role="tabpanel"'+
+            '            aria-labelledby="nav-home-tab">'+
+            '          </div>'+
+            '          <div class="tab-pane fade auto-content" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">'+
+            '          </div>'+
+            '          <div class="tab-pane fade  sachen-content" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">'+
+            '          </div>'+
+            '          <div class="tab-pane fade  vorsorge-content" id="nav-fourth" role="tabpanel" aria-labelledby="nav-fourth-tab">'+
+            '          </div>'+
+            '          <div class="bg-white submit-form-end px-3" role="tabpanel">'+
+            '            <div class="fs-3 fw-bold py-3">'+
+            '              Eingabe uberprufen!'+
+            '            </div>'+
+            '            <div class="row g-0">'+
+            '              <div class="col-12 col-md-6">'+
+            '                <div class="krankenkasse-content-submited  my-3">'+
+            '                  <div class="fs-5 fw-bold">'+
+            '                    Krankenkasse'+
+            '                  </div>'+
+            '                  <div class="kk-info">'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[0].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[0].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[1].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[1].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[2].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[2].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[3].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[3].value+'</div>'+
+            '                    </div>'+
+            '                   <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[4].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[4].value+'</div>'+
+            '                    </div>'+
+            '                  </div>'+
+            '                </div>'+
+            '                <div class="auto-content-submited  my-3">'+
+            '                  <div class="fs-5 fw-bold">'+
+            '                    Auto'+
+            '                  </div>'+
+            '                  <div  class="fs-5 my-2" style="font-weight: 500">'+
+            '                    Gegenofferte:'+
+            '                  </div>'+
+            '                  <div class="auto-content-submited">'+
+            '                   <div id="gegenoferte">'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[5].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[5].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[6].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[6].value+'</div>'+
+            '                       </div>'+
+            '                   </div>'+
+            '                  <div class="fs-5 my-2" style="font-weight: 500">'+
+            '                    Neues Fahrzeug:'+
+            '                  </div>'+
+            '                   <div id="autooferte">'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[7].innerHTML+': </div>'+
+            '                       <div class="col-6">'+inputs[7].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[8].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[8].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[9].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[9].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[10].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[10].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[11].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[11].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[12].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[12].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[13].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[13].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[14].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[14].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[15].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[15].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[16].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[16].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[17].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[17].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[18].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[18].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[19].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[19].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[20].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[20].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[21].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[21].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[22].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[22].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[23].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[23].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[24].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[24].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[25].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[25].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[26].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[26].value+'</div>'+
+            '                       </div>'+
+            '                       <div class="d-flex">'+
+            '                       <div class="col-6">'+showname[27].innerHTML+' </div>'+
+            '                       <div class="col-6">'+inputs[27].value+'</div>'+
+            '                       </div>'+
+            '                   </div>'+
+            '                  </div>'+
+            '                </div>'+
+            '              </div>'+
+            '              <div class="col-12 col-md-6">'+
+            '                <div class="3a3banfragen-content-submited  my-3">'+
+            '                  <div class="fs-5 fw-bold my-2">'+
+            '                    Vorsorge '+
+            '                  </div>'+
+            '                  <div class="fs-5 my-2" style="font-weight: 500">'+
+            '                   3a/ 3b Anfragen'+
+            '                  </div>'+
+            '                  <div class="inputs-shown-33-info">'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[28].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[28].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[29].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[29].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[30].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[30].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[31].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[31].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[32].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[32].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[33].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[33].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                     <div class="col-6">'+showname[34].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[34].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[35].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[35].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[36].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[36].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[37].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[37].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[38].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[38].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[39].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[39].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[40].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[40].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[41].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[41].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[42].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[42].value+'</div>'+
+            '                    </div>'+
+            '                    <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[43].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[43].value+'</div>'+
+            '                    </div>'+
+            '                  </div>'+
+            '                </div>'+
+            '                <div class="sachen-content-submited my-3">'+
+            '                  <div class="fs-5 fw-bold my-2">'+
+            '                    Sachen'+
+            '                  </div>'+
+            '                  <div class="fs-5 my-2" style="font-weight: 500">'+
+            '                    Hausrat- & Privathaftpflicht'+
+            '                  </div>'+
+            '                  <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[44].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[44].value+'</div>'+
+            '                  </div>'+
+            '                  <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[45].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[45].value+'</div>'+
+            '                  </div>'+
+            '                  <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[46].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[46].value+'</div>'+
+            '                  </div>'+
+            '                  <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[47].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[47].value+'</div>'+
+            '                  </div>'+
+            '                  <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[48].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[48].value+'</div>'+
+            '                  </div>'+
+            '                  <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[49].innerHTML+' </div>'+
+            '                      <div class="col-6">'+inputs[49].value+'</div>'+
+            '                  </div>'+
+            '                  <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[50].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[50].value+'</div>'+
+            '                  </div>'+
+            '                  <div class="fs-5 my-2" style="font-weight: 500">'+
+            '                    Rechtsschutzversicherung'+
+            '                  </div>'+
+            '                  <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[51].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[51].value+'</div>'+
+            '                  </div>'+
+            '                  <div class="d-flex">'+
+            '                      <div class="col-6">'+showname[52].innerHTML+': </div>'+
+            '                      <div class="col-6">'+inputs[52].value+'</div>'+
+            '                  </div>'+
+            // '                  <div class="d-flex">'+
+            // '                      <div class="col-6">'+showname[53].innerHTML+': </div>'+
+            // '                      <div class="col-6">'+inputs[60].value+'</div>'+
+            // '                  </div>'+
+            '                </div>'+
+            '              </div>'+
+            '            </div>'+
+            '            <div class="d-flex justify-content-center py-2">'+
+            '              <button class="py-2 px-5 submit-btnnnn">'+
+            '                Bestätigen'+
+            '              </button>'+
+            '            </div>'+
+            '          </div>'+
+            '        </div>'+
+            '      </div>'+
+            '    </div>'+
+            '  </div>';
+
+        var gegen = document.getElementsByClassName('gegenpdf');
+        var gegenName = document.getElementsByClassName('gegenName');
+        ismodulo = 1;
+        for(let i = gegen.length-1; i >= 0; i--) {
+            if(ismodulo % 2 == 1) {
+                document.getElementById("gegenoferte").insertAdjacentHTML("afterend",
+                    '<div class="d-flex " style="border-right: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;"> <div class="col-6 "> ' + gegenName[i].innerHTML + ' </div><div class="col-6">' + gegen[i].value + '</div></div>');
+            }
+            else{
+                document.getElementById("gegenoferte").insertAdjacentHTML("afterend",
+                    '<div class="d-flex " style="border-right: 1px solid black; border-left: 1px solid black; border-top: 1px solid black"> <div class="col-6 "> ' + gegenName[i].innerHTML + ' </div><div class="col-6">' + gegen[i].value + '</div></div>');
+            }
+            ismodulo++;
+        }
+
+        var auto = document.getElementsByClassName('autopdf');
+        var autoName = document.getElementsByClassName('autoName');
+
+        issmodulo = 1;
+        for(let i = auto.length-1; i >= 0; i--) {
+                document.getElementById("autooferte").insertAdjacentHTML("afterend",
+                    '<div class="d-flex " style="border-right: 1px solid black; border-left: 1px solid black;"> <div class="col-6 "> ' + autoName[i].innerHTML + ' </div><div class="col-6">' + auto[i].value + '</div></div>');
+
+        }
+
+
+
+    }
+
+
+
+
 </script>
 
 
@@ -4130,4 +4621,17 @@
     .coloriii a {
         color: black !important;
     }
+    .submit-form-end {
+        border-radius: 15px;
+        word-break: break-word;
+    }
+
+    .submit-btnnnn {
+        background-color: #0FDA89;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+    }
 </style>
+
