@@ -21,24 +21,23 @@ class CostumerImport implements ToModel
     /**
     * @param Collection $collection
     */
-    public function collection(Collection $collection)
-    {
-
-    }
+  
 
     public function model(array $row){
-
-        $lead = new lead();
-        $lead->assign_to_id = Auth::user()->id;
-        $lead->first_name = $row[0];
-        $lead->last_name = $row[1];
-        $lead->telephone = '';
-
-        $lead->campaign_id = 1;
-//        $lead->first_name = '';
-        $lead->first_name = '';
-        $lead->completed = 1;
-        $lead->save();
+    
+       $lead =  lead::create(['assign_to_id' =>Auth::user()->id,
+         'first_name' => "",
+         'last_name' => "",
+         'campaign_id' => 1,
+         'completed' => 1,
+         'birthdate' => $row[2],
+         'telephone' => $row[3],
+         'address' => $row[4],
+         'city' => $row[5],
+         'postal_code' => $row[6],
+         'nationality' => $row[7]
+         ]);
+     
 $family = family::create([
     'first_name' => $row[0],
     'last_name' => $row[1],
