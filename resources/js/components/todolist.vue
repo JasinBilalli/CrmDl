@@ -60,6 +60,10 @@ export default {
             axios.get('getToDo').then((response) => {
                 this.todos = response.data;
             })
+            var checkbx = document.getElementsByClassName('removeRow');
+            for (var checkbox of checkbx) {
+                checkbx.checked = true;
+            }
         },
         deleteToDo: function (id){
             axios.get('deleteToDoList?id=' + id).then(this.getToDo());
