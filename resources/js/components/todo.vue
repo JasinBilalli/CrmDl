@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0">
         <div class="add-a-task-div mx-2 mt-3 mt-sm-0">
             <div class="add-a-task-header d-flex">
                 <div class="col-auto my-2">
@@ -129,7 +129,7 @@
                                                 <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"></path>
                                             </svg>
                                         </span>
-                                        <span class="ps-1">
+                                        <span class="ps-1 fw-600">
                                             Task
                                         </span>
                                     </label>
@@ -236,7 +236,7 @@ export default {
             );
             val.value = "";
         },
- 
+
         assignpendency: function () {
             axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&task=' + document.getElementById('task').value);
             document.getElementById('alrt').innerHTML = "";
@@ -259,7 +259,7 @@ export default {
             axios.get('todos').then((response) => {
                 this.todos = response.data,
                 this.admin = response.data.admins[0].id
-                
+
             });
         }
     },

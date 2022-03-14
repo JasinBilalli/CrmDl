@@ -6,6 +6,7 @@ use App\Http\Requests\ToDoRequest;
 use App\Models\Admins;
 use App\Models\Costumer;
 use App\Models\family;
+use App\Models\ToDoList;
 use Illuminate\Http\Request;
 use App\Models\todo;
 use Illuminate\Support\Facades\DB;
@@ -120,4 +121,23 @@ class TodoController extends Controller
     {
         return todo::where('done', 'Answered')->get();
     }
+
+//    ToDo list Methods
+    public function addToDoList(Request $request){
+        ToDoList::create([
+           'admin_id' => Auth::guard('admins')->user()->id,
+            'title' => filter_var($request->title, FILTER_SANITIZE_STRING),
+        ]);
+    }
+    public function getToDo(){
+        return ToDoList::where('admin_id',Auth::guard('admins')->user()->id)->get();
+    }
+    public function deleteToDoList(Request $request){
+        if(Auth::guard('admins')->check()) {
+            $id = $request->id;
+            ToDoList::where('id','=',$id)->delete();
+        }
+    }
+
+
 }

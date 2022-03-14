@@ -620,7 +620,7 @@
                                                                 <button class="btn px-3"
 
                                                                         style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                        data-bs-dismiss="modal"><b>Offen {{$task->pid}}</b></button>
+                                                                        data-bs-dismiss="modal"><b>Offen</b></button>
                                                             </a>
 
                                                         </div>
