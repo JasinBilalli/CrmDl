@@ -990,7 +990,7 @@ class UserController extends Controller
         $admins->assignRole(filter_var($request->role_name, FILTER_SANITIZE_STRING));
 
         if ($admins->save()) {
-            return redirect()->route('dashboard')->with('success', 'Benutzerregistrierung erfolgreich');
+            return redirect()->route('dashboard')->with('success', 'Benutzerregistrierung erfolgreich!');
         } else {
             return redirect()->route('dashboard')->with('fail', 'Benutzer konnte sich nicht registrieren');
         }
