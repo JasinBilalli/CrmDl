@@ -3,7 +3,7 @@
         <section v-if="role == 'fs'">
             <div class="container-fluid">
                 <div class="row g-0">
-                    <div class="col-12 col-md-12 col-lg-9 g-0" style="height: 100px;">
+                    <div class="col-12 col-md-12 col-lg-9 g-0">
                         <div class="assigned-leads py-1 mx-1">
                             <div class="header ps-3 ps-sm-3 d-flex justify-content-between">
                                 <div class="fs-5">
@@ -555,7 +555,7 @@
         <section v-else>
             <div class="container-fluid p-0">
                 <div class="row g-0">
-                    <div class="col-12 col-md-12 col-lg-9 g-0" style="height: 100px;">
+                    <div class="col-12 col-md-12 col-lg-9 g-0">
                         <div class="assigned-leads1 mx-1 py-1 ">
                             <div class="header ps-3 ps-sm-3 d-flex justify-content-between">
                                 <div class="fs-5">

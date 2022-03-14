@@ -328,7 +328,7 @@
         border-top-right-radius: 8px !important;
     }
 
-    @media (max-width: 575.98px) {
+    @media (max-width: 991.98px) {
         .overflow-div {
             padding-right: 5px;
         }
