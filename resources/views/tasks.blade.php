@@ -379,20 +379,29 @@
                                         </tr>
                                         </thead>
                                         <tbody id="body-table-edit">
-                                            @php  $admin_id = Crypt::encrypt($leadsss); @endphp
+                                        @if(count($tasks) == 0)
+                                            <div class="" style="position: absolute; margin-top: 70px;">
+                                                Keine Offene Aufgaben
+                                            </div>
+
+                                        @else
+                                        @php  $admin_id = Crypt::encrypt($leadsss); @endphp
                                         @foreach($tasks as $task)
                                             @php
                                                 $leadss = $task->id * 1244;
                                                 $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
 
                                             @endphp
+
                                             <tr class="table-content1" style="cursor: pointer">
                                                 <td scope="row"
                                                     onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($task->created_at)->format('Y-m-d') }}</td>
                                                 <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->first_name)}}</td>
                                                 <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->last_name)}}</td>
                                             </tr>
+
                                         @endforeach
+                                        @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -411,6 +420,12 @@
                             </div>
                             <div class="content px-3">
                                 <div class="overflow-div py-3">
+                                    @if(count($birthdays) == 0)
+                                        <div class="text-center">
+                                            Keine geburtstage für heute
+                                            <hr>
+                                        </div>
+                                    @else
                                     @foreach($birthdays as $birth)
                                     <div class="p-2 my-2 birthday-itemm bg-white d-flex">
                                             <div class="my-auto px-2">
@@ -426,7 +441,84 @@
                                             </div>
                                     </div>
                                     @endforeach
-
+                                    @endif
+                                    @if(count($personalApp) == 0)
+                                        <div class="text-center">
+                                            Keine persönlichen Termine für heute
+                                            <hr>
+                                        </div>
+                                        @else
+                                        @foreach($personalApp as $perApp)
+                                            <div class="offene-item-one22 py-2 px-3 m-2" data-bs-toggle="modal"
+                                                 data-bs-target="#exampleModalll{{$perApp->id}}" style="cursor: pointer">
+                                                <div class="d-flex ">
+                                                    <div class="my-auto col-auto pe-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
+                                                             class="bi bi-file-medical" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                                            <path
+                                                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="name-divs col">
+                                                        <div class="name fs-5 fw-bold" style="color: #535353;">
+                                                            {{$perApp->title}}
+                                                        </div>
+                                                        <div class="comment fw-600" style="color: #535353;">
+                                                            {{$perApp->date}} ({{$perApp->time}})
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal fade" id="exampleModalll{{$perApp->id}}" tabindex="-1"
+                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content"
+                                                         style="background: #f8f8f8; border-radius: 43px">
+                                                        <div class="modal-header mx-3 pt-4"
+                                                             style="border-bottom: none !important;">
+                                                            <h4>Personal Appointment</h4>
+                                                            <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"
+                                                                    style="opacity: 1 !important;"></button>
+                                                        </div>
+                                                        <div class="modal-body p-3">
+                                                            <div class="row my-2">
+                                                                <div class="col-12">
+                                                                    <div class=" fw-bold"
+                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                        Title: {{$perApp->title}}
+                                                                        <br>
+                                                                        Kommentar: {{$perApp->comment}}
+                                                                        <br>
+                                                                        Adress: {{$perApp->address}}
+                                                                        <br>
+                                                                        Datum: {{$perApp->date}}
+                                                                        <br>
+                                                                        Zeit: {{$perApp->time}}
+                                                                        <br>
+                                                                        Von: {{App\Models\Admins::find($perApp->assignfrom)->name}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer"
+                                                             style="border-top: none !important; display: block;">
+                                                            <div class="row mx-4 pb-4">
+                                                                <div class=" mx-auto">
+                                                                    <button type="button" class="btn w-100 px-3"
+                                                                            style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
+                                                                            data-bs-dismiss="modal"><b>Schliessen</b>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                        @endif
                                 </div>
                             </div>
                         </div>
@@ -497,6 +589,11 @@
                                         </tr>
                                         </thead>
                                         <tbody id="body-table-edit">
+                                        @if($pending->count() == 0)
+                                            <div class="text-center" style="position: absolute; margin-top: 90px;" >
+                                                Keine Pendenze
+                                            </div>
+                                        @else
                                         @foreach($pending as $task)
                                             @php
                                                 $leadss = $task->id * 1244;
@@ -504,6 +601,7 @@
                                                 $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
                                                 $pend_id = $task->pid;
                                             @endphp
+
                                             <tr class="table-content" style="cursor: pointer">
                                                 <td scope="row" data-bs-target="#stats{{$task->pid}}"
                                                     data-bs-toggle="modal">{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$task->created_at)->format('Y-m-d')}}</td>
@@ -547,6 +645,7 @@
 
                                                 </td>
                                             </tr>
+
                                             <div class="modal fade" id="stats{{$task->pid}}" tabindex="-1"
                                                  aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
@@ -628,6 +727,7 @@
                                                 </div>
                                             </div>
                                         @endforeach
+                                        @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -840,8 +940,14 @@
                                 </div>
                             </div>
                             <div class="content">
+                                @if(count($answered) == 0)
+                                    <div class="text-center">
+                                        Keine Beantwortete Aufgaben
+                                    </div>
+                                @else
                                 <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
                                     <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
+
                                         <form action="{{route('tasks')}}" class="mb-0" style="width: 100%;" method="post">
                                             @csrf
                                             <div class="input-group">
@@ -872,6 +978,7 @@
 
                                 </div>
                                 <div class="overflow-div px-3 px-sm-3 px-md-3 me-2">
+
                                     <script>
                                         var intvaluecount = 1;
                                         var truefalsee = [];
@@ -944,6 +1051,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                    @endif
                             </div>
                         </div>
                     </div>
@@ -957,9 +1065,16 @@
                                     {{count($opened)}}
                                 </div>
                             </div>
+
                             <div class="content">
+                                @if(count($opened) == 0)
+                                    <div class="text-center">
+                                        Keine Aufgaben öffnen
+                                    </div>
+                                @else
                                 <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
                                     <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
+
                                         <form action="{{route('tasks')}}" class="mb-0" style="width: 100%;" method="post">
                                             @csrf
                                             <div class="input-group">
@@ -988,11 +1103,11 @@
                                             </div>
                                         </form>
                                     </div>
-
                                 </div>
                                 <div class="overflow-div px-1 px-sm-1 px-md-2 me-3">
                                     <div id="first_collapse">
                                         <div class="collapse23___   ">
+
                                             @foreach($opened as $task)
                                                 @php
                                                     $leadss = $task->family_id * 1244;
@@ -1062,10 +1177,13 @@
                                                     </script>
                                                 </div>
                                             @endforeach
+
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -1415,7 +1533,7 @@
         border-bottom-right-radius: 15px;
     }
     .offene-item-one22 {
-        background-color: #F7F7F7;
+        background-color: #ffffff;
         border-radius: 10px;
     }
     .overflow-divv1::-webkit-scrollbar {

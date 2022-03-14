@@ -465,7 +465,7 @@
             </div>
             <div class="container-fluid p-0">
                 <div class="col-12 g-0">
-                    <div class="import-leads-div px-3 m-1">
+                    <div class="import-leads-div px-3 my-2">
                         <form action="{{route('importcostumer')}}" class="mb-2" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="head py-3">
@@ -947,6 +947,10 @@
         }
     </script>
 <style>
+    .import-leads-div {
+        border: 1px black solid;
+        border-radius: 15px;
+    }
     /* overflow 1 */
     .ovrflw::-webkit-scrollbar {
         width: 4px;
