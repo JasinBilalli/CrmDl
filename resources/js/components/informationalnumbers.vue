@@ -122,7 +122,7 @@ export default {
     mounted() {
         this.fetchnumbers();
         this.fetchtasks();
-        this.defaultvalue();
+;
     },
     data() {
         return {
@@ -155,9 +155,7 @@ export default {
             valName.value = "";
             valPosition.value = "";
         },
-        defaultvalue: function () {
-            this.costumer = this.todos.costumers[0].id;
-        },
+    
         assignpendency: function () {
             axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value);
             document.getElementById('alrt').innerHTML = "";

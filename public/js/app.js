@@ -5923,10 +5923,12 @@ __webpack_require__.r(__webpack_exports__);
     searchfor: function searchfor() {
       var _this3 = this;
 
-      this.lpage -= 4;
-      axios.get('vuedate?page=' + this.lpage).then(function (response) {
-        _this3.lista = response.data;
-      });
+      if (this.lpage > 4) {
+        this.lpage -= 4;
+        axios.get('vuedate?page=' + this.lpage).then(function (response) {
+          _this3.lista = response.data;
+        });
+      }
     },
     searchapp: function searchapp(vall) {
       var _this4 = this;
@@ -6390,7 +6392,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.fetchnumbers();
     this.fetchtasks();
-    this.defaultvalue();
+    ;
   },
   data: function data() {
     return {
@@ -6418,9 +6420,6 @@ __webpack_require__.r(__webpack_exports__);
       valNumber.value = "";
       valName.value = "";
       valPosition.value = "";
-    },
-    defaultvalue: function defaultvalue() {
-      this.costumer = this.todos.costumers[0].id;
     },
     assignpendency: function assignpendency() {
       axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value);
@@ -8098,6 +8097,7 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].component('addtask4', (__webpack_req
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component('infonumbers', (__webpack_require__(/*! ./components/informationalnumbers.vue */ "./resources/js/components/informationalnumbers.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component('todolist', (__webpack_require__(/*! ./components/todolist.vue */ "./resources/js/components/todolist.vue")["default"]));
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].config.productionTip = false;
+vue__WEBPACK_IMPORTED_MODULE_0__["default"].config.silent = false;
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -38831,96 +38831,90 @@ var render = function () {
         _vm._v(" "),
         _c("div", { staticClass: "content greyBg py-3 px-2" }, [
           _c(
-            "form",
-            { staticClass: "mb-0", attrs: { method: "post", action: "" } },
+            "div",
+            { staticClass: "ovrflw pe-1" },
             [
-              _c(
-                "div",
-                { staticClass: "ovrflw pe-1" },
-                [
-                  _vm._l(_vm.todos, function (todo) {
-                    return _c("div", { staticClass: "input-group mb-2" }, [
-                      _c("div", { staticClass: "row g-0" }, [
-                        _c("div", { staticClass: "col-auto text-center" }, [
-                          _c("label", { staticClass: "container1" }, [
-                            _c("input", {
-                              staticClass: "removeRow",
-                              attrs: { type: "checkbox" },
-                              on: {
-                                click: function ($event) {
-                                  return _vm.deleteToDo(todo.id)
-                                },
-                              },
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "checkmark" }),
-                          ]),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col" }, [
+              _vm._l(_vm.todos, function (todo) {
+                return _c("div", { staticClass: "input-group mb-2" }, [
+                  _c("div", { staticClass: "row g-0" }, [
+                    _c("div", { staticClass: "col-auto text-center" }, [
+                      _c("label", { staticClass: "container1" }, [
                         _c("input", {
-                          staticClass: "form-control m-input",
-                          attrs: {
-                            type: "text",
-                            autocomplete: "off",
-                            readonly: "",
+                          staticClass: "removeRow",
+                          attrs: { type: "checkbox" },
+                          on: {
+                            click: function ($event) {
+                              return _vm.deleteToDo(todo.id)
+                            },
                           },
-                          domProps: { value: todo.title },
                         }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "checkmark" }),
                       ]),
-                    ])
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col" }, [
-                      _c("input", {
-                        staticClass: "form-control m-input",
-                        attrs: {
-                          type: "text",
-                          placeholder: "Enter title",
-                          id: "title",
-                          name: "title",
-                          autocomplete: "off",
-                        },
-                        on: {
-                          keyup: function ($event) {
-                            if (
-                              !$event.type.indexOf("key") &&
-                              _vm._k(
-                                $event.keyCode,
-                                "enter",
-                                13,
-                                $event.key,
-                                "Enter"
-                              )
-                            ) {
-                              return null
-                            }
-                            return _vm.addtodos.apply(null, arguments)
-                          },
-                        },
-                      }),
                     ]),
                   ]),
-                ],
-                2
-              ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col" }, [
+                    _c("input", {
+                      staticClass: "form-control m-input",
+                      attrs: {
+                        type: "text",
+                        autocomplete: "off",
+                        readonly: "",
+                      },
+                      domProps: { value: todo.title },
+                    }),
+                  ]),
+                ])
+              }),
               _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "px-5 py-2 my-2 add-button fw-bold text-center",
-                  attrs: { id: "addRow", type: "button" },
-                  on: { click: _vm.addtodos },
-                },
-                [
-                  _vm._v(
-                    "\n                        Neue Erinnerung\n                        "
-                  ),
-                ]
+              _c("div", { staticClass: "input-group" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "col" }, [
+                  _c("input", {
+                    staticClass: "form-control m-input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "Enter title",
+                      id: "title",
+                      name: "title",
+                      autocomplete: "off",
+                    },
+                    on: {
+                      keyup: function ($event) {
+                        if (
+                          !$event.type.indexOf("key") &&
+                          _vm._k(
+                            $event.keyCode,
+                            "enter",
+                            13,
+                            $event.key,
+                            "Enter"
+                          )
+                        ) {
+                          return null
+                        }
+                        return _vm.addtodos.apply(null, arguments)
+                      },
+                    },
+                  }),
+                ]),
+              ]),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "px-5 py-2 my-2 add-button fw-bold text-center",
+              attrs: { id: "addRow", type: "button" },
+              on: { click: _vm.addtodos },
+            },
+            [
+              _vm._v(
+                "\n                        Neue Erinnerung\n                        "
               ),
             ]
           ),

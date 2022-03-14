@@ -182,10 +182,12 @@
             );
         },
         searchfor(){
+            if(this.lpage > 4){
             this.lpage -= 4;
             axios.get('vuedate?page=' + this.lpage).then(
                 (response) => { this.lista = response.data;}
             );
+            }
         },
         searchapp(vall){
             var idForStyle = document.getElementById(vall).id;
