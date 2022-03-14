@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
-
+@php $user = auth()->user();
+$urole = $user->getRoleNames();
+$urole = $urole->toArray();
+@endphp
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
           integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
@@ -132,8 +135,8 @@
                 </a>
 
 
-                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin'))
+                @if(in_array('backoffice',$urole) ||
+                in_array('fs',$urole) || in_array('admin',$urole))
 
                     <a href="{{route('tasks')}}"
                        class="nav-link {{ (request()->is('tasks')) ? 'activeClassNav__' : '' }}">
@@ -147,8 +150,8 @@
                         <span class="ps-2 txt-dn">Aufgaben</span>
                     </a>
                 @endif
-                @if(Auth::guard('admins')->user()->hasRole('salesmanager')
-                ||Auth::guard('admins')->user()->hasRole('menagment'))
+                @if(in_array('salesmanager',$urole)
+                ||in_array('menagment',$urole))
                     <a href="{{route('leads')}}"
                        class="nav-link {{ (request()->is('leads')) ? 'activeClassNav__' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
@@ -169,8 +172,8 @@
                     </svg>
                     <span class="ps-2 txt-dn">Finanzen</span>
                 </a> -->
-                @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
+                @if(in_array('backoffice',$urole) ||
+                in_array('admin',$urole))
 
                 <!-- <a href="{{route('status')}}"
                        class="nav-link {{ (request()->is('status')) ? 'activeClassNav__' : '' }}">
@@ -198,8 +201,8 @@
                         <span class="ps-2 txt-dn">Kunden</span>
                     </a>
                 @endif
-            <!-- @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
+            <!-- @if(in_array('backoffice',$urole) ||
+                in_array('admin',$urole))
                 <a href="#" class="nav-link ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                          class="bi bi-cash-coin" viewBox="0 0 16 16">
@@ -214,8 +217,8 @@
                     <span class="ps-2 txt-dn">Einzahlung</span>
                 </a>
 @endif -->
-            <!-- @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
+            <!-- @if(in_array('backoffice',$urole) ||
+                in_array('admin',$urole))
                 <a href="#" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                          class="bi bi-x-square" viewBox="0 0 16 16">
@@ -227,10 +230,10 @@
                     <span class="ps-2 txt-dn">Stornierungen</span>
                 </a>
 @endif -->
-                @if(Auth::guard('admins')->user()->hasRole('fs') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
+                @if(in_array('fs',$urole) ||
+                in_array('salesmanager',$urole) ||
+                in_array('menagment',$urole) ||
+                in_array('admin',$urole))
                     <a href="{{route('Appointments')}}"
                        class="nav-link  {{ (request()->is('Appointments')) ? 'activeClassNav__' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
@@ -240,16 +243,16 @@
                             <path
                                 d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                         </svg>
-                        @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
+                        @if(in_array('salesmanager',$urole))
                             <span class="ps-2 txt-dn">Terminen</span>
                         @else
                             <span class="ps-2 txt-dn">Kalender</span>
                         @endif
                     </a>
                 @endif
-            <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
+            <!-- @if(in_array('admin',$urole) ||
+                in_array('menagment',$urole) ||
+                in_array('salesmanager',$urole))
                 <a href="#" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                          class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -261,8 +264,8 @@
                     <span class="ps-2 txt-dn">Mitarbeiter</span>
                 </a>
 @endif -->
-            <!-- @if(Auth::guard('admins')->user()->hasRole('finance') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
+            <!-- @if(in_array('finance',$urole) ||
+                in_array('admin',$urole))
                 <a href="#" class="nav-link ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-percent"
                          viewBox="0 0 16 16">
@@ -272,9 +275,9 @@
                     <span class="ps-2 txt-dn">Provisionen</span>
                 </a>
 @endif -->
-            <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
+            <!-- @if(in_array('admin',$urole) ||
+                in_array('menagment',$urole) ||
+                in_array('salesmanager',$urole))
                 <a href="#" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                          class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
@@ -284,9 +287,9 @@
                     <span class="ps-2 txt-dn">Prov.system</span>
                 </a>
 @endif -->
-            <!-- @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
+            <!-- @if(in_array('admin',$urole) ||
+                in_array('menagment',$urole) ||
+                in_array('salesmanager',$urole))
                 <a href="#" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                          class="bi bi-bar-chart-fill" viewBox="0 0 16 16">
@@ -296,9 +299,9 @@
                     <span class="ps-2 txt-dn">Statistik</span>
                 </a>
 @endif -->
-            <!-- @if(Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('finance')
-                ||Auth::guard('admins')->user()->hasRole('admin') )
+            <!-- @if(in_array('menagment',$urole) ||
+                in_array('finance',$urole)
+                ||in_array('admin',$urole) )
                 <a href="#" class="nav-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff"
                          class="bi bi-diagram-2-fill" viewBox="0 0 16 16">
@@ -308,7 +311,7 @@
                     <span class="ps-2 txt-dn">Treuhand</span>
                 </a>
 @endif -->
-                @if(Auth::guard('admins')->user()->hasRole('admin'))
+                @if(in_array('admin',$urole))
                     <a class="nav-link" href="{{route('addnewuser')}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -342,14 +345,17 @@
             </div>
         </div>
     </div>
+    @php $gcnt = \App\Models\newgegen::where('person_id',$id)->count(); 
+     $ncnt = \App\Models\newnue::where('person_id',$id)->count();
+    @endphp
     <div class="col">
         <form method="post" enctype="multipart/form-data" id="forma">
             @csrf
 
             <input type="hidden" name="newgcount" id="newgcount"
-                   value="{{\App\Models\newgegen::where('person_id',$id)->count()}}">
+                   value="{{$gcnt}}">
             <input type="hidden" name="newncount" id="newncount"
-                   value="{{\App\Models\newnue::where('person_id',$id)->count()}}">
+                   value="{{$ncnt}}">
             <input type="hidden" name="nofert" id="nofert">
             <input type="hidden" name="gofert" id="gofert">
             <div class="my-1 my-sm-5 mx-0 mx-sm-4">
@@ -365,7 +371,7 @@
                                         </svg>
                                     </a>
                                 </div>
-                                {{$lead->first_name}} {{$id}} {{$data->fahrzeug->leasing_name}}
+                                {{$lead->first_name}} {{$data->fahrzeug->leasing_name}}
                             </span<br>
                         <span class="fs-6 text-muted">
                                 {{$lead->address}}
@@ -851,7 +857,7 @@
                             </div>
                             <div class="text-center mt-3 pb-3">
                                 <div class="row mx-2 mx-sm-4">
-                                    @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
+                                    @if(in_array('admin',$urole) || in_array('backoffice',$urole))
                                         <addtask2 url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                   :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask2>
                                     @endif
@@ -3874,7 +3880,7 @@
                             </div>
                             <div class="text-center mt-3 pb-3">
                                 <div class="row mx-2 mx-sm-4">
-                                    @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
+                                    @if(in_array('admin',$urole) || in_array('backoffice',$urole))
                                         <addtask3 url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                   :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask3>
                                     @endif
@@ -5080,7 +5086,7 @@
                             </div>
                             <div class="text-center mt-3 pb-3">
                                 <div class="row mx-2 mx-sm-4">
-                                    @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
+                                    @if(in_array('admin',$urole) || in_array('backoffice',$urole))
                                         <addtask4 url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                   :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask4>
                                     @endif
@@ -5695,7 +5701,7 @@
 
                                 <div class="text-center g-0 mt-3 pb-3">
                                     <div class="row mx-0 mx-sm-4">
-                                        @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice'))
+                                        @if(in_array('admin',$urole) || in_array('backoffice',$urole))
                                             <addtask url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                      :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
                                         @endif
@@ -5752,8 +5758,9 @@
                                       d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                             </svg>
                         </button>
+                        @php $pendency = \App\Models\Pendency::find(Session::get('pend_id')); @endphp
                         @if(Auth::user()->hasRole('backoffice') || Auth::user()->hasRole('admin'))
-                            @if(\App\Models\Pendency::find(Session::get('pend_id'))->completed == 0 && \App\Models\Pendency::find(Session::get('pend_id'))->done == 1)
+                            @if($pendency->completed == 0 && $pendency->done == 1)
                                 <button class="px-5 py-2" id="submitt1" type="button"
                                         style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
                                         onclick="accept();">
@@ -5765,7 +5772,8 @@
                                     </svg>
                                 </button>
                             @endif
-                            @if(\App\Models\Pendency::find(Session::get('pend_id'))->done == 1 && \App\Models\Pendency::find(Session::get('pend_id'))->completed == 0)
+                           
+                            @if($pendency->done == 1 && $pendency->completed == 0)
                                 <button class="px-5 py-2" id="submitt1" type="button"
                                         style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"
                                         onclick="reject();">
@@ -5803,8 +5811,8 @@
                 </span>
         </div>
     </a>
-    @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-    Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin'))
+    @if(in_array('backoffice',$urole) ||
+    in_array('fs',$urole) || in_array('admin',$urole))
         <a href="{{route('tasks')}}" class="m-nav {{ (request()->is('tasks')) ? 'activeClassNavMob__' : '' }}">
             <span>
                 <svg width="26" viewBox="0 0 19 20" fill="#88889D" xmlns="http://www.w3.org/2000/svg">
@@ -5841,10 +5849,10 @@
             </div>
         </a>
     @endif
-    @if(Auth::guard('admins')->user()->hasRole('admin') ||
-    Auth::guard('admins')->user()->hasRole('fs') ||
-    Auth::guard('admins')->user()->hasRole('salesmanager')
-    ||Auth::guard('admins')->user()->hasRole('menagment'))
+    @if(in_array('admin',$urole) ||
+    in_array('fs',$urole) ||
+    in_array('salesmanager',$urole)
+    ||in_array('menagment',$urole))
         <a href="{{route('leads')}}" class="m-nav {{ (request()->is('leads')) ? 'activeClassNavMob__' : '' }}">
             <span>
             <svg xmlns="http://www.w3.org/2000/svg" width="27" fill="#88889D" class="bi bi-hdd-stack-fill"
@@ -5913,8 +5921,8 @@
     </div>
     <div class="content-of-burger col-9 mx-auto ">
         <div class="my-3 m-burger">
-        @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-            Auth::guard('admins')->user()->hasRole('admin'))
+        @if(in_array('backoffice',$urole) ||
+            in_array('admin',$urole))
             <!-- <a href="{{route('status')}}"
                    class="m-nav text-decoration-none {{ (request()->is('status')) ? 'activeClassNavMob__' : '' }}">
                     <span class="px-2 active-dot">
@@ -5941,8 +5949,8 @@
             @endif
         </div>
     <!-- <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-            Auth::guard('admins')->user()->hasRole('admin'))
+            @if(in_array('backoffice',$urole) ||
+            in_array('admin',$urole))
         <a href="#" class="m-nav text-decoration-none">
             <span class="px-2 active-dot">
                 <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -5969,8 +5977,8 @@
 @endif
         </div> -->
     <!-- <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
+            @if(in_array('backoffice',$urole) ||
+                in_array('admin',$urole))
         <a href="#" class="m-nav text-decoration-none">
             <span class="px-2 active-dot">
                 <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -5994,10 +6002,10 @@
 @endif
         </div> -->
         <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('fs') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
+            @if(in_array('fs',$urole) ||
+                in_array('salesmanager',$urole) ||
+                in_array('menagment',$urole) ||
+                in_array('admin',$urole))
                 <a href="{{route('Appointments')}}"
                    class="m-nav text-decoration-none {{ (request()->is('Appointments')) ? 'activeClassNavMob__' : '' }}">
                         <span class="px-2 active-dot">
@@ -6015,7 +6023,7 @@
                             </svg>
                         </span>
                     <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
-                        @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
+                        @if(in_array('salesmanager',$urole))
                             TERMINEN
                         @else
                             KALENDER
@@ -6027,9 +6035,9 @@
             @endif
         </div>
     <!-- <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
+            @if(in_array('admin',$urole) ||
+                in_array('menagment',$urole) ||
+                in_array('salesmanager',$urole))
         <a href="#" class="m-nav text-decoration-none">
                 <span class="px-2 active-dot">
                     <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6053,8 +6061,8 @@
 @endif
         </div> -->
     <!-- <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('finance') ||
-                Auth::guard('admins')->user()->hasRole('admin'))
+            @if(in_array('finance',$urole) ||
+                in_array('admin',$urole))
         <a href="#" class="m-nav text-decoration-none">
                 <span class="px-2 active-dot">
                     <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6096,9 +6104,9 @@
             <hr>
         </div> -->
     <!-- <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
+            @if(in_array('admin',$urole) ||
+                in_array('menagment',$urole) ||
+                in_array('salesmanager',$urole))
         <a href="#" class="m-nav text-decoration-none">
                 <span class="px-2 active-dot">
                     <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6120,9 +6128,9 @@
 @endif
         </div> -->
     <!-- <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('admin') ||
-                Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('salesmanager'))
+            @if(in_array('admin',$urole) ||
+                in_array('menagment',$urole) ||
+                in_array('salesmanager',$urole))
         <a href="#" class="m-nav text-decoration-none">
                 <span class="px-2 active-dot">
                     <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6144,9 +6152,9 @@
 @endif
         </div> -->
     <!-- <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('menagment') ||
-                Auth::guard('admins')->user()->hasRole('finance')
-                ||Auth::guard('admins')->user()->hasRole('admin') )
+            @if(in_array('menagment',$urole) ||
+                in_array('finance',$urole)
+                ||in_array('admin',$urole) )
         <a href="#" class="m-nav text-decoration-none">
                 <span class="px-2 active-dot">
                     <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -6168,7 +6176,7 @@
 @endif
         </div> -->
         <div class="my-3 m-burger">
-            @if(Auth::guard('admins')->user()->hasRole('admin'))
+            @if(in_array('admin',$urole))
                 <a href="{{route('addnewuser')}}"
                    class="m-nav text-decoration-none {{ (request()->is('addnewuser')) ? 'activeClassNavMob__' : '' }}">
                         <span class="px-2 active-dot">
@@ -6816,8 +6824,8 @@
         crossorigin="anonymous"></script>
 <script>
     var cntt = 0;
-    var newgcnt = <?php echo \App\Models\newgegen::where('person_id', $id)->count() ?>;
-    var newncnt =  <?php echo \App\Models\newnue::where('person_id', $id)->count() ?>;
+    var newgcnt = <?php echo $gcnt; ?>;
+    var newncnt =  <?php echo $ncnt; ?>;
     var gofert = [];
     var nofert = [];
 

@@ -22,9 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(data::class,function($app){
-            return new data('aaa');
-                 });
+     
     }
 
     /**
@@ -34,6 +32,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       
+     
     }
 }

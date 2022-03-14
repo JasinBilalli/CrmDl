@@ -28,9 +28,9 @@ class FamilyPersonsController extends Controller
         $cnt = 0;
         $cnt1 = 0;
         $lead = family::find($idd);
- $admin_id = $req->admin_id;
 
 
+        $data = LeadDataKK::where('person_id', '=', $idd)->first();
 
 
             if (Auth::guard('admins')->user()->hasRole('fs')) {
@@ -38,7 +38,7 @@ class FamilyPersonsController extends Controller
                 if ($lead->lead->assign_to_id == Auth::user()->id || Pendency::find((int) $req->pend_id)->admin_id == Auth::user()->id) {
                     try {
 
-                        $data = LeadDataKK::where('person_id', '=', $idd)->firstOrFail();
+                   
                         return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
                     }
                     catch (Exception $e) {
@@ -53,7 +53,7 @@ class FamilyPersonsController extends Controller
             }
 
             else {
-                $data = LeadDataKK::where('person_id', '=', $idd)->firstOrFail();
+               
 
                 try {
 
