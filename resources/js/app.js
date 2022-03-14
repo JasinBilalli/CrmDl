@@ -16,6 +16,7 @@ Vue.component('addtask2', require('./components/addtask2.vue').default);
 Vue.component('addtask3', require('./components/addtask3.vue').default);
 Vue.component('addtask4', require('./components/addtask4.vue').default);
 Vue.component('infonumbers', require('./components/informationalnumbers.vue').default);
+Vue.component('todolist', require('./components/todolist.vue').default);
 Vue.config.productionTip = false;
 
 require('./bootstrap');
