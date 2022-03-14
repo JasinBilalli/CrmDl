@@ -411,8 +411,8 @@
                             </div>
                             <div class="content px-3">
                                 <div class="overflow-div py-3">
-                                    <!-- <div class="p-2 birthday-itemm bg-white d-flex">
-                                   @foreach($birthdays as $birth)
+                                    @foreach($birthdays as $birth)
+                                    <div class="p-2 my-2 birthday-itemm bg-white d-flex">
                                             <div class="my-auto px-2">
                                                 <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
@@ -424,88 +424,9 @@
                                                 <div class="fs-5 fw-600">{{$birth['name']}}</div>
                                                 <div class="">{{$birth['birthday']}} ({{$birth['age']}} yahre)</div>
                                             </div>
+                                    </div>
                                     @endforeach
-                                    </div> -->
 
-
-                                    <!-- <table class="table table-borderless  table-2">
-                                        <thead>
-                                        <tr class="sticky-class">
-                                            <th scope="col">Datum</th>
-                                            <th scope="col">Wann</th>
-                                            <th scope="col">Kundename</th>
-
-                                        </tr>
-                                        </thead>
-                                        <tbody id="body-table-edit">
-                                        @foreach($birthdays as $birth)
-                                            <tr class="table-content1">
-                                                <td scope="row">{{$birth['birthday']}} </td>
-                                                <td>({{$birth['age']}})</td>
-                                                <td>{{$birth['name']}}</td>
-
-                                            </tr>
-                                        @endforeach
-                                        @foreach($personalApp as $perApp)
-                                            <tr class="table-content1" style="cursor: pointer">
-                                                <td scope="row" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{$perApp->id}}">{{$perApp->date}} </td>
-                                                <td data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{$perApp->id}}">{{$perApp->title}}</td>
-                                                <td data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal{{$perApp->id}}"></td>
-                                            </tr>
-                                            <div class="modal fade" id="exampleModal{{$perApp->id}}" tabindex="-1"
-                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content"
-                                                         style="background: #f8f8f8; border-radius: 43px">
-                                                        <div class="modal-header mx-3 pt-4"
-                                                             style="border-bottom: none !important;">
-                                                            <h4>Personal Appointment</h4>
-                                                            <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"
-                                                                    style="opacity: 1 !important;"></button>
-                                                        </div>
-                                                        <div class="modal-body p-3">
-                                                            <div class="row my-2">
-                                                                <div class="col-12">
-                                                                    <div class=" fw-bold"
-                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                        Title: {{$perApp->title}}
-                                                                        <br>
-                                                                        Kommentar: {{$perApp->comment}}
-                                                                        <br>
-                                                                        Adress: {{$perApp->address}}
-                                                                        <br>
-                                                                        Datum: {{$perApp->date}}
-                                                                        <br>
-                                                                        Zeit: {{$perApp->time}}
-                                                                        <br>
-                                                                        Von: {{App\Models\Admins::find($perApp->assignfrom)->name}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer"
-                                                             style="border-top: none !important; display: block;">
-                                                            <div class="row mx-4 pb-4">
-                                                                <div class=" mx-auto">
-                                                                    <button type="button" class="btn w-100 px-3"
-                                                                            style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                            data-bs-dismiss="modal"><b>Schliessen</b>
-                                                                    </button>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                        </tbody>
-                                    </table> -->
                                 </div>
                             </div>
                         </div>
