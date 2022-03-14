@@ -79,11 +79,11 @@ route::prefix('')->middleware('confirmcode')->group(function(){
    })->name('importleads')->middleware('role:admin|salesmanager');
    route::get('getleads',function(){
       $user = auth()->user();
-      
+
       $urole = $user->getRoleNames();
-  
-   
-    
+
+
+
       if ($urole->contains('admin') || $urole->contains('salesmanager') || $urole->contains('backoffice')) {
          $leads['leads'] = lead::with('campaign')->with('info')->where('completed', '0')->where('assigned', 0)->where('assign_to_id', null)->where('wantsonline',0)->where('rejected',0)->orderBy('updated_at','asc')->select('leads.*')->paginate(100);
      } elseif ($urole->contains('fs')) {
@@ -104,9 +104,9 @@ $leadinfo = $leads['leads'][$i]->info;
      if($leads['leads'][$i]->campaign_id == 1) $instagram++;
      elseif($leads['leads'][$i]->campaign_id == 2) $facebook++;
      else $sanascout++;
-     
+
    }
- 
+
      $leads['admins'] = Admins::role(['fs'])->get();
      $leads['admin'] = Auth::user()->getRoleNames();
      $leads['sanascout'] = $sanascout;
@@ -192,7 +192,10 @@ $leadinfo = $leads['leads'][$i]->info;
    route::get('vuedate',[TasksController::class,'vuedate'])->middleware('role:admin|fs|backoffice');
    route::get('chat/{u1}/{u2}',[ChatController::class,'chat'])->name('chat');
    route::any('addappointmentfile',[UserController::class,'addappointmentfile'])->name('addappointmentfile')->middleware('role:admin|fs|backoffice');
-      route::get('addtodo',[TodoController::class,'addtodo']);
+   route::get('addtodo',[TodoController::class,'addtodo']);
+   route::get('addToDoList',[TodoController::class,'addToDoList'])->name('addToDoList');
+   route::get('getToDo',[TodoController::class,'getToDo']);
+   route::get('deleteToDoList',[TodoController::class,'deleteToDoList']);
 
    route::get('todos',[TodoController::class,'todos']);
    route::get('deletetodo',[TodoController::class,'deletetodo']);
@@ -264,7 +267,7 @@ route::get('getnotifications',function(){
       $cnt++;
       if($not->read_at == null) $data['cnt']++;
    }
-   
+
  return $data;
 });
 route::get('readnotifications',function(){

@@ -347,64 +347,6 @@
                                             </div>
                                         </div>
                                     </div>
-{{--                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"--}}
-{{--                                         style="font-family: 'Montserrat';">--}}
-{{--                                        <div class="text-center"--}}
-{{--                                             style="background-color: #c7cb81; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">--}}
-{{--                                            <div class="pt-3">--}}
-{{--                                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"--}}
-{{--                                                     fill="#fff" class="bi bi-exclamation-octagon-fill"--}}
-{{--                                                     viewBox="0 0 16 16">--}}
-{{--                                                    <path--}}
-{{--                                                        d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>--}}
-{{--                                                </svg>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="py-2">--}}
-{{--                                                    <span class="fw-bold fs-5 text-white">--}}
-{{--                                                        0--}}
-{{--                                                    </span>--}}
-{{--                                                <br>--}}
-{{--                                                <span class="fw-bold fs-5 text-white">--}}
-{{--                                                        HR Comm--}}
-{{--                                                    </span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                    <div class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"--}}
-{{--                                         style="font-family: 'Montserrat';">--}}
-{{--                                        <div class="text-center box-1 "--}}
-{{--                                             style="margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">--}}
-{{--                                            <div class="py-4 ">--}}
-{{--                                                <div class="py-2">--}}
-{{--                                                    <svg id="Group_549" data-name="Group 549"--}}
-{{--                                                         xmlns="http://www.w3.org/2000/svg" width="29.713"--}}
-{{--                                                         height="29.713" viewBox="0 0 29.713 29.713">--}}
-{{--                                                        <rect id="Rectangle_9" data-name="Rectangle 9"--}}
-{{--                                                              width="29.713" height="29.713" rx="14.857"--}}
-{{--                                                              transform="translate(0)" fill="#4ec590"/>--}}
-{{--                                                        <g id="Group_42" data-name="Group 42"--}}
-{{--                                                           transform="translate(10.03 10.03)">--}}
-{{--                                                            <line id="Line_11" data-name="Line 11" y2="9.437"--}}
-{{--                                                                  transform="translate(4.719 0)" fill="none"--}}
-{{--                                                                  stroke="#fff" stroke-linecap="round"--}}
-{{--                                                                  stroke-width="2"/>--}}
-{{--                                                            <line id="Line_12" data-name="Line 12" x1="9.437"--}}
-{{--                                                                  transform="translate(0 4.441)" fill="none"--}}
-{{--                                                                  stroke="#fff" stroke-linecap="round"--}}
-{{--                                                                  stroke-width="2"/>--}}
-{{--                                                        </g>--}}
-{{--                                                    </svg>--}}
-
-{{--                                                </div>--}}
-{{--                                                <div class="py-1">--}}
-{{--                                                        <span class="text-muted">--}}
-{{--                                                            Neues hinzufügen--}}
-{{--                                                        </span>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>
@@ -415,35 +357,242 @@
     @endif
     @if(Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin'))
         <div class="row g-0 mt-4" id="app">
+            <todolist></todolist>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
+                <div class="hr-req-div mx-2 mt-3">
+                    <div class="d-flex justify-content-between">
+                        <div class="hr-req-header d-flex">
+                            <div class="col-auto my-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                     class="bi bi-file-medical" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                    <path
+                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                                </svg>
+                            </div>
+                            <div class="txt-01 my-auto ps-2">
+                                Hr-Anfragen
+                            </div>
 
-            <todo></todo>
-
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
-                    <div class="answered-task-div mx-2 mt-3 mt-sm-0">
-                        <div class="d-flex justify-content-between">
-                            <div class="answered-task-header d-flex">
-                                <div class="col-auto my-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
-                                         class="bi bi-list-task" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                              d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z" />
-                                        <path
-                                            d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z" />
-                                        <path fill-rule="evenodd"
-                                              d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z" />
-                                    </svg>
+                        </div>
+                        <div class="fs-5 count px-4 fw-bold">2</div>
+                    </div>
+                    <div class="hr-req-content">
+                        <div class="wrapper p-2">
+                            <div class="hr-req-overflow px-2">
+                                <div class="hr-req-item my-2 p-2 bg-white">
+                                    <div class="d-flex my-2 px-2">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                                    <path fill-rule="evenodd"
+                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                                </svg>
+                                            </span>
+                                        <div class="ps-2 fw-500">Malik Gabbi</div>
+                                    </div>
+                                    <div class="d-flex my-2 px-2">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                                </svg>
+                                            </span>
+                                        <div class="ps-2 fw-500">Vacation</div>
+                                    </div>
+                                    <div class="d-flex mb-1 mt-2">
+                                        <div class="col-auto g-0 p-0">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
+                                                         fill="currentColor" class="bi bi-calendar-week"
+                                                         viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                                        <path
+                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                                    </svg>
+                                                </span>
+                                        </div>
+                                        <div class="col ps-2">
+                                            <div class="fw-500">10 Days</div>
+                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="txt-01 ps-2 my-auto">
-                                    Beantwortete Pendenzen
+                                <div class="hr-req-item my-2 p-2 bg-white">
+                                    <div class="d-flex my-2 px-2">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                                    <path fill-rule="evenodd"
+                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                                </svg>
+                                            </span>
+                                        <div class="ps-2 fw-500">Malik Gabbi</div>
+                                    </div>
+                                    <div class="d-flex my-2 px-2">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                                </svg>
+                                            </span>
+                                        <div class="ps-2 fw-500">Vacation</div>
+                                    </div>
+                                    <div class="d-flex mb-1 mt-2">
+                                        <div class="col-auto g-0 p-0">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
+                                                         fill="currentColor" class="bi bi-calendar-week"
+                                                         viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                                        <path
+                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                                    </svg>
+                                                </span>
+                                        </div>
+                                        <div class="col ps-2">
+                                            <div class="fw-500">10 Days</div>
+                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="fs-5 count px-4 fw-bold">{{count($pendencies)}}</div>
                         </div>
-                        <div class="answered-task-content">
-                            <div class="search-div">
-                                <div class="d-flex py-2 px-1 px-sm-2" style="align-items: center;">
-                                    <div class="input-group">
-                                        <div class=" btn search-icon ps-3 pe-2">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
+                <infonumbers></infonumbers>
+            </div>
+            <todo></todo>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect">
+                <div class="answw-task m-2">
+                    <div class="header  justify-content-between">
+                        <div class="">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" viewBox="0 0 16 16"
+                                 class="bi bi-list-task">
+                                <path fill-rule="evenodd"
+                                      d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z">
+                                </path>
+                                <path
+                                    d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z">
+                                </path>
+                                <path fill-rule="evenodd"
+                                      d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z">
+                                </path>
+                            </svg></span>
+                            <span class="ps-2">Beantwortete Pendenzen</span>
+                        </div>
+                        <div class="h-100 count px-4">
+                            {{count($pendencies)}}
+                        </div>
+                    </div>
+                    <div class="content px-3">
+                        <div class="overflow-div ">
+                            <table class="table table-borderless tablee-123">
+                                <thead>
+                                <tr class="sticky-class1">
+                                    <th scope="col" style="padding-top: 10px;">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                                 class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                                <path fill-rule="evenodd"
+                                                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                            </svg>
+                                        </span>
+                                        Field Service
+                                    </th>
+                                    <th scope="col" style="padding-top: 10px;">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                                 class="bi bi-people" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+                                            </svg>
+                                        </span>
+                                        Client
+                                    </th>
+                                    <th scope="col" style="padding-top: 10px;">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                                 class="bi bi-card-list" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                                                <path
+                                                    d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </span>
+                                        Task
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="body-table-edit">
+                                @if(!empty($pendencies))
+                                    @foreach($pendencies as $pendency)
+                                        @php
+                                            $crypt = $pendency->family_id * 1244;
+                                            $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
+                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
+                                            $pend_id = $pendency->pid;
+                                        @endphp
+                                            <tr class="table-content1" style="cursor: pointer">
+                                                <td scope="row" class="fw-600" onclick="window.location.href='{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}'">
+                                                    {{$pendency->adminpend->name}}
+                                                </td>
+                                                <td class="fw-600" onclick="window.location.href='{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}'">
+                                                    {{$pendency->first_name}} {{$pendency->last_name}}
+                                                </td>
+                                                <td class="fw-600" onclick="window.location.href='{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}'">
+                                                    {{$pendency->description}}
+                                                </td>
+                                            </tr>
+                                    @endforeach
+                                @endif
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect">
+                <div class="answered-task-div mx-2 mt-3 mt-sm-0">
+                    <div class="d-flex justify-content-between">
+                        <div class="answered-task-header d-flex">
+                            <div class="col-auto my-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                     class="bi bi-list-task" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z" />
+                                    <path
+                                        d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z" />
+                                    <path fill-rule="evenodd"
+                                          d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z" />
+                                </svg>
+                            </div>
+                            <div class="txt-01 ps-2 my-auto">
+                                Beantwortete Pendenzen
+                            </div>
+                        </div>
+                        <div class="fs-5 count px-4 fw-bold">{{count($pendencies)}}</div>
+                    </div>
+                    <div class="answered-task-content">
+                        <div class="search-div">
+                            <div class="d-flex py-2 px-1 px-sm-2" style="align-items: center;">
+                                <div class="input-group">
+                                    <div class=" btn search-icon ps-3 pe-2">
                                             <span class="">
                                                 <svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg"
                                                      width="22.03" viewBox="0 0 28.03 24.48">
@@ -459,30 +608,30 @@
                                                           stroke="#0c71c3" stroke-linecap="round" stroke-width="2" />
                                                 </svg>
                                             </span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Search by name">
-                                        <button
-                                            class="py-1 px-3 px-sm-4 ms-2 fw-bold border-0 btn text-white search-button-task">
-                                            Search
-                                        </button>
                                     </div>
+                                    <input type="text" class="form-control" placeholder="Search by name">
+                                    <button
+                                        class="py-1 px-3 px-sm-4 ms-2 fw-bold border-0 btn text-white search-button-task">
+                                        Search
+                                    </button>
                                 </div>
                             </div>
-                                        <div class="wrapper p-2">
-                                            <div class="answered-tasks-overflow-content px-2">
-                                                @if(!empty($pendencies))
-                                                    @foreach($pendencies as $pendency)
-                                                        @php
-                                                            $crypt = $pendency->family_id * 1244;
-                                                            $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
-                                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
-                                                            $pend_id = $pendency->pid;
-                                                        @endphp
-                                                        <a style="text-decoration: none;color: black"
-                                                           href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
-                                                            <div class="answered-task-item my-2 p-2 bg-white " style="border-color: #14a814;">
-                                                                <div class="ps-2">
-                                                                    <div class="d-flex my-1">
+                        </div>
+                        <div class="wrapper p-2">
+                            <div class="answered-tasks-overflow-content px-2">
+                                @if(!empty($pendencies))
+                                    @foreach($pendencies as $pendency)
+                                        @php
+                                            $crypt = $pendency->family_id * 1244;
+                                            $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
+                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
+                                            $pend_id = $pendency->pid;
+                                        @endphp
+                                        <a style="text-decoration: none;color: black"
+                                           href="{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}">
+                                            <div class="answered-task-item my-2 p-2 bg-white " style="border-color: #14a814;">
+                                                <div class="ps-2">
+                                                    <div class="d-flex my-1">
                                                                         <span>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="25"
                                                                                  fill="currentColor" class="bi bi-person-circle"
@@ -492,9 +641,9 @@
                                                                                       d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                                                                             </svg>
                                                                         </span>
-                                                                        <div class="ps-2 fw-600">{{$pendency->adminpend->name}}</div>
-                                                                    </div>
-                                                                    <div class="d-flex my-1">
+                                                        <div class="ps-2 fw-600">{{$pendency->adminpend->name}}</div>
+                                                    </div>
+                                                    <div class="d-flex my-1">
                                                                         <span>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="25"
                                                                                  fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
@@ -502,9 +651,9 @@
                                                                                     d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
                                                                             </svg>
                                                                         </span>
-                                                                        <div class="ps-2 fw-600">{{$pendency->first_name}} {{$pendency->last_name}}</div>
-                                                                    </div>
-                                                                    <div class="d-flex my-1">
+                                                        <div class="ps-2 fw-600">{{$pendency->first_name}} {{$pendency->last_name}}</div>
+                                                    </div>
+                                                    <div class="d-flex my-1">
                                                                         <span>
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width="25"
                                                                                  fill="currentColor" class="bi bi-journal-x" viewBox="0 0 16 16">
@@ -516,135 +665,105 @@
                                                                                     d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
                                                                             </svg>
                                                                         </span>
-                                                                        <div class="ps-2 fw-600">Problem: {{$pendency->description}}</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    @endforeach
-                                                @endif
+                                                        <div class="ps-2 fw-600">Problem: {{$pendency->description}}</div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
-                <infonumbers></infonumbers>
-            </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
-                <div class="status-check-div mx-2  mt-3">
-                    <div class="d-flex justify-content-between">
-                        <div class="status-check-header d-flex">
-                            <div class="col-auto my-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
-                                     class="bi bi-clipboard-check" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                          d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                                    <path
-                                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-                                    <path
-                                        d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
-                                </svg>
-                            </div>
-                            <div class="txt-01 ps-2 my-auto">
-                                Statusprüfung
-                            </div>
-
-                        </div>
-                        <div class="fs-5 count px-4 fw-bold">2</div>
-                    </div>
-                    <div class="status-check-content">
-                        <div class="wrapper p-2">
-                            <div class="status-check-overflow px-2">
-                                <div class="status-check-item my-2 py-2 bg-white">
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
-                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                                    <path fill-rule="evenodd"
-                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Enis Demolli</div>
-                                    </div>
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-people" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Malik Gabbi</div>
-                                    </div>
-                                    <div class="d-flex mb-1 mt-2">
-                                        <div class="col-auto g-0 p-0">
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="41"
-                                                         fill="currentColor" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
-                                                        <path
-                                                            d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
-                                                    </svg>
-                                                </span>
-                                        </div>
-                                        <div class="col ps-2">
-                                            <div class="fw-500">Produkte - Grundsiverung</div>
-                                            <div class="text-danger"><i>Open for more than 30 days</i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="status-check-item my-2 py-2 bg-white">
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
-                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                                    <path fill-rule="evenodd"
-                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Enis Demolli</div>
-                                    </div>
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-people" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Malik Gabbi</div>
-                                    </div>
-                                    <div class="d-flex mb-1 mt-2">
-                                        <div class="col-auto g-0 p-0">
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="41"
-                                                         fill="currentColor" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
-                                                        <path
-                                                            d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
-                                                    </svg>
-                                                </span>
-                                        </div>
-                                        <div class="col ps-2">
-                                            <div class="fw-500">Produkte - Grundsiverung</div>
-                                            <div class="text-danger"><i>Open for more than 30 days</i></div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        </a>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect">
+                <div class="answw-task123 m-2">
+                    <div class="header  justify-content-between">
+                        <div class="">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" viewBox="0 0 16 16"
+                                 class="bi bi-calendar-minus">
+                                <path d="M5.5 9.5A.5.5 0 0 1 6 9h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"></path>
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                                </path>
+                            </svg></span>
+                            <span class="ps-2">Ablaufende Pendenzen</span>
+                        </div>
+                        <div class="h-100 count px-4">
+                            {{count($morethan30)}}
+                        </div>
+                    </div>
+                    <div class="content px-3">
+                        <div class="overflow-div ">
+                            <table class="table table-borderless tablee-12345">
+                                <thead>
+                                <tr class="sticky-class1">
+                                    <th scope="col" style="padding-top: 10px;">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                                 class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                                <path fill-rule="evenodd"
+                                                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                            </svg>
+                                        </span>
+                                        Field Service
+                                    </th>
+                                    <th scope="col" style="padding-top: 10px;">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                                 class="bi bi-people" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+                                            </svg>
+                                        </span>
+                                        Client
+                                    </th>
+                                    <th scope="col" style="padding-top: 10px;">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                                 class="bi bi-card-list" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                                                <path
+                                                    d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </span>
+                                        Task
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="body-table-edit">
+                                @if(!empty($morethan30))
+                                    @foreach($morethan30 as $pendency)
+                                        @php
+                                            $crypt = $pendency->family_id * 1244;
+                                            $familyId = \Illuminate\Support\Facades\Crypt::encrypt($crypt);
+                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($pendency->admin_id * 1244);
+                                            $pend_id = $pendency->pid;
+                                        @endphp
+                                        <tr class="table-content1" style="cursor: pointer">
+                                            <td scope="row" class="fw-600" onclick="window.location.href='{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}'">
+                                                {{$pendency->adminpend->name}}
+                                            </td>
+                                            <td class="fw-600" onclick="window.location.href='{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}'">
+                                                {{$pendency->first_name}} {{$pendency->last_name}}
+                                            </td>
+                                            <td class="fw-600" onclick="window.location.href='{{route('leadfamilyperson',[$familyId,$admin_id,'pend_id' => $pend_id])}}'">
+                                                {{$pendency->description}}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @endif
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect">
                 <div class="open-a-month-div mx-2 mt-3">
                     <div class="d-flex justify-content-between">
                         <div class="open-a-month-header d-flex">
@@ -752,31 +871,114 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
-                <div class="hr-req-div mx-2 mt-3">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect">
+                <div class="answw-task12345 m-2">
+                    <div class="header  justify-content-between">
+                        <div class="">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" viewBox="0 0 16 16"
+                                 class="bi bi-clipboard-check">
+                                <path fill-rule="evenodd"
+                                      d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z">
+                                </path>
+                                <path
+                                    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z">
+                                </path>
+                                <path
+                                    d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z">
+                                </path>
+                            </svg>
+                        </span>
+                            <span class="ps-2">Statusprüfung</span>
+                        </div>
+                        <div class="h-100 count px-4">
+                            5
+                        </div>
+                    </div>
+                    <div class="content px-3">
+                        <div class="overflow-div ">
+                            <table class="table table-borderless tablee-123456">
+                                <thead>
+                                <tr class="sticky-class1">
+                                    <th scope="col" style="padding-top: 10px;">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                                 class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                                <path fill-rule="evenodd"
+                                                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                            </svg>
+                                        </span>
+                                        Field Service
+                                    </th>
+                                    <th scope="col" style="padding-top: 10px;">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                                 class="bi bi-people" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+                                            </svg>
+                                        </span>
+                                        Client
+                                    </th>
+                                    <th scope="col" style="padding-top: 10px;">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                                 class="bi bi-card-list" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                                                <path
+                                                    d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                                            </svg>
+                                        </span>
+                                        Produkte
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="body-table-edit">
+                                <tr class="table-content1" style="cursor: pointer">
+                                    <td scope="row" class="fw-600" onclick="window.location.href=''">
+                                        Name
+                                    </td>
+                                    <td class="fw-600" onclick="window.location.href=''">
+                                        Name Last Name
+                                    </td>
+                                    <td class="fw-600" onclick="window.location.href=''">
+                                        Description
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect">
+                <div class="status-check-div mx-2  mt-3">
                     <div class="d-flex justify-content-between">
-                        <div class="hr-req-header d-flex">
+                        <div class="status-check-header d-flex">
                             <div class="col-auto my-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
-                                     class="bi bi-file-medical" viewBox="0 0 16 16">
+                                     class="bi bi-clipboard-check" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
                                     <path
-                                        d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
                                     <path
-                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                                        d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
                                 </svg>
                             </div>
-                            <div class="txt-01 my-auto ps-2">
-                                Hr-Anfragen
+                            <div class="txt-01 ps-2 my-auto">
+                                Statusprüfung
                             </div>
 
                         </div>
                         <div class="fs-5 count px-4 fw-bold">2</div>
                     </div>
-                    <div class="hr-req-content">
+                    <div class="status-check-content">
                         <div class="wrapper p-2">
-                            <div class="hr-req-overflow px-2">
-                                <div class="hr-req-item my-2 p-2 bg-white">
+                            <div class="status-check-overflow px-2">
+                                <div class="status-check-item my-2 py-2 bg-white">
                                     <div class="d-flex my-2 px-2">
                                             <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
@@ -786,40 +988,37 @@
                                                           d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                                                 </svg>
                                             </span>
-                                        <div class="ps-2 fw-500">Malik Gabbi</div>
+                                        <div class="ps-2 fw-500">Enis Demolli</div>
                                     </div>
                                     <div class="d-flex my-2 px-2">
                                             <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
+                                                     class="bi bi-people" viewBox="0 0 16 16">
                                                     <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
                                                 </svg>
                                             </span>
-                                        <div class="ps-2 fw-500">Vacation</div>
+                                        <div class="ps-2 fw-500">Malik Gabbi</div>
                                     </div>
                                     <div class="d-flex mb-1 mt-2">
                                         <div class="col-auto g-0 p-0">
                                                 <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
-                                                         fill="currentColor" class="bi bi-calendar-week"
-                                                         viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="41"
+                                                         fill="currentColor" viewBox="0 0 16 16">
                                                         <path
-                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                                            d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
                                                         <path
-                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                                            d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
                                                     </svg>
                                                 </span>
                                         </div>
                                         <div class="col ps-2">
-                                            <div class="fw-500">10 Days</div>
-                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
+                                            <div class="fw-500">Produkte - Grundsiverung</div>
+                                            <div class="text-danger"><i>Open for more than 30 days</i></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="hr-req-item my-2 p-2 bg-white">
+                                <div class="status-check-item my-2 py-2 bg-white">
                                     <div class="d-flex my-2 px-2">
                                             <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
@@ -829,36 +1028,33 @@
                                                           d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                                                 </svg>
                                             </span>
-                                        <div class="ps-2 fw-500">Malik Gabbi</div>
+                                        <div class="ps-2 fw-500">Enis Demolli</div>
                                     </div>
                                     <div class="d-flex my-2 px-2">
                                             <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
+                                                     class="bi bi-people" viewBox="0 0 16 16">
                                                     <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
                                                 </svg>
                                             </span>
-                                        <div class="ps-2 fw-500">Vacation</div>
+                                        <div class="ps-2 fw-500">Malik Gabbi</div>
                                     </div>
                                     <div class="d-flex mb-1 mt-2">
                                         <div class="col-auto g-0 p-0">
                                                 <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
-                                                         fill="currentColor" class="bi bi-calendar-week"
-                                                         viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="41"
+                                                         fill="currentColor" viewBox="0 0 16 16">
                                                         <path
-                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                                            d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
                                                         <path
-                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                                            d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
                                                     </svg>
                                                 </span>
                                         </div>
                                         <div class="col ps-2">
-                                            <div class="fw-500">10 Days</div>
-                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
+                                            <div class="fw-500">Produkte - Grundsiverung</div>
+                                            <div class="text-danger"><i>Open for more than 30 days</i></div>
                                         </div>
                                     </div>
                                 </div>
@@ -2574,6 +2770,293 @@
         border-radius: 10px;
     }
 
+</style>
+<style>
+    .add-button {
+        background-color: #0C71C3;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .input-group-append input[type=checkbox] {
+        border-radius: 0.25em;
+        height: 29px;
+        width: 29px;
+    }
+
+    .container1 {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .container1 input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 6px;
+        left: 5px;
+        height: 25px;
+        width: 25px;
+        background-color: #fff;
+        border: 6px solid #2196F3;
+        border-radius: 50%;
+    }
+
+    .container1 input:checked~.checkmark {
+        background-color: #2196F3;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+
+    .container .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+    }
+
+    .addRowBtn {
+        background-color: #2196F3;
+        color: #fff;
+        border: 1px solid #2196F3;
+        border-radius: 10px;
+        margin-left: 5px;
+    }
+
+    .greyBg {
+        background-color: #eee;
+        border-radius: 15px;
+    }
+
+    .ovrflw::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .ovrflw::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .ovrflw::-webkit-scrollbar-thumb {
+        background: #2196F3;
+        border-radius: 6px;
+    }
+
+    .ovrflw::-webkit-scrollbar-thumb:hover {
+        background: #2196F350;
+    }
+
+
+    .fw-600 {
+        font-weight: 600;
+    }
+
+    .tablee-123 tr td:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    .tablee-123 tr td:last-child {
+        border-top-right-radius: 10px;
+    }
+
+    .tablee-123 tr td:first-child {
+        border-bottom-left-radius: 10px;
+    }
+
+    .tablee-123 tr td:last-child {
+        border-bottom-right-radius: 10px;
+    }
+
+
+
+    .tablee-12345 tr td:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    .tablee-12345 tr td:last-child {
+        border-top-right-radius: 10px;
+    }
+
+    .tablee-12345 tr td:first-child {
+        border-bottom-left-radius: 10px;
+    }
+
+    .tablee-12345 tr td:last-child {
+        border-bottom-right-radius: 10px;
+    }
+
+
+
+
+    .tablee-123456 tr td:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    .tablee-123456 tr td:last-child {
+        border-top-right-radius: 10px;
+    }
+
+    .tablee-123456 tr td:first-child {
+        border-bottom-left-radius: 10px;
+    }
+
+    .tablee-123456 tr td:last-child {
+        border-bottom-right-radius: 10px;
+    }
+
+
+    .answw-task .header {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: 60px;
+        background-color: #fff;
+    }
+
+    .answw-task .content {
+        height: 450px;
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .answw-task .content .overflow-div {
+        overflow: auto;
+        height: 440px;
+        background-color: #EFEFEF;
+        padding: 0 !important;
+    }
+
+    .answw-task tr {
+        background-color: #fff;
+        border-bottom: 5px #EFEFEF solid;
+    }
+
+
+
+    .answw-task123 .header {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: 60px;
+        background-color: #fff;
+    }
+
+    .answw-task123 .content {
+        height: 450px;
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .answw-task123 .content .overflow-div {
+        overflow: auto;
+        height: 440px;
+        background-color: #EFEFEF;
+        padding: 0 !important;
+    }
+
+    .answw-task123 tr {
+        background-color: #fff;
+        border-bottom: 5px #EFEFEF solid;
+    }
+
+
+    .answw-task12345 .header {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        height: 60px;
+        background-color: #fff;
+    }
+
+    .answw-task12345 .content {
+        height: 450px;
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .answw-task12345 .content .overflow-div {
+        overflow: auto;
+        height: 440px;
+        background-color: #EFEFEF;
+        padding: 0 !important;
+    }
+
+    .answw-task12345 tr {
+        background-color: #fff;
+        border-bottom: 5px #EFEFEF solid;
+    }
+
+
+
+
+
+    .sticky-class1 {
+        font-weight: 500 !important;
+        color: #767676 !important;
+        position: sticky !important;
+        top: 0;
+        background-color: #EFEFEF !important;
+    }
+
+    .count {
+        background-color: #EFEFEF;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+    }
+
+    .mob-sect {
+        display: none;
+    }
+
+    .desk-sect {
+        display: block;
+    }
+
+    @media (max-width: 767.98px) {
+        .mob-sect {
+            display: block;
+        }
+
+        .desk-sect {
+            display: none;
+        }
+
+    }
 </style>
 
 
