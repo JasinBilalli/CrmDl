@@ -32,25 +32,25 @@ class LeadDataController extends Controller
         $admin_id = $req->admin_id;
         $user = Auth::user();
         $urole = $user->getRoleNames()->toArray();
-      
-        
+
+
         $admin_id = Crypt::decrypt($req->admin_id) / 1244;
         $lead = family::find($id);
         if (!in_array('fs',$urole) || Pendency::find(Session::get('pend_id'))->admin_id == $user->id) {
             if (!$accept) {
                 $data = new data();
-                    $data->getdata($id);
-               
+                $data->getdata($id);
 
-$leadfh = $data->fahrzeug;
+
+                $leadfh = $data->fahrzeug;
                 if($leadfh){
-                               $mandatiert = $leadfh->mandatiert != null ? true : false;
+                    $mandatiert = $leadfh->mandatiert != null ? true : false;
 
                 }
                 else{
                     $mandatiert = false;
                 }
-               $mandatiert ? $mandatierturl = $leadfh->mandatiert : $mandatierturl = "";
+                $mandatiert ? $mandatierturl = $leadfh->mandatiert : $mandatierturl = "";
 
 
                 return view('updatedocument')->with('data',$data)->with('lead',$lead)->with('admin_id',$admin_id)->with('mandatiert',$mandatiert)->with('mandatierturl',$mandatierturl)->with('id',$id);
@@ -59,28 +59,28 @@ $leadfh = $data->fahrzeug;
             } else {
                 if(in_array('backoffice',$urole) || in_array('admin',$urole)) {
                     $pend = Pendency::find(Session::get('pend_id'));
-                $pend->completed = 1;
-                $pend->type = 'Eingereicht';
-                $pend->save();
-                $person = family::find($pend->family_id);
-                $person->status = "Done";
-                $person->save();
-                return redirect()->route('acceptdata', ['id' => Crypt::encrypt($id * 1244),'admin_id' => Crypt::encrypt($admin_id * 1244)]);
+                    $pend->completed = 1;
+                    $pend->type = 'Eingereicht';
+                    $pend->save();
+                    $person = family::find($pend->family_id);
+                    $person->status = "Done";
+                    $person->save();
+                    return redirect()->route('acceptdata', ['id' => Crypt::encrypt($id * 1244),'admin_id' => Crypt::encrypt($admin_id * 1244)]);
                 }
                 else{
                     return redirect()->back();
                 }
             }
+        }
+
     }
-    
-}
-public function rejectupdate(Request $req){
- $pend = Pendency::find(Session::get('pend_id'));
-$pend->done = 0;
-$pend->completed = 0;
-$pend->save();
-return redirect()->route('tasks');
-}
+    public function rejectupdate(Request $req){
+        $pend = Pendency::find(Session::get('pend_id'));
+        $pend->done = 0;
+        $pend->completed = 0;
+        $pend->save();
+        return redirect()->route('tasks');
+    }
 
     public function createLeadDataKK($leadIdd, $personIdd, Request $request, $pendency = false)
     {
@@ -207,44 +207,44 @@ return redirect()->route('tasks');
             $family->update($status);
 
 
-for($i = 1; $i <= $newgcount; $i++){
-    $file = $request->file('upload_policeFahrzeug' . $i);
-    $request->hasFile('offer' . $i) ? $offer++ : $offer += 0;
-newgegen::create([
-    'comparison_type' => $request->input('comparison_type' . $i) ? filter_var($request->input('comparison_type' . $i),FILTER_SANITIZE_STRING) : null,
-    'upload_policeFahrzeug' => $request->hasFile('upload_policeFahrzeug' . $i) ? $this->storeFile($file, FolderPaths::KK_FILES) : null,
-    'commentFahrenzug' => $request->input('commentFahrenzug' . $i) ? filter_var($request->input('commentFahrenzug' . $i),FILTER_SANITIZE_STRING) : "",
-    'offer' => $request->file('offer'. $i) ? $this->storeFile($request->file('offer' . $i),FolderPaths::KK_FILES) : "",
-    'person_id' => $personId,
-    'vergleichsart_select' => filter_var($request->vergleichsart_select,FILTER_SANITIZE_STRING)
-]);
-}
-for($i = 1; $i <= $newncount; $i++){
-newnue::create([
-    'nuekommentar' => filter_var($request->input('nuekommentar' . $i),FILTER_SANITIZE_STRING),
-    'person_id' => $personId,
-    'first_intro' => filter_var($request->input('first_intro'. $i),FILTER_SANITIZE_STRING),
-    'vehicle_id' => $request->hasFile('vehicle_id' . $i) ? $this->storeFile($request->file('vehicle_id' . $i),FolderPaths::KK_FILES) : null,
-    'leasing' => filter_var($request->input('leasing' . $i),FILTER_SANITIZE_STRING),
-    'leasing_name' => filter_var($request->input('leasing_name' .$i),FILTER_SANITIZE_STRING),
-    'year_of_purchase' => filter_var($request->input('year_of_purchase' . $i),FILTER_SANITIZE_STRING),
-    'placing_on_the_market' => filter_var($request->input('placing_on_the_market' . $i),FILTER_SANITIZE_STRING),
-    'nationality' => filter_var($request->input('nationality' . $i),FILTER_SANITIZE_STRING),
-    'insurance_date' => $request->input('insurance_date' . $i),
-    'most_common' => filter_var($request->input('most_common' . $i),FILTER_SANITIZE_STRING),
-    'redeemed' => filter_var($request->input('redeemed' . $i),FILTER_SANITIZE_STRING),
-    'km_stood' => filter_var($request->input('nationality' . $i),FILTER_SANITIZE_STRING),
-    'insurance' => filter_var($request->input('insurance' . $i),FILTER_SANITIZE_STRING),
-    'traffic_legal_protection' => filter_var($request->input('traffic_legal_protection' . $i),FILTER_SANITIZE_STRING),
-    'deductible' => filter_var($request->input('deductible' . $i),FILTER_SANITIZE_STRING),
-    'glass_protection' => filter_var($request->input('glass_protection' . $i),FILTER_SANITIZE_STRING),
-    'carried' => filter_var($request->input('carried' . $i),FILTER_SANITIZE_STRING),
-    'parking_damage' => filter_var($request->input('parking_damage' . $i),FILTER_SANITIZE_STRING),
-    'repair_shop' => filter_var($request->input('repair_shop' . $i),FILTER_SANITIZE_STRING),
-    'hour_breakdown_assistance' => filter_var($request->input('hour_breakFILTER_SANITIZE_STRING),down_assistance' . $i),FILTER_SANITIZE_STRING),
-    'accident_coverage' => filter_var($request->input('accident_coverage' . $i),FILTER_SANITIZE_STRING),
-]);
-}
+            for($i = 1; $i <= $newgcount; $i++){
+                $file = $request->file('upload_policeFahrzeug' . $i);
+                $request->hasFile('offer' . $i) ? $offer++ : $offer += 0;
+                newgegen::create([
+                    'comparison_type' => $request->input('comparison_type' . $i) ? filter_var($request->input('comparison_type' . $i),FILTER_SANITIZE_STRING) : null,
+                    'upload_policeFahrzeug' => $request->hasFile('upload_policeFahrzeug' . $i) ? $this->storeFile($file, FolderPaths::KK_FILES) : null,
+                    'commentFahrenzug' => $request->input('commentFahrenzug' . $i) ? filter_var($request->input('commentFahrenzug' . $i),FILTER_SANITIZE_STRING) : "",
+                    'offer' => $request->file('offer'. $i) ? $this->storeFile($request->file('offer' . $i),FolderPaths::KK_FILES) : "",
+                    'person_id' => $personId,
+                    'vergleichsart_select' => filter_var($request->vergleichsart_select,FILTER_SANITIZE_STRING)
+                ]);
+            }
+            for($i = 1; $i <= $newncount; $i++){
+                newnue::create([
+                    'nuekommentar' => filter_var($request->input('nuekommentar' . $i),FILTER_SANITIZE_STRING),
+                    'person_id' => $personId,
+                    'first_intro' => filter_var($request->input('first_intro'. $i),FILTER_SANITIZE_STRING),
+                    'vehicle_id' => $request->hasFile('vehicle_id' . $i) ? $this->storeFile($request->file('vehicle_id' . $i),FolderPaths::KK_FILES) : null,
+                    'leasing' => filter_var($request->input('leasing' . $i),FILTER_SANITIZE_STRING),
+                    'leasing_name' => filter_var($request->input('leasing_name' .$i),FILTER_SANITIZE_STRING),
+                    'year_of_purchase' => filter_var($request->input('year_of_purchase' . $i),FILTER_SANITIZE_STRING),
+                    'placing_on_the_market' => filter_var($request->input('placing_on_the_market' . $i),FILTER_SANITIZE_STRING),
+                    'nationality' => filter_var($request->input('nationality' . $i),FILTER_SANITIZE_STRING),
+                    'insurance_date' => $request->input('insurance_date' . $i),
+                    'most_common' => filter_var($request->input('most_common' . $i),FILTER_SANITIZE_STRING),
+                    'redeemed' => filter_var($request->input('redeemed' . $i),FILTER_SANITIZE_STRING),
+                    'km_stood' => filter_var($request->input('nationality' . $i),FILTER_SANITIZE_STRING),
+                    'insurance' => filter_var($request->input('insurance' . $i),FILTER_SANITIZE_STRING),
+                    'traffic_legal_protection' => filter_var($request->input('traffic_legal_protection' . $i),FILTER_SANITIZE_STRING),
+                    'deductible' => filter_var($request->input('deductible' . $i),FILTER_SANITIZE_STRING),
+                    'glass_protection' => filter_var($request->input('glass_protection' . $i),FILTER_SANITIZE_STRING),
+                    'carried' => filter_var($request->input('carried' . $i),FILTER_SANITIZE_STRING),
+                    'parking_damage' => filter_var($request->input('parking_damage' . $i),FILTER_SANITIZE_STRING),
+                    'repair_shop' => filter_var($request->input('repair_shop' . $i),FILTER_SANITIZE_STRING),
+                    'hour_breakdown_assistance' => filter_var($request->input('hour_breakFILTER_SANITIZE_STRING),down_assistance' . $i),FILTER_SANITIZE_STRING),
+                    'accident_coverage' => filter_var($request->input('accident_coverage' . $i),FILTER_SANITIZE_STRING),
+                ]);
+            }
             $pend = Pendency::where('family_id', $personId)->first();
             if ($pend) {
                 $pend->done = 1;
@@ -264,20 +264,20 @@ newnue::create([
             $person->save();
 
             $bo = Admins::role(['backoffice','admin'])->get();
-foreach($bo as $b){
-    $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Dokumentation für :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
-    $b->notify(new SendNotificationn($url));
-}
-if($offer > 0){
-    $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Das erhaltene Angebot für den Kunden :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
-Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
-$pend1 = new Pendency();
-$pend1->admin_id = $pend->admin_id;
-$pend1->family_id = $pend->family_id;
-$pend1->description = 'Offer';
-$pend1->type = 'Offer';
-$pend1->save();
-  }
+            foreach($bo as $b){
+                $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Dokumentation für :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
+                $b->notify(new SendNotificationn($url));
+            }
+            if($offer > 0){
+                $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Das erhaltene Angebot für den Kunden :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
+                Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
+                $pend1 = new Pendency();
+                $pend1->admin_id = $pend->admin_id;
+                $pend1->family_id = $pend->family_id;
+                $pend1->description = 'Offer';
+                $pend1->type = 'Offer';
+                $pend1->save();
+            }
             return redirect()->route('dashboard')->with('success', 'Erfolgreich eingereicht und wartet auf das Backoffice!');
         } else {
             return redirect()->back();
@@ -314,42 +314,42 @@ $pend1->save();
             $existingLeadDataKK->update($leadDataKK);
         }
         $count = (int) $request->input('newgcount');
- if($request->gofert != null){
-        $garray = explode(',',$request->gofert);
-           foreach($garray as $gofert){
-               $newg = newgegen::find($gofert);
-               if($newg){
-                   $newg->delete();}
-           }
-    }
-    $gegen = newgegen::where('person_id',$personId)->get();
-    for($i = 0; $i< $count; $i++){
-        $curr = $i+1;
+        if($request->gofert != null){
+            $garray = explode(',',$request->gofert);
+            foreach($garray as $gofert){
+                $newg = newgegen::find($gofert);
+                if($newg){
+                    $newg->delete();}
+            }
+        }
+        $gegen = newgegen::where('person_id',$personId)->get();
+        for($i = 0; $i< $count; $i++){
+            $curr = $i+1;
 
-        if(isset($gegen[$i])){
+            if(isset($gegen[$i])){
 
-                   $file = $request->file('upload_policeFahrzeug'. $curr);
-                   $gegen[$i]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i]->upload_policeFahrzeug;
-                   $gegen[$i]->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : $gegen[$i]->comparison_type;
-                   $gegen[$i]->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : $gegen[$i]->commentFahrenzug;
-                   $gegen[$i]->offer = $request->file('offer' . $curr) ? $this->storeFile($request->file('offer' . $curr),FolderPaths::KK_FILES) : $gegen[$i]->offer;
-                   $gegen[$i]->vergleichsart_select =$request->input('vergleichsart_select' . $curr);
-                   $request->hasFile('offer' .$i) && !isset($gegen[$i]->offer) ? $offer++ : $offer += 0;
-                   $gegen[$i]->save();
-                    }
-                   else{
-                       $gegen = new newgegen();
-                       $file = $request->file('upload_policeFahrzeug'. $curr);
-                       $gegen->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : null;
-                       $gegen->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : null;
-                       $gegen->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : null;
-                       $gegen->person_id = $personId;
-                       $gegen->offer = $request->file('offer' . $curr) ? $this->storeFile($request->file('offer'. $curr),FolderPaths::KK_FILES) : null;
-                       $gegen->vergleichsart_select = $request->input('vergleichsart_select' . $curr);
-                       $gegen->save();
-                       $request->hasFile('offer' . $curr) ? $offer++ : $offer += 0;
-                   }
-                }
+                $file = $request->file('upload_policeFahrzeug'. $curr);
+                $gegen[$i]->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i]->upload_policeFahrzeug;
+                $gegen[$i]->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : $gegen[$i]->comparison_type;
+                $gegen[$i]->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : $gegen[$i]->commentFahrenzug;
+                $gegen[$i]->offer = $request->file('offer' . $curr) ? $this->storeFile($request->file('offer' . $curr),FolderPaths::KK_FILES) : $gegen[$i]->offer;
+                $gegen[$i]->vergleichsart_select =$request->input('vergleichsart_select' . $curr);
+                $request->hasFile('offer' .$i) && !isset($gegen[$i]->offer) ? $offer++ : $offer += 0;
+                $gegen[$i]->save();
+            }
+            else{
+                $gegen = new newgegen();
+                $file = $request->file('upload_policeFahrzeug'. $curr);
+                $gegen->upload_policeFahrzeug = $request->hasFile('upload_policeFahrzeug'. $curr) ? $this->storeFile($file,FolderPaths::KK_FILES) : null;
+                $gegen->comparison_type = $request->input('comparison_type' . $curr) ? $request->input('comparison_type' . $curr) : null;
+                $gegen->commentFahrenzug = $request->input('commentFahrenzug' . $curr) ? $request->input('commentFahrenzug' . $curr) : null;
+                $gegen->person_id = $personId;
+                $gegen->offer = $request->file('offer' . $curr) ? $this->storeFile($request->file('offer'. $curr),FolderPaths::KK_FILES) : null;
+                $gegen->vergleichsart_select = $request->input('vergleichsart_select' . $curr);
+                $gegen->save();
+                $request->hasFile('offer' . $curr) ? $offer++ : $offer += 0;
+            }
+        }
 
 
 
@@ -362,63 +362,63 @@ $pend1->save();
                     $newn->delete();
                 }
             }
-            }
+        }
 
         $cc = 0;
         $gegen = newnue::where('person_id',$personId)->get();
         for($i = 1; $i <= $count; $i++){
             if(!empty($gegen[$i-1])){
-            $file = $request->file('vehicle_id'. $i);
-            $gegen[$i-1]->nationality = $request->input('nationality' . $i) ? $request->input('nationality' . $i) : $gegen[$i-1]->nationality;
-            $gegen[$i-1]->nuekommentar = $request->input('nuekommentar' . $i) ? $request->input('nuekommentar' . $i) : $gegen[$i-1]->nuekommentar;
-            $gegen[$i-1]->vehicle_id = $request->hasFile('vehicle_id'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i-1]->vehicle_id;
-           $gegen[$i-1]->leasing = $request->input('leasing' . $i) ? $request->input('leasing' . $i) : $gegen[$i-1]->leasing;
-           $gegen[$i-1]->leasing_name = $request->input('leasing_name' . $i) ? $request->input('leasing_name' . $i) : $gegen[$i-1]->leasing_name;
-           $gegen[$i-1]->year_of_purchase = $request->input('year_of_purchase' . $i) ? $request->input('year_of_purchase' . $i) : $gegen[$i-1]->year_of_purchase;
-           $gegen[$i-1]->placing_on_the_market = $request->input('placing_on_the_market' . $i) ? $request->input('placing_on_the_market' . $i) : $gegen[$i-1]->placing_on_the_market;
-           $gegen[$i-1]->nationality = $request->input('nationality' . $i) ? $request->input('nationality' . $i) : $gegen[$i-1]->nationality;
-           $gegen[$i-1]->insurance_date = $request->input('insurance_date' . $i) ? $request->input('insurance_date' . $i) : $gegen[$i-1]->insurance_date;
-           $gegen[$i-1]->most_common = $request->input('most_common' . $i) ? $request->input('most_common' . $i) : $gegen[$i-1]->most_common;
-           $gegen[$i-1]->redeemed = $request->input('redeemed' . $i) ? $request->input('redeemed' . $i) : $gegen[$i-1]->redeemed;
-           $gegen[$i-1]->km_stood = $request->input('km_stood' . $i) ? $request->input('km_stood' . $i) : $gegen[$i-1]->km_stood;
-           $gegen[$i-1]->insurance = $request->input('insurance' . $i) ? $request->input('insurance' . $i) : $gegen[$i-1]->insurance;
-           $gegen[$i-1]->traffic_legal_protection = $request->input('traffic_legal_protection' . $i) ? $request->input('traffic_legal_protection' . $i) : $gegen[$i-1]->traffic_legal_protection;
-           $gegen[$i-1]->deductible = $request->input('deductible' . $i) ? $request->input('deductible' . $i) : $gegen[$i-1]->deductible;
-           $gegen[$i-1]->glass_protection = $request->input('glass_protection' . $i) ? $request->input('glass_protection' . $i) : $gegen[$i-1]->glass_protection;
-           $gegen[$i-1]->carried = $request->input('carried' . $i) ? $request->input('carried' . $i) : $gegen[$i-1]->carried;
-           $gegen[$i-1]->parking_damage = $request->input('parking_damage' . $i) ? $request->input('parking_damage' . $i) : $gegen[$i-1]->parking_damage;
-           $gegen[$i-1]->repair_shop = $request->input('repair_shop' . $i) ? $request->input('repair_shop' . $i) : $gegen[$i-1]->repair_shop;
-           $gegen[$i-1]->hour_breakdown_assistance = $request->input('hour_breakdown_assistance' . $i) ? $request->input('hour_breakdown_assistance' . $i) : $gegen[$i-1]->hour_breakdown_assistance;
-           $gegen[$i-1]->accident_coverage = $request->input('accident_coverage' . $i) ? $request->input('accident_coverage' . $i) : $gegen[$i-1]->accident_coverage;
-           $gegen[$i-1]->save();
+                $file = $request->file('vehicle_id'. $i);
+                $gegen[$i-1]->nationality = $request->input('nationality' . $i) ? $request->input('nationality' . $i) : $gegen[$i-1]->nationality;
+                $gegen[$i-1]->nuekommentar = $request->input('nuekommentar' . $i) ? $request->input('nuekommentar' . $i) : $gegen[$i-1]->nuekommentar;
+                $gegen[$i-1]->vehicle_id = $request->hasFile('vehicle_id'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : $gegen[$i-1]->vehicle_id;
+                $gegen[$i-1]->leasing = $request->input('leasing' . $i) ? $request->input('leasing' . $i) : $gegen[$i-1]->leasing;
+                $gegen[$i-1]->leasing_name = $request->input('leasing_name' . $i) ? $request->input('leasing_name' . $i) : $gegen[$i-1]->leasing_name;
+                $gegen[$i-1]->year_of_purchase = $request->input('year_of_purchase' . $i) ? $request->input('year_of_purchase' . $i) : $gegen[$i-1]->year_of_purchase;
+                $gegen[$i-1]->placing_on_the_market = $request->input('placing_on_the_market' . $i) ? $request->input('placing_on_the_market' . $i) : $gegen[$i-1]->placing_on_the_market;
+                $gegen[$i-1]->nationality = $request->input('nationality' . $i) ? $request->input('nationality' . $i) : $gegen[$i-1]->nationality;
+                $gegen[$i-1]->insurance_date = $request->input('insurance_date' . $i) ? $request->input('insurance_date' . $i) : $gegen[$i-1]->insurance_date;
+                $gegen[$i-1]->most_common = $request->input('most_common' . $i) ? $request->input('most_common' . $i) : $gegen[$i-1]->most_common;
+                $gegen[$i-1]->redeemed = $request->input('redeemed' . $i) ? $request->input('redeemed' . $i) : $gegen[$i-1]->redeemed;
+                $gegen[$i-1]->km_stood = $request->input('km_stood' . $i) ? $request->input('km_stood' . $i) : $gegen[$i-1]->km_stood;
+                $gegen[$i-1]->insurance = $request->input('insurance' . $i) ? $request->input('insurance' . $i) : $gegen[$i-1]->insurance;
+                $gegen[$i-1]->traffic_legal_protection = $request->input('traffic_legal_protection' . $i) ? $request->input('traffic_legal_protection' . $i) : $gegen[$i-1]->traffic_legal_protection;
+                $gegen[$i-1]->deductible = $request->input('deductible' . $i) ? $request->input('deductible' . $i) : $gegen[$i-1]->deductible;
+                $gegen[$i-1]->glass_protection = $request->input('glass_protection' . $i) ? $request->input('glass_protection' . $i) : $gegen[$i-1]->glass_protection;
+                $gegen[$i-1]->carried = $request->input('carried' . $i) ? $request->input('carried' . $i) : $gegen[$i-1]->carried;
+                $gegen[$i-1]->parking_damage = $request->input('parking_damage' . $i) ? $request->input('parking_damage' . $i) : $gegen[$i-1]->parking_damage;
+                $gegen[$i-1]->repair_shop = $request->input('repair_shop' . $i) ? $request->input('repair_shop' . $i) : $gegen[$i-1]->repair_shop;
+                $gegen[$i-1]->hour_breakdown_assistance = $request->input('hour_breakdown_assistance' . $i) ? $request->input('hour_breakdown_assistance' . $i) : $gegen[$i-1]->hour_breakdown_assistance;
+                $gegen[$i-1]->accident_coverage = $request->input('accident_coverage' . $i) ? $request->input('accident_coverage' . $i) : $gegen[$i-1]->accident_coverage;
+                $gegen[$i-1]->save();
             }
-           else{
-               $gegen = new newnue();
-               $file = $request->file('vehicle_id'. $i);
-               $gegen->nuekommentar = $request->input('nuekommentar' . $i) ? $request->input('nuekommentar' . $i) : $gegen->nuekommentar;
-               $gegen->first_intro = $request->input('first_intro' . $i) ? $request->input('first_intro' . $i) : $gegen->first_intro;
-               $gegen->vehicle_id = $request->hasFile('vehicle_id'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : null;
-               $gegen->leasing = $request->input('leasing' . $i) ? $request->input('leasing' . $i) : $gegen->leasing;
-               $gegen->leasing_name = $request->input('leasing_name' . $i) ? $request->input('leasing_name' . $i) : null;
-               $gegen->year_of_purchase = $request->input('year_of_purchase' . $i) ? $request->input('year_of_purchase' . $i) : null;
-               $gegen->placing_on_the_market = $request->input('placing_on_the_market' . $i) ? $request->input('placing_on_the_market' . $i) : null;
-               $gegen->nationality = $request->input('nationality' . $i) ? $request->input('nationality' . $i) : null;
-               $gegen->insurance_date = $request->input('insurance_date' . $i) ? $request->input('insurance_date' . $i) : null;
-               $gegen->most_common = $request->input('most_common' . $i) ? $request->input('most_common' . $i) : null;
-               $gegen->redeemed = $request->input('redeemed' . $i) ? $request->input('redeemed' . $i) : null;
-               $gegen->km_stood = $request->input('km_stood' . $i) ? $request->input('km_stood' . $i) : null;
-               $gegen->insurance = $request->input('insurance' . $i) ? $request->input('insurance' . $i) : null;
-               $gegen->traffic_legal_protection = $request->input('traffic_legal_protection' . $i) ? $request->input('traffic_legal_protection' . $i) : null;
-               $gegen->deductible = $request->input('deductible' . $i) ? $request->input('deductible' . $i) : null;
-               $gegen->glass_protection = $request->input('glass_protection' . $i) ? $request->input('glass_protection' . $i) : null;
-               $gegen->carried = $request->input('carried' . $i) ? $request->input('carried' . $i) : null;
-               $gegen->parking_damage = $request->input('parking_damage' . $i) ? $request->input('parking_damage' . $i) : null;
-               $gegen->repair_shop = $request->input('repair_shop' . $i) ? $request->input('repair_shop' . $i) : null;
-               $gegen->hour_breakdown_assistance = $request->input('hour_breakdown_assistance' . $i) ? $request->input('hour_breakdown_assistance' . $i) : null;
-               $gegen->accident_coverage = $request->input('accident_coverage' . $i) ? $request->input('accident_coverage' . $i) : null;
-               $gegen->person_id = $personId;
-               $gegen->save();
-           }
+            else{
+                $gegen = new newnue();
+                $file = $request->file('vehicle_id'. $i);
+                $gegen->nuekommentar = $request->input('nuekommentar' . $i) ? $request->input('nuekommentar' . $i) : $gegen->nuekommentar;
+                $gegen->first_intro = $request->input('first_intro' . $i) ? $request->input('first_intro' . $i) : $gegen->first_intro;
+                $gegen->vehicle_id = $request->hasFile('vehicle_id'. $i) ? $this->storeFile($file,FolderPaths::KK_FILES) : null;
+                $gegen->leasing = $request->input('leasing' . $i) ? $request->input('leasing' . $i) : $gegen->leasing;
+                $gegen->leasing_name = $request->input('leasing_name' . $i) ? $request->input('leasing_name' . $i) : null;
+                $gegen->year_of_purchase = $request->input('year_of_purchase' . $i) ? $request->input('year_of_purchase' . $i) : null;
+                $gegen->placing_on_the_market = $request->input('placing_on_the_market' . $i) ? $request->input('placing_on_the_market' . $i) : null;
+                $gegen->nationality = $request->input('nationality' . $i) ? $request->input('nationality' . $i) : null;
+                $gegen->insurance_date = $request->input('insurance_date' . $i) ? $request->input('insurance_date' . $i) : null;
+                $gegen->most_common = $request->input('most_common' . $i) ? $request->input('most_common' . $i) : null;
+                $gegen->redeemed = $request->input('redeemed' . $i) ? $request->input('redeemed' . $i) : null;
+                $gegen->km_stood = $request->input('km_stood' . $i) ? $request->input('km_stood' . $i) : null;
+                $gegen->insurance = $request->input('insurance' . $i) ? $request->input('insurance' . $i) : null;
+                $gegen->traffic_legal_protection = $request->input('traffic_legal_protection' . $i) ? $request->input('traffic_legal_protection' . $i) : null;
+                $gegen->deductible = $request->input('deductible' . $i) ? $request->input('deductible' . $i) : null;
+                $gegen->glass_protection = $request->input('glass_protection' . $i) ? $request->input('glass_protection' . $i) : null;
+                $gegen->carried = $request->input('carried' . $i) ? $request->input('carried' . $i) : null;
+                $gegen->parking_damage = $request->input('parking_damage' . $i) ? $request->input('parking_damage' . $i) : null;
+                $gegen->repair_shop = $request->input('repair_shop' . $i) ? $request->input('repair_shop' . $i) : null;
+                $gegen->hour_breakdown_assistance = $request->input('hour_breakdown_assistance' . $i) ? $request->input('hour_breakdown_assistance' . $i) : null;
+                $gegen->accident_coverage = $request->input('accident_coverage' . $i) ? $request->input('accident_coverage' . $i) : null;
+                $gegen->person_id = $personId;
+                $gegen->save();
+            }
         }
 
 
@@ -539,19 +539,19 @@ $pend1->save();
             $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Dokumentation für :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
             $b->notify(new SendNotificationn($url));
         }
-          if($offer > 0){
+        if($offer > 0){
             $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Das erhaltene Angebot für den Kunden :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
-        Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
-        $pend1 = new Pendency();
-        $pend1->admin_id = $pend->admin_id;
-        $pend1->family_id = $pend->family_id;
-        $pend1->description = 'Offer';
-        $pend1->type = 'Offer';
-        $pend1->save();
-          }
-          $person = family::find($pend->family_id);
-          $person->status = "Done";
-          $person->save();
+            Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
+            $pend1 = new Pendency();
+            $pend1->admin_id = $pend->admin_id;
+            $pend1->family_id = $pend->family_id;
+            $pend1->description = 'Offer';
+            $pend1->type = 'Offer';
+            $pend1->save();
+        }
+        $person = family::find($pend->family_id);
+        $person->status = "Done";
+        $person->save();
 
 
 
