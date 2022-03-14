@@ -8000,6 +8000,30 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getToDo();
@@ -33526,7 +33550,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "informational-nr-div mx-2 mt-3 mt-sm-0" }, [
+  return _c("div", { staticClass: "informational-nr-div mx-2 mt-3" }, [
     _c("div", { staticClass: "d-flex justify-content-between" }, [
       _c("div", { staticClass: "informational-nr-header d-flex" }, [
         _c("div", { staticClass: "col-auto my-2" }, [
@@ -38443,9 +38467,9 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "col-12 col-sm-6 col-md-6 col-lg-6 g-0" }, [
-    _c("div", { staticClass: "add-a-task-div mx-2 mt-3 mt-sm-0" }, [
+    _c("div", { staticClass: "add-a-task-div mx-2 mt-2" }, [
       _c("div", { staticClass: "add-a-task-header d-flex" }, [
-        _c("div", { staticClass: "col-auto my-2" }, [
+        _c("div", { staticClass: "col-auto my-auto" }, [
           _c(
             "svg",
             {
@@ -38943,98 +38967,147 @@ var render = function () {
     "div",
     { staticClass: "col-12 col-sm-6 col-md-6 col-lg-4 g-0 px-2" },
     [
-      _c("div", { staticClass: "to-do-headerrrrr ps-2 fw-bold my-2" }, [
-        _vm._v("TO DO"),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "container-fluid greyBg py-3 px-2" }, [
-        _c("form", { attrs: { method: "post", action: "" } }, [
-          _c(
-            "div",
-            {
-              staticClass: "ovrflw pe-1",
-              staticStyle: { height: "400px", "overflow-y": "auto" },
-            },
-            [
-              _vm._l(_vm.todos, function (todo) {
-                return _c("div", { staticClass: "input-group mb-2" }, [
-                  _c("div", { staticClass: "row g-0" }, [
-                    _c("div", { staticClass: "col-auto text-center" }, [
-                      _c("label", { staticClass: "container1" }, [
-                        _c("input", {
-                          staticClass: "removeRow",
-                          attrs: { type: "checkbox" },
-                          on: {
-                            click: function ($event) {
-                              return _vm.deleteToDo(todo.id)
-                            },
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "checkmark" }),
-                      ]),
-                    ]),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col" }, [
-                    _c("input", {
-                      staticClass: "form-control m-input",
-                      attrs: {
-                        type: "text",
-                        autocomplete: "off",
-                        readonly: "",
-                      },
-                      domProps: { value: todo.title },
-                    }),
-                  ]),
-                ])
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "input-group" }, [
-                _vm._m(0),
-                _vm._v(" "),
-                _c("div", { staticClass: "col" }, [
-                  _c("input", {
-                    staticClass: "form-control m-input",
+      _c("div", { staticClass: "to-do-new wrapper-of-todo mt-3" }, [
+        _c("div", { staticClass: "d-flex justify-content-between" }, [
+          _c("div", { staticClass: "header d-flex" }, [
+            _c("div", { staticClass: "col-auto my-2" }, [
+              _c(
+                "svg",
+                {
+                  staticClass: "bi bi-list-task",
+                  attrs: {
+                    xmlns: "http://www.w3.org/2000/svg",
+                    width: "30",
+                    fill: "currentColor",
+                    viewBox: "0 0 16 16",
+                  },
+                },
+                [
+                  _c("path", {
                     attrs: {
-                      type: "text",
-                      placeholder: "Enter title",
-                      id: "title",
-                      name: "title",
-                      autocomplete: "off",
-                    },
-                    on: {
-                      keyup: function ($event) {
-                        if (
-                          !$event.type.indexOf("key") &&
-                          _vm._k(
-                            $event.keyCode,
-                            "enter",
-                            13,
-                            $event.key,
-                            "Enter"
-                          )
-                        ) {
-                          return null
-                        }
-                        return _vm.addtodos.apply(null, arguments)
-                      },
+                      "fill-rule": "evenodd",
+                      d: "M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z",
                     },
                   }),
-                ]),
-              ]),
-            ],
-            2
-          ),
+                  _vm._v(" "),
+                  _c("path", {
+                    attrs: {
+                      d: "M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z",
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      d: "M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z",
+                    },
+                  }),
+                ]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "txt-01 my-auto ps-2" }, [
+              _vm._v("\n                Aufgaben\n            "),
+            ]),
+          ]),
           _vm._v(" "),
+          _c("div", { staticClass: "fs-5 count px-4 fw-bold" }, [_vm._v("0")]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "content greyBg py-3 px-2" }, [
           _c(
-            "button",
-            {
-              staticClass: "px-5 py-2 my-2 add-button fw-bold text-center",
-              attrs: { id: "addRow", type: "button" },
-              on: { click: _vm.addtodos },
-            },
-            [_vm._v("Add new to\n                list")]
+            "form",
+            { staticClass: "mb-0", attrs: { method: "post", action: "" } },
+            [
+              _c(
+                "div",
+                { staticClass: "ovrflw pe-1" },
+                [
+                  _vm._l(_vm.todos, function (todo) {
+                    return _c("div", { staticClass: "input-group mb-2" }, [
+                      _c("div", { staticClass: "row g-0" }, [
+                        _c("div", { staticClass: "col-auto text-center" }, [
+                          _c("label", { staticClass: "container1" }, [
+                            _c("input", {
+                              staticClass: "removeRow",
+                              attrs: { type: "checkbox" },
+                              on: {
+                                click: function ($event) {
+                                  return _vm.deleteToDo(todo.id)
+                                },
+                              },
+                            }),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "checkmark" }),
+                          ]),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col" }, [
+                        _c("input", {
+                          staticClass: "form-control m-input",
+                          attrs: {
+                            type: "text",
+                            autocomplete: "off",
+                            readonly: "",
+                          },
+                          domProps: { value: todo.title },
+                        }),
+                      ]),
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "input-group" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col" }, [
+                      _c("input", {
+                        staticClass: "form-control m-input",
+                        attrs: {
+                          type: "text",
+                          placeholder: "Enter title",
+                          id: "title",
+                          name: "title",
+                          autocomplete: "off",
+                        },
+                        on: {
+                          keyup: function ($event) {
+                            if (
+                              !$event.type.indexOf("key") &&
+                              _vm._k(
+                                $event.keyCode,
+                                "enter",
+                                13,
+                                $event.key,
+                                "Enter"
+                              )
+                            ) {
+                              return null
+                            }
+                            return _vm.addtodos.apply(null, arguments)
+                          },
+                        },
+                      }),
+                    ]),
+                  ]),
+                ],
+                2
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "px-5 py-2 my-2 add-button fw-bold text-center",
+                  attrs: { id: "addRow", type: "button" },
+                  on: { click: _vm.addtodos },
+                },
+                [
+                  _vm._v(
+                    "\n                        Neue Erinnerung\n                        "
+                  ),
+                ]
+              ),
+            ]
           ),
         ]),
       ]),

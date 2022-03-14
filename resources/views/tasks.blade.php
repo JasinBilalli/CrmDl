@@ -1491,41 +1491,41 @@
         color: #fff;
         border-radius: 35px;
     }
-    .table-1 tr:first-child td:first-child {
-        border-top-left-radius: 10px;
+    .table-1 td:first-child {
+        border-top-left-radius: 15px;
     }
-    .table-1 tr:first-child td:last-child {
-        border-top-right-radius: 10px;
+    .table-1  td:last-child {
+        border-top-right-radius: 15px;
     }
-    .table-1 tr:last-child td:first-child {
-        border-bottom-left-radius: 10px;
+    .table-1  td:first-child {
+        border-bottom-left-radius: 15px;
     }
-    .table-1 tr:last-child td:last-child {
-        border-bottom-right-radius: 10px;
+    .table-1  td:last-child {
+        border-bottom-right-radius: 15px;
     }
-    .table-2 tr:first-child td:first-child {
-        border-top-left-radius: 10px;
+    .table-2  td:first-child {
+        border-top-left-radius: 15px;
     }
-    .table-2 tr:first-child td:last-child {
-        border-top-right-radius: 10px;
+    .table-2  td:last-child {
+        border-top-right-radius: 15px;
     }
-    .table-2 tr:last-child td:first-child {
-        border-bottom-left-radius: 10px;
+    .table-2  td:first-child {
+        border-bottom-left-radius: 15px;
     }
-    .table-2 tr:last-child td:last-child {
-        border-bottom-right-radius: 10px;
+    .table-2  td:last-child {
+        border-bottom-right-radius: 15px;
     }
-    .table-22 tr:first-child td:first-child {
-        border-top-left-radius: 10px;
+    .table-22  td:first-child {
+        border-top-left-radius: 15px;
     }
-    .table-22 tr:first-child td:last-child {
-        border-top-right-radius: 10px;
+    .table-22  td:last-child {
+        border-top-right-radius: 15px;
     }
-    .table-22 tr:last-child td:first-child {
-        border-bottom-left-radius: 10px;
+    .table-22 td:first-child {
+        border-bottom-left-radius: 15px;
     }
-    .table-22 tr:last-child td:last-child {
-        border-bottom-right-radius: 10px;
+    .table-22  td:last-child {
+        border-bottom-right-radius: 15px;
     }
     .table-22 tr{
         background-color: #fff;
@@ -1749,7 +1749,7 @@
         border-bottom-right-radius: 10px;
     }
     .pending-divv .content .overflow-div {
-        height: 430px;
+        height: 460px;
         overflow: auto;
         background-color: #EFEFEF;
         padding: 0 !important;

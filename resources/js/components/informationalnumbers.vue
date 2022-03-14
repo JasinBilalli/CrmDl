@@ -1,6 +1,6 @@
 <template>
 
-    <div class="informational-nr-div mx-2 mt-3 mt-sm-0">
+    <div class="informational-nr-div mx-2 mt-3">
         <div class="d-flex justify-content-between">
             <div class="informational-nr-header d-flex">
                 <div class="col-auto my-2">
