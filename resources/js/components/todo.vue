@@ -1,8 +1,8 @@
 <template>
     <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0">
-        <div class="add-a-task-div mx-2 mt-3 mt-sm-0">
+        <div class="add-a-task-div mx-2 mt-2">
             <div class="add-a-task-header d-flex">
-                <div class="col-auto my-2">
+                <div class="col-auto my-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
                          class="bi bi-list-task" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"

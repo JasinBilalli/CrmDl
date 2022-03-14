@@ -493,7 +493,7 @@
                                       d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z">
                                 </path>
                             </svg></span>
-                            <span class="ps-2">Beantwortete Pendenzen</span>
+                            <span class="ps-2 txt-01">Beantwortete Pendenzen</span>
                         </div>
                         <div class="h-100 count px-4">
                             {{count($pendencies)}}
@@ -525,7 +525,7 @@
                                         </span>
                                         Client
                                     </th>
-                                    <th scope="col" style="padding-top: 10px;">
+                                    <th scope="col" style="padding-top: 10px;max-width:100px;">
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
                                                  class="bi bi-card-list" viewBox="0 0 16 16">
@@ -1937,6 +1937,9 @@
                 </script>
                 @endsection
                 <style>
+                .add-a-task-header {
+                    height: 60px;
+                }
                     .count {
                         background-color: #EFEFEF;
                         border-bottom-left-radius: 0;
@@ -1980,6 +1983,9 @@
 
                 </style>
                 <style>
+                    .to-do-headerrrrr {
+                        height: 60px;
+                    }
                     /* overflow 1 */
                     .overflow-div1::-webkit-scrollbar {
                         width: 8px;
@@ -2435,7 +2441,8 @@
             }
 
             .answw-task .content {
-                height: 450px;
+                height: 60vh;
+                min-height: 450px;
                 background-color: #EFEFEF;
                 border-top-left-radius: 10px;
                 border-top-right-radius: 0px;
@@ -2845,10 +2852,21 @@
         margin-left: 5px;
     }
 
-    .greyBg {
-        background-color: #eee;
-        border-radius: 15px;
+    .to-do-new .ovrflw {
+        height: 50vh;
+        overflow: auto;
+        min-height: 360px;
     }
+    .to-do-new .content {
+        background-color: #eee;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 60vh !important;
+        min-height: 450px !important;
+    }
+
 
     .ovrflw::-webkit-scrollbar {
         width: 6px;
@@ -2934,14 +2952,14 @@
         background-color: #fff;
     }
 
-    .answw-task .content {
+    /* .answw-task .content {
         height: 450px;
         background-color: #EFEFEF;
         border-top-left-radius: 10px;
         border-top-right-radius: 0px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-    }
+    } */
 
     .answw-task .content .overflow-div {
         overflow: auto;
@@ -2966,7 +2984,8 @@
     }
 
     .answw-task123 .content {
-        height: 450px;
+        height: 60vh;
+        min-height: 450px;
         background-color: #EFEFEF;
         border-top-left-radius: 10px;
         border-top-right-radius: 0px;
@@ -2996,7 +3015,8 @@
     }
 
     .answw-task12345 .content {
-        height: 450px;
+        height: 60vh;
+        min-height: 450px;
         background-color: #EFEFEF;
         border-top-left-radius: 10px;
         border-top-right-radius: 0px;
