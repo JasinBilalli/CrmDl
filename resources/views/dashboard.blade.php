@@ -252,7 +252,7 @@
                                     <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff; border: 2px solid #000; border-radius: 18px;  margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
+                                             style="background-color: #fff; border: 2px solid #000; border-radius: 18px; height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
                                                      fill="#000" class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -1296,9 +1296,9 @@
                         </div>
                     </div>
                 </div>
-                <section class="my-5">
+                <section class="my-3">
                     <div class="statistics ">
-                        <div class="mx-4 py-3" style="background-color: #f7f7f7; border-radius: 15px;">
+                        <div class="mx-3 py-3" style="background-color: #EFEFEF; border-radius: 15px;">
                             <div class="header mx-4 py-3">
                                 <span class="fs-5 fw-bold">Statistics</span>
                             </div>
@@ -1398,11 +1398,11 @@
                         </div>
                     </div>
                     <div class="row my-2 mx-2">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0 mb-3">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0">
                             <div class="consultations-div pb-2">
                                 <div class="">
-                                    <div class="accordion accordion-flush mx-3 " id="accordionFlush5">
-                                        <div class="accordion-item mb-3 my-1 py-2" style="background-color: #F7F7F7;">
+                                    <div class="accordion accordion-flush mx-2 " id="accordionFlush5">
+                                        <div class="accordion-item mb-3 my-1 py-2" style="background-color: #EFEFEF;">
                                             <h2 class="accordion-header" id="flush-heading5">
                                                 <div class="p-3">
                                                     <div class="row">
@@ -1418,7 +1418,7 @@
                                             <div id="flush-collapse5" class="accordion-collapse collapse show"
                                                  aria-labelledby="flush-heading5" data-bs-parent="#accordionFlush5">
                                                 <div class="accordion-body p-0 mx-2 py-2 overflow-div4"
-                                                     style="background-color: #F7F7F7; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 170px; overflow-y: scroll !important; overflow-x: hidden !important;">
+                                                     style="background-color: #EFEFEF; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 330px; overflow-y: scroll !important; overflow-x: hidden !important;">
                                                     @foreach($consultation as $consult)
                                                         <div class="py-2 my-2 mx-2"
                                                              style="background-color: #fff; font-family: 'Montserrat'; border-radius: 15px; color: #000;">
@@ -1591,10 +1591,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0 mb-3">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0">
                             <div class="personal-apponitments-div pb-2">
-                                <div class="accordion accordion-flush mx-3 " id="accordionFlush1">
-                                    <div class="accordion-item my-1 mb-3 py-2" style="background-color: #F7F7F7;">
+                                <div class="accordion accordion-flush mx-2 " id="accordionFlush1">
+                                    <div class="accordion-item my-1 mb-3 py-2" style="background-color: #EFEFEF;">
                                         <h2 class="accordion-header" id="flush-heading1">
                                             <div class="p-3">
                                                 <div class="row">
@@ -1610,8 +1610,8 @@
                                         <div id="flush-collapse1" class="accordion-collapse collapse show"
                                              aria-labelledby="flush-heading1" data-bs-parent="#accordionFlush1">
 
-                                            <div class="accordion-body p-0 mx-2 py-2 overflow-div1"
-                                                 style="background-color: #F7F7F7; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 170px; overflow-y: scroll !important; overflow-x: hidden !important;">
+                                            <div class="accordion-body p-0 mx-2 py-2 overflow-div4"
+                                                 style="background-color: #EFEFEF; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 330px; overflow-y: scroll !important; overflow-x: hidden !important;">
                                                 @foreach($personalApp as $perApp)
                                                     <div class="py-2 my-2 mx-2"
                                                          style="background-color: #fff; border-radius: 15px; color: #000;">
@@ -1775,13 +1775,13 @@
                             </div>
 
                         </div>
-                        <div class="my-3">
-                            <div class="row mx-2">
+                        <div class="g-0">
+                            <div class="row g-0">
                                 <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center"
-                                         style="background-color: #8A8BF9; border-radius: 18px;  margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
+                                    <div class="text-center mx-2"
+                                         style="background-color: #fff; border:2px solid black; border-radius: 18px; ">
                                         <div class="pt-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#000"
                                                  class="bi bi-people-fill" viewBox="0 0 16 16">
                                                 <path
                                                     d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -1791,11 +1791,11 @@
                                             </svg>
                                         </div>
                                         <div class="py-2">
-                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">
+                            <span class="fw-bold fs-5 text-black" style="font-family: 'Montserrat' !important;">
                                 {{$leadscount}}
                             </span>
                                             <br>
-                                            <span class="fw-bold fs-5 text-white"
+                                            <span class="fw-bold fs-5 text-black"
                                                   style="font-family: 'Montserrat' !important;">
                                 Neue Leads
                             </span>
@@ -1848,21 +1848,21 @@
 {{--                                    </div>--}}
 {{--                                </div>--}}
                                 <div onclick="window.location.href='{{route('Appointments')}}'" style="cursor: pointer" class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center"
-                                         style="background-color: #4e5ec5; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
+                                    <div class="text-center mx-2"
+                                         style="background-color: #fff; border:2px solid black; border-radius: 18px;">
                                         <div class="pt-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#000"
                                                  class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
                                                 <path
                                                     d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                             </svg>
                                         </div>
                                         <div class="py-2">
-                                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">
+                                            <span class="fw-bold fs-5 text-black" style="font-family: 'Montserrat' !important;">
                                                 {{$todayAppointCount}}
                                             </span>
                                             <br>
-                                            <span class="fw-bold fs-5 text-white"
+                                            <span class="fw-bold fs-5 text-black"
                                                   style="font-family: 'Montserrat' !important;">
                                                 Heute Termin
                                             </span>
