@@ -3726,11 +3726,11 @@
             '                                                                                    for="btnradio1' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '                                                                                <input type="radio"' +
             '                                                                                       class="btn-check " name="leasing' + newncnt + '"' +
-            '                                                                                       value="Nein" id="btnradio2' + newncnt + '2"' +
+            '                                                                                       value="Nein" id="btnradio1' + newncnt + '2"' +
             '                                                                                       autocomplete="off">' +
             '                                                                                <label' +
             '                                                                                    class="btn btn-outline-secondary w-100 g-0 "' +
-            '                                                                                    for="btnradio2' + newncnt + '2" onclick="showel(this)">Nein</label>' +
+            '                                                                                    for="btnradio1' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                                            </div>' +
             '                                                                            <div class="">' +
             '                                                                                <select name="leasing_name' + newncnt + '"' +
@@ -4017,9 +4017,9 @@
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="traffic_legal_protection' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4a' + newncnt + '2" autocomplete="off">' +
+            '                                                                       id="btnradio3a' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4a' + newncnt + '2" onclick="showel(this)">Nein</label>' +
+            '                                                                       for="btnradio3a' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
@@ -4038,9 +4038,9 @@
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="grossly' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4ab' + newncnt + '2" autocomplete="off">' +
+            '                                                                       id="btnradio3ab' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4ab' + newncnt + '2" onclick="showel(this)">Nein</label>' +
+            '                                                                       for="btnradio3ab' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
@@ -4059,9 +4059,9 @@
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="glass_protection' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4abc' + newncnt + '2" autocomplete="off">' +
+            '                                                                       id="btnradio3abc' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4abc' + newncnt + '2" onclick="showel(this)">Nein</label>' +
+            '                                                                       for="btnradio3abc' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
@@ -4081,9 +4081,9 @@
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="parking_damage' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4abcd' + newncnt + '2" autocomplete="off">' +
+            '                                                                       id="btnradio3abcd' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4abcd' + newncnt + '2" onclick="showel(this)">Nein</label>' +
+            '                                                                       for="btnradio3abcd' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
@@ -4102,9 +4102,9 @@
             '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="hour_breakdown_assistance' + newncnt + '" value="Nein"' +
-            '                                                                       id="btnradio4abcde' + newncnt + '2" autocomplete="off">' +
+            '                                                                       id="btnradio3abcde' + newncnt + '2" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
-            '                                                                       for="btnradio4abcde' + newncnt + '2" onclick="showel(this)">Nein</label>' +
+            '                                                                       for="btnradio3abcde' + newncnt + '2" onclick="showel(this)">Nein</label>' +
             '                                                            </div>' +
             '                                                                    </div>' +
             '                                                                </div>' +
@@ -4612,12 +4612,19 @@ function qoe(){
 function showel(x){
     var val = parseInt(x.getAttribute('for').charAt(x.getAttribute('for').length -1));
     var val2 = x.getAttribute('for').substring(0,x.getAttribute('for').length -1);
-    console.log(val2);
-    $('#btnradio3').addClass('showpdf');
-    $('#btnradio4 ').removeClass('showpdf');
-  
-
+    var valc = val + 1;
+    if(val == 1){
+    var fulldoc = val2 + valc;
+        $('#' + x.getAttribute('for')).addClass('showpdf');
+   $('#' +fulldoc).removeClass('showpdf');
+    }
+    else{
+    var fulldoc = val2 + "1";
+     $('#' + x.getAttribute('for')).addClass('showpdf');
+   $('#' +fulldoc).removeClass('showpdf');
+    }
 }
+
 
 </script>
 
