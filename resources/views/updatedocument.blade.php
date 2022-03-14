@@ -5700,7 +5700,7 @@ $urole = $urole->toArray();
                                 </div>
 
                                 <div class="text-center g-0 mt-3 pb-3">
-                                    <div class="row mx-0 mx-sm-4">
+                                    <div class="row mx-0 ">
                                         @if(in_array('admin',$urole) || in_array('backoffice',$urole))
                                             <addtask url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                      :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>

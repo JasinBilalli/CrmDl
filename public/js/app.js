@@ -34386,7 +34386,7 @@ var render = function () {
                                             "div",
                                             {
                                               staticClass:
-                                                "modal-body p-2 p-sm-3",
+                                                "modal-body p-0 p-sm-3",
                                             },
                                             [
                                               _vm.role == "fs"
@@ -34427,7 +34427,7 @@ var render = function () {
                                                         "div",
                                                         {
                                                           staticClass:
-                                                            "col-6 col-md-4 py-3 my-auto",
+                                                            "col-6 col-md-4 py-1 py-sm-3",
                                                         },
                                                         [
                                                           _c(
@@ -34471,7 +34471,7 @@ var render = function () {
                                                         "div",
                                                         {
                                                           staticClass:
-                                                            "col-6 col-md-4 py-3 my-auto",
+                                                            "col-6 col-md-4  py-1 py-sm-3",
                                                         },
                                                         [
                                                           _c(
@@ -35944,7 +35944,10 @@ var render = function () {
                                           _vm._v(" "),
                                           _c(
                                             "div",
-                                            { staticClass: "modal-body p-3" },
+                                            {
+                                              staticClass:
+                                                "modal-body p-1 p-sm-3",
+                                            },
                                             [
                                               _c(
                                                 "div",
@@ -35995,7 +35998,7 @@ var render = function () {
                                                     "div",
                                                     {
                                                       staticClass:
-                                                        "mx-3 pb-3 row",
+                                                        "mx-0 pb-0 mx-sm-3 pb-sm-3 row",
                                                     },
                                                     [
                                                       _c(
