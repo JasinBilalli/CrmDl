@@ -784,7 +784,7 @@
                                                                         <div class="col">
                                                                             <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
                                                                                 <input type="radio" class="btn-check showpdf" value="Ja" name="leasing" id="btnradio1" autocomplete="off">
-                                                                                <label class="btn btn-outline-secondary w-100 g-0" value="Ja" for="btnradio1">Ja</label>
+                                                                                <label class="btn btn-outline-secondary w-100 g-0" value="Ja" for="btnradio1" onclick="showel(this)">Ja</label>
                                                                                 <input type="radio" class="btn-check" name="leasing" value="Nein" id="btnradio2" autocomplete="off">
                                                                                 <label class="btn btn-outline-secondary w-100 g-0 " for="btnradio2">Nein</label>
                                                                             </div>
@@ -1960,7 +1960,7 @@
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                                 <input type="radio" class="btn-check showpdf" name="eu_pension" value="Ja" id="btnradio5" autocomplete="off" checked>
-                                                                <label class="btn btn-outline-secondary" for="btnradio5">Ja</label>
+                                                                <label class="btn btn-outline-secondary" for="btnradio5" onclick="showel(this)">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="eu_pension" value="Nein" id="btnradio6" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio6">Nein</label>
@@ -3963,18 +3963,18 @@
             '                                                                             aria-label="Basic radio toggle button group">' +
             '' +
             '                                                                            <input type="radio" class="btn-check autopdf"' +
-            '                                                                                   name="repair_shop' + newncnt + '" id="btnradio1' + newncnt + '1"' +
+            '                                                                                   name="repair_shop' + newncnt + '" id="btnradio1a' + newncnt + '1"' +
             '                                                                                   value="Specific garage" checked>' +
             '                                                                            <label' +
             '                                                                                class="btn btn-outline-secondary w-100 g-0"' +
-            '                                                                                for="btnradio1' + newncnt + '1" onclick="showel(this)">Specific' +
+            '                                                                                for="btnradio1a' + newncnt + '1" onclick="showel(this)">Specific' +
             '                                                                                garage</label>' +
             '                                                                            <input type="radio" class="btn-check"' +
             '                                                                                   name="repair_shop' + newncnt + '"' +
-            '                                                                                   value="Freie Wahl" id="btnradio2'+newncnt+'2">' +
+            '                                                                                   value="Freie Wahl" id="btnradio1a'+newncnt+'2">' +
             '                                                                            <label' +
             '                                                                                class="btn btn-outline-secondary w-100 g-0 "' +
-            '                                                                                for="btnradio2' + newncnt + '2" onclick="showel(this)">Freie Wahl</label>' +
+            '                                                                                for="btnradio1a' + newncnt + '2" onclick="showel(this)">Freie Wahl</label>' +
             '' +
             '                                                                        </div>' +
             '                                                                    </div>' +
@@ -4591,41 +4591,47 @@
             ismodulo++;
         }
 
+
         var auto = document.getElementsByClassName('autopdf');
         var autoName = document.getElementsByClassName('autoName');
 
         issmodulo = 1;
         for(let i = auto.length-1; i >= 0; i--) {
-                document.getElementById("autooferte").insertAdjacentHTML("afterend",
-                    '<div class="d-flex " style="border-right: 1px solid black; border-left: 1px solid black;"> <div class="col-6 "> ' + autoName[i].innerHTML + ' </div><div class="col-6">' + auto[i].value + '</div></div>');
+
+            document.getElementById("autooferte").insertAdjacentHTML("afterend",
+                '<div class="d-flex " style=""> <div class="col-6 "> ' + autoName[i].innerHTML + ' </div><div class="col-6">' + auto[i].value + '</div></div>');
+            if(i == 1){
+                $("#autooferte").append(
+                    '<hr>');
+            }
 
         }
-
+console.log(auto.length);
 
 
     }
 
 
-function qoe(){
+    function qoe(){
         document.getElementById('formaa').submit();
-}
-function showel(x){
-    var val = parseInt(x.getAttribute('for').charAt(x.getAttribute('for').length -1));
-    var val2 = x.getAttribute('for').substring(0,x.getAttribute('for').length -1);
-    var valc = val + 1;
-    if(val == 1){
-    var fulldoc = val2 + valc;
-        $('#' + x.getAttribute('for')).addClass('autopdf');
-   $('#' +fulldoc).removeClass('autopdf');
+    }
+    function showel(x){
+        var val = parseInt(x.getAttribute('for').charAt(x.getAttribute('for').length -1));
+        var val2 = x.getAttribute('for').substring(0,x.getAttribute('for').length -1);
+        var valc = val + 1;
+        if(val == 1){
+            var fulldoc = val2 + valc;
+            $('#' + x.getAttribute('for')).addClass('autopdf');
+            $('#' +fulldoc).removeClass('autopdf');
+
+        }
+        else{
+            var fulldoc = val2 + "1";
+            $('#' + x.getAttribute('for')).addClass('autopdf');
+            $('#' +fulldoc).removeClass('autopdf');
+        }
 
     }
-    else{
-    var fulldoc = val2 + "1";
-     $('#' + x.getAttribute('for')).addClass('autopdf');
-   $('#' +fulldoc).removeClass('autopdf');
-    }
-   
-}
 
 
 </script>
