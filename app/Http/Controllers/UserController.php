@@ -983,7 +983,7 @@ class UserController extends Controller
                 $admins->password = Hash::make($request->user_password);
             }
         }else{
-            return redirect()->back()->with('fail', 'Ncuk');
+            return redirect()->back()->with('fail', 'Falsche!');
         }
 
 
