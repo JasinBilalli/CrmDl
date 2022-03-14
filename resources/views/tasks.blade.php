@@ -426,7 +426,68 @@
                                             </div>
                                     </div>
                                     @endforeach
-
+                                        @foreach($personalApp as $perApp)
+                                            <div class="p-2 my-2 birthday-itemm bg-white d-flex" data-bs-toggle="modal"
+                                                 data-bs-target="#exampleModall{{$perApp->id}}">
+                                                <div class="my-auto px-2">
+                                                <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                                </svg>
+                                                </span>
+                                                </div>
+                                                <div class="">
+                                                    <div class="fs-5 fw-600">{{$perApp->title}}</div>
+                                                    <div class="">{{$perApp->date}} ({{$perApp->time}})</div>
+                                                </div>
+                                            </div>
+                                            <div class="modal fade" id="exampleModall{{$perApp->id}}" tabindex="-1"
+                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content"
+                                                         style="background: #f8f8f8; border-radius: 43px">
+                                                        <div class="modal-header mx-3 pt-4"
+                                                             style="border-bottom: none !important;">
+                                                            <h4>Personal Appointment</h4>
+                                                            <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"
+                                                                    style="opacity: 1 !important;"></button>
+                                                        </div>
+                                                        <div class="modal-body p-3">
+                                                            <div class="row my-2">
+                                                                <div class="col-12">
+                                                                    <div class=" fw-bold"
+                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                        Title: {{$perApp->title}}
+                                                                        <br>
+                                                                        Kommentar: {{$perApp->comment}}
+                                                                        <br>
+                                                                        Adress: {{$perApp->address}}
+                                                                        <br>
+                                                                        Datum: {{$perApp->date}}
+                                                                        <br>
+                                                                        Zeit: {{$perApp->time}}
+                                                                        <br>
+                                                                        Von: {{App\Models\Admins::find($perApp->assignfrom)->name}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer"
+                                                             style="border-top: none !important; display: block;">
+                                                            <div class="row mx-4 pb-4">
+                                                                <div class=" mx-auto">
+                                                                    <button type="button" class="btn w-100 px-3"
+                                                                            style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
+                                                                            data-bs-dismiss="modal"><b>Schliessen</b>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
                                 </div>
                             </div>
                         </div>
