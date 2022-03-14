@@ -19,6 +19,7 @@ use App\Models\newgegen;
 use App\Models\newnue;
 use App\Notifications\SendNotificationn;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
 use Svg\Tag\Rect;
 
@@ -29,31 +30,34 @@ class LeadDataController extends Controller
     {
         $id = Crypt::decrypt($id) / 1244;
         $admin_id = $req->admin_id;
-
+        $user = Auth::user();
+        $urole = $user->getRoleNames()->toArray();
+      
+        
         $admin_id = Crypt::decrypt($req->admin_id) / 1244;
-
-        if (!Auth::user()->hasRole('fs') || Pendency::find(Session::get('pend_id'))->admin_id == Auth::user()->id) {
+        $lead = family::find($id);
+        if (!in_array('fs',$urole) || Pendency::find(Session::get('pend_id'))->admin_id == $user->id) {
             if (!$accept) {
                 $data = new data();
-                $lead = family::find($id);
-                $data->getdata($id);
+                    $data->getdata($id);
+               
 
-
-                if(LeadDataFahrzeug::where('person_id',$id)->first()){
-                               $mandatiert = LeadDataFahrzeug::where('person_id',$id)->first()->mandatiert != null ? true : false;
+$leadfh = $data->fahrzeug;
+                if($leadfh){
+                               $mandatiert = $leadfh->mandatiert != null ? true : false;
 
                 }
                 else{
                     $mandatiert = false;
                 }
-               $mandatiert ? $mandatierturl = LeadDataFahrzeug::where('person_id',$id)->first()->mandatiert : $mandatierturl = "";
+               $mandatiert ? $mandatierturl = $leadfh->mandatiert : $mandatierturl = "";
 
 
                 return view('updatedocument')->with('data',$data)->with('lead',$lead)->with('admin_id',$admin_id)->with('mandatiert',$mandatiert)->with('mandatierturl',$mandatierturl)->with('id',$id);
 
 
             } else {
-                if (Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin')) {
+                if(in_array('backoffice',$urole) || in_array('admin',$urole)) {
                     $pend = Pendency::find(Session::get('pend_id'));
                 $pend->completed = 1;
                 $pend->type = 'Eingereicht';
@@ -68,6 +72,7 @@ class LeadDataController extends Controller
                 }
             }
     }
+    
 }
 public function rejectupdate(Request $req){
  $pend = Pendency::find(Session::get('pend_id'));

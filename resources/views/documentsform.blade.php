@@ -784,7 +784,7 @@
                                                                         <div class="col">
                                                                             <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
                                                                                 <input type="radio" class="btn-check showpdf" value="Ja" name="leasing" id="btnradio1" autocomplete="off">
-                                                                                <label class="btn btn-outline-secondary w-100 g-0" value="Ja" for="btnradio1" onclick="showel(this)">Ja</label>
+                                                                                <label class="btn btn-outline-secondary w-100 g-0" value="Ja" for="btnradio1">Ja</label>
                                                                                 <input type="radio" class="btn-check" name="leasing" value="Nein" id="btnradio2" autocomplete="off">
                                                                                 <label class="btn btn-outline-secondary w-100 g-0 " for="btnradio2">Nein</label>
                                                                             </div>
@@ -1960,7 +1960,7 @@
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                                                                 <input type="radio" class="btn-check showpdf" name="eu_pension" value="Ja" id="btnradio5" autocomplete="off" checked>
-                                                                <label class="btn btn-outline-secondary" for="btnradio5" onclick="showel(this)">Ja</label>
+                                                                <label class="btn btn-outline-secondary" for="btnradio5">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="eu_pension" value="Nein" id="btnradio6" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio6">Nein</label>
@@ -3506,7 +3506,7 @@
     function addanother_item_g() {
         $("#add_g").remove();
         newgcnt++;
-        document.getElementById('shtogegen').innerHTML += '<div id="g' + newgcnt + '">' +
+        $('#shtogegen').append('<div id="g' + newgcnt + '">' +
             ' <div class="text-end mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16" style="cursor:pointer;" onclick="deletethat2(' + newgcnt + ')">' +
             '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>' +
             '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg></div>' +
@@ -3630,14 +3630,14 @@
             ''+
             '                                                                </div>'+
             '                                                            </div>'+
-            '                                                        </div>';
+            '                                                        </div>');
         document.getElementById('newgcount').value = newgcnt;
     }
 
     function addanother_item_n() {
         $('#add_n').remove();
         newncnt++;
-        document.getElementById('shtonew').innerHTML += '<div class="" id="n' + newncnt + '">' +
+        $('#shtonew').append('<div class="" id="n' + newncnt + '">' +
             ' <div class="text-end mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16" style="cursor:pointer;" onclick="deletethat(' + newncnt + ')">' +
             '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>' +
             '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg></div>' +
@@ -3715,6 +3715,7 @@
             '                                                                            <div class="btn-group w-100"' +
             '                                                                                 role="group"' +
             '                                                                                 aria-label="Basic radio toggle button group">' +
+            '' +
             '                                                                                <input type="radio"' +
             '                                                                                       class="btn-check autopdf" value="Ja"' +
             '                                                                                       name="leasing' + newncnt + '" id="btnradio1' + newncnt + '1"' +
@@ -3734,9 +3735,11 @@
             '                                                                            <div class="">' +
             '                                                                                <select name="leasing_name' + newncnt + '"' +
             '                                                                                        class="w-100 slct1" id="">' +
+            '' +
             '                                                                                    <option value="Gesellschaft">' +
             '                                                                                        Gesellschaft' +
             '                                                                                    </option>' +
+            '' +
             '                                                                                </select>' +
             '                                                                            </div>' +
             '                                                                        </div>' +
@@ -3773,8 +3776,10 @@
             '                                                                                    Este inverkehrssetzung:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
+            '' +
             '                                                                        <input name="first_intro' + newncnt + '"' +
             '                                                                               type="date" class="py-1 border-0 autopdf">' +
+            '' +
             '                                                                    </div>' +
             '                                                                    <div class="date-input-div mb-2">' +
             '                                                                        <div class="">' +
@@ -3782,8 +3787,10 @@
             '                                                                                    Beginn Versicherung:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
+            '' +
             '                                                                        <input name="insurance_date' + newncnt + '" type="date"' +
             '                                                                               class="py-1 border-0 autopdf">' +
+            '' +
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +
@@ -3829,8 +3836,10 @@
             '                                                                                    KM - Stand:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
+            '' +
             '                                                                        <input name="km_stood' + newncnt + '" class="py-1 autopdf"' +
             '                                                                               type="number" id="">' +
+            '' +
             '                                                                    </div>' +
             '                                                                </div>' +
             '                                                                <div class="col">' +
@@ -3847,8 +3856,10 @@
             '                                                                                    Ausstelldatum Fuhrerausweis:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
+            '' +
             '                                                                        <input name="placing_on_the_market' + newncnt + '"' +
             '                                                                               type="date" class="py-1 border-0 autopdf">' +
+            '' +
             '                                                                    </div>' +
             '                                                                    <div class="input-select-div mb-2">' +
             '                                                                        <div class="">' +
@@ -3918,6 +3929,7 @@
             '                                                                        <select name="deductible' + newncnt + '"' +
             '                                                                                class="form-select w-75 autopdf"' +
             '                                                                                aria-label="Default select example">' +
+            '' +
             '                                                                            <option selected></option>' +
             '                                                                            <option value="500">500</option>' +
             '                                                                            <option value="1000">1000</option>' +
@@ -3934,18 +3946,22 @@
             '                                                                        <select name="carried' + newncnt + '"' +
             '                                                                                class="form-select w-75 autopdf"' +
             '                                                                                aria-label="Default select example">' +
+            '' +
             '                                                                            <option selected></option>' +
             '                                                                            @for($i=1000;$i<=20000;$i+=1000)' +
             '                                                                                <option value="{{$i}}">{{$i}}</option>' +
             '                                                                            @endfor' +
+            '' +
             '                                                                        </select>' +
             '                                                                    </div>' +
             '                                                                    <div class="">' +
             '                                                                            <span class="autoName">' +
             '                                                                                Reparaturwerkstatt:' +
             '                                                                            </span>' +
+
             '                                                                        <div class="btn-group w-100" role="group"' +
             '                                                                             aria-label="Basic radio toggle button group">' +
+            '' +
             '                                                                            <input type="radio" class="btn-check autopdf"' +
             '                                                                                   name="repair_shop' + newncnt + '" id="btnradio1' + newncnt + '1"' +
             '                                                                                   value="Specific garage" checked>' +
@@ -3959,6 +3975,7 @@
             '                                                                            <label' +
             '                                                                                class="btn btn-outline-secondary w-100 g-0 "' +
             '                                                                                for="btnradio2' + newncnt + '2" onclick="showel(this)">Freie Wahl</label>' +
+            '' +
             '                                                                        </div>' +
             '                                                                    </div>' +
             '                                                                    <div class="input-div1 mb-2">' +
@@ -3971,9 +3988,10 @@
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="accident_coverage' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3abcde' + newncnt + '1" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3abcdef' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3abcdef' + newncnt + '1" onclick="showel(this)">Ja</label>' +
+            '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="accident_coverage' + newncnt + '" value="Nein"' +
             '                                                                       id="btnradio4abcdef' + newncnt + '2" autocomplete="off">' +
@@ -3996,6 +4014,7 @@
             '                                                                       id="btnradio3a' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3a' + newncnt + '1" onclick="showel(this)">Ja</label>' +
+            '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="traffic_legal_protection' + newncnt + '" value="Nein"' +
             '                                                                       id="btnradio3a' + newncnt + '2" autocomplete="off">' +
@@ -4016,6 +4035,7 @@
             '                                                                       id="btnradio3ab' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3ab' + newncnt + '1" onclick="showel(this)">Ja</label>' +
+            '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="grossly' + newncnt + '" value="Nein"' +
             '                                                                       id="btnradio3ab' + newncnt + '2" autocomplete="off">' +
@@ -4036,6 +4056,7 @@
             '                                                                       id="btnradio3abc' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3abc' + newncnt + '1" onclick="showel(this)">Ja</label>' +
+            '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="glass_protection' + newncnt + '" value="Nein"' +
             '                                                                       id="btnradio3abc' + newncnt + '2" autocomplete="off">' +
@@ -4049,6 +4070,7 @@
             '                                                                                    + Parkschaden:' +
             '                                                                                </span>' +
             '                                                                        </div>' +
+            '' +
             '                                                                        <div class="btn-group" role="group"' +
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
@@ -4056,6 +4078,7 @@
             '                                                                       id="btnradio3abcd' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3abcd' + newncnt + '1" onclick="showel(this)">Ja</label>' +
+            '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="parking_damage' + newncnt + '" value="Nein"' +
             '                                                                       id="btnradio3abcd' + newncnt + '2" autocomplete="off">' +
@@ -4076,6 +4099,7 @@
             '                                                                       id="btnradio3abcde' + newncnt + '1" autocomplete="off" checked>' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3abcde' + newncnt + '1" onclick="showel(this)">Ja</label>' +
+            '' +
             '                                                                <input type="radio" class="btn-check"' +
             '                                                                       name="hour_breakdown_assistance' + newncnt + '" value="Nein"' +
             '                                                                       id="btnradio3abcde' + newncnt + '2" autocomplete="off">' +
@@ -4092,12 +4116,13 @@
             '                                                                        </div>' +
             '                                                                        <div class="col-6">'+
             '                                                                        <textarea class="form-control autopdf" name="nuekommentar' + newncnt + '"></textarea>'+
-            '                                                                       </div>'+
+            '    </div>'+
             '                                                                    </div>'+
             '                                                            </div>' +
             '                                                        </div>' +
             '                                                    </div>' +
             '                                                    <div class="text-center mt-3" style="margin-top: -30px" id="add_n" onclick="addanother_item_n()">' +
+            '' +
             '<svg xmlns="http://www.w3.org/2000/svg" width="37.694" height="37.694"' +
             '     viewBox="0 0 37.694 37.694" style="cursor:pointer;" >' +
             '    <g id="Group_621" data-name="Group 621"' +
@@ -4121,7 +4146,8 @@
             '        </g>' +
             '    </g>' +
             '</svg>' +
-            '</div>';
+            '' +
+            '</div>');
 
         document.getElementById('newncount').value = newncnt;
 
@@ -4589,14 +4615,16 @@ function showel(x){
     var valc = val + 1;
     if(val == 1){
     var fulldoc = val2 + valc;
-        $('#' + x.getAttribute('for')).addClass('showpdf');
-   $('#' +fulldoc).removeClass('showpdf');
+        $('#' + x.getAttribute('for')).addClass('autopdf');
+   $('#' +fulldoc).removeClass('autopdf');
+
     }
     else{
     var fulldoc = val2 + "1";
-     $('#' + x.getAttribute('for')).addClass('showpdf');
-   $('#' +fulldoc).removeClass('showpdf');
+     $('#' + x.getAttribute('for')).addClass('autopdf');
+   $('#' +fulldoc).removeClass('autopdf');
     }
+   
 }
 
 

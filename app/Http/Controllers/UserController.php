@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 use Maatwebsite\Excel\Excel;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cache;
 use Nexmo;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
@@ -377,10 +378,11 @@ class UserController extends Controller
         $remember = $req->input('remember') == 'on' ? true : false;
         if (Auth::guard('admins')->attempt(['email' => $email, 'password' => $password], $remember)) {
             session()->regenerate();
-            $pin = random_int(1000, 9999);
-            $user = Auth::guard('admins')->user();
+            $pin = random_int(1000, 99999);
+            $user = auth()->user();
             $user->confirmed = 0;
             $user->pin = $pin;
+
 
 
             //  Nexmo::message()->send([
@@ -578,8 +580,10 @@ class UserController extends Controller
 
     public function dashboard(Request $req)
     {
-        $user = auth();
-        $urole = $user->user()->getRoleNames();
+        $user = auth()->user();
+        
+
+        $urole = $user->getRoleNames()->toArray();
 
         $getmonth = isset($req->getmonth) ? $req->getmonth : "";
         
@@ -627,7 +631,7 @@ class UserController extends Controller
                 //perfundion
         
         
-                if ($user->check()) {
+                if (auth()->check()) {
                     $pendingcnt = 0;
                     $opencnt = 0;
                     $done = 0;
@@ -637,7 +641,7 @@ class UserController extends Controller
                     $taskcnt = 0;
                     $tasks = null;
         
-                    if ($urole->contains('backoffice') || $urole->contains('admin') || $urole->contains('salesmanager')) {
+                    if (in_array('backoffice',$urole) || in_array('admin',$urole) || in_array('salesmanager',$urole)) {
                         $pcnt = 0;
                         $mcnt = 0;
                         foreach (family::with('adminpend')
@@ -668,9 +672,9 @@ class UserController extends Controller
         
         
                     }
-                    if ($urole->contains('fs') || $urole->contains('admin') || $urole->contains('salesmanager') || $urole->contains('digital')) {
+                    if (in_array('fs',$urole) || in_array('admin',$urole) || in_array('salesmanager',$urole) || in_array('digital',$urole)) {
         
-                        if ($urole->contains('fs')) {
+                        if (in_array('fs',$urole)) {
         
                             $pendingcnt = DB::table('family_person')
                                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
@@ -694,7 +698,7 @@ class UserController extends Controller
                                 ->count();
         
         
-                        } elseif ($urole->contains('admin')) {
+                        } elseif (in_array('admin',$urole)) {
         
                             $pending = DB::table('family_person')
                                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
@@ -739,7 +743,7 @@ class UserController extends Controller
                             $percnt = (100 / $tasks) * $done;
                         }
         
-                        if ($urole->contains('fs')) {
+                        if (in_array('fs',$urole)) {
                             $offen = DB::table('leads')
                             ->join('family_person','leads.id','family_person.leads_id')
                             ->where('leads.assign_to_id',$user->user()->id)
@@ -751,7 +755,7 @@ class UserController extends Controller
                             $offen = DB::table('family_person')
                                 ->join('leads', 'family_person.leads_id', '=', 'leads.id')
                                 ->whereIn('family_person.status',['Open'])
-                                ->where('leads.assign_to_id', $user->user()->id)
+                                ->where('leads.assign_to_id', $user->id)
                                 ->count();
         
                             $leadscount = DB::table('leads')
@@ -762,11 +766,11 @@ class UserController extends Controller
                                 ->count();
                         }
                     }
-                    if ($urole->contains('fs') || $urole->contains('digital')) {
-                        if ($urole->contains('fs')) {
-                            $todayAppointCount = lead::where('assign_to_id', $user->user()->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 0)->where('assigned', 1)->get()->count();
+                    if (in_array('fs',$urole) || in_array('digital',$urole)) {
+                        if (in_array('fs',$urole)) {
+                            $todayAppointCount = lead::where('assign_to_id', $user->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 0)->where('assigned', 1)->get()->count();
                         } else {
-                            $todayAppointCount = lead::where('assign_to_id', $user->user()->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 1)->where('assigned', 1)->get()->count();
+                            $todayAppointCount = lead::where('assign_to_id', $user->id)->where('appointment_date', Carbon::now()->toDateString())->where('wantsonline', 1)->where('assigned', 1)->get()->count();
                         }
         
                         $grundprov = 0;
@@ -790,7 +794,7 @@ class UserController extends Controller
         
                         foreach (DB::table('family_person')
                                      ->join('leads', 'family_person.leads_id', 'leads.id')
-                                     ->where('leads.assign_to_id', $user->user()->id)
+                                     ->where('leads.assign_to_id', $user->id)
                                      ->join('costumer_produkt_grundversicherung', 'costumer_produkt_grundversicherung.person_id_PG', 'family_person.id')
                                      ->select('costumer_produkt_grundversicherung.status_PG')
                                      ->get() as $status) {
@@ -806,7 +810,7 @@ class UserController extends Controller
                         }
                         foreach (DB::table('family_person')
                                      ->join('leads', 'family_person.leads_id', 'leads.id')
-                                     ->where('leads.assign_to_id', $user->user()->id)
+                                     ->where('leads.assign_to_id', $user->id)
                                      ->join('costumer_produkt_autoversicherung', 'costumer_produkt_autoversicherung.person_id_PA', 'family_person.id')
                                      ->select('costumer_produkt_autoversicherung.status_PA')
                                      ->get() as $status) {
@@ -820,7 +824,7 @@ class UserController extends Controller
                         }
                         foreach (DB::table('family_person')
                                      ->join('leads', 'family_person.leads_id', 'leads.id')
-                                     ->where('leads.assign_to_id', $user->user()->id)
+                                     ->where('leads.assign_to_id', $user->id)
                                      ->join('costumer_podukt_zusatzversicherung', 'costumer_podukt_zusatzversicherung.person_id_PZ', 'family_person.id')
                                      ->select('costumer_podukt_zusatzversicherung.status_PZ')
                                      ->get() as $status) {
@@ -834,7 +838,7 @@ class UserController extends Controller
                         }
                         foreach (DB::table('family_person')
                                      ->join('leads', 'family_person.leads_id', 'leads.id')
-                                     ->where('leads.assign_to_id', $user->user()->id)
+                                     ->where('leads.assign_to_id', $user->id)
                                      ->join('costumer_produkt_hausrat', 'costumer_produkt_hausrat.person_id_PH', 'family_person.id')
                                      ->select('costumer_produkt_hausrat.status_PH')
                                      ->get() as $status) {
@@ -848,7 +852,7 @@ class UserController extends Controller
                         }
                         foreach (DB::table('family_person')
                                      ->join('leads', 'family_person.leads_id', 'leads.id')
-                                     ->where('leads.assign_to_id', $user->user()->id)
+                                     ->where('leads.assign_to_id', $user->id)
                                      ->join('costumer_produkt_rechtsschutz', 'costumer_produkt_rechtsschutz.person_id_PR', 'family_person.id')
                                      ->select('costumer_produkt_rechtsschutz.status_PR')
                                      ->get() as $status) {
@@ -862,7 +866,7 @@ class UserController extends Controller
                         }
                         foreach (DB::table('family_person')
                                      ->join('leads', 'family_person.leads_id', 'leads.id')
-                                     ->where('leads.assign_to_id', $user->user()->id)
+                                     ->where('leads.assign_to_id', $user->id)
                                      ->join('costumer_produkt_vorsorge', 'costumer_produkt_vorsorge.person_id_PV', 'family_person.id')
                                      ->select('costumer_produkt_vorsorge.status_PV')
                                      ->get() as $status) {
@@ -892,20 +896,20 @@ class UserController extends Controller
                             'aufgenomenCount' => $aufgenomenCount,
                             'familyCount' => $fmcount
                         ];
-                        return view('dashboard', compact('done', 'tasks', 'pendingcnt', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'counterat', 'offen'));
-                    } elseif ($urole->contains('backoffice')) {
-                        return view('dashboard', compact('pendencies', 'morethan30'));
-                    } elseif ($urole->contains('salesmanager')) {
+                        return view('dashboard', compact('user','urole','done', 'tasks', 'pendingcnt', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'counterat', 'offen'));
+                    } elseif (in_array('backoffice',$urole)) {
+                        return view('dashboard', compact('user','urole','pendencies', 'morethan30'));
+                    } elseif (in_array('salesmanager',$urole)) {
         
         
-                        $consultation = PersonalAppointment::where('user_id', $user->user()->id)->where('AppOrCon', 2)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
+                        $consultation = PersonalAppointment::where('user_id', $user->id)->where('AppOrCon', 2)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
         
                         $countconsultation = $consultation->count();
         
                         $todayAppointCount = lead::where('appointment_date', Carbon::now()->toDateString())->where('assigned', 1)->count();
         
         
-                        $personalApp = PersonalAppointment::where('AppOrCon', 1)->where('user_id', $user->user()->id)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
+                        $personalApp = PersonalAppointment::where('AppOrCon', 1)->where('user_id', $user->id)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
                         $countpersonalApp = $personalApp->count();
                         $admins = Admins::all();
         
@@ -916,12 +920,15 @@ class UserController extends Controller
                         $abgCount = $grundversicherungA + $retchsschutzA + $vorsorgeA + $zusatzversicherungA + $autoversicherungA + $hausratA;
         
         
-                        return view('dashboard', compact('personalApp', 'consultation', 'done', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'countconsultation', 'provisionertCount', 'offenCount', 'aufgenomenCount', 'zuruckCount', 'abgCount', 'offen'));
+                        return view('dashboard', compact('user','urole','personalApp', 'consultation', 'done', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'countconsultation', 'provisionertCount', 'offenCount', 'aufgenomenCount', 'zuruckCount', 'abgCount', 'offen'));
         
-                    } elseif ($urole->contains('admin')) {
-                        $personalApp = PersonalAppointment::where('AppOrCon', 1)->where('assignfrom', $user->user()->id)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
+                    } elseif (in_array('admin',$urole)) {
+                        $personalApp = PersonalAppointment::where('AppOrCon', 1)->where('assignfrom', $user->id)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
                         $countpersonalApp = $personalApp->count();
-                        $admins = Admins::all();
+                        $admins = Cache::remember('admins', 7200, function () {
+                            return Admins::all();
+                        });
+                     
                         $todayAppointCount = lead::where('appointment_date', Carbon::now()->toDateString())->where('assigned', 1)->count();
         
                         //
@@ -949,7 +956,7 @@ class UserController extends Controller
                         ];
         
 
-                return view('dashboard', compact('done', 'admins', 'counterat', 'personalApp', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'offen'));
+                return view('dashboard', compact('user','urole','done', 'admins', 'counterat', 'personalApp', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'offen'));
             }
 
         }

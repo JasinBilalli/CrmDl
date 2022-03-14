@@ -2,7 +2,8 @@
 @section('content')
 
     <title>Startseite</title>
-    @if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('digital'))
+
+    @if(in_array('admin',$urole) ||in_array('fs',$urole) || in_array('digital',$urole))
         <section>
             <div class="col-12 col-md-12">
 {{--                <div class="py-3 mx-3">--}}
@@ -355,7 +356,7 @@
             </div>
         </section>
     @endif
-    @if(Auth::guard('admins')->user()->hasRole('backoffice') || Auth::guard('admins')->user()->hasRole('admin'))
+    @if(in_array('backoffice',$urole) || in_array('admin',$urole))
         <div class="row g-0 mt-4" id="app">
             <todolist></todolist>
             <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
@@ -1064,7 +1065,7 @@
                 </div>
             </div>
         </div>
-            @if(!Auth::guard('admins')->user()->hasRole('backoffice'))
+            @if(!in_array('backoffice',$urole))
                 <div class="col-12 col-md-12 col-lg-12 g-0">
                     <div class="personal-appointments m-2">
                         <div class="header  justify-content-between">
@@ -1183,7 +1184,7 @@
                                         <select class="form-select mb-2"
                                                 style="font-family: 'Montserrat' !important;border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
                                                 name="roleid">
-                                            @if(!Auth::guard('admins')->user()->hasRole('backoffice'))
+                                            @if(!in_array('backoffice',$urole))
                                                 @foreach($admins as $admin)
 
                                                     <option value="{{$admin->id}}">{{$admin->name}}</option>
@@ -1223,7 +1224,7 @@
 
             @endif
             @endif
-            @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
+            @if(in_array('salesmanager',$urole))
                 <div class="modal fade" id="finstatus" tabindex="-1"
                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">

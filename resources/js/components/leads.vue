@@ -1033,7 +1033,7 @@ export default {
         },
         hiq() {
             var checkboxes = document.getElementsByName('jep');
-            for (var checkbox of checkboxes) {
+            for(var checkbox of checkboxes) {
                 checkbox.checked = false;
             }
 
