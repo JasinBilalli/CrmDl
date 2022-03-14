@@ -21,7 +21,7 @@ class FamilyPersonsController extends Controller
     public function family_persons($id,$admin_id = null,Request $req)
     {
 
-     Session::put('pend_id',(int) $req->pend_id);
+        Session::put('pend_id',(int) $req->pend_id);
 
         $idd = Crypt::decrypt($id);
         $idd /= 1244;
@@ -33,41 +33,41 @@ class FamilyPersonsController extends Controller
         $data = LeadDataKK::where('person_id', '=', $idd)->first();
 
 
-            if (Auth::guard('admins')->user()->hasRole('fs')) {
+        if (Auth::guard('admins')->user()->hasRole('fs')) {
 
-                if ($lead->lead->assign_to_id == Auth::user()->id || Pendency::find((int) $req->pend_id)->admin_id == Auth::user()->id) {
-                    try {
-
-                   
-                        return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
-                    }
-                    catch (Exception $e) {
-
-                        return view('documentsform', compact('lead'));
-                    }
-                }
-                else {
-
-                    return redirect()->back();
-                }
-            }
-
-            else {
-               
-
+            if ($lead->lead->assign_to_id == Auth::user()->id || Pendency::find((int) $req->pend_id)->admin_id == Auth::user()->id) {
                 try {
 
-                    if($data->imported == 0){
+
                     return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
-                    }
-                    else{
-                        return view('documentsform', compact('lead'));
-                    }
                 }
                 catch (Exception $e) {
+
                     return view('documentsform', compact('lead'));
                 }
             }
+            else {
+
+                return redirect()->back();
+            }
+        }
+
+        else {
+
+
+            try {
+
+                if($data->imported == 0){
+                    return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
+                }
+                else{
+                    return view('documentsform', compact('lead'));
+                }
+            }
+            catch (Exception $e) {
+                return view('documentsform', compact('lead'));
+            }
+        }
 
 
 
