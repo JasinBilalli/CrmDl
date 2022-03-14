@@ -231,7 +231,7 @@ route::get('file/{file?}',function($file = null,Request $request){
            return abort(404);
         }
 })->middleware('role:admin|backoffice|salesmanager|management|fs')->name('showfile');
-});
+
 Route::get('Appointments', 'App\Http\Controllers\AppointmentsController@index')->name('Appointments')->middleware('role:admin|fs|salesmanager');
 Route::get('Dropajax', 'App\Http\Controllers\AppointmentsController@Dropajax')->name('Dropajax')->middleware('role:admin|fs|salesmanager');
 route::get('getchat/{u1}/{u2}',[ChatController::class,'getchat']);
@@ -282,8 +282,7 @@ route::get('forgot_password',function (){
 route::post('forgotpassword',[\App\Http\Controllers\ForgotPassController::class,'forgot_password'])->name('forgot_password');
 route::get('changepasswrd/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'changepasswrd'])->name('changepasswrd');
 route::post('update_password/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'update_password'])->name('update_password');
-
-
+});
 
 
 

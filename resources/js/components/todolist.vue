@@ -24,7 +24,7 @@
             <div class="fs-5 count px-4 fw-bold">0</div>
         </div>
             <div class="content greyBg py-3 px-2">
-                <form method="post" class="mb-0" action="">
+             
                         <div class="ovrflw pe-1">
                             <div class="input-group mb-2" v-for="todo in todos">
                                 <div class="row g-0">
@@ -58,7 +58,7 @@
                         <button id="addRow" @click="addtodos"  type="button" class="px-5 py-2 my-2 add-button fw-bold text-center">
                             Neue Erinnerung
                             </button>
-                </form>
+                
             </div>
          </div>
      </div>
