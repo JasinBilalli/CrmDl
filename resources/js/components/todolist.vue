@@ -1,7 +1,7 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 px-2">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 px-2 order-last order-md-1">
         <div class="to-do-new wrapper-of-todo mt-3">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between" id="#firstDivToggle1a">
             <div class="header d-flex">
                 <div class="col-auto my-2">
                      <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" viewBox="0 0 16 16"
