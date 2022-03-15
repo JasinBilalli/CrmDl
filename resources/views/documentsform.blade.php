@@ -4575,13 +4575,27 @@
             '      </div>'+
             '    </div>'+
             '  </div>';
+            var auto = document.getElementsByClassName('autopdf');
+        var autoName = document.getElementsByClassName('autoName');
+ 
+        
+    
+        issmodulo = 1;
+        for(let i = auto.length-1; i >= 0 ; i--) {
+            document.getElementById("autooferte").insertAdjacentHTML("afterend",
+                '<div class="d-flex " style=""> <div class="col-6 "> ' + autoName[i].innerHTML + ' </div><div class="col-6">' + auto[i].value + '</div></div>');
+            if(i == 0){
+                $("#autooferte").append(
+                    '<hr>');
+            }
 
+        }
+     
             var gegen = document.getElementsByClassName('gegenpdf');
         var gegenName = document.getElementsByClassName('gegenName');
-        auto.reverse();
-        autoName.reverse();
+ 
         ismodulo = 1;
-        for(let i = 0; i < gegen.length-1; i++) {
+        for(let i = gegen.length-1; i >= 0 ; i--) {
             if(ismodulo % 2 == 1) {
                 document.getElementById("gegenoferte").insertAdjacentHTML("afterend",
                     '<div class="d-flex " style="border-right: 1px solid black; border-left: 1px solid black; border-bottom: 1px solid black;"> <div class="col-6 "> ' + gegenName[i].innerHTML + ' </div><div class="col-6">' + gegen[i].value + '</div></div>');
@@ -4594,22 +4608,8 @@
         }
 
 
-        var auto = document.getElementsByClassName('autopdf');
-        var autoName = document.getElementsByClassName('autoName');
-        auto.reverse();
-        autoName.reverse();
+        
 
-        issmodulo = 1;
-        for(let i = 0; i < auto.length-1; i++) {
-            document.getElementById("autooferte").insertAdjacentHTML("afterend",
-                '<div class="d-flex " style=""> <div class="col-6 "> ' + autoName[i].innerHTML + ' </div><div class="col-6">' + auto[i].value + '</div></div>');
-            if(i == auto.length-1){
-                $("#autooferte").append(
-                    '<hr>');
-            }
-
-        }
-console.log(auto.length);
 
 
     }

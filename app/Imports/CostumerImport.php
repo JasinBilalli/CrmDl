@@ -84,19 +84,24 @@ class CostumerImport implements ToModel
        $pendency->family_id = $family->id;
        $pendency->save();
 
-
+       if(isset($row[8])){
+     
         $grundversicherungP = new CostumerProduktGrundversicherung();
         $grundversicherungP->person_id_PG = $family->id;
+  
         $grundversicherungP->graduation_date_PG = $row[8];
         $grundversicherungP->society_PG = $row[9];
         $grundversicherungP->product_PG = $row[10];
         $grundversicherungP->status_PG = $row[11];
         $grundversicherungP->last_adjustment_PG = $row[12];
         $grundversicherungP->total_commisions_PG = $row[13];
+        
         $grundversicherungP->save();
-
+       }
+       if(isset($row[14])){
         $zusatzversicherungP = new CostumerProduktZusatzversicherung();
         $zusatzversicherungP->person_id_PZ = $family->id;
+
         $zusatzversicherungP->graduation_date_PZ = $row[14];
         $zusatzversicherungP->society_PZ = $row[15];
         $zusatzversicherungP->produkt_PZ = $row[16];
@@ -108,7 +113,8 @@ class CostumerImport implements ToModel
         $zusatzversicherungP->provision_PZ = $row[22];
         $zusatzversicherungP->total_commisions_PZ = $row[23];
         $zusatzversicherungP->save();
-
+       }
+       if(isset($row[24])){
         $retchsschutzP = new CostumerProduktRechtsschutz();
         $retchsschutzP->person_id_PR = $family->id;
         $retchsschutzP->graduation_date_PR = $row[24];
@@ -117,8 +123,9 @@ class CostumerImport implements ToModel
         $retchsschutzP->status_PR = $row[27];
         $retchsschutzP->last_adjustment_PR = $row[28];
         $retchsschutzP->total_commisions_PR = $row[29];
-        $retchsschutzP->save();
+        $retchsschutzP->save();}
 
+        if(isset($row[30])){
         $autoversicherungP = new CostumerProduktAutoversicherung();
         $autoversicherungP->person_id_PA = $family->id;
         $autoversicherungP->society_PA = $row[30];
@@ -128,7 +135,8 @@ class CostumerImport implements ToModel
         $autoversicherungP->last_adjustment_PA = $row[34];
         $autoversicherungP->total_commisions_PA = $row[35];
         $autoversicherungP->save();
-
+        }
+        if(isset($row[36])){
         $hausratP = new CostumerProduktHausrat();
         $hausratP->person_id_PH = $family->id;
         $hausratP->society_PH = $row[36];
@@ -138,7 +146,8 @@ class CostumerImport implements ToModel
         $hausratP->last_adjustment_PH = $row[40];
         $hausratP->total_commisions_PH = $row[41];
         $hausratP->save();
-
+        }
+        if(isset($row[42])){
         $vorsorgeP = new CostumerProduktVorsorge();
         $vorsorgeP->person_id_PV = $family->id;
         $vorsorgeP->graduation_date_PV = $row[42];
@@ -153,7 +162,7 @@ class CostumerImport implements ToModel
         $vorsorgeP->last_adjustment_PV = $row[51];
         $vorsorgeP->total_commisions_PV = $row[52];
         $vorsorgeP->save();
-
+        }
         return $family;
 
 

@@ -14,7 +14,7 @@ class AddStatusFamily extends Migration
     public function up()
     {
         Schema::table('family_person', function (Blueprint $table) {
-            $table->string('status')->default('Open');
+            $table->string('status')->default('Open')->index();
      
         });
       

@@ -21,7 +21,7 @@ class AddAnotherItem extends Migration
             $table->string('comparison_type')->nullable();
             $table->string('commentFahrenzug')->nullable();
             $table->string('offer')->nullable();
-            $table->integer('person_id');
+            $table->integer('person_id')->index();
             $table->timestamps();
         });
     }

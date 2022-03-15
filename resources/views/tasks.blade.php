@@ -870,7 +870,7 @@
                                             $leadss = $task->admin_id * 1244;
                                             $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
 
-                                            $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
+                                            $authUserId= $leadsss;
                                             $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
                                         @endphp
                                         <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
@@ -880,7 +880,7 @@
                                                      style="text-overflow: ellipsis; overflow:hidden;">
                                                     <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
                                                     <div class="col-auto">
-                                                                    <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$authUserId])}}'">
+                                                                    <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$leadsss])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
                                                                             <i class="bi bi-chat justify-content-end"></i>
                                                                         </span>
