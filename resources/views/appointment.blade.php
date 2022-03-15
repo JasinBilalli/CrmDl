@@ -235,10 +235,10 @@
     <div class="modal-content">
       <div class="modal-header">
 	  <div class="col-md-4" style="text-align : left">
-	  <h5 class="modal-title" id="exampleModalLabel">Appointement detail</h5>
+	  <h5 class="modal-title" id="exampleModalLabel">Termindetails</h5>
 	  </div>
 	  <div class="col-md-6" style="text-align : center">
-	  <h4 style="text-align : center; "><B><span id='start' style=" color : #e57e2d"></span></B> (<span id='number_of_persons'></span>persons)</h4>
+	  <h4 style="text-align : center; "><B><span id='start' style="color : #e57e2d"></span></B>(<span id='number_of_persons'></span>personen)</h4>
 	  </div>
 	  <div class="col-md-2" style="text-align : right">
 	  <h5 class="modal-title"><B>ID :</B><span id='id'></span></h5>
@@ -250,23 +250,23 @@
 
 
 
-	    <p style="line-height :8px"><B>Name :</B><span id='name'></span></p>
-	    <p style="line-height :8px"><B>Telephone :</B><span id='telephone'></span></p>
-	    <p style="line-height :8px"><B>Birthdate :</B><span id='birthdate'></span></p>
-	    <p style="line-height :8px"><B>Nationality :</B><span id='nationality'></span></p>
-	    <p style="line-height :8px"><B>Status of task :</B><span id='status_task'></span></p>
+	    <p style="line-height :8px"><B>Vorname :</B><span id='name'></span></p>
+	    <p style="line-height :8px"><B>Telefon :</B><span id='telephone'></span></p>
+	    <p style="line-height :8px"><B>Geburtstag :</B><span id='birthdate'></span></p>
+	    <p style="line-height :8px"><B>Nationalitet :</B><span id='nationality'></span></p>
+	    <p style="line-height :8px"><B>Status der Aufgabe :</B><span id='status_task'></span></p>
 		<hr>
 		<!--<p><B>address :</B><span id='address'></span></p> -->
 		<div class="row" >
 			<div class="col-md-6" style="text-align : left; ">
-			<a href="#" onclick='document.getElementById("change_fs").style.display = "block" ;' class="btn btn-info btn-sm"><i class="far fa-edit"></i> Edit</a>
+			<a href="#" onclick='document.getElementById("change_fs").style.display = "block" ;' class="btn btn-info btn-sm"><i class="far fa-edit"></i> Bearbeiten</a>
 			</div>
 			<div class="col-md-6" style="text-align : right ;">
 			{{ Form::open(array('url' => 'changeTS' , 'method' => 'get')) }}
 			<input type="hidden"  id="id_lead_input2" name="id_lead_input">
 			<input type="hidden"  id="ts_id2" name="ts_id" value="0">
 			<input type="hidden"  id="time_new2" name="time_new">
-			<input type="hidden"  id="date_new2" name="date_new">{!! Form::button('<i class="fas fa-retweet"></i> Replace in appointement list', ['type' => 'submit', 'class' => 'btn btn-warning btn-sm']) !!}
+			<input type="hidden"  id="date_new2" name="date_new">{!! Form::button('<i class="fas fa-retweet"></i> In Terminliste Ersetzen', ['type' => 'submit', 'class' => 'btn btn-warning btn-sm']) !!}
 			{{ Form::close() }}
 			</div>
 			<hr>
@@ -295,7 +295,7 @@
 				<div class="form-group col-sm-3" style="text-align : rignt">
 					<br>
 					{!! Form::submit('Save', ['class' => 'btn btn-primary btn-sm btn-block']) !!}
-					<a class="btn btn-danger btn-sm" href="#" onclick="$(exampleModal).modal('hide'); ">Cancel</a>
+					<a class="btn btn-danger btn-sm" href="#" onclick="$(exampleModal).modal('hide'); ">Stornieren</a>
 				</div>
 			</div>
 		{{ Form::close() }}
@@ -336,9 +336,9 @@
 			<div class="col-lg-1">
 				<label >Status</label>
 				<select name="rejected" class="form-control form-select form-select-sm">
-					<option value="all" @if($rejectedO == "all") selected @endif>All</option>
-					<option value="1" @if($rejectedO == "1") selected @endif>Rejected </option>
-					<option value="0" @if($rejectedO == "0") selected @endif>Accepted</option>
+					<option value="all" @if($rejectedO == "all") selected @endif>Alle</option>
+					<option value="1" @if($rejectedO == "1") selected @endif>Abgelehnt </option>
+					<option value="0" @if($rejectedO == "0") selected @endif>Abgelehnt</option>
 				</select>
 			</div>
 			<div class="col-lg-2">
@@ -410,7 +410,7 @@
 
                 <div class="text-center">
                     <a href="{{route('insertappointment')}}">
-               
+
                     <svg xmlns="http://www.w3.org/2000/svg" width="37"  fill="#0c71c3" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
                         <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
                     </svg>

@@ -323,7 +323,7 @@
                                                             <div class="col-6 col-sm-3">
                                                                 <button type="button" class="btn m-1 w-100"
                                                                         style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                        data-bs-dismiss="modal"><b>Close</b></button>
+                                                                        data-bs-dismiss="modal"><b>Schliessen</b></button>
                                                             </div>
                                                             <div class="col-6 col-sm-3 ">
                                                                 <button class="btn fw-bold  m-1 fs-6 py-2 w-100"
@@ -799,11 +799,11 @@
                                                      style="display: block !important; border-top: none !important;">
                                                     <button @click="assign" class="btn"
                                                             style="background-color: #4EC590 !important; color: #fff !important; border-radius: 8px !important;">
-                                                        <b>Assign</b></button>
+                                                        <b>Zuweisen</b></button>
                                                     <button type="button" @click="reloadthis()" class="btn"
                                                             data-bs-dismiss="modal"
                                                             style="background-color: #6C757D !important; color: #fff !important; border-radius: 8px !important;">
-                                                        <b>Close</b>
+                                                        <b>Schliessen</b>
                                                     </button>
                                                 </div>
                                             </div>

@@ -252,7 +252,7 @@
                                     <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff; border: 2px solid #000; border-radius: 18px; height: 150px;">
+                                             style="background-color: #fff; border: 2px solid #000; border-radius: 18px; height: 150px; margin:4%;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
                                                      fill="#000" class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -359,7 +359,7 @@
     @if(in_array('backoffice',$urole) || in_array('admin',$urole))
         <div class="row g-0 mt-4" id="app">
             <todolist></todolist>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 order-5 order-md-2 desk-sect">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 g-0 order-last order-md-2">
                 <div class="hr-req-div mx-2 mt-3">
                     <div class="d-flex justify-content-between" >
                         <div class="hr-req-header d-flex">
@@ -472,134 +472,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 order-5 order-md-2 mob-sect">
-                <div class="hr-req-div mx-2 mt-3">
-                    <div class="d-flex justify-content-between" >
-                        <div class="hr-req-header d-flex">
-                            <div class="col-auto my-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
-                                     class="bi bi-file-medical" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
-                                    <path
-                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
-                                </svg>
-                            </div>
-                            <div class="txt-01 my-auto ps-2">
-                                Hr-Anfragen
-                            </div>
-
-                        </div>
-                        <div class="fs-5 count px-4 fw-bold"  onclick="secondDivToggleFunct2a()">2</div>
-                    </div>
-                    <div id="firstDivToggle2a" class="py-5 sjfg2" onclick="firstDivToggleFunct2a()">
-                        <div class="text-center">
-                            <span class="fs-4 fw-bold" style="color: #BCC1CD;">
-                                Drücken um
-                                aufzuklappen
-                            </span>
-                        </div>
-                    </div>
-                    <div class="hr-req-content" id="secondDivToggle2a" style="display: none;">
-                        <div class="wrapper p-2">
-                            <div class="hr-req-overflow px-2">
-                                <div class="hr-req-item my-2 p-2 bg-white">
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
-                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                                    <path fill-rule="evenodd"
-                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Malik Gabbi</div>
-                                    </div>
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Vacation</div>
-                                    </div>
-                                    <div class="d-flex mb-1 mt-2">
-                                        <div class="col-auto g-0 p-0">
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
-                                                         fill="currentColor" class="bi bi-calendar-week"
-                                                         viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
-                                                        <path
-                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                                                    </svg>
-                                                </span>
-                                        </div>
-                                        <div class="col ps-2">
-                                            <div class="fw-500">10 Days</div>
-                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="hr-req-item my-2 p-2 bg-white">
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
-                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                                    <path fill-rule="evenodd"
-                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Malik Gabbi</div>
-                                    </div>
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Vacation</div>
-                                    </div>
-                                    <div class="d-flex mb-1 mt-2">
-                                        <div class="col-auto g-0 p-0">
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
-                                                         fill="currentColor" class="bi bi-calendar-week"
-                                                         viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
-                                                        <path
-                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                                                    </svg>
-                                                </span>
-                                        </div>
-                                        <div class="col ps-2">
-                                            <div class="fw-500">10 Days</div>
-                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 order-4 order-md-3">
+            </div> 
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 g-0 order-5 order-md-3">
                 <infonumbers></infonumbers>
             </div>
             <todo></todo>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect order-3 order-md-4">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 g-0 desk-sect order-3 order-md-4">
                 <div class="answw-task m-2">
                     <div class="header  justify-content-between">
                         <div class="">
@@ -690,8 +568,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect order-3 order-md-4">
-                <div class="answered-task-div mx-2 mt-3 mt-sm-0">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 g-0 mob-sect order-3 order-md-4">
+                <div class="answered-task-div mx-2 mt-3">
                     <div class="d-flex justify-content-between">
                         <div class="answered-task-header d-flex">
                             <div class="col-auto my-2">
@@ -709,37 +587,17 @@
                                 Beantwortete Pendenzen
                             </div>
                         </div>
-                        <div class="fs-5 count px-4 fw-bold">{{count($pendencies)}}</div>
+                        <div class="fs-5 count px-4 fw-bold" onclick="secondDivToggleFunct5a()">{{count($pendencies)}}</div>
                     </div>
-                    <div class="answered-task-content">
-                        <div class="search-div">
-                            <div class="d-flex py-2 px-1 px-sm-2" style="align-items: center;">
-                                <div class="input-group">
-                                    <div class=" btn search-icon ps-3 pe-2">
-                                            <span class="">
-                                                <svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg"
-                                                     width="22.03" viewBox="0 0 28.03 24.48">
-                                                    <g id="Ellipse_2" data-name="Ellipse 2" fill="none" stroke="#0c71c3"
-                                                       stroke-linecap="round" stroke-width="2">
-                                                        <ellipse cx="10.648" cy="10.648" rx="10.648" ry="10.648"
-                                                                 stroke="none" />
-                                                        <ellipse cx="10.648" cy="10.648" rx="9.648" ry="9.648"
-                                                                 fill="none" />
-                                                    </g>
-                                                    <line id="Line_4" data-name="Line 4" x2="7.305" y2="6.113"
-                                                          transform="translate(19.316 16.958)" fill="none"
-                                                          stroke="#0c71c3" stroke-linecap="round" stroke-width="2" />
-                                                </svg>
-                                            </span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Search by name">
-                                    <button
-                                        class="py-1 px-3 px-sm-4 ms-2 fw-bold border-0 btn text-white search-button-task">
-                                        Search
-                                    </button>
-                                </div>
+                    <div id="firstDivToggle5a" class="py-5 sjfg mobby-dk" onclick=" firstDivToggleFunct5a()">
+                            <div class="text-center">
+                            <span class="fs-4 fw-bold" style="color: #BCC1CD;">
+                                Drücken um
+                                aufzuklappen
+                            </span>
                             </div>
                         </div>
+                    <div class="answered-task-content" id="secondDivToggle5a" style="display: none;">
                         <div class="wrapper p-2">
                             <div class="answered-tasks-overflow-content px-2">
                                 @if(!empty($pendencies))
@@ -800,7 +658,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect order-2 order-md-5">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 g-0 desk-sect order-4 order-md-5">
                 <div class="answw-task123 m-2">
                     <div class="header  justify-content-between">
                         <div class="">
@@ -886,7 +744,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect order-2 order-md-5">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 g-0 mob-sect order-4 order-md-5">
                 <div class="open-a-month-div mx-2 mt-3">
                     <div class="d-flex justify-content-between">
                         <div class="open-a-month-header d-flex">
@@ -902,11 +760,18 @@
                                 Ablaufende Pendenzen
                             </div>
                         </div>
-                        <div class="fs-5 count px-4 fw-bold">{{count($morethan30)}}</div>
+                        <div class="fs-5 count px-4 fw-bold" onclick="secondDivToggleFunct4a()">{{count($morethan30)}}</div>
                     </div>
-
-                    <div class="open-a-month-content">
-                        <div class="search-div">
+                    <div id="firstDivToggle4a" class="py-5 sjfg dsdsdsw3" onclick="firstDivToggleFunct4a()">
+                            <div class="text-center">
+                            <span class="fs-4 fw-bold" style="color: #BCC1CD;">
+                                Drücken um
+                                aufzuklappen
+                            </span>
+                            </div>
+                        </div>
+                    <div class="open-a-month-content" id="secondDivToggle4a" style="display: none;">
+                        <!-- <div class="search-div">
                             <div class="d-flex py-2 px-1 px-sm-2" style="align-items: center;">
                                 <div class="input-group">
                                     <div class=" btn search-icon ps-3 pe-2">
@@ -933,7 +798,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="wrapper p-2">
                             <div class="open-a-month-overflow px-2">
                                 @if(!empty($morethan30))
@@ -994,7 +859,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect order-1 order-md-last">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 g-0 desk-sect order-2 order-md-last">
                 <div class="answw-task12345 m-2">
                     <div class="header  justify-content-between">
                         <div class="">
@@ -1076,7 +941,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect  order-1 order-md-last">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 g-0 mob-sect  order-1 order-md-last">
                 <div class="status-check-div mx-2  mt-3">
                     <div class="d-flex justify-content-between">
                         <div class="status-check-header d-flex">
@@ -1096,9 +961,17 @@
                             </div>
 
                         </div>
-                        <div class="fs-5 count px-4 fw-bold">2</div>
+                        <div class="fs-5 count px-4 fw-bold" onclick="secondDivToggleFunct3a()">2</div>
                     </div>
-                    <div class="status-check-content">
+                    <div id="firstDivToggle3a" class="py-5 sjfg statuscheck-mobb" onclick="firstDivToggleFunct3a()">
+                            <div class="text-center">
+                            <span class="fs-4 fw-bold" style="color: #BCC1CD;">
+                                Drücken um
+                                aufzuklappen
+                            </span>
+                            </div>
+                        </div>
+                    <div class="status-check-content" id="secondDivToggle3a" style="display:none;">
                         <div class="wrapper p-2">
                             <div class="status-check-overflow px-2">
                                 <div class="status-check-item my-2 py-2 bg-white">
@@ -2679,7 +2552,7 @@
         background-color: #EEEFEF;
         border-radius: 8px;
         border-top-right-radius: 0px;
-        height: 60vh;
+        /* height: 60vh; */
         min-height: 450px !important;
 
 
@@ -2708,7 +2581,7 @@
         background-color: #EEEFEF !important;
         border-radius: 8px !important;
         border-top-right-radius: 0px!important;
-        height: 60vh !important;
+        /* height: 60vh !important; */
         min-height: 450px !important;
     }
 
@@ -3170,6 +3043,27 @@
         top: 0;
         background-color: #EFEFEF !important;
     }
+    .statuscheck-mobb {
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .dsdsdsw3 {
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .mobby-dk {
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 
     .count {
         background-color: #EFEFEF;
@@ -3190,6 +3084,13 @@
         display: block;
     }
 
+    .mobile-sswr {
+        background-color: #EFEFEF;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
     @media (max-width: 767.98px) {
         .mob-sect {
             display: block;
@@ -3206,6 +3107,7 @@
 <script>
 
 
+///////////////////////////////////////////
      function firstDivToggleFunct1a() {
         $('#firstDivToggle1a').slideUp(200);
         $('#secondDivToggle1a').slideDown(200);
@@ -3217,7 +3119,7 @@
     }
 
 
-    /////////////////////////////////////////
+    //////////////////funct////////////////
 
     function firstDivToggleFunct2a() {
         $('#firstDivToggle2a').slideUp(200);
@@ -3229,7 +3131,7 @@
         $('#firstDivToggle2a').slideDown(200);
     }
 
-    ////////////////////////////////////////
+    ////////////////////funct///////////////
 
     function firstDivToggleFunct3a() {
         $('#firstDivToggle3a').slideUp(200);
@@ -3241,7 +3143,7 @@
         $('#firstDivToggle3a').slideDown(200);
     }
    
-    ///////////////////////////////////////////
+    ////////////////////funct///////////////
 
     function firstDivToggleFunct4a() {
         $('#firstDivToggle4a').slideUp(200);
@@ -3253,7 +3155,7 @@
         $('#firstDivToggle4a').slideDown(200);
     }
    
-    ///////////////////////////////////////////
+    //////////////////////funct/////////////
 
     function firstDivToggleFunct5a() {
         $('#firstDivToggle5a').slideUp(200);
@@ -3265,7 +3167,7 @@
         $('#firstDivToggle5a').slideDown(200);
     }
    
-    ///////////////////////////////////////////
+    /////////////////////////////////////////
 
 
     function firstDivToggleFunct6a() {
@@ -3278,7 +3180,6 @@
         $('#firstDivToggle6a').slideDown(200);
     }
    
-    ///////////////////////////////////////////
 </script>
 
 

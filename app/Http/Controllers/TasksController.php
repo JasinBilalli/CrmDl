@@ -584,7 +584,7 @@ if(in_array('admin',$urole)){
       $tasks = family::with('adminpend')
       ->join('leads','family_person.leads_id','=','leads.id')
       ->where('status','Open')
-      ->where('leads.assign_to_id',$user->user()->id)
+      ->where('leads.assign_to_id',$user->id)
       ->select('family_person.*')
       ->orderBy('family_person.created_at','desc')
       ->paginate(200);
@@ -604,7 +604,7 @@ if(in_array('admin',$urole)){
       $pending = family::with('adminpend')
       ->join('pendencies','family_person.id','=','pendencies.family_id')
       ->where('pendencies.completed','=',0)
-      ->where('pendencies.admin_id','=',$user->user()->id)
+      ->where('pendencies.admin_id','=',$user->id)
       ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
       ->paginate(200);
 

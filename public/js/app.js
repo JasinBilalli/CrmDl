@@ -8023,6 +8023,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getToDo();
@@ -37040,7 +37042,7 @@ var render = function () {
                                                 },
                                                 on: { click: _vm.assign },
                                               },
-                                              [_c("b", [_vm._v("Assign")])]
+                                              [_c("b", [_vm._v("Zuweisen")])]
                                             ),
                                             _vm._v(" "),
                                             _c(
@@ -37064,7 +37066,7 @@ var render = function () {
                                                   },
                                                 },
                                               },
-                                              [_c("b", [_vm._v("Close")])]
+                                              [_c("b", [_vm._v("Schliessen")])]
                                             ),
                                           ]
                                         ),
@@ -37842,7 +37844,7 @@ var staticRenderFns = [
           },
           attrs: { type: "button", "data-bs-dismiss": "modal" },
         },
-        [_c("b", [_vm._v("Close")])]
+        [_c("b", [_vm._v("Schliessen")])]
       ),
     ])
   },
@@ -38295,7 +38297,7 @@ var render = function () {
     "div",
     {
       staticClass:
-        "col-12 col-sm-6 col-md-6 col-lg-6 g-0 order-first order-md-4",
+        "col-12 col-sm-12 col-md-6 col-lg-6 g-0 order-first order-md-4",
     },
     [
       _c("div", { staticClass: "add-a-task-div mx-2 mt-2" }, [
@@ -38816,7 +38818,7 @@ var render = function () {
     "div",
     {
       staticClass:
-        "col-12 col-sm-6 col-md-6 col-lg-4 g-0 px-2 order-last order-md-1",
+        "col-12 col-sm-12 col-md-6 col-lg-4 g-0 px-2 order-1 order-md-1",
     },
     [
       _c("div", { staticClass: "to-do-new wrapper-of-todo mt-3" }, [
@@ -38960,7 +38962,7 @@ var render = function () {
             },
             [
               _vm._v(
-                "\n                        Neue Erinnerung\n                        "
+                "\n                        Neue Erinnerung\n                    "
               ),
             ]
           ),
