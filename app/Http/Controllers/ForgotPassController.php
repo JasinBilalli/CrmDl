@@ -25,6 +25,9 @@ class ForgotPassController extends Controller
             return redirect()->back()->with('message','Email Wrong');
         }
     }
+    public function apptest(){
+        return $apptest;
+    }
 
     public function sendResetEmail($email , $token, $user)
     {

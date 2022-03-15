@@ -19,10 +19,15 @@ class confirmedcode
     {
         $user = auth();
         if ($user->check()) {
-<<<<<<< HEAD
-            
-=======
->>>>>>> 7ebe3dfe01d830bbb8613a2ad84a385d9dfd8953
+
+//            if ($user->user()->firsttime == 1) {
+//                return redirect()->route('smsconfirm');
+//            } else if ($user->user()->confirmed == 0) {
+//                return redirect()->route('smsconfirmation');
+//            } else {
+//                return $next($request);
+//            }
+
             return $next($request);
         }
         return redirect()->route('rnlogin');
