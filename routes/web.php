@@ -193,7 +193,7 @@ $leadinfo = $leads['leads'][$i]->info;
    route::get('todayappointments',[TasksController::class,'today'])->middleware('role:admin|fs|backoffice');
    route::get('vuedate',[TasksController::class,'vuedate'])->middleware('role:admin|fs|backoffice');
    route::get('chat/{u1}/{u2}',[ChatController::class,'chat'])->name('chat');
-   route::any('addappointmentfile',[UserController::class,'addappointmentfile'])->name('addappointmentfile')->middleware('role:admin|fs|backoffice');
+   route::any('addappointmentfile',[UserController::class,'addappointmentfile'])->name('addappointmentfile')->middleware('role:admin|fs|backoffice|salesmanager');
    route::get('addtodo',[TodoController::class,'addtodo']);
    route::get('addToDoList',[TodoController::class,'addToDoList'])->name('addToDoList');
    route::get('getToDo',[TodoController::class,'getToDo']);
@@ -285,6 +285,7 @@ route::post('forgotpassword',[\App\Http\Controllers\ForgotPassController::class,
 route::get('changepasswrd/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'changepasswrd'])->name('changepasswrd');
 route::post('update_password/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'update_password'])->name('update_password');
 });
+route::get('apptest',[\App\Http\Controllers\ForgotPassController::class,'apptest']);
 
 
 

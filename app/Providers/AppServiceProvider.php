@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-     
+
     }
 
     /**
@@ -37,7 +37,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-    
-       
+        $this->app->when('App\Http\Controllers\ForgotPassController')
+            ->needs('$apptest')
+            ->give('asd');
+
     }
 }
