@@ -8023,6 +8023,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getToDo();
@@ -38295,7 +38298,7 @@ var render = function () {
     "div",
     {
       staticClass:
-        "col-12 col-sm-6 col-md-6 col-lg-6 g-0 order-first order-md-4",
+        "col-12 col-sm-12 col-md-6 col-lg-6 g-0 order-first order-md-4",
     },
     [
       _c("div", { staticClass: "add-a-task-div mx-2 mt-2" }, [
@@ -38816,7 +38819,7 @@ var render = function () {
     "div",
     {
       staticClass:
-        "col-12 col-sm-6 col-md-6 col-lg-4 g-0 px-2 order-last order-md-1",
+        "col-12 col-sm-12 col-md-6 col-lg-4 g-0 px-2 order-1 order-md-1",
     },
     [
       _c("div", { staticClass: "to-do-new wrapper-of-todo mt-3" }, [
