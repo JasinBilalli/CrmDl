@@ -252,7 +252,7 @@
                                     <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff; border: 2px solid #000; border-radius: 18px;  margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
+                                             style="background-color: #fff; border: 2px solid #000; border-radius: 18px; height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
                                                      fill="#000" class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -359,9 +359,9 @@
     @if(in_array('backoffice',$urole) || in_array('admin',$urole))
         <div class="row g-0 mt-4" id="app">
             <todolist></todolist>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 order-5 order-md-2 desk-sect">
                 <div class="hr-req-div mx-2 mt-3">
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between" >
                         <div class="hr-req-header d-flex">
                             <div class="col-auto my-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
@@ -379,7 +379,7 @@
                         </div>
                         <div class="fs-5 count px-4 fw-bold">2</div>
                     </div>
-                    <div class="hr-req-content">
+                    <div class="hr-req-content" >
                         <div class="wrapper p-2">
                             <div class="hr-req-overflow px-2">
                                 <div class="hr-req-item my-2 p-2 bg-white">
@@ -473,11 +473,133 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 order-5 order-md-2 mob-sect">
+                <div class="hr-req-div mx-2 mt-3">
+                    <div class="d-flex justify-content-between" >
+                        <div class="hr-req-header d-flex">
+                            <div class="col-auto my-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor"
+                                     class="bi bi-file-medical" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                    <path
+                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                                </svg>
+                            </div>
+                            <div class="txt-01 my-auto ps-2">
+                                Hr-Anfragen
+                            </div>
+
+                        </div>
+                        <div class="fs-5 count px-4 fw-bold"  onclick="secondDivToggleFunct2a()">2</div>
+                    </div>
+                    <div id="firstDivToggle2a" class="py-5 sjfg2" onclick="firstDivToggleFunct2a()">
+                        <div class="text-center">
+                            <span class="fs-4 fw-bold" style="color: #BCC1CD;">
+                                Drücken um
+                                aufzuklappen
+                            </span>
+                        </div>
+                    </div>
+                    <div class="hr-req-content" id="secondDivToggle2a" style="display: none;">
+                        <div class="wrapper p-2">
+                            <div class="hr-req-overflow px-2">
+                                <div class="hr-req-item my-2 p-2 bg-white">
+                                    <div class="d-flex my-2 px-2">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                                    <path fill-rule="evenodd"
+                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                                </svg>
+                                            </span>
+                                        <div class="ps-2 fw-500">Malik Gabbi</div>
+                                    </div>
+                                    <div class="d-flex my-2 px-2">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                                </svg>
+                                            </span>
+                                        <div class="ps-2 fw-500">Vacation</div>
+                                    </div>
+                                    <div class="d-flex mb-1 mt-2">
+                                        <div class="col-auto g-0 p-0">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
+                                                         fill="currentColor" class="bi bi-calendar-week"
+                                                         viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                                        <path
+                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                                    </svg>
+                                                </span>
+                                        </div>
+                                        <div class="col ps-2">
+                                            <div class="fw-500">10 Days</div>
+                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr-req-item my-2 p-2 bg-white">
+                                    <div class="d-flex my-2 px-2">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
+                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                                    <path fill-rule="evenodd"
+                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                                </svg>
+                                            </span>
+                                        <div class="ps-2 fw-500">Malik Gabbi</div>
+                                    </div>
+                                    <div class="d-flex my-2 px-2">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
+                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+                                                </svg>
+                                            </span>
+                                        <div class="ps-2 fw-500">Vacation</div>
+                                    </div>
+                                    <div class="d-flex mb-1 mt-2">
+                                        <div class="col-auto g-0 p-0">
+                                                <span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
+                                                         fill="currentColor" class="bi bi-calendar-week"
+                                                         viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                                        <path
+                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                                    </svg>
+                                                </span>
+                                        </div>
+                                        <div class="col ps-2">
+                                            <div class="fw-500">10 Days</div>
+                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 order-4 order-md-3">
                 <infonumbers></infonumbers>
             </div>
             <todo></todo>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect order-3 order-md-4">
                 <div class="answw-task m-2">
                     <div class="header  justify-content-between">
                         <div class="">
@@ -568,7 +690,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect order-3 order-md-4">
                 <div class="answered-task-div mx-2 mt-3 mt-sm-0">
                     <div class="d-flex justify-content-between">
                         <div class="answered-task-header d-flex">
@@ -678,7 +800,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect order-2 order-md-5">
                 <div class="answw-task123 m-2">
                     <div class="header  justify-content-between">
                         <div class="">
@@ -764,7 +886,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect order-2 order-md-5">
                 <div class="open-a-month-div mx-2 mt-3">
                     <div class="d-flex justify-content-between">
                         <div class="open-a-month-header d-flex">
@@ -872,7 +994,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 desk-sect order-1 order-md-last">
                 <div class="answw-task12345 m-2">
                     <div class="header  justify-content-between">
                         <div class="">
@@ -954,7 +1076,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 mob-sect  order-1 order-md-last">
                 <div class="status-check-div mx-2  mt-3">
                     <div class="d-flex justify-content-between">
                         <div class="status-check-header d-flex">
@@ -1296,9 +1418,9 @@
                         </div>
                     </div>
                 </div>
-                <section class="my-5">
+                <section class="my-3">
                     <div class="statistics ">
-                        <div class="mx-4 py-3" style="background-color: #f7f7f7; border-radius: 15px;">
+                        <div class="mx-3 py-3" style="background-color: #EFEFEF; border-radius: 15px;">
                             <div class="header mx-4 py-3">
                                 <span class="fs-5 fw-bold">Statistics</span>
                             </div>
@@ -1398,11 +1520,11 @@
                         </div>
                     </div>
                     <div class="row my-2 mx-2">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0 mb-3">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0">
                             <div class="consultations-div pb-2">
                                 <div class="">
-                                    <div class="accordion accordion-flush mx-3 " id="accordionFlush5">
-                                        <div class="accordion-item mb-3 my-1 py-2" style="background-color: #F7F7F7;">
+                                    <div class="accordion accordion-flush mx-2 " id="accordionFlush5">
+                                        <div class="accordion-item mb-3 my-1 py-2" style="background-color: #EFEFEF;">
                                             <h2 class="accordion-header" id="flush-heading5">
                                                 <div class="p-3">
                                                     <div class="row">
@@ -1418,7 +1540,7 @@
                                             <div id="flush-collapse5" class="accordion-collapse collapse show"
                                                  aria-labelledby="flush-heading5" data-bs-parent="#accordionFlush5">
                                                 <div class="accordion-body p-0 mx-2 py-2 overflow-div4"
-                                                     style="background-color: #F7F7F7; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 170px; overflow-y: scroll !important; overflow-x: hidden !important;">
+                                                     style="background-color: #EFEFEF; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 330px; overflow-y: scroll !important; overflow-x: hidden !important;">
                                                     @foreach($consultation as $consult)
                                                         <div class="py-2 my-2 mx-2"
                                                              style="background-color: #fff; font-family: 'Montserrat'; border-radius: 15px; color: #000;">
@@ -1591,10 +1713,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0 mb-3">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 g-0">
                             <div class="personal-apponitments-div pb-2">
-                                <div class="accordion accordion-flush mx-3 " id="accordionFlush1">
-                                    <div class="accordion-item my-1 mb-3 py-2" style="background-color: #F7F7F7;">
+                                <div class="accordion accordion-flush mx-2 " id="accordionFlush1">
+                                    <div class="accordion-item my-1 mb-3 py-2" style="background-color: #EFEFEF;">
                                         <h2 class="accordion-header" id="flush-heading1">
                                             <div class="p-3">
                                                 <div class="row">
@@ -1610,8 +1732,8 @@
                                         <div id="flush-collapse1" class="accordion-collapse collapse show"
                                              aria-labelledby="flush-heading1" data-bs-parent="#accordionFlush1">
 
-                                            <div class="accordion-body p-0 mx-2 py-2 overflow-div1"
-                                                 style="background-color: #F7F7F7; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 170px; overflow-y: scroll !important; overflow-x: hidden !important;">
+                                            <div class="accordion-body p-0 mx-2 py-2 overflow-div4"
+                                                 style="background-color: #EFEFEF; font-family: 'Montserrat'; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: 330px; overflow-y: scroll !important; overflow-x: hidden !important;">
                                                 @foreach($personalApp as $perApp)
                                                     <div class="py-2 my-2 mx-2"
                                                          style="background-color: #fff; border-radius: 15px; color: #000;">
@@ -1775,13 +1897,13 @@
                             </div>
 
                         </div>
-                        <div class="my-3">
-                            <div class="row mx-2">
+                        <div class="g-0">
+                            <div class="row g-0">
                                 <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center"
-                                         style="background-color: #8A8BF9; border-radius: 18px;  margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
+                                    <div class="text-center mx-2"
+                                         style="background-color: #fff; border:2px solid black; border-radius: 18px; ">
                                         <div class="pt-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#000"
                                                  class="bi bi-people-fill" viewBox="0 0 16 16">
                                                 <path
                                                     d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -1791,11 +1913,11 @@
                                             </svg>
                                         </div>
                                         <div class="py-2">
-                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">
+                            <span class="fw-bold fs-5 text-black" style="font-family: 'Montserrat' !important;">
                                 {{$leadscount}}
                             </span>
                                             <br>
-                                            <span class="fw-bold fs-5 text-white"
+                                            <span class="fw-bold fs-5 text-black"
                                                   style="font-family: 'Montserrat' !important;">
                                 Neue Leads
                             </span>
@@ -1848,21 +1970,21 @@
 {{--                                    </div>--}}
 {{--                                </div>--}}
                                 <div onclick="window.location.href='{{route('Appointments')}}'" style="cursor: pointer" class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center"
-                                         style="background-color: #4e5ec5; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%;">
+                                    <div class="text-center mx-2"
+                                         style="background-color: #fff; border:2px solid black; border-radius: 18px;">
                                         <div class="pt-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#fff"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#000"
                                                  class="bi bi-exclamation-octagon-fill" viewBox="0 0 16 16">
                                                 <path
                                                     d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                             </svg>
                                         </div>
                                         <div class="py-2">
-                                            <span class="fw-bold fs-5 text-white" style="font-family: 'Montserrat' !important;">
+                                            <span class="fw-bold fs-5 text-black" style="font-family: 'Montserrat' !important;">
                                                 {{$todayAppointCount}}
                                             </span>
                                             <br>
-                                            <span class="fw-bold fs-5 text-white"
+                                            <span class="fw-bold fs-5 text-black"
                                                   style="font-family: 'Montserrat' !important;">
                                                 Heute Termin
                                             </span>
@@ -1937,7 +2059,7 @@
 
                 </script>
                 @endsection
-                <style>
+        <style>
                 .add-a-task-header {
                     height: 60px;
                 }
@@ -2180,7 +2302,7 @@
                         color: #7F00FF !important;
                     }
                 </style>
-                <style>
+     <style>
                     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
 
                     body {
@@ -2399,27 +2521,27 @@
                         font-weight: bold;
                         height: 60px;
                         background-color: #fff;
-                    }
+            }
 
-                    .personal-appointments .content {
-                        height: 450px;
-                        background-color: #EEEFEF;
-                        border-top-left-radius: 10px;
-                        border-top-right-radius: 0px;
-                        border-bottom-left-radius: 10px;
-                        border-bottom-right-radius: 10px;
-                    }
+            .personal-appointments .content {
+             height: 450px;
+             background-color: #EEEFEF;
+             border-top-left-radius: 10px;
+             border-top-right-radius: 0px;
+             border-bottom-left-radius: 10px;
+             border-bottom-right-radius: 10px;
+            }
 
-                    .personal-appointments .content .overflow-div {
-                        height: 300px;
-                        overflow: auto;
+            .personal-appointments .content .overflow-div {
+              height: 300px;
+              overflow: auto;
 
-                    }
-                    .fw-500 {
-                        font-weight: 500;
-                    }
-                    .tablee-123 tr td:first-child {
-                border-top-left-radius: 10px;
+             }
+            .fw-500 {
+                font-weight: 500;
+            }
+           .tablee-123 tr td:first-child {
+              border-top-left-radius: 10px;
             }
 
             .tablee-123 tr td:last-child {
@@ -3079,8 +3201,84 @@
 
     }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
 
 
+     function firstDivToggleFunct1a() {
+        $('#firstDivToggle1a').slideUp(200);
+        $('#secondDivToggle1a').slideDown(200);
+    }
 
+    function secondDivToggleFunct1a() {
+        $('#secondDivToggle1a').slideUp(200);
+        $('#firstDivToggle1a').slideDown(200);
+    }
+
+
+    /////////////////////////////////////////
+
+    function firstDivToggleFunct2a() {
+        $('#firstDivToggle2a').slideUp(200);
+        $('#secondDivToggle2a').slideDown(200);
+    }
+
+    function secondDivToggleFunct2a() {
+        $('#secondDivToggle2a').slideUp(200);
+        $('#firstDivToggle2a').slideDown(200);
+    }
+
+    ////////////////////////////////////////
+
+    function firstDivToggleFunct3a() {
+        $('#firstDivToggle3a').slideUp(200);
+        $('#secondDivToggle3a').slideDown(200);
+    }
+
+    function secondDivToggleFunct3a() {
+        $('#secondDivToggle3a').slideUp(200);
+        $('#firstDivToggle3a').slideDown(200);
+    }
+   
+    ///////////////////////////////////////////
+
+    function firstDivToggleFunct4a() {
+        $('#firstDivToggle4a').slideUp(200);
+        $('#secondDivToggle4a').slideDown(200);
+    }
+
+    function secondDivToggleFunct4a() {
+        $('#secondDivToggle4a').slideUp(200);
+        $('#firstDivToggle4a').slideDown(200);
+    }
+   
+    ///////////////////////////////////////////
+
+    function firstDivToggleFunct5a() {
+        $('#firstDivToggle5a').slideUp(200);
+        $('#secondDivToggle5a').slideDown(200);
+    }
+
+    function secondDivToggleFunct5a() {
+        $('#secondDivToggle5a').slideUp(200);
+        $('#firstDivToggle5a').slideDown(200);
+    }
+   
+    ///////////////////////////////////////////
+
+
+    function firstDivToggleFunct6a() {
+        $('#firstDivToggle6a').slideUp(200);
+        $('#secondDivToggle6a').slideDown(200);
+    }
+
+    function secondDivToggleFunct6a() {
+        $('#secondDivToggle6a').slideUp(200);
+        $('#firstDivToggle6a').slideDown(200);
+    }
+   
+    ///////////////////////////////////////////
+</script>
 
 

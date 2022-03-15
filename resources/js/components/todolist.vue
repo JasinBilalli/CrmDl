@@ -1,7 +1,7 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 px-2">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 px-2 order-last order-md-1">
         <div class="to-do-new wrapper-of-todo mt-3">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between" id="#firstDivToggle1a">
             <div class="header d-flex">
                 <div class="col-auto my-2">
                      <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" viewBox="0 0 16 16"
@@ -21,10 +21,10 @@
                     Aufgaben
                 </div>
             </div>
-            <div class="fs-5 count px-4 fw-bold">0</div>
+            <div class="fs-5 count px-4 fw-bold">{{cnt}}</div>
         </div>
             <div class="content greyBg py-3 px-2">
-             
+
                         <div class="ovrflw pe-1">
                             <div class="input-group mb-2" v-for="todo in todos">
                                 <div class="row g-0">
@@ -58,7 +58,7 @@
                         <button id="addRow" @click="addtodos"  type="button" class="px-5 py-2 my-2 add-button fw-bold text-center">
                             Neue Erinnerung
                             </button>
-                
+
             </div>
          </div>
      </div>
@@ -70,7 +70,8 @@ export default {
     },
     data(){
         return {
-            todos:null
+            todos:null,
+            cnt: 0
         }
     },
     methods: {
@@ -83,6 +84,7 @@ export default {
         getToDo(){
             axios.get('getToDo').then((response) => {
                 this.todos = response.data;
+                this.cnt = response.data.length;
             })
             var checkbx = document.getElementsByClassName('removeRow');
             for (var checkbox of checkbx) {

@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-6 g-0 order-first order-md-4">
         <div class="add-a-task-div mx-2 mt-2">
             <div class="add-a-task-header d-flex">
                 <div class="col-auto my-auto">
@@ -241,7 +241,7 @@ export default {
             axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&task=' + document.getElementById('task').value);
             document.getElementById('alrt').innerHTML = "";
             document.getElementById('alrt').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' +
-                '                    <strong>Pendency was assigned successfully</strong>\n' +
+                '                    <strong>Erfolgreich Zugewiesen Pendenz</strong>\n' +
                 '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' +
                 '                </div>';
         },

@@ -21,8 +21,8 @@ $urole = $urole->toArray();
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Document</title>
-    <link rel="icon" type="image/png" href="img/Favicon.png">
+    <title>Dokumentieren</title>
+    <link rel="icon" type="image/png" href="../img/Favicon.png">
 </head>
 <style>
     /*nav ARti*/
@@ -345,7 +345,7 @@ $urole = $urole->toArray();
             </div>
         </div>
     </div>
-    @php $gcnt = \App\Models\newgegen::where('person_id',$id)->count(); 
+    @php $gcnt = \App\Models\newgegen::where('person_id',$id)->count();
      $ncnt = \App\Models\newnue::where('person_id',$id)->count();
     @endphp
     <div class="col">
@@ -1431,9 +1431,7 @@ $urole = $urole->toArray();
                                                                                  role="group"
                                                                                  aria-label="Basic radio toggle button group">
                                                                                 @if(isset($data->fahrzeug->leasing))
-                                                                                    @if($data->fahrzeug->leasing
-                                                                                    == 'Ja')
-
+                                                                                    @if($data->fahrzeug->leasing == 'Ja')
                                                                                         <input type="radio"
                                                                                                class="btn-check"
                                                                                                value="Ja"
@@ -2468,13 +2466,6 @@ $urole = $urole->toArray();
                                                                             <span>
                                                                                 Reparaturwerkstatt:
                                                                             </span>
-                                                                        <!-- <div class="input-group mb-2">
-                                                                    <input name="noname" type="text" placeholder="Partnergarage" class="form-control" aria-label=""
-                                                                      aria-describedby="basic-addon1">
-                                                                    <input name="noname" type="text" placeholder="Freie Wahl" class="form-control" aria-label=""
-                                                                      aria-describedby="basic-addon1">
-                                                                  </div> -->
-
                                                                         <div class="btn-group w-100" role="group"
                                                                              aria-label="Basic radio toggle button group">
                                                                             @if(isset($data->fahrzeug->repair_shop))
@@ -2983,8 +2974,7 @@ $urole = $urole->toArray();
                                                                                      role="group"
                                                                                      aria-label="Basic radio toggle button group">
                                                                                     @if(isset($nue->comparison_type))
-                                                                                        @if($nue->omparison_type
-                                                                                    == 'Ja')
+                                                                                        @if($nue->comparison_type == 'Ja')
                                                                                             <input type="radio"
                                                                                                    class="btn-check"
                                                                                                    value="Ja"
@@ -3443,12 +3433,6 @@ $urole = $urole->toArray();
                                                                             <span>
                                                                                 Reparaturwerkstatt:
                                                                             </span>
-                                                                            <!-- <div class="input-group mb-2">
-                                                                    <input name="noname" type="text" placeholder="Partnergarage" class="form-control" aria-label=""
-                                                                      aria-describedby="basic-addon1">
-                                                                    <input name="noname" type="text" placeholder="Freie Wahl" class="form-control" aria-label=""
-                                                                      aria-describedby="basic-addon1">
-                                                                  </div> -->
 
                                                                             <div class="btn-group w-100" role="group"
                                                                                  aria-label="Basic radio toggle button group">
@@ -5700,7 +5684,7 @@ $urole = $urole->toArray();
                                 </div>
 
                                 <div class="text-center g-0 mt-3 pb-3">
-                                    <div class="row mx-0 mx-sm-4">
+                                    <div class="row mx-0 ">
                                         @if(in_array('admin',$urole) || in_array('backoffice',$urole))
                                             <addtask url="{{config('app.url')}}" :client_id="{{$lead->id}}"
                                                      :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
@@ -5772,7 +5756,7 @@ $urole = $urole->toArray();
                                     </svg>
                                 </button>
                             @endif
-                           
+
                             @if($pendency->done == 1 && $pendency->completed == 0)
                                 <button class="px-5 py-2" id="submitt1" type="button"
                                         style="border: none; border-radius: 9px; background-color:#285F52;" title="Accept"

@@ -11,8 +11,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/css/intlTelInput.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Document</title>
-    <link rel="icon" type="image/png" href="{{config('app.url')}}/imgs/Favicon.png">
+    <title>Dokumentieren</title>
+    <link rel="icon" type="image/png" href="{{config('../app.url')}}/imgs/Favicon.png">
 </head>
 
 <body>
@@ -4654,7 +4654,7 @@
     }
 
     .submit-btnnnn {
-        background-color: #0FDA89;
+        background-color: #0C71C3;
         border-radius: 10px;
         border: none;
         color: #fff;

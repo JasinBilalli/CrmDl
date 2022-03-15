@@ -13,7 +13,7 @@
                                     <span class="fs-5">{{cnt}}</span>
                                 </div>
                             </div>
-                            <div class="content p-2" >
+                            <div class="content p-2">
                                 <div class="overflow-div row mx-2 mx-sm-3 me-2">
                                     <div class="col-12 col-sm-12 col-md-6 g-0" v-for="lead in leads">
                                         <!--                                    Rejecti Posht-->
@@ -181,14 +181,14 @@
                                                                 aria-label="Close"
                                                                 style="opacity: 1 !important;"></button>
                                                     </div>
-                                                    <div class="modal-body p-2 p-sm-3">
+                                                    <div class="modal-body p-0 p-sm-3">
                                                         <div v-if="role == 'fs'" class="row mx-3 my-auto">
                                                             <div class="col-12 col-md-4 my-auto">
                                                                 <span class="fs-4 fw-bold text-dark">
                                                                   {{ lead.first_name }}
                                                                 </span>
                                                             </div>
-                                                            <div class="col-6 col-md-4 py-3 my-auto">
+                                                            <div class="col-6 col-md-4 py-1 py-sm-3">
                                                                 <div class="d-flex justify-content-center">
                                                                     <a :href="'tel:' + lead.telephone"
                                                                        class="btn fw-bold fs-5 py-2 w-100"
@@ -197,7 +197,7 @@
                                                                     </a>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6 col-md-4 py-3 my-auto">
+                                                            <div class="col-6 col-md-4  py-1 py-sm-3">
                                                                 <div class="d-flex justify-content-start">
                                                                     <button class="btn fw-bold fs-5 py-2 w-100"
                                                                             data-bs-dismiss="modal"
@@ -579,7 +579,7 @@
                                                                 aria-label="Close"
                                                                 style="opacity: 1 !important;"></button>
                                                     </div>
-                                                    <div class="modal-body p-3">
+                                                    <div class="modal-body p-1 p-sm-3">
                                                         <div class="row mx-3 my-auto">
                                                             <div class="col-12 col-md-4 my-auto">
                                                                 <span class="fs-4 fw-bold text-dark">
@@ -590,7 +590,7 @@
                                                         </div>
                                                         <br>
                                                         <div class="mt-sm-3 mt-1">
-                                                            <div class="mx-3 pb-3 row">
+                                                            <div class="mx-0 pb-0 mx-sm-3 pb-sm-3 row">
                                                                 <div class="col-md-6 col-12 my-2">
                                                                     <div class="text-dark text-left p-3 m-2 h-100"
                                                                          style="border-radius: 15px; background:white;">

@@ -34,7 +34,7 @@ class TableCostumerProduktZusatzversicherung extends Migration
             $table->date('last_adjustment_PZ2')->nullable();
             $table->string('provision_PZ2')->nullable();
 
-            $table->string('total_commisions_PZ')->nullable();
+            $table->string('total_commisions_PZ')->nullable()->default(0);
             $table->integer('selected')->default(0);
             $table->timestamps();
 
