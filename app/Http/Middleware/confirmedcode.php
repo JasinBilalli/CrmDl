@@ -19,7 +19,10 @@ class confirmedcode
     {
         $user = auth();
         if ($user->check()) {
+<<<<<<< HEAD
             
+=======
+>>>>>>> 7ebe3dfe01d830bbb8613a2ad84a385d9dfd8953
             return $next($request);
         }
         return redirect()->route('rnlogin');

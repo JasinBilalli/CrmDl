@@ -57,8 +57,7 @@
                         </div>
                         <button id="addRow" @click="addtodos"  type="button" class="px-5 py-2 my-2 add-button fw-bold text-center">
                             Neue Erinnerung
-                            </button>
-
+                        </button>
             </div>
          </div>
      </div>
