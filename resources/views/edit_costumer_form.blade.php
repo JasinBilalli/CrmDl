@@ -92,7 +92,7 @@
                 @endif
                 @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
                 Auth::guard('admins')->user()->hasRole('admin'))
-<!-- 
+<!--
                     <a href="{{route('status')}}" class="nav-link {{ (request()->is('status')) ? 'activeClassNav__' : '' }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-clipboard-data" viewBox="0 0 16 16">
                             <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z" />
@@ -1674,7 +1674,6 @@
                                                                 </div>
                                                                 <input class="py-1 form-control " value="{{$vorsorgeP->graduation_date_PV}}" type="date" name="graduation_date_PV" id="" min="1900-01-01" max="9999-12-31">
                                                             </div>
-
                                                         </div>
                                                         <div class="mb-3">
                                                             <div class="input-div1 input-groupp justify-content-between">
@@ -1685,7 +1684,6 @@
                                                                 </div>
                                                                 <input class="py-1 form-control " value="{{$vorsorgeP->begin_PV}}" type="date" name="begin_PV" id="" min="1900-01-01" max="9999-12-31">
                                                             </div>
-
                                                         </div>
                                                         <div class="mb-3">
                                                             <div class="input-div1 input-groupp justify-content-between">
@@ -1696,7 +1694,6 @@
                                                                 </div>
                                                                 <input class="py-1 form-control " value="{{$vorsorgeP->society_PV}}" type="text" name="society_PV" id="">
                                                             </div>
-
                                                         </div>
                                                         <div class="mb-3">
                                                             <div class="input-div1 input-groupp justify-content-between">
@@ -1707,7 +1704,6 @@
                                                                 </div>
                                                                 <input class="py-1 form-control " value="{{$vorsorgeP->pramie_PV}}" type="text" name="pramie_PV" id="">
                                                             </div>
-
                                                         </div>
                                                         <div class="mb-3">
                                                             <div class="input-div1 input-groupp justify-content-between">
@@ -1718,7 +1714,6 @@
                                                                 </div>
                                                                 <input class="py-1 form-control " value="{{$vorsorgeP->payment_rythm_PV}}" type="text" name="payment_rythm_PV" id="">
                                                             </div>
-
                                                         </div>
                                                         <div class="mb-3">
                                                             <div class="input-div1 input-groupp justify-content-between">

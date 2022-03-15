@@ -28,31 +28,14 @@ class FamilyPersonsController extends Controller
         $cnt = 0;
         $cnt1 = 0;
         $lead = family::find($idd);
-
- $admin_id = $req->admin_id;
- 
+        $admin_id = $req->admin_id;
 
 
-            if (Auth::guard('admins')->user()->hasRole('fs')) {
-                if (Auth::guard('admins')->user()->id == $lead->lead->assign_to_id || Pendency::find((int) $req->pend_id)->admin_id == Auth::user()->id) {
-                    try {
-                        
-                        $data = LeadDataKK::where('person_id', '=', $idd)->where('imported',0)->firstOrFail();
-                       
-                        return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
-                    }
-                    catch (Exception $e) {
-                      
-                        return view('documentsform', compact('lead'));
-                    }
-                }
-                else {
-               
-                    return redirect()->back();
-                }
-            }
-            else {
+
+        if (Auth::guard('admins')->user()->hasRole('fs')) {
+            if (Auth::guard('admins')->user()->id == $lead->lead->assign_to_id || Pendency::find((int) $req->pend_id)->admin_id == Auth::user()->id) {
                 try {
+
                     $data = LeadDataKK::where('person_id', '=', $idd)->where('imported',0)->firstOrFail();
 
                     return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
@@ -62,7 +45,6 @@ class FamilyPersonsController extends Controller
                     return view('documentsform', compact('lead'));
                 }
             }
-
             else {
 
                 return redirect()->back();
@@ -70,14 +52,13 @@ class FamilyPersonsController extends Controller
         }
         else {
             try {
-                $data = LeadDataKK::where('person_id', '=', $idd)->firstOrFail();
+                $data = LeadDataKK::where('person_id', '=', $idd)->where('imported',0)->firstOrFail();
                 return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
             }
             catch (Exception $e) {
                 return view('documentsform', compact('lead'));
             }
         }
-
     }
 
 
@@ -108,7 +89,6 @@ class FamilyPersonsController extends Controller
 
     public function updateleadfamilyperson(Request $request, $id)
     {
-
         $idd = Crypt::decrypt($id);
         $idd /= 1244;
 
