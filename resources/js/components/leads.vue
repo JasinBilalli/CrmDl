@@ -13,7 +13,7 @@
                                     <span class="fs-5">{{cnt}}</span>
                                 </div>
                             </div>
-                            <div class="content p-2" >
+                            <div class="content p-2">
                                 <div class="overflow-div row mx-2 mx-sm-3 me-2">
                                     <div class="col-12 col-sm-12 col-md-6 g-0" v-for="lead in leads">
                                         <!--                                    Rejecti Posht-->

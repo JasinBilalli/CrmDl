@@ -233,7 +233,7 @@ class LeadDataController extends Controller
                     'insurance_date' => $request->input('insurance_date' . $i),
                     'most_common' => filter_var($request->input('most_common' . $i),FILTER_SANITIZE_STRING),
                     'redeemed' => filter_var($request->input('redeemed' . $i),FILTER_SANITIZE_STRING),
-                    'km_stood' => filter_var($request->input('nationality' . $i),FILTER_SANITIZE_STRING),
+                    'km_stood' => filter_var($request->input('km_stood' . $i),FILTER_SANITIZE_STRING),
                     'insurance' => filter_var($request->input('insurance' . $i),FILTER_SANITIZE_STRING),
                     'traffic_legal_protection' => filter_var($request->input('traffic_legal_protection' . $i),FILTER_SANITIZE_STRING),
                     'deductible' => filter_var($request->input('deductible' . $i),FILTER_SANITIZE_STRING),
