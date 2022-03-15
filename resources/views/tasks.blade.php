@@ -31,7 +31,13 @@
                             </div>
                         </div>
                         <div id="secondDivToggle" class="wrapper p-2" style="display: none;">
+
                             <div class="overflow-divv1">
+                                @if(count($tasks) == 0)
+                                    <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
+                                        Keine Offene Aufgaben
+                                    </div>
+                                @else
                                 @php $admin_id = $leadsss; @endphp
                                 @foreach($tasks as $task)
                                     @php
@@ -71,6 +77,7 @@
                                         </div>
                                     </a>
                                 @endforeach
+                                    @endif
                             </div>
                         </div>
                     </div>
@@ -92,6 +99,11 @@
                         </div>
                         <div id="secondDivToggle22" class="wrapper1 p-2" style="display: none;">
                             <div class="overflow-divv2">
+                                @if(count($pending) == 0)
+                                    <div class="text-center fs-5 fw-600" style="color: #9F9F9F" >
+                                        Keine Pendenze
+                                    </div>
+                                @else
                                 @foreach($pending as $task)
                                     @php
                                         $leadss = $task->id * 1244;
@@ -215,6 +227,7 @@
                                     </div>
                                     @endif
                                 @endforeach
+                                    @endif
                             </div>
                         </div>
                     </div>
@@ -770,7 +783,11 @@
                         </script>
                         <div id="secondDivToggle33" class="wrapper p-2" style="display: none;">
                             <div class="overflow-divv1">
-
+                                @if(count($answered) == 0)
+                                    <div class="text-center fs-5 fw-600" style="color: #9F9F9F" >
+                                        Keine Beantwortete Aufgaben
+                                    </div>
+                                @else
                                 @foreach($answered as $task)
                                     @php
                                                    $leadss = $task->family_id * 1244;
@@ -837,6 +854,7 @@
                                         </script>
                                     </div>
                                 @endforeach
+                                    @endif
                             </div>
                         </div>
                     </div>
@@ -858,6 +876,11 @@
                         </div>
                         <div id="secondDivToggle44" class="wrapper3 p-2" style="display: none;">
                             <div class="overflow-divv2">
+                                @if(count($opened) == 0)
+                                    <div class="text-center fs-5 fw-600" style="color: #9F9F9F" >
+                                        Keine Aufgaben öffnen
+                                    </div>
+                                @else
                                 @foreach($opened as $task)
                                     @php
                                         $leadss = $task->family_id * 1244;
@@ -926,6 +949,7 @@
                                         </script>
                                     </div>
                                 @endforeach
+                                    @endif
                             </div>
                         </div>
                     </div>
@@ -947,7 +971,7 @@
                             </div>
                             <div class="content">
                                 @if(count($answered) == 0)
-                                    <div class="text-center">
+                                    <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
                                         Keine Beantwortete Aufgaben
                                     </div>
                                 @else
@@ -1074,7 +1098,7 @@
 
                             <div class="content">
                                 @if(count($opened) == 0)
-                                    <div class="text-center">
+                                    <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
                                         Keine Aufgaben öffnen
                                     </div>
                                 @else

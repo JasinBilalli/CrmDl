@@ -8022,7 +8022,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getToDo();
@@ -37040,7 +37039,7 @@ var render = function () {
                                                 },
                                                 on: { click: _vm.assign },
                                               },
-                                              [_c("b", [_vm._v("Assign")])]
+                                              [_c("b", [_vm._v("Zuweisen")])]
                                             ),
                                             _vm._v(" "),
                                             _c(
@@ -37064,7 +37063,7 @@ var render = function () {
                                                   },
                                                 },
                                               },
-                                              [_c("b", [_vm._v("Close")])]
+                                              [_c("b", [_vm._v("Schliessen")])]
                                             ),
                                           ]
                                         ),
@@ -37842,7 +37841,7 @@ var staticRenderFns = [
           },
           attrs: { type: "button", "data-bs-dismiss": "modal" },
         },
-        [_c("b", [_vm._v("Close")])]
+        [_c("b", [_vm._v("Schliessen")])]
       ),
     ])
   },
@@ -38960,7 +38959,7 @@ var render = function () {
             },
             [
               _vm._v(
-                "\n                        Neue Erinnerung\n                        "
+                "\n                        Neue Erinnerung\n                    "
               ),
             ]
           ),
