@@ -15,11 +15,11 @@ class AddPendenciesTable extends Migration
     {
         Schema::create('pendencies', function (Blueprint $table) {
             $table->id();
-            $table->integer('admin_id')->nullable();
+            $table->integer('admin_id')->nullable()->index();
             $table->integer('family_id')->nullable();
             $table->string('description')->nullable();
-            $table->boolean('done')->default(0);
-            $table->boolean('completed')->default(0);
+            $table->boolean('done')->default(0)->index();
+            $table->boolean('completed')->default(0)->index();
             $table->string('title')->nullable();
             $table->timestamps();
         });

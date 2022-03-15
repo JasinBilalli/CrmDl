@@ -63,7 +63,7 @@ class TodoController extends Controller
     public function todos(){
         if(Auth::guard('admins')->check()){
             if(Auth::guard('admins')->user()->hasRole('admin') || Auth::guard('admins')->user()->hasRole('backoffice')){
-        $data['costumers'] = family::whereIn('status',['Open'])->select('first_name','last_name','id')->get();
+        $data['costumers'] = family::select('first_name','last_name','id')->get();
         $data['admins'] = Admins::role(['fs'])->get();
         return $data;
             }

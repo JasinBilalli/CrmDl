@@ -16,7 +16,7 @@ class AddanotherThingN extends Migration
         Schema::create('addanother_thing_n', function (Blueprint $table) {
             $table->id();
             $table->string('vehicle_id')->nullable();
-            $table->integer('person_id')->nullable();
+            $table->integer('person_id')->index();
             $table->string('leasing')->nullable();
             $table->string('leasing_name')->nullable();
             $table->string('year_of_purchase')->nullable();

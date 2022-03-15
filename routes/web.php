@@ -34,6 +34,7 @@ use App\Http\Controllers\StatusController;
 use App\Http\Controllers\TeamController;
 use App\Imports\leadinfo;
 use App\Imports\newlead;
+use Illuminate\Support\Facades\DB;
 use App\Listeners\SendNotificationListener;
 use App\Models\campaigns;
 use App\Models\data;
@@ -55,7 +56,8 @@ use function Clue\StreamFilter\fun;
 use App\Models\TestClass;
 use FontLib\TrueType\Collection;
 use Monolog\Test\TestCase;
-use Vonage\Voice\Endpoint\App;
+
+
 
 route::prefix('')->middleware('confirmcode')->group(function(){
    route::get('addlead',function(){
@@ -283,6 +285,7 @@ route::post('forgotpassword',[\App\Http\Controllers\ForgotPassController::class,
 route::get('changepasswrd/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'changepasswrd'])->name('changepasswrd');
 route::post('update_password/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'update_password'])->name('update_password');
 });
+
 
 
 
