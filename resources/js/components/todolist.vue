@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 g-0 px-2 order-last order-md-1">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 g-0 px-2 order-1 order-md-1">
         <div class="to-do-new wrapper-of-todo mt-3">
             <div class="d-flex justify-content-between" id="#firstDivToggle1a">
             <div class="header d-flex">
@@ -61,7 +61,10 @@
             </div>
          </div>
      </div>
+
+    
 </template>
+
 <script>
 export default {
     mounted() {
@@ -78,7 +81,6 @@ export default {
             var title = document.getElementById('title');
             axios.get('addToDoList?title=' + title.value).then(this.getToDo());
             title.value = "";
-
         },
         getToDo(){
             axios.get('getToDo').then((response) => {
