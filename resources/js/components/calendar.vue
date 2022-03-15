@@ -5,7 +5,7 @@
             <div class="row text-center px-1">
                 <div class="g-0 col-md-3 col-3 calendarspan">
                     <div class="dayy this-month dateee p-2 mx-2 " v-bind:id="lista[0].date" @click="searchapp(lista[0].date)" style="cursor: pointer">
-                        <span 
+                        <span
                               class="monthh p-0" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[0].day }} {{ lista[0].month }}, {{ lista[0].year }}</b></span>
                         <br>
                         <span
@@ -16,10 +16,10 @@
                 </div>
                 <div class="g-0 col-md-3 col-3 calendarspan">
                     <div class="dayy this-month dateee p-2 mx-2" v-bind:id="lista[1].date" @click="searchapp(lista[1].date)" style="cursor: pointer">
-                        <span 
+                        <span
                           class="monthh p-0" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[1].day }} {{ lista[1].month }}, {{ lista[1].year }}</b></span>
                         <br>
-                        <span 
+                        <span
                               class="not-this-month  text-center" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[1].dayn }}</b>
                         </span>
                         <br>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="g-0 col-md-3 col-3 calendarspan">
                     <div class="dayy this-month dateee p-2 mx-2" v-bind:id="lista[2].date" @click="searchapp(lista[2].date)" style="cursor: pointer">
-                        <span 
+                        <span
                           class="monthh p-0" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[2].day }} {{ lista[2].month }}, {{ lista[2].year }}</b></span>
                         <br>
                         <span
@@ -39,11 +39,11 @@
                 <div class="g-0 col-md-3 col-3 calendarspan">
                     <div class="dayy this-month dateee p-2 mx-2" v-bind:id="lista[3].date" @click="searchapp(lista[3].date)" style="cursor: pointer">
 
-                          <span 
+                          <span
                                 class="monthh p-0" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[3].day }} {{ lista[3].month }}, {{ lista[3].year }}</b>
                           </span>
                         <br>
-                        <span 
+                        <span
                               class="not-this-month  text-center" style="font-family: 'Montserrat'; font-size: 15px;"><b>{{ lista[3].dayn }}</b>
                         </span>
                         <br>
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class=" p-3 p-sm-4" style="height: 300px; background: #0C71C3; border-radius: 25px;  overflow:hidden !important; background-color: #F5F4F4; border-radius: 15px; font-family: 'Montserrat';">
-                <div class="text-center" v-if="today == null || today == ''">
+                <div class="text-center fs-5 fw-600" style="color: #9F9F9F" v-if="today == null || today == ''">
                     <h5>Keine Termine für heute</h5>
                 </div>
                 <div class="scroll-2 pe-1 pe-sm-3" id="appscroll" v-else>
@@ -196,7 +196,7 @@
                 ele[i].style = "background-color: #fff; color: #000; cursor: pointer;";
             }
             document.getElementById(idForStyle).style = 'background-color: #0C71C3; color: white;  cursor: pointer;';
-            
+
             axios.get('todayappointments?date=' + vall + '?page=' + this.apage).then(
                 (response) => { this.today = response.data; }
             );

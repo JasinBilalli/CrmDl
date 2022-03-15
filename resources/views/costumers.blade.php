@@ -1,5 +1,10 @@
 @extends('template.navbar')
 @section('content')
+    <head>
+        <title>
+            Kunden
+        </title>
+    </head>
 
     <body>
     <div class="desktop-kunden">
@@ -48,7 +53,34 @@
                             <button class="dropdown-toggle border-0 bg-transparent" type="button"
                                     id="dropdownMenuButton1"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20.391" height="20.587"
+                                     viewBox="0 0 28.391 27.587">
+                                    <g id="Group_980" data-name="Group 980" transform="translate(1.25)">
+                                        <g id="Group_17" data-name="Group 17">
+                                            <line id="Line_5" data-name="Line 5" x2="25.891" transform="translate(0 24.217)"
+                                                  fill="none" stroke="#000" stroke-linecap="round" stroke-width="2.5"/>
+                                            <line id="Line_6" data-name="Line 6" x2="25.891" transform="translate(0 13.488)"
+                                                  fill="none" stroke="#000" stroke-linecap="round" stroke-width="2.5"/>
+                                            <line id="Line_7" data-name="Line 7" x2="25.891" transform="translate(0 2.76)"
+                                                  fill="none" stroke="#000" stroke-linecap="round" stroke-width="2.5"/>
+                                            <g id="Ellipse_4" data-name="Ellipse 4" transform="translate(4.926 21.457)"
+                                               stroke="#000" stroke-width="1">
+                                                <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065" stroke="none"/>
+                                                <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565" fill="none"/>
+                                            </g>
+                                            <g id="Ellipse_5" data-name="Ellipse 5" transform="translate(16.186 10.728)"
+                                               stroke="#000" stroke-width="1">
+                                                <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065" stroke="none"/>
+                                                <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565" fill="none"/>
+                                            </g>
+                                            <g id="Ellipse_6" data-name="Ellipse 6" transform="translate(4.926)"
+                                               stroke="#000" stroke-width="1">
+                                                <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065" stroke="none"/>
+                                                <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565" fill="none"/>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
 
                             </button>
                             <form method="post" action="{{route('search')}}" class="dropdown-menu px-2"

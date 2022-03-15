@@ -1,5 +1,10 @@
 @extends('template.navbar')
 @section('content')
+    <head>
+        <title>
+            Ablehnen
+        </title>
+    </head>
 <section class="my-0 my-sm-5">
     <div class="container-fluid">
         <div class="wrapper-div px-4 py-0 py-sm-4 mx-0 mx-sm-3">
@@ -166,7 +171,7 @@
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <input type="text" id="inputTxt4" name="reason" class="form-control"
-                                               aria-describedby="passwordHelpInline">
+                                               aria-describedby="passwordHelpInline" required>
                                     </div>
                                 </div>
                                 <div class="row mx-2 text-center my-1 my-sm-3 mx-3 mx-sm-5">
@@ -209,7 +214,7 @@
                                                     </svg>
                                                 </label>
                                                 <input onchange="uploadfile()" name="image" type="file" id="file-input-3"
-                                                       class="svg-div w-100 border-0  g-0">
+                                                       class="svg-div w-100 border-0  g-0" required>
                                             </div>
                                         </div>
                                     </div>

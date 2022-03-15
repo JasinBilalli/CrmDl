@@ -27,7 +27,7 @@ class CostumerImport implements ToModel
     /**
     * @param Collection $collection
     */
-  
+
 
     public function model(array $row){
 
@@ -47,11 +47,17 @@ class CostumerImport implements ToModel
         $lead->campaign_id = 1;
         $lead->completed = 1;
         $lead->save();
+        if(isset($row[8])){
+            $kunden = 1;
+        }else{
+            $kunden = 0;
+        }
         $family = family::create([
             'first_name' => $row[0],
             'last_name' => $row[1],
             'birthdate' => $row[2],
             'leads_id' => $lead->id,
+            'kundportfolio' => $kunden,
             'status' => 'done'
         ]);
 

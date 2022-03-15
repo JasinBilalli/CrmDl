@@ -85,7 +85,7 @@ admin: null
             axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
              document.getElementById('alrt1').innerHTML = "";
             document.getElementById('alrt1').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' +
-                '                   <strong>Pendency Assigned Successfuly</strong>\n' +
+                '                   <strong>Erfolgreich Zugewiesen</strong>\n' +
                 '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' +
                 '                </div> ';
         },

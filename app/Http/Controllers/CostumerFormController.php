@@ -182,7 +182,7 @@ class CostumerFormController extends Controller
                     $grundversicherungP->product_PG = filter_var($request->input('product_PG' . $i),FILTER_SANITIZE_STRING);
                     $grundversicherungP->status_PG = filter_var($request->input('status_PG' . $i),FILTER_SANITIZE_STRING);
                     $grundversicherungP->last_adjustment_PG = $request->input('last_adjustment_PG' . $i);
-                    $grundversicherungP->total_commisions_PG = filter_var($request->input('total_commisions_PG' . $i),FILTER_SANITIZE_STRING);
+                    $grundversicherungP->total_commisions_PG = (int)$request->input('total_commisions_PG' . $i);
                     $grundversicherungP->save();
                     $pcnt++;
 
@@ -273,7 +273,7 @@ class CostumerFormController extends Controller
                 $zusatzversicherungP->status_PZ = filter_var($request->input('status_PZ' . $i),FILTER_SANITIZE_STRING);
                 $zusatzversicherungP->last_adjustment_PZ = $request->input('last_adjustment_PZ' . $i);
                 $zusatzversicherungP->provision_PZ = filter_var($request->input('provision_PZ' . $i),FILTER_SANITIZE_STRING);
-                $zusatzversicherungP->total_commisions_PZ = filter_var($request->input('total_commisions_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->total_commisions_PZ = (int) $request->input('total_commisions_PZ' . $i);
                 $zusatzversicherungP->save();
                 $pcnt++;
 
