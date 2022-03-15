@@ -241,7 +241,7 @@ export default {
             axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&task=' + document.getElementById('task').value);
             document.getElementById('alrt').innerHTML = "";
             document.getElementById('alrt').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' +
-                '                    <strong>Pendency was assigned successfully</strong>\n' +
+                '                    <strong>Erfolgreich Zugewiesen Pendenz</strong>\n' +
                 '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' +
                 '                </div>';
         },

@@ -1,6 +1,11 @@
 @extends('template.navbar')
 @section('content')
 @php $admini = Auth::user(); @endphp
+<head>
+    <title>
+        Kalender
+    </title>
+</head>
 <style>
 
   body {

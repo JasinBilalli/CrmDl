@@ -177,12 +177,12 @@ class CostumerFormController extends Controller
             for ($i = 1; $i <= $cnt; $i++) {
                     $grundversicherungP = new CostumerProduktGrundversicherung();
                     $grundversicherungP->person_id_PG = filter_var($id,FILTER_SANITIZE_STRING);
-                    $grundversicherungP->graduation_date_PG = filter_var($request->input('graduation_date_PG' . $i),FILTER_SANITIZE_STRING);
+                    $grundversicherungP->graduation_date_PG = $request->input('graduation_date_PG' . $i);
                     $grundversicherungP->society_PG = filter_var($request->input('society_PG' . $i),FILTER_SANITIZE_STRING);
                     $grundversicherungP->product_PG = filter_var($request->input('product_PG' . $i),FILTER_SANITIZE_STRING);
                     $grundversicherungP->status_PG = filter_var($request->input('status_PG' . $i),FILTER_SANITIZE_STRING);
                     $grundversicherungP->last_adjustment_PG = $request->input('last_adjustment_PG' . $i);
-                    $grundversicherungP->total_commisions_PG = filter_var($request->input('total_commisions_PG' . $i),FILTER_SANITIZE_STRING);
+                    $grundversicherungP->total_commisions_PG = (int)$request->input('total_commisions_PG' . $i);
                     $grundversicherungP->save();
                     $pcnt++;
 
@@ -202,7 +202,7 @@ class CostumerFormController extends Controller
             $retchsschutzP->produkt_PR = filter_var($request->produkt_PR,FILTER_SANITIZE_STRING);
             $retchsschutzP->status_PR = filter_var($request->status_PR,FILTER_SANITIZE_STRING);
             $retchsschutzP->last_adjustment_PR = $request->last_adjustment_PR;
-            $retchsschutzP->total_commisions_PR = filter_var($request->total_commisions_PR,FILTER_SANITIZE_STRING);
+            $retchsschutzP->total_commisions_PR = $request->total_commisions_PR;
 
             if($request->status_PR == 'Provisionert'){
                 $familyperson = family::find($id)->lead->assign_to_id;
@@ -268,12 +268,12 @@ class CostumerFormController extends Controller
                 $zusatzversicherungP->society_PZ = filter_var($request->input('society_PZ' . $i),FILTER_SANITIZE_STRING);
                 $zusatzversicherungP->produkt_PZ = filter_var($request->input('produkt_PZ' . $i),FILTER_SANITIZE_STRING);
                 $zusatzversicherungP->vvg_premium_PZ = filter_var($request->input('vvg_premium_PZ' . $i),FILTER_SANITIZE_STRING);
-                $zusatzversicherungP->duration_from_PZ = filter_var($request->input('duration_from_PZ' . $i),FILTER_SANITIZE_STRING);
-                $zusatzversicherungP->duration_to_PZ = filter_var($request->input('duration_to_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->duration_from_PZ = $request->input('duration_from_PZ' . $i);
+                $zusatzversicherungP->duration_to_PZ = $request->input('duration_to_PZ' . $i);
                 $zusatzversicherungP->status_PZ = filter_var($request->input('status_PZ' . $i),FILTER_SANITIZE_STRING);
-                $zusatzversicherungP->last_adjustment_PZ = filter_var($request->input('last_adjustment_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->last_adjustment_PZ = $request->input('last_adjustment_PZ' . $i);
                 $zusatzversicherungP->provision_PZ = filter_var($request->input('provision_PZ' . $i),FILTER_SANITIZE_STRING);
-                $zusatzversicherungP->total_commisions_PZ = filter_var($request->input('total_commisions_PZ' . $i),FILTER_SANITIZE_STRING);
+                $zusatzversicherungP->total_commisions_PZ = (int) $request->input('total_commisions_PZ' . $i);
                 $zusatzversicherungP->save();
                 $pcnt++;
 
@@ -345,11 +345,11 @@ class CostumerFormController extends Controller
 
         $pcnt = 1;
         foreach (CostumerProduktGrundversicherung::where('person_id_PG',$id)->get() as $objekt){
-                $objekt->graduation_date_PG = filter_var($request->input('graduation_date_PG' . $pcnt),FILTER_SANITIZE_STRING);
+                $objekt->graduation_date_PG = $request->input('graduation_date_PG' . $pcnt);
                 $objekt->society_PG = filter_var($request->input('society_PG' . $pcnt),FILTER_SANITIZE_STRING);
                 $objekt->product_PG = filter_var($request->input('product_PG' . $pcnt),FILTER_SANITIZE_STRING);
                 $objekt->status_PG = filter_var($request->input('status_PG' . $pcnt),FILTER_SANITIZE_STRING);
-                $objekt->last_adjustment_PG= filter_var($request->input('last_adjustment_PG' . $pcnt),FILTER_SANITIZE_STRING);
+                $objekt->last_adjustment_PG= $request->input('last_adjustment_PG' . $pcnt);
                 $objekt->total_commisions_PG = filter_var($request->input('total_commisions_PG' . $pcnt),FILTER_SANITIZE_STRING);
                 $objekt->save();
             $pcnt++;
@@ -362,7 +362,7 @@ class CostumerFormController extends Controller
         }
 
         $retchsschutzP = CostumerProduktRechtsschutz::where('person_id_PR',$id)->update([
-            'graduation_date_PR'=> filter_var($request->graduation_date_PR,FILTER_SANITIZE_STRING),
+            'graduation_date_PR'=> $request->graduation_date_PR,
             'society_PR' => filter_var($request->society_PR,FILTER_SANITIZE_STRING),
             'produkt_PR'=> filter_var($request->produkt_PR,FILTER_SANITIZE_STRING),
             'status_PR'=> filter_var($request->status_PR,FILTER_SANITIZE_STRING),
@@ -384,7 +384,7 @@ class CostumerFormController extends Controller
             'duration_to_PV'=> $request->duration_to_PV,
             'production_PV'=> filter_var($request->production_PV,FILTER_SANITIZE_STRING),
             'status_PV'=> filter_var($request->status_PV,FILTER_SANITIZE_STRING),
-            'last_adjustment_PV'=> filter_var($request->last_adjustment_PV,FILTER_SANITIZE_STRING),
+            'last_adjustment_PV'=> $request->last_adjustment_PV,
             'total_commisions_PV'=> filter_var($request->total_commisions_PV,FILTER_SANITIZE_STRING)
         ]);
         if($request->status_PV == 'Provisionert'){
@@ -396,7 +396,7 @@ class CostumerFormController extends Controller
 
         $autoversicherungP = CostumerProduktAutoversicherung::where('person_id_PA',$id)->update([
             'society_PA'=> filter_var($request->society_PA,FILTER_SANITIZE_STRING),
-            'beginning_insurance_PA' => filter_var($request->beginning_insurance_PA,FILTER_SANITIZE_STRING),
+            'beginning_insurance_PA' => $request->beginning_insurance_PA,
             'insurance_PA'=> filter_var($request->insurance_PA,FILTER_SANITIZE_STRING),
             'status_PA'=> filter_var($request->status_PA,FILTER_SANITIZE_STRING),
             'last_adjustment_PA'=> $request->last_adjustment_PA,
@@ -410,7 +410,7 @@ class CostumerFormController extends Controller
 
         $hausratP = CostumerProduktHausrat::where('person_id_PH',$id)->update([
             'society_PH'=> filter_var($request->society_PH,FILTER_SANITIZE_STRING),
-            'beginning_insurance_PH' => filter_var($request->beginning_insurance_PH,FILTER_SANITIZE_STRING),
+            'beginning_insurance_PH' => $request->beginning_insurance_PH,
             'insurance_PH'=> filter_var($request->insurance_PH,FILTER_SANITIZE_STRING),
             'status_PH'=> filter_var($request->status_PH,FILTER_SANITIZE_STRING),
             'last_adjustment_PH'=> $request->last_adjustment_PH,
@@ -426,14 +426,14 @@ class CostumerFormController extends Controller
 
         $pcnt = 1;
         foreach (CostumerProduktZusatzversicherung::where('person_id_PZ',$id)->get() as $objekt){
-            $objekt->graduation_date_PZ = filter_var($request->input('graduation_date_PZ' . $pcnt),FILTER_SANITIZE_STRING);
+            $objekt->graduation_date_PZ = $request->input('graduation_date_PZ' . $pcnt);
             $objekt->society_PZ = filter_var($request->input('society_PZ' . $pcnt),FILTER_SANITIZE_STRING);
             $objekt->produkt_PZ = filter_var($request->input('produkt_PZ' . $pcnt),FILTER_SANITIZE_STRING);
             $objekt->vvg_premium_PZ = filter_var($request->input('vvg_premium_PZ' . $pcnt),FILTER_SANITIZE_STRING);
-            $objekt->duration_from_PZ= filter_var($request->input('duration_from_PZ' . $pcnt),FILTER_SANITIZE_STRING);
-            $objekt->duration_to_PZ = filter_var($request->input('duration_to_PZ' . $pcnt),FILTER_SANITIZE_STRING);
+            $objekt->duration_from_PZ= $request->input('duration_from_PZ' . $pcnt);
+            $objekt->duration_to_PZ = $request->input('duration_to_PZ' . $pcnt);
             $objekt->status_PZ = filter_var($request->input('status_PZ' . $pcnt),FILTER_SANITIZE_STRING);
-            $objekt->last_adjustment_PZ = filter_var($request->input('last_adjustment_PZ' . $pcnt),FILTER_SANITIZE_STRING);
+            $objekt->last_adjustment_PZ = $request->input('last_adjustment_PZ' . $pcnt);
             $objekt->provision_PZ = filter_var($request->input('provision_PZ' . $pcnt),FILTER_SANITIZE_STRING);
             $objekt->total_commisions_PZ = filter_var($request->input('total_commisions_PZ' . $pcnt),FILTER_SANITIZE_STRING);
             $objekt->save();

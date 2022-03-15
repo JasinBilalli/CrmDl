@@ -1,5 +1,8 @@
 @extends('template.navbar')
 @section('content')
+    <head>
+        <title>Leads</title>
+    </head>
     <leads></leads>
     @php $user = auth(); @endphp
     @if($user->user()->hasRole('admin') || $user->user()->hasRole('salesmanager'))

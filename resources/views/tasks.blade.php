@@ -2,7 +2,7 @@
 @section('content')
     <head>
         <title>
-            Tasks
+            Aufgaben
         </title>
         <link rel="icon" type="image/png" href="{{config('app.url')}}imgs/Favicon.png">
     </head>
@@ -226,6 +226,11 @@
                             <span class="fw-600 pe-4 pb-1 pt-1 fs-5 number-offene" style="color: #434343;">{{count($birthdays) + count($personalApp)}}</span>
                         </div>
                         <div class="wrapper2 p-2">
+                            @if(count($birthdays) == 0 && count($personalApp) == 0)
+                                <div class="text-center fs-4 fw-600" style="color: #9F9F9F">
+                                    Keine geburtstage für <heute></heute>
+                                </div>
+                            @else
                             <div class="overflow-divv1">
                                 @foreach($birthdays as $birth)
                                     <div class="offene-item-one22 py-2 px-3 m-2">
@@ -349,6 +354,7 @@
                                     </div>
                                 @endforeach
                             </div>
+                                @endif
                         </div>
                     </div>
                 </div>
@@ -380,7 +386,7 @@
                                         </thead>
                                         <tbody id="body-table-edit">
                                         @if(count($tasks) == 0)
-                                            <div class="" style="position: absolute; margin-top: 70px;">
+                                            <div class="fs-5 fw-600" style="position: absolute; margin-top: 70px; color: #9F9F9F">
                                                 Keine Offene Aufgaben
                                             </div>
 
@@ -421,7 +427,7 @@
                             <div class="content px-3">
                                 <div class="overflow-div py-3">
                                     @if(count($birthdays) == 0)
-                                        <div class="text-center">
+                                        <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
                                             Keine geburtstage für heute
                                             <hr>
                                         </div>
@@ -443,7 +449,7 @@
                                     @endforeach
                                     @endif
                                     @if(count($personalApp) == 0)
-                                        <div class="text-center">
+                                        <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
                                             Keine persönlichen Termine für heute
                                             <hr>
                                         </div>
@@ -590,7 +596,7 @@
                                         </thead>
                                         <tbody id="body-table-edit">
                                         @if($pending->count() == 0)
-                                            <div class="text-center" style="position: absolute; margin-top: 90px;" >
+                                            <div class="text-center fs-5 fw-600" style="position: absolute; margin-top: 90px;color: #9F9F9F" >
                                                 Keine Pendenze
                                             </div>
                                         @else

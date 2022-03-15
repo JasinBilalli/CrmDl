@@ -5332,7 +5332,7 @@ __webpack_require__.r(__webpack_exports__);
       var title = document.getElementById('title').value;
       axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
       document.getElementById('alrt').innerHTML = "";
-      document.getElementById('alrt').innerHTML += ' <div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                    <strong>Pendency Assigned Successfuly</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div>';
+      document.getElementById('alrt').innerHTML += ' <div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                    <strong>Erfolgreich Zugewiesen</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div>';
       console.log(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
     },
     onChangeSelect: function onChangeSelect(event) {
@@ -5457,7 +5457,7 @@ __webpack_require__.r(__webpack_exports__);
       var title = document.getElementById('title1').value;
       axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
       document.getElementById('alrt1').innerHTML = "";
-      document.getElementById('alrt1').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                   <strong>Pendency Assigned Successfuly</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div> ';
+      document.getElementById('alrt1').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                   <strong>Erfolgreich Zugewiesen</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div> ';
     },
     onChangeSelect: function onChangeSelect(event) {
       this.admin = parseInt(event.target.value);
@@ -5582,7 +5582,7 @@ __webpack_require__.r(__webpack_exports__);
       var title = document.getElementById('title2').value;
       axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
       document.getElementById('alrt2').innerHTML = "";
-      document.getElementById('alrt2').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                   <strong>Pendency Assigned Successfuly</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div> ';
+      document.getElementById('alrt2').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                   <strong>Erfolgreich Zugewiesen</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div> ';
     },
     onChangeSelect: function onChangeSelect(event) {
       this.admin = parseInt(event.target.value);
@@ -5707,7 +5707,7 @@ __webpack_require__.r(__webpack_exports__);
       var title = document.getElementById('title3').value;
       axios.get(this.url + 'assignpendency?admin=' + this.admin + '&id=' + this.client_id + '&desc=' + description + '&title=' + title);
       document.getElementById('alrt3').innerHTML = "";
-      document.getElementById('alrt3').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                   <strong>Pendency Assigned Successfuly</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div> ';
+      document.getElementById('alrt3').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                   <strong>Erfolgreich Zugewiesen</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div> ';
     },
     onChangeSelect: function onChangeSelect(event) {
       this.admin = parseInt(event.target.value);
@@ -7917,7 +7917,7 @@ __webpack_require__.r(__webpack_exports__);
     assignpendency: function assignpendency() {
       axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value + '&task=' + document.getElementById('task').value);
       document.getElementById('alrt').innerHTML = "";
-      document.getElementById('alrt').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                    <strong>Pendency was assigned successfully</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div>';
+      document.getElementById('alrt').innerHTML += '<div class="alert alert-success alert-dismissible fade show m-3" role="alert">\n' + '                    <strong>Erfolgreich Zugewiesen Pendenz</strong>\n' + '                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>\n' + '                </div>';
     },
     fetchnumbers: function fetchnumbers() {
       var _this = this;
@@ -8023,21 +8023,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getToDo();
   },
   data: function data() {
     return {
-      todos: null
+      todos: null,
+      cnt: 0
     };
   },
   methods: {
@@ -8051,6 +8044,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       axios.get('getToDo').then(function (response) {
         _this.todos = response.data;
+        _this.cnt = response.data.length;
       });
       var checkbx = document.getElementsByClassName('removeRow');
 
@@ -32824,9 +32818,14 @@ var render = function () {
       },
       [
         _vm.today == null || _vm.today == ""
-          ? _c("div", { staticClass: "text-center" }, [
-              _c("h5", [_vm._v("Keine Termine für heute")]),
-            ])
+          ? _c(
+              "div",
+              {
+                staticClass: "text-center fs-5 fw-600",
+                staticStyle: { color: "#9F9F9F" },
+              },
+              [_c("h5", [_vm._v("Keine Termine für heute")])]
+            )
           : _c(
               "div",
               {
@@ -38871,108 +38870,101 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "fs-5 count px-4 fw-bold" }, [
-              _vm._v("0"),
+              _vm._v(_vm._s(_vm.cnt)),
             ]),
           ]
         ),
         _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "content greyBg py-3 px-2",
-            attrs: { id: "#secondDivToggle1a" },
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "ovrflw pe-1" },
-              [
-                _vm._l(_vm.todos, function (todo) {
-                  return _c("div", { staticClass: "input-group mb-2" }, [
-                    _c("div", { staticClass: "row g-0" }, [
-                      _c("div", { staticClass: "col-auto text-center" }, [
-                        _c("label", { staticClass: "container1" }, [
-                          _c("input", {
-                            staticClass: "removeRow",
-                            attrs: { type: "checkbox" },
-                            on: {
-                              click: function ($event) {
-                                return _vm.deleteToDo(todo.id)
-                              },
+        _c("div", { staticClass: "content greyBg py-3 px-2" }, [
+          _c(
+            "div",
+            { staticClass: "ovrflw pe-1" },
+            [
+              _vm._l(_vm.todos, function (todo) {
+                return _c("div", { staticClass: "input-group mb-2" }, [
+                  _c("div", { staticClass: "row g-0" }, [
+                    _c("div", { staticClass: "col-auto text-center" }, [
+                      _c("label", { staticClass: "container1" }, [
+                        _c("input", {
+                          staticClass: "removeRow",
+                          attrs: { type: "checkbox" },
+                          on: {
+                            click: function ($event) {
+                              return _vm.deleteToDo(todo.id)
                             },
-                          }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "checkmark" }),
-                        ]),
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "checkmark" }),
                       ]),
                     ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col" }, [
-                      _c("input", {
-                        staticClass: "form-control m-input",
-                        attrs: {
-                          type: "text",
-                          autocomplete: "off",
-                          readonly: "",
-                        },
-                        domProps: { value: todo.title },
-                      }),
-                    ]),
-                  ])
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group" }, [
-                  _vm._m(0),
+                  ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col" }, [
                     _c("input", {
                       staticClass: "form-control m-input",
                       attrs: {
                         type: "text",
-                        placeholder: "Enter title",
-                        id: "title",
-                        name: "title",
                         autocomplete: "off",
+                        readonly: "",
                       },
-                      on: {
-                        keyup: function ($event) {
-                          if (
-                            !$event.type.indexOf("key") &&
-                            _vm._k(
-                              $event.keyCode,
-                              "enter",
-                              13,
-                              $event.key,
-                              "Enter"
-                            )
-                          ) {
-                            return null
-                          }
-                          return _vm.addtodos.apply(null, arguments)
-                        },
-                      },
+                      domProps: { value: todo.title },
                     }),
                   ]),
+                ])
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group" }, [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "col" }, [
+                  _c("input", {
+                    staticClass: "form-control m-input",
+                    attrs: {
+                      type: "text",
+                      placeholder: "Enter title",
+                      id: "title",
+                      name: "title",
+                      autocomplete: "off",
+                    },
+                    on: {
+                      keyup: function ($event) {
+                        if (
+                          !$event.type.indexOf("key") &&
+                          _vm._k(
+                            $event.keyCode,
+                            "enter",
+                            13,
+                            $event.key,
+                            "Enter"
+                          )
+                        ) {
+                          return null
+                        }
+                        return _vm.addtodos.apply(null, arguments)
+                      },
+                    },
+                  }),
                 ]),
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "px-5 py-2 my-2 add-button fw-bold text-center",
-                attrs: { id: "addRow", type: "button" },
-                on: { click: _vm.addtodos },
-              },
-              [
-                _vm._v(
-                  "\n                        Neue Erinnerung\n                        "
-                ),
-              ]
-            ),
-          ]
-        ),
+              ]),
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "px-5 py-2 my-2 add-button fw-bold text-center",
+              attrs: { id: "addRow", type: "button" },
+              on: { click: _vm.addtodos },
+            },
+            [
+              _vm._v(
+                "\n                        Neue Erinnerung\n                        "
+              ),
+            ]
+          ),
+        ]),
       ]),
     ]
   )
