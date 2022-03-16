@@ -246,7 +246,7 @@
                             @else
                             <div class="overflow-divv1">
                                 @foreach($birthdays as $birth)
-                                    <div class="offene-item-one22 py-2 px-3 m-2">
+                                    <div class="offene-item-one22 py-2 px-3 m-2 bg-light border">
                                         <div class="d-flex ">
                                             <div class="my-auto col-auto pe-2">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
@@ -282,7 +282,7 @@
                                     </div>
                                 @endforeach
                                 @foreach($personalApp as $perApp)
-                                    <div class="offene-item-one22 py-2 px-3 m-2" data-bs-toggle="modal"
+                                    <div class="offene-item-one22 py-2 px-3 m-2 bg-light border" data-bs-toggle="modal"
                                          data-bs-target="#exampleModall{{$perApp->id}}">
                                         <div class="d-flex ">
                                             <div class="my-auto col-auto pe-2">
@@ -420,7 +420,7 @@
                                 </div>
                             </div>
                             <div class="content px-3">
-                                <div class="overflow-div">
+                                <div class="overflow-div pe-3">
                                     <table class="table table-borderless table-1">
                                         <thead>
                                         <tr class="sticky-class">
@@ -522,8 +522,8 @@
                                     {{count($birthdays) + count($personalApp)}}
                                 </div>
                             </div>
-                            <div class="content px-3">
-                                <div class="overflow-div py-3">
+                            <div class="content px-3 py-2">
+                                <div class="overflow-div pe-3">
                                     @if(count($birthdays) == 0)
                                         <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
                                             Keine geburtstage für heute
@@ -553,7 +553,7 @@
                                         </div>
                                         @else
                                         @foreach($personalApp as $perApp)
-                                            <div class="offene-item-one22 py-2 px-3 m-2" data-bs-toggle="modal"
+                                            <div class="offene-item-one22 py-2 px-3 my-2" data-bs-toggle="modal"
                                                  data-bs-target="#exampleModalll{{$perApp->id}}" style="cursor: pointer">
                                                 <div class="d-flex ">
                                                     <div class="my-auto col-auto pe-2">
@@ -657,7 +657,7 @@
                                 </div>
                             </div>
                             <div class="content px-3">
-                                <div class="overflow-div">
+                                <div class="overflow-div pe-3">
                                     <table class="table table-22 table-borderless">
                                         <thead>
                                         <tr class="sticky-class" style="border-bottom: 1px solid #70707050 !important;">
@@ -1779,7 +1779,7 @@
     }
     /* overflow-scroll divvvvvvvvv */
     .overflow-div {
-        padding-right: 15px;
+        /* padding-right: 15px; */
     }
     .overflow-div::-webkit-scrollbar {
         width: 7px;
@@ -1787,7 +1787,7 @@
     }
     /* Track */
     .overflow-div::-webkit-scrollbar-track {
-        background: #EFEFEF !important;
+        background: #fff !important;
         border-radius: 10px;
     }
     /* Handle */
@@ -1896,7 +1896,7 @@
         overflow: auto;
         height: 440px;
         background-color: #EFEFEF;
-        padding: 0 !important;
+        /* padding: 0 !important; */
     }
     .open-tasks tr{
         background-color: #fff;
@@ -1937,7 +1937,7 @@
         height: 420px;
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
-        padding-right: 0 !important;
+        /* padding-right: 0 !important; */
     }
     /* .pending-divv {} */
     .pending-divv .header {
@@ -1963,6 +1963,6 @@
         height: 460px;
         overflow: auto;
         background-color: #EFEFEF;
-        padding: 0 !important;
+        /* padding: 0 !important; */
     }
 </style>

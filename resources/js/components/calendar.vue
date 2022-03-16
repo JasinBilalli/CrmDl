@@ -89,11 +89,11 @@
                     </i>
                 </div>
             </div>
-            <div class=" p-3 p-sm-4" style="height: 300px; background: #0C71C3; border-radius: 25px;  overflow:hidden !important; background-color: #F5F4F4; border-radius: 15px; font-family: 'Montserrat';">
+            <div class=" p-3 p-sm-3" style="height: 300px; background: #0C71C3; border-radius: 25px;  overflow:hidden !important; background-color: #F5F4F4; border-radius: 15px; font-family: 'Montserrat';">
                 <div class="text-center fs-5 fw-600" style="color: #9F9F9F" v-if="today == null || today == ''">
                     <h5>Keine Termine für heute</h5>
                 </div>
-                <div class="scroll-2 pe-1 pe-sm-3" id="appscroll" v-else>
+                <div class="scroll-2 pe-1 pe-sm-2" id="appscroll" v-else>
                     <a style="text-decoration: none;" v-for="tod in today"  :href="'acceptappointment/'+tod.id">
                         <div  class="mb-2 text-white" style="min-height: 60px;cursor: pointer;">
                             <div class="person-box py-2 px-2">

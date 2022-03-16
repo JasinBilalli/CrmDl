@@ -2243,7 +2243,7 @@
 
                     /* Track */
                     .overflow-div::-webkit-scrollbar-track {
-                        background: #EFEFEF !important;
+                        background: #fff !important;
                         border-radius: 10px;
                     }
 

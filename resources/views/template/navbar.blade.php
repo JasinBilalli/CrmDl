@@ -212,10 +212,9 @@
 
     .scroll-2 {
         height: 250px;
-        overflow-y: scroll;
-        overflow-x: hidden !important;
-        padding-left: 3px;
-        padding-right: 3px;
+        overflow-x: auto;
+        /* overflow-y: scroll; */
+        /* overflow-x: hidden !important; */
     }
 
     .scroll-2::-webkit-scrollbar {
@@ -224,7 +223,7 @@
 
     /* Track */
     .scroll-2::-webkit-scrollbar-track {
-        background: #E3E3E3 !important;
+        background: #fff !important;
         border-radius: 10px;
     }
 
@@ -2058,7 +2057,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
     }
 
     .overflow-div2212 {
-        height: 43vh;
+        height: 25rem;
         overflow: auto;
     }
 
@@ -2155,6 +2154,11 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             color: #0c71c3;
         }
 
+        @media (max-width: 912.98px) { 
+            .notification-divvv22 .dropdown-menu {
+                width: 63vw;
+            }
+        }
     @media (max-width: 575.98px) {
         .overflow-div2212 {
             height: 47vh;

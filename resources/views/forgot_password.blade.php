@@ -54,7 +54,7 @@
                 </div>
                 <div class="pt-2">
                     <button type="submit" class="py-2 w-100 border-0 fw-bold btn_anmelden__" style="font-family: 'Montserrat' !important;">
-                        Send
+                        Senden
                     </button>
                 </div>
             </form>
