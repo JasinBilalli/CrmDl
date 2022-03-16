@@ -376,13 +376,45 @@
         {{--        Desktop--}}
         <section class="desktop-tasks">
             <div class="container-fluid">
-                <div class="row g-0">
-                    <div class="col-12 col-md-12 col-lg-6 g-0 px-2">
+                <div class="row g-0 mx-1 mx-sm-3">
+                    <div class="col-12 col-md-12 col-lg-6">
                         <div class="open-tasks m-2">
                             <div class="header  justify-content-between">
-                                <div class="">
-                                    <span>Offene Aufgaben</span>
+                                <div class="d-flex">
+                                    <div class="my-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 23.5 17.5">
+                                        <g id="pendingTasksSvg" transform="translate(-178.5 -76.5)">
+                                            <line id="Line_50" data-name="Line 50" x2="20" transform="translate(179.5 77.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <line id="Line_51" data-name="Line 51" x2="20" transform="translate(179.5 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <line id="Line_52" data-name="Line 52" x2="12" transform="translate(179.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <g id="Group_1042" data-name="Group 1042">
+                                            <g id="Ellipse_390" data-name="Ellipse 390" transform="translate(193 85)" fill="#fff" stroke="#000" stroke-width="0.8">
+                                                <circle cx="4.5" cy="4.5" r="4.5" stroke="none"/>
+                                                <circle cx="4.5" cy="4.5" r="4.1" fill="none"/>
+                                            </g>
+                                            <g id="Ellipse_391" data-name="Ellipse 391" transform="translate(195 89)" fill="#000" stroke="#000" stroke-width="1">
+                                                <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
+                                                <circle cx="0.5" cy="0.5" fill="none"/>
+                                            </g>
+                                            <g id="Ellipse_392" data-name="Ellipse 392" transform="translate(197 89)" fill="#000" stroke="#000" stroke-width="1">
+                                                <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
+                                                <circle cx="0.5" cy="0.5" fill="none"/>
+                                            </g>
+                                            <g id="Ellipse_393" data-name="Ellipse 393" transform="translate(199 89)" fill="#000" stroke="#000" stroke-width="1">
+                                                <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
+                                                <circle cx="0.5" cy="0.5" fill="none"/>
+                                            </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+
+
+                                    </div>
+                                    <div class="txt-01">
+                                        <span class="ps-2">Offene Aufgaben</span>
+                                    </div>
                                 </div>
+                                
                                 <div class="h-100 count px-4">
                                     {{count($tasks)}}
                                 </div>
@@ -427,12 +459,65 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-6 g-0 px-2">
+                    <div class="col-12 col-md-12 col-lg-6 ">
                         <div class="birthday-div m-2">
                             <div class="header  justify-content-between">
-                                <div class="">
-                                    <span>Geburstage/Jubiläen</span>
+                                <div class="d-flex">
+                                    <div class="my-auto">
+                                     <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 21 17.837">
+                                        <g id="anniversay" transform="translate(-277 -71.163)">
+                                            <g id="Rectangle_904" data-name="Rectangle 904" transform="translate(277 78)" fill="#fff" stroke="#000" stroke-width="1">
+                                            <rect width="21" height="11" rx="2" stroke="none"/>
+                                            <rect x="0.5" y="0.5" width="20" height="10" rx="1.5" fill="none"/>
+                                            </g>
+                                            <g id="Group_1047" data-name="Group 1047" transform="translate(279.578 71.5)">
+                                            <g id="Group_1044" data-name="Group 1044" transform="translate(1)">
+                                                <path id="Path_1959" data-name="Path 1959" d="M0,0H0L-.531,1.063l-.391.859L0,3" transform="translate(0.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                                <path id="Path_1960" data-name="Path 1960" d="M-.922,0h0l.563,1.078.391.844L-.922,3" transform="translate(1.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                            </g>
+                                            <g id="Group_1045" data-name="Group 1045" transform="translate(13)">
+                                                <path id="Path_1959-2" data-name="Path 1959" d="M0,0H0L-.531,1.063l-.391.859L0,3" transform="translate(0.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                                <path id="Path_1960-2" data-name="Path 1960" d="M-.922,0h0l.563,1.078.391.844L-.922,3" transform="translate(1.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                            </g>
+                                            <g id="Group_1046" data-name="Group 1046" transform="translate(7)">
+                                                <path id="Path_1959-3" data-name="Path 1959" d="M0,0H0L-.531,1.063l-.391.859L0,3" transform="translate(0.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                                <path id="Path_1960-3" data-name="Path 1960" d="M-.922,0h0l.563,1.078.391.844L-.922,3" transform="translate(1.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                            </g>
+                                            </g>
+                                            <g id="Rectangle_906" data-name="Rectangle 906" transform="translate(280 75)" fill="#fff" stroke="#000" stroke-linejoin="round" stroke-width="1">
+                                            <rect width="3" height="4" stroke="none"/>
+                                            <rect x="0.5" y="0.5" width="2" height="3" fill="none"/>
+                                            </g>
+                                            <g id="Rectangle_912" data-name="Rectangle 912" transform="translate(286 75)" fill="#fff" stroke="#000" stroke-linejoin="round" stroke-width="1">
+                                            <rect width="3" height="4" stroke="none"/>
+                                            <rect x="0.5" y="0.5" width="2" height="3" fill="none"/>
+                                            </g>
+                                            <g id="Rectangle_913" data-name="Rectangle 913" transform="translate(292 75)" fill="#fff" stroke="#000" stroke-linejoin="round" stroke-width="1">
+                                            <rect width="3" height="4" stroke="none"/>
+                                            <rect x="0.5" y="0.5" width="2" height="3" fill="none"/>
+                                            </g>
+                                            <line id="Line_53" data-name="Line 53" x2="17.5" transform="translate(278.75 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+                                            <g id="Rectangle_909" data-name="Rectangle 909" transform="translate(279 78)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                                            <rect width="5" height="3" stroke="none"/>
+                                            <rect x="0.5" y="0.5" width="4" height="2" fill="none"/>
+                                            </g>
+                                            <g id="Rectangle_910" data-name="Rectangle 910" transform="translate(291 78)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                                            <rect width="5" height="3" stroke="none"/>
+                                            <rect x="0.5" y="0.5" width="4" height="2" fill="none"/>
+                                            </g>
+                                            <g id="Rectangle_911" data-name="Rectangle 911" transform="translate(285 78)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                                            <rect width="5" height="3" stroke="none"/>
+                                            <rect x="0.5" y="0.5" width="4" height="2" fill="none"/>
+                                            </g>
+                                        </g>
+                                        </svg>
+
+                                    </div>
+                                    <div class="txt-01">
+                                    <span class="ps-2">Geburstage/Jubiläen</span>
                                 </div>
+                                </div>
+                                
                                 <div class="count h-100 px-4">
                                     {{count($birthdays) + count($personalApp)}}
                                 </div>
@@ -542,11 +627,30 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-12 g-0 px-2">
-                        <div class="pending-divv my-2">
+                    <div class="col-12 col-md-12 col-lg-12 ">
+                        <div class="pending-divv m-2">
                             <div class="header justify-content-between">
-                                <div class="">
-                                    <span>Pendenze / Zur Nachbearbeitung </span>
+                                <div class="d-flex">
+                                    <div class="my-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 23.5 17.5">
+                                        <g id="openedTasksSvg" transform="translate(-178.5 -76.5)">
+                                            <line id="Line_50" data-name="Line 50" x2="20" transform="translate(179.5 77.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <line id="Line_51" data-name="Line 51" x2="20" transform="translate(179.5 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <line id="Line_52" data-name="Line 52" x2="12" transform="translate(179.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <g id="Group_1042" data-name="Group 1042">
+                                            <g id="Ellipse_390" data-name="Ellipse 390" transform="translate(193 85)" fill="#fff" stroke="#000" stroke-width="0.8">
+                                                <circle cx="4.5" cy="4.5" r="4.5" stroke="none"/>
+                                                <circle cx="4.5" cy="4.5" r="4.1" fill="none"/>
+                                            </g>
+                                            <path id="Path_1956" data-name="Path 1956" d="M-1.219.859l1.578.484" transform="translate(197.141 88.156)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.3"/>
+                                            <path id="Path_1955" data-name="Path 1955" d="M-.406,0h0V2.531" transform="translate(197.906 86.969)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.3"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    </div>
+                                    <div class="txt-01">
+                                    <span class="ps-2">Pendenze / Zur Nachbearbeitung </span>
+                                </div>
                                 </div>
                                 <div class="h-100 px-4 count">
                                     {{count($pending)}}
@@ -562,49 +666,7 @@
                                             <th scope="col">Titel</th>
                                             <th scope="col">Beschreibung</th>
                                             <th scope="col">Art</th>
-                                            <th scope="col" class="text-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22"
-                                                     viewBox="0 0 28.391 27.587">
-                                                    <g id="Group_17" data-name="Group 17" transform="translate(1.25)">
-                                                        <line id="Line_5" data-name="Line 5" x2="25.891"
-                                                              transform="translate(0 24.217)" fill="none"
-                                                              stroke="#8e8e8e"
-                                                              stroke-linecap="round" stroke-width="2.5"/>
-                                                        <line id="Line_6" data-name="Line 6" x2="25.891"
-                                                              transform="translate(0 13.488)" fill="none"
-                                                              stroke="#8e8e8e"
-                                                              stroke-linecap="round" stroke-width="2.5"/>
-                                                        <line id="Line_7" data-name="Line 7" x2="25.891"
-                                                              transform="translate(0 2.76)" fill="none" stroke="#8e8e8e"
-                                                              stroke-linecap="round" stroke-width="2.5"/>
-                                                        <g id="Ellipse_4" data-name="Ellipse 4"
-                                                           transform="translate(4.926 21.457)" fill="#8e8e8e"
-                                                           stroke="#8e8e8e" stroke-width="1">
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065"
-                                                                     stroke="none"/>
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565"
-                                                                     fill="none"/>
-                                                        </g>
-                                                        <g id="Ellipse_5" data-name="Ellipse 5"
-                                                           transform="translate(16.186 10.728)" fill="#8e8e8e"
-                                                           stroke="#8e8e8e" stroke-width="1">
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065"
-                                                                     stroke="none"/>
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565"
-                                                                     fill="none"/>
-                                                        </g>
-                                                        <g id="Ellipse_6" data-name="Ellipse 6"
-                                                           transform="translate(4.926)" fill="#8e8e8e" stroke="#8e8e8e"
-                                                           stroke-width="1">
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.815" ry="3.065"
-                                                                     stroke="none"/>
-                                                            <ellipse cx="2.815" cy="3.065" rx="2.315" ry="2.565"
-                                                                     fill="none"/>
-                                                        </g>
-                                                    </g>
-                                                </svg>
 
-                                            </th>
                                         </tr>
                                         </thead>
                                         <tbody id="body-table-edit">
@@ -640,28 +702,6 @@
                                                     @else
                                                     <span class="submited-btn py-2 px-4">Offer</span>
                                                     @endif
-                                                </td>
-                                                <td class="text-center" data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="4"
-                                                         viewBox="0 0 7 31">
-                                                        <g id="Group_860" data-name="Group 860"
-                                                           transform="translate(0.082)">
-                                                            <circle id="Ellipse_57" data-name="Ellipse 57" cx="3.5"
-                                                                    cy="3.5"
-                                                                    r="3.5" transform="translate(-0.082)"
-                                                                    fill="#767676"/>
-                                                            <circle id="Ellipse_58" data-name="Ellipse 58" cx="3.5"
-                                                                    cy="3.5"
-                                                                    r="3.5" transform="translate(-0.082 12)"
-                                                                    fill="#767676"/>
-                                                            <circle id="Ellipse_59" data-name="Ellipse 59" cx="3.5"
-                                                                    cy="3.5"
-                                                                    r="3.5" transform="translate(-0.082 24)"
-                                                                    fill="#767676"/>
-                                                        </g>
-                                                    </svg>
-
                                                 </td>
                                             </tr>
 
@@ -958,13 +998,30 @@
         </section>
         <section class="desktop-tasks">
             <div class="container-fluid">
-                <div class="row g-0">
-                    <div class="col-12 col-md-12 col-lg-6 g-0 px-2">
-                        <div class="answered-div">
+                <div class="row g-0 mx-3">
+                    <div class="col-12 col-md-12 col-lg-6">
+                        <div class="answered-div m-2">
                             <div class="header justify-content-between">
-                                <div class="ps-3">
-                                    <span>Beantwortete Aufgaben</span>
+                                <div class="d-flex">
+                                    <div class="my-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 22 15.645">
+                                        <g id="answeredTasksSvg" transform="translate(-178.5 -76.5)">
+                                            <line id="Line_50" data-name="Line 50" x2="20" transform="translate(179.5 77.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <line id="Line_51" data-name="Line 51" x2="20" transform="translate(179.5 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <line id="Line_52" data-name="Line 52" x2="12" transform="translate(179.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                            <g id="Group_1043" data-name="Group 1043" transform="translate(-56)">
+                                            <path id="Path_1958" data-name="Path 1958" d="M0,0,1.906,1.938" transform="translate(249.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+                                            <path id="Path_1957" data-name="Path 1957" d="M4,0-.094,4.922" transform="translate(251.5 86.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    
+                                    </div>
+                                    <div class="txt-01">
+                                    <span class="ps-2">Beantwortete Aufgaben</span>
+                                        </div>
                                 </div>
+                               
                                 <div class="my-auto count h-100 px-4">
                                     {{count($answered)}}
                                 </div>
@@ -1085,10 +1142,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-6 g-0 px-2">
-                        <div class="open-tasks-bo">
+                    <div class="col-12 col-md-12 col-lg-6">
+                        <div class="open-tasks-bo m-2">
                             <div class="header justify-content-between">
-                                <div class="">
+                                <div class="txt-01">
                                     <span>Aufgaben öffnen</span>
                                 </div>
                                 <div class="px-4 count h-100">
@@ -1228,7 +1285,12 @@
         body {
             overflow-x: hidden;
         }
-
+        .txt-01 {
+             font-size: 1.1rem;
+             font-weight: 600;
+             padding-top: 0.3rem;
+             padding-bottom: 0.3rem;
+        }
         .count {
         background-color: #EFEFEF;
         border-bottom-left-radius: 0;

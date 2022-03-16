@@ -2,13 +2,23 @@
     <div v-if="gati">
         <section v-if="role == 'fs'">
             <div class="container-fluid">
-                <div class="row g-0">
+                <div class="row g-0  mx-1 mx-sm-3">
                     <div class="col-12 col-md-12 col-lg-9 g-0">
                         <div class="assigned-leads py-1 mx-1">
                             <div class="header ps-3 ps-sm-3 d-flex justify-content-between">
-                                <div class="fs-5">
-                                    <span>Zugewiesene Leads</span>
+                                <div class="d-flex">
+                                    <div class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-hdd-stack" viewBox="0 0 16 16">
+                                            <path d="M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z"/>
+                                            <path d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                            <path d="M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                                        </svg>
+                                    </div>
+                                     <div class="fs-5">
+                                    <span class="ps-2">Zugewiesene Leads</span>
                                 </div>
+                                </div>
+                               
                                 <div class="count px-4 mt-3 h-100">
                                     <span class="fs-5">{{cnt}}</span>
                                 </div>
@@ -405,8 +415,15 @@
                     <div class="col-12 col-md-12 col-lg-3 g-0">
                         <div class="lead-statistics py-1">
                             <div class="header px-3 px-sm-3">
-                                <div class="fs-5">
-                                    <span>Statistik der Leads</span>
+                                <div class="d-flex">
+                                    <div class="my-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30"  fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
+                                        <path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
+                                        </svg>
+                                    </div>
+                                     <div class="fs-5">
+                                    <span class="ps-2">Statistik der Leads</span>
+                                </div>
                                 </div>
                             </div>
                             <div class="content-wrapper1 mx-1">
@@ -553,13 +570,22 @@
 
 
         <section v-else>
-            <div class="container-fluid p-0">
-                <div class="row g-0">
+            <div class="container-fluid ">
+                <div class="row g-0 mx-1 mx-sm-3">
                     <div class="col-12 col-md-12 col-lg-9 g-0">
                         <div class="assigned-leads1 mx-1 py-1 ">
                             <div class="header ps-3 ps-sm-3 d-flex justify-content-between">
-                                <div class="fs-5">
-                                    <span>Zugewiesene Leads</span>
+                                <div class="d-flex">
+                                    <div class="my-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" class="bi bi-hdd-stack" viewBox="0 0 16 16">
+                                            <path d="M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z"/>
+                                            <path d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                                            <path d="M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                                        </svg>
+                                    </div>
+                                     <div class="fs-5">
+                                    <span class="ps-2">Zugewiesene Leads</span>
+                                </div>
                                 </div>
                                 <div class="count px-4 mt-3 h-100">
                                     <span class="fs-5"> {{cnt}} </span>
@@ -816,8 +842,15 @@
                     <div class="col-12 col-md-12 col-lg-3 g-0">
                         <div class="lead-statistics1 py-1">
                             <div class="header px-3 px-sm-3">
-                                <div class="fs-5">
-                                    <span>Statistik der Leads</span>
+                                <div class="d-flex">
+                                    <div class="my-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30"  fill="currentColor" class="bi bi-bar-chart" viewBox="0 0 16 16">
+                                        <path d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
+                                        </svg>
+                                    </div>
+                                     <div class="fs-5">
+                                    <span class="ps-2">Statistik der Leads</span>
+                                </div>
                                 </div>
                             </div>
                             <div class="content-wrapper mx-1">
