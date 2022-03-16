@@ -13,7 +13,12 @@ class Pendency extends Model
     {
         return $this->belongsTo(family::class,'family_id');
     }
+    public function adminpend()
+    {
+        return $this->belongsTo(Admins::class,'admin_id');
+    }
     protected $guarded = [
     ];
+
    
 }

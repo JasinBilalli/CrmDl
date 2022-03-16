@@ -935,6 +935,19 @@
                                         Description
                                     </td>
                                 </tr>
+                                @foreach($morethan30 as $more)
+                                <tr class="" style="cursor: pointer">
+                                    <td scope="row" class="fw-600" onclick="window.location.href=''">
+                                        {{$more->first_name}}
+                                    </td>
+                                    <td class="fw-600" onclick="window.location.href=''">
+                                        {{$more->last_name}}
+                                    </td>
+                                    <td class="fw-600" onclick="window.location.href=''">
+                                        {{$more->description}}
+                                    </td>
+                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
