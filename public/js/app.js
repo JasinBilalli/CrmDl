@@ -32836,7 +32836,7 @@ var render = function () {
     _c(
       "div",
       {
-        staticClass: " p-3 p-sm-4",
+        staticClass: " p-3 p-sm-3",
         staticStyle: {
           height: "300px",
           background: "#0C71C3",
@@ -32859,7 +32859,7 @@ var render = function () {
           : _c(
               "div",
               {
-                staticClass: "scroll-2 pe-1 pe-sm-3",
+                staticClass: "scroll-2 pe-1 pe-sm-2",
                 attrs: { id: "appscroll" },
               },
               [

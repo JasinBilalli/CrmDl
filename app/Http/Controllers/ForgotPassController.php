@@ -22,7 +22,7 @@ class ForgotPassController extends Controller
             }
         }
         else {
-            return redirect()->back()->with('message','Email Wrong');
+            return redirect()->back()->with('message','Falsche E-mail');
         }
     }
     public function apptest(){
