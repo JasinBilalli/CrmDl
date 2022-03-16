@@ -18,7 +18,7 @@
                                     <span class="ps-2">Zugewiesene Leads</span>
                                 </div>
                                 </div>
-                               
+
                                 <div class="count px-4 mt-3 h-100">
                                     <span class="fs-5">{{cnt}}</span>
                                 </div>
@@ -806,7 +806,7 @@
                                                 <div class="modal-header" style="border-bottom: none !important;">
                                                     <h5 class="modal-title" id="exampleModalLabel">Zugewiesene
                                                         Leads</h5>
-                                                    <button type="button" class="btn-close"
+                                                    <button type="button" class="btn-close" @click="reloadthis()"
                                                             style="opacity: 1 !important;" data-bs-dismiss="modal"
                                                             aria-label="Close"></button>
                                                 </div>
@@ -823,14 +823,14 @@
                                                 </div>
                                                 <div class="modal-footer"
                                                      style="display: block !important; border-top: none !important;">
-                                                    <button @click="assign" class="btn"
-                                                            style="background-color: #4EC590 !important; color: #fff !important; border-radius: 8px !important;">
-                                                        <b>Zuweisen</b></button>
                                                     <button type="button" @click="reloadthis()" class="btn"
                                                             data-bs-dismiss="modal"
                                                             style="background-color: #6C757D !important; color: #fff !important; border-radius: 8px !important;">
                                                         <b>Schliessen</b>
                                                     </button>
+                                                    <button @click="assign" class="btn"
+                                                            style="background-color: #4EC590 !important; color: #fff !important; border-radius: 8px !important;">
+                                                        <b>Zuweisen</b></button>
                                                 </div>
                                             </div>
                                         </div>

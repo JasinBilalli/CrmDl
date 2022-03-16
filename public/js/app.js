@@ -7663,6 +7663,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getnotifications(); // setInterval(() => {
@@ -37084,7 +37088,49 @@ var render = function () {
                                         },
                                       },
                                       [
-                                        _vm._m(29),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass: "modal-header",
+                                            staticStyle: {
+                                              "border-bottom":
+                                                "none !important",
+                                            },
+                                          },
+                                          [
+                                            _c(
+                                              "h5",
+                                              {
+                                                staticClass: "modal-title",
+                                                attrs: {
+                                                  id: "exampleModalLabel",
+                                                },
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "Zugewiesene\n                                                    Leads"
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("button", {
+                                              staticClass: "btn-close",
+                                              staticStyle: {
+                                                opacity: "1 !important",
+                                              },
+                                              attrs: {
+                                                type: "button",
+                                                "data-bs-dismiss": "modal",
+                                                "aria-label": "Close",
+                                              },
+                                              on: {
+                                                click: function ($event) {
+                                                  return _vm.reloadthis()
+                                                },
+                                              },
+                                            }),
+                                          ]
+                                        ),
                                         _vm._v(" "),
                                         _c(
                                           "div",
@@ -37157,22 +37203,6 @@ var render = function () {
                                                 staticClass: "btn",
                                                 staticStyle: {
                                                   "background-color":
-                                                    "#4EC590 !important",
-                                                  color: "#fff !important",
-                                                  "border-radius":
-                                                    "8px !important",
-                                                },
-                                                on: { click: _vm.assign },
-                                              },
-                                              [_c("b", [_vm._v("Zuweisen")])]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "button",
-                                              {
-                                                staticClass: "btn",
-                                                staticStyle: {
-                                                  "background-color":
                                                     "#6C757D !important",
                                                   color: "#fff !important",
                                                   "border-radius":
@@ -37189,6 +37219,22 @@ var render = function () {
                                                 },
                                               },
                                               [_c("b", [_vm._v("Schliessen")])]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "button",
+                                              {
+                                                staticClass: "btn",
+                                                staticStyle: {
+                                                  "background-color":
+                                                    "#4EC590 !important",
+                                                  color: "#fff !important",
+                                                  "border-radius":
+                                                    "8px !important",
+                                                },
+                                                on: { click: _vm.assign },
+                                              },
+                                              [_c("b", [_vm._v("Zuweisen")])]
                                             ),
                                           ]
                                         ),
@@ -37229,7 +37275,7 @@ var render = function () {
                             ),
                           ]),
                           _vm._v(" "),
-                          _vm._m(30),
+                          _vm._m(29),
                         ]),
                       ]),
                       _vm._v(" "),
@@ -37615,7 +37661,7 @@ var render = function () {
                                   ),
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(31),
+                                _vm._m(30),
                               ]
                             ),
                             _vm._v(" "),
@@ -37656,7 +37702,7 @@ var render = function () {
                                 ),
                               ]),
                               _vm._v(" "),
-                              _vm._m(32),
+                              _vm._m(31),
                             ]),
                           ]),
                         ]),
@@ -38198,39 +38244,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal-header",
-        staticStyle: { "border-bottom": "none !important" },
-      },
-      [
-        _c(
-          "h5",
-          { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
-          [
-            _vm._v(
-              "Zugewiesene\n                                                    Leads"
-            ),
-          ]
-        ),
-        _vm._v(" "),
-        _c("button", {
-          staticClass: "btn-close",
-          staticStyle: { opacity: "1 !important" },
-          attrs: {
-            type: "button",
-            "data-bs-dismiss": "modal",
-            "aria-label": "Close",
-          },
-        }),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "fs-5" }, [
       _c("span", { staticClass: "ps-2" }, [_vm._v("Statistik der Leads")]),
     ])
@@ -38354,6 +38367,23 @@ var render = function () {
             },
           },
           [
+            _vm.notcnt > 0
+              ? _c(
+                  "span",
+                  {
+                    staticClass:
+                      "position-absolute  translate-middle badge rounded-pill bg-danger dot-styleee",
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.notcnt) +
+                        "\n                   "
+                    ),
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
             _c(
               "svg",
               {

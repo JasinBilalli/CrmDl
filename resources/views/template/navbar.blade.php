@@ -401,7 +401,14 @@
         }
     }
 
-
+    .dot-styleee {
+        z-index: 999;
+        top: 10px;
+        left: auto;
+        right: -7px;
+        border-radius: 50% !important;
+        padding: 7px 10px;
+    }
     .accepted-section {
         background-color: #7DBF9A;
         border-radius: 19px;
@@ -1779,6 +1786,15 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         }
         body {
             padding-bottom: 65px;
+        }
+        .dot-styleee {
+            z-index: 999;
+            top: 5px;
+            left: auto;
+            right: -7px;
+            border-radius: 50% !important;
+            /*padding: 7px 10px;*/
+            padding: 3px 6px ;
         }
     }
     a{
