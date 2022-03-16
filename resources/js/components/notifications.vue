@@ -11,6 +11,10 @@
         <div class="btn-group dropup">
             <button type="button" class="rounded-notid-icon dropdown-toggle" data-bs-toggle="dropdown"
                     id="dropdownFunct" aria-expanded="false">
+                    <span v-if="notcnt > 0" class="position-absolute  translate-middle badge rounded-pill bg-danger dot-styleee" >
+                    {{notcnt}}
+                   </span>
+<!--                <span v-if="notcnt > 0" class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle"></span>-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" fill="currentColor" class="bi bi-bell"
                      viewBox="0 0 16 16">
                     <path

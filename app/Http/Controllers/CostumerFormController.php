@@ -201,7 +201,7 @@ $provcnt= 0;
                 $aufcnt++;
             }
 
-            
+
 
             $retchsschutzP->person_id_PR = filter_var($id,FILTER_SANITIZE_STRING);
             $retchsschutzP->graduation_date_PR = $request->graduation_date_PR;
@@ -485,9 +485,14 @@ $provcnt= 0;
         elseif($request->status_PG == 'Aufgenomen') {
             $aufcnt++;
         }
+
         if($aufcnt > 0 || $provcnt > 0){
-            family::find($id)->update(['provisionert' => 1]);
+
+            $famely = family::find($id);
+            $famely->provisionert = 1;
+            $famely->save();
         }
+
 
         return redirect()->route('costumers')->with('success' , 'Ihre Änderungen wurden erfolgreich durchgeführt');
 

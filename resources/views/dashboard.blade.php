@@ -472,7 +472,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 g-0 order-5 order-md-3">
                 <infonumbers></infonumbers>
             </div>
@@ -880,7 +880,7 @@
                             <span class="ps-2">Statusprüfung</span>
                         </div>
                         <div class="h-100 count px-4">
-                            5
+                            {{count($morethan30)}}
                         </div>
                     </div>
                     <div class="content px-3">
@@ -924,17 +924,6 @@
                                 </tr>
                                 </thead>
                                 <tbody id="body-table-edit">
-                                <tr class="table-content1" style="cursor: pointer">
-                                    <td scope="row" class="fw-600" onclick="window.location.href=''">
-                                        Name
-                                    </td>
-                                    <td class="fw-600" onclick="window.location.href=''">
-                                        Name Last Name
-                                    </td>
-                                    <td class="fw-600" onclick="window.location.href=''">
-                                        Description
-                                    </td>
-                                </tr>
                                 @foreach($morethan30 as $more)
                                 <tr class="" style="cursor: pointer">
                                     <td scope="row" class="fw-600" onclick="window.location.href=''">
@@ -1608,7 +1597,7 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="fw-bold fs-5">Private Termine</div>
-                                                      
+
                                                     </div>
                                                     <div style="color: #0a53be" class="col-3 text-end">
                                                         <h5><b>{{$countpersonalApp}}</b></h5>
@@ -3156,7 +3145,7 @@
         $('#secondDivToggle3a').slideUp(200);
         $('#firstDivToggle3a').slideDown(200);
     }
-   
+
     ////////////////////funct///////////////
 
     function firstDivToggleFunct4a() {
@@ -3168,7 +3157,7 @@
         $('#secondDivToggle4a').slideUp(200);
         $('#firstDivToggle4a').slideDown(200);
     }
-   
+
     //////////////////////funct/////////////
 
     function firstDivToggleFunct5a() {
@@ -3180,7 +3169,7 @@
         $('#secondDivToggle5a').slideUp(200);
         $('#firstDivToggle5a').slideDown(200);
     }
-   
+
     /////////////////////////////////////////
 
 
@@ -3193,7 +3182,7 @@
         $('#secondDivToggle6a').slideUp(200);
         $('#firstDivToggle6a').slideDown(200);
     }
-   
+
 </script>
 
 

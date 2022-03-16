@@ -1119,7 +1119,7 @@
                                                                     <option value="Abgelehnt">Abgelehnt </option>
                                                                     <option value="Zuruckgezogen">Zuruckgezogen</option>
                                                                     <option value="Provisionert">Provisionert </option>
-                                                                    <option value="notselected">Not Selected</option>
+                                                                    <option value="Nicht Ausgewählt">Nicht Ausgewählt</option>
                                                                 </select>
                                                             </div>
 
@@ -1239,7 +1239,7 @@
                                                                     <option value="Abgelehnt">Abgelehnt </option>
                                                                     <option value="Zuruckgezogen">Zuruckgezogen</option>
                                                                     <option value="Provisionert">Provisionert </option>
-                                                                    <option value="notselected">Not Selected</option>
+                                                                    <option value="Nicht Ausgewählt">Nicht Ausgewählt</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -1377,7 +1377,7 @@
                                                                     <option value="Abgelehnt">Abgelehnt </option>
                                                                     <option value="Zuruckgezogen">Zuruckgezogen</option>
                                                                     <option value="Provisionert">Provisionert </option>
-                                                                    <option value="notselected">Not Selected</option>
+                                                                    <option value="Nicht Ausgewählt">Nicht Ausgewählt</option>
                                                                 </select>
                                                             </div>
 
@@ -1502,7 +1502,7 @@
                                                                     <option value="Abgelehnt">Abgelehnt </option>
                                                                     <option value="Zuruckgezogen">Zuruckgezogen</option>
                                                                     <option value="Provisionert">Provisionert </option>
-                                                                    <option value="notselected">Not Selected</option>
+                                                                    <option value="Nicht Ausgewählt">Nicht Ausgewählt</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -1612,7 +1612,7 @@
                                                                     <option value="Abgelehnt">Abgelehnt </option>
                                                                     <option value="Zuruckgezogen">Zuruckgezogen</option>
                                                                     <option value="Provisionert">Provisionert </option>
-                                                                    <option value="notselected">Not Selected</option>
+                                                                    <option value="Nicht Ausgewählt">Nicht Ausgewählt</option>
                                                                 </select>
                                                             </div>
 
@@ -1753,7 +1753,7 @@
                                                                     <option value="Abgelehnt">Abgelehnt </option>
                                                                     <option value="Zuruckgezogen">Zuruckgezogen</option>
                                                                     <option value="Provisionert">Provisionert </option>
-                                                                    <option value="notselected">Not Selected</option>
+                                                                    <option value="Nicht Ausgewählt">Nicht Ausgewählt</option>
                                                                 </select>
                                                             </div>
                                                         </div>

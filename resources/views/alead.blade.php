@@ -93,7 +93,7 @@
                     </div>
                     <div class="my-4">
                         <button type="submit" class="py-2 px-5 mx-5 border-0 fw-bold"
-                                style="background-color: #63D4A4; color: #fff; border-radius: 8px;">Annehmen
+                                style="background-color: #0C71C3; color: #fff; border-radius: 8px;">Annehmen
                         </button>
                     </div>
                 </form>
