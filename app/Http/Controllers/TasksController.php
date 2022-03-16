@@ -568,17 +568,13 @@ if(in_array('admin',$urole)){
       $opencnt = 0;
       $pendingcnt = 0;
 
+      $opencnt = $tasks->count();
 
-
-          $opencnt = $tasks->count();
-
-      $pending = family::with('adminpend')
-      ->join('pendencies','family_person.id','=','pendencies.family_id')
-      ->where('pendencies.completed','=',0)
-      ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
+     
+      $pending = Pendency::with('adminpend')->with('family')
+      ->where('completed','=',0)      
+      ->select('pendencies.*','pendencies.family_id as id','pendencies.id as pid','pendencies.type')
       ->paginate(200);
-
-
     }
     else{
       $tasks = family::with('adminpend')
@@ -601,12 +597,12 @@ if(in_array('admin',$urole)){
 
        $opencnt = $tasks->count();
 
-      $pending = family::with('adminpend')
-      ->join('pendencies','family_person.id','=','pendencies.family_id')
-      ->where('pendencies.completed','=',0)
-      ->where('pendencies.admin_id','=',$user->id)
-      ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
-      ->paginate(200);
+       $pending = Pendency::with('adminpend')
+       ->where('completed','=',0)
+       ->where('admin_id',$user->id)      
+       ->select('pendencies.*','pendencies.family_id as id','pendencies.id as pid','pendencies.type')
+       ->paginate(200);
+     
 
 
 

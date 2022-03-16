@@ -622,16 +622,17 @@
                                             @endphp
 
                                             <tr class="table-content" style="cursor: pointer">
-                                                <td scope="row" data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal">{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$task->created_at)->format('Y-m-d')}}</td>
-                                                <td data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal">{{ucfirst($task->first_name)}}  {{ucfirst($task->last_name)}}</td>
-                                                <td data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal">{{$task->title}}</td>
-                                                <td data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal">{{$task->description}}</td>
-                                                <td data-bs-target="#stats{{$task->pid}}" data-bs-toggle="modal">
-                                                    @if($task->type == "task")
+                                                <td scope="row" @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                    data-bs-toggle="modal" @endif>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$task->created_at)->format('Y-m-d')}}</td>
+                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                    data-bs-toggle="modal" @endif>{{ucfirst($task->family ? $task->family->first_name : "")}}  {{ucfirst($task->family ? $task->family->last_name : "")}}</td>
+                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                    data-bs-toggle="modal" @endif>{{$task->title}}</td>
+                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                    data-bs-toggle="modal" @endif>{{$task->description}}</td>
+                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                    data-bs-toggle="modal" @endif>
+                                                    @if($task->type == "Task")
                                                         <span class="submited-btn1 py-2 px-4">
                                                         {{ucfirst($task->type)}}
                                                         </span>

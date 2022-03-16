@@ -111,7 +111,8 @@ class CostumerFormController extends Controller
 
     public function save_costumer_form(Request $request, $id){
         $id = Crypt::decrypt($id) / 1244;
-
+$aufcnt = 0;
+$provcnt= 0;
         $grundversicherung = new CostumerStatusGrundversicherung();
         $hausrat = new CostumerStatusHausrat();
         $retchsschutz = new CostumerStatusRetchsschutz();
@@ -191,10 +192,16 @@ class CostumerFormController extends Controller
 
 
             if($request->status_PG == 'Provisionert'){
+                $provcnt++;
                 $familyperson = family::find($id)->lead->assign_to_id;
                 $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
+            elseif($request->status_PG == 'Aufgenomen') {
+                $aufcnt++;
+            }
+
+            
 
             $retchsschutzP->person_id_PR = filter_var($id,FILTER_SANITIZE_STRING);
             $retchsschutzP->graduation_date_PR = $request->graduation_date_PR;
@@ -205,9 +212,13 @@ class CostumerFormController extends Controller
             $retchsschutzP->total_commisions_PR = $request->total_commisions_PR;
 
             if($request->status_PR == 'Provisionert'){
+                $provcnt++;
                 $familyperson = family::find($id)->lead->assign_to_id;
                 $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
+            }
+            elseif($request->status_PR == 'Aufgenomen') {
+                $aufcnt++;
             }
 
             $vorsorgeP->person_id_PV = filter_var($id,FILTER_SANITIZE_STRING);
@@ -224,9 +235,13 @@ class CostumerFormController extends Controller
             $vorsorgeP->total_commisions_PV = filter_var($request->total_commisions_PV,FILTER_SANITIZE_STRING);
 
             if($request->status_PV == 'Provisionert'){
+                $provcnt++;
                 $familyperson = family::find($id)->lead->assign_to_id;
                 $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
+            }
+            elseif($request->status_PV == 'Aufgenomen') {
+                $aufcnt++;
             }
 
             $autoversicherungP->person_id_PA = filter_var($id,FILTER_SANITIZE_STRING);
@@ -242,6 +257,9 @@ class CostumerFormController extends Controller
                 $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
             }
+            elseif($request->status_PA == 'Aufgenomen') {
+                $aufcnt++;
+            }
             $hausratP->person_id_PH = filter_var($id,FILTER_SANITIZE_STRING);
             $hausratP->society_PH = filter_var($request->society_PH,FILTER_SANITIZE_STRING);
             $hausratP->beginning_insurance_PH = $request->beginning_insurance_PH;
@@ -254,6 +272,9 @@ class CostumerFormController extends Controller
                 $familyperson = family::find($id)->lead->assign_to_id;
                 $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
                 Admins::find($familyperson)->notify(new SendNotificationn($url));
+            }
+            elseif($request->status_PH == 'Aufgenomen') {
+                $aufcnt++;
             }
 
 
@@ -281,15 +302,19 @@ class CostumerFormController extends Controller
 
 
             if($request->statusPZ == 'Provisionert'){
+                $provcnt++;
                 $familyperson = family::find($id)->lead->assign_to_id;
                 $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
+            }   elseif($request->status_PG == 'Aufgenomen') {
+                $aufcnt++;
             }
 
         if($grundversicherung->save() && $hausrat->save() && $retchsschutz->save() && $vorsorge->save() &&
             $zusatzversicherung->save() && $retchsschutzP->save() && $vorsorgeP->save() && $autoversicherungP->save()
             && $hausratP->save()) {
-            family::where('id',$id)->update(['kundportfolio'=>1]);
+                if($aufcnt > 0 || $provcnt > 0) $provisionert = 1; else $provisionert = 1;
+            family::where('id',$id)->update(['kundportfolio'=>1,'provisionert' => $provisionert]);
             return redirect()->route('costumers')->with('success', 'Aktion erfolgreich durchgeführt');
         }else{
             return redirect()->back()->with('fail', 'Aktion nicht erledigt');
@@ -299,7 +324,8 @@ class CostumerFormController extends Controller
 
     public function edit_costumer_kundportfolio(Request $request, $id){
         $id = Crypt::decrypt($id) / 1244;
-
+        $aufcnt = 0;
+        $provcnt = 0;
 
         $grundversicherung = CostumerStatusGrundversicherung::where('person_idG',$id)->update([
            'societyG'=> filter_var($request->societyG,FILTER_SANITIZE_STRING),
@@ -356,9 +382,13 @@ class CostumerFormController extends Controller
         }
 
         if($request->status_PG == 'Provisionert'){
+            $provcnt++;
             $familyperson = family::find($id)->lead->assign_to_id;
             $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
+        }
+        elseif($request->status_PG == 'Aufgenomen') {
+            $aufcnt++;
         }
 
         $retchsschutzP = CostumerProduktRechtsschutz::where('person_id_PR',$id)->update([
@@ -388,9 +418,13 @@ class CostumerFormController extends Controller
             'total_commisions_PV'=> filter_var($request->total_commisions_PV,FILTER_SANITIZE_STRING)
         ]);
         if($request->status_PV == 'Provisionert'){
+            $provcnt++;
             $familyperson = family::find($id)->lead->assign_to_id;
             $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
+        }
+        elseif($request->status_PV == 'Aufgenomen') {
+            $aufcnt++;
         }
 
 
@@ -417,9 +451,13 @@ class CostumerFormController extends Controller
             'total_commisions_PH'=> filter_var($request->total_commisions_PH,FILTER_SANITIZE_STRING),
         ]);
         if($request->status_PH == 'Provisionert'){
+            $provcnt++;
             $familyperson = family::find($id)->lead->assign_to_id;
             $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
+        }
+        elseif($request->status_PG == 'Aufgenomen') {
+            $aufcnt++;
         }
 
 
@@ -443,6 +481,12 @@ class CostumerFormController extends Controller
             $familyperson = family::find($id)->lead->assign_to_id;
             $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
+        }
+        elseif($request->status_PG == 'Aufgenomen') {
+            $aufcnt++;
+        }
+        if($aufcnt > 0 || $provcnt > 0){
+            family::find($id)->update(['provisionert' => 1]);
         }
 
         return redirect()->route('costumers')->with('success' , 'Ihre Änderungen wurden erfolgreich durchgeführt');

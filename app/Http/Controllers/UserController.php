@@ -646,7 +646,7 @@ class UserController extends Controller
                         $mcnt = 0;
                         foreach (family::with('adminpend')
                                      ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
-                                     ->select('family_person.first_name', 'pendencies.family_id', 'family_person.id', 'family_person.last_name', 'pendencies.created_at', 'pendencies.done', 'pendencies.completed', 'pendencies.admin_id', 'pendencies.id as pid', 'pendencies.description')
+                                     ->select('family_person.first_name', 'pendencies.family_id', 'family_person.id', 'family_person.last_name', 'pendencies.created_at', 'pendencies.done', 'pendencies.completed', 'pendencies.admin_id', 'pendencies.id as pid', 'pendencies.description','family_person.provisionert')
                                      ->orderBy('family_person.first_name', 'asc')
                                      ->where('done', 1)
                                      ->orderBy('pendencies.created_at')
@@ -655,12 +655,13 @@ class UserController extends Controller
                                 $pendencies[$pcnt] = $task;
                                 $pcnt++;
                             }
-                            if (strtotime($task->created_at) < strtotime(Carbon::now()->subDays(30)->format('Y-m-d'))) {
-                                $morethan30[$mcnt] = $task;
+                            if (strtotime($task->created_at) < strtotime(Carbon::now()->subDays(14)->format('Y-m-d'))) {
+                                if($task->provisionert == 0) $morethan30[$mcnt] = $task;
+                                
                                 $mcnt++;
                             }
-
                         }
+                   
 
 
                         $pendingcnt = DB::table('family_person')
@@ -668,7 +669,7 @@ class UserController extends Controller
                             ->select('family_person.first_name', 'pendencies.family_id', 'family_person.id', 'family_person.last_name')
                             ->where('pendencies.done', '<>', 1)
                             ->orderBy('family_person.first_name', 'asc')
-                            ->count();
+                            ->get()->count();
 
 
                     }
