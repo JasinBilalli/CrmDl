@@ -414,7 +414,7 @@
                                         <span class="ps-2">Offene Aufgaben</span>
                                     </div>
                                 </div>
-                                
+
                                 <div class="h-100 count px-4">
                                     {{count($tasks)}}
                                 </div>
@@ -517,7 +517,7 @@
                                     <span class="ps-2">Geburstage/Jubiläen</span>
                                 </div>
                                 </div>
-                                
+
                                 <div class="count h-100 px-4">
                                     {{count($birthdays) + count($personalApp)}}
                                 </div>
@@ -684,15 +684,15 @@
                                             @endphp
 
                                             <tr class="table-content" style="cursor: pointer">
-                                                <td scope="row" @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                <td scope="row" @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
                                                     data-bs-toggle="modal" @endif>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$task->created_at)->format('Y-m-d')}}</td>
-                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
                                                     data-bs-toggle="modal" @endif>{{ucfirst($task->family ? $task->family->first_name : "")}}  {{ucfirst($task->family ? $task->family->last_name : "")}}</td>
-                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
                                                     data-bs-toggle="modal" @endif>{{$task->title}}</td>
-                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
                                                     data-bs-toggle="modal" @endif>{{$task->description}}</td>
-                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}" 
+                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
                                                     data-bs-toggle="modal" @endif>
                                                     @if($task->type == "Task")
                                                         <span class="submited-btn1 py-2 px-4">
@@ -847,7 +847,7 @@
                                            style="text-decoration:none;">
                                             <div class="px-2 py-2 ">
                                                 <div class="m-1 d-flex justify-content-between">
-                                                    <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
+                                                    <div class="fw-bold">{{ucfirst($task->family->first_name)}} {{ucfirst($task->family->last_name)}} </div>
                                                     <div class="col-auto">
                                                                     <span>
                                                                         <span class="px-2" style="font-size: 19px;">
@@ -860,7 +860,7 @@
                                             </div>
                                         </a>
                                         <div id="demo{{$taskId}}" class="collapse px-3 py-2">
-                                            <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->first_name)}}
+                                            <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family->first_name)}}
                                             </h6>
                                             <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                             <h6 class="m-1"><b>Adresse
@@ -942,7 +942,7 @@
                                             <div class="px-2 py-2">
                                                 <div class="m-1 d-flex justify-content-between"
                                                      style="text-overflow: ellipsis; overflow:hidden;">
-                                                    <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
+                                                    <div class="fw-bold">{{ucfirst($task->family->first_name)}} {{ucfirst($task->family->last_name)}} </div>
                                                     <div class="col-auto">
                                                                     <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$leadsss])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
@@ -955,7 +955,7 @@
                                             </div>
                                         </a>
                                         <div id="demo_2{{$authUserId}}" class="collapse px-3 py-2">
-                                            <h6 class="m-1"><b>Klientin: {{ucfirst($task->first_name)}}</b>
+                                            <h6 class="m-1"><b>Klientin: {{ucfirst($task->family->first_name)}}</b>
                                             </h6>
                                             <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                             <h6 class="m-1"><b>Adresse
@@ -1016,13 +1016,13 @@
                                             </g>
                                         </g>
                                     </svg>
-                                    
+
                                     </div>
                                     <div class="txt-01">
                                     <span class="ps-2">Beantwortete Aufgaben</span>
                                         </div>
                                 </div>
-                               
+
                                 <div class="my-auto count h-100 px-4">
                                     {{count($answered)}}
                                 </div>
@@ -1088,7 +1088,7 @@
                                                        style="text-decoration:none;">
                                                         <div class="px-2 py-2 ">
                                                             <div class="m-1 d-flex justify-content-between">
-                                                                <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
+                                                                <div class="fw-bold">{{ucfirst($task->family->first_name)}} {{ucfirst($task->family->last_name)}} </div>
                                                                 <div class="col-auto">
                                                                     <span>
                                                                         <span class="px-2" style="font-size: 19px;">
@@ -1101,7 +1101,7 @@
                                                         </div>
                                                     </a>
                                                     <div id="demo{{$taskId}}" class="collapse px-3 py-2">
-                                                        <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->first_name)}}
+                                                        <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family->first_name)}}
                                                         </h6>
                                                         <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                                         <h6 class="m-1"><b>Adresse
@@ -1217,7 +1217,7 @@
                                                         <div class="px-2 py-2">
                                                             <div class="m-1 d-flex justify-content-between"
                                                                  style="text-overflow: ellipsis; overflow:hidden;">
-                                                                <div class="fw-bold">{{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}} </div>
+                                                                <div class="fw-bold">{{ucfirst($task->family->first_name)}} {{ucfirst($task->family->last_name)}} </div>
                                                                 <div class="col-auto">
                                                                     <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$authUserId])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
