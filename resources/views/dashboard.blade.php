@@ -25,9 +25,9 @@
 {{--                            </span>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-                <div class="py-3 mx-3">
-                    <div class="row">
-                        <div class="col-md-3 col-6 g-0 px-3 mb-3 " onclick="window.location.href='{{route('costumers')}}'"
+                <div class=" py-2 mx-2 py-sm-3 mx-sm-2">
+                    <div class="row g-0">
+                        <div class="col-md-3 col-6 px-2 px-sm-3 mb-2 mb-sm-3 " onclick="window.location.href='{{route('costumers')}}'"
                              style="font-family: 'Montserrat';cursor: pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 303.571 190.391">
@@ -74,7 +74,7 @@
                                 </text>
                             </svg>
                         </div>
-                        <div class="col-md-3 col-6 g-0 px-3 mb-3" onclick="window.location.href='{{route('costumers')}}'"
+                        <div class="col-md-3 col-6 px-2 px-sm-3 mb-2 mb-sm-3" onclick="window.location.href='{{route('costumers')}}'"
                              style="font-family: 'Montserrat';cursor: pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 303.571 190.391">
@@ -122,7 +122,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <div class="col-md-3 col-6 g-0 px-3 mb-3" onclick="window.location.href='{{route('costumers')}}'"
+                        <div class="col-md-3 col-6 px-2 px-sm-3 mb-2 mb-sm-3" onclick="window.location.href='{{route('costumers')}}'"
                              style="font-family: 'Montserrat';cursor: pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 303.571 190.391">
@@ -169,7 +169,7 @@
                                 </g>
                             </svg>
                         </div>
-                        <div class="col-md-3 col-6 g-0 px-3 mb-3" onclick="window.location.href='{{route('costumers')}}'"
+                        <div class="col-md-3 col-6 px-2 px-sm-3 mb-2 mb-sm-3" onclick="window.location.href='{{route('costumers')}}'"
                              style="font-family: 'Montserrat';cursor: pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                  viewBox="0 0 303.571 190.391">
@@ -221,7 +221,7 @@
                 <div class="section-after-boxes">
                     <div class="row g-0">
                         <div class="d-grid col-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="calendar-div mx-3">
+                            <div class="calendar-div mx-1 mx-sm-3">
                                 <calendar></calendar>
                             </div>
                             <div class="text-center" style="margin-top: -15px">
@@ -247,12 +247,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="my-3">
-                                <div class="row g-0">
-                                    <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
+                            <div class="my-1  my-sm-3">
+                                <div class="row px-1 px-sm-3 g-0">
+                                    <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 p-2"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff; border: 2px solid #000; border-radius: 18px; height: 150px; margin:4%;">
+                                             style="background-color: #fff; border: 3px solid #000; border-radius: 18px; height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
                                                      fill="#000" class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -268,16 +268,16 @@
                                                         {{$leadscount}}
                                                     </span>
                                                 <br>
-                                                <span class="fw-bold fs-5" style="color: #000;">
+                                                <span class="fw-bold" style="color: #000;">
                                                         Neue Leads
                                                     </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div onclick="window.location.href='{{route('tasks')}}'" style="cursor: pointer"  class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
+                                    <div onclick="window.location.href='{{route('tasks')}}'" style="cursor: pointer"  class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 p-2"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff;border:2px solid  #000; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
+                                             style="background-color: #fff;border:3px solid  #000; border-radius: 18px;  height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
                                                      fill="#000" class="bi bi-bell-fill" viewBox="0 0 16 16">
@@ -290,16 +290,16 @@
                                                         {{$offen}}
                                                     </span>
                                                 <br>
-                                                <span class="fw-bold fs-5" style="color: #000;">
+                                                <span class="fw-bold" style="color: #000;">
                                                         Offene Aufgaben
                                                     </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div onclick="window.location.href='{{route('tasks')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
+                                    <div onclick="window.location.href='{{route('tasks')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 p-2"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff;border:2px solid #000; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
+                                             style="background-color: #fff;border:3px solid #000; border-radius: 18px; height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
                                                      fill="#000" class="bi bi-exclamation-octagon-fill"
@@ -319,16 +319,16 @@
                                                     </span>
                                                 @endif
                                                 <br>
-                                                <span class="fw-bold fs-5" style="color:#000">
+                                                <span class="fw-bold" style="color:#000">
                                                         Steht Aus
                                                     </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div onclick="window.location.href='{{route('Appointments')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 g-0 px-3 mb-3"
+                                    <div onclick="window.location.href='{{route('Appointments')}}'" style="cursor: pointer" class="col-6 col-sm-4 col-md-3 col-lg-6 col-xl-4 p-2"
                                          style="font-family: 'Montserrat';">
                                         <div class="text-center"
-                                             style="background-color: #fff;border:2px solid #000; border-radius: 18px; margin-left: 4%;margin-right: 4%; margin-bottom: 4%; margin-top: 4%; height: 150px;">
+                                             style="background-color: #fff;border:3px solid #000; border-radius: 18px; height: 150px;">
                                             <div class="pt-3">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33"
                                                      fill="#000" class="bi bi-exclamation-octagon-fill"
@@ -342,7 +342,7 @@
                                                         {{$todayAppointCount}}
                                                     </span>
                                                 <br>
-                                                <span class="fw-bold fs-5" style="color: #000;">
+                                                <span class="fw-bold" style="color: #000;">
                                                         Heute Termin
                                                     </span>
                                             </div>
@@ -357,7 +357,7 @@
         </section>
     @endif
     @if(in_array('backoffice',$urole) || in_array('admin',$urole))
-        <div class="row g-0 mt-4" id="app">
+        <div class="row g-0 mt-2 mt-sm-4 mx-0 mx-sm-3" id="app">
             <todolist></todolist>
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 g-0 order-last order-md-2">
                 <div class="hr-req-div mx-2 mt-3">
@@ -1061,8 +1061,8 @@
             </div>
         </div>
             @if(!in_array('backoffice',$urole))
-                <div class="col-12 col-md-12 col-lg-12 g-0">
-                    <div class="personal-appointments m-2">
+                <div class="col-12 col-md-12 col-lg-12 px-0 px-sm-2">
+                    <div class="personal-appointments my-2 mx-sm-3 mx-2">
                         <div class="header  justify-content-between">
                             <div class="d-flex">
                             <div class="">
@@ -1400,11 +1400,11 @@
                                         <div class="accordion-item mb-3 my-1 py-2" style="background-color: #EFEFEF;">
                                             <h2 class="accordion-header" id="flush-heading5">
                                                 <div class="p-3">
-                                                    <div class="row">
-                                                        <div class="col">
-                                                            <h5><b>Mitarbeiterbesprechungen</b></h5>
+                                                    <div class="row g-0">
+                                                        <div class="col-auto">
+                                                            <div class="fw-bold fs-5">Mitarbeiterbesprechungen</div>
                                                         </div>
-                                                        <div style="color: #0a53be" class="col-3 text-end">
+                                                        <div style="color: #0a53be" class="col text-end">
                                                             <h5><b>{{$countconsultation}}</b></h5>
                                                         </div>
                                                     </div>
@@ -1594,7 +1594,8 @@
                                             <div class="p-3">
                                                 <div class="row">
                                                     <div class="col">
-                                                        <h5><b>Private Termine</b></h5>
+                                                        <div class="fw-bold fs-5">Private Termine</div>
+                                                      
                                                     </div>
                                                     <div style="color: #0a53be" class="col-3 text-end">
                                                         <h5><b>{{$countpersonalApp}}</b></h5>
@@ -1772,8 +1773,8 @@
                         </div>
                         <div class="g-0">
                             <div class="row g-0">
-                                <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center mx-2"
+                                <div onclick="window.location.href='{{route('leads')}}'" style="cursor: pointer" class="col-6 g-0">
+                                    <div class="text-center mx-2 mb-2"
                                          style="background-color: #fff; border:2px solid black; border-radius: 18px; ">
                                         <div class="pt-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#000"
@@ -1786,15 +1787,15 @@
                                             </svg>
                                         </div>
                                         <div class="py-2">
-                            <span class="fw-bold fs-5 text-black" style="font-family: 'Montserrat' !important;">
-                                {{$leadscount}}
-                            </span>
-                                            <br>
-                                            <span class="fw-bold fs-5 text-black"
-                                                  style="font-family: 'Montserrat' !important;">
-                                Neue Leads
-                            </span>
-                                        </div>
+                                            <span class="fw-bold fs-5 text-black" style="font-family: 'Montserrat' !important;">
+                                                {{$leadscount}}
+                                            </span>
+                                                            <br>
+                                                            <span class="fw-bold fs-5 text-black"
+                                                                style="font-family: 'Montserrat' !important;">
+                                                Neue Leads
+                                            </span>
+                                                        </div>
                                     </div>
                                 </div>
 {{--                                <div  class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">--}}
@@ -1842,8 +1843,8 @@
 {{--                                        </div>--}}
 {{--                                    </div>--}}
 {{--                                </div>--}}
-                                <div onclick="window.location.href='{{route('Appointments')}}'" style="cursor: pointer" class="col-12 col-xs-6 col-sm-4 col-md-3 col-lg g-0">
-                                    <div class="text-center mx-2"
+                                <div onclick="window.location.href='{{route('Appointments')}}'" style="cursor: pointer" class="col-6 g-0">
+                                    <div class="text-center mx-2 mb-2"
                                          style="background-color: #fff; border:2px solid black; border-radius: 18px;">
                                         <div class="pt-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="#000"

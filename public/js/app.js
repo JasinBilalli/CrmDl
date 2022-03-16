@@ -7429,6 +7429,39 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -7958,15 +7991,6 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -33607,7 +33631,7 @@ var render = function () {
                   "info-nr-item my-2 p-2 bg-white d-flex justify-content-between",
               },
               [
-                _c("div", { staticClass: "col-auto my-auto" }, [
+                _c("div", { staticClass: "col-auto px-2 my-auto" }, [
                   _c(
                     "svg",
                     {
@@ -33970,7 +33994,7 @@ var render = function () {
         _vm.role == "fs"
           ? _c("section", [
               _c("div", { staticClass: "container-fluid" }, [
-                _c("div", { staticClass: "row g-0" }, [
+                _c("div", { staticClass: "row g-0  mx-1 mx-sm-3" }, [
                   _c("div", { staticClass: "col-12 col-md-12 col-lg-9 g-0" }, [
                     _c("div", { staticClass: "assigned-leads py-1 mx-1" }, [
                       _c(
@@ -33980,7 +34004,43 @@ var render = function () {
                             "header ps-3 ps-sm-3 d-flex justify-content-between",
                         },
                         [
-                          _vm._m(0),
+                          _c("div", { staticClass: "d-flex" }, [
+                            _c("div", {}, [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "bi bi-hdd-stack",
+                                  attrs: {
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    width: "30",
+                                    fill: "currentColor",
+                                    viewBox: "0 0 16 16",
+                                  },
+                                },
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      d: "M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _c("path", {
+                                    attrs: {
+                                      d: "M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _c("path", {
+                                    attrs: {
+                                      d: "M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z",
+                                    },
+                                  }),
+                                ]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(0),
+                          ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
                             _c("span", { staticClass: "fs-5" }, [
@@ -35457,7 +35517,33 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 col-md-12 col-lg-3 g-0" }, [
                     _c("div", { staticClass: "lead-statistics py-1" }, [
-                      _vm._m(17),
+                      _c("div", { staticClass: "header px-3 px-sm-3" }, [
+                        _c("div", { staticClass: "d-flex" }, [
+                          _c("div", { staticClass: "my-auto" }, [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "bi bi-bar-chart",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  width: "30",
+                                  fill: "currentColor",
+                                  viewBox: "0 0 16 16",
+                                },
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d: "M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z",
+                                  },
+                                }),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(17),
+                        ]),
+                      ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "content-wrapper1 mx-1" }, [
                         _c("div", { staticClass: "content" }, [
@@ -35893,8 +35979,8 @@ var render = function () {
               ]),
             ])
           : _c("section", [
-              _c("div", { staticClass: "container-fluid p-0" }, [
-                _c("div", { staticClass: "row g-0" }, [
+              _c("div", { staticClass: "container-fluid " }, [
+                _c("div", { staticClass: "row g-0 mx-1 mx-sm-3" }, [
                   _c("div", { staticClass: "col-12 col-md-12 col-lg-9 g-0" }, [
                     _c("div", { staticClass: "assigned-leads1 mx-1 py-1 " }, [
                       _c(
@@ -35904,7 +35990,43 @@ var render = function () {
                             "header ps-3 ps-sm-3 d-flex justify-content-between",
                         },
                         [
-                          _vm._m(20),
+                          _c("div", { staticClass: "d-flex" }, [
+                            _c("div", { staticClass: "my-auto" }, [
+                              _c(
+                                "svg",
+                                {
+                                  staticClass: "bi bi-hdd-stack",
+                                  attrs: {
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    width: "30",
+                                    fill: "currentColor",
+                                    viewBox: "0 0 16 16",
+                                  },
+                                },
+                                [
+                                  _c("path", {
+                                    attrs: {
+                                      d: "M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _c("path", {
+                                    attrs: {
+                                      d: "M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z",
+                                    },
+                                  }),
+                                  _vm._v(" "),
+                                  _c("path", {
+                                    attrs: {
+                                      d: "M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z",
+                                    },
+                                  }),
+                                ]
+                              ),
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(20),
+                          ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
                             _c("span", { staticClass: "fs-5" }, [
@@ -37083,7 +37205,33 @@ var render = function () {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 col-md-12 col-lg-3 g-0" }, [
                     _c("div", { staticClass: "lead-statistics1 py-1" }, [
-                      _vm._m(30),
+                      _c("div", { staticClass: "header px-3 px-sm-3" }, [
+                        _c("div", { staticClass: "d-flex" }, [
+                          _c("div", { staticClass: "my-auto" }, [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "bi bi-bar-chart",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  width: "30",
+                                  fill: "currentColor",
+                                  viewBox: "0 0 16 16",
+                                },
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d: "M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z",
+                                  },
+                                }),
+                              ]
+                            ),
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(30),
+                        ]),
+                      ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "content-wrapper mx-1" }, [
                         _c("div", { staticClass: "content" }, [
@@ -37527,7 +37675,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "fs-5" }, [
-      _c("span", [_vm._v("Zugewiesene Leads")]),
+      _c("span", { staticClass: "ps-2" }, [_vm._v("Zugewiesene Leads")]),
     ])
   },
   function () {
@@ -37884,10 +38032,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "header px-3 px-sm-3" }, [
-      _c("div", { staticClass: "fs-5" }, [
-        _c("span", [_vm._v("Statistik der Leads")]),
-      ]),
+    return _c("div", { staticClass: "fs-5" }, [
+      _c("span", { staticClass: "ps-2" }, [_vm._v("Statistik der Leads")]),
     ])
   },
   function () {
@@ -37947,7 +38093,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "fs-5" }, [
-      _c("span", [_vm._v("Zugewiesene Leads")]),
+      _c("span", { staticClass: "ps-2" }, [_vm._v("Zugewiesene Leads")]),
     ])
   },
   function () {
@@ -38085,10 +38231,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "header px-3 px-sm-3" }, [
-      _c("div", { staticClass: "fs-5" }, [
-        _c("span", [_vm._v("Statistik der Leads")]),
-      ]),
+    return _c("div", { staticClass: "fs-5" }, [
+      _c("span", { staticClass: "ps-2" }, [_vm._v("Statistik der Leads")]),
     ])
   },
   function () {
@@ -38834,7 +38978,7 @@ var render = function () {
                 _c(
                   "svg",
                   {
-                    staticClass: "bi bi-list-task",
+                    staticClass: "bi bi-ui-radios",
                     attrs: {
                       xmlns: "http://www.w3.org/2000/svg",
                       width: "30",
@@ -38845,21 +38989,7 @@ var render = function () {
                   [
                     _c("path", {
                       attrs: {
-                        "fill-rule": "evenodd",
-                        d: "M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("path", {
-                      attrs: {
-                        d: "M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z",
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c("path", {
-                      attrs: {
-                        "fill-rule": "evenodd",
-                        d: "M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z",
+                        d: "M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zM0 12a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm7-1.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zM3 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z",
                       },
                     }),
                   ]

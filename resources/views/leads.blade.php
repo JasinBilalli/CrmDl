@@ -7,19 +7,32 @@
     @php $user = auth(); @endphp
     @if($user->user()->hasRole('admin') || $user->user()->hasRole('salesmanager'))
         <div class="container-fluid p-0">
-            <div class="col-12 g-0">
+            <div class="col-12 g-0  ">
+                <div class="mx-1 mx-sm-3">
                 <div class="import-leads-div px-3 m-1">
                     <form action="{{route('importleads')}}" class="mb-2" enctype="multipart/form-data" method="post">
                         @csrf
                         <div class="head py-3">
-                            <span class="fs-5 fw-bold">Leads Importieren</span>
+                            <div class="d-flex">
+                                <div class="svg-divvvvvvvvvv my-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30"  fill="currentColor" class="bi bi-file-earmark-arrow-down" viewBox="0 0 16 16">
+                                    <path d="M8.5 6.5a.5.5 0 0 0-1 0v3.793L6.354 9.146a.5.5 0 1 0-.708.708l2 2a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 10.293V6.5z"/>
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                </svg>
+                                </div>
+                                <div class="">
+                                <span class="fs-5 ps-2 fw-bold">Leads Importieren</span>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="content py-3">
                             <input type="file" class="form-control" name="file" id="file">
-                            <input type="submit" class="mt-2 btn py-2" value="Senden"
+                            <input type="submit" class=" btn fs-5 py-2 px-5 my-3" value="Senden"
                                    style="background-color: #0C71C3; color: #ffffff; font-weight: bold; border: none; border-radius: 12px;">
                         </div>
                     </form>
+                </div>
                 </div>
             </div>
         </div>
@@ -426,9 +439,6 @@
     @media (max-width: 575.98px) {
         .namme span {
             font-size: 1.25rem !important;
-        }
-        body {
-            background-color: #EFEFEF !important;
         }
         .assigned-items {
             background-color: #fff !important;
