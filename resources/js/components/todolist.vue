@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <input type="text" placeholder="Enter title" id="title" name="title" class="form-control m-input" autocomplete="off" v-on:keyup.enter="addtodos">
+                                    <input type="text" placeholder="Enter title" id="title" name="title" class="form-control m-input" autocomplete="off" v-on:keyup.enter="addtodos" required>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
          </div>
      </div>
 
-    
+
 </template>
 
 <script>

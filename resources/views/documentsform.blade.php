@@ -690,7 +690,7 @@
                                                                                 </svg>
                                                                             </label>
                                                                             <input type="file" id="file-input-4ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer">
-                                                                            <input type="text" class="form-control text-center showpdf" id="file-input-4wwc" disabled style="background:transparent; border:none;">
+                                                                            <input type="text" class="form-control text-center" id="file-input-4wwc" disabled style="background:transparent; border:none;">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -2163,7 +2163,7 @@
                                                                             </svg>
                                                                         </label>
                                                                         <input type="file" id="file-input-6ww" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offersach">
-                                                                        <input type="text" class="form-control text-center showpdf" id="file-input-6wwc" disabled style="background:transparent; border:none;">
+                                                                        <input type="text" class="form-control text-center" id="file-input-6wwc" disabled style="background:transparent; border:none;">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -3607,7 +3607,7 @@
             '                                                                                </svg>'+
             '                                                                            </label>'+
             '                                                                            <input type="file" id="file-input-'+ newgcnt + 'w" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="offer' + newgcnt + '">'+
-            '                                                                            <input type="text" class="form-control text-center gegenpdf" id="file-input-'+newgcnt + 'wc"' + 'disabled style="background:transparent; border:none;">'+
+            '                                                                            <input type="text" class="form-control text-center" id="file-input-'+newgcnt + 'wc"' + 'disabled style="background:transparent; border:none;">'+
             '                                                                        </div>'+
             '                                                                    </div>'+
             '                                                                </div>'+
@@ -4577,9 +4577,9 @@
             '  </div>';
             var auto = document.getElementsByClassName('autopdf');
         var autoName = document.getElementsByClassName('autoName');
- 
-        
-    
+
+
+
         issmodulo = 1;
         for(let i = auto.length-1; i >= 0 ; i--) {
             document.getElementById("autooferte").insertAdjacentHTML("afterend",
@@ -4590,10 +4590,10 @@
             }
 
         }
-     
-            var gegen = document.getElementsByClassName('gegenpdf');
+
+        var gegen = document.getElementsByClassName('gegenpdf');
         var gegenName = document.getElementsByClassName('gegenName');
- 
+
         ismodulo = 1;
         for(let i = gegen.length-1; i >= 0 ; i--) {
             if(ismodulo % 2 == 1) {
@@ -4608,7 +4608,7 @@
         }
 
 
-        
+
 
 
 
