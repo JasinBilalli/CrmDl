@@ -64,8 +64,9 @@ class TodoController extends Controller
         $user = auth()->user()->getRoleNames()->toArray();
 
             if(in_array('admin',$user) || in_array('backoffice',$user)){
-        $data['costumers'] = family::select('first_name','last_name','id')->get();
+        $data['costumers'] = family::select('first_name','last_name','id')->orderBy('first_name','asc')->paginate(200);
         $data['admins'] = Admins::role(['fs'])->get();
+        $data['costumers'] = $data['costumers']->items();
         return $data;
             }
 

@@ -7462,6 +7462,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -7504,7 +7506,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           _this.facebook = response.data.facebook;
           _this.sanascout = response.data.sanascout;
           _this.gati = true;
-          _this.cnt = response.data.leads.data.length;
+          _this.cnt = response.data.leads.total;
         }
       });
     },
@@ -34047,9 +34049,13 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
-                            _c("span", { staticClass: "fs-5" }, [
-                              _vm._v(_vm._s(_vm.cnt)),
-                            ]),
+                            _vm.cnt < 101
+                              ? _c("span", { staticClass: "fs-5" }, [
+                                  _vm._v(_vm._s(_vm.cnt)),
+                                ])
+                              : _c("span", { staticClass: "fs-5" }, [
+                                  _vm._v("100+"),
+                                ]),
                           ]),
                         ]
                       ),
@@ -36033,9 +36039,13 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "count px-4 mt-3 h-100" }, [
-                            _c("span", { staticClass: "fs-5" }, [
-                              _vm._v(" " + _vm._s(_vm.cnt) + " "),
-                            ]),
+                            _vm.cnt < 101
+                              ? _c("span", { staticClass: "fs-5" }, [
+                                  _vm._v(_vm._s(_vm.cnt)),
+                                ])
+                              : _c("span", { staticClass: "fs-5" }, [
+                                  _vm._v("100+"),
+                                ]),
                           ]),
                         ]
                       ),

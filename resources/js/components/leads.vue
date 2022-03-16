@@ -20,7 +20,8 @@
                                 </div>
 
                                 <div class="count px-4 mt-3 h-100">
-                                    <span class="fs-5">{{cnt}}</span>
+                                    <span class="fs-5" v-if="cnt < 101">{{cnt}}</span>
+                                    <span class="fs-5" v-else>100+</span>
                                 </div>
                             </div>
                             <div class="content p-2">
@@ -588,7 +589,8 @@
                                 </div>
                                 </div>
                                 <div class="count px-4 mt-3 h-100">
-                                    <span class="fs-5"> {{cnt}} </span>
+                                    <span class="fs-5" v-if="cnt < 101">{{cnt}}</span>
+                                    <span class="fs-5" v-else>100+</span>
                                 </div>
                             </div>
                             <div class="content p-2">
@@ -1037,7 +1039,8 @@ export default {
                     this.facebook = response.data.facebook;
                     this.sanascout = response.data.sanascout;
                     this.gati = true;
-                    this.cnt = response.data.leads.data.length;
+                    this.cnt = response.data.leads.total;
+
                 }
             });
         },
