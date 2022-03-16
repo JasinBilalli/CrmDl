@@ -240,7 +240,7 @@ else{
     $fullcalendar = [];
     $br = 1;
     $dayofweek = 6;
-
+      Carbon::setLocale('de');
     for ($i = 0; $i <= 365; $i++) {
       $fullcalendar[$i]['date'] =  Carbon::now()->addDays($i)->format('Y-m-d');
       $fullcalendar[$i]['dayn'] =  substr(Carbon::now()->addDays($i)->format('l'),0,3);

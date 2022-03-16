@@ -38928,6 +38928,7 @@ var render = function () {
                       id: "title",
                       name: "title",
                       autocomplete: "off",
+                      required: "",
                     },
                     on: {
                       keyup: function ($event) {
