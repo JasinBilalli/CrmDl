@@ -496,7 +496,7 @@
                             </svg></span>
                             <span class="ps-2 txt-01">Beantwortete Pendenzen</span>
                         </div>
-                        <div class="h-100 count px-4">
+                        <div class="h-100 count fs-5 px-4">
                             {{count($pendencies)}}
                         </div>
                     </div>
@@ -672,7 +672,7 @@
                             </svg></span>
                             <span class="ps-2">Ablaufende Pendenzen</span>
                         </div>
-                        <div class="h-100 count px-4">
+                        <div class="h-100 count fs-5 px-4">
                             {{count($morethan30)}}
                         </div>
                     </div>
@@ -879,7 +879,7 @@
                         </span>
                             <span class="ps-2">Statusprüfung</span>
                         </div>
-                        <div class="h-100 count px-4">
+                        <div class="h-100 count fs-5 px-4">
                             {{count($morethan30)}}
                         </div>
                     </div>
@@ -1077,7 +1077,7 @@
                                 <span>Private Termine</span>
                             </div>
                             </div>
-                            <div class="count h-100 px-4 mt-2">
+                            <div class="count h-100 px-4 fs-5 mt-2">
                                 <span>{{$countpersonalApp}}</span>
                             </div>
                         </div>
