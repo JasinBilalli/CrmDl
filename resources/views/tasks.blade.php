@@ -1287,21 +1287,21 @@
             overflow-x: hidden;
         }
         .txt-01 {
-             font-size: 1.1rem;
-             font-weight: 600;
-             padding-top: 0.3rem;
-             padding-bottom: 0.3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
         }
         .count {
-        background-color: #EFEFEF;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        vertical-align: middle;
-        display: flex;
-        align-items: center;
-    }
+            background-color: #EFEFEF;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            vertical-align: middle;
+            display: flex;
+            align-items: center;
+        }
 
 
         .overflow-divvv::-webkit-scrollbar {
