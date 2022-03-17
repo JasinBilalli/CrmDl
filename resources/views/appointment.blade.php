@@ -591,7 +591,7 @@
 </div>
   <div class=" row g-0 mx-2">
 <div class="col-12" width="90%" style="font-size: 12px;">
-    <div id='calendar'></div>
+    <div id='calendar' class="mx-2"></div>
 
 
 </div>
