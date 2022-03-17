@@ -172,10 +172,8 @@
                                     @endif
                                     @endif
 
-
-
                                             @if(!empty($grundversicherungP[$i]))
-                                                @if($grundversicherungP[$i]->status_PG == 'notselected')
+                                                @if($grundversicherungP[$i]->status_PG == 'Nicht Ausgewählt')
                                                     <td class="py-5"></td>
                                                 @else
 
@@ -237,7 +235,7 @@
                                         <tr id="table-row-edit"
                                             onclick="window.location.href='{{route('costumer_form', $datId)}}'">
                                             @if(!empty($retchsschutzP[$i]))
-                                                @if($retchsschutzP[$i]->status_PR == 'notselected')
+                                                @if($retchsschutzP[$i]->status_PR == 'Nicht Ausgewählt')
                                                 @else
                                                     <th scope="row"></th>
                                                     <td></td>
@@ -279,7 +277,7 @@
                                         <tr id="table-row-edit"
                                             onclick="window.location.href='{{route('costumer_form', $datId)}}'">
                                             @if(!empty($vorsorgeP[$i]))
-                                                @if($vorsorgeP[$i]->status_PV == 'notselected')
+                                                @if($vorsorgeP[$i]->status_PV == 'Nicht Ausgewählt')
                                                 @else
                                                     <th scope="row"></th>
                                                     <td></td>
@@ -320,7 +318,7 @@
                                         <tr id="table-row-edit"
                                             onclick="window.location.href='{{route('costumer_form', $datId)}}'">
                                             @if(!empty($zusatzversicherungP[$i]))
-                                                @if($zusatzversicherungP[$i]->status_PZ == 'notselected')
+                                                @if($zusatzversicherungP[$i]->status_PZ == 'Nicht Ausgewählt')
                                                 @else
                                                     <th scope="row"></th>
                                                     <td></td>
@@ -381,7 +379,7 @@
                                         <tr id="table-row-edit"
                                             onclick="window.location.href='{{route('costumer_form', $datId)}}'">
                                             @if(!empty($autoversicherungP[$i]))
-                                                @if($autoversicherungP[$i]->status_PA == 'notselected')
+                                                @if($autoversicherungP[$i]->status_PA == 'Nicht Ausgewählt')
                                                 @else
                                                     <th scope="row"></th>
                                                     <td></td>
@@ -423,7 +421,7 @@
                                             onclick="window.location.href='{{route('costumer_form', $datId)}}'"
                                             style=" border: none;border-bottom: 12px #F0F0F0 solid;">
                                             @if(!empty($hausratP[$i]))
-                                                @if($hausratP[$i]->status_PH == 'notselected')
+                                                @if($hausratP[$i]->status_PH == 'Nicht Ausgewählt')
                                                 @else
                                                     <th scope="row"></th>
                                                     <td></td>
@@ -664,7 +662,7 @@
                             </div>
                             <div class="info-divider">
                                 @if(!empty($grundversicherungP[$i]))
-                                    @if($grundversicherungP[$i]->status_PG == 'notselected')
+                                    @if($grundversicherungP[$i]->status_PG == 'Nicht Ausgewählt')
                                     @else
                                         <div class="row my-1"
                                              onclick="window.location.href='{{route('costumer_form', $datId)}}'">
@@ -725,7 +723,7 @@
                                 @endif
 
                                 @if(!empty($retchsschutzP[$i]))
-                                    @if($retchsschutzP[$i]->status_PR == 'notselected')
+                                    @if($retchsschutzP[$i]->status_PR == 'Nicht Ausgewählt')
                                     @else
                                         <div class="row my-1"
                                              onclick="window.location.href='{{route('costumer_form', $datId)}}'">
@@ -761,7 +759,7 @@
                                 @endif
 
                                 @if(!empty($vorsorgeP[$i]))
-                                    @if($vorsorgeP[$i]->status_PV == 'notselected')
+                                    @if($vorsorgeP[$i]->status_PV == 'Nicht Ausgewählt')
                                     @else
                                         <div class="row my-1"
                                              onclick="window.location.href='{{route('costumer_form', $datId)}}'">
@@ -797,7 +795,7 @@
                                 @endif
 
                                 @if(!empty($zusatzversicherungP[$i]))
-                                    @if($zusatzversicherungP[$i]->status_PZ == 'notselected')
+                                    @if($zusatzversicherungP[$i]->status_PZ == 'Nicht Ausgewählt')
                                     @else
                                         <div class="row my-1"
                                              onclick="window.location.href='{{route('costumer_form', $datId)}}'">
@@ -857,7 +855,7 @@
                                 @endif
 
                                 @if(!empty($autoversicherungP[$i]))
-                                    @if($autoversicherungP[$i]->status_PA == 'notselected')
+                                    @if($autoversicherungP[$i]->status_PA == 'Nicht Ausgewählt')
                                     @else
                                         <div class="row my-1"
                                              onclick="window.location.href='{{route('costumer_form', $datId)}}'">
@@ -897,7 +895,7 @@
                                     @endif
                                 @endif
                                 @if(!empty($hausratP[$i]))
-                                    @if($hausratP[$i]->status_PH == 'notselected')
+                                    @if($hausratP[$i]->status_PH == 'Nicht Ausgewählt')
                                     @else
                                         <div class="row my-1"
                                              onclick="window.location.href='{{route('costumer_form', $datId)}}'">
