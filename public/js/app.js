@@ -6388,6 +6388,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.fetchnumbers();
@@ -33857,7 +33858,13 @@ var render = function () {
                           attrs: { type: "submit" },
                           on: { click: _vm.addnumber },
                         },
-                        [_c("b", [_vm._v("Add")])]
+                        [
+                          _c("b", [
+                            _vm._v(
+                              "\n                                    Hinzufügen"
+                            ),
+                          ]),
+                        ]
                       ),
                     ]
                   ),
@@ -39094,7 +39101,7 @@ var render = function () {
                     staticClass: "form-control m-input",
                     attrs: {
                       type: "text",
-                      placeholder: "Enter title",
+                      placeholder: "neue Aufgabe",
                       id: "title",
                       name: "title",
                       autocomplete: "off",

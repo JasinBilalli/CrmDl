@@ -106,7 +106,8 @@
                                  style="border-top: none !important; display: block;margin:0 !important;">
                                 <button @click="addnumber"  type="submit" class="btn w-100 m-0 my-3"
                                         style="background-color: #0C71C3; color: #fff !important;">
-                                    <b>Add</b></button>
+                                    <b>
+                                        Hinzufügen</b></button>
                             </div>
                         </div>
                     </div>
@@ -155,7 +156,7 @@ export default {
             valName.value = "";
             valPosition.value = "";
         },
-    
+
         assignpendency: function () {
             axios.get('assignpendency?admin=' + this.admin + '&id=' + this.costumer + '&desc=' + document.getElementById('desc').value);
             document.getElementById('alrt').innerHTML = "";
