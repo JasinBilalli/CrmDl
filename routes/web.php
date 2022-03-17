@@ -286,7 +286,6 @@ route::post('forgotpassword',[\App\Http\Controllers\ForgotPassController::class,
 route::get('changepasswrd/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'changepasswrd'])->name('changepasswrd');
 route::post('update_password/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'update_password'])->name('update_password');
 
-route::get('apptest',[\App\Http\Controllers\ForgotPassController::class,'apptest']);
 
 
 

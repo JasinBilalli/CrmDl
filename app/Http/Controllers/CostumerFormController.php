@@ -381,13 +381,13 @@ $provcnt= 0;
             $pcnt++;
         }
 
-        if($request->status_PG == 'Provisionert'){
+        if($request->status_PG1 == 'Provisionert'){
             $provcnt++;
             $familyperson = family::find($id)->lead->assign_to_id;
             $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
-        elseif($request->status_PG == 'Aufgenomen') {
+        elseif($request->status_PG1 == 'Aufgenomen') {
             $aufcnt++;
         }
 
@@ -477,12 +477,14 @@ $provcnt= 0;
             $objekt->save();
             $pcnt++;
         }
-        if($request->status_PZ == 'Provisionert'){
+
+        if($request->status_PZ1 == 'Provisionert'){
+
             $familyperson = family::find($id)->lead->assign_to_id;
             $url = '<a href="' . route("costumer_form",[Crypt::encrypt($id * 1244)]) . '"> Ihr Kunde :' . family::find($id)->first_name . ' wurde bereitgestellt </a>';
             Admins::find($familyperson)->notify(new SendNotificationn($url));
         }
-        elseif($request->status_PG == 'Aufgenomen') {
+        elseif($request->status_PZ1 == 'Aufgenomen') {
             $aufcnt++;
         }
 
