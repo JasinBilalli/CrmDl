@@ -114,6 +114,9 @@
                             <th scope="col" class="header-styling">Status</th>
                         </tr>
                         </thead>
+                        @php $user = auth()->user();
+                        $urole = $user->getRoleNames()->toArray();
+                        @endphp
                         <tbody id="body-table-edit"
                                style="cursor: pointer; border: none;border-bottom: 12px #fff solid;border-top: 5px #fff solid; border-radius: 30px !important;">
                         @if(!$data == [])
@@ -121,7 +124,7 @@
                                 @php $leadss=$data[$i]->id * 1244;
                                 $datId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                 @endphp
-                                @if(Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('salesmanager'))
+                                @if(in_array('fs',$urole) || in_array('salesmanager',$urole))
                                     @if($family_person[$i]->kundportfolio == 0)
                                         <th data-bs-toggle="modal" data-bs-target="#rejectmodal" scope="row"
                                             class="fw-bold" style="font-weight: 400 !important;">{{$data[$i]->id}}</th>
@@ -145,7 +148,7 @@
                                             @else
                                                 <td><span class="fw-bold">Nein</span></td>
                                     @endif
-                                    @endif
+                                @endif
                                 @else
                                     @if($family_person[$i]->kundportfolio == 0)
                                         <tr onclick="window.location.href='{{route('costumer_form', $datId)}}'">
@@ -157,7 +160,7 @@
                                                 <td><span class="fw-bold">Ja</span></td>
                                             @else
                                                 <td><span class="fw-bold">Nein</span></td>
-                                            @endif
+                                    @endif
                                     @else
                                         <tr onclick="window.location.href='{{route('costumer_form', $datId)}}'">
                                             <th scope="row" class="fw-bold"
@@ -169,8 +172,8 @@
                                             @else
                                                 <td><span class="fw-bold">Nein</span></td>
                                             @endif
-                                    @endif
-                                    @endif
+                                            @endif
+                                            @endif
 
 
 
@@ -187,13 +190,13 @@
                                                         CHF
                                                     </td>
                                                     @if($totaliGegen[$i]['totali'] > 1)
-                                                    @php $offen= 0; @endphp
-                                                    @foreach($statusGegen[$i]['statusGegen'] as $status)
-                                                        @if($status->status_PG != 'Provisionert')
-                                                            @php $offen++; break; @endphp
-                                                          @endif
-                                                    @endforeach
-                                                    @if($offen > 0)
+                                                        @php $offen= 0; @endphp
+                                                        @foreach($statusGegen[$i]['statusGegen'] as $status)
+                                                            @if($status->status_PG != 'Provisionert')
+                                                                @php $offen++; break; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                        @if($offen > 0)
                                                             <td class="status1 border-0 fw-600 bg-warning"
                                                                 style="padding:1px;"
                                                                 id="status">OFFEN</td>
@@ -205,32 +208,32 @@
                                                     @else
 
 
-                                                    @if($grundversicherungP[$i]->status_PG == 'Aufgenomen')
-                                                        <td class="status1 border-0 fw-600 greencol" id="status"
-                                                            style="padding:1px;">
-                                                            {{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
-                                                    @endif
-                                                    @if($grundversicherungP[$i]->status_PG == 'Offen')
-                                                        <td class="status1 border-0 fw-600 bg-warning"
-                                                            style="padding:1px;"
-                                                            id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
-                                                    @endif
-                                                    @if($grundversicherungP[$i]->status_PG == 'Provisionert')
-                                                        <td class="status1 border-0 fw-600 bg-success"
-                                                            style="padding:1px;"
-                                                            id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
-                                                    @endif
-                                                    @if($grundversicherungP[$i]->status_PG == 'Zuruckgezogen')
-                                                        <td class="status1 border-0 fw-600 bg-secondary"
-                                                            style="padding:1px;"
-                                                            id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
-                                                    @endif
-                                                    @if($grundversicherungP[$i]->status_PG == 'Abgelehnt')
-                                                        <td class="status1 border-0 fw-600 bg-danger"
-                                                            style="padding:1px;"
-                                                            id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
-                                                    @endif
+                                                        @if($grundversicherungP[$i]->status_PG == 'Aufgenomen')
+                                                            <td class="status1 border-0 fw-600 greencol" id="status"
+                                                                style="padding:1px;">
+                                                                {{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
                                                         @endif
+                                                        @if($grundversicherungP[$i]->status_PG == 'Offen')
+                                                            <td class="status1 border-0 fw-600 bg-warning"
+                                                                style="padding:1px;"
+                                                                id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
+                                                        @endif
+                                                        @if($grundversicherungP[$i]->status_PG == 'Provisionert')
+                                                            <td class="status1 border-0 fw-600 bg-success"
+                                                                style="padding:1px;"
+                                                                id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
+                                                        @endif
+                                                        @if($grundversicherungP[$i]->status_PG == 'Zuruckgezogen')
+                                                            <td class="status1 border-0 fw-600 bg-secondary"
+                                                                style="padding:1px;"
+                                                                id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
+                                                        @endif
+                                                        @if($grundversicherungP[$i]->status_PG == 'Abgelehnt')
+                                                            <td class="status1 border-0 fw-600 bg-danger"
+                                                                style="padding:1px;"
+                                                                id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
+                                                        @endif
+                                                    @endif
                                                 @endif
                                             @endif
                                         </tr>
@@ -349,31 +352,31 @@
                                                                 id="status">PROVISIONERT</td>
                                                         @endif
                                                     @else
-                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Aufgenomen')
-                                                        <td class="status1 greencol border-0 fw-600"
-                                                            style="padding:1px;"
-                                                            id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
-                                                    @endif
-                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Offen')
-                                                        <td class="status1 border-0 fw-600 bg-warning"
-                                                            style="padding:1px;"
-                                                            id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
-                                                    @endif
-                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Provisionert')
-                                                        <td class="status1 border-0 fw-600 bg-success"
-                                                            style="padding:1px;"
-                                                            id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
-                                                    @endif
-                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Zuruckgezogen')
-                                                        <td class="status1 border-0 fw-600 bg-secondary"
-                                                            style="padding:1px;"
-                                                            id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
-                                                    @endif
-                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Abgelehnt')
-                                                        <td class="status1 border-0 fw-600 bg-danger"
-                                                            style="padding:1px;"
-                                                            id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
-                                                    @endif
+                                                        @if($zusatzversicherungP[$i]->status_PZ == 'Aufgenomen')
+                                                            <td class="status1 greencol border-0 fw-600"
+                                                                style="padding:1px;"
+                                                                id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
+                                                        @endif
+                                                        @if($zusatzversicherungP[$i]->status_PZ == 'Offen')
+                                                            <td class="status1 border-0 fw-600 bg-warning"
+                                                                style="padding:1px;"
+                                                                id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
+                                                        @endif
+                                                        @if($zusatzversicherungP[$i]->status_PZ == 'Provisionert')
+                                                            <td class="status1 border-0 fw-600 bg-success"
+                                                                style="padding:1px;"
+                                                                id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
+                                                        @endif
+                                                        @if($zusatzversicherungP[$i]->status_PZ == 'Zuruckgezogen')
+                                                            <td class="status1 border-0 fw-600 bg-secondary"
+                                                                style="padding:1px;"
+                                                                id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
+                                                        @endif
+                                                        @if($zusatzversicherungP[$i]->status_PZ == 'Abgelehnt')
+                                                            <td class="status1 border-0 fw-600 bg-danger"
+                                                                style="padding:1px;"
+                                                                id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
+                                                        @endif
                                                     @endif
                                                 @endif
                                             @endif
@@ -546,14 +549,14 @@
                 </div>
                 <div class="col g-0 " id="ascDscSort">
 
-                        <a href="{{route('searchword')}}" style="text-decoration: none;color: #434343;cursor: pointer"
-                           class="">
-                            <div class="date-filter m-1 py-2  text-center">
+                    <a href="{{route('searchword')}}" style="text-decoration: none;color: #434343;cursor: pointer"
+                       class="">
+                        <div class="date-filter m-1 py-2  text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="#C5C7CD" class="bi bi-sort-down" viewBox="0 0 16 16">
                                 <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293V2.5zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
                             </svg>
-                            </div>
-                        </a>
+                        </div>
+                    </a>
 
                 </div>
                 <div class="col px-0" id="filterSort">
@@ -632,7 +635,7 @@
 
                         <div class="content-box my-2 mx-3 px-1 px-2 py-2">
                             <div class="top">
-                                @if(Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('salesmanager'))
+                                @if(in_array('fs',$urole) || in_array('salesmanager',$urole))
                                     @if($family_person[$i]->kundportfolio == 0)
                                         <div class="name-div" data-bs-toggle="modal" data-bs-target="#rejectmodali">
                                             <span class="fs-6">{{$data[$i]->first_name}} {{$data[$i]->last_name}} ({{$data[$i]->birthdate}})</span>
@@ -693,31 +696,31 @@
                                                     @endif
                                                 @else
 
-                                                @if($grundversicherungP[$i]->status_PG == 'Aufgenomen')
-                                                    <div class="status-check greencol py-1">
-                                                        <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
-                                                    </div>
-                                                @endif
-                                                @if($grundversicherungP[$i]->status_PG == 'Offen')
-                                                    <div class="status-check bg-warning py-1">
-                                                        <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
-                                                    </div>
-                                                @endif
-                                                @if($grundversicherungP[$i]->status_PG == 'Provisionert')
-                                                    <div class="status-check bg-success py-1">
-                                                        <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
-                                                    </div>
-                                                @endif
-                                                @if($grundversicherungP[$i]->status_PG == 'Zuruckgezogen')
-                                                    <div class="status-check bg-secondary py-1">
-                                                        <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
-                                                    </div>
-                                                @endif
-                                                @if($grundversicherungP[$i]->status_PG == 'Abgelehnt')
-                                                    <div class="status-check bg-danger py-1">
-                                                        <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
-                                                    </div>
-                                                @endif
+                                                    @if($grundversicherungP[$i]->status_PG == 'Aufgenomen')
+                                                        <div class="status-check greencol py-1">
+                                                            <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
+                                                        </div>
+                                                    @endif
+                                                    @if($grundversicherungP[$i]->status_PG == 'Offen')
+                                                        <div class="status-check bg-warning py-1">
+                                                            <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
+                                                        </div>
+                                                    @endif
+                                                    @if($grundversicherungP[$i]->status_PG == 'Provisionert')
+                                                        <div class="status-check bg-success py-1">
+                                                            <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
+                                                        </div>
+                                                    @endif
+                                                    @if($grundversicherungP[$i]->status_PG == 'Zuruckgezogen')
+                                                        <div class="status-check bg-secondary py-1">
+                                                            <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
+                                                        </div>
+                                                    @endif
+                                                    @if($grundversicherungP[$i]->status_PG == 'Abgelehnt')
+                                                        <div class="status-check bg-danger py-1">
+                                                            <span>{{strtoupper($grundversicherungP[$i]->status_PG)}}</span>
+                                                        </div>
+                                                    @endif
                                                 @endif
                                             </div>
                                         </div>
@@ -825,31 +828,31 @@
                                                         </div>
                                                     @endif
                                                 @else
-                                                @if($zusatzversicherungP[$i]->status_PZ == 'Aufgenomen')
-                                                    <div class="status-check greencol py-1">
-                                                        <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
-                                                    </div>
-                                                @endif
-                                                @if($zusatzversicherungP[$i]->status_PZ == 'Offen')
-                                                    <div class="status-check bg-warning py-1">
-                                                        <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
-                                                    </div>
-                                                @endif
-                                                @if($zusatzversicherungP[$i]->status_PZ == 'Provisionert')
-                                                    <div class="status-check bg-success py-1">
-                                                        <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
-                                                    </div>
-                                                @endif
-                                                @if($zusatzversicherungP[$i]->status_PZ == 'Zuruckgezogen')
-                                                    <div class="status-check bg-secondary py-1">
-                                                        <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
-                                                    </div>
-                                                @endif
-                                                @if($zusatzversicherungP[$i]->status_PZ == 'Abgelehnt')
-                                                    <div class="status-check bg-danger py-1">
-                                                        <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
-                                                    </div>
-                                                @endif
+                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Aufgenomen')
+                                                        <div class="status-check greencol py-1">
+                                                            <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
+                                                        </div>
+                                                    @endif
+                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Offen')
+                                                        <div class="status-check bg-warning py-1">
+                                                            <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
+                                                        </div>
+                                                    @endif
+                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Provisionert')
+                                                        <div class="status-check bg-success py-1">
+                                                            <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
+                                                        </div>
+                                                    @endif
+                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Zuruckgezogen')
+                                                        <div class="status-check bg-secondary py-1">
+                                                            <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
+                                                        </div>
+                                                    @endif
+                                                    @if($zusatzversicherungP[$i]->status_PZ == 'Abgelehnt')
+                                                        <div class="status-check bg-danger py-1">
+                                                            <span>{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</span>
+                                                        </div>
+                                                    @endif
                                                 @endif
                                             </div>
                                         </div>
@@ -969,15 +972,15 @@
     </body>
 @endsection
 <script>
-        function NaBleronit() {
-            document.getElementById("inputPress").style.display = "none";
-            document.getElementById("inputShow").style.display = "block";
-            document.getElementById("ascDscSort").classList.remove('col');
-            document.getElementById("ascDscSort").classList.remove('col');
-            document.getElementById("ascDscSort").classList.add('col-6');
-            document.getElementById("filterSort").classList.add('col-6');
-        }
-    </script>
+    function NaBleronit() {
+        document.getElementById("inputPress").style.display = "none";
+        document.getElementById("inputShow").style.display = "block";
+        document.getElementById("ascDscSort").classList.remove('col');
+        document.getElementById("ascDscSort").classList.remove('col');
+        document.getElementById("ascDscSort").classList.add('col-6');
+        document.getElementById("filterSort").classList.add('col-6');
+    }
+</script>
 <style>
     .import-leads-div {
         border: 1px black solid;

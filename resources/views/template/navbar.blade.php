@@ -1095,7 +1095,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 </div>
             @endif
 			    <div class="text-end mx-auto">
-                        <notifications url="{{config('app.url')}}"></notifications>
+                        <notifications url="{{env('APP_URL')}}"></notifications>
                     </div>
                 <div class="container-fluid">
             @yield('content')
@@ -2170,7 +2170,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
             color: #0c71c3;
         }
 
-        @media (max-width: 912.98px) { 
+        @media (max-width: 912.98px) {
             .notification-divvv22 .dropdown-menu {
                 width: 63vw;
             }

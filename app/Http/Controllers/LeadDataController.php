@@ -26,7 +26,7 @@ use Svg\Tag\Rect;
 class LeadDataController extends Controller
 {
     use FileManagerTrait;
-    public function acceptdata($id, $accept = false,Request $req)
+    public function acceptdata($id, Request $req,$accept = false)
     {
         $id = Crypt::decrypt($id) / 1244;
         $admin_id = $req->admin_id;
@@ -65,7 +65,7 @@ class LeadDataController extends Controller
                     $person = family::find($pend->family_id);
                     $person->status = "Done";
                     $person->save();
-                    return redirect()->route('acceptdata', ['id' => Crypt::encrypt($id * 1244),'admin_id' => Crypt::encrypt($admin_id * 1244)]);
+                    return redirect()->route('acceptdata', ['id' => Crypt::encrypt($id * 1244),'accept' => false,'admin_id' => Crypt::encrypt($admin_id * 1244)]);
                 }
                 else{
                     return redirect()->back();
