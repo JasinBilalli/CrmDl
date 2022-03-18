@@ -21,8 +21,10 @@ use App\Notifications\SendNotificationn;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\Types\Collection;
 use PhpParser\Node\Name\FullyQualified;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -262,7 +264,7 @@ else{
 
   public function searchword()
   {
-      if(Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('fs')){
+      if(Auth::guard('admins')->user()->hasRole('fs')){
           $data = DB::table('family_person')
               ->join('leads','family_person.leads_id','=','leads.id')
               ->where('leads.assign_to_id','=',Auth::guard('admins')->user()->id)
@@ -358,56 +360,51 @@ else{
         $statusGegen = null;
         $statusNeuen = null;
         $mandatiert = [];
-
+        $data = collect();
       $cnt = 0;
       $date1 = date('Y-m-d', strtotime($request->searchdate1));
       $n = date('Y-m-d', strtotime($request->searchdate2));
       $date2 = date('Y-m-d', strtotime($n . "+1 days"));
       $searchname = $request->searchname;
+      $user = auth()->user();
 
     if(Auth::user()->hasRole('fs') || Auth::user()->hasRole('digital')){
+if($searchname == null) {
+    foreach (family::with('hausrat')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Open'])
+                 ->get() as $fam) {
+        if ($fam->lead->assign_to_id == $user->id) $data->push($fam);
+    }
+}
 
-      $data = DB::table('family_person')
-            ->join('leads','family_person.leads_id','=','leads.id')
-            ->where('leads.assign_to_id','=',Auth::guard('admins')->user()->id)
-            ->whereIn('family_person.status',['Done'])
-            ->select('family_person.*')
-            ->get();
+      if ($searchname != null){
 
-        if ($searchname != null){
-
-            $data = DB::table('family_person')
-                ->join('leads','family_person.leads_id','=','leads.id')
-                ->where('leads.assign_to_id',Auth::guard('admins')->user()->id)
-                ->whereIn('family_person.status',['Done'])
-                ->where('family_person.first_name','like','%'.$searchname.'%')
-                ->orWhere('family_person.last_name','like','%'.$searchname.'%')
-                ->select('family_person.*')
-                ->paginate(100);
+          foreach(family::with('hausrat')->with('df')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Done'])->where('first_name','like','%'.$searchname . '%')->get() as $item){
+              if($item->lead->assign_to_id == $user->id){
+                  $data->push($item);
+              }
+          }
     }
         if (isset($request->searchdate1) && isset($request->searchdate2)) {
 
-            $data = DB::table('family_person')
-                ->join('leads','family_person.leads_id','=','leads.id')
-                ->where('leads.assign_to_id','=',Auth::guard('admins')->user()->id)
-                ->whereIn('family_person.status',['Done'])
-                ->whereBetween('family_person.created_at', [$date1, $date2])
-                ->select('family_person.*')
-                ->get();
-
+      foreach(family::with('hausrat')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Done'])->where('first_name','like','%'.$searchname . '%')->whereBetween('family_person.created_at', [$date1, $date2])->get() as $item) {
+                if ($item->lead->assign_to_id == $user->id){
+                    $data->push($item);
+                }
+            }
         }
+
         $cnt = 0;
 
         foreach ($data as $dat) {
-            $grundversicherungP[$cnt] = CostumerProduktGrundversicherung::where('person_id_PG', $dat->id)->first();
-            $retchsschutzP[$cnt] = CostumerProduktRechtsschutz::where('person_id_PR',$dat->id)->first();
-            $vorsorgeP[$cnt] = CostumerProduktVorsorge::where('person_id_PV',$dat->id)->first();
-            $zusatzversicherungP[$cnt] = CostumerProduktZusatzversicherung::where('person_id_PZ',$dat->id)->first();
-            $autoversicherungP[$cnt] = CostumerProduktAutoversicherung::where('person_id_PA', $dat->id)->first();
-            $hausratP[$cnt] = CostumerProduktHausrat::where('person_id_PH', $dat->id)->first();
-            $family_person[$cnt] = family::where('id',$dat->id)->first();
-            if(LeadDataFahrzeug::where('person_id',$dat->id)->first()){
-              if(LeadDataFahrzeug::where('person_id',$dat->id)->first()->mandatiert == null){
+            $grundversicherungP[$cnt] = $dat->grund->first();
+            $retchsschutzP[$cnt] = $dat->rech->first();
+            $vorsorgeP[$cnt] = $dat->vor->first();
+            $zusatzversicherungP[$cnt] = $dat->zus->first();
+            $autoversicherungP[$cnt] = $dat->auto->first();
+            $hausratP[$cnt] = $dat->hausrat;
+            $family_person[$cnt] = $dat;
+            if($dat->df){
+              if($dat->df->mandatiert == null){
                 $mandatiert[$cnt]['mandatiert'] = false;
               }
               else{
@@ -417,12 +414,13 @@ else{
             else{
               $mandatiert[$cnt]['mandatiert'] = false;
             }
-            $sumGegen[$cnt]['grsum'] = CostumerProduktGrundversicherung::where('person_id_PG', $dat->id)->get()->sum('total_commisions_PG');
-            $totaliGegen[$cnt]['totali'] = CostumerProduktGrundversicherung::where('person_id_PG', $dat->id)->count();
-            $sumNeuen[$cnt]['nesum'] = CostumerProduktZusatzversicherung::where('person_id_PZ', $dat->id)->get()->sum('total_commisions_PZ');
-            $totaliNeuen[$cnt]['netotali'] = CostumerProduktZusatzversicherung::where('person_id_PZ', $dat->id)->count();
-            $statusGegen[$cnt]['statusGegen'] = CostumerProduktGrundversicherung::where('person_id_PG', $dat->id)->get();
-            $statusNeuen[$cnt]['statusNeuen'] = CostumerProduktZusatzversicherung::where('person_id_PZ', $dat->id)->get();
+
+            $sumGegen[$cnt]['grsum'] = $dat->grund->sum('total_commisions_PG');
+            $totaliGegen[$cnt]['totali'] = $dat->grund->count();
+            $sumNeuen[$cnt]['nesum'] = $dat->zus->sum('total_commisions_PZ');
+            $totaliNeuen[$cnt]['netotali'] = $dat->zus->count();
+            $statusGegen[$cnt]['statusGegen'] = $dat->grund;
+            $statusNeuen[$cnt]['statusNeuen'] = $dat->zus;
 
             $cnt++;
         }
@@ -431,58 +429,56 @@ else{
         return view('costumers', compact('sumGegen','statusGegen','statusNeuen','sumNeuen','totaliNeuen','totaliGegen','data','mandatiert','grundversicherungP','retchsschutzP','vorsorgeP','autoversicherungP','hausratP','zusatzversicherungP','family_person'));
 
     }else {
+        if($searchname == null) {
+            $data = family::with('hausrat')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Open'])->get();
 
-            $data = family::where('status', 'Done')->get();
+        }
 
-        if ($searchname != null) {
+        if ($searchname != null){
 
-            $data = family::where('last_name', 'like', '%' . $searchname . '%')
-                ->orWhere('first_name', 'like', '%' . $searchname . '%')
-                ->whereIn('status',['Done'])
-                ->paginate(100);
+            $data = family::with('hausrat')->with('df')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Done'])->where('first_name','like','%'.$searchname . '%')->get();
+
 
         }
         if (isset($request->searchdate1) && isset($request->searchdate2)) {
-            $data = family::whereBetween('created_at', [$date1, $date2])->whereIn('status',['Done'])->get();
+
+            $data = family::with('hausrat')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Done'])->where('first_name','like','%'.$searchname . '%')->whereBetween('family_person.created_at', [$date1, $date2])->get();
+
 
         }
-            $contracts = [];
-            $datcnt = 0;
 
-            $cnt = 0;
-            $mandatiert = [];
-            $sum = [];
-                foreach ($data as $dat) {
-                    $grundversicherungP[$cnt] = CostumerProduktGrundversicherung::where('person_id_PG', $dat->id)->first();
-                    $retchsschutzP[$cnt] = CostumerProduktRechtsschutz::where('person_id_PR', $dat->id)->first();
-                    $vorsorgeP[$cnt] = CostumerProduktVorsorge::where('person_id_PV', $dat->id)->first();
-                    $zusatzversicherungP[$cnt] = CostumerProduktZusatzversicherung::where('person_id_PZ', $dat->id)->first();
-                    $autoversicherungP[$cnt] = CostumerProduktAutoversicherung::where('person_id_PA', $dat->id)->first();
-                    $hausratP[$cnt] = CostumerProduktHausrat::where('person_id_PH', $dat->id)->first();
-                    $family_person[$cnt] = family::where('id', $dat->id)->first();
-                    if(LeadDataFahrzeug::where('person_id',$dat->id)->first()){
-                      if(LeadDataFahrzeug::where('person_id',$dat->id)->first()->mandatiert == null){
-                        $mandatiert[$cnt]['mandatiert'] = false;
-                      }
-                      else{
-                        $mandatiert[$cnt]['mandatiert'] = true;
-                      }
-                    }
-                    else{
-                      $mandatiert[$cnt]['mandatiert'] = false;
-                    }
+        $cnt = 0;
 
-                    $sumGegen[$cnt]['grsum'] = CostumerProduktGrundversicherung::where('person_id_PG', $dat->id)->get()->sum('total_commisions_PG');
-                    $totaliGegen[$cnt]['totali'] = CostumerProduktGrundversicherung::where('person_id_PG', $dat->id)->count();
-                    $sumNeuen[$cnt]['nesum'] = CostumerProduktZusatzversicherung::where('person_id_PZ', $dat->id)->get()->sum('total_commisions_PZ');
-                    $totaliNeuen[$cnt]['netotali'] = CostumerProduktZusatzversicherung::where('person_id_PZ', $dat->id)->count();
-                    $statusGegen[$cnt]['statusGegen'] = CostumerProduktGrundversicherung::where('person_id_PG', $dat->id)->get();
-                    $statusNeuen[$cnt]['statusNeuen'] = CostumerProduktZusatzversicherung::where('person_id_PZ', $dat->id)->get();
-
-                    $cnt++;
+        foreach ($data as $dat) {
+            $grundversicherungP[$cnt] = $dat->grund->first();
+            $retchsschutzP[$cnt] = $dat->rech->first();
+            $vorsorgeP[$cnt] = $dat->vor->first();
+            $zusatzversicherungP[$cnt] = $dat->zus->first();
+            $autoversicherungP[$cnt] = $dat->auto->first();
+            $hausratP[$cnt] = $dat->hausrat;
+            $family_person[$cnt] = $dat;
+            if($dat->df){
+                if($dat->df->mandatiert == null){
+                    $mandatiert[$cnt]['mandatiert'] = false;
                 }
+                else{
+                    $mandatiert[$cnt]['mandatiert'] = true;
+                }
+            }
+            else{
+                $mandatiert[$cnt]['mandatiert'] = false;
+            }
 
+            $sumGegen[$cnt]['grsum'] = $dat->grund->sum('total_commisions_PG');
+            $totaliGegen[$cnt]['totali'] = $dat->grund->count();
+            $sumNeuen[$cnt]['nesum'] = $dat->zus->sum('total_commisions_PZ');
+            $totaliNeuen[$cnt]['netotali'] = $dat->zus->count();
+            $statusGegen[$cnt]['statusGegen'] = $dat->grund;
+            $statusNeuen[$cnt]['statusNeuen'] = $dat->zus;
 
+            $cnt++;
+        }
+        $contracts = [];
 
 
 
@@ -494,10 +490,13 @@ else{
     }
   }
 
-
   public function tasks(Request $req,$az = false)
   {
+
     $user = auth()->user();
+    $pending = collect([]);
+    $open = collect();
+      $pend = collect([]);
     $start = microtime(true);
        $cnt = 0;
        $cnt1 = 0;
@@ -505,37 +504,40 @@ else{
        $urole = $user->getRoleNames()->toArray();
        if (in_array('backoffice',$urole) || in_array('admin',$urole)) {
         if (isset($req->searchpend)) {
-            $pend = family::with('adminpend')->with('family')
-                ->select( 'pendencies.admin_id','pendencies.family_id','pendencies.*','pendencies.id as pid')
+            foreach (Pendency::with('adminpend')->with('family')
                 ->where('pendencies.done', '=', 1)
-                ->where('pendencies.completed',0)
-                ->where('family_person.first_name', 'like', '%' . $req->searchpend . '%')
-                ->orderBy('family_person.first_name', 'asc')
-                ->paginate(120);
-
-        }else {
-            $pend = Pendency::with('adminpend')->with('family')
-                ->where('pendencies.done', '=', 1)
-                ->where('pendencies.completed',0)
-                ->select( 'pendencies.admin_id','pendencies.family_id','pendencies.*','pendencies.id as pid')
-                ->paginate(120);
-
+                ->where('pendencies.completed', 0)
+                ->select('pendencies.admin_id', 'pendencies.family_id', 'pendencies.*', 'pendencies.id as pid')
+                ->paginate(120) as $task) {
+                $pending->push($task);
+                if(stristr($task->family->first_name,$req->searchpend)) $pend->push($task);
+            }
         }
+        else
+        {
+            $pend = Pendency::with('adminpend')->with('family')
+                    ->where('pendencies.done', '=', 1)
+                    ->where('pendencies.completed', 0)
+                    ->select('pendencies.admin_id', 'pendencies.family_id', 'pendencies.*', 'pendencies.id as pid')
+                    ->paginate(120);
+            $pending = $pend;
+            }
         if (isset($req->searchopen)) {
-          $open = Pendency::with('adminpend')->with('family')
+          foreach(Pendency::with('adminpend')->with('family')
                 ->where('pendencies.done',0)
                 ->where('pendencies.completed',0)
-                ->where('family_person.first_name', 'like', '%' . $req->searchopen . '%')
-                ->select('pendencies.admin_id','pendencies.family_id','pendencies.*','pendencies.id as pid')
-                ->paginate(120);
+                ->select('pendencies.admin_id','pendencies.family_id','pendencies.*','pendencies.id as pid',)
+                ->paginate(120) as $task){
+              if(stristr($task->family->first_name,$req->searchopen)) $open->push($task);
+
+
+            }
         } else {
             $open = Pendency::with('adminpend')->with('family')
                 ->where('pendencies.done',0)
                 ->where('pendencies.completed',0)
                 ->select('pendencies.admin_id','pendencies.family_id','pendencies.*','pendencies.id as pid')
                 ->paginate(120);
-
-
         }
 
 
@@ -543,10 +545,10 @@ else{
         $opened = [];
 
         $answered = $pend;
-
-
             $opened = $open;
     }
+
+
     if (in_array('fs',$urole) || in_array('admin',$urole)) {
 if(in_array('admin',$urole)){
       $tasks = family::with('adminpend')
@@ -558,17 +560,13 @@ if(in_array('admin',$urole)){
       $cntt = 0;
 
       $realopen = [];
-      $pending = [];
       $opencnt = 0;
       $pendingcnt = 0;
 
       $opencnt = $tasks->count();
 
 
-      $pending = Pendency::with('adminpend')->with('family')
-      ->where('completed','=',0)
-      ->select('pendencies.*','pendencies.family_id as id','pendencies.id as pid','pendencies.type')
-      ->paginate(120);
+
     }
     else{
       $tasks = family::with('adminpend')
@@ -583,7 +581,7 @@ if(in_array('admin',$urole)){
       $cntt = 0;
 
       $realopen = [];
-      $pending = [];
+
       $opencnt = 0;
       $pendingcnt = 0;
 

@@ -847,7 +847,7 @@
                                            style="text-decoration:none;">
                                             <div class="px-2 py-2 ">
                                                 <div class="m-1 d-flex justify-content-between">
-                                                    <div class="fw-bold">{{ucfirst($task->family->first_name)}} {{ucfirst($task->family->last_name)}} </div>
+                                                    <div class="fw-bold">{{ucfirst($task->family ? $task->family->first_name . $task->family->last_name : "")}}  </div>
                                                     <div class="col-auto">
                                                                     <span>
                                                                         <span class="px-2" style="font-size: 19px;">
@@ -860,7 +860,7 @@
                                             </div>
                                         </a>
                                         <div id="demo{{$taskId}}" class="collapse px-3 py-2">
-                                            <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family->first_name)}}
+                                            <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family ? $task->family->first_name : "")}}
                                             </h6>
                                             <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                             <h6 class="m-1"><b>Adresse

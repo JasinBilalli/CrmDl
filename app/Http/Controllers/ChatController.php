@@ -21,9 +21,9 @@ class ChatController extends Controller
  public function chat($u1,$u2){
 
    $u1 = Crypt::decrypt($u1) / 1244;
-   $u2 = Crypt::decrypt($u2) / 1244;
-   
-   
+   $u2 = Crypt::decrypt(Crypt::decrypt($u2)) / 1244;
+
+
 
   if($u1 == Auth::user()->id || $u2 == Auth::user()->id){
 
@@ -89,9 +89,9 @@ if($participants->contains('id',$user->id)){
  public function getchat($u1,$u2,Request $req){
 
      $u1 = Crypt::decrypt($u1) / 1244;
-   
+
      $u2 = Crypt::decrypt($u2) / 1244;
-    
+
 
     $admin1 = Admins::find($u1);
     $admin2 = Admins::find($u2);

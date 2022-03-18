@@ -1095,7 +1095,7 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
                 </div>
             @endif
 			    <div class="text-end mx-auto">
-                        <notifications url="{{config('app.url')}}"></notifications>
+                        <notifications url="{{env('APP_URL')}}"></notifications>
                     </div>
                 <div class="container-fluid">
             @yield('content')

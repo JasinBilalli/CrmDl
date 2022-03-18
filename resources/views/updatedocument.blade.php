@@ -848,7 +848,7 @@ $urole = $urole->toArray();
                             <div class="text-center mt-3 pb-3">
                                 <div class="row mx-2 mx-sm-4">
                                     @if(in_array('admin',$urole) || in_array('backoffice',$urole))
-                                        <addtask2 url="{{config('app.url')}}" :client_id="{{$lead->id}}"
+                                        <addtask2 url="{{env('APP_URL')}}" :client_id="{{$lead->id}}"
                                                   :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask2>
                                     @endif
                                     <div class="text-center mt-3 pb-3">
@@ -3855,7 +3855,7 @@ $urole = $urole->toArray();
                             <div class="text-center mt-3 pb-3">
                                 <div class="row mx-2 mx-sm-4">
                                     @if(in_array('admin',$urole) || in_array('backoffice',$urole))
-                                        <addtask3 url="{{config('app.url')}}" :client_id="{{$lead->id}}"
+                                        <addtask3 url="{{env('APP_URL')}}" :client_id="{{$lead->id}}"
                                                   :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask3>
                                     @endif
                                     <div class="text-center mt-3 pb-3">
@@ -5061,7 +5061,7 @@ $urole = $urole->toArray();
                             <div class="text-center mt-3 pb-3">
                                 <div class="row mx-2 mx-sm-4">
                                     @if(in_array('admin',$urole) || in_array('backoffice',$urole))
-                                        <addtask4 url="{{config('app.url')}}" :client_id="{{$lead->id}}"
+                                        <addtask4 url="{{env('APP_URL')}}" :client_id="{{$lead->id}}"
                                                   :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask4>
                                     @endif
                                     <div class="text-center mt-3 pb-3">
@@ -5676,7 +5676,7 @@ $urole = $urole->toArray();
                                 <div class="text-center g-0 mt-3 pb-3">
                                     <div class="row mx-0 ">
                                         @if(in_array('admin',$urole) || in_array('backoffice',$urole))
-                                            <addtask url="{{config('app.url')}}" :client_id="{{$lead->id}}"
+                                            <addtask url="{{env('APP_URL')}}" :client_id="{{$lead->id}}"
                                                      :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
                                         @endif
 {{--                                        <div class="text-center mt-3 pb-3">--}}

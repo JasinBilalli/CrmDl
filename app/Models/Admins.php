@@ -13,17 +13,17 @@ use Musonza\Chat\Traits\Messageable;
 
 class Admins extends Authenticatable
 {
-    
+
     use HasApiTokens, HasFactory, Notifiable, HasRoles, Messageable;
 
     protected $guard_name = 'admins';
-  
+
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
-  
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -42,6 +42,9 @@ class Admins extends Authenticatable
         'email_verified_at'
     ];
 
+    public function leads(){
+        return $this->hasMany(lead::class,'assign_to_id');
+    }
     /**
      * The attributes that should be cast.
      *
