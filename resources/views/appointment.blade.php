@@ -357,7 +357,7 @@
 
 </div>
 <div class="col-12 col-sm-12 col-md-12 col-lg-12 g-0"><br>
-            <div class="row g-0">
+            <div class="row g-0 mx-2">
                 <div class="col-lg-9 col-12" style="font-size: 12px; text-align : center ;">
                     @if(session('msg')) <h5
                         style="color : #212529 ; background-color : #0080003b;">{!! session('msg') !!}</h5> <?php session(['msg' => '']); ?> @endif
@@ -378,7 +378,7 @@
                         <div id='wrap' class="me-2"
                              style="overflow-y: scroll;background: #eee;text-align: left;height: 540px ;text-align:center;border-top-left-radius: 12px;border-top-right-radius: 0px;border-bottom-left-radius: 12px;border-bottom-right-radius: 12px;">
 
-                            <hr class="mx-2" style="height: 2px">
+                            <!-- <hr class="mx-2" style="height: 2px"> -->
                             @foreach ( $appointments_events as $appointment )
                                 @if($appointment["rejected"] == 0)
                                     <div class='fc-event p-2 m-2'
@@ -591,7 +591,7 @@
 </div>
   <div class=" row g-0 mx-2">
 <div class="col-12" width="90%" style="font-size: 12px;">
-    <div id='calendar'></div>
+    <div id='calendar' class="mx-2"></div>
 
 
 </div>

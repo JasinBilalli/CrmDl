@@ -241,7 +241,7 @@
                         <div class="wrapper2 p-2">
                             @if(count($birthdays) == 0 && count($personalApp) == 0)
                                 <div class="text-center fs-4 fw-600" style="color: #9F9F9F">
-                                    Keine geburtstage für <heute></heute>
+                                    Keine geburtstage für heute
                                 </div>
                             @else
                             <div class="overflow-divv1">
@@ -415,7 +415,7 @@
                                     </div>
                                 </div>
 
-                                <div class="h-100 count px-4">
+                                <div class="h-100 count fs-5 px-4">
                                     {{count($tasks)}}
                                 </div>
                             </div>
@@ -518,7 +518,7 @@
                                 </div>
                                 </div>
 
-                                <div class="count h-100 px-4">
+                                <div class="count fs-5 h-100 px-4">
                                     {{count($birthdays) + count($personalApp)}}
                                 </div>
                             </div>
@@ -652,7 +652,7 @@
                                     <span class="ps-2">Pendenze / Zur Nachbearbeitung </span>
                                 </div>
                                 </div>
-                                <div class="h-100 px-4 count">
+                                <div class="h-100 fs-5 px-4 count">
                                     {{count($pending)}}
                                 </div>
                             </div>
@@ -1023,7 +1023,7 @@
                                         </div>
                                 </div>
 
-                                <div class="my-auto count h-100 px-4">
+                                <div class="my-auto count fs-5 h-100 px-4">
                                     {{count($answered)}}
                                 </div>
                             </div>
@@ -1149,7 +1149,7 @@
                                 <div class="txt-01">
                                     <span>Aufgaben öffnen</span>
                                 </div>
-                                <div class="px-4 count h-100">
+                                <div class="px-4 count fs-5 h-100">
                                     {{count($opened)}}
                                 </div>
                             </div>
@@ -1287,21 +1287,21 @@
             overflow-x: hidden;
         }
         .txt-01 {
-             font-size: 1.1rem;
-             font-weight: 600;
-             padding-top: 0.3rem;
-             padding-bottom: 0.3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
         }
         .count {
-        background-color: #EFEFEF;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        vertical-align: middle;
-        display: flex;
-        align-items: center;
-    }
+            background-color: #EFEFEF;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            vertical-align: middle;
+            display: flex;
+            align-items: center;
+        }
 
 
         .overflow-divvv::-webkit-scrollbar {

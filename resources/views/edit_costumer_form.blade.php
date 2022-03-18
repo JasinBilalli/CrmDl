@@ -2279,65 +2279,6 @@
     </div>
 </div>
 
-{{--<script>--}}
-{{--    var count = <?php echo $newGegenOfertenCount +1;?>;--}}
-{{--    for (i = 2; i <= count; i++) {--}}
-{{--        $("#accordionFlushExample0006").append('<div class="accordion-item my-1" style="background-color: #EFEFEF !important;border-radius: 15px !important; border: none !important;">'+--}}
-{{--            '<div id="flush-collapse0006" class="accordion-collapse collapse" aria-labelledby="flush-heading0006" data-bs-parent="#accordionFlushExample0006">' +--}}
-{{--            '<div class="accordion-body" style="background-color: #EFEFEF !important; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">' +--}}
-{{--            '<div class="mb-3">' +--}}
-{{--            '<div class="input-div1 input-groupp justify-content-between">' +--}}
-{{--            '<div class="pe-3">' +--}}
-{{--            '<span class="" style="font-size: 15px;">Abschlussdatum: </span>' +--}}
-{{--            '</div>' +--}}
-{{--            '<input class="py-1 form-control " type="date" name="graduation_date_PG' + i + '"' + ' id="" min="1900-01-01" max="9999-12-31">' +--}}
-{{--            '</div>' +--}}
-{{--            '</div>' +--}}
-{{--            '<div class="mb-3">' +--}}
-{{--            '<div class="input-div1 input-groupp justify-content-between">' +--}}
-{{--            '<div class="pe-3">' +--}}
-{{--            '<span class="" style="font-size: 15px;">Gesellschaft: </span>' +--}}
-{{--            '</div>'+--}}
-{{--            '<input class="py-1 form-control " type="text" name="society_PG' + i + '"' + ' id="">' +--}}
-{{--            '</div>' +--}}
-{{--            '</div>' +--}}
-{{--            '<div class="mb-3">' +--}}
-{{--            '<div class="input-div1 input-groupp justify-content-between">' +--}}
-{{--            '<div class="pe-3">' +--}}
-{{--            '<span class="" style="font-size: 15px;">Produkt </span>' +--}}
-{{--            '</div>' +--}}
-{{--            '<input class="py-1 form-control " type="text" name="product_PG' + i + '"' + ' id="">' +--}}
-{{--            '</div>' +--}}
-{{--            '</div>' +--}}
-{{--            '<div class="mb-3">' +--}}
-{{--            '<div class="input-div1 input-groupp justify-content-between">' +--}}
-{{--            '<div class="pe-3">' +--}}
-{{--            '<span class="" style="font-size: 15px;">Status </span>' +--}}
-{{--            '</div>' +--}}
-{{--            '<select class="form-select" aria-label="Default select example" name="status_PG' + i + '"' + '> <option selected value="notselected">Not Selected </option> <option value="Aufgenomen">Aufgenomen </option> <option value="Offen">Offen</option> <option value="Abgelehnt">Abgelehnt </option> <option value="Zuruckgezogen">Zuruckgezogen</option> <option value="Provisionert">Provisionert </option> </select>' +--}}
-{{--            '</div>' +--}}
-{{--            '</div>' +--}}
-{{--            '<div class="mb-3">' +--}}
-{{--            '<div class="input-div1 input-groupp justify-content-between">' +--}}
-{{--            '<div class="pe-3">' +--}}
-{{--            '<span class="" style="font-size: 15px;">Letze Anpassung </span>' +--}}
-{{--            '</div>' +--}}
-{{--            '<input class="py-1 form-control " type="date" name="last_adjustment_PG' + i + '"' + ' id="" min="1900-01-01" max="9999-12-31">' +--}}
-{{--            '</div>' +--}}
-{{--            '</div>' +--}}
-{{--            '<div class="mb-3">' +--}}
-{{--            '<div class="input-div1 input-groupp justify-content-between">' +--}}
-{{--            '<div class="pe-3">' +--}}
-{{--            '<span class="" style="font-size: 15px;">Gesamtprovision: </span>' +--}}
-{{--            '</div>' +--}}
-{{--            '<input class="py-1 form-control " type="number" name="total_commisions_PG' + i + '"' + ' id="">' +--}}
-{{--            '</div>' +--}}
-{{--            '</div>' +--}}
-{{--            '</div>'+--}}
-{{--            '</div>');--}}
-{{--    }--}}
-{{--</script>--}}
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function openBurgerFunct() {

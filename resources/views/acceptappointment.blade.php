@@ -1,7 +1,7 @@
 @extends('template.navbar')
 @section('content')
 
-    <title>Termine annehmen</title>
+    <title>Termine Annehmen</title>
 
 <section class="my-0 my-sm-5">
     <div class="container-fluid">

@@ -2480,7 +2480,7 @@
             '<div class="pe-3">' +
             '<span class="" style="font-size: 15px;">Status </span>' +
             '</div>' +
-            '<select class="form-select" aria-label="Default select example" name="status_PG' + i + '"' + '> <option selected value="notselected">Not Selected </option> <option value="Aufgenomen">Aufgenomen </option> <option value="Offen">Offen</option> <option value="Abgelehnt">Abgelehnt </option> <option value="Zuruckgezogen">Zuruckgezogen</option> <option value="Provisionert">Provisionert </option> </select>' +
+            '<select class="form-select" aria-label="Default select example" name="status_PG' + i + '"' + '> <option selected value="Nicht Ausgewählt">Nicht Ausgewählt</option> <option value="Aufgenomen">Aufgenomen </option> <option value="Offen">Offen</option> <option value="Abgelehnt">Abgelehnt </option> <option value="Zuruckgezogen">Zuruckgezogen</option> <option value="Provisionert">Provisionert </option> </select>' +
             '</div>' +
             '</div>' +
             '<div class="mb-3">' +
@@ -2538,7 +2538,7 @@
             '<div class="pe-3">' +
             '<span class="" style="font-size: 15px;">Status </span>' +
             '</div>' +
-            '<select class="form-select" aria-label="Default select example" name="status_PG' + i + '"' + ' disabled> <option selected value="notselected">Not Selected </option> <option value="Aufgenomen">Aufgenomen </option> <option value="Offen">Offen</option> <option value="Abgelehnt">Abgelehnt </option> <option value="Zuruckgezogen">Zuruckgezogen</option> <option value="Provisionert">Provisionert </option> </select>' +
+            '<select class="form-select" aria-label="Default select example" name="status_PG' + i + '"' + ' disabled> <option selected value="Nicht Ausgewählt">Nicht Ausgewählt</option> <option value="Aufgenomen">Aufgenomen </option> <option value="Offen">Offen</option> <option value="Abgelehnt">Abgelehnt </option> <option value="Zuruckgezogen">Zuruckgezogen</option> <option value="Provisionert">Provisionert </option> </select>' +
             '</div>' +
             '</div>' +
             '<div class="mb-3">' +
@@ -2616,7 +2616,7 @@
             '<span class="" style="font-size: 15px;">Status: </span>' +
             '</div>' +
             '<select class="form-select" aria-label="Default select example" name="status_PZ' + i + '"' + '>' +
-            '<option selected value="notselected">Not Selected </option>' +
+            '<option selected value="Nicht Ausgewählt">Nicht Ausgewählt</option>' +
             '<option value="Aufgenomen">Aufgenomen </option>' +
             '<option value="Offen">Offen</option>' +
             '<option value="Abgelehnt">Abgelehnt </option>' +
@@ -2707,7 +2707,7 @@
             '<span class="" style="font-size: 15px;">Status: </span>' +
             '</div>' +
             '<select class="form-select" aria-label="Default select example" disabled name="status_PZ' + i + '"' + '>' +
-            '<option selected value="notselected">Not Selected </option>' +
+            '<option selected value="Nicht Ausgewählt">Nicht Ausgewählt</option>' +
             '<option value="Aufgenomen">Aufgenomen </option>' +
             '<option value="Offen">Offen</option>' +
             '<option value="Abgelehnt">Abgelehnt </option>' +
