@@ -7465,6 +7465,21 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -37081,7 +37096,90 @@ var render = function () {
                         _vm._v(" "),
                         _vm.role != "fs"
                           ? _c("div", { staticClass: " py-2" }, [
-                              _vm._m(28),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "d-flex justify-content-between py-3",
+                                  staticStyle: {
+                                    "background-color": "transparent",
+                                  },
+                                },
+                                [
+                                  _vm._m(28),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "prev-nxt-btn d-flex" },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "prev-btn border p-2 bg-light m-2 rounded",
+                                        },
+                                        [
+                                          _c(
+                                            "svg",
+                                            {
+                                              staticClass: "bi bi-chevron-left",
+                                              attrs: {
+                                                xmlns:
+                                                  "http://www.w3.org/2000/svg",
+                                                width: "16",
+                                                height: "16",
+                                                fill: "currentColor",
+                                                viewBox: "0 0 16 16",
+                                              },
+                                            },
+                                            [
+                                              _c("path", {
+                                                attrs: {
+                                                  "fill-rule": "evenodd",
+                                                  d: "M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z",
+                                                },
+                                              }),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "nxt-btn border p-2 bg-light m-2 rounded",
+                                        },
+                                        [
+                                          _c(
+                                            "svg",
+                                            {
+                                              staticClass:
+                                                "bi bi-chevron-right",
+                                              attrs: {
+                                                xmlns:
+                                                  "http://www.w3.org/2000/svg",
+                                                width: "16",
+                                                height: "16",
+                                                fill: "currentColor",
+                                                viewBox: "0 0 16 16",
+                                              },
+                                            },
+                                            [
+                                              _c("path", {
+                                                attrs: {
+                                                  "fill-rule": "evenodd",
+                                                  d: "M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z",
+                                                },
+                                              }),
+                                            ]
+                                          ),
+                                        ]
+                                      ),
+                                    ]
+                                  ),
+                                ]
+                              ),
                               _vm._v(" "),
                               _c(
                                 "div",
@@ -38234,28 +38332,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "button-div my-auto mx-3 mx-smmoda-5 py-3" },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "px-5 py-2 fs-4 btn",
-            attrs: {
-              type: "submit",
-              "data-bs-toggle": "modal",
-              "data-bs-target": "#asign",
-            },
+    return _c("div", { staticClass: "button-div my-auto mx-2" }, [
+      _c(
+        "button",
+        {
+          staticClass: "px-5 py-2 fs-4 btn",
+          attrs: {
+            type: "submit",
+            "data-bs-toggle": "modal",
+            "data-bs-target": "#asign",
           },
-          [
-            _vm._v(
-              "\n                                        Zuweisen\n                                    "
-            ),
-          ]
-        ),
-      ]
-    )
+        },
+        [
+          _vm._v(
+            "\n                                        Zuweisen\n                                    "
+          ),
+        ]
+      ),
+    ])
   },
   function () {
     var _vm = this
@@ -39054,7 +39148,7 @@ var render = function () {
           ]
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "content greyBg py-3 px-2" }, [
+        _c("div", { staticClass: "content greyBg p-2" }, [
           _c(
             "div",
             { staticClass: "ovrflw pe-1" },

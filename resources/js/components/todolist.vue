@@ -14,7 +14,7 @@
             </div>
             <div class="fs-5 count px-4 fw-bold">{{cnt}}</div>
         </div>
-            <div class="content greyBg py-3 px-2">
+            <div class="content greyBg p-2">
 
                         <div class="ovrflw pe-1">
                             <div class="input-group mb-2" v-for="todo in todos">

@@ -79,6 +79,20 @@
                                 @endforeach
                                     @endif
                             </div>
+                            <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
+                        <div class="prev-nxt-btn d-flex">
+                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            </div>
+                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            </div>
+                        </div>
+                </div>
                         </div>
                     </div>
                 </div>
@@ -229,6 +243,20 @@
                                 @endforeach
                                     @endif
                             </div>
+                            <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
+                        <div class="prev-nxt-btn d-flex">
+                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            </div>
+                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            </div>
+                        </div>
+                </div>
                         </div>
                     </div>
                 </div>
@@ -456,6 +484,20 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="d-flex justify-content-end py-3" style="background-color: transparent;">
+                        <div class="prev-nxt-btn d-flex">
+                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            </div>
+                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            </div>
+                        </div>
+                </div>
                             </div>
                         </div>
                     </div>
@@ -791,6 +833,20 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="d-flex justify-content-end py-3" style="background-color: transparent;">
+                        <div class="prev-nxt-btn d-flex">
+                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            </div>
+                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            </div>
+                        </div>
+                </div>
                             </div>
                         </div>
                     </div>
@@ -897,6 +953,20 @@
                                 @endforeach
                                     @endif
                             </div>
+                            <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
+                        <div class="prev-nxt-btn d-flex">
+                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            </div>
+                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            </div>
+                        </div>
+                </div>
                         </div>
                     </div>
                 </div>
@@ -992,6 +1062,20 @@
                                 @endforeach
                                     @endif
                             </div>
+                            <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
+                        <div class="prev-nxt-btn d-flex">
+                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            </div>
+                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            </div>
+                        </div>
+                </div>
                         </div>
                     </div>
                 </div>
@@ -1140,6 +1224,20 @@
                                     </div>
                                 </div>
                                     @endif
+                                    <div class="d-flex justify-content-start p-3" style="background-color: transparent;">
+                        <div class="prev-nxt-btn d-flex">
+                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            </div>
+                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            </div>
+                        </div>
+                </div>
                             </div>
                         </div>
                     </div>
@@ -1270,6 +1368,20 @@
                                     </div>
                                 </div>
                                 @endif
+                                <div class="d-flex justify-content-start p-3" style="background-color: transparent;">
+                        <div class="prev-nxt-btn d-flex">
+                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            </div>
+                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                            </div>
+                        </div>
+                </div>
                             </div>
 
                         </div>
@@ -1594,32 +1706,45 @@
         border-radius: 10px;
     }
     .overflow-divv1 {
-        height: 37vh;
+        /* height: 37vh; */
+        height: auto;
+        max-height: 320px;
         overflow: auto;
     }
     .overflow-divv2 {
-        height: 28vh;
+        height: auto;
+        max-height: 320px;
+        /* height: 28vh; */
         overflow: auto;
     }
     .wrapper {
+        height: auto;
+        max-height: 400px;
         background-color: #F7F7F7;
         border-bottom-left-radius: 15px;
         border-top-left-radius: 15px;
         border-bottom-right-radius: 15px;
     }
     .wrapper1 {
+        height: auto;
+        max-height: 400px;
+        /* height: 400px; */
         background-color: #FF400010;
         border-bottom-left-radius: 15px;
         border-top-left-radius: 15px;
         border-bottom-right-radius: 15px;
     }
     .wrapper2 {
+        height: auto;
+        max-height: 400px;
         background-color: #fff;
         border-bottom-left-radius: 15px;
         border-top-left-radius: 15px;
         border-bottom-right-radius: 15px;
     }
     .wrapper3 {
+        height: auto;
+        max-height: 400px;
         background-color: #F7F7F7;
         border-bottom-left-radius: 15px;
         border-top-left-radius: 15px;
@@ -1817,7 +1942,7 @@
     }
     .answered-div .content {
         background-color: #EFEFEF;
-        height: 500px;
+        height: 560px;
         border-top-left-radius: 10px;
         border-top-right-radius: 0px;
         border-bottom-left-radius: 10px;
@@ -1857,7 +1982,7 @@
         background-color: #fff;
     }
     .open-tasks-bo .content {
-        height: 500px;
+        height: 560px;
         background-color: #EFEFEF;
         border-top-left-radius: 10px;
         border-top-right-radius: 0px;
@@ -1885,7 +2010,7 @@
         background-color: #fff;
     }
     .open-tasks .content {
-        height: 450px;
+        height: 525px;
         background-color: #EFEFEF;
         border-top-left-radius: 10px;
         border-top-right-radius: 0px;
@@ -1924,7 +2049,7 @@
         border-radius: 10px;
     }
     .birthday-div .content {
-        height: 450px;
+        height: 525px;
         background-color: #EFEFEF;
         border-top-left-radius: 10px;
         border-top-right-radius: 0px;
@@ -1934,9 +2059,9 @@
     }
     .birthday-div .content .overflow-div {
         overflow: auto;
-        height: 420px;
+        height: 500px;
         padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
+        /* padding-bottom: 1rem !important; */
         /* padding-right: 0 !important; */
     }
     /* .pending-divv {} */
@@ -1952,7 +2077,7 @@
         background-color: #fff;
     }
     .pending-divv .content {
-        height: 500px;
+        height: 520px;
         background-color: #EFEFEF;
         border-top-left-radius: 10px;
         border-top-right-radius: 0px;
@@ -1960,7 +2085,7 @@
         border-bottom-right-radius: 10px;
     }
     .pending-divv .content .overflow-div {
-        height: 460px;
+        height: 440px;
         overflow: auto;
         background-color: #EFEFEF;
         /* padding: 0 !important; */
