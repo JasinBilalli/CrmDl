@@ -114,9 +114,6 @@
                             <th scope="col" class="header-styling">Status</th>
                         </tr>
                         </thead>
-                        @php $user = auth()->user();
-                        $urole = $user->getRoleNames()->toArray();
-                        @endphp
                         <tbody id="body-table-edit"
                                style="cursor: pointer; border: none;border-bottom: 12px #fff solid;border-top: 5px #fff solid; border-radius: 30px !important;">
                         @if(!$data == [])
@@ -124,7 +121,7 @@
                                 @php $leadss=$data[$i]->id * 1244;
                                 $datId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                 @endphp
-                                @if(in_array('fs',$urole) || in_array('salesmanager',$urole))
+                                @if(Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('salesmanager'))
                                     @if($family_person[$i]->kundportfolio == 0)
                                         <th data-bs-toggle="modal" data-bs-target="#rejectmodal" scope="row"
                                             class="fw-bold" style="font-weight: 400 !important;">{{$data[$i]->id}}</th>
@@ -635,7 +632,7 @@
 
                         <div class="content-box my-2 mx-3 px-1 px-2 py-2">
                             <div class="top">
-                                @if(in_array('fs',$urole) || in_array('salesmanager',$urole))
+                                @if(Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('salesmanager'))
                                     @if($family_person[$i]->kundportfolio == 0)
                                         <div class="name-div" data-bs-toggle="modal" data-bs-target="#rejectmodali">
                                             <span class="fs-6">{{$data[$i]->first_name}} {{$data[$i]->last_name}} ({{$data[$i]->birthdate}})</span>

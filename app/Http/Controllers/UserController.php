@@ -657,11 +657,11 @@ class UserController extends Controller
                             }
                             if (strtotime($task->created_at) < strtotime(Carbon::now()->subDays(14)->format('Y-m-d'))) {
                                 if($task->provisionert == 0) $morethan30[$mcnt] = $task;
-                                
+
                                 $mcnt++;
                             }
                         }
-                   
+
 
 
                         $pendingcnt = DB::table('family_person')
@@ -669,38 +669,19 @@ class UserController extends Controller
                             ->select('family_person.first_name', 'pendencies.family_id', 'family_person.id', 'family_person.last_name')
                             ->where('pendencies.done', '<>', 1)
                             ->orderBy('family_person.first_name', 'asc')
-                            ->get()->count();
+                            ->count();
 
 
                     }
                     if (in_array('fs',$urole) || in_array('admin',$urole) || in_array('salesmanager',$urole) || in_array('digital',$urole)) {
 
                         if (in_array('fs',$urole)) {
-
-                            $pendingcnt = DB::table('family_person')
-                                ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
-                                ->where('pendencies.done', '<>', 1)
-                                ->where('pendencies.admin_id', $user->id)
-                                ->count();
-
-
+                            $pending = auth()->user()->pendencies()->where('done',0)->count();
                             $tasks = DB::table('leads')
                                 ->where('completed', '=', '0')
-                                ->where('status_contract', '!=', 'Done')
-                                ->orWhereNull('status_contract')
-                                ->where('status_task', '!=', 'Done')
-                                ->where('assign_to_id', $user->id)
                                 ->count();
-                            $done = DB::table('leads')
-                                ->where('completed', 1)
-                                ->where('status_contract', 'Done')
-                                ->where('assign_to_id', $user->id)
-                                ->where('status_task', 'Done')
-                                ->count();
-
-
+                            $done = auth()->user()->pendencies()->where('completed',1)->count();
                         } elseif (in_array('admin',$urole)) {
-
                             $pending = DB::table('family_person')
                                 ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
                                 ->where('pendencies.done', '=', 0)
@@ -726,8 +707,6 @@ class UserController extends Controller
                                 ->count();
                             $tasks = DB::table('leads')
                                 ->where('completed', '=', '0')
-                                ->where('status_contract', '!=', 'Done')
-                                ->orWhereNull('status_contract')
                                 ->where('status_task', '!=', 'Done')
                                 ->where('assign_to_id', $user->id)
                                 ->count();

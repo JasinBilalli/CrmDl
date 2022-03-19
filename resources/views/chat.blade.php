@@ -536,7 +536,7 @@ document.getElementById(x.id + 'c').value = filename;
 </script>
 
 <div id="app">
-    <chat url="{{env('APP_URL')}}" admin="{{Auth::user()->id}}"></chat>
+    <chat url="{{config('app.url')}}" admin="{{Auth::user()->id}}"></chat>
 </div>
 </body>
 </html>
