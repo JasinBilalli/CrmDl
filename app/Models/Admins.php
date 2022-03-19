@@ -45,6 +45,9 @@ class Admins extends Authenticatable
     public function leads(){
         return $this->hasMany(lead::class,'assign_to_id');
     }
+    public function pendencies(){
+        return $this->hasMany(Pendency::class,'admin_id');
+    }
     /**
      * The attributes that should be cast.
      *

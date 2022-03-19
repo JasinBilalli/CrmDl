@@ -469,7 +469,6 @@
                                             @php
                                                 $leadss = $task->id * 1244;
                                                 $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-
                                             @endphp
 
                                             <tr class="table-content1" style="cursor: pointer">
@@ -893,8 +892,6 @@
                                                     $pend_id = $task->pid;
                                                     $leadss = $task->admin_id * 1244;
                                                     $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-
-
                                                     $authUserId = \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
 
                                     @endphp
@@ -1012,7 +1009,7 @@
                                             <div class="px-2 py-2">
                                                 <div class="m-1 d-flex justify-content-between"
                                                      style="text-overflow: ellipsis; overflow:hidden;">
-                                                    <div class="fw-bold">{{ucfirst($task->family->first_name)}} {{ucfirst($task->family->last_name)}} </div>
+                                                    <div class="fw-bold">{{ucfirst($task->family ?$task->family->first_name  : "")}} {{ucfirst($task->family ? $task->family->last_name : "")}} </div>
                                                     <div class="col-auto">
                                                                     <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$leadsss])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
@@ -1025,7 +1022,7 @@
                                             </div>
                                         </a>
                                         <div id="demo_2{{$authUserId}}" class="collapse px-3 py-2">
-                                            <h6 class="m-1"><b>Klientin: {{ucfirst($task->family->first_name)}}</b>
+                                            <h6 class="m-1"><b>Klientin: {{ucfirst($task->family ? $task->family->first_name : "")}}</b>
                                             </h6>
                                             <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                             <h6 class="m-1"><b>Adresse
@@ -1172,7 +1169,7 @@
                                                        style="text-decoration:none;">
                                                         <div class="px-2 py-2 ">
                                                             <div class="m-1 d-flex justify-content-between">
-                                                                <div class="fw-bold">{{ucfirst($task->family->first_name)}} {{ucfirst($task->family->last_name)}} </div>
+                                                                <div class="fw-bold">{{ucfirst($task->family ? $task->family->first_name : "")}} {{ucfirst($task->family ? $task->family->last_name : "")}} </div>
                                                                 <div class="col-auto">
                                                                     <span>
                                                                         <span class="px-2" style="font-size: 19px;">
@@ -1185,7 +1182,7 @@
                                                         </div>
                                                     </a>
                                                     <div id="demo{{$taskId}}" class="collapse px-3 py-2">
-                                                        <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family->first_name)}}
+                                                        <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family ? $task->family->last_name : "")}}
                                                         </h6>
                                                         <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
                                                         <h6 class="m-1"><b>Adresse
@@ -1315,7 +1312,7 @@
                                                         <div class="px-2 py-2">
                                                             <div class="m-1 d-flex justify-content-between"
                                                                  style="text-overflow: ellipsis; overflow:hidden;">
-                                                                <div class="fw-bold">{{ucfirst($task->family->first_name)}} {{ucfirst($task->family->last_name)}} </div>
+                                                                <div class="fw-bold">{{ucfirst($task->family ? $task->family->last_name : "")}} {{ucfirst($task->family? $task->family->last_name : "")}} </div>
                                                                 <div class="col-auto">
                                                                     <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$authUserId])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
