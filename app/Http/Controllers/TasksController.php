@@ -370,7 +370,7 @@ class TasksController extends Controller
 
         if(Auth::user()->hasRole('fs') || Auth::user()->hasRole('digital')){
             if($searchname == null) {
-                foreach (family::with('hausrat')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Open'])
+                foreach (family::with('hausrat')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Done'])
                              ->orderBy('updated_at','desc')->paginate(200) as $fam) {
                     if ($fam->lead->assign_to_id == $user->id) $data->push($fam);
                 }
@@ -430,7 +430,7 @@ class TasksController extends Controller
 
         }else {
             if($searchname == null) {
-                $data = family::with('hausrat')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Open'])->orderBy('updated_at','desc')->paginate(100);
+                $data = family::with('hausrat')->with('lead')->with('grund')->with('rech')->with('vor')->with('zus')->with('auto')->whereIn('status', ['Done'])->orderBy('updated_at','desc')->paginate(100);
 
             }
 
