@@ -846,9 +846,27 @@
         }
     }
 
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background: url(https://c.tenor.com/b8F9BMmvXlcAAAAi/loading-round.gif) center no-repeat #fff;
+    background-size: 200px;
+}
+
+
 </style>
 
 <body>
+<div class="se-pre-con"></div>
 <?php
 $activePage = basename($_SERVER['PHP_SELF'], ".php");
 ?>
@@ -1686,6 +1704,16 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
         $("#bottom-burger").slideToggle();
     }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script> 
+    //paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut();;
+	});
+    </script>
 </body>
 {{--mobile--}}
 <style>
@@ -1782,6 +1810,9 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 
         .mobile-nav {
             display: flex;
+        }
+        .se-pre-con {
+            background-size: 100px;
         }
         body {
             padding-bottom: 65px;

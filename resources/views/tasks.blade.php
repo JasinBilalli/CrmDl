@@ -1220,7 +1220,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                    @endif
+                                   
                                     <div class="d-flex justify-content-start p-3" style="background-color: transparent;">
                         <div class="prev-nxt-btn d-flex">
                             <div class="prev-btn border p-2 bg-light m-2 rounded">
@@ -1235,6 +1235,7 @@
                             </div>
                         </div>
                 </div>
+                @endif
                             </div>
                         </div>
                     </div>
@@ -1312,7 +1313,7 @@
                                                         <div class="px-2 py-2">
                                                             <div class="m-1 d-flex justify-content-between"
                                                                  style="text-overflow: ellipsis; overflow:hidden;">
-                                                                <div class="fw-bold">{{ucfirst($task->family ? $task->family->last_name : "")}} {{ucfirst($task->family? $task->family->last_name : "")}} </div>
+                                                                <div class="fw-bold">{{ucfirst($task->family ? $task->family->first_name : "")}} {{ucfirst($task->family? $task->family->last_name : "")}} </div>
                                                                 <div class="col-auto">
                                                                     <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$authUserId])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
@@ -1364,7 +1365,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
+                              
                                 <div class="d-flex justify-content-start p-3" style="background-color: transparent;">
                         <div class="prev-nxt-btn d-flex">
                             <div class="prev-btn border p-2 bg-light m-2 rounded">
@@ -1379,6 +1380,7 @@
                             </div>
                         </div>
                 </div>
+                @endif
                             </div>
 
                         </div>
