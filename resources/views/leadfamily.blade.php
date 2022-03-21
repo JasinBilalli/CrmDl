@@ -17,6 +17,7 @@
 
 <body>
 
+<div class="se-pre-con"></div>
 
 <div class="row g-0">
     <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
@@ -817,10 +818,40 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous">
 </script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script> 
+    //paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut();;
+	});
+    </script>
 
 {{--Mobile--}}
 <style>
+        /* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background: url(https://c.tenor.com/b8F9BMmvXlcAAAAi/loading-round.gif) center no-repeat #fff;
+    background-size: 200px;
+}
+
+@media (max-width: 575.98px) { 
+    .se-pre-con {
+        background-size: 100px;
+    }
+}
     .activeClassNavMob__,
     .activeClassNavMob__ span,
     .activeClassNavMob__ svg {

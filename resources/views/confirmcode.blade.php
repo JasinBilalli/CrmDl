@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<div class="se-pre-con"></div>
 <form action="{{route('confirmcode')}}" method="post" class="form3">
     @csrf
 <section style="display:flex; justify-content: center; width: 100%;">
@@ -64,6 +65,28 @@
 </form>
 
 <style>
+    /* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background: url(https://c.tenor.com/b8F9BMmvXlcAAAAi/loading-round.gif) center no-repeat #fff;
+    background-size: 200px;
+}
+
+@media (max-width: 575.98px) { 
+    .se-pre-con {
+        background-size: 100px;
+    }
+
+ }
     #code-block i {
         font-style: normal !important;
         cursor: pointer;
@@ -125,7 +148,16 @@
     }
 
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script> 
+    //paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut();;
+	});
+    </script>
 
 <script>
     var cnt = 0;
