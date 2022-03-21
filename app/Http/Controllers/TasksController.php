@@ -493,77 +493,85 @@ class TasksController extends Controller
 
     public function tasks(Request $req,$az = false)
     {
-
-        $user = auth()->user();
-        $pending = collect([]);
-        $open = collect();
-        $pend = collect([]);
+        $user = auth();
         $start = microtime(true);
         $cnt = 0;
         $cnt1 = 0;
         $leadsss = Crypt::encrypt(Auth::user()->id * 1244);
-        $urole = $user->getRoleNames()->toArray();
-        if (in_array('backoffice',$urole) || in_array('admin',$urole)) {
+        if ($user->user()->hasRole('backoffice') || $user->user()->hasRole('admin')) {
             if (isset($req->searchpend)) {
-                foreach (Pendency::with('adminpend')->with('family')
-                             ->where('pendencies.done', '=', 1)
-                             ->where('pendencies.completed', 0)
-                             ->select('pendencies.admin_id', 'pendencies.family_id', 'pendencies.*', 'pendencies.id as pid')
-                             ->paginate(120) as $task) {
-                    $pending->push($task);
-                    if(stristr($task->family->first_name,$req->searchpend)) $pend->push($task);
-                }
-            }
+                $pend = family::with('adminpend')
+                    ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
+                    ->select('family_person.first_name','pendencies.admin_id', 'pendencies.family_id','pendencies.*','family_person.id', 'family_person.last_name','pendencies.id as pid')
+                    ->where('pendencies.done', '=', 1)
+                    ->where('pendencies.completed',0)
+                    ->where('family_person.first_name', 'like', '%' . $req->searchpend . '%')
+                    ->orderBy('family_person.first_name', 'asc')
+                    ->paginate(20,['*'],'pendP');
 
-            elseif (isset($req->searchopen)) {
-                foreach(Pendency::with('adminpend')->with('family')
-                            ->where('pendencies.done',0)
-                            ->where('pendencies.completed',0)
-                            ->select('pendencies.admin_id','pendencies.family_id','pendencies.*','pendencies.id as pid',)
-                            ->paginate(120) as $task){
-                    if(stristr($task->family->first_name,$req->searchopen)) $open->push($task);
-
-
-                }
-            }
-            else
-            {
-
-                foreach (Pendency::with('adminpend')->with('family')
-                             ->where('pendencies.completed', 0)
-                             ->select( 'pendencies.*', 'pendencies.id as pid')
-                             ->paginate(100) as $task){
-                    $pending->push($task);
-                    if($task->done == 0) $open->push($task);
-                }
+            }else {
+                $pend = family::with('adminpend')
+                    ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
+                    ->where('pendencies.done', '=', 1)
+                    ->where('pendencies.completed',0)
+                    ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id','pendencies.*','family_person.id', 'family_person.last_name','pendencies.id as pid')
+                    ->orderBy('family_person.first_name', 'asc')
+                    ->paginate(20,['*'],'pendP');
 
             }
+            if (isset($req->searchopen)) {
+                $open = family::with('adminpend')
+                    ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
+                    ->where('pendencies.done',0)
+                    ->where('pendencies.completed',0)
+                    ->where('family_person.first_name', 'like', '%' . $req->searchopen . '%')
+                    ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id', 'family_person.id', 'family_person.last_name','pendencies.*','pendencies.id as pid')
+                    ->orderBy('family_person.first_name', 'asc')
+                    ->paginate(20,['*'],'openP');
+            } else {
+                $open = family::with('adminpend')
+                    ->join('pendencies', 'family_person.id', '=', 'pendencies.family_id')
+                    ->where('pendencies.done',0)
+                    ->where('pendencies.completed',0)
+                    ->select('family_person.first_name', 'pendencies.admin_id','pendencies.family_id', 'family_person.id', 'family_person.last_name','pendencies.*','pendencies.id as pid')
+                    ->orderBy('family_person.first_name', 'asc')
+                    ->paginate(20,['*'],'openP');
 
+            }
 
             $answered = [];
             $opened = [];
 
             $answered = $pend;
+
+
             $opened = $open;
         }
-
-
-        if (in_array('fs',$urole) || in_array('admin',$urole)) {
-            if(in_array('admin',$urole)){
-                $tasks = family::with('adminpend')
+        if ($user->user()->hasRole('fs') || $user->user()->hasRole('admin')) {
+            if($user->user()->hasRole('admin')){
+                $tasks = family::
+                join('leads','family_person.leads_id','=','leads.id')
                     ->whereIn('family_person.status',['Open'])
                     ->select('family_person.*')
                     ->orderBy('family_person.created_at','desc')
-                    ->paginate(120);
+                    ->paginate(20,['*'],'tasksP');
 
                 $cntt = 0;
 
                 $realopen = [];
+                $pending = [];
                 $opencnt = 0;
                 $pendingcnt = 0;
 
+
+
                 $opencnt = $tasks->count();
 
+                $pending = family::with('adminpend')
+                    ->join('pendencies','family_person.id','=','pendencies.family_id')
+                    ->where('pendencies.completed','=',0)
+                    ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
+                    ->paginate(20,['*'],'pendingP');
 
 
             }
@@ -571,16 +579,16 @@ class TasksController extends Controller
                 $tasks = family::with('adminpend')
                     ->join('leads','family_person.leads_id','=','leads.id')
                     ->where('status','Open')
-                    ->where('leads.assign_to_id',$user->id)
+                    ->where('leads.assign_to_id',$user->user()->id)
                     ->select('family_person.*')
                     ->orderBy('family_person.created_at','desc')
-                    ->paginate(120);
+                    ->paginate(20,['*'],'tasksP');
 
                 $tasks2 = [];
                 $cntt = 0;
 
                 $realopen = [];
-
+                $pending = [];
                 $opencnt = 0;
                 $pendingcnt = 0;
 
@@ -588,22 +596,18 @@ class TasksController extends Controller
 
                 $opencnt = $tasks->count();
 
-                $pending = Pendency::with('adminpend')
-                    ->where('completed','=',0)
-                    ->where('admin_id',$user->id)
-                    ->select('pendencies.*','pendencies.family_id as id','pendencies.id as pid','pendencies.type')
-                    ->paginate(120);
-
-
-
-
+                $pending = family::with('adminpend')
+                    ->join('pendencies','family_person.id','=','pendencies.family_id')
+                    ->where('pendencies.completed','=',0)
+                    ->where('pendencies.admin_id','=',$user->user()->id)
+                    ->select('family_person.first_name as first_name','family_person.last_name as last_name','pendencies.*','family_person.id as id','pendencies.id as pid','pendencies.type')
+                    ->paginate(20,['*'],'pendingP');
 
             }
             $cnt = 0;
-            $costumers = collect();
             $birthdays = [];
             $todaydate = Carbon::now()->format('m-d');
-            foreach (family::where('birthdate','like','%'.Carbon::now()->format('m-d').'%')->paginate(50) as $cos){
+            foreach (family::where('birthdate','like','%'.Carbon::now()->format('m-d').'%')->paginate(200) as $cos){
                 if (substr($cos->birthdate, 5) == $todaydate) {
                     $birthdays[$cnt]['birthday'] = $cos->birthdate;
                     $now = (int) Carbon::now()->format('Y');
@@ -621,16 +625,13 @@ class TasksController extends Controller
 
 
 
-
-
         }
 
-        $personalApp = DB::table('personalappointment')->where('AppOrCon',1)->where('user_id',$user->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
+        $personalApp = DB::table('personalappointment')->where('AppOrCon',1)->where('user_id',Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
 
-        if(in_array('backoffice',$urole)) return view('tasks',compact('answered','pend','opened','leadsss'));
-        if(in_array('fs',$urole)) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','leadsss'));
-// dd($personalApp,$opencnt, $pendingcnt, $realopen, $pending, $birthdays, $tasks,$answered,$pend,$opened,$leadsss);
-        if(in_array('admin',$urole)) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','answered','pend','opened','leadsss'));
+        if($user->user()->hasRole('backoffice')) return view('tasks',compact('answered','pend','opened','leadsss'));
+        if($user->user()->hasRole('fs')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','leadsss'));
+        if($user->user()->hasRole('admin')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','answered','pend','opened','leadsss'));
 
 
     }
