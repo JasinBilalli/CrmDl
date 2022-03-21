@@ -21,7 +21,9 @@ return $this->belongsTo(Pendency::class,'id','family_id');
     public function hausrat(){
         return $this->belongsTo(CostumerProduktHausrat::class,'person_id');
     }
-
+ public function pendencies(){
+        return $this->hasMany(Pendency::class,'family_id');
+ }
     public function grund(){
         return $this->hasMany(CostumerProduktGrundversicherung::class,'person_id_PG');
     }

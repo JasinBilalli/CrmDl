@@ -637,7 +637,7 @@ class UserController extends Controller
                     $done = 0;
                     $recorded = 0;
                     $morethan30 = [];
-                    $pendencies = [];
+                    $pendencies = collect();
                     $taskcnt = 0;
                     $tasks = null;
 
@@ -650,13 +650,15 @@ class UserController extends Controller
                                      ->orderBy('family_person.first_name', 'asc')
                                      ->where('done', 1)
                                      ->orderBy('pendencies.created_at')
-                                     ->paginate(200) as $task) {
+                                     ->paginate(50,'*','pendP') as $task) {
                             if ($task->completed == 0) {
                                 $pendencies[$pcnt] = $task;
+
                                 $pcnt++;
                             }
+$pendencies->page = $req->pendP;
                             if (strtotime($task->created_at) < strtotime(Carbon::now()->subDays(14)->format('Y-m-d'))) {
-                                if($task->provisionert == 0) $morethan30[$mcnt] = $task;
+                                if($task->provisionert == 0 && $task->completed == 0) $morethan30[$mcnt] = $task;
 
                                 $mcnt++;
                             }
