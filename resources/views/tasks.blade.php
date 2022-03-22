@@ -487,7 +487,7 @@
                                                 $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                             @endphp
 
-                                            <tr class="table-content1" style="cursor: pointer">
+                                            <tr class="table-content1" style="cursor: pointer" >
                                                 <td scope="row"
                                                     onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($task->created_at)->format('Y-m-d') }}</td>
                                                 <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->first_name)}}</td>
