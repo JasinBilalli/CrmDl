@@ -249,12 +249,21 @@ class LeadDataController extends Controller
             if ($pend) {
                 $pend->done = 1;
                 $pend->type = 'Eingereicht';
+                $pend->kranken_skip = $request->krankenSkip;
+                $pend->auto_skip = $request->autoSkip;
+                $pend->vorsorge_skip = $request->vorsorgenSkip;
+                $pend->sachen_skip = $request->sachenSkip;
+
                 $pend->save();
-            } else {
+            }else {
                 $pend = new Pendency();
                 $pend->admin_id = Auth::user()->id;
                 $pend->family_id = $personId;
                 $pend->done = 1;
+                $pend->kranken_skip = $request->krankenSkip;
+                $pend->auto_skip = $request->autoSkip;
+                $pend->vorsorge_skip = $request->vorsorgenSkip;
+                $pend->sachen_skip = $request->sachenSkip;
                 $pend->type = 'Eingereicht';
                 $pend->save();
             }

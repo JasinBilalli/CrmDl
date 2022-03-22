@@ -498,7 +498,6 @@
                                 </div>
                                     <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
                                         <div class="prev-nxt-btn d-flex">
-                                            @if($tasks->count() > 0)
                                             <a href="{{route('tasks',['tasksP' => $tasks->currentPage() -1 ])}}">
                                                 <div class="prev-btn border p-2 bg-light m-2 rounded">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -506,7 +505,7 @@
                                                     </svg>
                                                 </div>
                                             </a>
-                                            @endif
+                                            @if($tasks->count() > 0)
                                             <a href="{{route('tasks',['tasksP' => $tasks->currentPage() + 1])}}">
                                                 <div class="nxt-btn border p-2 bg-light m-2 rounded">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -514,6 +513,7 @@
                                                     </svg>
                                                 </div>
                                             </a>
+                                            @endif
                                         </div>
                                     </div>
                             </div>
@@ -747,7 +747,7 @@
                                                     <td scope="row" @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
                                                         data-bs-toggle="modal" @endif>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$task->created_at)->format('Y-m-d')}}</td>
                                                     <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
-                                                        data-bs-toggle="modal" @endif>{{ucfirst($task->family ? $task->family->first_name : "")}}  {{ucfirst($task->family ? $task->family->last_name : "")}}</td>
+                                                        data-bs-toggle="modal" @endif>{{ucfirst($task->first_name)}}  {{ucfirst($task->last_name)}}</td>
                                                     <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
                                                         data-bs-toggle="modal" @endif>{{$task->title}}</td>
                                                     <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
