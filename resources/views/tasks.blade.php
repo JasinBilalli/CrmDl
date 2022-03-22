@@ -31,72 +31,70 @@
                             </div>
                         </div>
                         <div id="secondDivToggle" class="wrapper p-2" style="display: none;">
-
                             <div class="overflow-divv1">
                                 @if(count($tasks) == 0)
                                     <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
                                         Keine Offene Aufgaben
                                     </div>
                                 @else
-                                @php $admin_id = $leadsss; @endphp
-                                @foreach($tasks as $task)
-                                    @php
-                                        $leadss = $task->id * 1244;
-                                        $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                    @php $admin_id = $leadsss; @endphp
+                                    @foreach($tasks as $task)
+                                        @php
+                                            $leadss = $task->id * 1244;
+                                            $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                        @endphp
+                                        <a href="{{route('leadfamilyperson',[$taskId,$admin_id])}}">
+                                            <div class="offene-item-one py-2 px-3 m-2">
 
-                                    @endphp
-                                    <a href="{{route('leadfamilyperson',[$taskId,$admin_id])}}">
-                                        <div class="offene-item-one py-2 px-3 m-2">
-
-                                            <div class="d-flex justify-content-between">
-                                                <div class="name-divs">
-                                                    <div class="name fs-5 fw-bold" style="color: #535353;">
-                                                        {{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}}
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="name-divs">
+                                                        <div class="name fs-5 fw-bold" style="color: #535353;">
+                                                            {{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}}
+                                                        </div>
+                                                        <div class="status fw-bold" style="color: #535353;">
+                                                            Status: {{ucfirst($task->status)}}
+                                                        </div>
                                                     </div>
-                                                    <div class="status fw-bold" style="color: #535353;">
-                                                        Status: {{ucfirst($task->status)}}
+                                                    <div class="svg-divv">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
+                                                             viewBox="0 0 6.253 15.484">
+                                                            <g id="Group_1178" data-name="Group 1178"
+                                                               transform="translate(-1054.727 -165.697)">
+                                                                <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
+                                                                         rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
+                                                                         fill="#535353" />
+                                                                <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
+                                                                         rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
+                                                                         fill="#535353" />
+                                                            </g>
+                                                        </svg>
+
                                                     </div>
                                                 </div>
-                                                <div class="svg-divv">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
-                                                         viewBox="0 0 6.253 15.484">
-                                                        <g id="Group_1178" data-name="Group 1178"
-                                                           transform="translate(-1054.727 -165.697)">
-                                                            <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
-                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
-                                                                     fill="#535353" />
-                                                            <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
-                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
-                                                                     fill="#535353" />
-                                                        </g>
-                                                    </svg>
 
-                                                </div>
                                             </div>
-
-                                        </div>
-                                    </a>
-                                @endforeach
-                                    @endif
+                                        </a>
+                                    @endforeach
+                                @endif
                             </div>
                             <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
-                        <div class="prev-nxt-btn d-flex">
-                            <a href="{{route('tasks',['tasksP' => $tasks->currentPage() -1 ])}}">
-                            <div class="prev-btn border p-2 bg-light m-2 rounded">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                            </svg>
+                                <div class="prev-nxt-btn d-flex">
+                                    <a href="{{route('tasks',['tasksP' => $tasks->currentPage() -1 ])}}">
+                                        <div class="prev-btn border p-2 bg-light m-2 rounded">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <a href="{{route('tasks',['tasksP' => $tasks->currentPage() + 1])}}">
+                                        <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                            </a>
-                            <a href="{{route('tasks',['tasksP' => $tasks->currentPage() + 1])}}">
-                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                            </div>
-                            </a>
-                        </div>
-                </div>
                         </div>
                     </div>
                 </div>
@@ -122,130 +120,130 @@
                                         Keine Pendenze
                                     </div>
                                 @else
-                                @foreach($pending as $task)
-                                    @php
-                                        $leadss = $task->id * 1244;
-                                        $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                        $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
-                                        $pend_id = $task->pid;
-                                    @endphp
-                                    <div class="offene-item-one py-2 px-3 m-2" data-bs-target="#statss{{$task->pid}}"
-                                         data-bs-toggle="modal">
-                                        <div class="d-flex justify-content-between">
-                                            <div class="name-divs">
-                                                <div class="name fs-5 fw-bold" style="color: #535353;">
-                                                    {{ucfirst($task->first_name)}}  {{ucfirst($task->last_name)}}
-                                                </div>
-                                                <div class="comment fw-bold" style="color: #535353;">
-                                                    Art:
-                                                    @if($task->type == "task")
-                                                        <span class="submited-btn1 py-1 px-3">
+                                    @foreach($pending as $task)
+                                        @php
+                                            $leadss = $task->id * 1244;
+                                            $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
+                                            $pend_id = $task->pid;
+                                        @endphp
+                                        <div class="offene-item-one py-2 px-3 m-2" data-bs-target="#statss{{$task->pid}}"
+                                             data-bs-toggle="modal">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="name-divs">
+                                                    <div class="name fs-5 fw-bold" style="color: #535353;">
+                                                        {{ucfirst($task->first_name)}}  {{ucfirst($task->last_name)}}
+                                                    </div>
+                                                    <div class="comment fw-bold" style="color: #535353;">
+                                                        Art:
+                                                        @if($task->type == "task")
+                                                            <span class="submited-btn1 py-1 px-3">
                                                 {{ucfirst($task->type)}}
                                                 </span>
 
-                                                        <span class="submited-btn py-1 px-3">Eingereicht</span>
-                                                    @endif
-                                                </div>
-                                            </div>
-                                            <div class="svg-divv">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
-                                                     viewBox="0 0 6.253 15.484">
-                                                    <g id="Group_1178" data-name="Group 1178"
-                                                       transform="translate(-1054.727 -165.697)">
-                                                        <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
-                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
-                                                                 fill="#535353" />
-                                                        <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
-                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
-                                                                 fill="#535353" />
-                                                    </g>
-                                                </svg>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @if($task->type != 'Order')
-                                    <div class="modal fade" id="statss{{$task->pid}}" tabindex="-1"
-                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content"
-                                                 style="background: #f8f8f8; border-radius: 43px">
-                                                <div class="modal-header mx-3 pt-4"
-                                                     style="border-bottom: none !important;">
-                                                    <h4>Pendenzen Info</h4>
-                                                    <button type="button" class="btn-close"
-                                                            data-bs-dismiss="modal" aria-label="Close"
-                                                            style="opacity: 1 !important;"></button>
-                                                </div>
-                                                <div class="modal-body p-3">
-                                                    <div class="row">
-                                                        <div class="col-6">
-                                                            <div class="text-center my-1 fw-bold"
-                                                                 style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                Datum:
-                                                                <br>
-                                                                {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('Y-m-d')}}
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="text-center my-1 fw-bold"
-                                                                 style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
-                                                                Time:
-                                                                <br>
-                                                                {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('H:i')}}
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row my-2">
-                                                        <div class="col-6">
-                                                            <div class="text-center my-1 fw-bold"
-                                                                 style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                Kundenname:
-                                                                <br>
-                                                                {{ucfirst($task->first_name)}}
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <div class="text-center my-1 fw-bold"
-                                                                 style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
-                                                                Titel
-                                                                <br>
-                                                                {{$task->title}}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row my-2">
-                                                        <div class="col-12">
-                                                            <div class="text-center fw-bold"
-                                                                 style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                Beschreibung:
-                                                                <br>
-                                                                {{$task->description}}
-                                                            </div>
-                                                        </div>
+                                                            <span class="submited-btn py-1 px-3">Eingereicht</span>
+                                                        @endif
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer text-center"
-                                                     style="border-top: none !important; display: block;">
-
-                                                    <button type="button" class="btn px-3"
-                                                            style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                            data-bs-dismiss="modal"><b>Close</b></button>
-
-                                                    <a onclick="window.location.href='{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}'" >
-                                                        <button class="btn px-3"
-                                                                style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                data-bs-dismiss="modal"><b>Offen</b></button>
-                                                    </a>
+                                                <div class="svg-divv">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
+                                                         viewBox="0 0 6.253 15.484">
+                                                        <g id="Group_1178" data-name="Group 1178"
+                                                           transform="translate(-1054.727 -165.697)">
+                                                            <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
+                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
+                                                                     fill="#535353" />
+                                                            <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
+                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
+                                                                     fill="#535353" />
+                                                        </g>
+                                                    </svg>
 
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endif
-                                @endforeach
-                                    @endif
+                                        @if($task->type != 'Order')
+                                            <div class="modal fade" id="statss{{$task->pid}}" tabindex="-1"
+                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content"
+                                                         style="background: #f8f8f8; border-radius: 43px">
+                                                        <div class="modal-header mx-3 pt-4"
+                                                             style="border-bottom: none !important;">
+                                                            <h4>Pendenzen Info</h4>
+                                                            <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"
+                                                                    style="opacity: 1 !important;"></button>
+                                                        </div>
+                                                        <div class="modal-body p-3">
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <div class="text-center my-1 fw-bold"
+                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                        Datum:
+                                                                        <br>
+                                                                        {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('Y-m-d')}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="text-center my-1 fw-bold"
+                                                                         style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
+                                                                        Time:
+                                                                        <br>
+                                                                        {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('H:i')}}
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row my-2">
+                                                                <div class="col-6">
+                                                                    <div class="text-center my-1 fw-bold"
+                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                        Kundenname:
+                                                                        <br>
+                                                                        {{ucfirst($task->first_name)}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <div class="text-center my-1 fw-bold"
+                                                                         style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
+                                                                        Titel
+                                                                        <br>
+                                                                        {{$task->title}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row my-2">
+                                                                <div class="col-12">
+                                                                    <div class="text-center fw-bold"
+                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                        Beschreibung:
+                                                                        <br>
+                                                                        {{$task->description}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer text-center"
+                                                             style="border-top: none !important; display: block;">
+
+                                                            <button type="button" class="btn px-3"
+                                                                    style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
+                                                                    data-bs-dismiss="modal"><b>Close</b></button>
+
+                                                            <a onclick="window.location.href='{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}'" >
+                                                                <button class="btn px-3"
+                                                                        style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
+                                                                        data-bs-dismiss="modal"><b>Offen</b></button>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endif
                             </div>
                             <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
                                 <div class="prev-nxt-btn d-flex">
@@ -288,130 +286,130 @@
                                     Keine geburtstage für heute
                                 </div>
                             @else
-                            <div class="overflow-divv1">
-                                @foreach($birthdays as $birth)
-                                    <div class="offene-item-one22 py-2 px-3 m-2 bg-light border">
-                                        <div class="d-flex ">
-                                            <div class="my-auto col-auto pe-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
-                                                     class="bi bi-balloon" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd"
-                                                          d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z" />
-                                                </svg>
-                                            </div>
-                                            <div class="name-divs col">
-                                                <div class="name fs-5 fw-bold" style="color: #535353;">
-                                                    {{$birth['name']}}
+                                <div class="overflow-divv1">
+                                    @foreach($birthdays as $birth)
+                                        <div class="offene-item-one22 py-2 px-3 m-2 bg-light border">
+                                            <div class="d-flex ">
+                                                <div class="my-auto col-auto pe-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
+                                                         class="bi bi-balloon" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd"
+                                                              d="M8 9.984C10.403 9.506 12 7.48 12 5a4 4 0 0 0-8 0c0 2.48 1.597 4.506 4 4.984ZM13 5c0 2.837-1.789 5.227-4.52 5.901l.244.487a.25.25 0 1 1-.448.224l-.008-.017c.008.11.02.202.037.29.054.27.161.488.419 1.003.288.578.235 1.15.076 1.629-.157.469-.422.867-.588 1.115l-.004.007a.25.25 0 1 1-.416-.278c.168-.252.4-.6.533-1.003.133-.396.163-.824-.049-1.246l-.013-.028c-.24-.48-.38-.758-.448-1.102a3.177 3.177 0 0 1-.052-.45l-.04.08a.25.25 0 1 1-.447-.224l.244-.487C4.789 10.227 3 7.837 3 5a5 5 0 0 1 10 0Zm-6.938-.495a2.003 2.003 0 0 1 1.443-1.443C7.773 2.994 8 2.776 8 2.5c0-.276-.226-.504-.498-.459a3.003 3.003 0 0 0-2.46 2.461c-.046.272.182.498.458.498s.494-.227.562-.495Z" />
+                                                    </svg>
                                                 </div>
-                                                <div class="comment fw-bold" style="color: #535353;">
-                                                    {{$birth['birthday']}} ({{$birth['age']}} Jahre)
+                                                <div class="name-divs col">
+                                                    <div class="name fs-5 fw-bold" style="color: #535353;">
+                                                        {{$birth['name']}}
+                                                    </div>
+                                                    <div class="comment fw-bold" style="color: #535353;">
+                                                        {{$birth['birthday']}} ({{$birth['age']}} Jahre)
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="svg-divv">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
-                                                     viewBox="0 0 6.253 15.484">
-                                                    <g id="Group_1178" data-name="Group 1178"
-                                                       transform="translate(-1054.727 -165.697)">
-                                                        <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
-                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
-                                                                 fill="#535353" />
-                                                        <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
-                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
-                                                                 fill="#535353" />
-                                                    </g>
-                                                </svg>
+                                                <div class="svg-divv">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
+                                                         viewBox="0 0 6.253 15.484">
+                                                        <g id="Group_1178" data-name="Group 1178"
+                                                           transform="translate(-1054.727 -165.697)">
+                                                            <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
+                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
+                                                                     fill="#535353" />
+                                                            <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
+                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
+                                                                     fill="#535353" />
+                                                        </g>
+                                                    </svg>
 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
-                                @foreach($personalApp as $perApp)
-                                    <div class="offene-item-one22 py-2 px-3 m-2 bg-light border" data-bs-toggle="modal"
-                                         data-bs-target="#exampleModall{{$perApp->id}}">
-                                        <div class="d-flex ">
-                                            <div class="my-auto col-auto pe-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
-                                                     class="bi bi-file-medical" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
-                                                    <path
-                                                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
-                                                </svg>
-                                            </div>
-                                            <div class="name-divs col">
-                                                <div class="name fs-5 fw-bold" style="color: #535353;">
-                                                    {{$perApp->title}}
+                                    @endforeach
+                                    @foreach($personalApp as $perApp)
+                                        <div class="offene-item-one22 py-2 px-3 m-2 bg-light border" data-bs-toggle="modal"
+                                             data-bs-target="#exampleModall{{$perApp->id}}">
+                                            <div class="d-flex ">
+                                                <div class="my-auto col-auto pe-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
+                                                         class="bi bi-file-medical" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                                        <path
+                                                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                                                    </svg>
                                                 </div>
-                                                <div class="comment fw-bold" style="color: #535353;">
-                                                    {{$perApp->date}} ({{$perApp->time}})
+                                                <div class="name-divs col">
+                                                    <div class="name fs-5 fw-bold" style="color: #535353;">
+                                                        {{$perApp->title}}
+                                                    </div>
+                                                    <div class="comment fw-bold" style="color: #535353;">
+                                                        {{$perApp->date}} ({{$perApp->time}})
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="svg-divv">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
-                                                     viewBox="0 0 6.253 15.484">
-                                                    <g id="Group_1178" data-name="Group 1178"
-                                                       transform="translate(-1054.727 -165.697)">
-                                                        <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
-                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
-                                                                 fill="#535353" />
-                                                        <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
-                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
-                                                                 fill="#535353" />
-                                                    </g>
-                                                </svg>
+                                                <div class="svg-divv">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
+                                                         viewBox="0 0 6.253 15.484">
+                                                        <g id="Group_1178" data-name="Group 1178"
+                                                           transform="translate(-1054.727 -165.697)">
+                                                            <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
+                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
+                                                                     fill="#535353" />
+                                                            <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
+                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
+                                                                     fill="#535353" />
+                                                        </g>
+                                                    </svg>
 
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="modal fade" id="exampleModall{{$perApp->id}}" tabindex="-1"
-                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content"
-                                                 style="background: #f8f8f8; border-radius: 43px">
-                                                <div class="modal-header mx-3 pt-4"
-                                                     style="border-bottom: none !important;">
-                                                    <h4>Personal Appointment</h4>
-                                                    <button type="button" class="btn-close"
-                                                            data-bs-dismiss="modal" aria-label="Close"
-                                                            style="opacity: 1 !important;"></button>
-                                                </div>
-                                                <div class="modal-body p-3">
-                                                    <div class="row my-2">
-                                                        <div class="col-12">
-                                                            <div class=" fw-bold"
-                                                                 style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                Title: {{$perApp->title}}
-                                                                <br>
-                                                                Kommentar: {{$perApp->comment}}
-                                                                <br>
-                                                                Adress: {{$perApp->address}}
-                                                                <br>
-                                                                Datum: {{$perApp->date}}
-                                                                <br>
-                                                                Zeit: {{$perApp->time}}
-                                                                <br>
-                                                                Von: {{App\Models\Admins::find($perApp->assignfrom)->name}}
+                                        <div class="modal fade" id="exampleModall{{$perApp->id}}" tabindex="-1"
+                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content"
+                                                     style="background: #f8f8f8; border-radius: 43px">
+                                                    <div class="modal-header mx-3 pt-4"
+                                                         style="border-bottom: none !important;">
+                                                        <h4>Personal Appointment</h4>
+                                                        <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"
+                                                                style="opacity: 1 !important;"></button>
+                                                    </div>
+                                                    <div class="modal-body p-3">
+                                                        <div class="row my-2">
+                                                            <div class="col-12">
+                                                                <div class=" fw-bold"
+                                                                     style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                    Title: {{$perApp->title}}
+                                                                    <br>
+                                                                    Kommentar: {{$perApp->comment}}
+                                                                    <br>
+                                                                    Adress: {{$perApp->address}}
+                                                                    <br>
+                                                                    Datum: {{$perApp->date}}
+                                                                    <br>
+                                                                    Zeit: {{$perApp->time}}
+                                                                    <br>
+                                                                    Von: {{App\Models\Admins::find($perApp->assignfrom)->name}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer"
+                                                         style="border-top: none !important; display: block;">
+                                                        <div class="row mx-4 pb-4">
+                                                            <div class=" mx-auto">
+                                                                <button type="button" class="btn w-100 px-3"
+                                                                        style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
+                                                                        data-bs-dismiss="modal"><b>Schliessen</b>
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="modal-footer"
-                                                     style="border-top: none !important; display: block;">
-                                                    <div class="row mx-4 pb-4">
-                                                        <div class=" mx-auto">
-                                                            <button type="button" class="btn w-100 px-3"
-                                                                    style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                    data-bs-dismiss="modal"><b>Schliessen</b>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                                @endif
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -426,31 +424,31 @@
                             <div class="header  justify-content-between">
                                 <div class="d-flex">
                                     <div class="my-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 23.5 17.5">
-                                        <g id="pendingTasksSvg" transform="translate(-178.5 -76.5)">
-                                            <line id="Line_50" data-name="Line 50" x2="20" transform="translate(179.5 77.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-                                            <line id="Line_51" data-name="Line 51" x2="20" transform="translate(179.5 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-                                            <line id="Line_52" data-name="Line 52" x2="12" transform="translate(179.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-                                            <g id="Group_1042" data-name="Group 1042">
-                                            <g id="Ellipse_390" data-name="Ellipse 390" transform="translate(193 85)" fill="#fff" stroke="#000" stroke-width="0.8">
-                                                <circle cx="4.5" cy="4.5" r="4.5" stroke="none"/>
-                                                <circle cx="4.5" cy="4.5" r="4.1" fill="none"/>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" viewBox="0 0 23.5 17.5">
+                                            <g id="pendingTasksSvg" transform="translate(-178.5 -76.5)">
+                                                <line id="Line_50" data-name="Line 50" x2="20" transform="translate(179.5 77.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                                <line id="Line_51" data-name="Line 51" x2="20" transform="translate(179.5 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                                <line id="Line_52" data-name="Line 52" x2="12" transform="translate(179.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                                <g id="Group_1042" data-name="Group 1042">
+                                                    <g id="Ellipse_390" data-name="Ellipse 390" transform="translate(193 85)" fill="#fff" stroke="#000" stroke-width="0.8">
+                                                        <circle cx="4.5" cy="4.5" r="4.5" stroke="none"/>
+                                                        <circle cx="4.5" cy="4.5" r="4.1" fill="none"/>
+                                                    </g>
+                                                    <g id="Ellipse_391" data-name="Ellipse 391" transform="translate(195 89)" fill="#000" stroke="#000" stroke-width="1">
+                                                        <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
+                                                        <circle cx="0.5" cy="0.5" fill="none"/>
+                                                    </g>
+                                                    <g id="Ellipse_392" data-name="Ellipse 392" transform="translate(197 89)" fill="#000" stroke="#000" stroke-width="1">
+                                                        <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
+                                                        <circle cx="0.5" cy="0.5" fill="none"/>
+                                                    </g>
+                                                    <g id="Ellipse_393" data-name="Ellipse 393" transform="translate(199 89)" fill="#000" stroke="#000" stroke-width="1">
+                                                        <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
+                                                        <circle cx="0.5" cy="0.5" fill="none"/>
+                                                    </g>
+                                                </g>
                                             </g>
-                                            <g id="Ellipse_391" data-name="Ellipse 391" transform="translate(195 89)" fill="#000" stroke="#000" stroke-width="1">
-                                                <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
-                                                <circle cx="0.5" cy="0.5" fill="none"/>
-                                            </g>
-                                            <g id="Ellipse_392" data-name="Ellipse 392" transform="translate(197 89)" fill="#000" stroke="#000" stroke-width="1">
-                                                <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
-                                                <circle cx="0.5" cy="0.5" fill="none"/>
-                                            </g>
-                                            <g id="Ellipse_393" data-name="Ellipse 393" transform="translate(199 89)" fill="#000" stroke="#000" stroke-width="1">
-                                                <circle cx="0.5" cy="0.5" r="0.5" stroke="none"/>
-                                                <circle cx="0.5" cy="0.5" fill="none"/>
-                                            </g>
-                                            </g>
-                                        </g>
-                                    </svg>
+                                        </svg>
 
 
                                     </div>
@@ -478,48 +476,46 @@
                                             <div class="fs-5 fw-600" style="position: absolute; margin-top: 70px; color: #9F9F9F">
                                                 Keine Offene Aufgaben
                                             </div>
-
                                         @else
-                                        @php  $admin_id = Crypt::encrypt($leadsss); @endphp
-                                        @foreach($tasks as $task)
-                                            @php
-                                                $leadss = $task->id * 1244;
-                                                $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                            @endphp
+                                            @php  $admin_id = Crypt::encrypt($leadsss); @endphp
+                                            @foreach($tasks as $task)
+                                                @php
+                                                    $leadss = $task->id * 1244;
+                                                    $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                @endphp
 
-                                            <tr class="table-content1" style="cursor: pointer" >
-                                                <td scope="row"
-                                                    onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($task->created_at)->format('Y-m-d') }}</td>
-                                                <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->first_name)}}</td>
-                                                <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->last_name)}}</td>
-                                            </tr>
+                                                <tr class="table-content1" style="cursor: pointer" >
+                                                    <td scope="row"
+                                                        onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($task->created_at)->format('Y-m-d') }}</td>
+                                                    <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->first_name)}}</td>
+                                                    <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->last_name)}}</td>
+                                                </tr>
 
-                                        @endforeach
+                                            @endforeach
                                         @endif
                                         </tbody>
                                     </table>
                                 </div>
-                                @if($tasks->count() > 0)
-                                <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
-                                    <div class="prev-nxt-btn d-flex">
-                                        <a href="{{route('tasks',['tasksP' => $tasks->currentPage() -1 ])}}">
-                                            <div class="prev-btn border p-2 bg-light m-2 rounded">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                                                </svg>
-                                            </div>
-                                        </a>
-                                        @endif
-                                        <a href="{{route('tasks',['tasksP' => $tasks->currentPage() + 1])}}">
-                                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                                                </svg>
-                                            </div>
-                                        </a>
+                                    <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
+                                        <div class="prev-nxt-btn d-flex">
+                                            @if($tasks->count() > 0)
+                                            <a href="{{route('tasks',['tasksP' => $tasks->currentPage() -1 ])}}">
+                                                <div class="prev-btn border p-2 bg-light m-2 rounded">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                            @endif
+                                            <a href="{{route('tasks',['tasksP' => $tasks->currentPage() + 1])}}">
+                                                <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                                    </svg>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -528,58 +524,58 @@
                             <div class="header  justify-content-between">
                                 <div class="d-flex">
                                     <div class="my-auto">
-                                     <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 21 17.837">
-                                        <g id="anniversay" transform="translate(-277 -71.163)">
-                                            <g id="Rectangle_904" data-name="Rectangle 904" transform="translate(277 78)" fill="#fff" stroke="#000" stroke-width="1">
-                                            <rect width="21" height="11" rx="2" stroke="none"/>
-                                            <rect x="0.5" y="0.5" width="20" height="10" rx="1.5" fill="none"/>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 21 17.837">
+                                            <g id="anniversay" transform="translate(-277 -71.163)">
+                                                <g id="Rectangle_904" data-name="Rectangle 904" transform="translate(277 78)" fill="#fff" stroke="#000" stroke-width="1">
+                                                    <rect width="21" height="11" rx="2" stroke="none"/>
+                                                    <rect x="0.5" y="0.5" width="20" height="10" rx="1.5" fill="none"/>
+                                                </g>
+                                                <g id="Group_1047" data-name="Group 1047" transform="translate(279.578 71.5)">
+                                                    <g id="Group_1044" data-name="Group 1044" transform="translate(1)">
+                                                        <path id="Path_1959" data-name="Path 1959" d="M0,0H0L-.531,1.063l-.391.859L0,3" transform="translate(0.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                                        <path id="Path_1960" data-name="Path 1960" d="M-.922,0h0l.563,1.078.391.844L-.922,3" transform="translate(1.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                                    </g>
+                                                    <g id="Group_1045" data-name="Group 1045" transform="translate(13)">
+                                                        <path id="Path_1959-2" data-name="Path 1959" d="M0,0H0L-.531,1.063l-.391.859L0,3" transform="translate(0.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                                        <path id="Path_1960-2" data-name="Path 1960" d="M-.922,0h0l.563,1.078.391.844L-.922,3" transform="translate(1.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                                    </g>
+                                                    <g id="Group_1046" data-name="Group 1046" transform="translate(7)">
+                                                        <path id="Path_1959-3" data-name="Path 1959" d="M0,0H0L-.531,1.063l-.391.859L0,3" transform="translate(0.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                                        <path id="Path_1960-3" data-name="Path 1960" d="M-.922,0h0l.563,1.078.391.844L-.922,3" transform="translate(1.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
+                                                    </g>
+                                                </g>
+                                                <g id="Rectangle_906" data-name="Rectangle 906" transform="translate(280 75)" fill="#fff" stroke="#000" stroke-linejoin="round" stroke-width="1">
+                                                    <rect width="3" height="4" stroke="none"/>
+                                                    <rect x="0.5" y="0.5" width="2" height="3" fill="none"/>
+                                                </g>
+                                                <g id="Rectangle_912" data-name="Rectangle 912" transform="translate(286 75)" fill="#fff" stroke="#000" stroke-linejoin="round" stroke-width="1">
+                                                    <rect width="3" height="4" stroke="none"/>
+                                                    <rect x="0.5" y="0.5" width="2" height="3" fill="none"/>
+                                                </g>
+                                                <g id="Rectangle_913" data-name="Rectangle 913" transform="translate(292 75)" fill="#fff" stroke="#000" stroke-linejoin="round" stroke-width="1">
+                                                    <rect width="3" height="4" stroke="none"/>
+                                                    <rect x="0.5" y="0.5" width="2" height="3" fill="none"/>
+                                                </g>
+                                                <line id="Line_53" data-name="Line 53" x2="17.5" transform="translate(278.75 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+                                                <g id="Rectangle_909" data-name="Rectangle 909" transform="translate(279 78)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                                                    <rect width="5" height="3" stroke="none"/>
+                                                    <rect x="0.5" y="0.5" width="4" height="2" fill="none"/>
+                                                </g>
+                                                <g id="Rectangle_910" data-name="Rectangle 910" transform="translate(291 78)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                                                    <rect width="5" height="3" stroke="none"/>
+                                                    <rect x="0.5" y="0.5" width="4" height="2" fill="none"/>
+                                                </g>
+                                                <g id="Rectangle_911" data-name="Rectangle 911" transform="translate(285 78)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+                                                    <rect width="5" height="3" stroke="none"/>
+                                                    <rect x="0.5" y="0.5" width="4" height="2" fill="none"/>
+                                                </g>
                                             </g>
-                                            <g id="Group_1047" data-name="Group 1047" transform="translate(279.578 71.5)">
-                                            <g id="Group_1044" data-name="Group 1044" transform="translate(1)">
-                                                <path id="Path_1959" data-name="Path 1959" d="M0,0H0L-.531,1.063l-.391.859L0,3" transform="translate(0.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
-                                                <path id="Path_1960" data-name="Path 1960" d="M-.922,0h0l.563,1.078.391.844L-.922,3" transform="translate(1.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
-                                            </g>
-                                            <g id="Group_1045" data-name="Group 1045" transform="translate(13)">
-                                                <path id="Path_1959-2" data-name="Path 1959" d="M0,0H0L-.531,1.063l-.391.859L0,3" transform="translate(0.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
-                                                <path id="Path_1960-2" data-name="Path 1960" d="M-.922,0h0l.563,1.078.391.844L-.922,3" transform="translate(1.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
-                                            </g>
-                                            <g id="Group_1046" data-name="Group 1046" transform="translate(7)">
-                                                <path id="Path_1959-3" data-name="Path 1959" d="M0,0H0L-.531,1.063l-.391.859L0,3" transform="translate(0.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
-                                                <path id="Path_1960-3" data-name="Path 1960" d="M-.922,0h0l.563,1.078.391.844L-.922,3" transform="translate(1.922)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"/>
-                                            </g>
-                                            </g>
-                                            <g id="Rectangle_906" data-name="Rectangle 906" transform="translate(280 75)" fill="#fff" stroke="#000" stroke-linejoin="round" stroke-width="1">
-                                            <rect width="3" height="4" stroke="none"/>
-                                            <rect x="0.5" y="0.5" width="2" height="3" fill="none"/>
-                                            </g>
-                                            <g id="Rectangle_912" data-name="Rectangle 912" transform="translate(286 75)" fill="#fff" stroke="#000" stroke-linejoin="round" stroke-width="1">
-                                            <rect width="3" height="4" stroke="none"/>
-                                            <rect x="0.5" y="0.5" width="2" height="3" fill="none"/>
-                                            </g>
-                                            <g id="Rectangle_913" data-name="Rectangle 913" transform="translate(292 75)" fill="#fff" stroke="#000" stroke-linejoin="round" stroke-width="1">
-                                            <rect width="3" height="4" stroke="none"/>
-                                            <rect x="0.5" y="0.5" width="2" height="3" fill="none"/>
-                                            </g>
-                                            <line id="Line_53" data-name="Line 53" x2="17.5" transform="translate(278.75 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
-                                            <g id="Rectangle_909" data-name="Rectangle 909" transform="translate(279 78)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-                                            <rect width="5" height="3" stroke="none"/>
-                                            <rect x="0.5" y="0.5" width="4" height="2" fill="none"/>
-                                            </g>
-                                            <g id="Rectangle_910" data-name="Rectangle 910" transform="translate(291 78)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-                                            <rect width="5" height="3" stroke="none"/>
-                                            <rect x="0.5" y="0.5" width="4" height="2" fill="none"/>
-                                            </g>
-                                            <g id="Rectangle_911" data-name="Rectangle 911" transform="translate(285 78)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-                                            <rect width="5" height="3" stroke="none"/>
-                                            <rect x="0.5" y="0.5" width="4" height="2" fill="none"/>
-                                            </g>
-                                        </g>
                                         </svg>
 
                                     </div>
                                     <div class="txt-01">
-                                    <span class="ps-2">Geburstage/Jubiläen</span>
-                                </div>
+                                        <span class="ps-2">Geburstage/Jubiläen</span>
+                                    </div>
                                 </div>
 
                                 <div class="count fs-5 h-100 px-4">
@@ -594,28 +590,28 @@
                                             <hr>
                                         </div>
                                     @else
-                                    @foreach($birthdays as $birth)
-                                    <div class="p-2 my-2 birthday-itemm bg-white d-flex">
-                                            <div class="my-auto px-2">
+                                        @foreach($birthdays as $birth)
+                                            <div class="p-2 my-2 birthday-itemm bg-white d-flex">
+                                                <div class="my-auto px-2">
                                                 <span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
                                                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                                                 </svg>
                                                 </span>
+                                                </div>
+                                                <div class="">
+                                                    <div class="fs-5 fw-600">{{$birth['name']}}</div>
+                                                    <div class="">{{$birth['birthday']}} ({{$birth['age']}} yahre)</div>
+                                                </div>
                                             </div>
-                                            <div class="">
-                                                <div class="fs-5 fw-600">{{$birth['name']}}</div>
-                                                <div class="">{{$birth['birthday']}} ({{$birth['age']}} yahre)</div>
-                                            </div>
-                                    </div>
-                                    @endforeach
+                                        @endforeach
                                     @endif
                                     @if(count($personalApp) == 0)
                                         <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
                                             Keine persönlichen Termine für heute
                                             <hr>
                                         </div>
-                                        @else
+                                    @else
                                         @foreach($personalApp as $perApp)
                                             <div class="offene-item-one22 py-2 px-3 my-2" data-bs-toggle="modal"
                                                  data-bs-target="#exampleModalll{{$perApp->id}}" style="cursor: pointer">
@@ -686,7 +682,7 @@
                                                 </div>
                                             </div>
                                         @endforeach
-                                        @endif
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -696,25 +692,25 @@
                             <div class="header justify-content-between">
                                 <div class="d-flex">
                                     <div class="my-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 23.5 17.5">
-                                        <g id="openedTasksSvg" transform="translate(-178.5 -76.5)">
-                                            <line id="Line_50" data-name="Line 50" x2="20" transform="translate(179.5 77.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-                                            <line id="Line_51" data-name="Line 51" x2="20" transform="translate(179.5 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-                                            <line id="Line_52" data-name="Line 52" x2="12" transform="translate(179.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-                                            <g id="Group_1042" data-name="Group 1042">
-                                            <g id="Ellipse_390" data-name="Ellipse 390" transform="translate(193 85)" fill="#fff" stroke="#000" stroke-width="0.8">
-                                                <circle cx="4.5" cy="4.5" r="4.5" stroke="none"/>
-                                                <circle cx="4.5" cy="4.5" r="4.1" fill="none"/>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 23.5 17.5">
+                                            <g id="openedTasksSvg" transform="translate(-178.5 -76.5)">
+                                                <line id="Line_50" data-name="Line 50" x2="20" transform="translate(179.5 77.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                                <line id="Line_51" data-name="Line 51" x2="20" transform="translate(179.5 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                                <line id="Line_52" data-name="Line 52" x2="12" transform="translate(179.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                                <g id="Group_1042" data-name="Group 1042">
+                                                    <g id="Ellipse_390" data-name="Ellipse 390" transform="translate(193 85)" fill="#fff" stroke="#000" stroke-width="0.8">
+                                                        <circle cx="4.5" cy="4.5" r="4.5" stroke="none"/>
+                                                        <circle cx="4.5" cy="4.5" r="4.1" fill="none"/>
+                                                    </g>
+                                                    <path id="Path_1956" data-name="Path 1956" d="M-1.219.859l1.578.484" transform="translate(197.141 88.156)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.3"/>
+                                                    <path id="Path_1955" data-name="Path 1955" d="M-.406,0h0V2.531" transform="translate(197.906 86.969)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.3"/>
+                                                </g>
                                             </g>
-                                            <path id="Path_1956" data-name="Path 1956" d="M-1.219.859l1.578.484" transform="translate(197.141 88.156)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.3"/>
-                                            <path id="Path_1955" data-name="Path 1955" d="M-.406,0h0V2.531" transform="translate(197.906 86.969)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.3"/>
-                                            </g>
-                                        </g>
-                                    </svg>
+                                        </svg>
                                     </div>
                                     <div class="txt-01">
-                                    <span class="ps-2">Pendenze / Zur Nachbearbeitung</span>
-                                </div>
+                                        <span class="ps-2">Pendenze / Zur Nachbearbeitung</span>
+                                    </div>
                                 </div>
                                 <div class="h-100 fs-5 px-4 count">
                                     {{count($pending)}}
@@ -739,118 +735,118 @@
                                                 Keine Pendenze
                                             </div>
                                         @else
-                                        @foreach($pending as $task)
-                                            @php
-                                                $leadss = $task->id * 1244;
-                                                $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
-                                                $pend_id = $task->pid;
-                                            @endphp
+                                            @foreach($pending as $task)
+                                                @php
+                                                    $leadss = $task->id * 1244;
+                                                    $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                    $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
+                                                    $pend_id = $task->pid;
+                                                @endphp
 
-                                            <tr class="table-content" style="cursor: pointer">
-                                                <td scope="row" @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal" @endif>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$task->created_at)->format('Y-m-d')}}</td>
-                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal" @endif>{{ucfirst($task->family ? $task->family->first_name : "")}}  {{ucfirst($task->family ? $task->family->last_name : "")}}</td>
-                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal" @endif>{{$task->title}}</td>
-                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal" @endif>{{$task->description}}</td>
-                                                <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
-                                                    data-bs-toggle="modal" @endif>
-                                                    @if($task->type == "Task")
-                                                        <span class="submited-btn1 py-2 px-4">
+                                                <tr class="table-content" style="cursor: pointer">
+                                                    <td scope="row" @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
+                                                        data-bs-toggle="modal" @endif>{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$task->created_at)->format('Y-m-d')}}</td>
+                                                    <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
+                                                        data-bs-toggle="modal" @endif>{{ucfirst($task->family ? $task->family->first_name : "")}}  {{ucfirst($task->family ? $task->family->last_name : "")}}</td>
+                                                    <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
+                                                        data-bs-toggle="modal" @endif>{{$task->title}}</td>
+                                                    <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
+                                                        data-bs-toggle="modal" @endif>{{$task->description}}</td>
+                                                    <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
+                                                        data-bs-toggle="modal" @endif>
+                                                        @if($task->type == "Task")
+                                                            <span class="submited-btn1 py-2 px-4">
                                                         {{ucfirst($task->type)}}
                                                         </span>
-                                                    @elseif($task->type == 'Order')
-                                                        <span class="submited-btn py-2 px-4">Offer</span>
-                                                    @else
-                                                    <span class="submited-btn py-2 px-4">Offer</span>
-                                                    @endif
-                                                </td>
-                                            </tr>
+                                                        @elseif($task->type == 'Order')
+                                                            <span class="submited-btn py-2 px-4">Offer</span>
+                                                        @else
+                                                            <span class="submited-btn py-2 px-4">Offer</span>
+                                                        @endif
+                                                    </td>
+                                                </tr>
 
-                                            <div class="modal fade" id="stats{{$task->pid}}" tabindex="-1"
-                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content"
-                                                         style="background: #f8f8f8; border-radius: 43px">
-                                                        <div class="modal-header mx-3 pt-4"
-                                                             style="border-bottom: none !important;">
-                                                            <h4>Pendenzen Info</h4>
-                                                            <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"
-                                                                    style="opacity: 1 !important;"></button>
-                                                        </div>
-                                                        <div class="modal-body p-3">
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div class="text-center my-1 fw-bold"
-                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                        Datum:
-                                                                        <br>
-                                                                        {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('Y-m-d')}}
+                                                <div class="modal fade" id="stats{{$task->pid}}" tabindex="-1"
+                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content"
+                                                             style="background: #f8f8f8; border-radius: 43px">
+                                                            <div class="modal-header mx-3 pt-4"
+                                                                 style="border-bottom: none !important;">
+                                                                <h4>Pendenzen Info</h4>
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"
+                                                                        style="opacity: 1 !important;"></button>
+                                                            </div>
+                                                            <div class="modal-body p-3">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <div class="text-center my-1 fw-bold"
+                                                                             style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                            Datum:
+                                                                            <br>
+                                                                            {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('Y-m-d')}}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="text-center my-1 fw-bold"
+                                                                             style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
+                                                                            Time:
+                                                                            <br>
+                                                                            {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('H:i')}}
+
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-6">
-                                                                    <div class="text-center my-1 fw-bold"
-                                                                         style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
-                                                                        Time:
-                                                                        <br>
-                                                                        {{Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $task->created_at)->format('H:i')}}
-
+                                                                <div class="row my-2">
+                                                                    <div class="col-6">
+                                                                        <div class="text-center my-1 fw-bold"
+                                                                             style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                            Kundenname:
+                                                                            <br>
+                                                                            {{ucfirst($task->first_name)}}
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="text-center my-1 fw-bold"
+                                                                             style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
+                                                                            Titel
+                                                                            <br>
+                                                                            {{$task->title}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row my-2">
+                                                                    <div class="col-12">
+                                                                        <div class="text-center fw-bold"
+                                                                             style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                            Beschreibung:
+                                                                            <br>
+                                                                            {{$task->description}}
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row my-2">
-                                                                <div class="col-6">
-                                                                    <div class="text-center my-1 fw-bold"
-                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                        Kundenname:
-                                                                        <br>
-                                                                        {{ucfirst($task->first_name)}}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div class="text-center my-1 fw-bold"
-                                                                         style="padding: 15px;background-color: #eeeeee; border-radius: 15px">
-                                                                        Titel
-                                                                        <br>
-                                                                        {{$task->title}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row my-2">
-                                                                <div class="col-12">
-                                                                    <div class="text-center fw-bold"
-                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                        Beschreibung:
-                                                                        <br>
-                                                                        {{$task->description}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer text-center"
-                                                             style="border-top: none !important; display: block;">
-
-                                                            <button class="btn px-3"
-                                                                    style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                    data-bs-dismiss="modal"><b>Close</b></button>
-
-                                                            <a onclick="window.location.href='{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}'">
+                                                            <div class="modal-footer text-center"
+                                                                 style="border-top: none !important; display: block;">
 
                                                                 <button class="btn px-3"
-
                                                                         style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                        data-bs-dismiss="modal"><b>Offen</b></button>
-                                                            </a>
+                                                                        data-bs-dismiss="modal"><b>Close</b></button>
 
+                                                                <a onclick="window.location.href='{{route('leadfamilyperson',[$taskId,'admin_id' => $admin_id,'pend_id' => $task->pid])}}'">
+
+                                                                    <button class="btn px-3"
+
+                                                                            style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
+                                                                            data-bs-dismiss="modal"><b>Offen</b></button>
+                                                                </a>
+
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        @endforeach
+                                            @endforeach
                                         @endif
                                         </tbody>
                                     </table>
@@ -866,13 +862,13 @@
                                             </div>
                                         </a>
                                         @if($pending->count() > 0)
-                                        <a href="{{route('tasks',['pendingP' => $pending->currentPage() +1])}}">
-                                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                                                </svg>
-                                            </div>
-                                        </a>
+                                            <a href="{{route('tasks',['pendingP' => $pending->currentPage() +1])}}">
+                                                <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                                    </svg>
+                                                </div>
+                                            </a>
                                         @endif
                                     </div>
                                 </div>
@@ -914,71 +910,71 @@
                                         Keine Beantwortete Aufgaben
                                     </div>
                                 @else
-                                @foreach($answered as $task)
-                                    @php
-                                                   $leadss = $task->family_id * 1244;
-                                                    $admin_id = Crypt::encrypt($task->admin_id * 1244);
-                                                    $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                    $pend_id = $task->pid;
-                                                    $leadss = $task->admin_id * 1244;
-                                                    $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                    $authUserId = \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
+                                    @foreach($answered as $task)
+                                        @php
+                                            $leadss = $task->family_id * 1244;
+                                             $admin_id = Crypt::encrypt($task->admin_id * 1244);
+                                             $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                             $pend_id = $task->pid;
+                                             $leadss = $task->admin_id * 1244;
+                                             $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                             $authUserId = \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
 
-                                    @endphp
-                                    <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
-                                        <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
-                                           style="text-decoration:none;">
-                                            <div class="px-2 py-2 ">
-                                                <div class="m-1 d-flex justify-content-between">
-                                                    <div class="fw-bold">{{ucfirst($task->family ? $task->family->first_name . $task->family->last_name : "")}}  </div>
-                                                    <div class="col-auto">
+                                        @endphp
+                                        <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
+                                            <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
+                                               style="text-decoration:none;">
+                                                <div class="px-2 py-2 ">
+                                                    <div class="m-1 d-flex justify-content-between">
+                                                        <div class="fw-bold">{{ucfirst($task->family ? $task->family->first_name . $task->family->last_name : "")}}  </div>
+                                                        <div class="col-auto">
                                                                     <span>
                                                                         <span class="px-2" style="font-size: 19px;">
                                                                             <i class="bi bi-chat justify-content-end"></i>
                                                                         </span>
                                                                     </span>
-                                                        <span id="demo23span{{$taskId}}" class="bi bi-chevron-down"></span>
+                                                            <span id="demo23span{{$taskId}}" class="bi bi-chevron-down"></span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                        <div id="demo{{$taskId}}" class="collapse px-3 py-2">
-                                            <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family ? $task->family->first_name : "")}}
-                                            </h6>
-                                            <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
-                                            <h6 class="m-1"><b>Adresse
-                                                    zu:</b> {{$task->adminpend->name}}
-                                            </h6>
-                                            <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
-                                            <h6 class="m-1"><b>Beschreibung:</b>
-                                                <span> {{$task->description }}</span></h6>
-                                            <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
-                                                <button class="btn m-1"
-                                                        style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
-                                                    Offen
-                                                </button>
                                             </a>
-                                        </div>
-                                        <script>
-                                            truefalsee["sss" + intvaluecount] = false;
-                                            $(document).ready(function () {
-                                                $("#demo23{{$taskId}}").click(function () {
+                                            <div id="demo{{$taskId}}" class="collapse px-3 py-2">
+                                                <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family ? $task->family->first_name : "")}}
+                                                </h6>
+                                                <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
+                                                <h6 class="m-1"><b>Adresse
+                                                        zu:</b> {{$task->adminpend->name}}
+                                                </h6>
+                                                <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
+                                                <h6 class="m-1"><b>Beschreibung:</b>
+                                                    <span> {{$task->description }}</span></h6>
+                                                <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
+                                                    <button class="btn m-1"
+                                                            style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
+                                                        Offen
+                                                    </button>
+                                                </a>
+                                            </div>
+                                            <script>
+                                                truefalsee["sss" + intvaluecount] = false;
+                                                $(document).ready(function () {
+                                                    $("#demo23{{$taskId}}").click(function () {
 
-                                                    $("#demo{{$taskId}}").collapse('toggle');
-                                                    if (truefalsee["sss" + intvaluecount] === false) {
-                                                        $("#demo23span{{$taskId}}").addClass("bi bi-chevron-down bi-chevron-up");
-                                                        truefalsee["sss" + intvaluecount] = true;
-                                                    } else {
-                                                        $("#demo23span{{$taskId}}").removeClass("bi bi-chevron-up");
-                                                        truefalsee["sss" + intvaluecount] = false;
-                                                    }
+                                                        $("#demo{{$taskId}}").collapse('toggle');
+                                                        if (truefalsee["sss" + intvaluecount] === false) {
+                                                            $("#demo23span{{$taskId}}").addClass("bi bi-chevron-down bi-chevron-up");
+                                                            truefalsee["sss" + intvaluecount] = true;
+                                                        } else {
+                                                            $("#demo23span{{$taskId}}").removeClass("bi bi-chevron-up");
+                                                            truefalsee["sss" + intvaluecount] = false;
+                                                        }
+                                                    });
                                                 });
-                                            });
-                                            intvaluecount++;
-                                        </script>
-                                    </div>
-                                @endforeach
-                                    @endif
+                                                intvaluecount++;
+                                            </script>
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
 
                             <div class="d-flex justify-content-start py-1" style="background-color: transparent;">
@@ -991,14 +987,14 @@
                                         </div>
                                     </a>
                                     @if($answered->count() > 0)
-                                    <a href="{{route('tasks',['pendP' => $answered->currentPage() +1])}}">
-                                        <div class="nxt-btn border p-2 bg-light m-2 rounded">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                                            </svg>
-                                        </div>
-                                    </a>
-                                        @endif
+                                        <a href="{{route('tasks',['pendP' => $answered->currentPage() +1])}}">
+                                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
 
@@ -1027,75 +1023,75 @@
                                         Keine Aufgaben öffnen
                                     </div>
                                 @else
-                                @foreach($opened as $task)
-                                    @php
-                                        $leadss = $task->family_id * 1244;
-                                        $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                        $pend_id = $task->pid;
-                                    @endphp
-                                    <div class="answered-items ms-3 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
-
+                                    @foreach($opened as $task)
                                         @php
-                                            $leadss = $task->admin_id * 1244;
-                                            $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-
-                                            $authUserId= $leadsss;
-                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
+                                            $leadss = $task->family_id * 1244;
+                                            $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                            $pend_id = $task->pid;
                                         @endphp
-                                        <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
-                                           style="text-decoration:none;">
-                                            <div class="px-2 py-2">
-                                                <div class="m-1 d-flex justify-content-between"
-                                                     style="text-overflow: ellipsis; overflow:hidden;">
-                                                    <div class="fw-bold">{{ucfirst($task->first_name )}} {{ucfirst( $task->last_name)}} </div>
-                                                    <div class="col-auto">
+                                        <div class="answered-items ms-3 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
+
+                                            @php
+                                                $leadss = $task->admin_id * 1244;
+                                                $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+
+                                                $authUserId= $leadsss;
+                                                $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
+                                            @endphp
+                                            <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
+                                               style="text-decoration:none;">
+                                                <div class="px-2 py-2">
+                                                    <div class="m-1 d-flex justify-content-between"
+                                                         style="text-overflow: ellipsis; overflow:hidden;">
+                                                        <div class="fw-bold">{{ucfirst($task->first_name )}} {{ucfirst( $task->last_name)}} </div>
+                                                        <div class="col-auto">
                                                                     <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$leadsss])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
                                                                             <i class="bi bi-chat justify-content-end"></i>
                                                                         </span>
                                                                     </span>
-                                                        <span id="demo23span_2{{$authUserId}}" class="bi bi-chevron-down"></span>
+                                                            <span id="demo23span_2{{$authUserId}}" class="bi bi-chevron-down"></span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                        <div id="demo_2{{$authUserId}}" class="collapse px-3 py-2">
-                                            <h6 class="m-1"><b>Klientin: {{ucfirst($task->first_name)}}</b>
-                                            </h6>
-                                            <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
-                                            <h6 class="m-1"><b>Adresse
-                                                    zu:</b> {{$task->adminpend->name}}
-                                            </h6>
-                                            <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
-                                            <h6 class="m-1"><b>Beschreibung:</b>
-                                                <span> {{$task->description}} </span></h6>
-                                            <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
-                                                <button class="btn m-1"
-                                                        style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
-                                                    Offen
-                                                </button>
                                             </a>
+                                            <div id="demo_2{{$authUserId}}" class="collapse px-3 py-2">
+                                                <h6 class="m-1"><b>Klientin: {{ucfirst($task->first_name)}}</b>
+                                                </h6>
+                                                <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
+                                                <h6 class="m-1"><b>Adresse
+                                                        zu:</b> {{$task->adminpend->name}}
+                                                </h6>
+                                                <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
+                                                <h6 class="m-1"><b>Beschreibung:</b>
+                                                    <span> {{$task->description}} </span></h6>
+                                                <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
+                                                    <button class="btn m-1"
+                                                            style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
+                                                        Offen
+                                                    </button>
+                                                </a>
 
-                                        </div>
-                                        <script>
-                                            truefalsee2["sss" + intvaluecount2] = false;
-                                            $(document).ready(function () {
-                                                $("#demo23_2{{$authUserId}}").click(function () {
-                                                    $("#demo_2{{$authUserId}}").collapse('toggle');
-                                                    if (truefalsee2["sss" + intvaluecount2] === false) {
-                                                        $("#demo23span_2{{$authUserId}}").addClass("bi bi-chevron-down bi-chevron-up");
-                                                        truefalsee2["sss" + intvaluecount2] = true;
-                                                    } else {
-                                                        $("#demo23span_2{{$authUserId}}").removeClass("bi bi-chevron-up");
-                                                        truefalsee2["sss" + intvaluecount2] = false;
-                                                    }
+                                            </div>
+                                            <script>
+                                                truefalsee2["sss" + intvaluecount2] = false;
+                                                $(document).ready(function () {
+                                                    $("#demo23_2{{$authUserId}}").click(function () {
+                                                        $("#demo_2{{$authUserId}}").collapse('toggle');
+                                                        if (truefalsee2["sss" + intvaluecount2] === false) {
+                                                            $("#demo23span_2{{$authUserId}}").addClass("bi bi-chevron-down bi-chevron-up");
+                                                            truefalsee2["sss" + intvaluecount2] = true;
+                                                        } else {
+                                                            $("#demo23span_2{{$authUserId}}").removeClass("bi bi-chevron-up");
+                                                            truefalsee2["sss" + intvaluecount2] = false;
+                                                        }
+                                                    });
                                                 });
-                                            });
-                                            intvaluecount2++;
-                                        </script>
-                                    </div>
-                                @endforeach
-                                    @endif
+                                                intvaluecount2++;
+                                            </script>
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
 
                         </div>
@@ -1111,22 +1107,22 @@
                             <div class="header justify-content-between">
                                 <div class="d-flex">
                                     <div class="my-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 22 15.645">
-                                        <g id="answeredTasksSvg" transform="translate(-178.5 -76.5)">
-                                            <line id="Line_50" data-name="Line 50" x2="20" transform="translate(179.5 77.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-                                            <line id="Line_51" data-name="Line 51" x2="20" transform="translate(179.5 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-                                            <line id="Line_52" data-name="Line 52" x2="12" transform="translate(179.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
-                                            <g id="Group_1043" data-name="Group 1043" transform="translate(-56)">
-                                            <path id="Path_1958" data-name="Path 1958" d="M0,0,1.906,1.938" transform="translate(249.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
-                                            <path id="Path_1957" data-name="Path 1957" d="M4,0-.094,4.922" transform="translate(251.5 86.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 22 15.645">
+                                            <g id="answeredTasksSvg" transform="translate(-178.5 -76.5)">
+                                                <line id="Line_50" data-name="Line 50" x2="20" transform="translate(179.5 77.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                                <line id="Line_51" data-name="Line 51" x2="20" transform="translate(179.5 83.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                                <line id="Line_52" data-name="Line 52" x2="12" transform="translate(179.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+                                                <g id="Group_1043" data-name="Group 1043" transform="translate(-56)">
+                                                    <path id="Path_1958" data-name="Path 1958" d="M0,0,1.906,1.938" transform="translate(249.5 89.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+                                                    <path id="Path_1957" data-name="Path 1957" d="M4,0-.094,4.922" transform="translate(251.5 86.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="1"/>
+                                                </g>
                                             </g>
-                                        </g>
-                                    </svg>
+                                        </svg>
 
                                     </div>
                                     <div class="txt-01">
-                                    <span class="ps-2">Beantwortete Aufgaben</span>
-                                        </div>
+                                        <span class="ps-2">Beantwortete Aufgaben</span>
+                                    </div>
                                 </div>
 
                                 <div class="my-auto count fs-5 h-100 px-4">
@@ -1139,13 +1135,13 @@
                                         Keine Beantwortete Aufgaben
                                     </div>
                                 @else
-                                <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
-                                    <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
+                                    <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
+                                        <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
 
-                                        <form action="{{route('tasks')}}" class="mb-0" style="width: 100%;" method="post">
-                                            @csrf
-                                            <div class="input-group">
-                                                <div class=" btn search-icon ps-3 pe-2 bg-white">
+                                            <form action="{{route('tasks')}}" class="mb-0" style="width: 100%;" method="post">
+                                                @csrf
+                                                <div class="input-group">
+                                                    <div class=" btn search-icon ps-3 pe-2 bg-white">
                                                 <span class="">
                                                     <svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg"
                                                          width="22.03" viewBox="0 0 28.03 24.48">
@@ -1161,102 +1157,102 @@
                                                               stroke="#0c71c3" stroke-linecap="round" stroke-width="2"/>
                                                     </svg>
                                                 </span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Suche nach Name" name="searchpend">
+                                                    <button type="submit" class="py-1 px-3 px-sm-4 px-md-5 ms-2 fw-bold border-0 search-button-task">
+                                                        Suche..
+                                                    </button>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Suche nach Name" name="searchpend">
-                                                <button type="submit" class="py-1 px-3 px-sm-4 px-md-5 ms-2 fw-bold border-0 search-button-task">
-                                                    Suche..
-                                                </button>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
+
                                     </div>
+                                    <div class="overflow-div px-3 px-sm-3 px-md-3 me-2">
 
-                                </div>
-                                <div class="overflow-div px-3 px-sm-3 px-md-3 me-2">
-
-                                    <script>
-                                        var intvaluecount = 1;
-                                        var truefalsee = [];
-                                        var intvaluecount2 = 1;
-                                        var truefalsee2 = [];
-                                    </script>
-                                    <div id="collapse__">
-                                        <div class="collapse2___ "
-                                        >
-                                            @foreach($answered as $task)
-                                                @php
-                                                    $leadss = $task->family_id * 1244;
-                                                    $admin_id = Crypt::encrypt($task->admin_id * 1244);
-                                                    $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                    $pend_id = $task->pid;
-                                                @endphp
-                                                <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
-                                                    <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
-                                                       style="text-decoration:none;">
-                                                        <div class="px-2 py-2 ">
-                                                            <div class="m-1 d-flex justify-content-between">
-                                                                <div class="fw-bold">{{ucfirst($task->family ? $task->family->first_name : "")}} {{ucfirst($task->family ? $task->family->last_name : "")}} </div>
-                                                                <div class="col-auto">
+                                        <script>
+                                            var intvaluecount = 1;
+                                            var truefalsee = [];
+                                            var intvaluecount2 = 1;
+                                            var truefalsee2 = [];
+                                        </script>
+                                        <div id="collapse__">
+                                            <div class="collapse2___ "
+                                            >
+                                                @foreach($answered as $task)
+                                                    @php
+                                                        $leadss = $task->family_id * 1244;
+                                                        $admin_id = Crypt::encrypt($task->admin_id * 1244);
+                                                        $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                        $pend_id = $task->pid;
+                                                    @endphp
+                                                    <div class="answered-items ms-2 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
+                                                        <a data-bs-toggle="collapse" id="demo23{{$taskId}}"
+                                                           style="text-decoration:none;">
+                                                            <div class="px-2 py-2 ">
+                                                                <div class="m-1 d-flex justify-content-between">
+                                                                    <div class="fw-bold">{{ucfirst($task->family ? $task->family->first_name : "")}} {{ucfirst($task->family ? $task->family->last_name : "")}} </div>
+                                                                    <div class="col-auto">
                                                                     <span>
                                                                         <span class="px-2" style="font-size: 19px;">
                                                                             <i class="bi bi-chat justify-content-end"></i>
                                                                         </span>
                                                                     </span>
-                                                                    <span id="demo23span{{$taskId}}" class="bi bi-chevron-down"></span>
+                                                                        <span id="demo23span{{$taskId}}" class="bi bi-chevron-down"></span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </a>
-                                                    <div id="demo{{$taskId}}" class="collapse px-3 py-2">
-                                                        <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family ? $task->family->last_name : "")}}
-                                                        </h6>
-                                                        <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
-                                                        <h6 class="m-1"><b>Adresse
-                                                                zu:</b> {{$task->adminpend->name}}
-                                                        </h6>
-                                                        <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
-                                                        <h6 class="m-1"><b>Beschreibung:</b>
-                                                            <span> {{$task->description }}</span></h6>
-                                                        <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
-                                                            <button class="btn m-1"
-                                                                    style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
-                                                                Offen
-                                                            </button>
                                                         </a>
-                                                    </div>
-                                                    <script>
-                                                        truefalsee["sss" + intvaluecount] = false;
-                                                        $(document).ready(function () {
-                                                            $("#demo23{{$taskId}}").click(function () {
-                                                                $("#demo{{$taskId}}").collapse('toggle');
-                                                                if (truefalsee["sss" + intvaluecount] === false) {
-                                                                    $("#demo23span{{$taskId}}").addClass("bi bi-chevron-down bi-chevron-up");
-                                                                    truefalsee["sss" + intvaluecount] = true;
-                                                                } else {
-                                                                    $("#demo23span{{$taskId}}").removeClass("bi bi-chevron-up");
-                                                                    truefalsee["sss" + intvaluecount] = false;
-                                                                }
+                                                        <div id="demo{{$taskId}}" class="collapse px-3 py-2">
+                                                            <h6 class="m-1"><b>Klientin:</b> {{ucfirst($task->family ? $task->family->last_name : "")}}
+                                                            </h6>
+                                                            <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
+                                                            <h6 class="m-1"><b>Adresse
+                                                                    zu:</b> {{$task->adminpend->name}}
+                                                            </h6>
+                                                            <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
+                                                            <h6 class="m-1"><b>Beschreibung:</b>
+                                                                <span> {{$task->description }}</span></h6>
+                                                            <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
+                                                                <button class="btn m-1"
+                                                                        style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
+                                                                    Offen
+                                                                </button>
+                                                            </a>
+                                                        </div>
+                                                        <script>
+                                                            truefalsee["sss" + intvaluecount] = false;
+                                                            $(document).ready(function () {
+                                                                $("#demo23{{$taskId}}").click(function () {
+                                                                    $("#demo{{$taskId}}").collapse('toggle');
+                                                                    if (truefalsee["sss" + intvaluecount] === false) {
+                                                                        $("#demo23span{{$taskId}}").addClass("bi bi-chevron-down bi-chevron-up");
+                                                                        truefalsee["sss" + intvaluecount] = true;
+                                                                    } else {
+                                                                        $("#demo23span{{$taskId}}").removeClass("bi bi-chevron-up");
+                                                                        truefalsee["sss" + intvaluecount] = false;
+                                                                    }
+                                                                });
                                                             });
-                                                        });
-                                                        intvaluecount++;
-                                                    </script>
-                                                </div>
+                                                            intvaluecount++;
+                                                        </script>
+                                                    </div>
 
-                                            @endforeach
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                    @endif
+                                @endif
 
-                                    <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
-                                        <div class="prev-nxt-btn d-flex">
-                                            <a href="{{route('tasks',['pendP' => $answered->currentPage() - 1])}}">
-                                                <div class="prev-btn border p-2 bg-light m-2 rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                                                    </svg>
-                                                </div>
-                                            </a>
-                                            @if($answered->count() > 0)
+                                <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
+                                    <div class="prev-nxt-btn d-flex">
+                                        <a href="{{route('tasks',['pendP' => $answered->currentPage() - 1])}}">
+                                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        @if($answered->count() > 0)
                                             <a href="{{route('tasks',['pendP' => $answered->currentPage() + 1])}}">
                                                 <div class="nxt-btn border p-2 bg-light m-2 rounded">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -1264,15 +1260,15 @@
                                                     </svg>
                                                 </div>
                                             </a>
-                                            @else
-                                                <div class="nxt-btn border p-2 bg-light m-2 rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                                                    </svg>
-                                                </div>
-                                            @endif
-                                        </div>
+                                        @else
+                                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                                </svg>
+                                            </div>
+                                        @endif
                                     </div>
+                                </div>
 
                             </div>
                         </div>
@@ -1294,13 +1290,13 @@
                                         Keine Aufgaben öffnen
                                     </div>
                                 @else
-                                <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
-                                    <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
+                                    <div class="button-divv mx-0 mx-sm-1 mx-md-4 mx-lg-4 py-2">
+                                        <div class="d-flex py-2 px-3 px-sm-2" style="align-items: center;">
 
-                                        <form action="{{route('tasks')}}" class="mb-0" style="width: 100%;" method="post">
-                                            @csrf
-                                            <div class="input-group">
-                                                <div class="bg-white btn search-icon ps-3 pe-2">
+                                            <form action="{{route('tasks')}}" class="mb-0" style="width: 100%;" method="post">
+                                                @csrf
+                                                <div class="input-group">
+                                                    <div class="bg-white btn search-icon ps-3 pe-2">
                                             <span class="">
                                                 <svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg"
                                                      width="22.03" viewBox="0 0 28.03 24.48">
@@ -1316,120 +1312,120 @@
                                                           stroke="#0c71c3" stroke-linecap="round" stroke-width="2"/>
                                                 </svg>
                                             </span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Suche nach Name" name="searchopen">
+                                                    <button type="submit" class="py-1 px-3 px-sm-4 px-md-5 ms-2 fw-bold border-0 search-button-task">
+                                                        Suchen..
+                                                    </button>
+
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Suche nach Name" name="searchopen">
-                                                <button type="submit" class="py-1 px-3 px-sm-4 px-md-5 ms-2 fw-bold border-0 search-button-task">
-                                                    Suchen..
-                                                </button>
-
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="overflow-div px-1 px-sm-1 px-md-2 me-3">
-                                    <div id="first_collapse">
-                                        <div class="collapse23___   ">
+                                    <div class="overflow-div px-1 px-sm-1 px-md-2 me-3">
+                                        <div id="first_collapse">
+                                            <div class="collapse23___   ">
 
-                                            @foreach($opened as $task)
-                                                @php
-                                                    $leadss = $task->family_id * 1244;
-                                                    $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                    $pend_id = $task->pid;
-                                                @endphp
-
-                                                <div class="answered-items ms-3 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
-
+                                                @foreach($opened as $task)
                                                     @php
-                                                        $leadss = $task->admin_id * 1244;
-                                                        $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-
-                                                        $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
-                                                        $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
+                                                        $leadss = $task->family_id * 1244;
+                                                        $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                        $pend_id = $task->pid;
                                                     @endphp
-                                                    <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
-                                                       style="text-decoration:none;">
-                                                        <div class="px-2 py-2">
-                                                            <div class="m-1 d-flex justify-content-between"
-                                                                 style="text-overflow: ellipsis; overflow:hidden;">
-                                                                <div class="fw-bold">{{ucfirst($task->family ? $task->family->last_name : "")}} {{ucfirst($task->family? $task->family->last_name : "")}} </div>
-                                                                <div class="col-auto">
+
+                                                    <div class="answered-items ms-3 ms-sm-2 ms-md-4 me-2 me-sm-3 my-3">
+
+                                                        @php
+                                                            $leadss = $task->admin_id * 1244;
+                                                            $taskAdminId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+
+                                                            $authUserId= \Illuminate\Support\Facades\Crypt::encrypt($leadsss);
+                                                            $admin_id = \Illuminate\Support\Facades\Crypt::encrypt($task->admin_id * 1244);
+                                                        @endphp
+                                                        <a data-bs-toggle="collapse" id="demo23_2{{$authUserId}}"
+                                                           style="text-decoration:none;">
+                                                            <div class="px-2 py-2">
+                                                                <div class="m-1 d-flex justify-content-between"
+                                                                     style="text-overflow: ellipsis; overflow:hidden;">
+                                                                    <div class="fw-bold">{{ucfirst($task->family ? $task->family->last_name : "")}} {{ucfirst($task->family? $task->family->last_name : "")}} </div>
+                                                                    <div class="col-auto">
                                                                     <span style="cursor:pointer;" onclick="window.location.href='{{route('chat',[$taskAdminId,$authUserId])}}'">
                                                                         <span class="px-2" style="font-size: 19px;">
                                                                             <i class="bi bi-chat justify-content-end"></i>
                                                                         </span>
                                                                     </span>
-                                                                    <span id="demo23span_2{{$authUserId}}" class="bi bi-chevron-down"></span>
+                                                                        <span id="demo23span_2{{$authUserId}}" class="bi bi-chevron-down"></span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </a>
-                                                    <div id="demo_2{{$authUserId}}" class="collapse px-3 py-2">
-                                                        <h6 class="m-1"><b>Klientin: {{ucfirst($task->first_name)}}</b>
-                                                        </h6>
-                                                        <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
-                                                        <h6 class="m-1"><b>Adresse
-                                                                zu:</b> {{$task->adminpend->name}}
-                                                        </h6>
-                                                        <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
-                                                        <h6 class="m-1"><b>Beschreibung:</b>
-                                                            <span> {{$task->description}} </span></h6>
-                                                        <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
-                                                            <button class="btn m-1"
-                                                                    style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
-                                                                Offen
-                                                            </button>
                                                         </a>
+                                                        <div id="demo_2{{$authUserId}}" class="collapse px-3 py-2">
+                                                            <h6 class="m-1"><b>Klientin: {{ucfirst($task->first_name)}}</b>
+                                                            </h6>
+                                                            <h6 class="m-1"><b>Titel:</b> {{$task->title}}</h6>
+                                                            <h6 class="m-1"><b>Adresse
+                                                                    zu:</b> {{$task->adminpend->name}}
+                                                            </h6>
+                                                            <h6 class="m-1"><b>Datum & Zeit:</b> {{$task->updated_at}}</h6>
+                                                            <h6 class="m-1"><b>Beschreibung:</b>
+                                                                <span> {{$task->description}} </span></h6>
+                                                            <a href="{{route('leadfamilyperson',['id' => $taskId,'admin_id' => $admin_id,'pend_id' => $pend_id])}}">
+                                                                <button class="btn m-1"
+                                                                        style="background-color: #0C71C3; color: #fff; font-weight: 600; padding-left: 8%; padding-right: 8%;">
+                                                                    Offen
+                                                                </button>
+                                                            </a>
 
-                                                    </div>
-                                                    <script>
-                                                        truefalsee2["sss" + intvaluecount2] = false;
-                                                        $(document).ready(function () {
-                                                            $("#demo23_2{{$authUserId}}").click(function () {
-                                                                $("#demo_2{{$authUserId}}").collapse('toggle');
-                                                                if (truefalsee2["sss" + intvaluecount2] === false) {
-                                                                    $("#demo23span_2{{$authUserId}}").addClass("bi bi-chevron-down bi-chevron-up");
-                                                                    truefalsee2["sss" + intvaluecount2] = true;
-                                                                } else {
-                                                                    $("#demo23span_2{{$authUserId}}").removeClass("bi bi-chevron-up");
-                                                                    truefalsee2["sss" + intvaluecount2] = false;
-                                                                }
+                                                        </div>
+                                                        <script>
+                                                            truefalsee2["sss" + intvaluecount2] = false;
+                                                            $(document).ready(function () {
+                                                                $("#demo23_2{{$authUserId}}").click(function () {
+                                                                    $("#demo_2{{$authUserId}}").collapse('toggle');
+                                                                    if (truefalsee2["sss" + intvaluecount2] === false) {
+                                                                        $("#demo23span_2{{$authUserId}}").addClass("bi bi-chevron-down bi-chevron-up");
+                                                                        truefalsee2["sss" + intvaluecount2] = true;
+                                                                    } else {
+                                                                        $("#demo23span_2{{$authUserId}}").removeClass("bi bi-chevron-up");
+                                                                        truefalsee2["sss" + intvaluecount2] = false;
+                                                                    }
+                                                                });
                                                             });
-                                                        });
-                                                        intvaluecount2++;
-                                                    </script>
-                                                </div>
-                                            @endforeach
+                                                            intvaluecount2++;
+                                                        </script>
+                                                    </div>
+                                                @endforeach
 
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endif
-                                    <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
-                                        <div class="prev-nxt-btn d-flex">
-                                            <a href="{{route('tasks',['openP' => $opened->currentPage() - 1])}}">
-                                                <div class="prev-btn border p-2 bg-light m-2 rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                                                    </svg>
-                                                </div>
-                                            </a>
-                                            @if($opened->count() > 0)
-                                                <a href="{{route('tasks',['openP' => $opened->currentPage() + 1])}}">
-                                                    <div class="nxt-btn border p-2 bg-light m-2 rounded">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                            @else
+                                <div class="d-flex justify-content-end py-1" style="background-color: transparent;">
+                                    <div class="prev-nxt-btn d-flex">
+                                        <a href="{{route('tasks',['openP' => $opened->currentPage() - 1])}}">
+                                            <div class="prev-btn border p-2 bg-light m-2 rounded">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                                </svg>
+                                            </div>
+                                        </a>
+                                        @if($opened->count() > 0)
+                                            <a href="{{route('tasks',['openP' => $opened->currentPage() + 1])}}">
                                                 <div class="nxt-btn border p-2 bg-light m-2 rounded">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                                                     </svg>
                                                 </div>
-                                            @endif
-                                        </div>
+                                            </a>
+                                        @else
+                                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                                </svg>
+                                            </div>
+                                        @endif
                                     </div>
+                                </div>
                             </div>
 
                         </div>
@@ -1443,123 +1439,123 @@
 
 @endsection
 <style>
-        body {
-            overflow-x: hidden;
-        }
-        .txt-01 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding-top: 0.3rem;
-            padding-bottom: 0.3rem;
-        }
-        .count {
-            background-color: #EFEFEF;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            vertical-align: middle;
-            display: flex;
-            align-items: center;
-        }
+    body {
+        overflow-x: hidden;
+    }
+    .txt-01 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+    .count {
+        background-color: #EFEFEF;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+    }
 
 
-        .overflow-divvv::-webkit-scrollbar {
-            width: 1px !important;
-        }
-        /* Track */
-        .overflow-divvv::-webkit-scrollbar-track {
-            background: transparent !important;
-            border-radius: 10px !important;
-        }
-        /* Handle */
-        .overflow-divvv::-webkit-scrollbar-thumb {
-            background: #c9cad8 !important;
-            border-radius: 10px !important;
-        }
-        /* Handle on hover */
-        .overflow-divvv::-webkit-scrollbar-thumb:hover {
-            background: #707070 !important;
-            border-radius: 10px !important;
-        }
-        .tab-lookalike2 {
-            background-color: #FFEAE4 !important;
-            color: #434343 !important;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 5px !important;
-            border-top-right-radius: 5px !important;
-        }
-        .tab-lookalike1 {
-            background-color: #F7F7F7 !important;
-            color: #434343 !important;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 5px !important;
-            border-top-right-radius: 5px !important;
-        }
-        .tab-lookalike {
-            background-color: #F7F7F7 !important;
-            color: #FF4000 !important;
-            border-bottom-left-radius: 0px !important;
-            border-bottom-right-radius: 0px !important;
-            border-top-left-radius: 5px !important;
-            border-top-right-radius: 5px !important;
-        }
-        .header-open-task1 {
-            background-color: #F7F7F7 !important;
-            border-bottom-left-radius: 20px !important;
-            border-bottom-right-radius: 20px !important;
-            border-top-left-radius: 20px !important;
-            border-top-right-radius: 0px !important;
-        }
-        .header-open-task1-pink {
-            background-color: #FFEAE4 !important;
-            border-bottom-left-radius: 20px !important;
-            border-bottom-right-radius: 20px !important;
-            border-top-left-radius: 20px !important;
-            border-top-right-radius: 0px;
-        }
-        .priority-spnn {
-            background-color: #ad2b2b !important;
-            border-radius: 35px !important;
-            color: #fff !important;
-        }
-        .open-task-box {
-            border-radius: 35px !important;
-            background-color: #fff;
-            border: none !important;
-        }
-        .pendzen-box {
-            border-radius: 35px !important;
-            background-color: #EAECF0 !important;
-            border: none !important;
-        }
-        .third-box {
-            border-radius: 35px !important;
-            background-color: #fff !important;
-            border: #707070 1px solid !important;
-        }
-        .task-box {
-            background-color: #F7F7F7 !important;
-            border-radius: 12px !important;
-        }
-        .name-spnnnn {
-            font-weight: 600 !important;
-        }
-        .fw-600 {
-            font-weight: 600 !important;
-        }
-        .spn-muted {
-            color: #707070 !important;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-        }
-        .spn-normal {
-            font-weight: 600;
-            font-size: 14px !important;
-        }
-    </style>
+    .overflow-divvv::-webkit-scrollbar {
+        width: 1px !important;
+    }
+    /* Track */
+    .overflow-divvv::-webkit-scrollbar-track {
+        background: transparent !important;
+        border-radius: 10px !important;
+    }
+    /* Handle */
+    .overflow-divvv::-webkit-scrollbar-thumb {
+        background: #c9cad8 !important;
+        border-radius: 10px !important;
+    }
+    /* Handle on hover */
+    .overflow-divvv::-webkit-scrollbar-thumb:hover {
+        background: #707070 !important;
+        border-radius: 10px !important;
+    }
+    .tab-lookalike2 {
+        background-color: #FFEAE4 !important;
+        color: #434343 !important;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        border-top-left-radius: 5px !important;
+        border-top-right-radius: 5px !important;
+    }
+    .tab-lookalike1 {
+        background-color: #F7F7F7 !important;
+        color: #434343 !important;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        border-top-left-radius: 5px !important;
+        border-top-right-radius: 5px !important;
+    }
+    .tab-lookalike {
+        background-color: #F7F7F7 !important;
+        color: #FF4000 !important;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+        border-top-left-radius: 5px !important;
+        border-top-right-radius: 5px !important;
+    }
+    .header-open-task1 {
+        background-color: #F7F7F7 !important;
+        border-bottom-left-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;
+        border-top-left-radius: 20px !important;
+        border-top-right-radius: 0px !important;
+    }
+    .header-open-task1-pink {
+        background-color: #FFEAE4 !important;
+        border-bottom-left-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;
+        border-top-left-radius: 20px !important;
+        border-top-right-radius: 0px;
+    }
+    .priority-spnn {
+        background-color: #ad2b2b !important;
+        border-radius: 35px !important;
+        color: #fff !important;
+    }
+    .open-task-box {
+        border-radius: 35px !important;
+        background-color: #fff;
+        border: none !important;
+    }
+    .pendzen-box {
+        border-radius: 35px !important;
+        background-color: #EAECF0 !important;
+        border: none !important;
+    }
+    .third-box {
+        border-radius: 35px !important;
+        background-color: #fff !important;
+        border: #707070 1px solid !important;
+    }
+    .task-box {
+        background-color: #F7F7F7 !important;
+        border-radius: 12px !important;
+    }
+    .name-spnnnn {
+        font-weight: 600 !important;
+    }
+    .fw-600 {
+        font-weight: 600 !important;
+    }
+    .spn-muted {
+        color: #707070 !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+    }
+    .spn-normal {
+        font-weight: 600;
+        font-size: 14px !important;
+    }
+</style>
 <script>
     function firstDivToggleFunct() {
         $('#firstDivToggle').slideUp(200);
