@@ -1929,6 +1929,7 @@
         font-weight: 600 !important;
         color: #434343;
         border-radius: 5px !important;
+        
     }
     td {
         padding-top: 15px !important;
