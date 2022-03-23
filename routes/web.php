@@ -1,6 +1,7 @@
 <?php
 
 use App\Events\SendNotification;
+use App\Http\Controllers\HumanResourcesController;
 use App\Models\CostumerProduktGrundversicherung;
 use App\Models\CostumerProduktRechtsschutz;
 use App\Models\CostumerProduktVorsorge;
@@ -199,7 +200,24 @@ $leadinfo = $leads['leads'][$i]->info;
    route::get('getToDo',[TodoController::class,'getToDo']);
    route::get('deleteToDoList',[TodoController::class,'deleteToDoList']);
 
-   route::get('todos',[TodoController::class,'todos']);
+
+
+    route::post('createAbsence',[HumanResourcesController::class,'createAbsence'])->name('createAbsence');
+    route::post('updateAbsence',[HumanResourcesController::class,'updateAbsenceById'])->name('updateAbsenceById');
+    route::get('getAllEmployeeAbsences',[HumanResourcesController::class,'getAllEmployeeAbsences'])->name('getAllEmployeeAbsences');
+    route::post('removeAbsence',[HumanResourcesController::class,'removeAbsence'])->name('removeAbsence');
+    route::post('addBankInformationData',[HumanResourcesController::class,'addBankInformationData'])->name('addBankInformationData');
+    route::post('updateBankInformation',[HumanResourcesController::class,'updateBankInformation'])->name('updateBankInformation');
+    route::get('getEmployeeBankInformation',[HumanResourcesController::class,'getEmployeeBankInformation'])->name('getEmployeeBankInformation');
+    route::post('createPersonalData',[HumanResourcesController::class,'createPersonalData'])->name('createPersonalData');
+    route::get('getEmployeePersonalDataById',[HumanResourcesController::class,'getEmployeePersonalDataById'])->name('getEmployeePersonalDataById');
+    route::get('getAllEmployees',[HumanResourcesController::class,'getAllEmployees'])->name('getAllEmployees');
+    route::post('updatePersonalData',[HumanResourcesController::class,'updatePersonalData'])->name('updatePersonalData');
+    route::post('removePersonalData',[HumanResourcesController::class,'removePersonalData'])->name('removePersonalData');
+
+
+
+    route::get('todos',[TodoController::class,'todos']);
    route::get('deletetodo',[TodoController::class,'deletetodo']);
    route::get('donetodo',[TodoController::class,'donetodo']);
    route::get('addnumber',[TodoController::class,'addnumber']);

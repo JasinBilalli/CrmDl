@@ -19,7 +19,7 @@
 
 <style>
         /* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript, 
+/* This only works with JavaScript,
 if it's not present, don't show loader */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
@@ -34,7 +34,7 @@ if it's not present, don't show loader */
     background-size: 200px;
 }
 
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
     .se-pre-con {
         background-size: 100px;
     }
@@ -597,7 +597,8 @@ if it's not present, don't show loader */
                                 <div class="row">
                                     <div class="col g-0 text-end my-auto">
                                         <div class="">
-                                            <button type="button" id="nextonee__" onclick="nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
+                                            <input type="checkbox" value="1"  id="krankenSkip" name="krankenSkip" hidden>
+                                            <button type="button" id="nextonee__" onclick="krankenSkipp(); nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
                                                 Uberspringen
                                             </button>
                                         </div>
@@ -1464,7 +1465,8 @@ if it's not present, don't show loader */
                                     <div class="row">
                                         <div class="col g-0 text-end my-auto">
                                             <div class="">
-                                                <button type="button" id="nextonee__" onclick="nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
+                                                <input type="checkbox" value="1"  id="autoSkip" name="autoSkip" hidden>
+                                                <button type="button" id="nextonee__" onclick="autoSkipp(); nextonee(); " class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
                                                     Uberspringen
                                                 </button>
                                             </div>
@@ -2066,7 +2068,8 @@ if it's not present, don't show loader */
                                 <div class="row">
                                     <div class="col g-0 text-end my-auto">
                                         <div class="">
-                                            <button type="button" id="nextonee__" onclick="nextonee()" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
+                                            <input type="checkbox" value="1" id="vorsorgenSkip" name="vorsorgenSkip" hidden>
+                                            <button type="button" id="nextonee__" onclick="vorsorgeSkipp(); nextonee();" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
                                                 Uberspringen
                                             </button>
                                         </div>
@@ -2434,15 +2437,15 @@ if it's not present, don't show loader */
                                     <div class="row">
                                         <div class="col g-0 text-end my-auto">
                                             <div class="">
-                                                    <span class="pe-2" style="color: #9F9F9F;">
-                                                        Einreichen
-                                                    </span>
+                                                <input type="checkbox" value="1" id="sachenSkip" name="sachenSkip" hidden>
+                                                <button type="button" onclick="showpdf(); sachenSkipp();" class="px-3 fw-bold mx-2 py-2" style="border-radius: 9px;color: #fff; background-color: #afafaf; border: none;  cursor: pointer">
+                                                    Uberspringen
+                                                </button>
                                             </div>
                                         </div>
                                         <div class="col g-0 text-start">
                                             <div class="">
                                                 <button type="button" class="px-5 py-2"
-                                                        {{--                                                            id="submitt" --}}
                                                         onclick="showpdf()" style="border: none; border-radius: 9px; background-color:#285F52;">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#fff" class="bi bi-check-circle" viewBox="0 0 16 16">
                                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -2463,7 +2466,6 @@ if it's not present, don't show loader */
                     <div class="modal-content">
                         <div class="modal-body text-center">
                             <h4>Ihr Formular wurde an das Backoffice weitergeleitet!</h4>
-
                             <button class="btn" type="submit" style="background: #3CD598;">OK</button>
                         </div>
                     </div>
@@ -3434,7 +3436,7 @@ if it's not present, don't show loader */
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script> 
+<script>
     //paste this code under the head tag or in a separate js file.
 	// Wait for window load
 	$(window).load(function() {
@@ -4591,17 +4593,15 @@ if it's not present, don't show loader */
             '                      <div class="col-6">'+showname[52].innerHTML+': </div>'+
             '                      <div class="col-6">'+inputs[52].value+'</div>'+
             '                  </div>'+
-            // '                  <div class="d-flex">'+
-            // '                      <div class="col-6">'+showname[53].innerHTML+': </div>'+
-            // '                      <div class="col-6">'+inputs[60].value+'</div>'+
-            // '                  </div>'+
             '                </div>'+
             '              </div>'+
             '            </div>'+
             '            <div class="d-flex justify-content-center py-2">'+
+            '               <div>'+
             '              <button type="button" onclick="qoe()" class="py-2 px-5 submit-btnnnn">'+
             '                Bestätigen'+
             '              </button>'+
+            '               </div>'+
             '            </div>'+
             '          </div>'+
             '        </div>'+
@@ -4668,7 +4668,21 @@ if it's not present, don't show loader */
         }
 
     }
-
+    function krankenSkipp(){
+        document.getElementById('krankenSkip').checked = true;
+        document.getElementById('nav-home-tab').disabled = true;
+    }
+    function autoSkipp(){
+        document.getElementById('autoSkip').checked = true;
+        document.getElementById('nav-profile-tab').disabled = true;
+    }
+    function vorsorgeSkipp(){
+        document.getElementById('vorsorgenSkip').checked = true;
+        document.getElementById('nav-contact-tab').disabled = true;
+    }
+    function sachenSkipp(){
+        document.getElementById('sachenSkip').checked = true;
+    }
 
 </script>
 
@@ -4693,6 +4707,14 @@ if it's not present, don't show loader */
         color: #fff;
         font-weight: bold;
     }
+    .back-btnnnn{
+        background-color: #fa3737;
+        border-radius: 10px;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+    }
 
 </style>
+
 
