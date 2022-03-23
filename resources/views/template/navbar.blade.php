@@ -847,7 +847,7 @@
     }
 
 /* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript, 
+/* This only works with JavaScript,
 if it's not present, don't show loader */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
@@ -1706,12 +1706,12 @@ $activePage = basename($_SERVER['PHP_SELF'], ".php");
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script> 
+<script>
     //paste this code under the head tag or in a separate js file.
 	// Wait for window load
 	$(window).load(function() {
 		// Animate loader off screen
-		$(".se-pre-con").fadeOut();;
+		$(".se-pre-con").fadeOut();
 	});
     </script>
 </body>
