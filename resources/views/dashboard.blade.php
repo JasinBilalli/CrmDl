@@ -320,7 +320,7 @@
                                                 @endif
                                                 <br>
                                                 <span class="fw-bold" style="color:#000">
-                                                        Steht Aus
+                                                        Offene Pendenzen
                                                     </span>
                                             </div>
                                         </div>
@@ -343,7 +343,7 @@
                                                     </span>
                                                 <br>
                                                 <span class="fw-bold" style="color: #000;">
-                                                        Heute Termin
+                                                        Termin (Heute)
                                                     </span>
                                             </div>
                                         </div>

@@ -8,6 +8,7 @@
             {!! implode('<br />', $errors->all(':message')) !!}
         </div>
     @endif
+            @php $user = auth()->user()->getRoleNames()->toArray(); @endphp
             <div class="form-div my-4 py-4 mx-3 mx-sm-5" style="background-color: #EFEFEF; border-radius: 20px;">
                 <form action="{{route('addappointment')}}" method="post">
                     @csrf
@@ -15,12 +16,22 @@
                     <div class="col">
                         <div class="mx-2">
                             <div class="mb-2">
+                                @if(in_array('fs',$user))
                                 <label for="" class="mb-1">Agent:</label>
-                                <input type="text"  class="form-control" value="" name="agent" >
+                                <input type="text"  class="form-control" value="" disabled name="agent">
+                                @else
+                                    <label for="" class="mb-1">Agent:</label>
+                                    <input type="text"  class="form-control" value="" name="agent">
+                                @endif
                             </div>
                             <div class="mb-2">
+                                @if(in_array('fs',$user))
                                 <label for="" class="mb-1">Qualität:</label>
-                                <input type="text" class="form-control" value="" name="berater" >
+                                <input type="text" class="form-control" value="" disabled name="berater" >
+                                @else
+                                    <label for="" class="mb-1">Qualität:</label>
+                                    <input type="text" class="form-control" value="" name="berater" >
+                                @endif
                             </div>
                             <div class="mb-2">
                                 <label for="" class="mb-1">Vorname</label>
@@ -76,9 +87,15 @@
 
                                 @if(Auth::guard('admins')->user()->hasRole('fs'))
                                     <label for="" class="mb-1">Zuweisen</label>
-                                    <select name="admin" class="form-control">
+                                @if(in_array('fs',$user))
+                                    <select name="admin" class="form-control" disabled>
                                         <option value="{{$admins->id}}">{{$admins->name}}</option>
                                     </select>
+                                    @else
+                                        <select name="admin" class="form-control">
+                                            <option value="{{$admins->id}}">{{$admins->name}}</option>
+                                        </select>
+                                    @endif
                                 @elseif(Auth::user()->hasRole('salesmanager'))
 
                                 @else
@@ -162,7 +179,7 @@
 
 
 
- 
+
 
 
 

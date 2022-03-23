@@ -29,7 +29,7 @@
                             </svg>
                         </div>
                         <div class="ps-2 col">
-                            <div class="fw-bold">{{ numberi.costumer }}</div>
+                            <div class="fw-bold">{{ numberi.costumer }} ({{ numberi.number }})</div>
                             <div class=""><i>{{numberi.comment}}-{{ numberi.number }}</i></div>
                             <div class="">{{ numberi.text }}</div>
                         </div>

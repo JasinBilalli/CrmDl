@@ -41,7 +41,9 @@ class Admins extends Authenticatable
         'updated_at',
         'email_verified_at'
     ];
-
+public function headadmin(){
+    return $this->belongsTo(Admins::class,'admin_id');
+}
     public function leads(){
         return $this->hasMany(lead::class,'assign_to_id');
     }

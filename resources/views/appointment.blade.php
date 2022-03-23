@@ -587,7 +587,7 @@
 
 
 <div class="col-12 ">
-  <h3 class="ps-2"> Appointments</h1><hr>
+  <h3 class="ps-2"> Termine</h1><hr>
 </div>
   <div class=" row g-0 mx-2">
 <div class="col-12" width="90%" style="font-size: 12px;">
