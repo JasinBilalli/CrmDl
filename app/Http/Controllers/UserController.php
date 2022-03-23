@@ -61,6 +61,10 @@ class UserController extends Controller
     {
         $this->middleware(confirmedcode::class);
     }
+    public function changerole(){
+        Auth::loginUsingId(auth()->user()->headadmin->id);
+        return redirect()->route('dashboard');
+    }
 
     public function rleads()
     {
@@ -656,7 +660,8 @@ class UserController extends Controller
 
                                 $pcnt++;
                             }
-$pendencies->page = $req->pendP;
+
+
                             if (strtotime($task->created_at) < strtotime(Carbon::now()->subDays(14)->format('Y-m-d'))) {
                                 if($task->provisionert == 0 && $task->completed == 0) $morethan30[$mcnt] = $task;
 
@@ -673,7 +678,7 @@ $pendencies->page = $req->pendP;
                             ->orderBy('family_person.first_name', 'asc')
                             ->count();
 
-
+                        $pendencies->page = $req->pendP ? $req->pendP : 1;
                     }
                     if (in_array('fs',$urole) || in_array('admin',$urole) || in_array('salesmanager',$urole) || in_array('digital',$urole)) {
 
@@ -977,14 +982,23 @@ $admin = Admins::where('email',$email)->first();
 if($cnt > 0) {
     if ($request->user_password == $request->retype_password) {
         if ($request->user_password != '' && ($request->user_password > 8)) {
-    for ($i = 1; $i <= $cnt; $i++) {
+            $admins = new Admins();
+            $admins->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+            $admins->email = filter_var($request->user_email, FILTER_SANITIZE_STRING);
+            $admins->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
 
+                    $admins->roless = json_encode($roles);
+                    $admins->password = Hash::make($request->user_password);
+                    $admins->save();
+
+    for ($i = 1; $i <= $cnt; $i++) {
                 $roles->push($request->input('role_name' . $i));
                 $admin = new Admins();
                 $admin->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
                 $admin->email = filter_var($request->input('role_name' . $i) . $request->user_email, FILTER_SANITIZE_STRING);
                 $admin->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
                 $admin->password = Hash::make($request->user_password);
+                $admin->admin_id = $admins->id;
                 $admin->save();
                 $admin->assignRole($request->input('role_name' . $i));
             }
@@ -1000,20 +1014,7 @@ if($cnt > 0) {
     }
 
 
-    $admins = new Admins();
-    $admins->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
-    $admins->email = filter_var($request->user_email, FILTER_SANITIZE_STRING);
-    $admins->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
-    if ($request->user_password == $request->retype_password) {
-        if ($request->user_password != '' && ($request->user_password > 8)) {
-            $admins->roless = json_encode($roles);
-            $admins->password = Hash::make($request->user_password);
-            $admins->save();
-            return redirect()->route('dashboard')->with('success', 'Benutzerregistrierung erfolgreich');
-        }
-    } else {
-        return redirect()->back()->with('fail', 'Falsche!');
-    }
+
 }
 else{
     $admins = new Admins();

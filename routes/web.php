@@ -184,11 +184,11 @@ $leadinfo = $leads['leads'][$i]->info;
 
     route::post('createLeadDataKK/{leadIdd}/{personIdd}',[LeadDataController::class,'createLeadDataKK'])->name('createLeadDataKK')->middleware('role:admin|fs|backoffice');
     route::post('updateLeadDataKK/{leadId}/{personId}',[LeadDataController::class,'updateLeadDataKK'])->name('updateLeadDataKK')->middleware('role:admin|fs|backoffice');
-
+route::get('changerole','App\Http\Controllers\UserController@changerole');
    route::any('tasks',[TasksController::class,'tasks'])->name('tasks')->middleware('role:admin|fs|backoffice');
    route::get('searchword',[TasksController::class,'searchword'])->name('searchword')->middleware('role:admin|fs|backoffice|salesmanager');
     route::get('costumer/{costumerId}',[TodoController::class,'getDataForTaskByCostumerId'])->name('getDataForTaskByCostumerId');
-   route::any('costumers',[TasksController::class,'costumers'])->name('costumers')->middleware('role:admin|fs|backoffice|salesmanager');
+   route::any('costumers',[TasksController::class,'costumers'])->name('costumers')->middleware('role:admin|fs|backoffice|salesmanager|digital');
    route::get('costumer_form/{id}',[\App\Http\Controllers\CostumerFormController::class,'costumer_form'])->name('costumer_form');
    route::post('save_costumer_form/{id}',[\App\Http\Controllers\CostumerFormController::class,'save_costumer_form'])->name('save_costumer_form');
    route::any('search',[TasksController::class,'costumers'])->name('search');

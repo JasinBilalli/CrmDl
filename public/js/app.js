@@ -33682,7 +33682,12 @@ var render = function () {
                 _vm._v(" "),
                 _c("div", { staticClass: "ps-2 col" }, [
                   _c("div", { staticClass: "fw-bold" }, [
-                    _vm._v(_vm._s(numberi.costumer)),
+                    _vm._v(
+                      _vm._s(numberi.costumer) +
+                        " (" +
+                        _vm._s(numberi.number) +
+                        ")"
+                    ),
                   ]),
                   _vm._v(" "),
                   _c("div", {}, [
