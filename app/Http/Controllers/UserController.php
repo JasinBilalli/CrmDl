@@ -952,29 +952,90 @@ $pendencies->page = $req->pendP;
             return view('addnewuser', compact('roles'));
         }
     }
+    public function loginas(Request  $req){
+
+        $email = auth()->user()->email;
+        $email = $req->role . $email;
+
+$admin = Admins::where('email',$email)->first();
+        if($admin){
+           Auth::loginUsingId($admin->id);
+            return redirect()->route('dashboard');
+        }
+        else{
+
+            return redirect()->back()->with('fail',"Falsche!");
+        }
+    }
 
     public function registernewuser(Request $request)
     {
-        $admins = new Admins();
 
-        $admins->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
-        $admins->email = filter_var($request->user_email, FILTER_SANITIZE_STRING);
-        $admins->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
-        if ($request->user_password == $request->retype_password){
-            if ($request->user_password != '' && ($request->user_password > 8)) {
-                $admins->password = Hash::make($request->user_password);
+        $cnt = (int) $request->input('addedroles');
+        $roles = collect();
+        $roles->push($request->input('role_name'));
+if($cnt > 0) {
+    if ($request->user_password == $request->retype_password) {
+        if ($request->user_password != '' && ($request->user_password > 8)) {
+    for ($i = 1; $i <= $cnt; $i++) {
+
+                $roles->push($request->input('role_name' . $i));
+                $admin = new Admins();
+                $admin->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+                $admin->email = filter_var($request->input('role_name' . $i) . $request->user_email, FILTER_SANITIZE_STRING);
+                $admin->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+                $admin->password = Hash::make($request->user_password);
+                $admin->save();
+                $admin->assignRole($request->input('role_name' . $i));
             }
-        }else{
-            return redirect()->back()->with('fail', 'Ncuk');
+            $admin = new Admins();
+            $admin->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+            $admin->email = filter_var($request->input('role_name') . $request->user_email, FILTER_SANITIZE_STRING);
+            $admin->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+            $admin->password = Hash::make($request->user_password);
+            $admin->save();
+            $admin->assignRole($request->input('role_name'));
         }
 
-
-        $admins->assignRole(filter_var($request->role_name, FILTER_SANITIZE_STRING));
-
-        if ($admins->save()) {
-            return redirect()->route('dashboard')->with('success', 'Benutzerregistrierung erfolgreich');
-        } else {
-            return redirect()->route('dashboard')->with('fail', 'Benutzer konnte sich nicht registrieren');
-        }
     }
+
+
+    $admins = new Admins();
+    $admins->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+    $admins->email = filter_var($request->user_email, FILTER_SANITIZE_STRING);
+    $admins->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+    if ($request->user_password == $request->retype_password) {
+        if ($request->user_password != '' && ($request->user_password > 8)) {
+            $admins->roless = json_encode($roles);
+            $admins->password = Hash::make($request->user_password);
+            $admins->save();
+            return redirect()->route('dashboard')->with('success', 'Benutzerregistrierung erfolgreich');
+        }
+    } else {
+        return redirect()->back()->with('fail', 'Falsche!');
+    }
+}
+else{
+    $admins = new Admins();
+    $admins->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+    $admins->email = filter_var($request->user_email, FILTER_SANITIZE_STRING);
+    $admins->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+    if ($request->user_password == $request->retype_password) {
+        if ($request->user_password != '' && ($request->user_password > 8)) {
+            $admins->roless = null;
+            $admins->password = Hash::make($request->user_password);
+            $admins->save();
+                return redirect()->route('dashboard')->with('success', 'Benutzerregistrierung erfolgreich');
+        }
+        $admins->assignRole($request->role_name);
+    } else {
+        return redirect()->back()->with('fail', 'Falsche!');
+    }
+}
+
+
+
+
+        }
+
 }

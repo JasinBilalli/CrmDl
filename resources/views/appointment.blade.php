@@ -169,7 +169,7 @@
 	    $.ajax({
                                     url: "{{URL::route('Dropajax')}}" + "?nom_lead=" + arg.draggedEl.innerText.trim() + "&id_user=" + arg.resource.id + "&time=" + arg.draggedEl.now + "&ctime=" + calendar.getDate(),
                                     type: "GET",
-                                    data: {"data": arg.draggedEl.innerText.trim()},
+
                                     success: function (data) {
                                         alert(data);
                                         window.location.reload();

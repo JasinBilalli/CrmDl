@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\ChangeRole;
 use App\Http\Middleware\confirmedcode;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -71,5 +72,6 @@ class Kernel extends HttpKernel
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
         'confirmcode' => \App\Http\Middleware\confirmedcode::class,
         'cansee' => \App\Http\Middleware\cansee::class,
+        'multiplerole' => \App\Http\Middleware\ChangeRole::class
     ];
 }

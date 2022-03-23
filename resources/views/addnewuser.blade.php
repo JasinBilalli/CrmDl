@@ -14,6 +14,7 @@
                         </span>
                     </div>
                 </div>
+                <input name="addedroles" id="addedroles" style="display:none" type="number" value="0">
                 <br>
                 <div class="input-group mb-3">
                     <input placeholder="Vorname" autocomplete="off" type="text" name="user_name" class="form-control"
@@ -36,13 +37,14 @@
                     <input placeholder=" Retype Passwort" type="password" name="retype_password" class="form-control"
                            aria-describedby="basic-addon1" id="password" autocomplete="off">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" id="roles">
                     <select name="role_name" class="form-select py-2 w-100">
                         @foreach($roles as $role)
                         <option>{{$role->name}}</option>
                         @endforeach
                     </select>
                 </div>
+                <div class="text-center mt-2"><i class="bi bi-plus-square" style="font-size: 22px; cursor: pointer;" title="Add another role" onclick="addanother()"></i></div>
                 <div class="pt-2">
                     <input type="submit" class="py-2 w-100 border-0 fw-bold" value="Registrieren">
                 </div>
@@ -59,31 +61,16 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
         <script>
-        function verifyPassword() {
-        var pw = document.getElementById("pswd").value;
-        var pw2 = document.getElementById("password").value;
-        //check empty password field
-        if(pw == "") {
-        document.getElementById("message").innerHTML = "**Geben Sie bitte das Passwort ein!";
-        return false;
-        }
+            var cnt = 1;
+            function addanother(){
+               document.getElementById('roles').innerHTML += "<select class='form-select py-2 w-100 mt-2' name='role_name" + cnt + "' id='" + cnt + "'>";
+               @foreach($roles as $role)
+                document.getElementById(cnt.toString()).innerHTML += '<option value="{{$role->name}}">{{$role->name}}</option>';
+                @endforeach
+                    document.getElementById('addedroles').value = cnt;
+                cnt++;
+            }
 
-        //minimum password length validation
-        if(pw.length < 8) {
-        document.getElementById("message").innerHTML = "**Die Passwortlänge muss mindestens 8 Zeichen betragen";
-        return false;
-        }
-
-        //maximum length of password validation
-        if(pw.length > 15) {
-        document.getElementById("message").innerHTML = "**Die Passwortlänge darf 15 Zeichen nicht überschreiten";
-        return false;
-        }
-        if(pw != pw2){
-            document.getElementById("message").innerHTML = "**Passwort stimmt nicht überein";
-            return false;
-        }
-        }
         </script>
 <style>
     .form1 input {

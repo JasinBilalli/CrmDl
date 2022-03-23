@@ -621,10 +621,6 @@ class TasksController extends Controller
             }
 
 
-
-
-
-
         }
 
         $personalApp = DB::table('personalappointment')->where('AppOrCon',1)->where('user_id',Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();

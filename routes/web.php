@@ -60,7 +60,7 @@ use Monolog\Test\TestCase;
 
 
 
-route::prefix('')->middleware('confirmcode')->group(function(){
+route::prefix('')->middleware(['confirmcode',\App\Http\Middleware\ChangeRole::class])->group(function(){
    route::get('addlead',function(){
       $campaigns = campaigns::all();
       return view('addlead',compact('campaigns'));
@@ -164,6 +164,7 @@ $leadinfo = $leads['leads'][$i]->info;
     route::post('rejectlead/{id}',[UserController::class,'rejectlead'])->name('rejectlead')->middleware('role:admin|fs|salesmanager');
     route::get('addnewuser',[UserController::class,'addnewuser'])->name('addnewuser')->middleware('role:admin');
     route::post('registernewuser',[UserController::class,'registernewuser'])->name('registernewuser')->middleware('role:admin');
+
     route::get('acceptappointment/{id}',function ($id){
         $idd = Crypt::decrypt($id);
         $idd /= 1244;
@@ -227,8 +228,6 @@ $leadinfo = $leads['leads'][$i]->info;
    route::get('accepttask/{id}',[TasksController::class,'accepttask'])->name('accepttask')->middleware('role:admin|fs|salesmanager');
    route::post('addPersonalAppointment',[\App\Http\Controllers\PersonalAppointmentController::class,'addPersonalAppointment'])->name('addPersonalAppointment')->middleware('role:admin|fs|salesmanager');
    route::post('confirmsms',[TasksController::class,'confirmsms'])->name('confirmsms');
-Route::get('login',[UserController::class,'rnlogin'])->name('rnlogin')->withoutMiddleware([confirmedcode::class]);
-route::post('trylogin',[UserController::class,'trylogin'])->name('trylogin')->withoutMiddleware([confirmedcode::class]);
 route::any('acceptdata/{id}/{accept?}',[LeadDataController::class,'acceptdata'])->name('acceptdata')->middleware('role:admin|fs|backoffice|salesmanager');
 route::get('smsverification',[UserController::class,'smsconfirmation'])->name('smsconfirmation')->withoutMiddleware([confirmedcode::class]);
 route::get('smsconfirm',function (){
@@ -236,7 +235,6 @@ route::get('smsconfirm',function (){
     return view('confirm_sms');
 })->name('smsconfirm')->withoutMiddleware([confirmedcode::class]);
 route::post('confirmcode',[UserController::class,'confirmcode'])->name('confirmcode')->withoutMiddleware([confirmedcode::class]);
-route::get('logout',[UserController::class,'logout'])->name('logout')->withoutMiddleware([confirmedcode::class]);
 route::get('status',[StatusController::class,'status'])->name('status');
 // route::get('editclientdata/{id}',[StatusController::class,'editclientdata'])->name('editclientdata');
 // route::post('editclientform/{id}',[StatusController::class,'editclientform'])->name('editclientform');
@@ -303,7 +301,10 @@ route::get('forgot_password',function (){
 route::post('forgotpassword',[\App\Http\Controllers\ForgotPassController::class,'forgot_password'])->name('forgot_password');
 route::get('changepasswrd/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'changepasswrd'])->name('changepasswrd');
 route::post('update_password/{token}/{id}',[\App\Http\Controllers\ForgotPassController::class,'update_password'])->name('update_password');
-
+route::get('logout',[UserController::class,'logout'])->name('logout')->withoutMiddleware([confirmedcode::class]);
+Route::get('login',[UserController::class,'rnlogin'])->name('rnlogin')->withoutMiddleware([confirmedcode::class]);
+route::post('trylogin',[UserController::class,'trylogin'])->name('trylogin')->withoutMiddleware([confirmedcode::class]);
+route::post('loginas',[UserController::class,'loginas'])->name('loginas');
 
 
 
