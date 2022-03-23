@@ -979,6 +979,9 @@ $admin = Admins::where('email',$email)->first();
         $cnt = (int) $request->input('addedroles');
         $roles = collect();
         $roles->push($request->input('role_name'));
+        for($i = 1; $i <= $cnt; $i++){
+            $roles->push($request->input('role_name' . $i));
+        }
 if($cnt > 0) {
     if ($request->user_password == $request->retype_password) {
         if ($request->user_password != '' && ($request->user_password > 8)) {
@@ -986,13 +989,12 @@ if($cnt > 0) {
             $admins->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
             $admins->email = filter_var($request->user_email, FILTER_SANITIZE_STRING);
             $admins->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
-
                     $admins->roless = json_encode($roles);
                     $admins->password = Hash::make($request->user_password);
                     $admins->save();
-
+            $admins->assignRole($request->input('role_name'));
     for ($i = 1; $i <= $cnt; $i++) {
-                $roles->push($request->input('role_name' . $i));
+
                 $admin = new Admins();
                 $admin->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
                 $admin->email = filter_var($request->input('role_name' . $i) . $request->user_email, FILTER_SANITIZE_STRING);
@@ -1007,8 +1009,11 @@ if($cnt > 0) {
             $admin->email = filter_var($request->input('role_name') . $request->user_email, FILTER_SANITIZE_STRING);
             $admin->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
             $admin->password = Hash::make($request->user_password);
+            $admin->admin_id = $admins->id;
             $admin->save();
             $admin->assignRole($request->input('role_name'));
+
+          return redirect()->back()->with('success','Success');
         }
 
     }

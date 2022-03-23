@@ -71,7 +71,7 @@
                 </g>
               </svg>
             </i>
-            <input type="email" id="typeEmailX-2" name="email" style="font-family: 'Montserrat' !important; left: 5%;" class="form-control form-control-sm" />
+            <input type="text" id="typeEmailX-2" name="email" style="font-family: 'Montserrat' !important; left: 5%;" class="form-control form-control-sm" />
             <span class="input-group-text bg-white pw_div__" id="basic-addon1" style="border: none;border-bottom: 1px solid #D3CDCD; border-radius: 0;">
             </span>
           </div>
