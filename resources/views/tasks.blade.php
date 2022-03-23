@@ -1877,6 +1877,7 @@
         height: 400px;
         overflow: auto;
     }
+    
     /* .open-tasks-bo .content .overflow-div span {
         font-size: 18px;
     } */
