@@ -33825,12 +33825,12 @@ var render = function () {
                         staticClass: "col-form-label",
                         attrs: { for: "number" },
                       },
-                      [_vm._v("Anzahl: ")]
+                      [_vm._v("Telefonnummer : ")]
                     ),
                     _vm._v(" "),
                     _c("input", {
                       staticClass: "form-control",
-                      attrs: { type: "number", name: "todo", id: "number" },
+                      attrs: { type: "tel", name: "todo", id: "number" },
                       on: {
                         keyup: function ($event) {
                           if (
@@ -33968,7 +33968,7 @@ var staticRenderFns = [
       _c(
         "label",
         { staticClass: "col-form-label", attrs: { for: "position" } },
-        [_vm._v("Position: ")]
+        [_vm._v("Funktion / Notiz :")]
       ),
       _vm._v(" "),
       _c("input", {
@@ -33985,7 +33985,7 @@ var staticRenderFns = [
       _c(
         "label",
         { staticClass: "col-form-label", attrs: { for: "company_name" } },
-        [_vm._v("Name der Firma:: ")]
+        [_vm._v("Name der Firma: ")]
       ),
       _vm._v(" "),
       _c("input", {

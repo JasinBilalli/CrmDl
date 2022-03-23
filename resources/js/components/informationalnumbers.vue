@@ -91,16 +91,16 @@
                                 <input type="text" name="name" id="name" class="form-control">
                             </div>
                             <div class="col-12">
-                                <label for="position" class="col-form-label">Position: </label>
+                                <label for="position" class="col-form-label">Funktion / Notiz :</label>
                                 <input type="text" name="position" id="position" class="form-control" >
                             </div>
                             <div class="col-12">
-                                <label for="company_name" class="col-form-label">Name der Firma:: </label>
+                                <label for="company_name" class="col-form-label">Name der Firma: </label>
                                 <input type="text" name="position" id="company_name" class="form-control" >
                             </div>
                             <div class="col-12">
-                                <label for="number" class="col-form-label">Anzahl: </label>
-                                <input type="number" name="todo" id="number" class="form-control" v-on:keyup.enter="addnumber">
+                                <label for="number" class="col-form-label">Telefonnummer : </label>
+                                <input type="tel" name="todo" id="number" class="form-control" v-on:keyup.enter="addnumber">
                             </div>
                             <div class="modal-footer m-0"
                                  style="border-top: none !important; display: block;margin:0 !important;">
