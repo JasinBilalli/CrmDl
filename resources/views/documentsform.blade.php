@@ -353,13 +353,13 @@ if it's not present, don't show loader */
 
                         <nav class="g-0 nav-form-links">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="nav-link active col krankenkasse-btn" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="changecnt(0)"><span class="desk-t">Krankenkasse</span><span class="mobile-t">KK</span><div><span class="mobile-t" style="font-size: 10px;">KK</span></div>
+                                <button class="nav-link active col krankenkasse-btn me-2" id="nav-home-tab" name="baba" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="changecnt(0)"><span class="desk-t">Krankenkasse</span><span class="mobile-t">KK</span><div><span class="mobile-t" style="font-size: 10px;">KK</span></div>
                                 </button>
-                                <button class="nav-link col auto-btn" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="changecnt(1)"><span class="desk-t">Auto</span><span class="mobile-t">A</span><div><span class="mobile-t" style="font-size: 10px;">Auto</span></div>
+                                <button class="nav-link col auto-btn mx-2" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="changecnt(1)"><span class="desk-t">Auto</span><span class="mobile-t">A</span><div><span class="mobile-t" style="font-size: 10px;">Auto</span></div>
                                 </button>
-                                <button class="nav-link  col sachen-btn" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)"><span class="desk-t">Vorsorge</span><span class="mobile-t">V</span><div><span class="mobile-t" style="font-size: 10px;">Vorsage</span></div>
+                                <button class="nav-link  col sachen-btn mx-2" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)"><span class="desk-t">Vorsorge</span><span class="mobile-t">V</span><div><span class="mobile-t" style="font-size: 10px;">Vorsage</span></div>
                                 </button>
-                                <button class="nav-link  col vorsorge-btn" id="nav-fourth-tab" data-bs-toggle="tab" data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth" aria-selected="false" onclick="changecnt(3)"><span class="desk-t">Sachen</span><span class="mobile-t">S</span><div><span class="mobile-t" style="font-size: 10px;">Sachen</span></div>
+                                <button class="nav-link  col vorsorge-btn ms-2" id="nav-fourth-tab" data-bs-toggle="tab" data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth" aria-selected="false" onclick="changecnt(3)"><span class="desk-t">Sachen</span><span class="mobile-t">S</span><div><span class="mobile-t" style="font-size: 10px;">Sachen</span></div>
                                 </button>
                             </div>
                         </nav>
@@ -1327,8 +1327,7 @@ if it's not present, don't show loader */
                                                                         aria-describedby="basic-addon1">
                                                                     </div> -->
                                                                         <div class="btn-group w-100" role="group" aria-label="Basic radio toggle button group">
-
-                                                                            <input type="radio" class="btn-check showpdf " name="repair_shop" id="btnradio1_" value="Specific garage" checked>
+                                                                            <input type="radio" class="btn-check showpdf " name="repair_shop" id="btnradio1_" value="Specific garage">
                                                                             <label class="btn btn-outline-secondary w-100 g-0" for="btnradio1_">Specific
                                                                                 garage</label>
                                                                             <input type="radio" class="btn-check " name="repair_shop" value="Freie Wahl" id="btnradio2_">
@@ -1344,7 +1343,7 @@ if it's not present, don't show loader */
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check showpdf" name="accident_coverage" value="Ja" id="btnradio3abcdef" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="accident_coverage" value="Ja" id="btnradio3abcdef" autocomplete="off">
                                                                             <label class="btn btn-outline-secondary" for="btnradio3abcdef">Ja</label>
 
                                                                             <input type="radio" class="btn-check " name="accident_coverage" value="Nein" id="btnradio4abcdef" autocomplete="off">
@@ -1360,7 +1359,7 @@ if it's not present, don't show loader */
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check showpdf" name="traffic_legal_protection" value="Ja" id="btnradio3a" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="traffic_legal_protection" value="Ja" id="btnradio3a" autocomplete="off">
                                                                             <label class="btn btn-outline-secondary" for="btnradio3a">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="traffic_legal_protection" value="Nein" id="btnradio4a" autocomplete="off">
@@ -1374,7 +1373,7 @@ if it's not present, don't show loader */
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check showpdf" name="grossly" value="Ja" id="btnradio3ab" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="grossly" value="Ja" id="btnradio3ab" autocomplete="off">
                                                                             <label class="btn btn-outline-secondary" for="btnradio3ab">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="grossly" value="Nein" id="btnradio4ab" autocomplete="off">
@@ -1388,7 +1387,7 @@ if it's not present, don't show loader */
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check showpdf" name="glass_protection" value="Ja" id="btnradio3abc" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="glass_protection" value="Ja" id="btnradio3abc" autocomplete="off">
                                                                             <label class="btn btn-outline-secondary" for="btnradio3abc">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="glass_protection" value="Nein" id="btnradio4abc" autocomplete="off">
@@ -1403,7 +1402,7 @@ if it's not present, don't show loader */
                                                                         </div>
 
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check showpdf" name="parking_damage" value="Ja" id="btnradio3abcd" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="parking_damage" value="Ja" id="btnradio3abcd" autocomplete="off">
                                                                             <label class="btn btn-outline-secondary" for="btnradio3abcd">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="parking_damage" value="Nein" id="btnradio4abcd" autocomplete="off">
@@ -1418,7 +1417,7 @@ if it's not present, don't show loader */
                                                                                 </span>
                                                                         </div>
                                                                         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                            <input type="radio" class="btn-check showpdf" name="hour_breakdown_assistance" value="Ja" id="btnradio3abcde" autocomplete="off" checked>
+                                                                            <input type="radio" class="btn-check showpdf" name="hour_breakdown_assistance" value="Ja" id="btnradio3abcde" autocomplete="off">
                                                                             <label class="btn btn-outline-secondary" for="btnradio3abcde">Ja</label>
 
                                                                             <input type="radio" class="btn-check" name="hour_breakdown_assistance" value="Nein" id="btnradio4abcde" autocomplete="off">
@@ -1955,7 +1954,7 @@ if it's not present, don't show loader */
                                                                     </span>
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                <input type="radio" class="btn-check showpdf" name="premium_exemption" value="Ja" id="btnradio3" autocomplete="off" checked>
+                                                                <input type="radio" class="btn-check showpdf" name="premium_exemption" value="Ja" id="btnradio3" autocomplete="off" >
                                                                 <label class="btn btn-outline-secondary" for="btnradio3">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="premium_exemption" value="Nein" id="btnradio4" autocomplete="off">
@@ -1984,7 +1983,7 @@ if it's not present, don't show loader */
                                                                     </span>
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                <input type="radio" class="btn-check showpdf" name="eu_pension" value="Ja" id="btnradio5" autocomplete="off" checked>
+                                                                <input type="radio" class="btn-check showpdf" name="eu_pension" value="Ja" id="btnradio5" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio5" onclick="showel(this)">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="eu_pension" value="Nein" id="btnradio6" autocomplete="off">
@@ -2009,7 +2008,7 @@ if it's not present, don't show loader */
                                                                     </span>
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                <input type="radio" class="btn-check showpdf" name="death_benefit" value="Ja" id="btnradio7" autocomplete="off" checked>
+                                                                <input type="radio" class="btn-check showpdf" name="death_benefit" value="Ja" id="btnradio7" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio7">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="death_benefit" value="Nein" id="btnradio8" autocomplete="off">
@@ -2034,7 +2033,7 @@ if it's not present, don't show loader */
                                                                     </span>
                                                             </div>
                                                             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                                                <input type="radio" class="btn-check showpdf" name="smoker" value="Ja" id="btnradio9" autocomplete="off" checked>
+                                                                <input type="radio" class="btn-check showpdf" name="smoker" value="Ja" id="btnradio9" autocomplete="off">
                                                                 <label class="btn btn-outline-secondary" for="btnradio9">Ja</label>
 
                                                                 <input type="radio" class="btn-check" name="smoker" value="Nein" id="btnradio10" autocomplete="off">
@@ -3159,6 +3158,13 @@ if it's not present, don't show loader */
         border-bottom-right-radius: 17px !important;
         border-top-right-radius: 17px !important;
     }
+    .gray-btn-kk {
+        border: solid !important;
+        border-left: none !important;
+        border-top: #979797 solid 4px!important;
+        border-right: #979797 solid 4px!important;
+        border-bottom: none!important;
+    }
 
     .auto-content {
         background-color: #fff;
@@ -3186,7 +3192,7 @@ if it's not present, don't show loader */
     .krankenkasse-btn {
         color: black;
         font-weight: 600;
-        border: none !important;
+        /*border: none !important;*/
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
         border-bottom-left-radius: 0px !important;
@@ -3201,7 +3207,7 @@ if it's not present, don't show loader */
     .auto-btn {
         color: black;
         font-weight: 600;
-        border: none !important;
+        /*border: none !important;*/
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
         border-bottom-left-radius: 0px !important;
@@ -3215,7 +3221,7 @@ if it's not present, don't show loader */
     .sachen-btn {
         color: black;
         font-weight: 600;
-        border: none !important;
+        /*border: none !important;*/
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
         border-bottom-left-radius: 0px !important;
@@ -3229,7 +3235,7 @@ if it's not present, don't show loader */
     .vorsorge-btn {
         color: black;
         font-weight: 600;
-        border: none !important;
+        /*border: none !important;*/
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
         border-bottom-left-radius: 0px !important;
@@ -3999,7 +4005,7 @@ if it's not present, don't show loader */
             '' +
             '                                                                            <input type="radio" class="btn-check autopdf"' +
             '                                                                                   name="repair_shop' + newncnt + '" id="btnradio1a' + newncnt + '1"' +
-            '                                                                                   value="Specific garage" checked>' +
+            '                                                                                   value="Specific garage">' +
             '                                                                            <label' +
             '                                                                                class="btn btn-outline-secondary w-100 g-0"' +
             '                                                                                for="btnradio1a' + newncnt + '1" onclick="showel(this)">Specific' +
@@ -4023,7 +4029,7 @@ if it's not present, don't show loader */
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="accident_coverage' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3abcdef' + newncnt + '1" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3abcdef' + newncnt + '1" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3abcdef' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
@@ -4046,7 +4052,7 @@ if it's not present, don't show loader */
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="traffic_legal_protection' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3a' + newncnt + '1" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3a' + newncnt + '1" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3a' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
@@ -4067,7 +4073,7 @@ if it's not present, don't show loader */
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="grossly' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3ab' + newncnt + '1" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3ab' + newncnt + '1" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3ab' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
@@ -4088,7 +4094,7 @@ if it's not present, don't show loader */
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="glass_protection' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3abc' + newncnt + '1" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3abc' + newncnt + '1" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3abc' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
@@ -4110,7 +4116,7 @@ if it's not present, don't show loader */
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="parking_damage' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3abcd' + newncnt + '1" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3abcd' + newncnt + '1" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3abcd' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
@@ -4131,7 +4137,7 @@ if it's not present, don't show loader */
             '                                                                 aria-label="Basic radio toggle button group">' +
             '                                                                <input type="radio" class="btn-check autopdf"' +
             '                                                                       name="hour_breakdown_assistance' + newncnt + '" value="Ja"' +
-            '                                                                       id="btnradio3abcde' + newncnt + '1" autocomplete="off" checked>' +
+            '                                                                       id="btnradio3abcde' + newncnt + '1" autocomplete="off">' +
             '                                                                <label class="btn btn-outline-secondary"' +
             '                                                                       for="btnradio3abcde' + newncnt + '1" onclick="showel(this)">Ja</label>' +
             '' +
@@ -4671,14 +4677,17 @@ if it's not present, don't show loader */
     function krankenSkipp(){
         document.getElementById('krankenSkip').checked = true;
         document.getElementById('nav-home-tab').disabled = true;
+        $('#nav-home-tab').addClass('gray-btn-kk');
     }
     function autoSkipp(){
         document.getElementById('autoSkip').checked = true;
         document.getElementById('nav-profile-tab').disabled = true;
+        $('#nav-profile-tab').addClass('gray-btn-kk');
     }
     function vorsorgeSkipp(){
         document.getElementById('vorsorgenSkip').checked = true;
         document.getElementById('nav-contact-tab').disabled = true;
+        $('#nav-contact-tab').addClass('gray-btn-kk');
     }
     function sachenSkipp(){
         document.getElementById('sachenSkip').checked = true;

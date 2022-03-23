@@ -26,7 +26,7 @@
         font-family: 'Montserrat', sans-serif;
     }
         /* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript, 
+/* This only works with JavaScript,
 if it's not present, don't show loader */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
@@ -41,7 +41,7 @@ if it's not present, don't show loader */
     background-size: 200px;
 }
 
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
     .se-pre-con {
         background-size: 100px;
     }
@@ -1200,22 +1200,14 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " type="text"
-                                                                       name="society_PG1" id="">
-{{--                                                                <select class="py-1 form-control" name="society_PG1" id="qeadd">--}}
-{{--                                                                    <option value="Option">Option</option>--}}
-{{--                                                                    <option value="New Thing" >New Option</option>--}}
-{{--                                                                </select>--}}
-{{--                                                                <div class="row mt-1" id="addopt" style="display: none;">--}}
-{{--                                                                    <div class="col-9 col-md-9">--}}
-{{--                                                                <input type="text" class="form-control text-center" id="opti">--}}
-{{--                                                                    </div>--}}
-{{--                                                                    <div class="col-2 col-md-2">--}}
-{{--                                                                        <button type="button" onclick="added()" class="btn btn-info">Add</button>--}}
-{{--                                                                    </div>--}}
-{{--                                                                    </div>--}}
-{{--                                                                <i onclick="addoption()" style="font-size: 22px; cursor:pointer;" class="bi bi-plus-circle"></i>--}}
-
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PG1">
+                                                                    <option value=""></option>
+                                                                    <option value="Sympany">Sympany</option>
+                                                                    <option value="Helsana">Helsana</option>
+                                                                    <option value="Swica">Swica</option>
+                                                                    <option value="GM">GM</option>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -1324,8 +1316,13 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " type="text"
-                                                                       name="society_PA" id="">
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PA">
+                                                                    <option value=""></option>
+                                                                    <option value="Helvetia">Helvetia</option>
+                                                                    <option value="Zurich">Zurich</option>
+                                                                    <option value="Axa">Axa</option>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -1459,8 +1456,14 @@ if it's not present, don't show loader */
                                                                 <span class="" style="font-size: 15px;">
                                                                     Gesellschaft: </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " type="text"
-                                                                       name="society_PZ1" id="">
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PZ1">
+                                                                    <option value=""></option>
+                                                                    <option value="Sympany">Sympany</option>
+                                                                    <option value="Helsana">Helsana</option>
+                                                                    <option value="Swica">Swica</option>
+                                                                    <option value="GM">GM</option>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -1609,6 +1612,13 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PH">
+                                                                    <option value=""></option>
+                                                                    <option value="Helvetia">Helvetia</option>
+                                                                    <option value="Zurich">Zurich</option>
+                                                                    <option value="Axa">Axa</option>
+                                                                </select>
                                                                 <input class="py-1 form-control " type="text"
                                                                        name="society_PH" id="">
                                                             </div>
@@ -1747,8 +1757,14 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " type="text"
-                                                                       name="society_PR" id="">
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PR">
+                                                                    <option value=""></option>
+                                                                    <option value="Helvetia">Helvetia</option>
+                                                                    <option value="Zurich">Zurich</option>
+                                                                    <option value="Axa">Axa</option>
+                                                                    <option value="GM">GM</option>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -1884,8 +1900,15 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " type="text"
-                                                                       name="society_PV" id="">
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PV">
+                                                                    <option value=""></option>
+                                                                    <option value="Helvetia">Helvetia</option>
+                                                                    <option value="Pax">Pax</option>
+                                                                    <option value="Axa">Axa</option>
+                                                                    <option value="GM">GM</option>
+                                                                    <option value="Zurich">Zurich</option>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -2768,7 +2791,7 @@ if it's not present, don't show loader */
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script> 
+<script>
     //paste this code under the head tag or in a separate js file.
 	// Wait for window load
 	$(window).load(function() {
