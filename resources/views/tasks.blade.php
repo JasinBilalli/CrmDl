@@ -135,7 +135,7 @@
                                                         {{ucfirst($task->first_name)}}  {{ucfirst($task->last_name)}}
                                                     </div>
                                                     <div class="comment fw-bold" style="color: #535353;">
-                                                        Art:
+                                                        Kategorie:
                                                         @if($task->type == "task")
                                                             <span class="submited-btn1 py-1 px-3">
                                                 {{ucfirst($task->type)}}
@@ -281,7 +281,7 @@
                             <span class="fw-600 pe-4 pb-1 pt-1 fs-5 number-offene" style="color: #434343;">{{count($birthdays) + count($personalApp)}}</span>
                         </div>
                         <div class="wrapper2 p-2">
-                            @if(count($birthdays) == 0 && count($personalApp) == 0)
+                            @if(count($birthdays) == 0)
                                 <div class="text-center fs-4 fw-600" style="color: #9F9F9F">
                                     Keine geburtstage für heute
                                 </div>
@@ -299,7 +299,7 @@
                                                 </div>
                                                 <div class="name-divs col">
                                                     <div class="name fs-5 fw-bold" style="color: #535353;">
-                                                        {{$birth['name']}}
+                                                        {{$birth['name']}} {{$birth['lname']}}
                                                     </div>
                                                     <div class="comment fw-bold" style="color: #535353;">
                                                         {{$birth['birthday']}} ({{$birth['age']}} Jahre)
@@ -319,91 +319,6 @@
                                                         </g>
                                                     </svg>
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                    @foreach($personalApp as $perApp)
-                                        <div class="offene-item-one22 py-2 px-3 m-2 bg-light border" data-bs-toggle="modal"
-                                             data-bs-target="#exampleModall{{$perApp->id}}">
-                                            <div class="d-flex ">
-                                                <div class="my-auto col-auto pe-2">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
-                                                         class="bi bi-file-medical" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
-                                                        <path
-                                                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
-                                                    </svg>
-                                                </div>
-                                                <div class="name-divs col">
-                                                    <div class="name fs-5 fw-bold" style="color: #535353;">
-                                                        {{$perApp->title}}
-                                                    </div>
-                                                    <div class="comment fw-bold" style="color: #535353;">
-                                                        {{$perApp->date}} ({{$perApp->time}})
-                                                    </div>
-                                                </div>
-                                                <div class="svg-divv">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
-                                                         viewBox="0 0 6.253 15.484">
-                                                        <g id="Group_1178" data-name="Group 1178"
-                                                           transform="translate(-1054.727 -165.697)">
-                                                            <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
-                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
-                                                                     fill="#535353" />
-                                                            <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
-                                                                     rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
-                                                                     fill="#535353" />
-                                                        </g>
-                                                    </svg>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal fade" id="exampleModall{{$perApp->id}}" tabindex="-1"
-                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content"
-                                                     style="background: #f8f8f8; border-radius: 43px">
-                                                    <div class="modal-header mx-3 pt-4"
-                                                         style="border-bottom: none !important;">
-                                                        <h4>Personal Appointment</h4>
-                                                        <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"
-                                                                style="opacity: 1 !important;"></button>
-                                                    </div>
-                                                    <div class="modal-body p-3">
-                                                        <div class="row my-2">
-                                                            <div class="col-12">
-                                                                <div class=" fw-bold"
-                                                                     style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                    Title: {{$perApp->title}}
-                                                                    <br>
-                                                                    Kommentar: {{$perApp->comment}}
-                                                                    <br>
-                                                                    Adress: {{$perApp->address}}
-                                                                    <br>
-                                                                    Datum: {{$perApp->date}}
-                                                                    <br>
-                                                                    Zeit: {{$perApp->time}}
-                                                                    <br>
-                                                                    Von: {{App\Models\Admins::find($perApp->assignfrom)->name}}
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer"
-                                                         style="border-top: none !important; display: block;">
-                                                        <div class="row mx-4 pb-4">
-                                                            <div class=" mx-auto">
-                                                                <button type="button" class="btn w-100 px-3"
-                                                                        style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                        data-bs-dismiss="modal"><b>Schliessen</b>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -467,8 +382,8 @@
                                         <thead>
                                         <tr class="sticky-class">
                                             <th scope="col">Datum</th>
-                                            <th scope="col">Beschreibung</th>
-                                            <th scope="col">Kundename</th>
+                                            <th scope="col">Vorname</th>
+                                            <th scope="col">Nachname</th>
                                         </tr>
                                         </thead>
                                         <tbody id="body-table-edit">
@@ -579,7 +494,7 @@
                                 </div>
 
                                 <div class="count fs-5 h-100 px-4">
-                                    {{count($birthdays) + count($personalApp)}}
+                                    {{count($birthdays)}}
                                 </div>
                             </div>
                             <div class="content px-3 py-2">
@@ -600,85 +515,8 @@
                                                 </span>
                                                 </div>
                                                 <div class="">
-                                                    <div class="fs-5 fw-600">{{$birth['name']}}</div>
+                                                    <div class="fs-5 fw-600">{{$birth['name']}} {{$birth['lname']}}</div>
                                                     <div class="">{{$birth['birthday']}} ({{$birth['age']}} yahre)</div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    @endif
-                                    @if(count($personalApp) == 0)
-                                        <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
-                                            Keine persönlichen Termine für heute
-                                            <hr>
-                                        </div>
-                                    @else
-                                        @foreach($personalApp as $perApp)
-                                            <div class="offene-item-one22 py-2 px-3 my-2" data-bs-toggle="modal"
-                                                 data-bs-target="#exampleModalll{{$perApp->id}}" style="cursor: pointer">
-                                                <div class="d-flex ">
-                                                    <div class="my-auto col-auto pe-2">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
-                                                             class="bi bi-file-medical" viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
-                                                            <path
-                                                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
-                                                        </svg>
-                                                    </div>
-                                                    <div class="name-divs col">
-                                                        <div class="name fs-5 fw-bold" style="color: #535353;">
-                                                            {{$perApp->title}}
-                                                        </div>
-                                                        <div class="comment fw-600" style="color: #535353;">
-                                                            {{$perApp->date}} ({{$perApp->time}})
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal fade" id="exampleModalll{{$perApp->id}}" tabindex="-1"
-                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content"
-                                                         style="background: #f8f8f8; border-radius: 43px">
-                                                        <div class="modal-header mx-3 pt-4"
-                                                             style="border-bottom: none !important;">
-                                                            <h4>Personal Appointment</h4>
-                                                            <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"
-                                                                    style="opacity: 1 !important;"></button>
-                                                        </div>
-                                                        <div class="modal-body p-3">
-                                                            <div class="row my-2">
-                                                                <div class="col-12">
-                                                                    <div class=" fw-bold"
-                                                                         style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
-                                                                        Title: {{$perApp->title}}
-                                                                        <br>
-                                                                        Kommentar: {{$perApp->comment}}
-                                                                        <br>
-                                                                        Adress: {{$perApp->address}}
-                                                                        <br>
-                                                                        Datum: {{$perApp->date}}
-                                                                        <br>
-                                                                        Zeit: {{$perApp->time}}
-                                                                        <br>
-                                                                        Von: {{App\Models\Admins::find($perApp->assignfrom)->name}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer"
-                                                             style="border-top: none !important; display: block;">
-                                                            <div class="row mx-4 pb-4">
-                                                                <div class=" mx-auto">
-                                                                    <button type="button" class="btn w-100 px-3"
-                                                                            style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
-                                                                            data-bs-dismiss="modal"><b>Schliessen</b>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -725,7 +563,7 @@
                                             <th scope="col">Kundename</th>
                                             <th scope="col">Titel</th>
                                             <th scope="col">Beschreibung</th>
-                                            <th scope="col">Art</th>
+                                            <th scope="col">Kategorie</th>
 
                                         </tr>
                                         </thead>
@@ -1929,7 +1767,7 @@
         font-weight: 600 !important;
         color: #434343;
         border-radius: 5px !important;
-        
+
     }
     td {
         padding-top: 15px !important;
