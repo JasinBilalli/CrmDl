@@ -1619,8 +1619,6 @@ if it's not present, don't show loader */
                                                                     <option value="Zurich">Zurich</option>
                                                                     <option value="Axa">Axa</option>
                                                                 </select>
-                                                                <input class="py-1 form-control " type="text"
-                                                                       name="society_PH" id="">
                                                             </div>
 
                                                         </div>
