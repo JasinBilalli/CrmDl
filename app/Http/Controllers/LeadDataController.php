@@ -52,7 +52,6 @@ class LeadDataController extends Controller
                 }
                 $mandatiert ? $mandatierturl = $leadfh->mandatiert : $mandatierturl = "";
 
-
                 return view('updatedocument')->with('data',$data)->with('lead',$lead)->with('admin_id',$admin_id)->with('mandatiert',$mandatiert)->with('mandatierturl',$mandatierturl)->with('id',$id);
 
 

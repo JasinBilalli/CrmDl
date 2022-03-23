@@ -25,7 +25,7 @@
         font-family: 'Montserrat', sans-serif;
     }
         /* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript, 
+/* This only works with JavaScript,
 if it's not present, don't show loader */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
@@ -40,7 +40,7 @@ if it's not present, don't show loader */
     background-size: 200px;
 }
 
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
     .se-pre-con {
         background-size: 100px;
     }
@@ -1111,7 +1111,14 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " value="{{$grundversicherungPP->society_PG}}" type="text" name="society_PG{{$count}}" id="">
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PG{{$count}}">
+                                                                    <option value="{{$grundversicherungPP->society_PG}}">{{$grundversicherungPP->society_PG}}</option>
+                                                                    <option value="Sympany">Sympany</option>
+                                                                    <option value="Helsana">Helsana</option>
+                                                                    <option value="Swica">Swica</option>
+                                                                    <option value="GM">GM</option>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -1205,10 +1212,14 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " type="text"
-                                                                       name="society_PA" id=""
-                                                                       value="{{$autoversicherungP->society_PA}}"
-                                                                >
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PA">
+                                                                    <option value="{{$autoversicherungP->society_PA}}">{{$autoversicherungP->society_PA}}</option>
+                                                                    <option value="Helvetia">Helvetia</option>
+                                                                    <option value="Zurich">Zurich</option>
+                                                                    <option value="Axa">Axa</option>
+                                                                </select>
+
                                                             </div>
 
                                                         </div>
@@ -1344,7 +1355,14 @@ if it's not present, don't show loader */
                                                                 <span class="" style="font-size: 15px;">
                                                                     Gesellschaft: </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " value="{{$zusatzversicherungPP->society_PZ}}" type="text" name="society_PZ{{$count}}" id="">
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PZ{{$count}}">
+                                                                    <option value="{{$zusatzversicherungPP->society_PZ}}">{{$zusatzversicherungPP->society_PZ}}</option>
+                                                                    <option value="Sympany">Sympany</option>
+                                                                    <option value="Helsana">Helsana</option>
+                                                                    <option value="Swica">Swica</option>
+                                                                    <option value="GM">GM</option>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -1472,8 +1490,13 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " type="text"
-                                                                       name="society_PH" id="" value="{{$hausratP->society_PH}}">
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PH">
+                                                                    <option value="{{$hausratP->society_PH}}">{{$hausratP->society_PH}}</option>
+                                                                    <option value="Helvetia">Helvetia</option>
+                                                                    <option value="Zurich">Zurich</option>
+                                                                    <option value="Axa">Axa</option>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -1604,7 +1627,14 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " value="{{$retchsschutzP->society_PR}}" type="text" name="society_PR" id="">
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PR">
+                                                                    <option value="{{$retchsschutzP->society_PR}}">{{$retchsschutzP->society_PR}}</option>
+                                                                    <option value="Helvetia">Helvetia</option>
+                                                                    <option value="Zurich">Zurich</option>
+                                                                    <option value="Axa">Axa</option>
+                                                                    <option value="GM">GM</option>
+                                                                </select>
                                                             </div>
 
                                                         </div>
@@ -1714,7 +1744,15 @@ if it's not present, don't show loader */
                                                                     Gesellschaft:
                                                                 </span>
                                                                 </div>
-                                                                <input class="py-1 form-control " value="{{$vorsorgeP->society_PV}}" type="text" name="society_PV" id="">
+                                                                <select class="form-select"
+                                                                        aria-label="Default select example" name="society_PV">
+                                                                    <option value="{{$vorsorgeP->society_PV}}">{{$vorsorgeP->society_PV}}</option>
+                                                                    <option value="Helvetia">Helvetia</option>
+                                                                    <option value="Pax">Pax</option>
+                                                                    <option value="Axa">Axa</option>
+                                                                    <option value="GM">GM</option>
+                                                                    <option value="Zurich">Zurich</option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                         <div class="mb-3">
@@ -2360,7 +2398,7 @@ if it's not present, don't show loader */
         crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script> 
+<script>
     //paste this code under the head tag or in a separate js file.
 	// Wait for window load
 	$(window).load(function() {

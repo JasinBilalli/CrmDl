@@ -32,7 +32,7 @@ $urole = $urole->toArray();
         font-family: 'Montserrat', sans-serif;
     }
         /* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript, 
+/* This only works with JavaScript,
 if it's not present, don't show loader */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
@@ -47,7 +47,7 @@ if it's not present, don't show loader */
     background-size: 200px;
 }
 
-@media (max-width: 575.98px) { 
+@media (max-width: 575.98px) {
     .se-pre-con {
         background-size: 100px;
     }
@@ -389,34 +389,72 @@ if it's not present, don't show loader */
                                 {{$lead->address}}
                             </span>
                     </div>
-                    <div class="row mx-2 mx-sm-4">
+                    @php $pendencyy = \App\Models\Pendency::find(Session::get('pend_id')); @endphp
+                    <div class="row g-0 mx-2 mx-sm-4">
                         <nav class="g-0 nav-form-links">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="nav-link active col krankenkasse-btn" id="nav-home-tab"
+                                @if($pendencyy->kranken_skip === 1)
+                                    <button class="nav-link active col krankenkasse-btn gray-btn-kk me-2" id="nav-home-tab"
+                                            data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab"
+                                            aria-controls="nav-home" aria-selected="true"
+                                            onclick="changecnt(0)"><span class="desk-t">Krankenkasse</span><span
+                                            class="mobile-t">KK</span>
+                                        <div><span class="mobile-t" style="font-size: 10px;">KK</span></div>
+                                    </button>
+                                @else
+                                <button class="nav-link active col krankenkasse-btn green-btn-kk me-2" id="nav-home-tab"
                                         data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab"
                                         aria-controls="nav-home" aria-selected="true"
                                         onclick="changecnt(0)"><span class="desk-t">Krankenkasse</span><span
                                         class="mobile-t">KK</span>
                                     <div><span class="mobile-t" style="font-size: 10px;">KK</span></div>
                                 </button>
-                                <button class="nav-link col auto-btn" id="nav-profile-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-profile" type="button" role="tab"
-                                        aria-controls="nav-profile" aria-selected="false" onclick="changecnt(1)"><span
-                                        class="desk-t">Auto</span><span class="mobile-t">A</span>
-                                    <div><span class="mobile-t" style="font-size: 10px;">Auto</span></div>
-                                </button>
-                                <button class="nav-link  col sachen-btn" id="nav-contact-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-contact" type="button" role="tab"
-                                        aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)"><span
-                                        class="desk-t">Vorsorge</span><span class="mobile-t">V</span>
-                                    <div><span class="mobile-t" style="font-size: 10px;">Vorsage</span></div>
-                                </button>
-                                <button class="nav-link  col vorsorge-btn" id="nav-fourth-tab" data-bs-toggle="tab"
-                                        data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth"
-                                        aria-selected="false" onclick="changecnt(3)"><span
-                                        class="desk-t">Sachen</span><span class="mobile-t">S</span>
-                                    <div><span class="mobile-t" style="font-size: 10px;">Sachen</span></div>
-                                </button>
+                                @endif
+                                @if($pendencyy->auto_skip === 1)
+                                    <button class="nav-link col auto-btn gray-btn-kk mx-2" id="nav-profile-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-profile" type="button" role="tab"
+                                            aria-controls="nav-profile" aria-selected="false" onclick="changecnt(1)"><span
+                                            class="desk-t">Auto</span><span class="mobile-t">A</span>
+                                        <div><span class="mobile-t" style="font-size: 10px;">Auto</span></div>
+                                    </button>
+                                @else
+                                    <button class="nav-link col auto-btn green-btn-kk mx-2" id="nav-profile-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-profile" type="button" role="tab"
+                                            aria-controls="nav-profile" aria-selected="false" onclick="changecnt(1)"><span
+                                            class="desk-t">Auto</span><span class="mobile-t">A</span>
+                                        <div><span class="mobile-t" style="font-size: 10px;">Auto</span></div>
+                                    </button>
+                                @endif
+                                @if($pendencyy->vorsorge_skip === 1)
+                                    <button class="nav-link  col sachen-btn gray-btn-kk mx-2" id="nav-contact-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-contact" type="button" role="tab"
+                                            aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)"><span
+                                            class="desk-t">Vorsorge</span><span class="mobile-t">V</span>
+                                        <div><span class="mobile-t" style="font-size: 10px;">Vorsage</span></div>
+                                    </button>
+                                @else
+                                    <button class="nav-link  col sachen-btn green-btn-kk mx-2" id="nav-contact-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-contact" type="button" role="tab"
+                                            aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)"><span
+                                            class="desk-t">Vorsorge</span><span class="mobile-t">V</span>
+                                         <div><span class="mobile-t" style="font-size: 10px;">Vorsage</span></div>
+                                    </button>
+                                @endif
+                                @if($pendencyy->sachen_skip === 1)
+                                    <button class="nav-link  col vorsorge-btn gray-btn-kk ms-2" id="nav-fourth-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth"
+                                            aria-selected="false" onclick="changecnt(3)"><span
+                                            class="desk-t">Sachen</span><span class="mobile-t">S</span>
+                                        <div><span class="mobile-t" style="font-size: 10px;">Sachen</span></div>
+                                    </button>
+                                @else
+                                    <button class="nav-link  col vorsorge-btn green-btn-kk ms-2" id="nav-fourth-tab" data-bs-toggle="tab"
+                                            data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth"
+                                            aria-selected="false" onclick="changecnt(3)"><span
+                                            class="desk-t">Sachen</span><span class="mobile-t">S</span>
+                                         <div><span class="mobile-t" style="font-size: 10px;">Sachen</span></div>
+                                    </button>
+                                @endif
                             </div>
                         </nav>
                     </div>
@@ -6221,7 +6259,7 @@ if it's not present, don't show loader */
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script> 
+<script>
     //paste this code under the head tag or in a separate js file.
 	// Wait for window load
 	$(window).load(function() {
@@ -6563,7 +6601,7 @@ if it's not present, don't show loader */
     .krankenkasse-btn {
         color: black;
         font-weight: 600;
-        border: none !important;
+        /*border: none !important;*/
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
         border-bottom-left-radius: 0px !important;
@@ -6573,11 +6611,34 @@ if it's not present, don't show loader */
     .krankenkasse-btn:hover {
         color: black;
     }
+    .green-btn-kk {
+        border: solid !important;
+        border-left: none !important;
+        border-top: #4DC591 solid 4px !important;
+        border-right: #4DC591 solid 4px !important;
+        border-bottom: none !important;
+    }
+
+    .gray-btn-kk {
+        border: solid !important;
+        border-left: none !important;
+        border-top: #979797 solid 4px!important;
+        border-right: #979797 solid 4px!important;
+        border-bottom: none!important;
+    }
+
+    .orange-btn-kk {
+        border: solid !important;
+        border-left: none !important;
+        border-top: #FFC278 solid 4px !important;
+        border-right: #FFC278 solid 4px !important;
+        border-bottom: none !important;
+    }
 
     .auto-btn {
         color: black;
         font-weight: 600;
-        border: none !important;
+        /*border: none !important;*/
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
         border-bottom-left-radius: 0px !important;
@@ -6591,7 +6652,7 @@ if it's not present, don't show loader */
     .sachen-btn {
         color: black;
         font-weight: 600;
-        border: none !important;
+        /*border: none !important;*/
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
         border-bottom-left-radius: 0px !important;
@@ -6605,7 +6666,7 @@ if it's not present, don't show loader */
     .vorsorge-btn {
         color: black;
         font-weight: 600;
-        border: none !important;
+        /*border: none !important;*/
         border-top-left-radius: 15px !important;
         border-top-right-radius: 15px !important;
         border-bottom-left-radius: 0px !important;
