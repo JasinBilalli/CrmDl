@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Crypt;
 
 class FamilyPersonsController extends Controller
 {
-    public function family_persons($id,$admin_id = null,Request $req)
+    public function family_persons($id,Request $req,$admin_id = null)
     {
 
         Session::put('pend_id',(int) $req->pend_id);
