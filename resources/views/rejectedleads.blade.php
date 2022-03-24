@@ -57,7 +57,7 @@
 {{--                                        <div class="text-div py-3 ps-2">--}}
 {{--                                            <span class="fw-600 ">Berater:</span> <span class="fs-6">{{$lead->berater}}</span>--}}
 {{--                                        </div>--}}
-{{--                                    </div>--}}
+                                    {{--                                    </div>--}}
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
                                             <span class="fw-600 ">Vorname:</span> <span class="fs-6">{{$leads->first_name}} </span>
@@ -157,7 +157,7 @@
                     @endphp
                     <form method="post" action="{{route('rejectlead',$leadsId)}}" enctype="multipart/form-data">
                         @csrf
-                        <div class="border-left-div">
+                        <div class="border-left-div my-2">
                             <div class="termin-div mx-3 py-3">
 
                                 <div class="text-center py-3">
@@ -170,15 +170,15 @@
                                         <label for="inputTxt4" class="col-form-label">Begrundung: </label>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <input type="text" id="inputTxt4" name="reason" class="form-control"
+                                        <input type="text" id="inputTxt4" name="begrundung" class="form-control"
                                                aria-describedby="passwordHelpInline" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    <form method="post" action="{{route('rejectlead',$leadsId)}}" enctype="multipart/form-data">
-                        @csrf
+{{--                    </form>--}}
+{{--                    <form method="post" action="{{route('rejectlead',$leadsId)}}" enctype="multipart/form-data">--}}
+{{--                        @csrf--}}
                         <div class="border-left-div">
                             <div class="termin-div mx-3 py-3">
 
@@ -192,7 +192,7 @@
                                         <label for="inputTxt4" class="col-form-label">Begrundung: </label>
                                     </div>
                                     <div class="col-12 col-md-6">
-                                        <select class="form-select" name="reason">
+                                        <select class="form-select" name="begrundung2">
                                             <option value="Nicht Zuhause">Nicht Zuhause</option>
                                             <option value="Weg geschick">Weg geschick</option>
                                         </select>
@@ -237,7 +237,7 @@
                                                         </g>
                                                     </svg>
                                                 </label>
-                                                <input onchange="uploadfile()" name="image" type="file" id="file-input-3"
+                                                <input onchange="uploadfile()" name="begrundungfile2" type="file" id="file-input-3"
                                                        class="svg-div w-100 border-0  g-0">
                                             </div>
                                         </div>

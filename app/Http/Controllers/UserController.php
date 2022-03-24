@@ -567,19 +567,28 @@ class UserController extends Controller
     {
         $id = Crypt::decrypt($id) / 1244;
 
-        $rejectlead = new rejectedlead();
+        $lead = lead::find($id)->first();
+        $file = $request->file('begrundungfile2');
+        $lead->update([
+            'begrundung'=>$request->begrundung,
+            'begrundung2' => $request->begrundung2,
+            'begrundungfile2' => $this->storeFile($file, 'img')
+        ]);
+        $lead->delete();
 
-        $rejectlead->leads_id = $id;
-        $rejectlead->reason = filter_var($request->reason,FILTER_SANITIZE_URL);
-        $file = $request->file('image');
-        $rejectlead->image = $this->storeFile($file, 'img');
+//        $rejectlead = new rejectedlead();
+//
+//        $rejectlead->leads_id = $id;
+//        $rejectlead->reason = filter_var($request->reason,FILTER_SANITIZE_URL);
+//        $file = $request->file('image');
+//        $rejectlead->image = $this->storeFile($file, 'img');
 
-        if ($rejectlead->save()) {
-            return redirect()->route('dashboard')->with('success', 'Aktion erfolgreich durchgeführt');
-        } else {
-            return redirect()->route('dashboard')->with('fail', 'Aktion fehlgeschlagen');
-
-        }
+//        if ($rejectlead->save()) {
+//            return redirect()->route('dashboard')->with('success', 'Aktion erfolgreich durchgeführt');
+//        } else {
+//            return redirect()->route('dashboard')->with('fail', 'Aktion fehlgeschlagen');
+//
+//        }
     }
 
     public function dashboard(Request $req)
