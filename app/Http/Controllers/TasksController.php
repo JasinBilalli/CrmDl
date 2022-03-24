@@ -70,6 +70,7 @@ class TasksController extends Controller
         $user = auth()->user();
         $urole = auth()->user()->getRoleNames();
 
+
         $some_date = Carbon::now()->format('H:i');
         $now = (int) str_replace(':', '', $some_date);
 
@@ -85,11 +86,11 @@ class TasksController extends Controller
                              ->whereNotNull('assign_to_id')
                              ->orderBy('time','desc')
                              ->where('completed',0)
-                             ->select('first_name','last_name','address','id')
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
-                    $val = (int) $d['id'];
-                    $data[$cnt]->id = Crypt::encrypt($val * 1244);
+                    $val = (int) $d->id;
+                    dd($val,$d->id);
+                    $data[$cnt]->id = $val;
                     $cnt++;
 
                 }
@@ -101,11 +102,10 @@ class TasksController extends Controller
                              ->orderBy('time','desc')
                              ->where('completed',0)
                              ->where('assign_to_id',$user->id)
-                             ->select('first_name','last_name','address','id')
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
-                    $val = (int) $d['id'];
-                    $data[$cnt]->id = Crypt::encrypt($val * 1244);
+                    $val = (int) $d->id;
+                    $data[$cnt]->id = $val;
                     $cnt++;
 
                 }
@@ -118,29 +118,28 @@ class TasksController extends Controller
                              ->where('appointment_date', $req->date)
                              ->orderBy('time','desc')
                              ->where('completed',0)
-                             ->select('first_name','last_name','address','id')
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
-                    $val = (int) $d['id'];
-                    $data[$cnt]->id = Crypt::encrypt($val * 1244);
+                    $val = (int) $d->id;
+                    $data[$cnt]->id = $val;
                     $cnt++;
 
                 }
             }
         } else {
             if ($urole->contains('admin') || $urole->contains('salesmanager')) {
+
                 if ($now > 2300) {
                     foreach (lead::
                     where('wantsonline', 0)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
-                                 ->select('first_name','last_name','address','id')
                                  ->where('appointment_date', Carbon::now()->addDays()->toDateString())
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d['id'];
-                        $data[$cnt]->id = Crypt::encrypt($val * 1244);
+                        $val = (int) $d->id;
+                        $data[$cnt]->id = $val;
                         $cnt++;
 
                     }
@@ -155,8 +154,8 @@ class TasksController extends Controller
                                  ->select('first_name','last_name','address','id')
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d['id'];
-                        $data[$cnt]->id = Crypt::encrypt($val * 1244);
+                        $val = (int) $d->id;
+                        $data[$cnt]->id = $val;
                         $cnt++;
 
                     }
@@ -174,8 +173,8 @@ class TasksController extends Controller
                                  ->where('assign_to_id',$user->id)
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d['id'];
-                        $data[$cnt]->id = Crypt::encrypt($val * 1244);
+                        $val = (int) $d->id;
+                        $data[$cnt]->id = $val;
                         $cnt++;
 
                     }
@@ -190,8 +189,8 @@ class TasksController extends Controller
                                  ->where('assign_to_id',$user->id)
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d['id'];
-                        $data[$cnt]->id = Crypt::encrypt($val * 1244);
+                        $val = (int) $d->id;
+                        $data[$cnt]->id = $val;
                         $cnt++;
 
                     }
@@ -208,8 +207,8 @@ class TasksController extends Controller
                                  ->where('appointment_date', Carbon::now()->addDays()->toDateString())
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d['id'];
-                        $data[$cnt]->id = Crypt::encrypt($val * 1244);
+                        $val = (int) $d->id;
+                        $data[$cnt]->id = $val;
                         $cnt++;
 
                     }
@@ -221,8 +220,8 @@ class TasksController extends Controller
                                  ->select('first_name','last_name','address','id')
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d['id'];
-                        $data[$cnt]->id = Crypt::encrypt($val * 1244);
+                        $val = (int) $d->id;
+                        $data[$cnt]->id = $val;
                         $cnt++;
 
                     }
