@@ -80,12 +80,12 @@ class TasksController extends Controller
         if ($req->date != null) {
             if ($urole->contains('admin') || $urole->contains('salesmanager')) {
                 foreach (lead::
-                             where('wantsonline', 0)
+                where('wantsonline', 0)
                              ->where('appointment_date', $req->date)
                              ->whereNotNull('assign_to_id')
                              ->orderBy('time','desc')
                              ->where('completed',0)
-                             ->select('leads.first_name','leads.last_name','leads.address','leads.id')
+                             ->select('first_name','last_name','address','id')
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
                     $val = (int) $d->id;
@@ -95,13 +95,13 @@ class TasksController extends Controller
                 }
             } elseif ($urole->contains('fs')) {
                 foreach (lead::
-                             where('wantsonline', 0)
+                where('wantsonline', 0)
                              ->where('appointment_date', $req->date)
                              ->whereNotNull('assign_to_id')
                              ->orderBy('time','desc')
                              ->where('completed',0)
-                             ->where('leads.assign_to_id',$user->id)
-                             ->select('leads.first_name','leads.last_name','leads.address','leads.id')
+                             ->where('assign_to_id',$user->id)
+                             ->select('first_name','last_name','address','id')
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
                     $val = (int) $d->id;
@@ -114,11 +114,11 @@ class TasksController extends Controller
             }
             elseif($urole->contains('digital')) {
                 foreach (lead::
-                             where('wantsonline', 1)
+                where('wantsonline', 1)
                              ->where('appointment_date', $req->date)
                              ->orderBy('time','desc')
                              ->where('completed',0)
-                             ->select('leads.first_name','leads.last_name','leads.address','leads.id')
+                             ->select('first_name','last_name','address','id')
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
                     $val = (int) $d->id;
@@ -131,11 +131,11 @@ class TasksController extends Controller
             if ($urole->contains('admin') || $urole->contains('salesmanager')) {
                 if ($now > 2300) {
                     foreach (lead::
-                                 where('wantsonline', 0)
+                    where('wantsonline', 0)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
-                                 ->select('leads.first_name','leads.last_name','leads.address','leads.id')
+                                 ->select('first_name','last_name','address','id')
                                  ->where('appointment_date', Carbon::now()->addDays()->toDateString())
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
@@ -147,12 +147,12 @@ class TasksController extends Controller
                 } else {
 
                     foreach (lead::
-                                 where('wantsonline', 0)
+                    where('wantsonline', 0)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
                                  ->where('appointment_date',Carbon::now()->format('Y-m-d'))
-                                 ->select('leads.first_name','leads.last_name','leads.address','leads.id')
+                                 ->select('first_name','last_name','address','id')
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
                         $val = (int) $d->id;
@@ -165,13 +165,13 @@ class TasksController extends Controller
             if ($urole->contains('fs')) {
                 if ($now > 2300) {
                     foreach (lead::
-                                 where('wantsonline', 0)
+                    where('wantsonline', 0)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
-                                 ->select('leads.first_name','leads.last_name','leads.address','leads.id')
+                                 ->select('first_name','last_name','address','id')
                                  ->where('appointment_date', Carbon::now()->addDays()->toDateString())
-                                 ->where('leads.assign_to_id',$user->id)
+                                 ->where('assign_to_id',$user->id)
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
                         $val = (int) $d->id;
@@ -181,13 +181,13 @@ class TasksController extends Controller
                     }
                 } else {
                     foreach (lead::
-                                 where('wantsonline', 0)
+                    where('wantsonline', 0)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
                                  ->where('appointment_date',Carbon::now()->format('Y-m-d'))
-                                 ->select('leads.first_name','leads.last_name','leads.address','leads.id')
-                                 ->where('leads.assign_to_id',$user->id)
+                                 ->select('first_name','last_name','address','id')
+                                 ->where('assign_to_id',$user->id)
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
                         $val = (int) $d->id;
@@ -200,11 +200,11 @@ class TasksController extends Controller
             elseif($urole->contains('digital')){
                 if ($now > 2300) {
                     foreach (lead::
-                                 where('wantsonline', 1)
+                    where('wantsonline', 1)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
-                                 ->select('leads.first_name','leads.last_name','leads.address','leads.id')
+                                 ->select('first_name','last_name','address','id')
                                  ->where('appointment_date', Carbon::now()->addDays()->toDateString())
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
@@ -215,10 +215,10 @@ class TasksController extends Controller
                     }
                 } else {
                     foreach (lead::
-                                 where('wantsonline', 1)
+                    where('wantsonline', 1)
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
-                                 ->select('leads.first_name','leads.last_name','leads.address','leads.id')
+                                 ->select('first_name','last_name','address','id')
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
                         $val = (int) $d->id;
