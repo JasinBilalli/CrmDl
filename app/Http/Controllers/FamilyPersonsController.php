@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Crypt;
 
 class FamilyPersonsController extends Controller
 {
+    public function fmembers($family,lead $lid){
+        $user = auth()->user()->id;
+        return $lid->family()->where(function ($query){
+            $query->where('assign_to_id', '=', $activated);
+        })->get();
+    }
     public function family_persons($id,Request $req,$admin_id = null)
     {
 
@@ -27,7 +33,7 @@ class FamilyPersonsController extends Controller
         $idd /= 1244;
         $cnt = 0;
         $cnt1 = 0;
-        $lead = family::find($idd);
+        $lead = family::with('lead')->find($idd);
         $admin_id = $req->admin_id;
 
 
