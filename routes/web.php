@@ -167,9 +167,8 @@ $leadinfo = $leads['leads'][$i]->info;
     route::post('registernewuser',[UserController::class,'registernewuser'])->name('registernewuser')->middleware('role:admin');
 
     route::get('acceptappointment/{id}',function ($id){
-        $idd = Crypt::decrypt($id);
-        $idd /= 1244;
-        $lead = lead::find($idd);
+
+        $lead = lead::find($id);
 
         return view('acceptappointment',compact('lead'));
     })->name('acceptappointment');
