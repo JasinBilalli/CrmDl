@@ -79,8 +79,8 @@ class TasksController extends Controller
         $cnt = 0;
         if ($req->date != null) {
             if ($urole->contains('admin') || $urole->contains('salesmanager')) {
-                foreach (DB::table('leads')
-                             ->where('wantsonline', 0)
+                foreach (lead::
+                             where('wantsonline', 0)
                              ->where('appointment_date', $req->date)
                              ->whereNotNull('assign_to_id')
                              ->orderBy('time','desc')
@@ -94,8 +94,8 @@ class TasksController extends Controller
 
                 }
             } elseif ($urole->contains('fs')) {
-                foreach (DB::table('leads')
-                             ->where('wantsonline', 0)
+                foreach (lead::
+                             where('wantsonline', 0)
                              ->where('appointment_date', $req->date)
                              ->whereNotNull('assign_to_id')
                              ->orderBy('time','desc')
@@ -113,8 +113,8 @@ class TasksController extends Controller
 
             }
             elseif($urole->contains('digital')) {
-                foreach (DB::table('leads')
-                             ->where('wantsonline', 1)
+                foreach (lead::
+                             where('wantsonline', 1)
                              ->where('appointment_date', $req->date)
                              ->orderBy('time','desc')
                              ->where('completed',0)
@@ -130,8 +130,8 @@ class TasksController extends Controller
         } else {
             if ($urole->contains('admin') || $urole->contains('salesmanager')) {
                 if ($now > 2300) {
-                    foreach (DB::table('leads')
-                                 ->where('wantsonline', 0)
+                    foreach (lead::
+                                 where('wantsonline', 0)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
@@ -146,8 +146,8 @@ class TasksController extends Controller
                     }
                 } else {
 
-                    foreach (DB::table('leads')
-                                 ->where('wantsonline', 0)
+                    foreach (lead::
+                                 where('wantsonline', 0)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
@@ -164,8 +164,8 @@ class TasksController extends Controller
             }
             if ($urole->contains('fs')) {
                 if ($now > 2300) {
-                    foreach (DB::table('leads')
-                                 ->where('wantsonline', 0)
+                    foreach (lead::
+                                 where('wantsonline', 0)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
@@ -180,8 +180,8 @@ class TasksController extends Controller
 
                     }
                 } else {
-                    foreach (DB::table('leads')
-                                 ->where('wantsonline', 0)
+                    foreach (lead::
+                                 where('wantsonline', 0)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
@@ -199,8 +199,8 @@ class TasksController extends Controller
             }
             elseif($urole->contains('digital')){
                 if ($now > 2300) {
-                    foreach (DB::table('leads')
-                                 ->where('wantsonline', 1)
+                    foreach (lead::
+                                 where('wantsonline', 1)
                                  ->whereNotNull('assign_to_id')
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
@@ -214,8 +214,8 @@ class TasksController extends Controller
 
                     }
                 } else {
-                    foreach (DB::table('leads')
-                                 ->where('wantsonline', 1)
+                    foreach (lead::
+                                 where('wantsonline', 1)
                                  ->orderBy('time','desc')
                                  ->where('completed',0)
                                  ->select('leads.first_name','leads.last_name','leads.address','leads.id')
