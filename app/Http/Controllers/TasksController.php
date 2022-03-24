@@ -242,10 +242,12 @@ class TasksController extends Controller
         $fullcalendar = [];
         $br = 1;
         $dayofweek = 6;
-        Carbon::setLocale('de');
+   $days  = collect([['day' => 'Montag','name' => 'Monday'],['day'=>'Dienstag','name'=>'Tuesday'],['day' => 'Mittwoch','name'=> 'Wednesday'],['day' =>'Donnerstag','name'=>'Thursday'],['day'=>'Freitag','name'=>'Friday'],['day'=>'Samstag','name'=>'Saturday'],['day'=>'Sonntag','name'=> 'Sunday']]);
+
+
         for ($i = 0; $i <= 365; $i++) {
             $fullcalendar[$i]['date'] =  Carbon::now()->addDays($i)->format('Y-m-d');
-            $fullcalendar[$i]['dayn'] =  substr(Carbon::now()->addDays($i)->format('l'),0,3);
+            $fullcalendar[$i]['dayn'] =  substr($days->firstWhere('name',Carbon::now()->addDays($i)->format('l'))['day'],0,4);
             $fullcalendar[$i]['day'] =   Carbon::now()->addDays($i)->format('d');
             $fullcalendar[$i]['month'] = Carbon::now()->addDays($i)->format('M');
             $fullcalendar[$i]['year'] =  Carbon::now()->addDays($i)->format('Y');

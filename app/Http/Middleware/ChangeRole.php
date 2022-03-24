@@ -18,7 +18,7 @@ class ChangeRole
     {
 
         $roles = json_decode(auth()->user()->roless);
-        dd(count($roles));
+
     if(!is_null($roles) && count($roles) > 1){
             return response()->view('selectrole',compact('roles'));
         }
