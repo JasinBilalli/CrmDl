@@ -195,11 +195,11 @@
                                                         @endforeach
                                                         @if($offen > 0)
                                                             <td class="status1 border-0 fw-600 bg-warning"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">OFFEN</td>
                                                         @else
                                                             <td class="status1 border-0 fw-600 bg-success"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">PROVISIONERT</td>
                                                         @endif
                                                     @else
@@ -207,27 +207,27 @@
 
                                                         @if($grundversicherungP[$i]->status_PG == 'Aufgenomen')
                                                             <td class="status1 border-0 fw-600 greencol" id="status"
-                                                                style="padding:1px;">
+                                                                style="padding:6px;">
                                                                 {{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
                                                         @endif
                                                         @if($grundversicherungP[$i]->status_PG == 'Offen')
                                                             <td class="status1 border-0 fw-600 bg-warning"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
                                                         @endif
                                                         @if($grundversicherungP[$i]->status_PG == 'Provisionert')
                                                             <td class="status1 border-0 fw-600 bg-success"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
                                                         @endif
                                                         @if($grundversicherungP[$i]->status_PG == 'Zuruckgezogen')
                                                             <td class="status1 border-0 fw-600 bg-secondary"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
                                                         @endif
                                                         @if($grundversicherungP[$i]->status_PG == 'Abgelehnt')
                                                             <td class="status1 border-0 fw-600 bg-danger"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">{{strtoupper($grundversicherungP[$i]->status_PG)}}</td>
                                                         @endif
                                                     @endif
@@ -250,27 +250,27 @@
 
                                                     @if($retchsschutzP[$i]->status_PR == 'Aufgenomen')
                                                         <td class="status1 greencol border-0 fw-600"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($retchsschutzP[$i]->status_PR)}}</td>
                                                     @endif
                                                     @if($retchsschutzP[$i]->status_PR == 'Offen')
                                                         <td class="status1 border-0 fw-600 bg-warning"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($retchsschutzP[$i]->status_PR)}}</td>
                                                     @endif
                                                     @if($retchsschutzP[$i]->status_PR == 'Provisionert')
                                                         <td class="status1 border-0 fw-600 bg-success"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($retchsschutzP[$i]->status_PR)}}</td>
                                                     @endif
                                                     @if($retchsschutzP[$i]->status_PR == 'Zuruckgezogen')
                                                         <td class="status1 border-0 fw-600 bg-secondary"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($retchsschutzP[$i]->status_PR)}}</td>
                                                     @endif
                                                     @if($retchsschutzP[$i]->status_PR == 'Abgelehnt')
                                                         <td class="status1 border-0 fw-600 bg-danger"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($retchsschutzP[$i]->status_PR)}}</td>
                                                     @endif
                                                 @endif
@@ -291,27 +291,27 @@
                                                     </td>
                                                     @if($vorsorgeP[$i]->status_PV == 'Aufgenomen')
                                                         <td class="status1 greencol border-0 fw-600"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($vorsorgeP[$i]->status_PV)}}</td>
                                                     @endif
                                                     @if($vorsorgeP[$i]->status_PV == 'Offen')
                                                         <td class="status1 border-0 fw-600 bg-warning"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($vorsorgeP[$i]->status_PV)}}</td>
                                                     @endif
                                                     @if($vorsorgeP[$i]->status_PV == 'Provisionert')
                                                         <td class="status1 border-0 fw-600 bg-success"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($vorsorgeP[$i]->status_PV)}}</td>
                                                     @endif
                                                     @if($vorsorgeP[$i]->status_PV == 'Zuruckgezogen')
                                                         <td class="status1 border-0 fw-600 bg-secondary"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($vorsorgeP[$i]->status_PV)}}</td>
                                                     @endif
                                                     @if($vorsorgeP[$i]->status_PV == 'Abgelehnt')
                                                         <td class="status1 border-0 fw-600 bg-danger"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($vorsorgeP[$i]->status_PV)}}</td>
                                                     @endif
                                                 @endif
@@ -341,37 +341,37 @@
                                                         @endforeach
                                                         @if($offen > 0)
                                                             <td class="status1 border-0 fw-600 bg-warning"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">OFFEN</td>
                                                         @else
                                                             <td class="status1 border-0 fw-600 bg-success"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">PROVISIONERT</td>
                                                         @endif
                                                     @else
                                                         @if($zusatzversicherungP[$i]->status_PZ == 'Aufgenomen')
                                                             <td class="status1 greencol border-0 fw-600"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
                                                         @endif
                                                         @if($zusatzversicherungP[$i]->status_PZ == 'Offen')
                                                             <td class="status1 border-0 fw-600 bg-warning"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
                                                         @endif
                                                         @if($zusatzversicherungP[$i]->status_PZ == 'Provisionert')
                                                             <td class="status1 border-0 fw-600 bg-success"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
                                                         @endif
                                                         @if($zusatzversicherungP[$i]->status_PZ == 'Zuruckgezogen')
                                                             <td class="status1 border-0 fw-600 bg-secondary"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
                                                         @endif
                                                         @if($zusatzversicherungP[$i]->status_PZ == 'Abgelehnt')
                                                             <td class="status1 border-0 fw-600 bg-danger"
-                                                                style="padding:1px;"
+                                                                style="padding:6px;"
                                                                 id="status">{{strtoupper($zusatzversicherungP[$i]->status_PZ)}}</td>
                                                         @endif
                                                     @endif
@@ -393,27 +393,27 @@
                                                     </td>
                                                     @if($autoversicherungP[$i]->status_PA == 'Aufgenomen')
                                                         <td class="status1 greencol border-0 fw-600"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($autoversicherungP[$i]->status_PA)}}</td>
                                                     @endif
                                                     @if($autoversicherungP[$i]->status_PA == 'Offen')
                                                         <td class="status1 border-0 fw-600 bg-warning"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($autoversicherungP[$i]->status_PA)}}</td>
                                                     @endif
                                                     @if($autoversicherungP[$i]->status_PA == 'Provisionert')
                                                         <td class="status1 border-0 fw-600 bg-success"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($autoversicherungP[$i]->status_PA)}}</td>
                                                     @endif
                                                     @if($autoversicherungP[$i]->status_PA == 'Zuruckgezogen')
                                                         <td class="status1 border-0 fw-600 bg-secondary"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($autoversicherungP[$i]->status_PA)}}</td>
                                                     @endif
                                                     @if($autoversicherungP[$i]->status_PA == 'Abgelehnt')
                                                         <td class="status1 border-0 fw-600 bg-danger"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($autoversicherungP[$i]->status_PA)}}</td>
                                                     @endif
                                                 @endif
@@ -435,27 +435,27 @@
                                                     </td>
                                                     @if($hausratP[$i]->status_PH == 'Aufgenomen')
                                                         <td class="status1 greencol border-0 fw-600"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($hausratP[$i]->status_PH)}}</td>
                                                     @endif
                                                     @if($hausratP[$i]->status_PH == 'Offen')
                                                         <td class="status1 border-0 fw-600 bg-warning"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($hausratP[$i]->status_PH)}}</td>
                                                     @endif
                                                     @if($hausratP[$i]->status_PH == 'Provisionert')
                                                         <td class="status1 border-0 fw-600 bg-success"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($hausratP[$i]->status_PH)}}</td>
                                                     @endif
                                                     @if($hausratP[$i]->status_PH == 'Zuruckgezogen')
                                                         <td class="status1 border-0 fw-600 bg-secondary"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($hausratP[$i]->status_PH)}}</td>
                                                     @endif
                                                     @if($hausratP[$i]->status_PH == 'Abgelehnt')
                                                         <td class="status1 border-0 fw-600 bg-danger"
-                                                            style="padding:1px;"
+                                                            style="padding:6px;"
                                                             id="status">{{strtoupper($hausratP[$i]->status_PH)}}</td>
                                                     @endif
                                                 @endif

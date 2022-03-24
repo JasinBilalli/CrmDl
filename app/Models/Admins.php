@@ -50,6 +50,9 @@ public function headadmin(){
     public function pendencies(){
         return $this->hasMany(Pendency::class,'admin_id');
     }
+    public function personaldata(){
+    return $this->belongsTo(EmployeePersonalData::class,'admin_id');
+    }
     /**
      * The attributes that should be cast.
      *

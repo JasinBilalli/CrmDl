@@ -238,7 +238,7 @@
                         <div class="col py-1">
                             <div class="mx-3 my-3">
                                 <span class="fs-3 fw-bold text-white">
-                                    {{$app->first_name}}
+                                    {{$app->first_name}} {{$app->last_name}}
                                 </span>
                             </div>
                             <div class="mx-3">
@@ -252,7 +252,7 @@
                                                   stroke-width="0.5"/>
                                         </svg>
                                     </span>
-                                    {{$app->address}}
+                                    {{$app->address}} {{$app->city}}
                                 </span>
                             </div>
                         </div>
@@ -262,81 +262,16 @@
                             <div class="info-divv px-2 my-3">
                                 <div class="row">
                                     <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Agent:</span> <span class="fs-6">{{$app->agent}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Berater:</span> <span class="fs-6">{{$app->berater}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Datum:</span> <span class="fs-6">{{$app->appointment_date}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Tag:</span> <span class="fs-6">{{\Carbon\Carbon::parse($app->appointment_date)->format('l')}}</span>
-                                            </div>
-                                        </div>
-
-
-
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Strasse:</span> <span class="fs-6">{{$app->address}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">PLZ:</span> <span class="fs-6">{{$app->postal_code}}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Zufriedenheit:</span> <span class="fs-6">{{$app->zufriedenheit}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Zeit:</span> <span class="fs-6">{{$app->time}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Sprache: </span><span class="fs-6">{{$app->sprache}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Personen:</span> <span class="fs-6">{{$app->number_of_persons}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Nationalität:</span> <span
-                                                    class="fs-6">{{$app->nationality}}</span>
-                                            </div>
-                                        </div>
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$app->address}}</span>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                                        <div class="white-thingy my-2">
-                                            <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Ort</span> <span class="fs-6">{{$app->city}}</span>
-                                            </div>
-                                        </div>
+                                        {{--                                    <div class="white-thingy my-2">--}}
+                                        {{--                                        <div class="text-div py-3 ps-2">--}}
+                                        {{--                                            <span class="fw-600 ">Agent:</span> <span class="fs-6">{{$lead->agent}}</span>--}}
+                                        {{--                                        </div>--}}
+                                        {{--                                    </div>--}}
+                                        {{--                                    <div class="white-thingy my-2">--}}
+                                        {{--                                        <div class="text-div py-3 ps-2">--}}
+                                        {{--                                            <span class="fw-600 ">Berater:</span> <span class="fs-6">{{$lead->berater}}</span>--}}
+                                        {{--                                        </div>--}}
+                                        {{--                                    </div>--}}
                                         <div class="white-thingy my-2">
                                             <div class="text-div py-3 ps-2">
                                                 <span class="fw-600 ">Vorname:</span> <span class="fs-6">{{$app->first_name}} </span>
@@ -349,17 +284,77 @@
                                         </div>
                                         <div class="white-thingy my-2">
                                             <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Gesundheit:</span><span class="fs-6">{{$app->gesundheit}}</span>
+                                                <span class="fw-600 ">Nationalitat:</span> <span
+                                                    class="fs-6">{{$app->nationality}}</span>
                                             </div>
                                         </div>
-
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Sprache: </span><span class="fs-6">{{$app->sprache}}</span>
+                                            </div>
+                                        </div>
                                         <div class="white-thingy my-2">
                                             <div class="text-div py-3 ps-2">
                                                 <span class="fw-600 ">Tel. Privat</span> <span class="fs-6">{{$app->telephone}}</span>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Datum:</span> <span class="fs-6">{{$app->appointment_date}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Zeit:</span> <span class="fs-6">{{$app->time}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Tag:</span> <span class="fs-6">{{\Carbon\Carbon::parse($app->appointment_date)->format('l')}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Personen:</span> <span class="fs-6">{{$app->number_of_persons}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Strasse:</span> <span class="fs-6">{{$app->address}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$app->address}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Ort</span> <span class="fs-6">{{$app->city}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">PLZ:</span> <span class="fs-6">{{$app->postal_code}}</span>
+                                            </div>
+                                        </div>
 
+                                        <div class="white-thingy my-2">
+                                            <div class="text-div py-3 ps-2">
+                                                <span class="fw-600 ">Zufriedenheit:</span> <span class="fs-6">{{$app->zufriedenheit}}</span>
+                                            </div>
+                                        </div>
+                                        {{--                                    <div class="white-thingy my-2">--}}
+                                        {{--                                        <div class="text-div py-3 ps-2">--}}
+                                        {{--                                            <span class="fw-600 ">Gesundheit:</span><span class="fs-6">{{$lead->gesundheit}}</span>--}}
+                                        {{--                                        </div>--}}
+                                        {{--                                    </div>--}}
+
+                                    </div>
                                 </div>
                                 <div class="white-thingy my-2">
                                     <div class="text-div py-3 ps-2">
@@ -969,7 +964,7 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-<script> 
+<script>
     //paste this code under the head tag or in a separate js file.
 	// Wait for window load
 	$(window).load(function() {
@@ -982,7 +977,7 @@
 {{--MObile--}}
 <style>
     /* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript, 
+/* This only works with JavaScript,
 if it's not present, don't show loader */
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
