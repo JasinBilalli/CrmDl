@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\PersonalAppointment;
+use App\Notifications\SendNotificationn;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Flash;
@@ -83,16 +84,21 @@ class AppointmentsController extends Controller
 		$pieces = explode("-", $input['nom_lead']);
 		$id_lead = (int) $pieces['0'];
 		$date = Carbon::parse(substr($request->ctime,0,15))->format('Y-m-d');
+
 	if(lead::find($id_lead)->appointment_date == $date){
 		if(lead::find($id_lead)->wantsonline == 0 && Admins::find($input['id_user'])->getRoleNames()[0] == 'fs'){
 		$appointment = lead::where('id', $pieces['0'])
               ->update(['assigned' => 1,'assign_to_id' => $input['id_user'],'rejected' => 0]);
-		if($appointment){return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
+		if($appointment){Admins::find($input['id_user'])->notify(new SendNotificationn('<a href="' . route('Appointments') .'">Ihnen wurde ein Termin zugeteilt</a>'));
+            return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
+
 	}
 	elseif(lead::find($id_lead)->wantsonline == 1 && Admins::find($input['id_user'])->getRoleNames()[0] == 'digital'){
 	$appointment = lead::where('id', $pieces['0'])
               ->update(['assigned' => 1,'assign_to_id' => $input['id_user'],'rejected' => 0]);
-		if($appointment){return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
+		if($appointment){Admins::find($input['id_user'])->notify(new SendNotificationn('<a href="' . route('Appointments') .'">Ihnen wurde ein Termin zugeteilt</a>'));
+            return "Mit Erfolg hochgeladen !!!!";} else {return "ERROR !!!";}
+
 	}
 	elseif(strtotime(lead::find($id_lead)->time) > strtotime("22:00") || strtotime(lead::find($id_lead)->time) < strtotime("07:59")){
 		return "Die Terminzeit ist nicht korrekt, sie sollte zwischen 8:00 und 19:30 Uhr liegen";

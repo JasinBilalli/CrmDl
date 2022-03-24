@@ -988,17 +988,16 @@ if($cnt > 0) {
             $admins = new Admins();
             $admins->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
             $admins->email = filter_var($request->user_email, FILTER_SANITIZE_STRING);
-            $admins->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+            $admins->phonenumber = filter_var($request->phone_number, FILTER_SANITIZE_STRING);
                     $admins->roless = json_encode($roles);
                     $admins->password = Hash::make($request->user_password);
                     $admins->save();
             $admins->assignRole($request->input('role_name'));
     for ($i = 1; $i <= $cnt; $i++) {
-
                 $admin = new Admins();
                 $admin->name = filter_var($request->user_name, FILTER_SANITIZE_STRING);
                 $admin->email = filter_var($request->input('role_name' . $i) . $request->user_email, FILTER_SANITIZE_STRING);
-                $admin->phonenumber = filter_var($request->user_name, FILTER_SANITIZE_STRING);
+                $admin->phonenumber = filter_var($request->phone_number, FILTER_SANITIZE_STRING);
                 $admin->password = Hash::make($request->user_password);
                 $admin->admin_id = $admins->id;
                 $admin->save();

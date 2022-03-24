@@ -599,7 +599,7 @@
                                                         @elseif($task->type == 'Order')
                                                             <span class="submited-btn py-2 px-4">Offer</span>
                                                         @else
-                                                            <span class="submited-btn py-2 px-4">Offer</span>
+                                                            <span class="submited-btn py-2 px-4">Eingereicht</span>
                                                         @endif
                                                     </td>
                                                 </tr>
@@ -1877,7 +1877,7 @@
         height: 400px;
         overflow: auto;
     }
-    
+
 
     /* .open-tasks-bo .content .overflow-div span {
         font-size: 18px;

@@ -34,18 +34,18 @@
                                 <defs>
                                     <clipPath id="clip-path">
                                         <rect id="Rectangle_4" data-name="Rectangle 4" width="303.569" height="190.388"
-                                              fill="#bdc1cc"/>
+                                              fill="#198754"/>
                                     </clipPath>
                                     <clipPath id="clip-path-2">
                                         <rect id="Rectangle_5" data-name="Rectangle 5" width="111.429" height="81.913"
-                                              fill="#88889b"/>
+                                              fill="#198754"/>
                                     </clipPath>
                                 </defs>
                                 <g id="Group_6" data-name="Group 6" transform="translate(0 0.004)">
                                     <g id="Group_5" data-name="Group 5" clip-path="url(#clip-path)">
                                         <path id="Path_274" data-name="Path 274"
                                               d="M282.242,190.39H21.329C9.549,190.39,0,181.3,0,170.077V20.313C0,9.1,9.549,0,21.329,0H282.242c11.78,0,21.329,9.094,21.329,20.311V170.077c0,11.219-9.549,20.313-21.329,20.313"
-                                              transform="translate(0 -0.002)" fill="#bdc1cc"/>
+                                              transform="translate(0 -0.002)" fill="#198754"/>
                                     </g>
                                 </g>
                                 <g id="Group_778" data-name="Group 778" transform="translate(-397.019 -143.537)">
@@ -54,7 +54,7 @@
                                             <path id="Path_275" onclick="window.location.href='{{route('costumers')}}'"
                                                   style="cursor: pointer;" data-name="Path 275"
                                                   d="M214.01,20.318V76.634c-91.968,21.8-104.334-30.2-104.386-41.938C109.468,0,102.581,0,102.581,0h90.095c11.782,0,21.334,9.1,21.334,20.318"
-                                                  transform="translate(-102.581)" fill="#88889b"/>
+                                                  transform="translate(-102.581)" fill="#0f5132"/>
                                         </g>
                                     </g>
                                     <ellipse id="Ellipse_8" onclick="window.location.href='{{route('costumers')}}'"
@@ -62,7 +62,7 @@
                                              rx="2.923" ry="2.783" transform="translate(659.672 173.599)" fill="#fff"/>
                                     <ellipse id="Ellipse_9" onclick="window.location.href='{{route('costumers')}}'"
                                              style="cursor: pointer;" data-name="Ellipse 9" cx="2.923" cy="2.783"
-                                             rx="2.923" ry="2.783" transform="translate(659.672 182.506)" fill="#fff"/>
+                                             rx="2.923" ry="2.783" transform="translate(659.672 182.506)" fill="#198754"/>
                                 </g>
                                 <text id="_74_" data-name="74%" transform="translate(31.871 94.343)" fill="#fff"
                                       font-size="49" font-family="Montserrat-Bold, Montserrat" font-weight="700">
@@ -187,7 +187,7 @@
                                     <g id="Group_5" data-name="Group 5" clip-path="url(#clip-path)">
                                         <path id="Path_274" data-name="Path 274"
                                               d="M282.242,190.39H21.329C9.549,190.39,0,181.3,0,170.077V20.313C0,9.1,9.549,0,21.329,0H282.242c11.78,0,21.329,9.094,21.329,20.311V170.077c0,11.219-9.549,20.313-21.329,20.313"
-                                              transform="translate(0 -0.002)" fill="#ff6262"/>
+                                              transform="translate(0 -0.002)" fill="#bdc1cc"/>
                                     </g>
                                 </g>
                                 <g id="Group_9" data-name="Group 9" transform="translate(192.142)">
@@ -195,7 +195,7 @@
                                         <path id="Path_275" onclick="window.location.href='{{route('costumers')}}'"
                                               style="cursor: pointer;" data-name="Path 275"
                                               d="M214.01,20.318V76.634c-91.968,21.8-104.334-30.2-104.386-41.938C109.468,0,102.581,0,102.581,0h90.095c11.782,0,21.334,9.1,21.334,20.318"
-                                              transform="translate(-102.581)" fill="#fd2f2f"/>
+                                              transform="translate(-102.581)" fill="#84878f"/>
                                     </g>
                                 </g>
                                 <ellipse id="Ellipse_11" onclick="window.location.href='{{route('costumers')}}'"
@@ -377,97 +377,11 @@
                             </div>
 
                         </div>
-                        <div class="fs-5 count px-4 fw-bold">2</div>
+                        <div class="fs-5 count px-4 fw-bold">0</div>
                     </div>
                     <div class="hr-req-content" >
                         <div class="wrapper p-2">
                             <div class="hr-req-overflow px-2">
-                                <div class="hr-req-item my-2 p-2 bg-white">
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
-                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                                    <path fill-rule="evenodd"
-                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Malik Gabbi</div>
-                                    </div>
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Ferien</div>
-                                    </div>
-                                    <div class="d-flex mb-1 mt-2">
-                                        <div class="col-auto g-0 p-0">
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
-                                                         fill="currentColor" class="bi bi-calendar-week"
-                                                         viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
-                                                        <path
-                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                                                    </svg>
-                                                </span>
-                                        </div>
-                                        <div class="col ps-2">
-                                            <div class="fw-500">10 Tage</div>
-                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="hr-req-item my-2 p-2 bg-white">
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-person-circle" viewBox="0 0 16 16">
-                                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                                    <path fill-rule="evenodd"
-                                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Malik Gabbi</div>
-                                    </div>
-                                    <div class="d-flex my-2 px-2">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="currentColor"
-                                                     class="bi bi-question-circle" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
-                                                </svg>
-                                            </span>
-                                        <div class="ps-2 fw-500">Ferien</div>
-                                    </div>
-                                    <div class="d-flex mb-1 mt-2">
-                                        <div class="col-auto g-0 p-0">
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40"
-                                                         fill="currentColor" class="bi bi-calendar-week"
-                                                         viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
-                                                        <path
-                                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                                                    </svg>
-                                                </span>
-                                        </div>
-                                        <div class="col ps-2">
-                                            <div class="fw-500">10 Tage</div>
-                                            <div class="text-secondary"><i>(06.03.2022 - 16.03.2022)</i></div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <div class="d-flex justify-content-end py-3" style="background-color: transparent;">
                         <div class="prev-nxt-btn d-flex">
@@ -588,7 +502,7 @@
                                         </svg>
                                     </div>
                                 </a>
-                                @if($pendencies->page != 0)
+
                                     <a href="{{route('dashboard',['pendP' => $pendencies->page + 1])}}">
                                         <div class="nxt-btn border p-2 bg-light m-2 rounded">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
@@ -596,13 +510,9 @@
                                             </svg>
                                         </div>
                                     </a>
-                                @else
-                                    <div class="nxt-btn border p-2 bg-light m-2 rounded">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                    </div>
-                                @endif
+
+
+
                             </div>
                         </div>
                     </div>
@@ -795,20 +705,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="d-flex justify-content-end py-3" style="background-color: transparent;">
-                        <div class="prev-nxt-btn d-flex">
-                            <div class="prev-btn border p-2 bg-light m-2 rounded">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            </div>
-                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                            </div>
-                        </div>
-                </div>
+
                     </div>
                 </div>
             </div>
@@ -1022,20 +919,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="d-flex justify-content-end py-3" style="background-color: transparent;">
-                        <div class="prev-nxt-btn d-flex">
-                            <div class="prev-btn border p-2 bg-light m-2 rounded">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                            </svg>
-                            </div>
-                            <div class="nxt-btn border p-2 bg-light m-2 rounded">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                 <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-                            </svg>
-                            </div>
-                        </div>
-                </div>
+
                     </div>
                 </div>
             </div>
@@ -1381,7 +1265,7 @@
                                 <div class="row my-2">
                                     <div class="col-12">
                                         <div class="text-center fw-bold"
-                                             style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                             style="padding: 15px;background-color: #198754;border-radius: 15px">
                                             {{$provisionertCount}}
                                             <br>
                                             Provisionert
