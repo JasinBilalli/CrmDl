@@ -88,7 +88,7 @@ class TasksController extends Controller
                              ->select('first_name','last_name','address','id')
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
-                    $val = (int) $d->id;
+                    $val = (int) $d['id'];
                     $data[$cnt]->id = Crypt::encrypt($val * 1244);
                     $cnt++;
 
@@ -104,7 +104,7 @@ class TasksController extends Controller
                              ->select('first_name','last_name','address','id')
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
-                    $val = (int) $d->id;
+                    $val = (int) $d['id'];
                     $data[$cnt]->id = Crypt::encrypt($val * 1244);
                     $cnt++;
 
@@ -121,7 +121,7 @@ class TasksController extends Controller
                              ->select('first_name','last_name','address','id')
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
-                    $val = (int) $d->id;
+                    $val = (int) $d['id'];
                     $data[$cnt]->id = Crypt::encrypt($val * 1244);
                     $cnt++;
 
@@ -139,7 +139,7 @@ class TasksController extends Controller
                                  ->where('appointment_date', Carbon::now()->addDays()->toDateString())
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d->id;
+                        $val = (int) $d['id'];
                         $data[$cnt]->id = Crypt::encrypt($val * 1244);
                         $cnt++;
 
@@ -155,7 +155,7 @@ class TasksController extends Controller
                                  ->select('first_name','last_name','address','id')
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d->id;
+                        $val = (int) $d['id'];
                         $data[$cnt]->id = Crypt::encrypt($val * 1244);
                         $cnt++;
 
@@ -174,7 +174,7 @@ class TasksController extends Controller
                                  ->where('assign_to_id',$user->id)
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d->id;
+                        $val = (int) $d['id'];
                         $data[$cnt]->id = Crypt::encrypt($val * 1244);
                         $cnt++;
 
@@ -190,7 +190,7 @@ class TasksController extends Controller
                                  ->where('assign_to_id',$user->id)
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d->id;
+                        $val = (int) $d['id'];
                         $data[$cnt]->id = Crypt::encrypt($val * 1244);
                         $cnt++;
 
@@ -208,7 +208,7 @@ class TasksController extends Controller
                                  ->where('appointment_date', Carbon::now()->addDays()->toDateString())
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d->id;
+                        $val = (int) $d['id'];
                         $data[$cnt]->id = Crypt::encrypt($val * 1244);
                         $cnt++;
 
@@ -221,7 +221,7 @@ class TasksController extends Controller
                                  ->select('first_name','last_name','address','id')
                                  ->paginate(15) as $d){
                         $data[$cnt] = $d;
-                        $val = (int) $d->id;
+                        $val = (int) $d['id'];
                         $data[$cnt]->id = Crypt::encrypt($val * 1244);
                         $cnt++;
 
