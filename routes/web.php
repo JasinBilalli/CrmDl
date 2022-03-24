@@ -203,19 +203,7 @@ route::get('changerole','App\Http\Controllers\UserController@changerole');
 
 
 
-    route::post('createAbsence',[HumanResourcesController::class,'createAbsence'])->name('createAbsence');
-    route::post('updateAbsence',[HumanResourcesController::class,'updateAbsenceById'])->name('updateAbsenceById');
-    route::get('getAllEmployeeAbsences',[HumanResourcesController::class,'getAllEmployeeAbsences'])->name('getAllEmployeeAbsences');
-    route::post('removeAbsence',[HumanResourcesController::class,'removeAbsence'])->name('removeAbsence');
-    route::post('addBankInformationData',[HumanResourcesController::class,'addBankInformationData'])->name('addBankInformationData');
-    route::post('updateBankInformation',[HumanResourcesController::class,'updateBankInformation'])->name('updateBankInformation');
-    route::get('getEmployeeBankInformation',[HumanResourcesController::class,'getEmployeeBankInformation'])->name('getEmployeeBankInformation');
-    route::post('createPersonalData',[HumanResourcesController::class,'createPersonalData'])->name('createPersonalData');
-    route::get('getEmployeePersonalDataById',[HumanResourcesController::class,'getEmployeePersonalDataById'])->name('getEmployeePersonalDataById');
-    route::get('getAllEmployees',[HumanResourcesController::class,'getAllEmployees'])->name('getAllEmployees');
-    route::post('updatePersonalData',[HumanResourcesController::class,'updatePersonalData'])->name('updatePersonalData');
-    route::post('removePersonalData',[HumanResourcesController::class,'removePersonalData'])->name('removePersonalData');
-
+    include 'Hr.php';
 
 
     route::get('todos',[TodoController::class,'todos']);

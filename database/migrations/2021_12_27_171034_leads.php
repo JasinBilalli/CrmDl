@@ -13,7 +13,6 @@ class Leads extends Migration
      */
     public function up()
     {
-        //
         Schema::drop('leads');
         Schema::create('leads',function(Blueprint $table){
             $table->id();
@@ -37,6 +36,9 @@ class Leads extends Migration
             $table->integer('assign_to_id')->nullable()->index(); //Foreign Key
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
+            $table->string('begrundung')->nullable();
+            $table->string('begrundung2')->nullable();
+            $table->string('begrundungfile2')->nullable();
         });
     }
 

@@ -121,14 +121,17 @@ class HumanResourcesController extends Controller
         }
     }
 
-    public function getEmployeeBankInformation(Request $request)
+    public function getEmployeeBankInformation($id)
     {
-        $employeeId = $request->employeeId;
+        $bankInfo = BankInformation::where('employee_id', $id)->get();
 
-        $decryptedEmployeeId = Crypt::decrypt($employeeId);
-        $decryptedEmployeeId /= 1244;
 
-        return BankInformation::where('employee_id', $decryptedEmployeeId)->first();
+        $bankData['bankData'] = $bankInfo;
+
+
+        echo json_encode($bankData);
+        exit;
+
     }
 
     public function createPersonalData(Request $request)
@@ -161,9 +164,23 @@ class HumanResourcesController extends Controller
         return EmployeePersonalData::where('id', $decryptedEmployeeId)->first();
     }
 
-    public function getAllEmployees()
-    {
-        return EmployeePersonalData::all();
+//    public function getAllEmployees()
+//    {
+//        dd(2);
+//        $empData = EmployeePersonalData::all()->get();
+//        return redirect()->route('hr_view')->with('empData',$empData);
+//
+//    }
+
+    public function getHRs($id){
+
+        $employees = EmployeePersonalData::where('admin_id', $id)->get();
+
+        // Fetch all records
+        $userData['data'] = $employees;
+
+        echo json_encode($userData);
+        exit;
     }
 
     public function updatePersonalData(Request $request)
