@@ -14,7 +14,7 @@ class AddBelongstoAdmis extends Migration
     public function up()
     {
         Schema::table('admins', function (Blueprint $table) {
-            $table->integer('admin_id')->nullable()->change();
+            $table->integer('admin_id')->nullable();
         });
     }
 

@@ -24,7 +24,7 @@
                     <div class="col py-1">
                         <div class="mx-3 my-3">
                                 <span class="fs-3 fw-bold text-white">
-                                    {{$leads->first_name}}
+                                    {{$leads->first_name}} {{$leads->last_name}}
                                 </span>
                         </div>
                         <div class="mx-3">
@@ -38,7 +38,7 @@
                                                   stroke-width="0.5" />
                                         </svg>
                                     </span>
-                                    {{$leads->address}}
+                                    {{$leads->address}} {{$leads->city}}
                                 </span>
                         </div>
                     </div>
@@ -48,76 +48,16 @@
                         <div class="info-divv px-2 my-3">
                             <div class="row">
                                 <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Agent:</span> <span class="fs-6">{{$leads->agent}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Berater:</span> <span class="fs-6">{{$leads->berater}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Datum:</span> <span class="fs-6">{{$leads->appointment_date}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Tag:</span> <span class="fs-6">{{\Carbon\Carbon::parse($leads->appointment_date)->format('l')}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Strasse:</span> <span class="fs-6">{{$leads->address}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">PLZ:</span> <span class="fs-6">{{$leads->postal_code}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Zufriedenheit:</span> <span class="fs-6">{{$leads->zufriedenheit}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Zeit:</span> <span class="fs-6">{{$leads->time}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Sprache: </span><span class="fs-6">{{$leads->sprache}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Personen:</span> <span class="fs-6">{{$leads->number_of_persons}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Nationalitat:</span> <span class="fs-6">{{$leads->nationality}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$leads->address}}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
-                                    <div class="white-thingy my-2">
-                                        <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Ort</span> <span class="fs-6">{{$leads->city}}</span>
-                                        </div>
-                                    </div>
+{{--                                    <div class="white-thingy my-2">--}}
+{{--                                        <div class="text-div py-3 ps-2">--}}
+{{--                                            <span class="fw-600 ">Agent:</span> <span class="fs-6">{{$lead->agent}}</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="white-thingy my-2">--}}
+{{--                                        <div class="text-div py-3 ps-2">--}}
+{{--                                            <span class="fw-600 ">Berater:</span> <span class="fs-6">{{$lead->berater}}</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
                                             <span class="fw-600 ">Vorname:</span> <span class="fs-6">{{$leads->first_name}} </span>
@@ -130,17 +70,76 @@
                                     </div>
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
-                                            <span class="fw-600 ">Gesundheit:</span><span class="fs-6">{{$leads->gesundheit}}</span>
+                                            <span class="fw-600 ">Nationalitat:</span> <span
+                                                class="fs-6">{{$leads->nationality}}</span>
                                         </div>
                                     </div>
-
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Sprache: </span><span class="fs-6">{{$leads->sprache}}</span>
+                                        </div>
+                                    </div>
                                     <div class="white-thingy my-2">
                                         <div class="text-div py-3 ps-2">
                                             <span class="fw-600 ">Tel. Privat</span> <span class="fs-6">{{$leads->telephone}}</span>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Datum:</span> <span class="fs-6">{{$leads->appointment_date}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Zeit:</span> <span class="fs-6">{{$leads->time}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Tag:</span> <span class="fs-6">{{\Carbon\Carbon::parse($leads->appointment_date)->format('l')}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Personen:</span> <span class="fs-6">{{$leads->number_of_persons}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Strasse:</span> <span class="fs-6">{{$leads->address}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$leads->address}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Ort</span> <span class="fs-6">{{$leads->city}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">PLZ:</span> <span class="fs-6">{{$leads->postal_code}}</span>
+                                        </div>
+                                    </div>
 
+                                    <div class="white-thingy my-2">
+                                        <div class="text-div py-3 ps-2">
+                                            <span class="fw-600 ">Zufriedenheit:</span> <span class="fs-6">{{$leads->zufriedenheit}}</span>
+                                        </div>
+                                    </div>
+{{--                                    <div class="white-thingy my-2">--}}
+{{--                                        <div class="text-div py-3 ps-2">--}}
+{{--                                            <span class="fw-600 ">Gesundheit:</span><span class="fs-6">{{$lead->gesundheit}}</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+                                </div>
                             </div>
                             <div class="white-thingy my-2">
                                 <div class="text-div py-3 ps-2">
@@ -150,6 +149,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 px-0 ps-sm-0">
                     @php
                         $leadss = $leads->id * 1244;
@@ -162,16 +162,40 @@
 
                                 <div class="text-center py-3">
                                         <span class="fs-5 fw-bold text-secondary">
-                                            Termin nicht stattgefunden
+                                            Termin stattgefunden
                                         </span>
                                 </div>
                                 <div class="row g-3 align-items-center py-1 mx-2 mx-sm-5">
-                                    <div class="col-12 col-md-6 text-sm-center">
+                                    <div class="col-12 col-md-6">
                                         <label for="inputTxt4" class="col-form-label">Begrundung: </label>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <input type="text" id="inputTxt4" name="reason" class="form-control"
                                                aria-describedby="passwordHelpInline" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form method="post" action="{{route('rejectlead',$leadsId)}}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="border-left-div">
+                            <div class="termin-div mx-3 py-3">
+
+                                <div class="text-center py-3">
+                                        <span class="fs-5 fw-bold text-secondary">
+                                            Termin nicht stattgefunden
+                                        </span>
+                                </div>
+                                <div class="row g-3 align-items-center py-1 mx-2 mx-sm-5">
+                                    <div class="col-12 col-md-6 ">
+                                        <label for="inputTxt4" class="col-form-label">Begrundung: </label>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <select class="form-select" name="reason">
+                                            <option value="Nicht Zuhause">Nicht Zuhause</option>
+                                            <option value="Weg geschick">Weg geschick</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row mx-2 text-center my-1 my-sm-3 mx-3 mx-sm-5">
@@ -214,7 +238,7 @@
                                                     </svg>
                                                 </label>
                                                 <input onchange="uploadfile()" name="image" type="file" id="file-input-3"
-                                                       class="svg-div w-100 border-0  g-0" required>
+                                                       class="svg-div w-100 border-0  g-0">
                                             </div>
                                         </div>
                                     </div>

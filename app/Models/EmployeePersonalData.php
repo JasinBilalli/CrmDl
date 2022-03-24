@@ -18,6 +18,7 @@ class EmployeePersonalData extends Model
         'address',
         'zip',
         'city',
-        'phone'
+        'phone',
+        'admin_id'
     ];
 }

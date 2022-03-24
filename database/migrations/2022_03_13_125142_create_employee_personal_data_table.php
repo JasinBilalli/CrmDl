@@ -20,8 +20,14 @@ class CreateEmployeePersonalDataTable extends Migration
             $table->text('email')->unique();
             $table->text('address')->nullable();
             $table->text('zip')->nullable();
-            $table->text('city');
+            $table->text('city')->nullable();
             $table->text('phone')->nullable();
+            $table->string('language')->nullable();
+            $table->string('job_position')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('status')->nullable();
+            $table->integer('admin_id')->nullable();
             $table->timestamps();
         });
     }
