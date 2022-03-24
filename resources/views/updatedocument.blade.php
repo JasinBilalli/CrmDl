@@ -6898,13 +6898,13 @@ if it's not present, don't show loader */
 
 
     function edit() {
-        document.getElementById('forma').action = "{{URL::route('updateLeadDataKK', [\Illuminate\Support\Facades\Crypt::encrypt($lead->lead->id * 1244), Crypt::encrypt($lead->id * 1244), 'admin_id' => Crypt::encrypt($admin_id * 1244)])}}";
+        document.getElementById('forma').action = "{{URL::route('updateLeadDataKK', [\Illuminate\Support\Facades\Crypt::encrypt($lead->lead->id * 1244), Crypt::encrypt($lead->id * 1244), 'admin_id' => Crypt::encrypt($admin_id * 1244),'vorsorge'=>$vorsorge])}}";
         document.getElementById('forma').submit();
     }
 
     function accept() {
         <?php
-        echo 'document.getElementById("forma").action ="' . route('acceptdata', [\Illuminate\Support\Facades\Crypt::encrypt($lead->id * 1244), 'accept' => true, 'admin_id' => \Illuminate\Support\Facades\Crypt::encrypt((int)$admin_id * 1244)]) . '";';
+        echo 'document.getElementById("forma").action ="' . route('acceptdata', [\Illuminate\Support\Facades\Crypt::encrypt($lead->id * 1244), 'accept' => true, 'admin_id' => \Illuminate\Support\Facades\Crypt::encrypt((int)$admin_id * 1244),'vorsorge' => $vorsorge]) . '";';
         echo 'document.getElementById("forma").submit();';
         ?>
     }

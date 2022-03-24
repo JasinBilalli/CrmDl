@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Dokumentieren</title>
-    <link rel="icon" type="image/png" href="{{config('../app.url')}}/imgs/Favicon.png">
+    <link rel="icon" type="image/png" href="{{config('../app.
+url')}}/imgs/Favicon.png">
 </head>
-
+<script src="{{ asset('js/app.js') }}" defer></script>
 <body>
 
 <style>
@@ -123,7 +124,7 @@ if it's not present, don't show loader */
     }
 </style>
 <div class="se-pre-con"></div>
-<div class="row g-0">
+<div class="row g-0" id="app">
     <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
         <div class="nav-styling col-md-2 col-sm-1 col-1" style="position: fixed; top:0;left:0; ">
             <div class="d-flex align-middle" style="height: 16vh;">
@@ -617,6 +618,7 @@ if it's not present, don't show loader */
                                     </div>
                                 </div>
                             </div>
+<krank fam_id="{{$lead->id}}" url="{{config('app.url')}}" lead_id="{{$lead->lead->id}}"></krank>
                         </div>
 
                         <div class="tab-pane fade auto-content" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -4201,6 +4203,10 @@ if it's not present, don't show loader */
             document.getElementById("submitt").setAttribute('data-bs-target', '#exampleModal');
         }
     }
+    function saveContentFunct1() {
+        $("#add-btn1").slideToggle();
+        $("#added-content1").slideToggle();
+    }
 
     function deletethat(x) {
         $('#n' + x).remove();
@@ -4244,7 +4250,10 @@ if it's not present, don't show loader */
             cntt++;
         }
     }
-
+    function addContentFunct1() {
+        $("#added-content1").slideToggle();
+        $("#add-btn1").slideToggle();
+    }
     function hideSpan() {
         if (document.getElementById("bastelle-span").style.display === "none") {
             document.getElementById("bastelle-span").style.display = "block";

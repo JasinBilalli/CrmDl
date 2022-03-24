@@ -30,5 +30,9 @@ class lead extends Model
     public function pending_reject_lead(){
         return $this->belongsTo(PendingRejectedLead::class,'lead_id');
     }
+    function getRouteKeyName()
+    {
+        return 'id';
+    }
 
 }

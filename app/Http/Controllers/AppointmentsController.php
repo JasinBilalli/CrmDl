@@ -116,6 +116,7 @@ class AppointmentsController extends Controller
 	public function changeTS(Request $request){
 		$input = $request->all();
 		if($input['ts_id'] == "0"){$input['ts_id'] = null;}
+         Admins::find(lead::where('id', $input['id_lead_input'])->first()->assign_to_id)->notify(new SendNotificationn('<a href="' . route('Appointments') . '">Ein Termin wurde von Ihnen entfernt</a>'));
 		$appointment = lead::where('id', $input['id_lead_input'])
               ->update(['assign_to_id' => $input['ts_id']]);
 		if($appointment){session(['msg' => 'Success !!!']);  return redirect()->back();} else {return "ERROR !!!";}

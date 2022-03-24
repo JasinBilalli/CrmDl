@@ -18,6 +18,13 @@ use Illuminate\Support\Facades\Crypt;
 
 class FamilyPersonsController extends Controller
 {
+    public function fmembers($family,lead $lid){
+        $user = auth()->user();
+        $urole = $user->getRoleNames()->toArray();
+        if($lid->assign_to_id == $user->id || in_array('backoffice',$urole) || in_array('admin',$urole)) {
+            return $lid->family()->where('id', '<>', $family)->get();
+        }
+    }
     public function family_persons($id,Request $req,$admin_id = null)
     {
 
@@ -27,7 +34,7 @@ class FamilyPersonsController extends Controller
         $idd /= 1244;
         $cnt = 0;
         $cnt1 = 0;
-        $lead = family::find($idd);
+        $lead = family::with('lead')->find($idd);
         $admin_id = $req->admin_id;
 
 
@@ -38,7 +45,7 @@ class FamilyPersonsController extends Controller
 
                     $data = LeadDataKK::where('person_id', '=', $idd)->where('imported',0)->firstOrFail();
 
-                    return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
+                    return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id,'vorsorge' => $req->vorsorge]);
                 }
                 catch (Exception $e) {
 
@@ -53,7 +60,7 @@ class FamilyPersonsController extends Controller
         else {
             try {
                 $data = LeadDataKK::where('person_id', '=', $idd)->where('imported',0)->firstOrFail();
-                return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id]);
+                return redirect()->route('acceptdata', [Crypt::encrypt($idd*1244),'accept' => false,'admin_id' => $admin_id,'vorsorge' => $req->vorsorge]);
             }
             catch (Exception $e) {
                 return view('documentsform', compact('lead'));

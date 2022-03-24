@@ -26,8 +26,9 @@ use Svg\Tag\Rect;
 class LeadDataController extends Controller
 {
     use FileManagerTrait;
-    public function acceptdata($id, Request $req,$accept = false,$vorsorge = false)
+    public function acceptdata($id, Request $req,$accept = false)
     {
+
         $id = Crypt::decrypt($id) / 1244;
         $admin_id = $req->admin_id;
         $user = Auth::user();
@@ -52,19 +53,26 @@ class LeadDataController extends Controller
                 }
                 $mandatiert ? $mandatierturl = $leadfh->mandatiert : $mandatierturl = "";
 
-                return view('updatedocument')->with('data',$data)->with('lead',$lead)->with('admin_id',$admin_id)->with('mandatiert',$mandatiert)->with('mandatierturl',$mandatierturl)->with('id',$id);
+                return view('updatedocument')->with('data',$data)->with('lead',$lead)->with('admin_id',$admin_id)->with('mandatiert',$mandatiert)->with('mandatierturl',$mandatierturl)->with('id',$id)->with('vorsorge',$req->vorsorge);
 
 
             } else {
                 if(in_array('backoffice',$urole) || in_array('admin',$urole)) {
+
                     $pend = Pendency::find(Session::get('pend_id'));
                     $pend->completed = 1;
-                    $pend->type = 'Eingereicht';
+
+                    if($req->vorsorge == '1') {
+                        $pend->type = 'Aktualisieren';
+                    }
+                    else{
+                        $pend->type = 'Eingereicht';
+                    }
                     $pend->save();
                     $person = family::find($pend->family_id);
                     $person->status = "Done";
                     $person->save();
-                    return redirect()->route('acceptdata', ['id' => Crypt::encrypt($id * 1244),'accept' => false,'admin_id' => Crypt::encrypt($admin_id * 1244)]);
+                    return redirect()->route('acceptdata', ['id' => Crypt::encrypt($id * 1244),'accept' => false,'admin_id' => Crypt::encrypt($admin_id * 1244),'vorsorge'=> $req->vorsorge]);
                 }
                 else{
                     return redirect()->back();
@@ -547,6 +555,7 @@ class LeadDataController extends Controller
             $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Dokumentation für :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
             $b->notify(new SendNotificationn($url));
         }
+        dd($request->vorsorge);
         if($offer > 0){
             $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Das erhaltene Angebot für den Kunden :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
             Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
