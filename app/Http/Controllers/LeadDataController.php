@@ -26,7 +26,7 @@ use Svg\Tag\Rect;
 class LeadDataController extends Controller
 {
     use FileManagerTrait;
-    public function acceptdata($id, Request $req,$accept = false)
+    public function acceptdata($id, Request $req,$accept = false,$vorsorge = false)
     {
         $id = Crypt::decrypt($id) / 1244;
         $admin_id = $req->admin_id;
