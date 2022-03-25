@@ -89,7 +89,6 @@ class TasksController extends Controller
                              ->paginate(15) as $d){
                     $data[$cnt] = $d;
                     $val = (int) $d->id;
-                    dd($val,$d->id);
                     $data[$cnt]->id = $val;
                     $cnt++;
 
@@ -550,12 +549,10 @@ class TasksController extends Controller
         }
         if ($user->user()->hasRole('fs') || $user->user()->hasRole('admin')) {
             if($user->user()->hasRole('admin')){
-                $tasks = family::
-                join('leads','family_person.leads_id','=','leads.id')
-                    ->whereIn('family_person.status',['Open'])
-                    ->select('family_person.*')
-                    ->orderBy('family_person.created_at','desc')
-                    ->paginate(20,['*'],'tasksP');
+                $tasks = lead::whereHas('family', function ($q){
+                    $q->whereIn('status',['Open']);
+                })->with('family')->paginate(25);
+
 
                 $cntt = 0;
 

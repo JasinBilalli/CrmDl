@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\FolderPaths;
 use App\Events\RejectLead;
 use App\Imports\LeadImport;
 use App\Imports\LeadsImport;
@@ -179,7 +180,8 @@ class UserController extends Controller
         $lead->telephone = filter_var($req->input('phone'), FILTER_SANITIZE_STRING);
         $lead->address = filter_var($req->input('address'), FILTER_SANITIZE_STRING);
         $lead->postal_code = filter_var($req->input('postal'), FILTER_SANITIZE_STRING);
-        $lead->city = filter_var($req->input('nr') . $req->input('location'), FILTER_SANITIZE_STRING);
+        $lead->city =  filter_var($req->input('location'), FILTER_SANITIZE_STRING);
+        $lead->nr = filter_var($req->input('nr'),FILTER_SANITIZE_STRING);
         $lead->nationality = filter_var($req->input('country'), FILTER_SANITIZE_STRING);
         $lead->appointment_date = filter_var($req->input('appdate'), FILTER_SANITIZE_STRING);
         $lead->time = filter_var($req->input('apptime'), FILTER_SANITIZE_STRING);
@@ -467,8 +469,6 @@ class UserController extends Controller
         $lead->completed = 1;
         $lead->save();
         return redirect()->route('tasks');
-
-
     }
 
     public function filterbydateapp(Request $req)
@@ -487,7 +487,6 @@ class UserController extends Controller
 
     public function dealclosed($id)
     {
-
         $id = Crypt::decrypt($id) / 1244;
 
         $app = lead::where('id', $id)->first();
@@ -500,7 +499,6 @@ class UserController extends Controller
 
     public function dealnotclosed($id)
     {
-
         $leads = lead::where('id', $id)->first();
         if ($leads->assign_to_id != null && $leads->assign_to_id == Auth::guard('admins')->user()->id || Auth::guard('admins')->user()->hasRole('admin')) {
             return view('rejectedleads', compact('leads'));
@@ -567,28 +565,21 @@ class UserController extends Controller
     {
         $id = Crypt::decrypt($id) / 1244;
 
-        $lead = lead::find($id)->first();
-        $file = $request->file('begrundungfile2');
-        $lead->update([
-            'begrundung'=>$request->begrundung,
-            'begrundung2' => $request->begrundung2,
-            'begrundungfile2' => $this->storeFile($file, 'img')
-        ]);
-        $lead->delete();
+        $lead = lead::find($id);
 
-//        $rejectlead = new rejectedlead();
-//
-//        $rejectlead->leads_id = $id;
-//        $rejectlead->reason = filter_var($request->reason,FILTER_SANITIZE_URL);
-//        $file = $request->file('image');
-//        $rejectlead->image = $this->storeFile($file, 'img');
+        //$file = $request->file('begrundungfile2');
+        $lead->begrundung = $request->begrundung;
+        $lead->begrundung2 = $request->begrundung2;
+        $lead->begrundungfile2 = $request->begrundungfile2 ? $this->storeFile($request->file('begrundungfile2'),'imgs') : null;
+            //$this->storeFile($file, 'img');
 
-//        if ($rejectlead->save()) {
-//            return redirect()->route('dashboard')->with('success', 'Aktion erfolgreich durchgeführt');
-//        } else {
-//            return redirect()->route('dashboard')->with('fail', 'Aktion fehlgeschlagen');
-//
-//        }
+        if($lead->save()){
+            $lead->delete();
+            return redirect()->route('dashboard')->with('success', 'Aktion erfolgreich durchgeführt');
+        }else {
+           return redirect()->route('dashboard')->with('fail', 'Aktion fehlgeschlagen');
+        }
+
     }
 
     public function dashboard(Request $req)

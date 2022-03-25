@@ -252,7 +252,7 @@
                                                   stroke-width="0.5"/>
                                         </svg>
                                     </span>
-                                    {{$app->address}} {{$app->city}}
+                                    {{$app->address}}, {{$app->city}}
                                 </span>
                             </div>
                         </div>
@@ -329,7 +329,7 @@
                                     <div class="col-12 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4">
                                         <div class="white-thingy my-2">
                                             <div class="text-div py-3 ps-2">
-                                                <span class="fw-600 ">Nr:</span> <span class="fs-6">{{(int)$app->address}}</span>
+                                                <span class="fw-600 ">Nr:</span> <span class="fs-6">{{$app->nr}}</span>
                                             </div>
                                         </div>
                                         <div class="white-thingy my-2">
