@@ -42,6 +42,18 @@
                                 <input type="text" name="lname" class="form-control" required>
                             </div>
                             <div class="mb-2">
+                                <label for="" class="mb-1">Nationalität:</label>
+                                <input type="text" name="country" class="form-control" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="" class="mb-1">Sprache</label>
+                                <input type="text" name="sprache" class="form-control" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="" class="mb-1">Tel. Privat</label>
+                                <input type="number" name="phone" class="form-control" required>
+                            </div>
+                            <div class="mb-2">
                                 <label for="" class="mb-1">Datum</label>
                                 <input type="date" class="form-control" name="appdate" required>
                             </div>
@@ -49,40 +61,34 @@
                                 <label for="" class="mb-1">Zeit</label>
                                 <input type="time" class="form-control" name="apptime" required>
                             </div>
-                            <div class="mb-2">
-                                <label for="" class="mb-1">Sprache</label>
-                                <input type="text" name="sprache" class="form-control" required>
-                            </div>
-                            <div class="mb-2">
-                                <label for="" class="mb-1">Personen</label>
-                                <input type="number" name="count" class="form-control" required="required">
-                            </div>
-                            <div class="mb-2">
-                                <label for="" class="mb-1">Nationalität:</label>
-                                <input type="text" name="country" class="form-control" required>
-                            </div>
-
                         </div>
                     </div>
                     <div class="col">
                         <div class="mx-2">
+                            <div class="mb-2">
+                                <label for="" class="mb-1">Personen</label>
+                                <input type="number" name="count" class="form-control" required="required">
+                            </div>
                             <div class="mb-2">
                                 <label for="" class="mb-1">Strasse</label>
                                 <input type="text" name="address" class="form-control" required>
                             </div>
                             <div class="mb-2">
                                 <label for="" class="mb-1">Nr</label>
-                                <input type="text" name="nr" class="form-control" required>
+                                <input type="number" name="nr" class="form-control" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="" class="mb-1">Ort</label>
+                                <input type="text" name="location" class="form-control" required>
                             </div>
                             <div class="mb-2">
                                 <label for="" class="mb-1">PLZ</label>
                                 <input type="number" name="postal" class="form-control" required>
                             </div>
                             <div class="mb-2">
-                                <label for="" class="mb-1">Ort</label>
-                                <input type="text" name="location" class="form-control" required>
+                                <label for="" class="mb-1">Zufriedenheit</label>
+                                <input type="text" name="zufriedenheit" class="form-control" required>
                             </div>
-
                             <div class="mb-2">
 
                                 @if(Auth::guard('admins')->user()->hasRole('fs'))
@@ -118,14 +124,8 @@
                                     @endif
                                 </select>
                             </div>
-                            <div class="mb-2">
-                                <label for="" class="mb-1">Tel. Privat</label>
-                                <input type="text" name="phone" class="form-control" required>
-                            </div>
-                            <div class="mb-2">
-                                <label for="" class="mb-1">Zufriedenheit</label>
-                                <input type="text" name="zufriedenheit" class="form-control" required>
-                            </div>
+
+
                             <div class="mb-2">
                                 <label for="exampleFormControlTextarea1" class="form-label">Bemerkung:</label>
                                 <textarea class="form-control" name="bemerkung" id="exampleFormControlTextarea1" rows="3" required></textarea>

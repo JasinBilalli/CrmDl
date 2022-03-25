@@ -392,20 +392,28 @@
                                                 Keine Offene Aufgaben
                                             </div>
                                         @else
-                                            @php  $admin_id = Crypt::encrypt($leadsss); @endphp
+                                            @php
+                                                $admin_id = Crypt::encrypt($leadsss);
+                                            @endphp
+
                                             @foreach($tasks as $task)
-                                                @php
-                                                    $leadss = $task->id * 1244;
-                                                    $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
-                                                @endphp
+                                                @foreach($task->family as $family)
+                                                    @php
 
-                                                <tr class="table-content1" style="cursor: pointer" >
+                                                        $leadss = $family->id * 1244;
+                                                        $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
+                                                    @endphp
+
+                                                <tr class="table-content1 " style="cursor: pointer;" >
                                                     <td scope="row"
-                                                        onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($task->created_at)->format('Y-m-d') }}</td>
-                                                    <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->first_name)}}</td>
-                                                    <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($task->last_name)}}</td>
+                                                        onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($family->created_at)->format('Y-m-d') }}</td>
+                                                    <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($family->first_name)}}</td>
+                                                    <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($family->last_name)}}</td>
                                                 </tr>
+                                                @endforeach
+                                                <tr class="table-content1" style="border-bottom: 2px solid;border-left: 2px solid; border-color: #afafaf;margin-top: 20px;margin-bottom: 20px">
 
+                                                </tr>
                                             @endforeach
                                         @endif
                                         </tbody>
