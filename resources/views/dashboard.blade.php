@@ -62,7 +62,7 @@
                                              rx="2.923" ry="2.783" transform="translate(659.672 173.599)" fill="#fff"/>
                                     <ellipse id="Ellipse_9" onclick="window.location.href='{{route('costumers')}}'"
                                              style="cursor: pointer;" data-name="Ellipse 9" cx="2.923" cy="2.783"
-                                             rx="2.923" ry="2.783" transform="translate(659.672 182.506)" fill="#198754"/>
+                                             rx="2.923" ry="2.783" transform="translate(659.672 182.506)" fill="#fff"/>
                                 </g>
                                 <text id="_74_" data-name="74%" transform="translate(31.871 94.343)" fill="#fff"
                                       font-size="49" font-family="Montserrat-Bold, Montserrat" font-weight="700">
