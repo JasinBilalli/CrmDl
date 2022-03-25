@@ -439,7 +439,33 @@
                             <div class="header  justify-content-between">
                                 <div class="d-flex">
                                     <div class="my-auto">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 21 17.837">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+                                          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                     </svg>
+
+                                    </div>
+                                    <div class="txt-01">
+                                        <span class="ps-2">Geburstage/Jubiläen</span>
+                                    </div>
+                                </div>
+
+                                <div class="count fs-5 h-100 px-4">
+                                    {{count($birthdays)}}
+                                </div>
+                            </div>
+                            <div class="content px-3 py-2">
+                                <div class="overflow-div pe-3">
+                                    @if(count($birthdays) == 0)
+                                        <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
+                                            Keine geburtstage für heute
+                                            <hr>
+                                        </div>
+                                    @else
+                                        @foreach($birthdays as $birth)
+                                            <div class="p-2 my-2 birthday-itemm bg-white d-flex">
+                                                <div class="my-auto px-2">
+                                                <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="40"  viewBox="0 0 21 17.837">
                                             <g id="anniversay" transform="translate(-277 -71.163)">
                                                 <g id="Rectangle_904" data-name="Rectangle 904" transform="translate(277 78)" fill="#fff" stroke="#000" stroke-width="1">
                                                     <rect width="21" height="11" rx="2" stroke="none"/>
@@ -487,31 +513,6 @@
                                             </g>
                                         </svg>
 
-                                    </div>
-                                    <div class="txt-01">
-                                        <span class="ps-2">Geburstage/Jubiläen</span>
-                                    </div>
-                                </div>
-
-                                <div class="count fs-5 h-100 px-4">
-                                    {{count($birthdays)}}
-                                </div>
-                            </div>
-                            <div class="content px-3 py-2">
-                                <div class="overflow-div pe-3">
-                                    @if(count($birthdays) == 0)
-                                        <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
-                                            Keine geburtstage für heute
-                                            <hr>
-                                        </div>
-                                    @else
-                                        @foreach($birthdays as $birth)
-                                            <div class="p-2 my-2 birthday-itemm bg-white d-flex">
-                                                <div class="my-auto px-2">
-                                                <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
-                                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                                                </svg>
                                                 </span>
                                                 </div>
                                                 <div class="">
