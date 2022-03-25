@@ -37,43 +37,85 @@
                                         Keine Offene Aufgaben
                                     </div>
                                 @else
-                                    @php $admin_id = $leadsss; @endphp
-                                    @foreach($tasks as $task)
+                                    @php
+                                        $admin_id = $leadsss;
+                                        $count = 1;
+                                    @endphp
+                                    @foreach($tasks as $taskk)
+                                        @foreach($taskk->family as $task)
                                         @php
                                             $leadss = $task->id * 1244;
                                             $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                         @endphp
-                                        <a href="{{route('leadfamilyperson',[$taskId,$admin_id])}}">
-                                            <div class="offene-item-one py-2 px-3 m-2">
+                                            @if($count %2 == 0)
+                                                <a href="{{route('leadfamilyperson',[$taskId,$admin_id])}}">
+                                                    <div class="offene-item-one py-2 px-3 m-2" style="background-color: #ececec">
 
-                                                <div class="d-flex justify-content-between">
-                                                    <div class="name-divs">
-                                                        <div class="name fs-5 fw-bold" style="color: #535353;">
-                                                            {{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}}
+                                                        <div class="d-flex justify-content-between">
+                                                            <div class="name-divs">
+                                                                <div class="name fs-5 fw-bold" style="color: #535353;">
+                                                                    {{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}}
+                                                                </div>
+                                                                <div class="status fw-bold" style="color: #535353;">
+                                                                    Status: {{ucfirst($task->status)}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="svg-divv">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
+                                                                     viewBox="0 0 6.253 15.484">
+                                                                    <g id="Group_1178" data-name="Group 1178"
+                                                                       transform="translate(-1054.727 -165.697)">
+                                                                        <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
+                                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
+                                                                                 fill="#535353" />
+                                                                        <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
+                                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
+                                                                                 fill="#535353" />
+                                                                    </g>
+                                                                </svg>
+
+                                                            </div>
                                                         </div>
-                                                        <div class="status fw-bold" style="color: #535353;">
-                                                            Status: {{ucfirst($task->status)}}
+
+                                                    </div>
+                                                </a>
+                                            @else
+                                                <a href="{{route('leadfamilyperson',[$taskId,$admin_id])}}">
+                                                    <div class="offene-item-one py-2 px-3 m-2">
+
+                                                        <div class="d-flex justify-content-between">
+                                                            <div class="name-divs">
+                                                                <div class="name fs-5 fw-bold" style="color: #535353;">
+                                                                    {{ucfirst($task->first_name)}} {{ucfirst($task->last_name)}}
+                                                                </div>
+                                                                <div class="status fw-bold" style="color: #535353;">
+                                                                    Status: {{ucfirst($task->status)}}
+                                                                </div>
+                                                            </div>
+                                                            <div class="svg-divv">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
+                                                                     viewBox="0 0 6.253 15.484">
+                                                                    <g id="Group_1178" data-name="Group 1178"
+                                                                       transform="translate(-1054.727 -165.697)">
+                                                                        <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
+                                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
+                                                                                 fill="#535353" />
+                                                                        <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
+                                                                                 rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
+                                                                                 fill="#535353" />
+                                                                    </g>
+                                                                </svg>
+
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="svg-divv">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="6.253" height="15.484"
-                                                             viewBox="0 0 6.253 15.484">
-                                                            <g id="Group_1178" data-name="Group 1178"
-                                                               transform="translate(-1054.727 -165.697)">
-                                                                <ellipse id="Ellipse_6" data-name="Ellipse 6" cx="3.127" cy="2.978"
-                                                                         rx="3.127" ry="2.978" transform="translate(1054.727 165.697)"
-                                                                         fill="#535353" />
-                                                                <ellipse id="Ellipse_7" data-name="Ellipse 7" cx="3.127" cy="2.978"
-                                                                         rx="3.127" ry="2.978" transform="translate(1054.727 175.225)"
-                                                                         fill="#535353" />
-                                                            </g>
-                                                        </svg>
 
                                                     </div>
-                                                </div>
-
-                                            </div>
-                                        </a>
+                                                </a>
+                                            @endif
+                                        @endforeach
+                                        @php
+                                            $count++;
+                                        @endphp
                                     @endforeach
                                 @endif
                             </div>
@@ -394,26 +436,36 @@
                                         @else
                                             @php
                                                 $admin_id = Crypt::encrypt($leadsss);
+                                                $count = 1;
                                             @endphp
-
                                             @foreach($tasks as $task)
                                                 @foreach($task->family as $family)
                                                     @php
-
                                                         $leadss = $family->id * 1244;
                                                         $taskId = \Illuminate\Support\Facades\Crypt::encrypt($leadss);
                                                     @endphp
-
-                                                <tr class="table-content1 " style="cursor: pointer;" >
-                                                    <td scope="row"
-                                                        onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($family->created_at)->format('Y-m-d') }}</td>
-                                                    <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($family->first_name)}}</td>
-                                                    <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($family->last_name)}}</td>
-                                                </tr>
+{{--                                                    @if($count %2 == 0)--}}
+                                                    <tr class="table-content1" style="cursor: pointer;border-left: 3px solid !important;border-right: 2px solid;border-top: none;border-bottom: none; border-color: #afafaf" >
+                                                        <td scope="row"
+                                                            onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($family->created_at)->format('Y-m-d') }}</td>
+                                                        <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($family->first_name)}}</td>
+                                                        <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($family->last_name)}}</td>
+                                                    </tr>
+{{--                                                    @else--}}
+{{--                                                        <tr class="table-content1 " style="cursor: pointer; background-color: #ffffff" >--}}
+{{--                                                            <td scope="row"--}}
+{{--                                                                onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ Carbon\Carbon::parse($family->created_at)->format('Y-m-d') }}</td>--}}
+{{--                                                            <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($family->first_name)}}</td>--}}
+{{--                                                            <td onclick="window.location.href='{{route('leadfamilyperson',[$taskId,$admin_id])}}'">{{ucfirst($family->last_name)}}</td>--}}
+{{--                                                        </tr>--}}
+{{--                                                    @endif--}}
                                                 @endforeach
-                                                <tr class="table-content1" style="border-bottom: 2px solid;border-left: 2px solid; border-color: #afafaf;margin-top: 20px;margin-bottom: 20px">
+                                                <tr class="" style="border-bottom: 2px solid; border-color: #afafaf;">
 
                                                 </tr>
+                                                @php
+                                                    $count++;
+                                                @endphp
                                             @endforeach
                                         @endif
                                         </tbody>
@@ -1717,17 +1769,25 @@
         color: #fff;
         border-radius: 35px;
     }
-    .table-1 td:first-child {
-        border-top-left-radius: 15px;
+    .table-1 td{
+        border: 1px solid #f8f8f8;
+        border-left: none;
+        border-right: none;
     }
-    .table-1  td:last-child {
-        border-top-right-radius: 15px;
-    }
-    .table-1  td:first-child {
-        border-bottom-left-radius: 15px;
-    }
-    .table-1  td:last-child {
-        border-bottom-right-radius: 15px;
+    /*.table-1  td:first-child {*/
+    /*    border-top-left-radius: 15px;*/
+    /*}*/
+    /*.table-1  td:last-child {*/
+    /*    border-top-right-radius: 15px;*/
+    /*}*/
+    /*.table-1  td:first-child {*/
+    /*    border-bottom-left-radius: 15px;*/
+    /*}*/
+    /*.table-1  td:last-child {*/
+    /*    border-bottom-right-radius: 15px;*/
+    /*}*/
+    .table-1 tr:first-child {
+        border-bottom: 2px solid #afafaf;
     }
     .table-2  td:first-child {
         border-top-left-radius: 15px;
@@ -1918,7 +1978,7 @@
     }
     .open-tasks tr{
         background-color: #fff;
-        border-bottom: 5px #EFEFEF solid ;
+        border-bottom: 2px #EFEFEF solid ;
     }
     .open-tasks-bo .content input {
         border-color: #707070 !important;

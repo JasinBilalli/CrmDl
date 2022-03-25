@@ -1175,12 +1175,6 @@
                         </div>
                     </div>
                 </div>
-{{--                <div class="row">--}}
-{{--                    <div class="col-4">qwe</div>--}}
-{{--                    <div class="col-4">qwe</div>--}}
-{{--                    <div class="col-4">qwe</div>--}}
-
-{{--                </div>--}}
             </div>
         </div>
 

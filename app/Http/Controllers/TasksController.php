@@ -549,10 +549,9 @@ class TasksController extends Controller
         }
         if ($user->user()->hasRole('fs') || $user->user()->hasRole('admin')) {
             if($user->user()->hasRole('admin')){
-                $tasks = lead::whereHas('family', function ($q){
-                    $q->whereIn('status',['Open']);
-                })->with('family')->paginate(25);
-
+                $tasks = lead::with(['family' => function ($q){
+                    $q->where('status',['Open']);
+                }])->whereHas('family')->paginate(25);
 
                 $cntt = 0;
 
