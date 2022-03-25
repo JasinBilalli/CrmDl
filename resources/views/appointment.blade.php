@@ -115,7 +115,7 @@
                     height: 600,
                     initialView: 'resourceTimeGridDay',
                     slotMinTime: "08:00:00",
-                    slotMaxTime: "20:30:00",
+                    slotMaxTime: "22:30:00",
                     slotDuration: '00:30:00',
                     slotLabelInterval: 30,
                     allDaySlot: false,
@@ -399,8 +399,6 @@
                                     </div>
                                 @endif
                             @endforeach
-
-
                         </div>
                     </div>
                 </div>
