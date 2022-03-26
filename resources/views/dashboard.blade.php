@@ -2722,7 +2722,7 @@
     .info-nr-overflow-div {
         /* height: 50vh; */
         overflow: auto;
-        min-height: 439px;
+        height: 439px;
     }
 
     .info-nr-overflow-div::-webkit-scrollbar {
