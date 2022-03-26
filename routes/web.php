@@ -200,7 +200,8 @@ route::get('changerole','App\Http\Controllers\UserController@changerole');
    route::get('addToDoList',[TodoController::class,'addToDoList'])->name('addToDoList');
    route::get('getToDo',[TodoController::class,'getToDo']);
    route::get('deleteToDoList',[TodoController::class,'deleteToDoList']);
-
+   route::get('fmembers/{family}/{lid}','App\Http\Controllers\FamilyPersonsController@fmembers')->middleware('role:fs|admin|backoffice');
+   route::get('linkthat/{id}/{pid}','App\Http\Controllers\FamilyPersonsController@linkthat');
 
 
     include 'Hr.php';

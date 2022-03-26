@@ -115,7 +115,7 @@
                     height: 600,
                     initialView: 'resourceTimeGridDay',
                     slotMinTime: "08:00:00",
-                    slotMaxTime: "22:30:00",
+                    slotMaxTime: "20:30:00",
                     slotDuration: '00:30:00',
                     slotLabelInterval: 30,
                     allDaySlot: false,
@@ -162,7 +162,7 @@
 		  //console.log('eventReceive',arg.draggedEl.innerText.trim());
 
 
-		  if (confirm('Are you sure you want to assign appointment of ('+arg.draggedEl.innerText.trim()+') to <'+arg.resource.title+'>')) {
+		  if (confirm("Wollen Sie den Termin ,,"+arg.draggedEl.innerText.trim()+"'' dem Berater ,,"+arg.resource.title+"''")) {
 		  // Save it!
 		  // console.log('Thing was saved to the database.');
 
@@ -171,7 +171,7 @@
                                     type: "GET",
 
                                     success: function (data) {
-                                        alert(data);
+
                                         window.location.reload();
                                     }
                                 });
@@ -399,6 +399,8 @@
                                     </div>
                                 @endif
                             @endforeach
+
+
                         </div>
                     </div>
                 </div>

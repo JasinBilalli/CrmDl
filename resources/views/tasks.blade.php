@@ -320,7 +320,7 @@
                     <div class="kundenbirung-div  my-3 ">
                         <div class="d-flex justify-content-between">
                             <span class="fw-600 ps-4 fs-5">Kundenbindung</span>
-                            <span class="fw-600 pe-4 pb-1 pt-1 fs-5 number-offene" style="color: #434343;">{{count($birthdays) + count($personalApp)}}</span>
+                            <span class="fw-600 pe-4 pb-1 pt-1 fs-5 number-offene" style="color: #434343;">{{count($birthdays)}}</span>
                         </div>
                         <div class="wrapper2 p-2">
                             @if(count($birthdays) == 0)
@@ -582,6 +582,85 @@
                                             </div>
                                         @endforeach
                                     @endif
+                                    @if(\Illuminate\Support\Facades\Auth::user()->hasRole('fs'))
+                                        @if(count($consultation) == 0)
+                                            <div class="text-center fs-5 fw-600" style="color: #9F9F9F">
+                                                Keine Mitarbeiterbesprechungen für heute
+                                                <hr>
+                                            </div>
+                                        @else
+                                            @foreach($consultation as $perApp)
+                                                <div class="offene-item-one22 py-2 px-3 my-2" data-bs-toggle="modal"
+                                                     data-bs-target="#exampleModalll{{$perApp->id}}" style="cursor: pointer">
+                                                    <div class="d-flex ">
+                                                        <div class="my-auto col-auto pe-2">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="33" fill="currentColor"
+                                                                 class="bi bi-file-medical" viewBox="0 0 16 16">
+                                                                <path
+                                                                    d="M8.5 4.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L7 6l-.549.317a.5.5 0 1 0 .5.866l.549-.317V7.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L9 6l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V4.5zM5.5 9a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                                                <path
+                                                                    d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z" />
+                                                            </svg>
+                                                        </div>
+                                                        <div class="name-divs col">
+                                                            <div class="name fs-5 fw-bold" style="color: #535353;">
+                                                                {{$perApp->title}}
+                                                            </div>
+                                                            <div class="comment fw-600" style="color: #535353;">
+                                                                {{$perApp->date}} ({{$perApp->time}})
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="exampleModalll{{$perApp->id}}" tabindex="-1"
+                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content"
+                                                             style="background: #f8f8f8; border-radius: 43px">
+                                                            <div class="modal-header mx-3 pt-4"
+                                                                 style="border-bottom: none !important;">
+                                                                <h4>Mitarbeiterbesprechungen</h4>
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"
+                                                                        style="opacity: 1 !important;"></button>
+                                                            </div>
+                                                            <div class="modal-body p-3">
+                                                                <div class="row my-2">
+                                                                    <div class="col-12">
+                                                                        <div class=" fw-bold"
+                                                                             style="padding: 15px;background-color: #eeeeee;border-radius: 15px">
+                                                                            Title: {{$perApp->title}}
+                                                                            <br>
+                                                                            Kommentar: {{$perApp->comment}}
+                                                                            <br>
+                                                                            Adress: {{$perApp->address}}
+                                                                            <br>
+                                                                            Datum: {{$perApp->date}}
+                                                                            <br>
+                                                                            Zeit: {{$perApp->time}}
+                                                                            <br>
+                                                                            Von: {{App\Models\Admins::find($perApp->assignfrom)->name}}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer"
+                                                                 style="border-top: none !important; display: block;">
+                                                                <div class="row mx-4 pb-4">
+                                                                    <div class=" mx-auto">
+                                                                        <button type="button" class="btn w-100 px-3"
+                                                                                style=" color: #ffffff !important; background-color: #6C757D !important;border-radius: 8px !important;"
+                                                                                data-bs-dismiss="modal"><b>Schliessen</b>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                        @endif
                                 </div>
                             </div>
                         </div>
@@ -653,15 +732,19 @@
                                                         data-bs-toggle="modal" @endif>{{$task->description}}</td>
                                                     <td @if($task->type != "Order") data-bs-target="#stats{{$task->pid}}"
                                                         data-bs-toggle="modal" @endif>
-                                                        @if($task->type == "Task")
-                                                            <span class="submited-btn1 py-2 px-4">
+                                                        @if($task->type == "Task" || $task->type == "Aktualisiert")
+                                                            @if($task->type == "Aktualisiert")<span class="submited-btn2 py-2 px-4">
                                                         {{ucfirst($task->type)}}
+                                                                @else
+                                                                    <span class="submited-btn1 py-2 px-4">
+                                                        {{ucfirst($task->type)}}
+                                                                        @endif
                                                         </span>
-                                                        @elseif($task->type == 'Order')
-                                                            <span class="submited-btn py-2 px-4">Offer</span>
-                                                        @else
-                                                            <span class="submited-btn py-2 px-4">Eingereicht</span>
-                                                        @endif
+                                                                    @elseif($task->type == 'Order')
+                                                                        <span class="submited-btn py-2 px-4">Offer</span>
+                                                                    @else
+                                                                        <span class="submited-btn py-2 px-4">Eingereicht</span>
+                                                            @endif
                                                     </td>
                                                 </tr>
 
@@ -2043,5 +2126,10 @@
         overflow: auto;
         background-color: #EFEFEF;
         /* padding: 0 !important; */
+    }
+    .submited-btn2 {
+        background-color: #eb990d;
+        color: #fff;
+        border-radius: 35px;
     }
 </style>

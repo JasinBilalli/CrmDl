@@ -1,5 +1,5 @@
 <template>
-    <div class="col text-start">
+    <div class="col-6 text-start">
         <div class=" plus-div  my-1">
             <div class="svg-div d-flex">
                 <svg xmlns="http://www.w3.org/2000/svg" onclick="addContentFunct1()"
@@ -19,7 +19,7 @@
                 </svg>
                 <div class="mx-3 my-auto">
                                                   <span>
-                                                    Neue Aufgabe hinzufügen !
+                                                    Sich mit einem anderen verbinden !
                                                   </span>
                 </div>
             </div>
@@ -33,8 +33,8 @@
                 <div class="py-2">
 
                     <label for="">Das Familienmitglied:</label>
-                    <select class="form-select" aria-label="Default select example" @change="">
-                        <option value=""></option>
+                    <select class="form-select" aria-label="Default select example" @change="onChangeSelect($event)">
+                        <option v-for="fam in family" :value="fam.id">{{fam.first_name}} {{fam.last_name}}</option>
                     </select>
                 </div>
 
@@ -44,9 +44,9 @@
                             style="background-color: #fff;border:1px solid #000">
                         Abbrechen
                     </button>
-                    <button @click="" onclick="" type="button" class="btn col-auto  text-white  rounded" id="save-btn"
+                    <button @click="linkthat()" onclick="saveContentFunct1()" type="button" class="btn col-auto  text-white  rounded" id="save-btn"
                             style="background-color: #5f5f5f;">
-                        Senden
+                        Verknüpfung
                     </button>
                 </div>
             </div>
@@ -55,22 +55,33 @@
 </template>
 <script>
 export default {
+    mounted() {
+        this.getfamily();
+    },
     data(){
         return{
-
+family:null,
+            val:null
         }
     },
     props:{
-      lead_id:{
-      },
-      fam_id:{
-      },
+      lead_id:{},
+      fam_id:{},
         url:{},
     },
     methods:{
         getfamily :function(){
-            axios.get(this.url);
+            axios.get(this.url + 'fmembers/' + this.fam_id + '/' + this.lead_id).then((response) => {
+                this.family = response.data;
+                this.val = response.data[0].id;
+            });
          },
+        linkthat:function(){
+            axios.get(this.url + 'linkthat/' + this.val + '/' + this.fam_id);
+        },
+        onChangeSelect(event) {
+            this.val = parseInt(event.target.value)
+        },
     }
 }
 </script>
