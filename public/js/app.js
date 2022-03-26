@@ -6517,8 +6517,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    this.getfamily();
+  },
   data: function data() {
-    return {};
+    return {
+      family: null,
+      val: null
+    };
   },
   props: {
     lead_id: {},
@@ -6527,7 +6533,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getfamily: function getfamily() {
-      axios.get(this.url);
+      var _this = this;
+
+      axios.get(this.url + 'fmembers/' + this.fam_id + '/' + this.lead_id).then(function (response) {
+        _this.family = response.data;
+        _this.val = response.data[0].id;
+      });
+    },
+    linkthat: function linkthat() {
+      axios.get(this.url + 'linkthat/' + this.val + '/' + this.fam_id);
+    },
+    onChangeSelect: function onChangeSelect(event) {
+      this.val = parseInt(event.target.value);
     }
   }
 });
@@ -34177,7 +34194,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col text-start" }, [
+  return _c("div", { staticClass: "col-6 text-start" }, [
     _c("div", { staticClass: " plus-div  my-1" }, [
       _c("div", { staticClass: "svg-div d-flex" }, [
         _c(
@@ -34274,9 +34291,20 @@ var render = function () {
                 {
                   staticClass: "form-select",
                   attrs: { "aria-label": "Default select example" },
-                  on: { change: function ($event) {} },
+                  on: {
+                    change: function ($event) {
+                      return _vm.onChangeSelect($event)
+                    },
+                  },
                 },
-                [_c("option", { attrs: { value: "" } })]
+                _vm._l(_vm.family, function (fam) {
+                  return _c("option", { domProps: { value: fam.id } }, [
+                    _vm._v(
+                      _vm._s(fam.first_name) + " " + _vm._s(fam.last_name)
+                    ),
+                  ])
+                }),
+                0
               ),
             ]),
             _vm._v(" "),
@@ -34303,10 +34331,18 @@ var render = function () {
                 {
                   staticClass: "btn col-auto  text-white  rounded",
                   staticStyle: { "background-color": "#5f5f5f" },
-                  attrs: { onclick: "", type: "button", id: "save-btn" },
-                  on: { click: function ($event) {} },
+                  attrs: {
+                    onclick: "saveContentFunct1()",
+                    type: "button",
+                    id: "save-btn",
+                  },
+                  on: {
+                    click: function ($event) {
+                      return _vm.linkthat()
+                    },
+                  },
                 },
-                [_vm._v("\n                    Senden\n                ")]
+                [_vm._v("\n                    Verknüpfung\n                ")]
               ),
             ]),
           ]
@@ -34323,7 +34359,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "mx-3 my-auto" }, [
       _c("span", [
         _vm._v(
-          "\n                                                Neue Aufgabe hinzufügen !\n                                              "
+          "\n                                                Sich mit einem anderen verbinden !\n                                              "
         ),
       ]),
     ])

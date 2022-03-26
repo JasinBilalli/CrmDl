@@ -31,27 +31,27 @@ $urole = $urole->toArray();
     body {
         font-family: 'Montserrat', sans-serif;
     }
-        /* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript,
-if it's not present, don't show loader */
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 99999;
-	background: url(https://c.tenor.com/b8F9BMmvXlcAAAAi/loading-round.gif) center no-repeat #fff;
-    background-size: 200px;
-}
-
-@media (max-width: 575.98px) {
+    /* Paste this css to your style sheet file or under head tag */
+    /* This only works with JavaScript,
+    if it's not present, don't show loader */
+    .no-js #loader { display: none;  }
+    .js #loader { display: block; position: absolute; left: 100px; top: 0; }
     .se-pre-con {
-        background-size: 100px;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        background: url(https://c.tenor.com/b8F9BMmvXlcAAAAi/loading-round.gif) center no-repeat #fff;
+        background-size: 200px;
     }
-}
+
+    @media (max-width: 575.98px) {
+        .se-pre-con {
+            background-size: 100px;
+        }
+    }
 
 
     .nav-itemsss {
@@ -162,11 +162,11 @@ if it's not present, don't show loader */
 
                     <a href="{{route('tasks')}}"
                        class="nav-link {{ (request()->is('tasks')) ? 'activeClassNav__' : '' }}">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
-                             <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
-                             <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
-                             <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
-                           </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
+                            <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+                            <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
+                        </svg>
                         <span class="ps-2 txt-dn">Aufgaben</span>
                     </a>
                 @endif
@@ -174,11 +174,11 @@ if it's not present, don't show loader */
                 ||in_array('menagment',$urole))
                     <a href="{{route('leads')}}"
                        class="nav-link {{ (request()->is('leads')) ? 'activeClassNav__' : '' }}">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-hdd-stack" viewBox="0 0 16 16">
-                        <path d="M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z"/>
-                        <path d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
-                        <path d="M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-hdd-stack" viewBox="0 0 16 16">
+                            <path d="M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z"/>
+                            <path d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                            <path d="M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                        </svg>
                         <span class="ps-2 txt-dn">Leads</span>
                     </a>
                 @endif
@@ -210,9 +210,9 @@ if it's not present, don't show loader */
                 @if(Auth::guard('admins')->check())
                     <a href="{{route('costumers')}}"
                        class="nav-link {{ (request()->is('costumers')) ? 'activeClassNav__' : '' }}">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
-                               <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
-                          </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                            <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                        </svg>
                         <span class="ps-2 txt-dn">Kunden</span>
                     </a>
                 @endif
@@ -251,10 +251,10 @@ if it's not present, don't show loader */
                 in_array('admin',$urole))
                     <a href="{{route('Appointments')}}"
                        class="nav-link  {{ (request()->is('Appointments')) ? 'activeClassNav__' : '' }}">
-                       <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
-                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
-                                <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
-                            </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
+                            <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                        </svg>
                         @if(in_array('salesmanager',$urole))
                             <span class="ps-2 txt-dn">Terminen</span>
                         @else
@@ -402,13 +402,13 @@ if it's not present, don't show loader */
                                         <div><span class="mobile-t" style="font-size: 10px;">KK</span></div>
                                     </button>
                                 @else
-                                <button class="nav-link active col krankenkasse-btn green-btn-kk me-2" id="nav-home-tab"
-                                        data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab"
-                                        aria-controls="nav-home" aria-selected="true"
-                                        onclick="changecnt(0)"><span class="desk-t">Krankenkasse</span><span
-                                        class="mobile-t">KK</span>
-                                    <div><span class="mobile-t" style="font-size: 10px;">KK</span></div>
-                                </button>
+                                    <button class="nav-link active col krankenkasse-btn green-btn-kk me-2" id="nav-home-tab"
+                                            data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab"
+                                            aria-controls="nav-home" aria-selected="true"
+                                            onclick="changecnt(0)"><span class="desk-t">Krankenkasse</span><span
+                                            class="mobile-t">KK</span>
+                                        <div><span class="mobile-t" style="font-size: 10px;">KK</span></div>
+                                    </button>
                                 @endif
                                 @if($pendencyy->auto_skip === 1)
                                     <button class="nav-link col auto-btn gray-btn-kk mx-2" id="nav-profile-tab" data-bs-toggle="tab"
@@ -437,7 +437,7 @@ if it's not present, don't show loader */
                                             data-bs-target="#nav-contact" type="button" role="tab"
                                             aria-controls="nav-contact" aria-selected="false" onclick="changecnt(2)"><span
                                             class="desk-t">Vorsorge</span><span class="mobile-t">V</span>
-                                         <div><span class="mobile-t" style="font-size: 10px;">Vorsage</span></div>
+                                        <div><span class="mobile-t" style="font-size: 10px;">Vorsage</span></div>
                                     </button>
                                 @endif
                                 @if($pendencyy->sachen_skip === 1)
@@ -452,7 +452,7 @@ if it's not present, don't show loader */
                                             data-bs-target="#nav-fourth" type="button" role="tab" aria-controls="nav-fourth"
                                             aria-selected="false" onclick="changecnt(3)"><span
                                             class="desk-t">Sachen</span><span class="mobile-t">S</span>
-                                         <div><span class="mobile-t" style="font-size: 10px;">Sachen</span></div>
+                                        <div><span class="mobile-t" style="font-size: 10px;">Sachen</span></div>
                                     </button>
                                 @endif
                             </div>
@@ -904,6 +904,7 @@ if it's not present, don't show loader */
                                         </div>
                                     </div>
                                 @endif
+                                <krank fam_id="{{$lead->id}}" url="{{config('app.url')}}" lead_id="{{$lead->lead->id}}"></krank>
                             </div>
                             <div class="text-center mt-3 pb-3">
                                 <div class="row mx-2 mx-sm-4">
@@ -1130,7 +1131,7 @@ if it's not present, don't show loader */
                                                                 </div>
                                                             </div>
                                                         @endif
-<hr>
+                                                        <hr>
                                                     </div>
                                                     @php $gcnt = 1; @endphp
                                                     @foreach(\App\Models\newgegen::where('person_id',$id)->get() as $newg)
@@ -1278,17 +1279,17 @@ if it's not present, don't show loader */
                                                                         <div class="upload-box mx-1 my-2">
                                                                             <div class="mx-1 my-2 text-center p-3">
                                                                                 @if(!Auth::user()->hasRole('fs'))
-                                                                                <label for="file-input-{{$gcnt}}ww">
-                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
-                                                                                        <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
-                                                                                            <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
-                                                                                            <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
-                                                                                                <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
-                                                                                                <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                    <label for="file-input-{{$gcnt}}ww">
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
+                                                                                            <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
+                                                                                                <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
+                                                                                                <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
+                                                                                                    <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                                    <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                                </g>
                                                                                             </g>
-                                                                                        </g>
-                                                                                    </svg>
-                                                                                </label>
+                                                                                        </svg>
+                                                                                    </label>
                                                                                 @endif
                                                                                 @if(isset($newg->offer))
 
@@ -1315,7 +1316,7 @@ if it's not present, don't show loader */
 
                                                             @endif
                                                         </div>
-<hr>
+                                                        <hr>
                                                     @endforeach
 
                                                     <div class="text-center mt-3" style="margin-top: -30px" id="add_g"
@@ -5323,17 +5324,17 @@ if it's not present, don't show loader */
                                                                 <div class="upload-box mx-1 my-2">
                                                                     <div class="mx-1 my-2 text-center p-3">
                                                                         @if(!Auth::user()->hasRole('fs'))
-                                                                        <label for="file-input-1212121www">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
-                                                                                <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
-                                                                                    <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
-                                                                                    <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
-                                                                                        <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
-                                                                                        <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                            <label for="file-input-1212121www">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
+                                                                                    <g id="Group_621" data-name="Group 621" transform="translate(-78.283 -14.777)">
+                                                                                        <circle id="Ellipse_31" data-name="Ellipse 31" cx="26.5" cy="26.5" r="26.5" transform="translate(78.283 14.777)" fill="#5f5f5f" />
+                                                                                        <g id="Group_326" data-name="Group 326" transform="translate(95.656 31.893)">
+                                                                                            <path id="Path_234" data-name="Path 234" d="M.6,8.9a.6.6,0,0,1,.6.6v3.011a1.2,1.2,0,0,0,1.2,1.2H16.863a1.2,1.2,0,0,0,1.2-1.2V9.5a.6.6,0,1,1,1.2,0v3.011a2.408,2.408,0,0,1-2.409,2.409H2.409A2.408,2.408,0,0,1,0,12.514V9.5a.6.6,0,0,1,.6-.6" transform="translate(0 1.82)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                            <path id="Path_235" data-name="Path 235" d="M8.29.177a.6.6,0,0,1,.852,0h0l3.613,3.613a.6.6,0,1,1-.853.853L9.318,2.057V12.648a.6.6,0,1,1-1.2,0V2.057L5.529,4.643a.6.6,0,0,1-.853-.853Z" transform="translate(0.92 0)" fill="#fff" stroke="#fff" stroke-width="0.5" />
+                                                                                        </g>
                                                                                     </g>
-                                                                                </g>
-                                                                            </svg>
-                                                                        </label>
+                                                                                </svg>
+                                                                            </label>
                                                                         @endif
                                                                         @if(isset($data->prevention->newoffer))
                                                                             <a target="_blank" href="{{route('showfile',$data->prevention->newoffer)}}"><input type="file" id="file-input-1212121www" class="svg-div w-100 border-0  g-0" onchange="upload(this);" name="newoffer">
@@ -5739,39 +5740,39 @@ if it's not present, don't show loader */
                                             <addtask url="{{env('APP_URL')}}" :client_id="{{$lead->id}}"
                                                      :lead_id="{{$lead->lead->id}}" :admin_id="{{$admin_id}}"></addtask>
                                         @endif
-{{--                                        <div class="text-center mt-3 pb-3">--}}
-{{--                                            <div class="row">--}}
-{{--                                                <div class="col g-0 text-end my-auto">--}}
-{{--                                                    <div class="">--}}
-{{--                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">--}}
+                                        {{--                                        <div class="text-center mt-3 pb-3">--}}
+                                        {{--                                            <div class="row">--}}
+                                        {{--                                                <div class="col g-0 text-end my-auto">--}}
+                                        {{--                                                    <div class="">--}}
+                                        {{--                                                    <span id="nextonee__" onclick="nextonee()" class="pe-2" style="color: #9F9F9F;cursor: pointer">--}}
 
-{{--                                                    </span>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="col g-0 text-start">--}}
-{{--                                                    <div id="buton">--}}
-{{--                                                        <button class="px-5 py-2" type="button"--}}
-{{--                                                                style="border: none; border-radius: 9px; background-color:#285F52;"--}}
-{{--                                                                id="nextonee__" onclick="nextonee()">--}}
-{{--                                                            <svg xmlns="http://www.w3.org/2000/svg" width="58.155"--}}
-{{--                                                                 height="19.159" viewBox="0 0 58.155 19.159">--}}
-{{--                                                                <g id="Group_453" data-name="Group 453"--}}
-{{--                                                                   transform="translate(0.004)">--}}
-{{--                                                                    <line id="Line_16" data-name="Line 16" x2="51.954"--}}
-{{--                                                                          y2="0.2"--}}
-{{--                                                                          transform="translate(0 9.287)" fill="none"--}}
-{{--                                                                          stroke="#3fd599" stroke-width="2"/>--}}
-{{--                                                                    <path id="Polygon_2" data-name="Polygon 2"--}}
-{{--                                                                          d="M9.58,0l9.58,11.642H0Z"--}}
-{{--                                                                          transform="translate(58.151 0) rotate(90)"--}}
-{{--                                                                          fill="#3fd599"/>--}}
-{{--                                                                </g>--}}
-{{--                                                            </svg>--}}
-{{--                                                        </button>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                        {{--                                                    </span>--}}
+                                        {{--                                                    </div>--}}
+                                        {{--                                                </div>--}}
+                                        {{--                                                <div class="col g-0 text-start">--}}
+                                        {{--                                                    <div id="buton">--}}
+                                        {{--                                                        <button class="px-5 py-2" type="button"--}}
+                                        {{--                                                                style="border: none; border-radius: 9px; background-color:#285F52;"--}}
+                                        {{--                                                                id="nextonee__" onclick="nextonee()">--}}
+                                        {{--                                                            <svg xmlns="http://www.w3.org/2000/svg" width="58.155"--}}
+                                        {{--                                                                 height="19.159" viewBox="0 0 58.155 19.159">--}}
+                                        {{--                                                                <g id="Group_453" data-name="Group 453"--}}
+                                        {{--                                                                   transform="translate(0.004)">--}}
+                                        {{--                                                                    <line id="Line_16" data-name="Line 16" x2="51.954"--}}
+                                        {{--                                                                          y2="0.2"--}}
+                                        {{--                                                                          transform="translate(0 9.287)" fill="none"--}}
+                                        {{--                                                                          stroke="#3fd599" stroke-width="2"/>--}}
+                                        {{--                                                                    <path id="Polygon_2" data-name="Polygon 2"--}}
+                                        {{--                                                                          d="M9.58,0l9.58,11.642H0Z"--}}
+                                        {{--                                                                          transform="translate(58.151 0) rotate(90)"--}}
+                                        {{--                                                                          fill="#3fd599"/>--}}
+                                        {{--                                                                </g>--}}
+                                        {{--                                                            </svg>--}}
+                                        {{--                                                        </button>--}}
+                                        {{--                                                    </div>--}}
+                                        {{--                                                </div>--}}
+                                        {{--                                            </div>--}}
+                                        {{--                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -6261,12 +6262,12 @@ if it's not present, don't show loader */
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 <script>
     //paste this code under the head tag or in a separate js file.
-	// Wait for window load
-	$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut();;
-	});
-    </script>
+    // Wait for window load
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut();;
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     function openBurgerFunct() {
@@ -6886,9 +6887,6 @@ if it's not present, don't show loader */
         }
 
 </style>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
 <script>
     var cntt = 0;
     var newgcnt = <?php echo $gcnt; ?>;

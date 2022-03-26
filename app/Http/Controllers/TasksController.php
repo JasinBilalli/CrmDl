@@ -551,7 +551,7 @@ class TasksController extends Controller
             if($user->user()->hasRole('admin')){
                 $tasks = lead::with(['family' => function ($q){
                     $q->where('status',['Open']);
-                }])->whereHas('family')->paginate(25);
+                }])->whereHas('family')->paginate(20,['*'],'tasksP');
 
                 $cntt = 0;
 
@@ -573,13 +573,9 @@ class TasksController extends Controller
 
             }
             else{
-                $tasks = family::with('adminpend')
-                    ->join('leads','family_person.leads_id','=','leads.id')
-                    ->where('status','Open')
-                    ->where('leads.assign_to_id',$user->user()->id)
-                    ->select('family_person.*')
-                    ->orderBy('family_person.created_at','desc')
-                    ->paginate(20,['*'],'tasksP');
+                $tasks = lead::with(['family' => function ($q){
+                    $q->where('status',['Open']);
+                }])->whereHas('family')->paginate(20,['*'],'tasksP');
 
                 $tasks2 = [];
                 $cntt = 0;
@@ -621,9 +617,10 @@ class TasksController extends Controller
         }
 
         $personalApp = DB::table('personalappointment')->where('AppOrCon',1)->where('user_id',Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
+        $consultation = DB::table('personalappointment')->where('AppOrCon',2)->where('user_id',Auth::user()->id)->where('date','>=',Carbon::now()->format('Y-m-d'))->get();
 
         if($user->user()->hasRole('backoffice')) return view('tasks',compact('answered','pend','opened','leadsss'));
-        if($user->user()->hasRole('fs')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','leadsss'));
+        if($user->user()->hasRole('fs')) return view('tasks', compact('consultation','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','leadsss'));
         if($user->user()->hasRole('admin')) return view('tasks', compact('personalApp','opencnt', 'pendingcnt', 'realopen', 'pending', 'birthdays', 'tasks','answered','pend','opened','leadsss'));
 
 

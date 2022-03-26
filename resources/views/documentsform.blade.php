@@ -19,27 +19,27 @@ url')}}/imgs/Favicon.png">
 <body>
 
 <style>
-        /* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript,
-if it's not present, don't show loader */
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 99999;
-	background: url(https://c.tenor.com/b8F9BMmvXlcAAAAi/loading-round.gif) center no-repeat #fff;
-    background-size: 200px;
-}
-
-@media (max-width: 575.98px) {
+    /* Paste this css to your style sheet file or under head tag */
+    /* This only works with JavaScript,
+    if it's not present, don't show loader */
+    .no-js #loader { display: none;  }
+    .js #loader { display: block; position: absolute; left: 100px; top: 0; }
     .se-pre-con {
-        background-size: 100px;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        background: url(https://c.tenor.com/b8F9BMmvXlcAAAAi/loading-round.gif) center no-repeat #fff;
+        background-size: 200px;
     }
-}
+
+    @media (max-width: 575.98px) {
+        .se-pre-con {
+            background-size: 100px;
+        }
+    }
 
     /*nav ARti*/
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
@@ -150,11 +150,11 @@ if it's not present, don't show loader */
                     Auth::guard('admins')->user()->hasRole('fs') || Auth::guard('admins')->user()->hasRole('admin'))
 
                     <a href="{{route('tasks')}}" class="nav-link {{ (request()->is('tasks')) ? 'activeClassNav__' : '' }}">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
-                             <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
-                             <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
-                             <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
-                           </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
+                            <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+                            <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
+                        </svg>
                         <span class="ps-2 txt-dn">Aufgaben</span>
                     </a>
                 @endif
@@ -163,11 +163,11 @@ if it's not present, don't show loader */
                     Auth::guard('admins')->user()->hasRole('salesmanager')
                     ||Auth::guard('admins')->user()->hasRole('menagment'))
                     <a href="{{route('leads')}}" class="nav-link {{ (request()->is('leads')) ? 'activeClassNav__' : '' }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-hdd-stack" viewBox="0 0 16 16">
-                        <path d="M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z"/>
-                        <path d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
-                        <path d="M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-hdd-stack" viewBox="0 0 16 16">
+                            <path d="M14 10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h12zM2 9a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a2 2 0 0 0-2-2H2z"/>
+                            <path d="M5 11.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM14 3a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12zM2 2a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                            <path d="M5 4.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-2 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                        </svg>
                         <span class="ps-2 txt-dn">Leads</span>
                     </a>
                 @endif
@@ -176,15 +176,11 @@ if it's not present, don't show loader */
                     Auth::guard('admins')->user()->hasRole('menagment') ||
                     Auth::guard('admins')->user()->hasRole('admin'))
                     <a href="{{route('Appointments')}}" class="nav-link  {{ (request()->is('Appointments')) ? 'activeClassNav__' : '' }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
-                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
-                                <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
-                            </svg>
-                        @if(Auth::guard('admins')->user()->hasRole('salesmanager'))
-                            <span class="ps-2 txt-dn">Terminen</span>
-                        @else
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-calendar4-week" viewBox="0 0 16 16">
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
+                            <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-2 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                        </svg>
                             <span class="ps-2 txt-dn">Kalender</span>
-                        @endif
                     </a>
                 @endif
                 @if(Auth::guard('admins')->user()->hasRole('backoffice') ||
@@ -201,9 +197,9 @@ if it's not present, don't show loader */
                 @endif
                 @if(Auth::guard('admins')->check())
                     <a href="{{route('costumers')}}" class="nav-link {{ (request()->is('costumers')) ? 'activeClassNav__' : '' }}">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
-                               <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
-                          </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                            <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                        </svg>
                         <span class="ps-2 txt-dn">Kunden</span>
                     </a>
                 @endif
@@ -300,15 +296,28 @@ if it's not present, don't show loader */
             </div>
             <div class="log-out-div ">
                 <hr class="hr-1 m-0">
-                <div class="logg d-flex justify-content-center">
+                <div class="logg d-flex flex-column justify-content-center">
+                    @if(auth()->user()->admin_id != null)
+                        <a href="{{action('App\Http\Controllers\UserController@changerole')}}"
+                           class="nav-link rolle-style">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+                                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                            </svg>
+                            <span class="ps-1 nav-texttt">Rolle wechseln</span>
+                        </a>
+                    @endif
                     <a href="{{route('logout')}}">
                         <button class=" btn">
-                                <span class="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-                                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                                    </svg>
-                                </span>
+                                    <span class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19"
+                                             fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                  d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                            <path fill-rule="evenodd"
+                                                  d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                        </svg>
+                                    </span>
                             <span class="ps-2 txt-dn">Abmelden</span>
                         </button>
                     </a>
@@ -618,7 +627,7 @@ if it's not present, don't show loader */
                                     </div>
                                 </div>
                             </div>
-<krank fam_id="{{$lead->id}}" url="{{config('app.url')}}" lead_id="{{$lead->lead->id}}"></krank>
+                            <krank fam_id="{{$lead->id}}" url="{{config('app.url')}}" lead_id="{{$lead->lead->id}}"></krank>
                         </div>
 
                         <div class="tab-pane fade auto-content" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -2473,6 +2482,7 @@ if it's not present, don't show loader */
                 </div>
             </div>
         </form>
+        <div id="kranken1" class="text-center"></div>
     </div>
 </div>
 {{-- mobile--}}
@@ -2835,6 +2845,26 @@ if it's not present, don't show loader */
             @endif
         </div>
         <div class="my-3 m-burger">
+            @if(auth()->user()->admin_id != null)
+                <a href="{{action('App\Http\Controllers\UserController@changerole')}}" class="m-nav text-decoration-none">
+                        <span class="px-2 active-dot">
+                            <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="2" cy="2" r="2" fill="#4DC591"/>
+                            </svg>
+                        </span>
+                    <span class="px-3 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" fill="#88889d" class="bi bi-person-check" viewBox="0 0 16 16">
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                            <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                        </span>
+                    <span class="fs-6 fw-bold" style="color: #88889D; line-height: 1;">
+                            ROLLE WECHSELN
+                        </span>
+                </a>
+            @endif
+        </div>
+        <div class="my-3 m-burger">
             <a href="{{route('logout')}}" class="m-nav text-decoration-none">
                     <span class="px-2 active-dot">
                         <svg width="8" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2852,7 +2882,9 @@ if it's not present, don't show loader */
                     </span>
             </a>
         </div>
+        <div id="krankss">
 
+        </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -3446,12 +3478,12 @@ if it's not present, don't show loader */
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 <script>
     //paste this code under the head tag or in a separate js file.
-	// Wait for window load
-	$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut();;
-	});
-    </script>
+    // Wait for window load
+    $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeOut();;
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
     $('input[type=radio][name=leasing]').change(function() {
@@ -4623,7 +4655,7 @@ if it's not present, don't show loader */
             '      </div>'+
             '    </div>'+
             '  </div>';
-            var auto = document.getElementsByClassName('autopdf');
+        var auto = document.getElementsByClassName('autopdf');
         var autoName = document.getElementsByClassName('autoName');
 
 
@@ -4636,7 +4668,6 @@ if it's not present, don't show loader */
                 $("#autooferte").append(
                     '<hr>');
             }
-
         }
 
         var gegen = document.getElementsByClassName('gegenpdf');
@@ -4701,6 +4732,14 @@ if it's not present, don't show loader */
     function sachenSkipp(){
         document.getElementById('sachenSkip').checked = true;
     }
+    @php $krank = \App\Models\LeadDataKK::where('person_id',$lead->id)->first(); @endphp
+    @if($krank)
+    @if($krank->krank_id != null)
+    document.getElementById('nav-home').style.display = 'none';
+    document.getElementById('kranken1').innerHTML = '<a href="' + '{{URL::route('leadfamilyperson',[\Illuminate\Support\Facades\Crypt::encrypt($krank->krank_id* 1244), "accept" => false, "admin_id" => \Illuminate\Support\Facades\Crypt::encrypt((int) \App\Models\Pendency::where('family_id',$krank->krank_id)->first()->admin_id * 1244),"vorsorge" => false,'pend_id' => \App\Models\Pendency::where('family_id',$krank->krank_id)->first()->id])}}' + '"><h4>Kranken</h4></a>';
+    @endif
+    @endif
+
 
 </script>
 
@@ -4733,6 +4772,10 @@ if it's not present, don't show loader */
         font-weight: bold;
     }
 
+    .rolle-style {
+        border-radius: 0 !important;
+        border-bottom: 1.5px solid white;
+    }
 </style>
 
 

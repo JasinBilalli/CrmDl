@@ -28,8 +28,8 @@ class LeadDataController extends Controller
     use FileManagerTrait;
     public function acceptdata($id, Request $req,$accept = false)
     {
-
         $id = Crypt::decrypt($id) / 1244;
+
         $admin_id = $req->admin_id;
         $user = Auth::user();
         $urole = $user->getRoleNames()->toArray();
@@ -37,6 +37,7 @@ class LeadDataController extends Controller
 
         $admin_id = Crypt::decrypt($req->admin_id) / 1244;
         $lead = family::find($id);
+
         if (!in_array('fs',$urole) || Pendency::find(Session::get('pend_id'))->admin_id == $user->id) {
             if (!$accept) {
                 $data = new data();
@@ -61,13 +62,7 @@ class LeadDataController extends Controller
 
                     $pend = Pendency::find(Session::get('pend_id'));
                     $pend->completed = 1;
-
-                    if($req->vorsorge == '1') {
-                        $pend->type = 'Aktualisieren';
-                    }
-                    else{
-                        $pend->type = 'Eingereicht';
-                    }
+                    $pend->type = 'Eingereicht';
                     $pend->save();
                     $person = family::find($pend->family_id);
                     $person->status = "Done";
@@ -301,11 +296,12 @@ class LeadDataController extends Controller
     }
 
 
-    public function updateLeadDataKK($leadId, $personId, Request $request)
+    public function updateLeadDataKK($leadId, $personId, Request $request,$vorsorge = false)
     {
+
         $pend = Pendency::find(Session::get('pend_id'));
         $pend->done = 1;
-        $pend->type = "";
+        $pend->type = "Aktualisiert";
         $pend->save();
 
         $leadId = Crypt::decrypt($leadId) / 1244;
@@ -555,7 +551,7 @@ class LeadDataController extends Controller
             $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Dokumentation für :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
             $b->notify(new SendNotificationn($url));
         }
-        dd($request->vorsorge);
+
         if($offer > 0){
             $url =  '<a href="'  . route("leadfamilyperson",[Crypt::encrypt($personId * 1244),"admin_id" => Crypt::encrypt(Pendency::find($pend->id)->admin_id * 1244),"pend_id" => Pendency::find($pend->id)->id]) . '"> Das erhaltene Angebot für den Kunden :' . family::find($personId)->first_name . ' wurde eingereicht </a>';
             Admins::find($pend->admin_id)->notify(new SendNotificationn($url));
@@ -575,7 +571,6 @@ class LeadDataController extends Controller
 
         return redirect()->route('tasks')->with('success', 'Aufgabe erfolgreich übermittelt');
     }
-
 
 
     public function deleteLeadDataKK($dataId)

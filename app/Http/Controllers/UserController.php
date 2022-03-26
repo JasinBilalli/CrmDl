@@ -889,16 +889,22 @@ class UserController extends Controller
                     } elseif (in_array('salesmanager',$urole)) {
 
 
-                        $consultation = PersonalAppointment::where('user_id', $user->id)->where('AppOrCon', 2)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
+                        $new = PersonalAppointment::where('AppOrCon', 2)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
+                        $consultation = $new->filter(function ($item) use($user){
+                            return $item->user_id == $user->id || $item->assignfrom == $user->id;
+                        });
+
 
                         $countconsultation = $consultation->count();
 
                         $todayAppointCount = lead::where('appointment_date', Carbon::now()->toDateString())->where('assigned', 1)->count();
 
+                        $admins = Admins::role(['fs','salesmanager'])->get();
+
 
                         $personalApp = PersonalAppointment::where('AppOrCon', 1)->where('user_id', $user->id)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
                         $countpersonalApp = $personalApp->count();
-                        $admins = Admins::all();
+
 
                         $provisionertCount = $grundversicherungP + $retchsschutzP + $vorsorgeP + $zusatzversicherungP + $autoversicherungP + $hausratP;
                         $offenCount = $grundversicherungOffen + $retchsschutzOffen + $vorsorgeOffen + $zusatzversicherungOffen + $autoversicherungOffen + $hausratOffen;
@@ -907,11 +913,18 @@ class UserController extends Controller
                         $abgCount = $grundversicherungA + $retchsschutzA + $vorsorgeA + $zusatzversicherungA + $autoversicherungA + $hausratA;
 
 
-                        return view('dashboard', compact('user','urole','personalApp', 'consultation', 'done', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'countconsultation', 'provisionertCount', 'offenCount', 'aufgenomenCount', 'zuruckCount', 'abgCount', 'offen'));
+                        return view('dashboard', compact('user','admins','urole','personalApp', 'consultation', 'done', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'countconsultation', 'provisionertCount', 'offenCount', 'aufgenomenCount', 'zuruckCount', 'abgCount', 'offen'));
 
                     } elseif (in_array('admin',$urole)) {
                         $personalApp = PersonalAppointment::where('AppOrCon', 1)->where('assignfrom', $user->id)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
                         $countpersonalApp = $personalApp->count();
+
+                        $neww = PersonalAppointment::where('AppOrCon', 2)->where('date', '>=', Carbon::now()->format('Y-m-d'))->get();
+                        $consultation = $neww->filter(function ($item) use($user){
+                            return $item->user_id == $user->id || $item->assignfrom == $user->id;
+                        });
+                        $countconsultation = $consultation->count();
+
                         $admins = Cache::remember('admins', 7200, function () {
                             return Admins::all();
                         });
@@ -943,7 +956,7 @@ class UserController extends Controller
                         ];
 
 
-                return view('dashboard', compact('user','urole','done', 'admins', 'counterat', 'personalApp', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'offen'));
+                return view('dashboard', compact('consultation','countconsultation','user','urole','done', 'admins', 'counterat', 'personalApp', 'tasks', 'pending', 'leadscount', 'todayAppointCount', 'percnt', 'pendencies', 'pendingcnt', 'morethan30', 'recorded', 'countpersonalApp', 'offen'));
             }
 
         }

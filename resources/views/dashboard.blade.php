@@ -1057,8 +1057,9 @@
             </div>
         </div>
             @if(!in_array('backoffice',$urole))
-                <div class="col-12 col-md-12 col-lg-12 px-0 px-sm-2">
-                    <div class="personal-appointments my-2 mx-sm-3 mx-2">
+                <div class="row g-0 mx-3">
+                    <div class="col-12 col-md-12 col-lg-6 px-0 ">
+                    <div class="personal-appointments my-2  mx-2">
                         <div class="header  justify-content-between">
                             <div class="d-flex">
                             <div class="">
@@ -1078,7 +1079,7 @@
                         <div class="content pt-2">
                             <div class="overflow-div mx-3 mt-4 row">
                                 @foreach($personalApp as $perApp)
-                                    <div class="col-12 col-sm-12 col-md-6 g-0">
+                                    <div class="col-12 col-sm-12 col-md-12 g-0">
                                         <div class="py-2 d-flex personal-app-items m-2 px-2 px-sm-3">
                                             <div class="col my-auto">
                                                 <div class="">
@@ -1095,15 +1096,6 @@
                                                 </div>
                                                 <div class="">
                                                     <span class="fw-400">Kommentar: {{$perApp->comment}}</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-auto d-flex align-items-center">
-                                                <div class="btn ">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="#000"
-                                                         class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                                                    </svg>
                                                 </div>
                                             </div>
                                         </div>
@@ -1130,88 +1122,242 @@
                         </div>
                     </div>
                 </div>
-                {{--        Modali--}}
-                <div class="modal fade" style="top: 1% !important;" id="exampleModal" tabindex="-1"
-                     aria-labelledby="exampleModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content p-3" style="border-radius: 43px !important;">
-                            <div class="modal-header" style="border-bottom: 0 !important;">
-                                <h5 class="modal-title mx-2" id="exampleModalLabel"
-                                    style="font-family: 'Montserrat' !important;"><b>Privaten Termin hinzufügen</b></h5>
-                                <button type="button" class="btn-close" style="opacity: 1 !important;"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form class="" action="{{route('addPersonalAppointment')}}" method="post">
-                                    @csrf
-                                    <input type="hidden" name="apporconId" value="1">
-                                    <div class="px-2">
-                                        <label style="font-family: 'Montserrat' !important;"><b>Titel</b></label>
-                                        <input type="text"
-                                               style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
-                                               name="title" class="form-control mb-3" required>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Datum</b></label>
-                                        <input type="date"
-                                               style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
-                                               name="date" class="form-control mb-3" required>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Zeit</b></label>
-                                        <input type="time"
-                                               style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
-                                               name="time" class="form-control mb-3" required>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Adress</b></label>
-                                        <input type="text"
-                                               style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
-                                               name="address" class="form-control mb-3" required>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Kommentar</b></label>
-                                        <textarea type="text"
-                                                  style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
-                                                  rows="3" name="comment" class="form-control mb-3"
-                                                  required>
+                    {{--Modali--}}
+                    <div class="modal fade" style="top: 1% !important;" id="exampleModal" tabindex="-1"
+                         aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content p-3" style="border-radius: 43px !important;">
+                                <div class="modal-header" style="border-bottom: 0 !important;">
+                                    <h5 class="modal-title mx-2" id="exampleModalLabel"
+                                        style="font-family: 'Montserrat' !important;"><b>Privaten Termin hinzufügen</b></h5>
+                                    <button type="button" class="btn-close" style="opacity: 1 !important;"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="" action="{{route('addPersonalAppointment')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="apporconId" value="1">
+                                        <div class="px-2">
+                                            <label style="font-family: 'Montserrat' !important;"><b>Titel</b></label>
+                                            <input type="text"
+                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                   name="title" class="form-control mb-3" required>
+                                            <label style="font-family: 'Montserrat' !important;"><b>Datum</b></label>
+                                            <input type="date"
+                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                   name="date" class="form-control mb-3" required>
+                                            <label style="font-family: 'Montserrat' !important;"><b>Zeit</b></label>
+                                            <input type="time"
+                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                   name="time" class="form-control mb-3" required>
+                                            <label style="font-family: 'Montserrat' !important;"><b>Adress</b></label>
+                                            <input type="text"
+                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                   name="address" class="form-control mb-3" required>
+                                            <label style="font-family: 'Montserrat' !important;"><b>Kommentar</b></label>
+                                            <textarea type="text"
+                                                      style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                      rows="3" name="comment" class="form-control mb-3"
+                                                      required>
                                                     </textarea>
-                                        <label style="font-family: 'Montserrat' !important;"><b>Zuweisen</b></label>
+{{--                                            <label style="font-family: 'Montserrat' !important;"><b>Zuweisen</b></label>--}}
 
-                                        <select class="form-select mb-2"
-                                                style="font-family: 'Montserrat' !important;border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
-                                                name="roleid">
-                                            @if(!in_array('backoffice',$urole))
-                                                @foreach($admins as $admin)
+{{--                                            <select class="form-select mb-2"--}}
+{{--                                                    style="font-family: 'Montserrat' !important;border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"--}}
+{{--                                                    name="roleid">--}}
+{{--                                                @if(!in_array('backoffice',$urole))--}}
+{{--                                                    @foreach($admins as $admin)--}}
 
-                                                    <option value="{{$admin->id}}">{{$admin->name}}</option>
-                                                @endforeach
-                                            @endif
-                                        </select>
+{{--                                                        <option value="{{$admin->id}}">{{$admin->name}}</option>--}}
+{{--                                                    @endforeach--}}
+{{--                                                @endif--}}
+{{--                                            </select>--}}
 
-                                    </div>
-                                    <div class="modal-footer px-1"
-                                         style="border-top: 0 !important; justify-content: flex-start !important;">
-                                        <div class="row" style="width: 100%;">
-                                            <div class="col-md-4 col-5 p-0">
-                                                <div style="padding: 2%;">
-                                                    <button type="button" class="btn py-2"
-                                                            data-bs-dismiss="modal"
-                                                            style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;">
-                                                        Schliessen
-                                                    </button>
+                                        </div>
+                                        <div class="modal-footer px-1"
+                                             style="border-top: 0 !important; justify-content: flex-start !important;">
+                                            <div class="row" style="width: 100%;">
+                                                <div class="col-md-4 col-5 p-0">
+                                                    <div style="padding: 2%;">
+                                                        <button type="button" class="btn py-2"
+                                                                data-bs-dismiss="modal"
+                                                                style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;">
+                                                            Schliessen
+                                                        </button>
 
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-4 col-5 p-0">
-                                                <div style="padding: 2%;">
-                                                    <input type="submit"
-                                                           style="font-family: 'Montserrat' !important; width: 100%; border: 1px solid #4EC590; font-weight: 600 !important; font-size: 18px !important; background-color: #4EC590; color: #fff; border-radius: 8px;"
-                                                           class="btn py-2" value="Speichern">
+                                                <div class="col-md-4 col-5 p-0">
+                                                    <div style="padding: 2%;">
+                                                        <input type="submit"
+                                                               style="font-family: 'Montserrat' !important; width: 100%; border: 1px solid #4EC590; font-weight: 600 !important; font-size: 18px !important; background-color: #4EC590; color: #fff; border-radius: 8px;"
+                                                               class="btn py-2" value="Speichern">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    {{--end--}}
+{{--                    ////////////////////////////////////////////////////////////////////////////////////////////////////////////--}}
+                    <div class="col-12 col-md-12 col-lg-6 px-0 ">
+                        <div class="personal-appointments my-2  mx-2">
+                            <div class="header  justify-content-between">
+                                <div class="d-flex">
+                                    <div class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="37" fill="currentColor" class="bi bi-file-earmark-lock" viewBox="0 0 16 16">
+                                            <path d="M10 7v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V9.3c0-.627.46-1.058 1-1.224V7a2 2 0 1 1 4 0zM7 7v1h2V7a1 1 0 0 0-2 0zM6 9.3v2.4c0 .042.02.107.105.175A.637.637 0 0 0 6.5 12h3a.64.64 0 0 0 .395-.125c.085-.068.105-.133.105-.175V9.3c0-.042-.02-.107-.105-.175A.637.637 0 0 0 9.5 9h-3a.637.637 0 0 0-.395.125C6.02 9.193 6 9.258 6 9.3z"/>
+                                            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="my-auto ps-2">
+                                        <span>Mitarbeiterbesprechungen</span>
+                                    </div>
+                                </div>
+                                <div class="count h-100 px-4 fs-5 mt-2">
+                                    <span>{{$countpersonalApp}}</span>
+                                </div>
+                            </div>
+                            <div class="content pt-2">
+                                <div class="overflow-div mx-3 mt-4 row">
+                                    @foreach($consultation as $consult)
+                                        <div class="col-12 col-sm-12 col-md-12 g-0">
+                                            <div class="py-2 d-flex personal-app-items m-2 px-2 px-sm-3">
+                                                <div class="col my-auto">
+                                                    <div class="">
+                                                        <span class="fw-600">{{$consult->title}}</span>
+                                                    </div>
+                                                    <div class="">
+                                                        <span class="fw-400">Adresse: {{$consult->address}}</span>
+                                                    </div>
+                                                    <div class="">
+                                                        <span class="fw-400">Datum: {{$consult->date}}</span>
+                                                    </div>
+                                                    <div class="">
+                                                        <span class="fw-400">Zeit: {{$consult->time}}</span>
+                                                    </div>
+                                                    <div class="">
+                                                        <span class="fw-400">Kommentar: {{$consult->comment}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto d-flex align-items-center">
+                                                    <div class="btn ">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="#000"
+                                                             class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="button-div mt-2">
+                                    <div class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="90"
+                                             viewBox="0 0 105 71">
+                                            <g id="Group_1170" data-name="Group 1170" transform="translate(-434 -2907)">
+                                                <rect id="Rectangle_977" data-name="Rectangle 977" width="105" height="71"
+                                                      rx="8" transform="translate(434 2907)" fill="#0c71c3"/>
+                                                <path id="Path_2005" data-name="Path 2005" d="M541.911,1942.5h27.942"
+                                                      transform="translate(-69.382 1000)" fill="none" stroke="#fff"
+                                                      stroke-linecap="round" stroke-width="3"/>
+                                                <path id="Path_2006" data-name="Path 2006" d="M0,0H27.942"
+                                                      transform="translate(486.5 2928.529) rotate(90)" fill="none"
+                                                      stroke="#fff" stroke-linecap="round" stroke-width="3"/>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{--Modali--}}
+                    <div class="modal fade" style="top: 1% !important;" id="exampleModal2" tabindex="-1"
+                         aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content p-3" style="border-radius: 43px !important;">
+                                <div class="modal-header" style="border-bottom: 0 !important;">
+                                    <h5 class="modal-title mx-2" id="exampleModalLabel"
+                                        style="font-family: 'Montserrat' !important;"><b>Mitarbeiterbesprechungen</b></h5>
+                                    <button type="button" class="btn-close" style="opacity: 1 !important;"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="" action="{{route('addPersonalAppointment')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="apporconId" value="2">
+                                        <div class="px-2">
+                                            <label style="font-family: 'Montserrat' !important;"><b>Titel</b></label>
+                                            <input type="text"
+                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                   name="title" class="form-control mb-3" required>
+                                            <label style="font-family: 'Montserrat' !important;"><b>Datum</b></label>
+                                            <input type="date"
+                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                   name="date" class="form-control mb-3" required>
+                                            <label style="font-family: 'Montserrat' !important;"><b>Zeit</b></label>
+                                            <input type="time"
+                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                   name="time" class="form-control mb-3" required>
+                                            <label style="font-family: 'Montserrat' !important;"><b>Adress</b></label>
+                                            <input type="text"
+                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                   name="address" class="form-control mb-3" required>
+                                            <label style="font-family: 'Montserrat' !important;"><b>Kommentar</b></label>
+                                            <textarea type="text"
+                                                      style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important; font-family: 'Montserrat';"
+                                                      rows="3" name="comment" class="form-control mb-3"
+                                                      required>
+                                                    </textarea>
+                                            <label style="font-family: 'Montserrat' !important;"><b>Zuweisen</b></label>
+                                            <select class="form-select mb-2"
+                                                    style="font-family: 'Montserrat' !important;border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
+                                                    name="roleid">
+                                                @if(!in_array('backoffice',$urole))
+                                                    @foreach($admins as $admin)
+                                                        <option value="{{$admin->id}}">{{$admin->name}}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                        <div class="modal-footer px-1"
+                                             style="border-top: 0 !important; justify-content: flex-start !important;">
+                                            <div class="row" style="width: 100%;">
+                                                <div class="col-md-4 col-5 p-0">
+                                                    <div style="padding: 2%;">
+                                                        <button type="button" class="btn py-2"
+                                                                data-bs-dismiss="modal"
+                                                                style="font-family: 'Montserrat' !important; width: 100%; font-weight: 600 !important; border: 1px solid #6C757D; font-size: 18px !important; background-color: #6C757D; color: #fff; border-radius: 8px;">
+                                                            Schliessen
+                                                        </button>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-5 p-0">
+                                                    <div style="padding: 2%;">
+                                                        <input type="submit"
+                                                               style="font-family: 'Montserrat' !important; width: 100%; border: 1px solid #4EC590; font-weight: 600 !important; font-size: 18px !important; background-color: #4EC590; color: #fff; border-radius: 8px;"
+                                                               class="btn py-2" value="Speichern">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{--end--}}
                 </div>
-                {{--End--}}
 
             @endif
             @endif
@@ -1420,25 +1566,6 @@
                                                         {{$consult->title}}
                                                     </span>
                                                                     </div>
-                                                                    <div class="col-1 text-end">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                                                             width="5" height="13"
-                                                                             viewBox="0 0 5 13">
-                                                                            <g id="Group_528" data-name="Group 528"
-                                                                               transform="translate(-0.239 0)">
-                                                                                <circle id="Ellipse_6"
-                                                                                        data-name="Ellipse 6" cx="2.5"
-                                                                                        cy="2.5" r="2.5"
-                                                                                        transform="translate(0.239 0)"
-                                                                                        fill="#000"/>
-                                                                                <circle id="Ellipse_7"
-                                                                                        data-name="Ellipse 7" cx="2.5"
-                                                                                        cy="2.5" r="2.5"
-                                                                                        transform="translate(0.239 8)"
-                                                                                        fill="#000"/>
-                                                                            </g>
-                                                                        </svg>
-                                                                    </div>
                                                                 </div>
                                                                 <div class="">
                                                 <span style="font-family: 'Montserrat';">
@@ -1539,6 +1666,16 @@
                                                                                   style="border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
                                                                                   class="form-control mb-3"
                                                                                   required></textarea>
+                                                                        <label style="font-family: 'Montserrat' !important;"><b>Zuweisen</b></label>
+                                                                        <select class="form-select mb-2"
+                                                                                style="font-family: 'Montserrat' !important;border-radius: 8px; background-color: #EFEFEF !important; border: 1px solid #EFEFEF !important;"
+                                                                                name="roleid">
+                                                                            @if(!in_array('backoffice',$urole))
+                                                                                @foreach($admins as $admin)
+                                                                                    <option value="{{$admin->id}}">{{$admin->name}}</option>
+                                                                                @endforeach
+                                                                            @endif
+                                                                        </select>
                                                                     </div>
 
                                                                     <div class="modal-footer px-1"
@@ -1591,7 +1728,6 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="fw-bold fs-5">Private Termine</div>
-
                                                     </div>
                                                     <div style="color: #0a53be" class="col-3 text-end">
                                                         <h5><b>{{$countpersonalApp}}</b></h5>
@@ -1613,25 +1749,6 @@
                                                 <span class="fw-bold fs-5" style="font-family: 'Montserrat';">
                                                     {{$perApp->title}}
                                                 </span>
-                                                                </div>
-                                                                <div class="col-1 text-end">
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="5"
-                                                                         height="13"
-                                                                         viewBox="0 0 5 13">
-                                                                        <g id="Group_528" data-name="Group 528"
-                                                                           transform="translate(-0.239 0)">
-                                                                            <circle id="Ellipse_6" data-name="Ellipse 6"
-                                                                                    cx="2.5" cy="2.5"
-                                                                                    r="2.5"
-                                                                                    transform="translate(0.239 0)"
-                                                                                    fill="#000"/>
-                                                                            <circle id="Ellipse_7" data-name="Ellipse 7"
-                                                                                    cx="2.5" cy="2.5"
-                                                                                    r="2.5"
-                                                                                    transform="translate(0.239 8)"
-                                                                                    fill="#000"/>
-                                                                        </g>
-                                                                    </svg>
                                                                 </div>
                                                             </div>
                                                             <div class="">
