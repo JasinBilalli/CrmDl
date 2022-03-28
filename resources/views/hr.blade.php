@@ -11,6 +11,7 @@
 
 
 <body>
+<div class="se-pre-con"></div>
 <div class="row g-0">
     @php $user = auth() @endphp
         <div class="col-lg-2 col-md-1 col-sm-1 col-1 first-col1">
@@ -1280,6 +1281,16 @@
         });
     }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+<script>
+    //paste this code under the head tag or in a separate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut();
+	});
+    </script>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@200;800;900&display=swap');
 
@@ -1472,6 +1483,18 @@
 
 
 <style>
+    .no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background: url(https://c.tenor.com/b8F9BMmvXlcAAAAi/loading-round.gif) center no-repeat #fff;
+    background-size: 200px;
+}
     div,
     button,
     span,
@@ -3273,5 +3296,11 @@
         border-radius: 0 !important;
         border-bottom: 1.5px solid white;
     }
+    @media (max-width: 799.99px) {
+
+        .se-pre-con {
+            background-size: 100px;
+        }
+        }
 </style>
 
