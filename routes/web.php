@@ -179,11 +179,11 @@ $leadinfo = $leads['leads'][$i]->info;
         return redirect()->back();
     })->name('acceptleadinfo')->middleware('role:admin|fs|salesmanager');
 
-   route::get('costumer_documents/{id}/{admin_id?}',[FamilyPersonsController::class,'family_persons'])->name('leadfamilyperson')->middleware('role:admin|fs|backoffice');
+   route::get('costumer_documents/{id}/{admin_id?}',[FamilyPersonsController::class,'family_persons'])->name('leadfamilyperson')->middleware('role:admin|backoffice');
 
 
-    route::post('createLeadDataKK/{leadIdd}/{personIdd}',[LeadDataController::class,'createLeadDataKK'])->name('createLeadDataKK')->middleware('role:admin|fs|backoffice');
-    route::post('updateLeadDataKK/{leadId}/{personId}',[LeadDataController::class,'updateLeadDataKK'])->name('updateLeadDataKK')->middleware('role:admin|fs|backoffice');
+    route::post('createLeadDataKK/{leadIdd}/{personIdd}',[LeadDataController::class,'createLeadDataKK'])->name('createLeadDataKK')->middleware('role:admin|backoffice');
+    route::post('updateLeadDataKK/{leadId}/{personId}',[LeadDataController::class,'updateLeadDataKK'])->name('updateLeadDataKK')->middleware('role:admin|backoffice');
 route::get('changerole','App\Http\Controllers\UserController@changerole');
    route::any('tasks',[TasksController::class,'tasks'])->name('tasks')->middleware('role:admin|fs|backoffice');
    route::get('searchword',[TasksController::class,'searchword'])->name('searchword')->middleware('role:admin|fs|backoffice|salesmanager');
@@ -217,7 +217,7 @@ route::get('fmembers/{family}/{lid}','App\Http\Controllers\FamilyPersonsControll
    route::get('accepttask/{id}',[TasksController::class,'accepttask'])->name('accepttask')->middleware('role:admin|fs|salesmanager');
    route::post('addPersonalAppointment',[\App\Http\Controllers\PersonalAppointmentController::class,'addPersonalAppointment'])->name('addPersonalAppointment')->middleware('role:admin|fs|salesmanager');
    route::post('confirmsms',[TasksController::class,'confirmsms'])->name('confirmsms');
-route::any('costumer_documentss/{id}/{accept?}',[LeadDataController::class,'acceptdata'])->name('acceptdata')->middleware('role:admin|fs|backoffice|salesmanager');
+route::any('costumer_documentss/{id}/{accept?}',[LeadDataController::class,'acceptdata'])->name('acceptdata')->middleware('role:admin|backoffice|salesmanager');
 route::get('smsverification',[UserController::class,'smsconfirmation'])->name('smsconfirmation')->withoutMiddleware([confirmedcode::class]);
 route::get('smsconfirm',function (){
     $Admin = Admins::find(12);
