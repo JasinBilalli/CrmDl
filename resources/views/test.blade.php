@@ -1,1 +1,1 @@
-{{__('lang.test',['name' => 'Albenit'])}}
+{{__('name',['name' => 'Albenit'])}}
