@@ -396,12 +396,13 @@ class TasksController extends Controller
             $cnt = 0;
 
             foreach ($data as $dat) {
+
                 $grundversicherungP[$cnt] = $dat->grund->first();
                 $retchsschutzP[$cnt] = $dat->rech->first();
                 $vorsorgeP[$cnt] = $dat->vor->first();
                 $zusatzversicherungP[$cnt] = $dat->zus->first();
                 $autoversicherungP[$cnt] = $dat->auto->first();
-                $hausratP[$cnt] = $dat->hausrat;
+                $hausratP[$cnt] = $dat->hausrat->first();
                 $family_person[$cnt] = $dat;
                 if($dat->df){
                     if($dat->df->mandatiert == null){
@@ -450,12 +451,13 @@ class TasksController extends Controller
             $cnt = 0;
 
             foreach ($data as $dat) {
+
                 $grundversicherungP[$cnt] = $dat->grund->first();
                 $retchsschutzP[$cnt] = $dat->rech->first();
                 $vorsorgeP[$cnt] = $dat->vor->first();
                 $zusatzversicherungP[$cnt] = $dat->zus->first();
                 $autoversicherungP[$cnt] = $dat->auto->first();
-                $hausratP[$cnt] = $dat->hausrat;
+                $hausratP[$cnt] = $dat->hausrat->first();
                 $family_person[$cnt] = $dat;
                 if($dat->df){
                     if($dat->df->mandatiert == null){

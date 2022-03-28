@@ -4,7 +4,7 @@
 use App\Http\Controllers\HumanResourcesController;
 use App\Models\EmployeePersonalData;
 
-route::post('createAbsence',[HumanResourcesController::class,'createAbsence'])->name('createAbsence');
+    route::post('createAbsence',[HumanResourcesController::class,'createAbsence'])->name('createAbsence');
     route::post('updateAbsence',[HumanResourcesController::class,'updateAbsenceById'])->name('updateAbsenceById');
     route::get('getAllEmployeeAbsences',[HumanResourcesController::class,'getAllEmployeeAbsences'])->name('getAllEmployeeAbsences');
     route::post('removeAbsence',[HumanResourcesController::class,'removeAbsence'])->name('removeAbsence');
@@ -19,8 +19,10 @@ route::post('createAbsence',[HumanResourcesController::class,'createAbsence'])->
     route::get('getAllEmployees/{id}',[HumanResourcesController::class,'getHRs'])->name('getAllEmployees');
     route::post('updatePersonalData',[HumanResourcesController::class,'updatePersonalData'])->name('updatePersonalData');
     route::post('removePersonalData',[HumanResourcesController::class,'removePersonalData'])->name('removePersonalData');
+
     route::get('hr_view', function (){
         $admins = \App\Models\Admins::where('admin_id',null)->get();
         return view('hr',['admins' => $admins]);
 })->name('hr_view');
+
 ?>

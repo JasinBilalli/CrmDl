@@ -19,7 +19,7 @@ return $this->belongsTo(Pendency::class,'id','family_id');
         return $this->belongsTo(LeadDataFahrzeug::class,'person_id');
     }
     public function hausrat(){
-        return $this->belongsTo(CostumerProduktHausrat::class,'person_id');
+        return $this->hasMany(CostumerProduktHausrat::class,'person_id_PH');
     }
  public function pendencies(){
         return $this->hasMany(Pendency::class,'family_id');
